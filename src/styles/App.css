@@ -1,16 +1,18 @@
+/*Colors*/
+/*orange: #E66E1C;*/
+/*header-gray: #3C3C3C;*/
+/*blue: #185FAC;*/
+/*font-gray: #464749;*/
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+  background-color: #3C3C3C;
+  height: 70px;
+  /*padding: 20px;*/
+  border-bottom: 5px solid #E66E1C;
   color: white;
 }
 
@@ -20,9 +22,4 @@
 
 .App-intro {
   font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
