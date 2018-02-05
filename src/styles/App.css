@@ -24,3 +24,11 @@
 .App-intro {
   font-size: large;
 }
+
+.Logo {
+  margin: 15px auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
