@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Paragraph from 'grommet/components/Paragraph';
+import Paragraph from '../../../bower_components/grommet/grommet.js';
 
 class What extends Component {
 
