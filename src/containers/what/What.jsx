@@ -1,12 +1,22 @@
 import React, { Component } from 'react';
 import Paragraph from 'grommet/components/Paragraph';
+// import Tiles from 'grommet/components/Tiles';
+// import Tile from 'grommet/components/Tile';
+// import Card from 'grommet/components/Card';
+import Columns from 'grommet/components/Columns';
+import Box from 'grommet/components/Box';
+import SearchIcon from 'grommet/components/icons/base/Search';
+import CompareIcon from 'grommet/components/icons/base/Compare';
+import CheckboxSelectedIcon from 'grommet/components/icons/base/CheckboxSelected';
+import MoneyIcon from 'grommet/components/icons/base/Money';
 
 class What extends Component {
 
   render() {
     return (
       <div>
-        <Paragraph size='large' margin='small'>
+        <h3>What</h3>
+        <Paragraph size='medium' margin='medium'>
           The vision for BookLocal is to connect travelers directly to their hotel of choice
           by creating the first two way property management system accessible as both
           a traveler and a hotel administrator. Simply put, BookLocal is designed to
@@ -21,6 +31,115 @@ class What extends Component {
           for both hotel workers and travelers will be designed to provide full service
           functionality and replace inefficiencies in the current ecosystem.
         </Paragraph>
+        <Paragraph>To the traveler, BookLocal will provide the following features:</Paragraph>
+        {/* <Tiles>
+          <Tile>
+            <SearchIcon/>
+            <Card
+              // thumbnail=''
+              heading='Search'
+            />
+          </Tile>
+          <Tile>
+            <CompareIcon/>
+            <Card
+              // thumbnail=''
+              heading='Search'
+            />
+          </Tile>
+          <Tile>
+            <CheckboxSelectedIcon/>
+            <Card
+              // thumbnail=''
+              heading='Search'
+            />
+          </Tile>
+          <Tile>
+            <MoneyIcon/>
+            <Card
+              // thumbnail=''
+              heading='Search'
+            />
+          </Tile>
+        </Tiles> */}
+        {/* <Box
+          direction='row'
+          justify='start'
+          align='center'
+          // wrap={true}
+          pad='medium'
+          margin='small'
+          colorIndex='light-2'> */}
+          {/* <Value value={1}
+            colorIndex='accent-1'
+          /> */}
+        <Columns
+          responsive={false}
+          >
+          <Box direction='row'
+            justify='start'
+            align='center'
+            wrap={true}
+            pad='medium'
+            margin='small'
+            colorIndex='light-1'>
+            <SearchIcon/>
+            Search
+            {/* <Value value={2} /> */}
+          </Box>
+          <Box direction='row'
+            justify='start'
+            align='center'
+            wrap={true}
+            pad='medium'
+            margin='small'
+            colorIndex='light-1'>
+            <CompareIcon/>
+            Compare
+            {/* <Value value={3} /> */}
+          </Box>
+        {/* </Box>
+        <Box
+          direction='row'
+          justify='start'
+          align='center'
+          // wrap={true}
+          pad='medium'
+          margin='small'
+          colorIndex='light-2'> */}
+          <Box direction='row'
+            justify='start'
+            align='center'
+            wrap={true}
+            pad='medium'
+            margin='small'
+            colorIndex='light-1'>
+            <CheckboxSelectedIcon/>
+            Book
+            {/* <Value value={4} /> */}
+          </Box>
+          <Box direction='row'
+            justify='start'
+            align='center'
+            wrap={true}
+            pad='medium'
+            margin='small'
+            colorIndex='light-1'>
+            <MoneyIcon/>
+            Purchase
+            {/* <Value value={5} /> */}
+          </Box>
+        {/* </Box> */}
+        </Columns>
+        <Paragraph>To the hotel, BookLocal will provide modules for:</Paragraph>
+          <ul>
+            <li>guest management</li>
+            <li>housekeeping and maintenance</li>
+            <li>revenue management</li>
+            <li>payment processing and point of sale</li>
+            <li>report generation</li>
+            <li>channel management</li>
+          </ul>
       </div>
     );
   }
