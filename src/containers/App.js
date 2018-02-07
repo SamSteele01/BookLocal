@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
+import 'grommet/grommet.min.css';
 import Header from '../components/Header';
 import Logo from '../components/Logo';
 import Jumbotron from '../components/Jumbotron';
