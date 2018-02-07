@@ -152,6 +152,23 @@ module.exports = {
               cacheDirectory: true,
             },
           },
+          {
+            test: /\.scss$/,
+            use: [
+              {
+                loader: 'style-loader'
+              },
+              {
+                loader: 'css-loader'
+              },
+              {
+                loader: 'sass-loader',
+                // options: {
+                //   includePaths: ['./node_modules', './node_modules/grommet/node_modules']
+                // }
+              }
+            ]
+          },
           // "postcss" loader applies autoprefixer to our CSS.
           // "css" loader resolves paths in CSS and adds assets as dependencies.
           // "style" loader turns CSS into JS modules that inject <style> tags.
@@ -189,22 +206,6 @@ module.exports = {
               },
             ],
           },
-          // {
-          //   test: /\.scss$/,
-          //   use: [
-          //     {
-          //       loader: 'style-loader'
-          //     },
-          //     {
-          //       loader: 'css-loader'
-          //     },
-          //     {
-          //       loader: 'sass-loader', options: {
-          //         includePaths: ['./node_modules', './node_modules/grommet/node_modules']
-          //       }
-          //     }
-          //   ]
-          // },
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.
           // In production, they would get copied to the `build` folder.
