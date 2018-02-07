@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import Logo from '../components/Logo';
 import Jumbotron from '../components/Jumbotron';
 import What from './what/What';
+import Why from './Why';
 
 class App extends Component {
   render() {
@@ -14,7 +15,7 @@ class App extends Component {
         <Logo/>
         <Jumbotron/>
         <What/>
-
+        <Why/>
       </div>
     );
   }
