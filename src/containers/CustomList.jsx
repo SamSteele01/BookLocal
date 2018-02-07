@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Box from 'grommet/components/Box';
+import Heading from 'grommet/components/Heading';
 
 class CustomList extends Component {
 
@@ -9,12 +10,16 @@ class CustomList extends Component {
         <Box
           direction='column'
           justify='start'
-          align='center'
+          align='stretch'
           wrap={true}
+          responsive={true}
           pad='medium'
           margin='small'
-          colorIndex='light-2'>
-          <h2>{this.props.title}</h2>
+          colorIndex={this.props.colorIndex}>
+          <Heading align='center'
+            tag='h4'>
+            {this.props.title}
+          </Heading>
           {this.props.children}
         </Box>
       </div>

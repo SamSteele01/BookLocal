@@ -11,14 +11,22 @@ class CustomListItem extends Component {
             keep={true} visible="scroll">
           <Box
             direction='row'
-            justify='start'
-            align='center'
-            wrap={true}
-            pad='medium'
+            justify='between'
+            alignSelf='stretch'
+            // full='horizontal'
+            flex='grow'
+            // size='medium'
+            responsive={false}
+            wrap={false}
+            pad='small'
             margin='small'
-            colorIndex='light-2'>
-            {this.props.icon}
-            <p>{this.props.text}</p>
+            colorIndex={this.props.colorIndex}>
+            {/* {this.props.icon} */}
+            {/* <div>&#8226;</div> */}
+            {/* <p> */}
+              {/* {this.props.text} */}
+            {/* </p> */}
+            {this.props.children}
           </Box>
         </Animate>
       </div>
