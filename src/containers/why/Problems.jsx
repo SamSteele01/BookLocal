@@ -8,7 +8,7 @@ class Problems extends Component {
     return (
       <div>
         <Heading align='center'
-          tag='h2'>
+          tag='h3'>
           Problems
         </Heading>
         <Paragraph>
