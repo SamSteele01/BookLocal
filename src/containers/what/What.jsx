@@ -32,47 +32,6 @@ class What extends Component {
           functionality and replace inefficiencies in the current ecosystem.
         </Paragraph>
         <Paragraph>To the traveler, BookLocal will provide the following features:</Paragraph>
-        {/* <Tiles>
-          <Tile>
-            <SearchIcon/>
-            <Card
-              // thumbnail=''
-              heading='Search'
-            />
-          </Tile>
-          <Tile>
-            <CompareIcon/>
-            <Card
-              // thumbnail=''
-              heading='Search'
-            />
-          </Tile>
-          <Tile>
-            <CheckboxSelectedIcon/>
-            <Card
-              // thumbnail=''
-              heading='Search'
-            />
-          </Tile>
-          <Tile>
-            <MoneyIcon/>
-            <Card
-              // thumbnail=''
-              heading='Search'
-            />
-          </Tile>
-        </Tiles> */}
-        {/* <Box
-          direction='row'
-          justify='start'
-          align='center'
-          // wrap={true}
-          pad='medium'
-          margin='small'
-          colorIndex='light-2'> */}
-          {/* <Value value={1}
-            colorIndex='accent-1'
-          /> */}
         <Columns
           responsive={false}
           >
@@ -96,17 +55,7 @@ class What extends Component {
             colorIndex='light-1'>
             <CompareIcon/>
             Compare
-            {/* <Value value={3} /> */}
           </Box>
-        {/* </Box>
-        <Box
-          direction='row'
-          justify='start'
-          align='center'
-          // wrap={true}
-          pad='medium'
-          margin='small'
-          colorIndex='light-2'> */}
           <Box direction='row'
             justify='start'
             align='center'
@@ -116,7 +65,6 @@ class What extends Component {
             colorIndex='light-1'>
             <CheckboxSelectedIcon/>
             Book
-            {/* <Value value={4} /> */}
           </Box>
           <Box direction='row'
             justify='start'
@@ -127,9 +75,7 @@ class What extends Component {
             colorIndex='light-1'>
             <MoneyIcon/>
             Purchase
-            {/* <Value value={5} /> */}
           </Box>
-        {/* </Box> */}
         </Columns>
         <Paragraph>To the hotel, BookLocal will provide modules for:</Paragraph>
           <ul>
