@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import Logo from '../components/Logo';
 import Jumbotron from '../components/Jumbotron';
 import What from './what/What';
-import Why from './Why';
+import Why from './why/Why';
 
 class App extends Component {
   render() {
