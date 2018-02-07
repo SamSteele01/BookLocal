@@ -189,7 +189,7 @@ module.exports = {
               },
             ],
           },
-          {
+          // {
           //   test: /\.scss$/,
           //   use: [
           //     {
