@@ -14,7 +14,7 @@ class What extends Component {
 
   render() {
     return (
-      <div>
+      <div className='what'>
         <h3>What</h3>
         <Paragraph size='medium' margin='medium'>
           The vision for BookLocal is to connect travelers directly to their hotel of choice
