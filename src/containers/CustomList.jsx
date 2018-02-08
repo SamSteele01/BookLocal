@@ -16,7 +16,7 @@ class CustomList extends Component {
           pad='medium'
           margin='small'
           colorIndex={this.props.colorIndex}>
-          <Heading align='center'
+          <Heading align='start'
             tag='h4'>
             {this.props.title}
           </Heading>
