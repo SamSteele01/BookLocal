@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import Paragraph from 'grommet/components/Paragraph';
-// import Tiles from 'grommet/components/Tiles';
-// import Tile from 'grommet/components/Tile';
-// import Card from 'grommet/components/Card';
 import Section from 'grommet/components/Section';
 import Heading from 'grommet/components/Heading';
-// import Columns from 'grommet/components/Columns';
-// import Box from 'grommet/components/Box';
 import CustomList from '../CustomList';
 import CustomListItem from '../CustomListItem';
 import SearchIcon from 'grommet/components/icons/base/Search';
