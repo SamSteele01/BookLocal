@@ -36,3 +36,12 @@
 .underline {
   text-decoration: underline;
 }
+
+.solutions {
+  background-color: #185FAC;
+  padding: 10px 0;
+}
+
+.white {
+  color: #FFF;
+}
