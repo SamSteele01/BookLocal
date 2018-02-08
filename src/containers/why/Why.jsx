@@ -4,6 +4,7 @@ import Heading from 'grommet/components/Heading';
 // import Label from 'grommet/components/Label';
 import Paragraph from 'grommet/components/Paragraph';
 import Problems from './Problems';
+import Solutions from './Solutions';
 import CustomList from '../CustomList';
 import CustomListItem from '../CustomListItem';
 
@@ -66,6 +67,7 @@ class Why extends Component {
             </CustomList>
             <CustomList title="Fragmented computer systems.">
               <CustomListItem>
+                <div>&#8226;</div>
                 Since many of the computers systems are only designed to handle specific
                 tasks (i.e. channel manager, property management system, point of sale,
                 housekeeping module), training costs are very high for new employees and
@@ -73,6 +75,7 @@ class Why extends Component {
                 the necessary systems.
               </CustomListItem>
               <CustomListItem>
+                <div>&#8226;</div>
                 Current property management systems allow for various rate plans, seasonal
                 rates, and room types, but often must be entered manually by the
                 revenue management department. This can limit responsiveness for special
@@ -80,7 +83,33 @@ class Why extends Component {
               </CustomListItem>
             </CustomList>
           </Problems>
-          {/* <Solutions/> */}
+          <Solutions>
+            <CustomList title="Brand new revenue structure.">
+              <CustomListItem>
+                <div>&#8226;</div>
+                Designed to lower the room prices for travelers and increase hotel profits.
+              </CustomListItem>
+            </CustomList>
+            <CustomList title="Open sourced contracts.">
+              <CustomListItem>
+                <div>&#8226;</div>
+                All contracts will be open sourced and publicly scrutinized to provide fair
+                and consistent terms.
+              </CustomListItem>
+            </CustomList>
+            <CustomList title="Holistic design.">
+              <CustomListItem>
+                <div>&#8226;</div>
+                This is the first travel application designed to accomodate the entire booking
+                process.
+              </CustomListItem>
+              <CustomListItem>
+                <div>&#8226;</div>
+                Integrating features into a single system will put the guest and hotel in
+                direct contact by removing unnecessary middlemen.
+              </CustomListItem>
+            </CustomList>
+          </Solutions>
         </Section>
       </div>
     );
