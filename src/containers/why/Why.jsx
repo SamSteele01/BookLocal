@@ -18,7 +18,7 @@ class Why extends Component {
             tag='h2'>
             Why
           </Heading>
-          <Paragraph>
+          <Paragraph size='medium' margin='small'>
             To understand the motivation for BookLocal we identify a few key issues with
             the current hotel reservation model and propose solutions.
           </Paragraph>

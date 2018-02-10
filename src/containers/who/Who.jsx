@@ -20,7 +20,7 @@ class Who extends Component {
             tag='h2'>
             Who
           </Heading>
-          <Paragraph size='medium' margin='medium'>
+          <Paragraph size='medium' margin='small'>
             The current ecosystem has too many players trying to earn a share of the fi-
             nal room price. Figure 1 shows the network of relationships, each of which is
             explained below.
@@ -28,7 +28,7 @@ class Who extends Component {
 
           {/* 3.1 */}
           <CustomList title="Ecosystem"> 
-            <Paragraph size='medium' margin='medium'>
+            <Paragraph size='medium' margin='small'>
               Below is a visual representation of the various paths through which a traveler
               can book a room. The red arrows indicate the most used reservation path.
             </Paragraph>
@@ -44,14 +44,14 @@ class Who extends Component {
             tag='h3'> 
             Players
           </Heading>
-          <Paragraph size='medium' margin='medium'>
+          <Paragraph size='medium' margin='small'>
             We describe the main players in the ecosystem by including a brief history and
             discussing the value they add and cost they subtract from the industry.
           </Paragraph>
 
           {/* 3.2.1 */}
           <CustomList title="Travel Agent"> 
-            <Paragraph>
+            <Paragraph size='medium' margin='small'>
               Travel agents appeared first as an intermediary between travelers and hotels
               in order to facilitate trip planning. While the internet has left brick and mortar
               travel agencies largely obsolete, they do still exist and are often helpful in
@@ -76,7 +76,7 @@ class Who extends Component {
 
           {/* 3.2.2 */}
           <CustomList title="Global Distribution System (GDS)"> 
-            <Paragraph>
+            <Paragraph size='medium' margin='small'>
               Global distribution systems originally began in the airline industry (eAAsy
               Sabre) to provide a central platform for airlines and travel agents to aggregate
               flight data. By 1991, the Hotel Reservation Network (now Hotels.com)
@@ -106,7 +106,7 @@ class Who extends Component {
 
           {/* 3.2.3 */}
           <CustomList title="Online Travel Agent (OTA)"> 
-            <Paragraph>
+            <Paragraph size='medium' margin='small'>
               Online travel agents represent the most dramatic change to the travel industry
               in the last decade. Initially, OTAs tapped directly into the GDS networks to
               find availabilities and sell directly to the interested traveler, however, channel
@@ -141,7 +141,7 @@ class Who extends Component {
 
           {/* 3.2.4 */}
           <CustomList title="Channel Manager"> 
-            <Paragraph>
+            <Paragraph size='medium' margin='small'>
               Channel management software allows the hotel to automatically update their
               availability and pricing information across their distribution network. This technology
               relies on two-way XML communication to push and pull data between
@@ -168,7 +168,7 @@ class Who extends Component {
 
           {/* 3.2.5 */}
           <CustomList title="Property Management System (PMS)"> 
-            <Paragraph>
+            <Paragraph size='medium' margin='small'>
               The hotel’s property management system (PMS) refers to any piece of software
               designed to help manage the daily requirements of running a hotel. At it’s most
               basic, a PMS will include functions to manage guest arrivals and departures and
@@ -192,7 +192,7 @@ class Who extends Component {
 
           {/* 3.3 */}
           <CustomList title="Proposed Ecosystem"> 
-            <Paragraph>
+            <Paragraph size='medium' margin='small'>
               Since BookLocal will act as a property management system, channel manager,
               and payment processor for the hotel and provide metasearch capabilities for
               the traveler, much of the current ecosystem can be bypassed. As such, figure 2
@@ -203,7 +203,7 @@ class Who extends Component {
               src={ecosystem2}
               caption='Figure 2: BookLocal Ecosystem' 
             />
-            <Paragraph>
+            <Paragraph size='medium' margin='small'>
               Note that BookLocal seeks to be fully compatible with current online travel
               agencies in order to provide seamless integration for early-adopting hotels and
               late-adopting travelers.

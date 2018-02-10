@@ -21,7 +21,7 @@ class What extends Component {
             tag='h2'>
             What
           </Heading>
-          <Paragraph size='medium' margin='medium'>
+          <Paragraph size='medium' margin='small'>
             The vision for BookLocal is to connect travelers directly to their hotel of choice
             by creating the first two way property management system accessible as both
             a traveler and a hotel administrator. Simply put, BookLocal is designed to
@@ -30,7 +30,7 @@ class What extends Component {
             user experiences; lower room prices for the traveler; and higher profits for the
             hotel.
           </Paragraph>
-          <Paragraph>
+          <Paragraph size='medium' margin='small'>
             At its heart, BookLocal will operate as a series of smart contracts stored on
             the Ethereum blockchain. To interact with the application, special interfaces
             for both hotel workers and travelers will be designed to provide full service
@@ -40,7 +40,7 @@ class What extends Component {
           <CustomList 
           // title='To the traveler, BookLocal will provide the following features:'
           >
-            <Paragraph>
+            <Paragraph size='medium' margin='small'>
               To the traveler, BookLocal will provide the following features:
             </Paragraph>
             <CustomListItem>
@@ -64,7 +64,7 @@ class What extends Component {
               <div></div>
             </CustomListItem>
           </CustomList>
-          <Paragraph>To the hotel, BookLocal will provide modules for:</Paragraph>
+          <Paragraph size='medium' margin='small'>To the hotel, BookLocal will provide modules for:</Paragraph>
           <CustomList>
             <CustomListItem>guest management</CustomListItem>
             <CustomListItem>housekeeping and maintenance</CustomListItem>
