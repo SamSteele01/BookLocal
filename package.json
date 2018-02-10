@@ -46,7 +46,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "gen:sass-watch": "sass --watch src/styles/App.scss:src/styles/App.css",
+    "dev": "npm-run-all --parallel start gen:sass-watch"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -92,6 +94,7 @@
   },
   "devDependencies": {
     "node-sass": "^4.7.2",
+    "npm-run-all": "^4.1.2",
     "sass-loader": "^6.0.6",
     "webpack": "^3.8.1"
   }
