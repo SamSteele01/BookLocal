@@ -7,6 +7,7 @@ class Problems extends Component {
   render() {
     return (
       <div>
+        {/* 2.1 */}
         <Heading align='center'
           tag='h3'>
           Problems

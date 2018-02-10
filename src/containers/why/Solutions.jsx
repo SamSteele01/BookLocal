@@ -7,6 +7,7 @@ class Solutions extends Component {
   render() {
     return (
       <div className="solutions white">
+        {/* 2.2 */}
         <Heading align='center'
           tag='h3'>
           Solutions
