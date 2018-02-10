@@ -1,8 +1,4 @@
 /*Colors*/
-/*orange: #E66E1C;*/
-/*header-gray: #3C3C3C;*/
-/*blue: #185FAC;*/
-/*font-gray: #464749;*/
 .App {
   text-align: center; }
 
@@ -36,5 +32,14 @@
 
 .white {
   color: #FFF; }
+
+p {
+  font-family: Titillium Web, sans-serif; }
+
+b, h1 {
+  font-family: Segoe UI, Arial, sans-serif; }
+
+h2, h3 {
+  font-family: PT Sans Narrow; }
 
 /*# sourceMappingURL=App.css.map */

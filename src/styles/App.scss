@@ -1,8 +1,12 @@
 /*Colors*/
-/*orange: #E66E1C;*/
-/*header-gray: #3C3C3C;*/
-/*blue: #185FAC;*/
-/*font-gray: #464749;*/
+$orange1: rgb(226, 124, 57);
+$orange2: #E66E1C;
+$gray: rgb(71, 71, 71);
+$header-gray: #3C3C3C;
+$blue1: #185FAC;
+$blue2: rgb(13, 71, 133);
+$font-gray: #464749;
+
 
 .App {
   text-align: center;
@@ -48,4 +52,14 @@
   // color: rgb(238, 148, 148);
 }
 
+p {
+  font-family: Titillium Web, sans-serif;
+}
 
+b, h1 {
+  font-family: Segoe UI, Arial, sans-serif;
+}
+
+h2, h3 {
+  font-family: PT Sans Narrow;
+}
