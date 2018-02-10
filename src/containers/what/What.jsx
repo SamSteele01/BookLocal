@@ -14,7 +14,9 @@ class What extends Component {
   render() {
     return (
       <div className='what'>
-        <Section>
+        <Section margin={{top: 'large'}}> 
+
+          {/* 1 */}
           <Heading align='center'
             tag='h2'>
             What
@@ -34,8 +36,13 @@ class What extends Component {
             for both hotel workers and travelers will be designed to provide full service
             functionality and replace inefficiencies in the current ecosystem.
           </Paragraph>
-          {/* <Paragraph></Paragraph> */}
-            <CustomList title='To the traveler, BookLocal will provide the following features:'>
+          
+          <CustomList 
+          // title='To the traveler, BookLocal will provide the following features:'
+          >
+            <Paragraph>
+              To the traveler, BookLocal will provide the following features:
+            </Paragraph>
             <CustomListItem>
               <SearchIcon/>
               Search

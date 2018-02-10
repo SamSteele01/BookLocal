@@ -13,7 +13,7 @@ class Why extends Component {
   render() {
     return (
       <div>
-        <Section>
+        <Section margin={{top: 'large'}}> 
           <Heading align='center'
             tag='h2'>
             Why
