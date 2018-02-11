@@ -8,6 +8,7 @@ import What from './what/What';
 import Why from './why/Why';
 import Who from './who/Who';
 import How from './how/How';
+import Steps from './Steps';
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
         <Why/>
         <Who/>
         <How/>
+        <Steps/>
       </div>
     );
   }
