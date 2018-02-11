@@ -6,13 +6,17 @@ class Solutions extends Component {
 
   render() {
     return (
-      <div className="solutions white">
+      <div 
+      // className="solutions white"
+      >
         {/* 2.2 */}
         <Heading align='center'
           tag='h3'>
           Solutions
         </Heading>
-        <Paragraph className="white">
+        <Paragraph 
+        // className="white"
+        >
           BookLocal will design a platform that incorporates the best features of the current system while omitting middlemen.
         </Paragraph>
         {this.props.children}
