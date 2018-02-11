@@ -65,13 +65,26 @@ class What extends Component {
             </CustomListItem>
           </CustomList>
           <Paragraph size='medium' margin='small'>To the hotel, BookLocal will provide modules for:</Paragraph>
+          {/* add icons */}
           <CustomList>
-            <CustomListItem>guest management</CustomListItem>
-            <CustomListItem>housekeeping and maintenance</CustomListItem>
-            <CustomListItem>revenue management</CustomListItem>
-            <CustomListItem>payment processing and point of sale</CustomListItem>
-            <CustomListItem>report generation</CustomListItem>
-            <CustomListItem>channel management</CustomListItem>
+            <CustomListItem>
+              guest management
+            </CustomListItem>
+            <CustomListItem>
+              housekeeping and maintenance
+            </CustomListItem>
+            <CustomListItem>
+              revenue management
+            </CustomListItem>
+            <CustomListItem>
+              payment processing and point of sale
+            </CustomListItem>
+            <CustomListItem>
+              report generation
+            </CustomListItem>
+            <CustomListItem>
+              channel management
+            </CustomListItem>
           </CustomList>
         </Section>
       </div>
