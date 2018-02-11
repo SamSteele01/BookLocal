@@ -48,7 +48,7 @@ export default class Steps extends Component {
                         <div>&#8226;</div>
                         <div>
                             Stores a list of reservations that, 1) map each room to a time, and 2)
-                            maps each time to a renter.
+                            maps each time to a renter
                         </div>
                     </CustomListItem>
                     <CustomListItem>
@@ -59,8 +59,9 @@ export default class Steps extends Component {
                         </div>
                     </CustomListItem>
                     <Paragraph>
-                    The contracts for the proof of concept (written in solidity) are available online.
+                        The contracts for the proof of concept (written in solidity) are available online.
                     </Paragraph>
+                    {/* make link to github */}
                 </CustomList>
 
                 {/* 5.1.2 */}
@@ -69,29 +70,104 @@ export default class Steps extends Component {
                         The minimum viable product will extend the Proof of Concept to incorporate
                         full payment functionality and user interfaces.
                     </Paragraph>
-                    <CustomListItem>
-                        <div>&#8226;</div>
-                        <div>
-                            Send exactly the asking rate.
-                        </div>
-                    </CustomListItem>
-                    <CustomListItem>
-                        <div>&#8226;</div>
-                        <div>
-                            Send more than the asking rate and use the BookLocal wallet to pay for
-                            food and activities during the trip. This works as a budgeting commitment
-                            device to ensure you don’t overspend during your trip.
-                        </div>
-                    </CustomListItem>
-                    <CustomListItem>
-                        <div>&#8226;</div>
-                        <div>
-                            Send some amount less than the upfront asking rate (if booking well in
-                            advance) to hold your room for a period of time and pay the remainder
-                            closer to the actual check-in date. This option will likely cost more due
-                            to the convenience.
-                        </div>
-                    </CustomListItem>
+                    <CustomList>
+
+                        {/* <div>1.</div> */}
+                        <Heading align='center'
+                            tag='h3'>
+                            1. Multisignature Wallets
+                        </Heading>
+
+                        <Paragraph size='medium' margin='small'>
+                            To ensure secure payments, we will use industry standard code for our
+                            multisignature wallet.
+                        </Paragraph>
+                    </CustomList>
+                    <CustomList>
+
+                        {/* <div>2.</div> */}
+                        <Heading align='center'
+                            tag='h3'>
+                            2. Traveler Interface
+                        </Heading>
+
+                        <Paragraph size='medium' margin='small'>
+                            Each “Traveler” object inherits functions from a standard wallet. Thus,
+                            the minimum viable interface for a traveler will extend the wallet to provide
+                            a graphical interface for the following methods:
+                        </Paragraph>
+                        <CustomListItem>
+                            <div>&#8226;</div>
+                            <div>
+                                checkRoomStatus(_roomId)
+                            </div>
+                        </CustomListItem>
+                        <CustomListItem>
+                            <div>&#8226;</div>
+                            <div>
+                                reserve(_roomId,_startDate,_stopDate)
+                            </div>
+                        </CustomListItem>
+                        <CustomListItem>
+                            <div>&#8226;</div>
+                            <div>
+                                checkIn(_roomId)
+                            </div>
+                        </CustomListItem>
+                        <CustomListItem>
+                            <div>&#8226;</div>
+                            <div>
+                                checkOut(_roomId)
+                            </div>
+                        </CustomListItem>
+                        <CustomListItem>
+                            <div>&#8226;</div>
+                            <div>
+                                cancel(_roomId,_startDate,_stopDate)
+                            </div>
+                        </CustomListItem>
+                    </CustomList>
+                    <CustomList>
+
+                        {/* <div>3.</div> */}
+                        <Heading align='center'
+                            tag='h3'>
+                            3. Hotel Interface
+                        </Heading>
+
+                        <Paragraph size='medium' margin='small'>
+                            Each “Hotel” object inherits functions from a standard multisignature
+                            wallet in order to appropriately handle payments being sent to the contract.
+                            In addition to base wallet features, the Hotel will also have access
+                            to all methods callable by the traveler (as listed above) with special owner
+                            permissions. Further, the minimum viable interface for a hotel will also
+                            include a graphical interface for the following methods:
+                        </Paragraph>
+                        <CustomListItem>
+                            <div>&#8226;</div>
+                            <div>
+                                newRoom()
+                            </div>
+                        </CustomListItem>
+                        <CustomListItem>
+                            <div>&#8226;</div>
+                            <div>
+                                changeDescription(_roomId)
+                            </div>
+                        </CustomListItem>
+                        <CustomListItem>
+                            <div>&#8226;</div>
+                            <div>
+                                remove(_roomId)
+                            </div>
+                        </CustomListItem>
+                        <CustomListItem>
+                            <div>&#8226;</div>
+                            <div>
+                                hide(_roomId)
+                            </div>
+                        </CustomListItem>
+                    </CustomList>
                 </CustomList>
 
 
