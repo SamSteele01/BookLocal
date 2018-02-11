@@ -13,17 +13,19 @@ class Why extends Component {
   render() {
     return (
       <div>
-        <Section>
+        <Section margin={{top: 'large'}}> 
           <Heading align='center'
             tag='h2'>
             Why
           </Heading>
-          <Paragraph>
+          <Paragraph size='medium' margin='small'>
             To understand the motivation for BookLocal we identify a few key issues with
             the current hotel reservation model and propose solutions.
           </Paragraph>
           <Problems>
-            <CustomList title="High commission payments." colorIndex='warning'>
+            <CustomList title="High commission payments." 
+              // colorIndex='warning'
+              >
               <CustomListItem colorIndex='light-1'>
                 <div>&#8226;</div>
                 Online travel agents (OTA) receive 15-25% commission per room.

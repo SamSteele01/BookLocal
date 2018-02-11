@@ -14,7 +14,7 @@ class CustomList extends Component {
           wrap={true}
           responsive={true}
           pad='medium'
-          margin='small'
+          // margin='small'
           colorIndex={this.props.colorIndex}>
           <Heading align='start'
             tag='h4'>

@@ -14,12 +14,14 @@ class What extends Component {
   render() {
     return (
       <div className='what'>
-        <Section>
+        <Section margin={{top: 'large'}}> 
+
+          {/* 1 */}
           <Heading align='center'
             tag='h2'>
             What
           </Heading>
-          <Paragraph size='medium' margin='medium'>
+          <Paragraph size='medium' margin='small'>
             The vision for BookLocal is to connect travelers directly to their hotel of choice
             by creating the first two way property management system accessible as both
             a traveler and a hotel administrator. Simply put, BookLocal is designed to
@@ -28,14 +30,19 @@ class What extends Component {
             user experiences; lower room prices for the traveler; and higher profits for the
             hotel.
           </Paragraph>
-          <Paragraph>
+          <Paragraph size='medium' margin='small'>
             At its heart, BookLocal will operate as a series of smart contracts stored on
             the Ethereum blockchain. To interact with the application, special interfaces
             for both hotel workers and travelers will be designed to provide full service
             functionality and replace inefficiencies in the current ecosystem.
           </Paragraph>
-          {/* <Paragraph></Paragraph> */}
-            <CustomList title='To the traveler, BookLocal will provide the following features:'>
+          
+          <CustomList 
+          // title='To the traveler, BookLocal will provide the following features:'
+          >
+            <Paragraph size='medium' margin='small'>
+              To the traveler, BookLocal will provide the following features:
+            </Paragraph>
             <CustomListItem>
               <SearchIcon/>
               Search
@@ -57,14 +64,27 @@ class What extends Component {
               <div></div>
             </CustomListItem>
           </CustomList>
-          <Paragraph>To the hotel, BookLocal will provide modules for:</Paragraph>
+          <Paragraph size='medium' margin='small'>To the hotel, BookLocal will provide modules for:</Paragraph>
+          {/* add icons */}
           <CustomList>
-            <CustomListItem>guest management</CustomListItem>
-            <CustomListItem>housekeeping and maintenance</CustomListItem>
-            <CustomListItem>revenue management</CustomListItem>
-            <CustomListItem>payment processing and point of sale</CustomListItem>
-            <CustomListItem>report generation</CustomListItem>
-            <CustomListItem>channel management</CustomListItem>
+            <CustomListItem>
+              guest management
+            </CustomListItem>
+            <CustomListItem>
+              housekeeping and maintenance
+            </CustomListItem>
+            <CustomListItem>
+              revenue management
+            </CustomListItem>
+            <CustomListItem>
+              payment processing and point of sale
+            </CustomListItem>
+            <CustomListItem>
+              report generation
+            </CustomListItem>
+            <CustomListItem>
+              channel management
+            </CustomListItem>
           </CustomList>
         </Section>
       </div>

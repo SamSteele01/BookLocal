@@ -21,18 +21,14 @@ class CustomListItem extends Component {
             pad='small'
             margin='small'
             colorIndex={this.props.colorIndex}>
-            {/* {this.props.icon} */}
-            {/* <div>&#8226;</div> */}
-            {/* <p> */}
-              {/* {this.props.text} */}
-            {/* </p> */}
             {this.props.children}
           </Box>
         </Animate>
       </div>
     );
   }
-
 }
+
+
 
 export default CustomListItem;

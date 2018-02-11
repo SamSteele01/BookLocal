@@ -1,12 +1,6 @@
 /*Colors*/
-/*orange: #E66E1C;*/
-/*header-gray: #3C3C3C;*/
-/*blue: #185FAC;*/
-/*font-gray: #464749;*/
-
 .App {
-  text-align: center;
-}
+  text-align: center; }
 
 .App-header {
   background-color: #3C3C3C;
@@ -14,34 +8,41 @@
   /*padding: 20px;*/
   border-bottom: 5px solid #E66E1C;
   color: white;
-  /*hide on scroll*/
-}
+  /*hide on scroll*/ }
 
 .App-title {
-  font-size: 1.5em;
-}
+  font-size: 1.5em; }
 
 .App-intro {
-  font-size: large;
-}
+  font-size: large; }
 
 .Logo {
   margin: 15px auto;
   display: block;
   max-width: 100%;
   height: auto;
-  width: auto;
-}
+  width: auto; }
 
 .underline {
-  text-decoration: underline;
-}
+  text-decoration: underline; }
 
 .solutions {
-  background-color: #185FAC;
-  padding: 10px 0;
-}
+  background-color: #06203d;
+  padding: 10px 0; }
 
 .white {
-  color: #FFF;
-}
+  color: #FFF; }
+
+p {
+  font-family: Titillium Web, sans-serif; }
+
+b, h1 {
+  font-family: Segoe UI, Arial, sans-serif; }
+
+h2, h3 {
+  font-family: PT Sans Narrow; }
+
+.bold {
+  font-weight: bold; }
+
+/*# sourceMappingURL=App.css.map */

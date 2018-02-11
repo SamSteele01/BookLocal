@@ -1,0 +1,70 @@
+/*Colors*/
+$orange1: rgb(231, 158, 109);
+$orange2: rgb(226, 124, 57);
+$orange3: #E66E1C;
+$blue1: rgb(66, 128, 194);
+$blue2: #185FAC;
+$blue3: rgb(13, 71, 133);
+$font-gray: #464749;
+$header-gray: #3C3C3C;
+$gray: rgb(71, 71, 71);
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #3C3C3C;
+  height: 70px;
+  /*padding: 20px;*/
+  border-bottom: 5px solid #E66E1C;
+  color: white;
+  /*hide on scroll*/
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.Logo {
+  margin: 15px auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.solutions {
+  // background-color: #185FAC;
+  background-color: rgb(6, 32, 61);
+  padding: 10px 0;
+}
+
+.white {
+  color: #FFF;
+  // color: rgb(238, 148, 148);
+}
+
+p {
+  font-family: Titillium Web, sans-serif;
+}
+
+b, h1 {
+  font-family: Segoe UI, Arial, sans-serif;
+}
+
+h2, h3 {
+  font-family: PT Sans Narrow;
+}
+
+.bold {
+  font-weight: bold;
+}
