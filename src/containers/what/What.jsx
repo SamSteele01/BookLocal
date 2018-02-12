@@ -62,7 +62,7 @@ class What extends Component {
               // bgColor="orange"
               border="1px solid blue"
               borderRad
-              classNames="card-font"
+              classNames="what__card-font"
             >
               {/* <SearchIcon/> */}
               <Image
@@ -73,13 +73,13 @@ class What extends Component {
               <div></div>
             </CustomListItem>
             <CustomListItem
-              // height="auto"
+              //height="auto"
               // animation="slide-left"
               // color="$black"
               // bgColor="orange"
               border="1px solid blue"
               borderRad
-              classNames="card-font"
+              classNames="what__card-font"
             >
               {/* <CompareIcon/> */}
               <Image
@@ -90,13 +90,13 @@ class What extends Component {
               <div></div>
             </CustomListItem>
             <CustomListItem
-              // height="auto"
+              //height="auto"
               animation="slide-left"
-              color="$black"
+              // color="$black"
               // bgColor="orange"
               border="1px solid blue"
               borderRad
-              classNames="card-font"
+              classNames="what__card-font"
             >
               {/* <CheckboxSelectedIcon/> */}
               <Image
@@ -107,12 +107,12 @@ class What extends Component {
               <div></div>
             </CustomListItem>
             <CustomListItem
-              // height="xsmall"           animation="slide-left"
+              //height="xsmall"           animation="slide-left"
               // color="$black"
               // bgColor="orange"
               border="1px solid blue"
               borderRad
-              classNames="card-font"
+              classNames="what__card-font"
             >
               {/* <MoneyIcon/> */}
               <Image
@@ -130,12 +130,12 @@ class What extends Component {
           <CustomList>
             <CustomListItem
               // height="xsmall"
-              // animation="slide-left"
+              animation="slide-left"
               // color="$black"
               // bgColor="orange"
               border="1px solid blue"
               borderRad
-              classNames="card-font"
+              classNames="what__card-font"
             >
               <Image
                 size='thumb'
@@ -151,7 +151,7 @@ class What extends Component {
               // bgColor="orange"
               border="1px solid blue"
               borderRad
-              classNames="card-font"
+              classNames="what__card-font"
             >
               <Image
                 size='thumb'
@@ -162,12 +162,12 @@ class What extends Component {
             </CustomListItem>
             <CustomListItem
               // height="xsmall"
-              // animation="slide-left"
+              animation="slide-left"
               // color="$black"
               // bgColor="orange"
               border="1px solid blue"
               borderRad
-              classNames="card-font"
+              classNames="what__card-font"
             >
               <Image
                 size='thumb'
@@ -183,7 +183,7 @@ class What extends Component {
               // bgColor="orange"
               border="1px solid blue"
               borderRad
-              classNames="card-font"
+              classNames="what__card-font"
             >
               <Image
                 size='thumb'
@@ -194,12 +194,12 @@ class What extends Component {
             </CustomListItem>
             <CustomListItem
                 // height="xsmall"
-                // animation="slide-left"
+                animation="slide-left"
                 // color="$black"
                 // bgColor="orange"
                 border="1px solid blue"
                 borderRad
-                classNames="card-font"
+                classNames="what__card-font"
               >
               <Image
                 size='thumb'
@@ -215,7 +215,7 @@ class What extends Component {
               // bgColor="orange"
               border="1px solid blue"
               borderRad
-              classNames="card-font"
+              classNames="what__card-font"
             >
               <Image
                 size='thumb'
