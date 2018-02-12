@@ -15,10 +15,11 @@ export default class How extends Component {
                 <Section margin={{top: 'large'}}> 
 
                     {/* 4 */}
-                    <Heading align='center'
+                    {/* <Heading align='center'
                         tag='h2'>
                         How
-                    </Heading>
+                    </Heading> */}
+                    <div className='heading'>How</div>
                     <Paragraph size='medium' margin='small'>
                         The heart of BookLocal will reside in a series of smart contracts on the public
                         Ethereum blockchain.
@@ -39,12 +40,28 @@ export default class How extends Component {
                         <Paragraph size='medium' margin='small'>
                             Take note of the following systems:
                         </Paragraph>
-                        <CustomListItem>
+                        <CustomListItem
+                            //height="auto"
+                            // animation="slide-left"
+                            // color="$black"
+                            // bgColor="orange"
+                            border="1px solid blue"
+                            borderRad
+                            classNames="how__card-font"
+                        >
                         <div>&#8226;</div>
                             <p><u className="bold">BookLocal API:</u> The programming interface for the smart contracts.
                             </p>
                         </CustomListItem>
-                        <CustomListItem>
+                        <CustomListItem
+                            //height="auto"
+                            // animation="slide-left"
+                            // color="$black"
+                            // bgColor="orange"
+                            border="1px solid blue"
+                            borderRad
+                            classNames="how__card-font"
+                        >
                         <div>&#8226;</div>
                             <p><u className="bold">Hotel PMS:</u> The hotel interface. The first version (minimum viable
                                 product) will provide a simple graphical user interface to interact with
@@ -52,7 +69,15 @@ export default class How extends Component {
                                 features described below.
                             </p>
                         </CustomListItem>
-                        <CustomListItem>
+                        <CustomListItem
+                            //height="auto"
+                            // animation="slide-left"
+                            // color="$black"
+                            // bgColor="orange"
+                            border="1px solid blue"
+                            borderRad
+                            classNames="how__card-font"
+                        >
                         <div>&#8226;</div>
                             <p><u className="bold">Traveler Interface:</u> The travelers interface will allow a traveler to search
                                 for available rooms, compare room attributes, and book the room.
@@ -118,13 +143,29 @@ export default class How extends Component {
                             When the traveler has found a room they like, they can book the room in one
                             of several ways:
                         </Paragraph>
-                        <CustomListItem>
+                        <CustomListItem
+                            //height="auto"
+                            // animation="slide-left"
+                            // color="$black"
+                            // bgColor="orange"
+                            border="1px solid blue"
+                            borderRad
+                            classNames="how__card-font"
+                        >
                             <div>&#8226;</div>
                             <div>
                                 Send exactly the asking rate.
                             </div>
                         </CustomListItem>
-                        <CustomListItem>
+                        <CustomListItem
+                            //height="auto"
+                            // animation="slide-left"
+                            // color="$black"
+                            // bgColor="orange"
+                            border="1px solid blue"
+                            borderRad
+                            classNames="how__card-font"
+                        >
                             <div>&#8226;</div>
                             <div>
                                 Send more than the asking rate and use the BookLocal wallet to pay for
@@ -132,7 +173,15 @@ export default class How extends Component {
                                 device to ensure you don’t overspend during your trip.
                             </div>
                         </CustomListItem>
-                        <CustomListItem>
+                        <CustomListItem
+                            //height="auto"
+                            // animation="slide-left"
+                            // color="$black"
+                            // bgColor="orange"
+                            border="1px solid blue"
+                            borderRad
+                            classNames="how__card-font"
+                        >
                             <div>&#8226;</div>
                             <div>
                                 Send some amount less than the upfront asking rate (if booking well in

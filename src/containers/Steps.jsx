@@ -12,10 +12,11 @@ export default class Steps extends Component {
                 <Section margin={{top: 'large'}}> 
 
                 {/* 5 */}
-                <Heading align='center'
+                {/* <Heading align='center'
                     tag='h1'>
                     Steps    
-                </Heading>
+                </Heading> */}
+                <div className='heading'>Steps</div>
                 <Paragraph size='medium' margin='small'>
                     Below are the key benchmarks toward full adoption.
                 </Paragraph>
@@ -37,21 +38,45 @@ export default class Steps extends Component {
                         token (as introduced in ERC-721) to provide temporary access for non-owners.
                         Applied to a hotel, our model does the following:
                     </Paragraph>
-                    <CustomListItem>
+                    <CustomListItem
+                        //height="auto"
+                        // animation="slide-left"
+                        // color="$black"
+                        // bgColor="orange"
+                        border="1px solid blue"
+                        borderRad
+                        classNames="steps__card-font"
+                    >
                         <div>&#8226;</div>
                         <div>
                             Defines “Room” as a structure consisting of an owner address, renter
                             address, and optional room attributes.
                         </div>
                     </CustomListItem>
-                    <CustomListItem>
+                    <CustomListItem
+                        //height="auto"
+                        // animation="slide-left"
+                        // color="$black"
+                        // bgColor="orange"
+                        border="1px solid blue"
+                        borderRad
+                        classNames="steps__card-font"
+                    >
                         <div>&#8226;</div>
                         <div>
                             Stores a list of reservations that, 1) map each room to a time, and 2)
                             maps each time to a renter
                         </div>
                     </CustomListItem>
-                    <CustomListItem>
+                    <CustomListItem
+                        //height="auto"
+                        // animation="slide-left"
+                        // color="$black"
+                        // bgColor="orange"
+                        border="1px solid blue"
+                        borderRad
+                        classNames="steps__card-font"
+                    >
                         <div>&#8226;</div>
                         <div>
                             Allows the appropriate traveler (with a current reservation) to update
@@ -96,31 +121,71 @@ export default class Steps extends Component {
                             the minimum viable interface for a traveler will extend the wallet to provide
                             a graphical interface for the following methods:
                         </Paragraph>
-                        <CustomListItem>
+                        <CustomListItem
+                            //height="auto"
+                            // animation="slide-left"
+                            // color="$black"
+                            // bgColor="orange"
+                            border="1px solid blue"
+                            borderRad
+                            classNames="steps__card-font"
+                        >
                             <div>&#8226;</div>
                             <div>
                                 checkRoomStatus(_roomId)
                             </div>
                         </CustomListItem>
-                        <CustomListItem>
+                        <CustomListItem
+                            //height="auto"
+                            // animation="slide-left"
+                            // color="$black"
+                            // bgColor="orange"
+                            border="1px solid blue"
+                            borderRad
+                            classNames="steps__card-font"
+                        >
                             <div>&#8226;</div>
                             <div>
                                 reserve(_roomId,_startDate,_stopDate)
                             </div>
                         </CustomListItem>
-                        <CustomListItem>
+                        <CustomListItem
+                            //height="auto"
+                            // animation="slide-left"
+                            // color="$black"
+                            // bgColor="orange"
+                            border="1px solid blue"
+                            borderRad
+                            classNames="steps__card-font"
+                        >
                             <div>&#8226;</div>
                             <div>
                                 checkIn(_roomId)
                             </div>
                         </CustomListItem>
-                        <CustomListItem>
+                        <CustomListItem
+                            //height="auto"
+                            // animation="slide-left"
+                            // color="$black"
+                            // bgColor="orange"
+                            border="1px solid blue"
+                            borderRad
+                            classNames="steps__card-font"
+                        >
                             <div>&#8226;</div>
                             <div>
                                 checkOut(_roomId)
                             </div>
                         </CustomListItem>
-                        <CustomListItem>
+                        <CustomListItem
+                            //height="auto"
+                            // animation="slide-left"
+                            // color="$black"
+                            // bgColor="orange"
+                            border="1px solid blue"
+                            borderRad
+                            classNames="steps__card-font"
+                        >
                             <div>&#8226;</div>
                             <div>
                                 cancel(_roomId,_startDate,_stopDate)
@@ -143,25 +208,57 @@ export default class Steps extends Component {
                             permissions. Further, the minimum viable interface for a hotel will also
                             include a graphical interface for the following methods:
                         </Paragraph>
-                        <CustomListItem>
+                        <CustomListItem
+                            //height="auto"
+                            // animation="slide-left"
+                            // color="$black"
+                            // bgColor="orange"
+                            border="1px solid blue"
+                            borderRad
+                            classNames="steps__card-font"
+                        >
                             <div>&#8226;</div>
                             <div>
                                 newRoom()
                             </div>
                         </CustomListItem>
-                        <CustomListItem>
+                        <CustomListItem
+                            //height="auto"
+                            // animation="slide-left"
+                            // color="$black"
+                            // bgColor="orange"
+                            border="1px solid blue"
+                            borderRad
+                            classNames="steps__card-font"
+                        >
                             <div>&#8226;</div>
                             <div>
                                 changeDescription(_roomId)
                             </div>
                         </CustomListItem>
-                        <CustomListItem>
+                        <CustomListItem
+                            //height="auto"
+                            // animation="slide-left"
+                            // color="$black"
+                            // bgColor="orange"
+                            border="1px solid blue"
+                            borderRad
+                            classNames="steps__card-font"
+                        >
                             <div>&#8226;</div>
                             <div>
                                 remove(_roomId)
                             </div>
                         </CustomListItem>
-                        <CustomListItem>
+                        <CustomListItem
+                            //height="auto"
+                            // animation="slide-left"
+                            // color="$black"
+                            // bgColor="orange"
+                            border="1px solid blue"
+                            borderRad
+                            classNames="steps__card-font"
+                        >
                             <div>&#8226;</div>
                             <div>
                                 hide(_roomId)

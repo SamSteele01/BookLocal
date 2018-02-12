@@ -16,10 +16,11 @@ class Who extends Component {
         <Section margin={{top: 'large'}}> 
 
           {/* 3 */}
-          <Heading align='center'
+          {/* <Heading align='center'
             tag='h2'>
             Who
-          </Heading>
+          </Heading> */}
+          <div className='heading'>Who</div>
           <Paragraph size='medium' margin='small'>
             The current ecosystem has too many players trying to earn a share of the final room price. Figure 1 shows the network of relationships, each of which is explained below.
           </Paragraph>
@@ -55,7 +56,15 @@ class Who extends Component {
               travel agencies largely obsolete, they do still exist and are often helpful in
               booking group trips.
             </Paragraph>
-            <CustomListItem>
+            <CustomListItem
+              //height="auto"
+              // animation="slide-left"
+              // color="$black"
+              // bgColor="orange"
+              border="1px solid blue"
+              borderRad
+              classNames="who__card-font"
+            >
               <div>&#8226;</div>
               <div><i className="underline">Value:</i> Travel agents at their best will remove the burden of research and
                 planning from the customer and provide individualized travel suggestions.
@@ -63,7 +72,15 @@ class Who extends Component {
                 can be negotiated on a case by case basis.
               </div>
             </CustomListItem>
-            <CustomListItem>
+            <CustomListItem
+              //height="auto"
+              // animation="slide-left"
+              // color="$black"
+              // bgColor="orange"
+              border="1px solid blue"
+              borderRad
+              classNames="who__card-font"
+            >
               <div>&#8226;</div>
               <p><i className="underline">Cost:</i> Conflicts of interest may arise when the travel agent is secretly
               incentivized by higher paying hotels. In these cases, the traveler may not
@@ -84,7 +101,15 @@ class Who extends Component {
               now able to bypass their networks and work directly with the service providers
               (i.e hotels, airlines, and rental car companies).
             </Paragraph>
-            <CustomListItem>
+            <CustomListItem
+              //height="auto"
+              // animation="slide-left"
+              // color="$black"
+              // bgColor="orange"
+              border="1px solid blue"
+              borderRad
+              classNames="who__card-font"
+            >
               <div>&#8226;</div>
               <div><i className="underline">Value:</i> The benefit of a global distribution system lies in it’s network and
               the consequent ability to bundle airline deals with hotel and car rental
@@ -93,7 +118,15 @@ class Who extends Component {
               distribution systems looking for ways to stay relevant.
               </div>
             </CustomListItem>
-            <CustomListItem>
+            <CustomListItem
+              //height="auto"
+              // animation="slide-left"
+              // color="$black"
+              // bgColor="orange"
+              border="1px solid blue"
+              borderRad
+              classNames="who__card-font"
+            >
               <div>&#8226;</div>
               <p><i className="underline">Cost:</i> Availability and pricing information can be slow and spotty since
               global distribution systems typically act between service providers and
@@ -117,13 +150,29 @@ class Who extends Component {
               legal agreements, the burden of which is shared by the hotel and the traveler in
               the form of lower profit and higher rates.
             </Paragraph>
-            <CustomListItem>
+            <CustomListItem
+              //height="auto"
+              // animation="slide-left"
+              // color="$black"
+              // bgColor="orange"
+              border="1px solid blue"
+              borderRad
+              classNames="who__card-font"
+            >
               <div>&#8226;</div>
               <div><i className="underline">Value:</i> Online travel agencies are easy to use and can provide discounts
               when bundling a flight, room, and rental car.
               </div>
             </CustomListItem>
-            <CustomListItem>
+            <CustomListItem
+              //height="auto"
+              // animation="slide-left"
+              // color="$black"
+              // bgColor="orange"
+              border="1px solid blue"
+              borderRad
+              classNames="who__card-font"
+            >
               <div>&#8226;</div>
               <p><i className="underline">Cost:</i> High commission rates charged by OTAs and various payment reconciliation
                 methods add costs to the hotel which ultimately falls, at least
@@ -149,13 +198,29 @@ class Who extends Component {
               allowed online travel agencies to bypass the global distribution system’s
               information network and take hold of the market.
             </Paragraph>
-            <CustomListItem>
+            <CustomListItem
+              //height="auto"
+              // animation="slide-left"
+              // color="$black"
+              // bgColor="orange"
+              border="1px solid blue"
+              borderRad
+              classNames="who__card-font"
+            >
               <div>&#8226;</div>
               <div><i className="underline">Value:</i> Automates much of the hotel’s inventory planning and centralizes
               access to various distribution channels.
               </div>
             </CustomListItem>
-            <CustomListItem>
+            <CustomListItem
+              //height="auto"
+              // animation="slide-left"
+              // color="$black"
+              // bgColor="orange"
+              border="1px solid blue"
+              borderRad
+              classNames="who__card-font"
+            >
               <div>&#8226;</div>
               <p><i className="underline">Cost:</i> Most channel management companies operate on the software as
               a service (SaaS) model which further increases the hotel’s operating cost
@@ -174,13 +239,29 @@ class Who extends Component {
               include a housekeeping module, payment processor, and revenue management
               tools.
             </Paragraph>
-            <CustomListItem>
+            <CustomListItem
+              //height="auto"
+              // animation="slide-left"
+              // color="$black"
+              // bgColor="orange"
+              border="1px solid blue"
+              borderRad
+              classNames="who__card-font"
+            >
               <div>&#8226;</div>
               <div><i className="underline">Value:</i> A good property management system can make the life of a hotelier
               much easier by automating and centralizing many of the daily operations.
               </div>
             </CustomListItem>
-            <CustomListItem>
+            <CustomListItem
+              //height="auto"
+              // animation="slide-left"
+              // color="$black"
+              // bgColor="orange"
+              border="1px solid blue"
+              borderRad
+              classNames="who__card-font"
+            >
               <div>&#8226;</div>
               <p><i className="underline">Cost:</i> Lack of customization and complicated interfaces makes it difficult
               to train new workers.
