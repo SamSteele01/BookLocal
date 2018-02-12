@@ -21,9 +21,7 @@ class Who extends Component {
             Who
           </Heading>
           <Paragraph size='medium' margin='small'>
-            The current ecosystem has too many players trying to earn a share of the fi-
-            nal room price. Figure 1 shows the network of relationships, each of which is
-            explained below.
+            The current ecosystem has too many players trying to earn a share of the final room price. Figure 1 shows the network of relationships, each of which is explained below.
           </Paragraph>
 
           {/* 3.1 */}
