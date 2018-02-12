@@ -40,7 +40,15 @@ class Why extends Component {
                 <div>&#8226;</div>
                 Online travel agents (OTA) receive 15-25% commission per room.
               </CustomListItem>
-              <CustomListItem colorIndex='light-1'>
+              <CustomListItem 
+                // height="xsmall"
+                // animation="slide-left"
+                // color="$black"
+                // bgColor="orange"
+                border="1px solid blue"
+                borderRad
+                classNames="why__card-font"
+              >
                 <div>&#8226;</div>
                 Other necessary software packages (i.e. channel manager and property
                 management systems) also require monthly usage fees.
