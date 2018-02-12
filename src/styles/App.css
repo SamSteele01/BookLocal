@@ -25,6 +25,10 @@
 .underline {
   text-decoration: underline; }
 
+.why {
+  background-color: #474747;
+  color: #FFF; }
+
 .solutions {
   background-color: #06203d;
   padding: 10px 0; }
@@ -35,8 +39,14 @@
 p {
   font-family: Titillium Web, sans-serif; }
 
-b, h1 {
-  font-family: Segoe UI, Arial, sans-serif; }
+.heading {
+  font-family: Segoe UI, Arial, sans-serif;
+  margin: .75em;
+  font-size: 2.25rem;
+  line-height: 1.125;
+  text-align: center;
+  font-weight: 300;
+  max-width: 100%; }
 
 h2, h3 {
   font-family: PT Sans Narrow; }
@@ -66,5 +76,25 @@ h2, h3 {
   z-index: 1;
   display: table-cell;
   vertical-align: middle; }
+
+.what__card-font {
+  font-weight: 300;
+  font-size: 26px; }
+
+.why__card-font {
+  font-weight: 300;
+  font-size: 14px; }
+
+.who__card-font {
+  font-weight: 300;
+  font-size: 14px; }
+
+.how__card-font {
+  font-weight: 300;
+  font-size: 14px; }
+
+.steps__card-font {
+  font-weight: 300;
+  font-size: 14px; }
 
 /*# sourceMappingURL=App.css.map */

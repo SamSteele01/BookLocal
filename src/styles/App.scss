@@ -14,7 +14,7 @@ $gray: rgb(71, 71, 71);
 }
 
 .App-header {
-  background-color: #3C3C3C;
+  background-color: $header-gray;
   height: 70px;
   /*padding: 20px;*/
   border-bottom: 5px solid #E66E1C;
@@ -43,6 +43,11 @@ $gray: rgb(71, 71, 71);
   text-decoration: underline;
 }
 
+.why {
+  background-color: $gray;
+  color: #FFF;
+}
+
 .solutions {
   // background-color: #185FAC;
   background-color: rgb(6, 32, 61);
@@ -58,8 +63,14 @@ p {
   font-family: Titillium Web, sans-serif;
 }
 
-b, h1 {
+.heading {
   font-family: Segoe UI, Arial, sans-serif;
+  margin: .75em;
+  font-size: 2.25rem;
+  line-height: 1.125;
+  text-align: center;
+  font-weight: 300;
+  max-width: 100%;
 }
 
 h2, h3 {
@@ -94,4 +105,29 @@ h2, h3 {
   display: table-cell;
   vertical-align: middle;
 
+}
+
+.what__card-font {
+  font-weight: 300;
+  font-size: 26px;
+}
+
+.why__card-font {
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.who__card-font {
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.how__card-font {
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.steps__card-font {
+  font-weight: 300;
+  font-size: 14px;
 }
