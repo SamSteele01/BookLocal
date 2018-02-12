@@ -25,13 +25,14 @@ class What extends Component {
   render() {
     return (
       <div className='what'>
-        <Section margin={{top: 'large'}}> 
+        <Section margin={{top: 'large'}} pad={{vertical: 'large'}}> 
 
           {/* 1 */}
-          <Heading align='center'
-            tag='h2'>
+          {/* <Heading align='center'
+            tag='h1'>
             What
-          </Heading>
+          </Heading> */}
+          <div className='heading'>What</div>
           <Paragraph size='medium' margin='small'>
             The vision for BookLocal is to connect travelers directly to their hotel of choice
             by creating the first two way property management system accessible as both
@@ -54,7 +55,15 @@ class What extends Component {
             <Paragraph size='medium' margin='small'>
               To the traveler, BookLocal will provide the following features:
             </Paragraph>
-            <CustomListItem>
+            <CustomListItem 
+              // height="auto"
+              animation="slide-left"
+              color="$black"
+              // bgColor="orange"
+              border="1px solid blue"
+              borderRad
+              classNames="card-font"
+            >
               {/* <SearchIcon/> */}
               <Image
                 size='thumb'
@@ -63,7 +72,15 @@ class What extends Component {
               Search
               <div></div>
             </CustomListItem>
-            <CustomListItem>
+            <CustomListItem
+              // height="auto"
+              // animation="slide-left"
+              // color="$black"
+              // bgColor="orange"
+              border="1px solid blue"
+              borderRad
+              classNames="card-font"
+            >
               {/* <CompareIcon/> */}
               <Image
                 size='thumb'
@@ -72,7 +89,15 @@ class What extends Component {
               Compare
               <div></div>
             </CustomListItem>
-            <CustomListItem>
+            <CustomListItem
+              // height="auto"
+              animation="slide-left"
+              color="$black"
+              // bgColor="orange"
+              border="1px solid blue"
+              borderRad
+              classNames="card-font"
+            >
               {/* <CheckboxSelectedIcon/> */}
               <Image
                 size='thumb'
@@ -81,7 +106,14 @@ class What extends Component {
               Book
               <div></div>
             </CustomListItem>
-            <CustomListItem>
+            <CustomListItem
+              // height="xsmall"           animation="slide-left"
+              // color="$black"
+              // bgColor="orange"
+              border="1px solid blue"
+              borderRad
+              classNames="card-font"
+            >
               {/* <MoneyIcon/> */}
               <Image
                 size='thumb'
@@ -91,55 +123,105 @@ class What extends Component {
               <div></div>
             </CustomListItem>
           </CustomList>
-          <Paragraph size='medium' margin='small'>To the hotel, BookLocal will provide modules for:</Paragraph>
+          <Paragraph size='medium' margin='small'>
+            To the hotel, BookLocal will provide modules for:
+          </Paragraph>
           {/* add icons */}
           <CustomList>
-            <CustomListItem>
+            <CustomListItem
+              // height="xsmall"
+              // animation="slide-left"
+              // color="$black"
+              // bgColor="orange"
+              border="1px solid blue"
+              borderRad
+              classNames="card-font"
+            >
               <Image
                 size='thumb'
                 src={Reception}
               />
-              guest management
+              Guest Management
               <div></div>
             </CustomListItem>
-            <CustomListItem>
+            <CustomListItem
+              // height="xsmall"
+              // animation="slide-left"
+              // color="$black"
+              // bgColor="orange"
+              border="1px solid blue"
+              borderRad
+              classNames="card-font"
+            >
               <Image
                 size='thumb'
                 src={Housekeeping}
               />
-              housekeeping and maintenance
+              Housekeeping and Maintenance
               <div></div>
             </CustomListItem>
-            <CustomListItem>
+            <CustomListItem
+              // height="xsmall"
+              // animation="slide-left"
+              // color="$black"
+              // bgColor="orange"
+              border="1px solid blue"
+              borderRad
+              classNames="card-font"
+            >
               <Image
                 size='thumb'
                 src={Revenue}
               />              
-              revenue management
+              Revenue Management
               <div></div>
             </CustomListItem>
-            <CustomListItem>
+            <CustomListItem
+              // height="xsmall"
+              // animation="slide-left"
+              // color="$black"
+              // bgColor="orange"
+              border="1px solid blue"
+              borderRad
+              classNames="card-font"
+            >
               <Image
                 size='thumb'
                 src={Sale}
               />
-              payment processing and point of sale
+              Payment Processing and Point of Sale
               <div></div>
             </CustomListItem>
-            <CustomListItem>
+            <CustomListItem
+                // height="xsmall"
+                // animation="slide-left"
+                // color="$black"
+                // bgColor="orange"
+                border="1px solid blue"
+                borderRad
+                classNames="card-font"
+              >
               <Image
                 size='thumb'
                 src={Report}
               />
-              report generation
+              Report Generation
               <div></div>
             </CustomListItem>
-            <CustomListItem>
+            <CustomListItem
+              // height="xsmall"
+              // animation="slide-left"
+              // color="$black"
+              // bgColor="orange"
+              border="1px solid blue"
+              borderRad
+              classNames="card-font"
+            >
               <Image
                 size='thumb'
                 src={Channel}
               />
-              channel management
+              Channel Management
               <div></div>
             </CustomListItem>
           </CustomList>
