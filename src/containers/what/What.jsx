@@ -2,12 +2,23 @@ import React, { Component } from 'react';
 import Paragraph from 'grommet/components/Paragraph';
 import Section from 'grommet/components/Section';
 import Heading from 'grommet/components/Heading';
+import Image from 'grommet/components/Image';
 import CustomList from '../CustomList';
 import CustomListItem from '../CustomListItem';
-import SearchIcon from 'grommet/components/icons/base/Search';
-import CompareIcon from 'grommet/components/icons/base/Compare';
-import CheckboxSelectedIcon from 'grommet/components/icons/base/CheckboxSelected';
-import MoneyIcon from 'grommet/components/icons/base/Money';
+// import SearchIcon from 'grommet/components/icons/base/Search';
+// import CompareIcon from 'grommet/components/icons/base/Compare';
+// import CheckboxSelectedIcon from 'grommet/components/icons/base/CheckboxSelected';
+// import MoneyIcon from 'grommet/components/icons/base/Money';
+import Search from '../../icons/search.png';
+import Compare from '../../icons/git-compare.png';
+import Reception from '../../icons/hotel_reception-512-bw.png';
+import Housekeeping from '../../icons/housekeeping-round-bw.svg';
+import Revenue from '../../icons/revenue-management.png';
+import Reserve from '../../icons/reserve-book.png';
+import ShoppingCart from '../../icons/shopping-cart.png';
+import Sale from '../../icons/point-of-sale.png';
+import Report from '../../icons/report.png';
+import Channel from '../../icons/channel-management.png';
 
 class What extends Component {
 
@@ -44,22 +55,38 @@ class What extends Component {
               To the traveler, BookLocal will provide the following features:
             </Paragraph>
             <CustomListItem>
-              <SearchIcon/>
+              {/* <SearchIcon/> */}
+              <Image
+                size='thumb'
+                src={Search}
+              />
               Search
               <div></div>
             </CustomListItem>
             <CustomListItem>
-              <CompareIcon/>
+              {/* <CompareIcon/> */}
+              <Image
+                size='thumb'
+                src={Compare}
+              />
               Compare
               <div></div>
             </CustomListItem>
             <CustomListItem>
-              <CheckboxSelectedIcon/>
+              {/* <CheckboxSelectedIcon/> */}
+              <Image
+                size='thumb'
+                src={Reserve}
+              />
               Book
               <div></div>
             </CustomListItem>
             <CustomListItem>
-              <MoneyIcon/>
+              {/* <MoneyIcon/> */}
+              <Image
+                size='thumb'
+                src={ShoppingCart}
+              />
               Purchase
               <div></div>
             </CustomListItem>
@@ -68,22 +95,52 @@ class What extends Component {
           {/* add icons */}
           <CustomList>
             <CustomListItem>
+              <Image
+                size='thumb'
+                src={Reception}
+              />
               guest management
+              <div></div>
             </CustomListItem>
             <CustomListItem>
+              <Image
+                size='thumb'
+                src={Housekeeping}
+              />
               housekeeping and maintenance
+              <div></div>
             </CustomListItem>
             <CustomListItem>
+              <Image
+                size='thumb'
+                src={Revenue}
+              />              
               revenue management
+              <div></div>
             </CustomListItem>
             <CustomListItem>
+              <Image
+                size='thumb'
+                src={Sale}
+              />
               payment processing and point of sale
+              <div></div>
             </CustomListItem>
             <CustomListItem>
+              <Image
+                size='thumb'
+                src={Report}
+              />
               report generation
+              <div></div>
             </CustomListItem>
             <CustomListItem>
+              <Image
+                size='thumb'
+                src={Channel}
+              />
               channel management
+              <div></div>
             </CustomListItem>
           </CustomList>
         </Section>
