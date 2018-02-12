@@ -3,7 +3,7 @@ import '../styles/App.css';
 import 'grommet/grommet.min.css'; //vanilla styles
 import Header from '../components/Header';
 import Logo from '../components/Logo';
-import Jumbotron from '../components/Jumbotron';
+import Hero from '../components/Hero';
 import What from './what/What';
 import Why from './why/Why';
 import Who from './who/Who';
@@ -16,11 +16,12 @@ class App extends Component {
       <div className="App">
         <Header/>
         <Logo/>
-        <Jumbotron/>
+        <Hero image="blockchain"/>
         <What/>
         <Why/>
         <Who/>
         <How/>
+        <Hero image="exchange-building"/>
         <Steps/>
       </div>
     );
