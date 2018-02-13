@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Box from 'grommet/components/Box';
 import Heading from 'grommet/components/Heading';
 
+// TODO: add window listener to feed media break 
+// padding, color, bgcolor as props
 class CustomList extends Component {
 
   render() {
@@ -16,7 +18,9 @@ class CustomList extends Component {
           pad='medium'
           // margin='small'
           colorIndex={this.props.colorIndex}>
-          <Heading align='start'
+          <Heading 
+            align='start'
+            margin='medium'
             tag='h4'>
             {this.props.title}
           </Heading>
