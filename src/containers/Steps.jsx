@@ -4,6 +4,7 @@ import Section from 'grommet/components/Section';
 import Heading from 'grommet/components/Heading';
 import CustomList from './CustomList';
 import CustomListItem from './CustomListItem';
+import colors from '../styles/colors';
 
 export default class Steps extends Component {
     render() {
@@ -47,7 +48,7 @@ export default class Steps extends Component {
                         borderRad
                         classNames="steps__card-font"
                     >
-                        <div>&#8226;</div>
+                        {/* <div>&#8226;</div> */}
                         <div>
                             Defines “Room” as a structure consisting of an owner address, renter
                             address, and optional room attributes.
@@ -62,7 +63,7 @@ export default class Steps extends Component {
                         borderRad
                         classNames="steps__card-font"
                     >
-                        <div>&#8226;</div>
+                        {/* {/* <div>&#8226;</div> */} */}
                         <div>
                             Stores a list of reservations that, 1) map each room to a time, and 2)
                             maps each time to a renter
@@ -77,7 +78,7 @@ export default class Steps extends Component {
                         borderRad
                         classNames="steps__card-font"
                     >
-                        <div>&#8226;</div>
+                        {/* <div>&#8226;</div> */}
                         <div>
                             Allows the appropriate traveler (with a current reservation) to update
                             the “renter” address of a specific room’s attributes.
@@ -130,7 +131,7 @@ export default class Steps extends Component {
                             borderRad
                             classNames="steps__card-font"
                         >
-                            <div>&#8226;</div>
+                            {/* <div>&#8226;</div> */}
                             <div>
                                 checkRoomStatus(_roomId)
                             </div>
@@ -144,7 +145,7 @@ export default class Steps extends Component {
                             borderRad
                             classNames="steps__card-font"
                         >
-                            <div>&#8226;</div>
+                            {/* <div>&#8226;</div> */}
                             <div>
                                 reserve(_roomId,_startDate,_stopDate)
                             </div>
@@ -158,7 +159,7 @@ export default class Steps extends Component {
                             borderRad
                             classNames="steps__card-font"
                         >
-                            <div>&#8226;</div>
+                            {/* <div>&#8226;</div> */}
                             <div>
                                 checkIn(_roomId)
                             </div>
@@ -172,7 +173,7 @@ export default class Steps extends Component {
                             borderRad
                             classNames="steps__card-font"
                         >
-                            <div>&#8226;</div>
+                            {/* <div>&#8226;</div> */}
                             <div>
                                 checkOut(_roomId)
                             </div>
@@ -186,7 +187,7 @@ export default class Steps extends Component {
                             borderRad
                             classNames="steps__card-font"
                         >
-                            <div>&#8226;</div>
+                            {/* <div>&#8226;</div> */}
                             <div>
                                 cancel(_roomId,_startDate,_stopDate)
                             </div>
@@ -217,7 +218,7 @@ export default class Steps extends Component {
                             borderRad
                             classNames="steps__card-font"
                         >
-                            <div>&#8226;</div>
+                            {/* <div>&#8226;</div> */}
                             <div>
                                 newRoom()
                             </div>
@@ -231,7 +232,7 @@ export default class Steps extends Component {
                             borderRad
                             classNames="steps__card-font"
                         >
-                            <div>&#8226;</div>
+                            {/* <div>&#8226;</div> */}
                             <div>
                                 changeDescription(_roomId)
                             </div>
@@ -245,7 +246,7 @@ export default class Steps extends Component {
                             borderRad
                             classNames="steps__card-font"
                         >
-                            <div>&#8226;</div>
+                            {/* <div>&#8226;</div> */}
                             <div>
                                 remove(_roomId)
                             </div>
@@ -259,7 +260,7 @@ export default class Steps extends Component {
                             borderRad
                             classNames="steps__card-font"
                         >
-                            <div>&#8226;</div>
+                            {/* <div>&#8226;</div> */}
                             <div>
                                 hide(_roomId)
                             </div>

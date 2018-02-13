@@ -19,6 +19,7 @@ import ShoppingCart from '../../icons/shopping-cart.png';
 import Sale from '../../icons/point-of-sale.png';
 import Report from '../../icons/report.png';
 import Channel from '../../icons/channel-management.png';
+import colors from '../../styles/colors';
 
 class What extends Component {
 
@@ -60,8 +61,8 @@ class What extends Component {
               animation="slide-left"
               color="$black"
               // bgColor="orange"
-              border="1px solid blue"
-              borderRad
+              border={`1px solid ${colors.blue1}`}
+              borderRad="5px"
               classNames="what__card-font"
             >
               {/* <SearchIcon/> */}

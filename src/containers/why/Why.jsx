@@ -37,7 +37,7 @@ class Why extends Component {
                 borderRad
                 classNames="why__card-font"
               >
-                <div>&#8226;</div>
+                {/* <div>&#8226;</div> */}
                 Online travel agents (OTA) receive 15-25% commission per room.
               </CustomListItem>
               <CustomListItem 
@@ -49,7 +49,7 @@ class Why extends Component {
                 borderRad
                 classNames="why__card-font"
               >
-                <div>&#8226;</div>
+                {/* <div>&#8226;</div> */}
                 Other necessary software packages (i.e. channel manager and property
                 management systems) also require monthly usage fees.
               </CustomListItem>
@@ -62,7 +62,7 @@ class Why extends Component {
                 borderRad
                 classNames="why__card-font"
               >
-                <div>&#8226;</div>
+                {/* <div>&#8226;</div> */}
                 These additional payments increase rates for travelers while lowering profit
                 for the hotels.
               </CustomListItem>
@@ -77,7 +77,7 @@ class Why extends Component {
                 borderRad
                 classNames="why__card-font"
               >
-                <div>&#8226;</div>
+                {/* <div>&#8226;</div> */}
                 <div>
                   <i className="underline">Last available room</i> clause requires hotels to give the OTA access their last
                   room(s) when near capacity. Because of the high commission rates, this
@@ -94,7 +94,7 @@ class Why extends Component {
                 borderRad
                 classNames="why__card-font"
               >
-                <div>&#8226;</div>
+                {/* <div>&#8226;</div> */}
                 <div>
                   <i className="underline">Rate parity</i> clause forbids the hotel from renting a room at a lower price
                   through any other source, including their own website, from which they
@@ -110,7 +110,7 @@ class Why extends Component {
                 borderRad
                 classNames="why__card-font"
               >
-                <div>&#8226;</div>
+                {/* <div>&#8226;</div> */}
                 <div>
                   <i className="underline">Blanket use of trademark rights</i> allows an OTA to bid on google ad-words
                   for higher listing than the hotel’s brand website.
@@ -127,7 +127,7 @@ class Why extends Component {
                 borderRad
                 classNames="why__card-font"
               >
-                <div>&#8226;</div>
+                {/* <div>&#8226;</div> */}
                 Since many of the computers systems are only designed to handle specific
                 tasks (i.e. channel manager, property management system, point of sale,
                 housekeeping module), training costs are very high for new employees and
@@ -143,7 +143,7 @@ class Why extends Component {
                 borderRad
                 classNames="why__card-font"
               >
-                <div>&#8226;</div>
+                {/* <div>&#8226;</div> */}
                 Current property management systems allow for various rate plans, seasonal
                 rates, and room types, but often must be entered manually by the
                 revenue management department. This can limit responsiveness for special
@@ -162,7 +162,7 @@ class Why extends Component {
                 borderRad
                 classNames="why__card-font"
               >
-                <div>&#8226;</div>
+                {/* <div>&#8226;</div> */}
                 Designed to lower the room prices for travelers and increase hotel profits.
               </CustomListItem>
             </CustomList>
@@ -176,7 +176,7 @@ class Why extends Component {
                 borderRad
                 classNames="why__card-font"
               >
-                <div>&#8226;</div>
+                {/* <div>&#8226;</div> */}
                 All contracts will be open sourced and publicly scrutinized to provide fair
                 and consistent terms.
               </CustomListItem>
@@ -191,7 +191,7 @@ class Why extends Component {
                 borderRad
                 classNames="why__card-font"
               >
-                <div>&#8226;</div>
+                {/* <div>&#8226;</div> */}
                 This is the first travel application designed to accomodate the entire booking
                 process.
               </CustomListItem>
@@ -204,7 +204,7 @@ class Why extends Component {
                 borderRad
                 classNames="why__card-font"
               >
-                <div>&#8226;</div>
+                {/* <div>&#8226;</div> */}
                 Integrating features into a single system will put the guest and hotel in
                 direct contact by removing unnecessary middlemen.
               </CustomListItem>

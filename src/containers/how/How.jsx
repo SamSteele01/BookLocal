@@ -7,6 +7,7 @@ import CustomListItem from '../CustomListItem';
 import Image from 'grommet/components/Image';
 import expandedEcosystemImg from '../../images/expanded-ecosystem.png';
 import plasmaChainImg from '../../images/plasma-chain.png';
+import colors from '../../styles/colors';
 
 export default class How extends Component {
     render() {
@@ -49,7 +50,7 @@ export default class How extends Component {
                             borderRad
                             classNames="how__card-font"
                         >
-                        <div>&#8226;</div>
+                        {/* <div>&#8226;</div> */}
                             <p><u className="bold">BookLocal API:</u> The programming interface for the smart contracts.
                             </p>
                         </CustomListItem>
@@ -62,7 +63,7 @@ export default class How extends Component {
                             borderRad
                             classNames="how__card-font"
                         >
-                        <div>&#8226;</div>
+                        {/* <div>&#8226;</div> */}
                             <p><u className="bold">Hotel PMS:</u> The hotel interface. The first version (minimum viable
                                 product) will provide a simple graphical user interface to interact with
                                 the BookLocal API. Full implementation will add the necessary off-chain
@@ -78,7 +79,7 @@ export default class How extends Component {
                             borderRad
                             classNames="how__card-font"
                         >
-                        <div>&#8226;</div>
+                        {/* <div>&#8226;</div> */}
                             <p><u className="bold">Traveler Interface:</u> The travelers interface will allow a traveler to search
                                 for available rooms, compare room attributes, and book the room.
                             </p>
@@ -152,7 +153,7 @@ export default class How extends Component {
                             borderRad
                             classNames="how__card-font"
                         >
-                            <div>&#8226;</div>
+                            {/* <div>&#8226;</div> */}
                             <div>
                                 Send exactly the asking rate.
                             </div>
@@ -166,7 +167,7 @@ export default class How extends Component {
                             borderRad
                             classNames="how__card-font"
                         >
-                            <div>&#8226;</div>
+                            {/* <div>&#8226;</div> */}
                             <div>
                                 Send more than the asking rate and use the BookLocal wallet to pay for
                                 food and activities during the trip. This works as a budgeting commitment
@@ -182,7 +183,7 @@ export default class How extends Component {
                             borderRad
                             classNames="how__card-font"
                         >
-                            <div>&#8226;</div>
+                            {/* <div>&#8226;</div> */}
                             <div>
                                 Send some amount less than the upfront asking rate (if booking well in
                                 advance) to hold your room for a period of time and pay the remainder
