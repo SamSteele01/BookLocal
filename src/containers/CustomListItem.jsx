@@ -40,7 +40,7 @@ class CustomListItem extends Component {
               responsive={false}
               wrap={false}
               pad='large'
-              margin='small'
+              // margin='small'
               >
               {this.props.children}
             </Box>

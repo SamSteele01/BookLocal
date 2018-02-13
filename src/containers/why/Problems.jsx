@@ -6,11 +6,11 @@ class Problems extends Component {
 
   render() {
     return (
-      <div>
+      <div className="problems">
         {/* 2.1 */}
         <Heading align='center' 
  	 	 	 	 	 	 margin='medium'
-          tag='h3'>
+          tag='h2'>
           Problems
         </Heading>
         <Paragraph align='center' size='medium' margin='small'>

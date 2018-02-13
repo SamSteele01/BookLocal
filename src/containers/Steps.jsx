@@ -9,8 +9,11 @@ import colors from '../styles/colors';
 export default class Steps extends Component {
     render() {
         return (
-            <div>
-                <Section margin={{top: 'large'}}> 
+            <div className="steps">
+                <Section 
+                    // margin={{top: 'large'}}
+                    pad="none"
+                    > 
 
                 {/* 5 */}
                 {/* <Heading align='center' 

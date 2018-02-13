@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Paragraph from 'grommet/components/Paragraph';
 import Section from 'grommet/components/Section';
 import Heading from 'grommet/components/Heading';
+import Columns from 'grommet/components/Columns';
 import CustomList from '../CustomList';
 import CustomListItem from '../CustomListItem';
 import Image from 'grommet/components/Image';
@@ -12,7 +13,7 @@ import colors from '../../styles/colors';
 export default class How extends Component {
     render() {
         return (
-            <div>
+            <div className="how">
                 <Section margin={{top: 'large'}}> 
 
                     {/* 4 */}
@@ -143,11 +144,32 @@ export default class How extends Component {
                     </Paragraph>
 
                     {/* 4.2.3 */}
-                    <CustomList title="Book"> 
-                        <Paragraph align='center' size='medium' margin='small'>
-                            When the traveler has found a room they like, they can book the room in one
-                            of several ways:
-                        </Paragraph>
+                    {/* <CustomList 
+                        pad
+                        title="Book"
+                        maxCount={3}
+                        color
+                        bgColor
+                        border
+                        borderRad
+                        classNames
+                    >  */}
+                    <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
+                        tag='h4'>
+                        Book
+                    </Heading>
+                    <Paragraph align='center' size='medium' margin='small'>
+                        When the traveler has found a room they like, they can book the room in one
+                        of several ways:
+                    </Paragraph>
+                    <Columns 
+                        responsive={false}
+                        masonry={false}
+                        justify='center'
+                        maxCount={3}
+                        // size='small'
+                    >
                         <CustomListItem
                             //height="auto"
                             // animation="slide-left"
@@ -195,7 +217,8 @@ export default class How extends Component {
                                 to the convenience.
                             </div>
                         </CustomListItem>
-                    </CustomList>
+                    </Columns>
+                    {/* </CustomList> */}
 
                     {/* 4.2.4 */}
                     <Heading align='center' 

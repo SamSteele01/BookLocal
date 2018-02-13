@@ -7,12 +7,12 @@ class Solutions extends Component {
   render() {
     return (
       <div 
-      // className="solutions white"
+      className="solutions"
       >
         {/* 2.2 */}
         <Heading align='center' 
  	 	 	 	 	 	 margin='medium'
-          tag='h3'>
+          tag='h2'>
           Solutions
         </Heading>
         <Paragraph align='center' 

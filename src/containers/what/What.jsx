@@ -26,7 +26,10 @@ class What extends Component {
   render() {
     return (
       <div className='what'>
-        <Section margin={{top: 'large'}} pad={{vertical: 'large'}}> 
+        <Section 
+          // margin={{top: 'large'}} 
+          pad='none'
+        > 
 
           {/* 1 */}
           {/* <Heading align='center' 
@@ -52,7 +55,7 @@ class What extends Component {
           </Paragraph>
           
           <CustomList 
-          // title='To the traveler, BookLocal will provide the following features:'
+            bgColor={colors.gray}
           >
             <Paragraph align='center' size='medium' margin='small'>
               To the traveler, BookLocal will provide the following features:
@@ -125,11 +128,17 @@ class What extends Component {
               <div></div>
             </CustomListItem>
           </CustomList>
-          <Paragraph align='center' size='medium' margin='small'>
+          <Paragraph 
+            align='center' 
+            size='medium' 
+            margin='large'
+          >
             To the hotel, BookLocal will provide modules for:
           </Paragraph>
           {/* add icons */}
-          <CustomList>
+          <CustomList
+            bgColor={colors.gray}
+          >
             <CustomListItem
               // height="xsmall"
               animation="slide-left"

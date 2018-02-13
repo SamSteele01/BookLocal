@@ -43,20 +43,40 @@ $gray: rgb(71, 71, 71);
   text-decoration: underline;
 }
 
-.why {
+.what {
   background-color: $gray;
   color: #FFF;
 }
 
-.solutions {
-  // background-color: #185FAC;
-  background-color: rgb(6, 32, 61);
-  padding: 10px 0;
+.why {
+  background-color: $blue3;
+  color: white;
 }
 
-.white {
+.who {
+  background-color: $gray;
   color: #FFF;
-  // color: rgb(238, 148, 148);
+}
+
+.how {
+  background-color: $gray;
+  color: #FFF;
+}
+
+.steps {
+  background-color: $gray;
+  color: #FFF;
+}
+
+.problems {
+  background-color: white;
+  color: $font-gray;
+}
+
+.solutions {
+  background-color: $blue3;
+  // background-color: rgb(6, 32, 61);
+  // padding: 10px 0;
 }
 
 p {
@@ -119,7 +139,7 @@ h2, h3 {
 
 .who__card-font {
   font-weight: 300;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .how__card-font {

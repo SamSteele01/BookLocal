@@ -1,20 +1,25 @@
 import React, { Component } from 'react';
 import Section from 'grommet/components/Section';
 import Heading from 'grommet/components/Heading';
-// import Label from 'grommet/components/Label';
+import Box from 'grommet/components/Box';
+import Image from 'grommet/components/Image';
 import Paragraph from 'grommet/components/Paragraph';
 import Problems from './Problems';
 import Solutions from './Solutions';
 import CustomList from '../CustomList';
 import CustomListItem from '../CustomListItem';
 import colors from '../../styles/colors';
+import LegalScale from '../../icons/tipped-scale.png';
 
 class Why extends Component {
 
   render() {
     return (
       <div className="why">
-        <Section margin={{top: 'large'}} pad={{vertical: 'large'}}> 
+        <Section 
+          // margin={{top: 'large'}} 
+          pad="none"
+          > 
           {/* <Heading align='center' 
  	 	 	 	 	 	 margin='medium'
             tag='h1'>
@@ -32,9 +37,9 @@ class Why extends Component {
               <CustomListItem 
                 // height="xsmall"
                 // animation="slide-left"
-                // color="$black"
-                // bgColor="orange"
-                border="1px solid blue"
+                color="white"
+                bgColor={colors.headerGray}
+                border={`2px solid ${colors.orange3}`}
                 borderRad
                 classNames="why__card-font"
               >
@@ -43,10 +48,10 @@ class Why extends Component {
               </CustomListItem>
               <CustomListItem 
                 // height="xsmall"
-                // animation="slide-left"
-                // color="$black"
-                // bgColor="orange"
-                border="1px solid blue"
+                animation="slide-left"
+                color="white"
+                bgColor={colors.gray}
+                border={`2px solid ${colors.orange3}`}
                 borderRad
                 classNames="why__card-font"
               >
@@ -57,9 +62,9 @@ class Why extends Component {
               <CustomListItem 
                 // height="xsmall"
                 // animation="slide-left"
-                // color="$black"
-                // bgColor="orange"
-                border="1px solid blue"
+                color="white"
+                bgColor={colors.headerGray}
+                border={`2px solid ${colors.orange3}`}
                 borderRad
                 classNames="why__card-font"
               >
@@ -68,13 +73,36 @@ class Why extends Component {
                 for the hotels.
               </CustomListItem>
             </CustomList>
-            <CustomList title="Abuse of power in legal agreements.">
+            <Box
+              direction='row'
+              justify='between'
+              align='center'
+              alignSelf='stretch'
+              // full='horizontal'
+              flex='grow'
+              // size={{height: height, width: 'full'}}
+              responsive={false}
+              wrap={false}
+              pad='large'
+              margin='small'
+            >
+              <div style={{fontSize: 18}}>
+                Abuse of power in legal agreements.
+              </div>
+              <Image
+                size='thumb'
+                src={LegalScale}
+              />
+            </Box>
+            <CustomList 
+              // title="Abuse of power in legal agreements."
+            >
               <CustomListItem
                 // height="xsmall"
                 // animation="slide-left"
-                // color="$black"
-                // bgColor="orange"
-                border="1px solid blue"
+                color="white"
+                bgColor={colors.blue2}
+                // border={`2px solid ${colors.orange3}`}
                 borderRad
                 classNames="why__card-font"
               >
@@ -88,10 +116,10 @@ class Why extends Component {
               </CustomListItem>
               <CustomListItem
                 // height="xsmall"
-                // animation="slide-left"
-                // color="$black"
-                // bgColor="orange"
-                border="1px solid blue"
+                animation="slide-left"
+                color="white"
+                bgColor={colors.blue1}
+                // border={`2px solid ${colors.orange3}`}
                 borderRad
                 classNames="why__card-font"
               >
@@ -105,9 +133,9 @@ class Why extends Component {
               <CustomListItem
                 // height="xsmall"
                 // animation="slide-left"
-                // color="$black"
-                // bgColor="orange"
-                border="1px solid blue"
+                color="white"
+                bgColor={colors.blue2}
+                // border={`2px solid ${colors.orange3}`}
                 borderRad
                 classNames="why__card-font"
               >
@@ -121,10 +149,10 @@ class Why extends Component {
             <CustomList title="Fragmented computer systems.">
               <CustomListItem
                 // height="xsmall"
-                // animation="slide-left"
-                // color="$black"
-                // bgColor="orange"
-                border="1px solid blue"
+                animation="slide-left"
+                color="white"
+                bgColor={colors.headerGray}
+                border={`2px solid ${colors.orange3}`}
                 borderRad
                 classNames="why__card-font"
               >
@@ -138,9 +166,9 @@ class Why extends Component {
               <CustomListItem
                 // height="xsmall"
                 // animation="slide-left"
-                // color="$black"
-                // bgColor="orange"
-                border="1px solid blue"
+                color="white"
+                bgColor={colors.gray}
+                border={`2px solid ${colors.orange3}`}
                 borderRad
                 classNames="why__card-font"
               >
@@ -153,44 +181,56 @@ class Why extends Component {
             </CustomList>
           </Problems>
           <Solutions>
-            <CustomList title="Brand new revenue structure.">
+            <CustomList 
+              title="Brand new revenue structure."
+              color="white"
+              bgColor={colors.blue3}
+              >
               <CustomListItem
                 // height="xsmall"
                 // animation="slide-left"
                 // color="$black"
-                // bgColor="orange"
-                border="1px solid blue"
+                bgColor="white"
+                // border="1px solid blue"
                 borderRad
-                classNames="why__card-font"
+                classNames="who__card-font"
               >
                 {/* <div>&#8226;</div> */}
                 Designed to lower the room prices for travelers and increase hotel profits.
               </CustomListItem>
             </CustomList>
-            <CustomList title="Open sourced contracts.">
+            <CustomList 
+              title="Open sourced contracts."
+              color="white"
+              bgColor={colors.blue3}
+            >
               <CustomListItem
                 // height="xsmall"
                 // animation="slide-left"
                 // color="$black"
                 // bgColor="orange"
-                border="1px solid blue"
+                // border="1px solid blue"
                 borderRad
-                classNames="why__card-font"
+                classNames="who__card-font"
               >
                 {/* <div>&#8226;</div> */}
                 All contracts will be open sourced and publicly scrutinized to provide fair
                 and consistent terms.
               </CustomListItem>
             </CustomList>
-            <CustomList title="Holistic design.">
+            <CustomList 
+              title="Holistic design."
+              color="white"
+              bgColor={colors.blue3}
+              >
               <CustomListItem
                 // height="xsmall"
                 // animation="slide-left"
                 // color="$black"
                 // bgColor="orange"
-                border="1px solid blue"
+                // border="1px solid blue"
                 borderRad
-                classNames="why__card-font"
+                classNames="who__card-font"
               >
                 {/* <div>&#8226;</div> */}
                 This is the first travel application designed to accomodate the entire booking
@@ -201,9 +241,9 @@ class Why extends Component {
                 // animation="slide-left"
                 // color="$black"
                 // bgColor="orange"
-                border="1px solid blue"
+                // border="1px solid blue"
                 borderRad
-                classNames="why__card-font"
+                classNames="who__card-font"
               >
                 {/* <div>&#8226;</div> */}
                 Integrating features into a single system will put the guest and hotel in

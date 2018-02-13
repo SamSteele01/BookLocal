@@ -13,8 +13,11 @@ class Who extends Component {
 
   render() {
     return (
-      <div>
-        <Section margin={{top: 'large'}}> 
+      <div className="who">
+        <Section 
+          // margin={{top: 'large'}}
+          pad="none"
+        > 
 
           {/* 3 */}
           {/* <Heading align='center' 
@@ -62,11 +65,11 @@ class Who extends Component {
             <CustomListItem
               //height="auto"
               // animation="slide-left"
-              // color="$black"
-              // bgColor="orange"
-              border="1px solid blue"
+              color="white"
+                bgColor={colors.blue2}
+              // border="1px solid blue"
               borderRad
-              classNames="who__card-font"
+              classNames="why__card-font"
             >
               {/* <div>&#8226;</div> */}
               <div><i className="underline">Value:</i> Travel agents at their best will remove the burden of research and
@@ -78,11 +81,11 @@ class Who extends Component {
             <CustomListItem
               //height="auto"
               // animation="slide-left"
-              // color="$black"
-              // bgColor="orange"
-              border="1px solid blue"
+              color="white"
+              bgColor={colors.gray}
+              // border="1px solid blue"
               borderRad
-              classNames="who__card-font"
+              classNames="why__card-font"
             >
               {/* <div>&#8226;</div> */}
               <p><i className="underline">Cost:</i> Conflicts of interest may arise when the travel agent is secretly
@@ -107,11 +110,11 @@ class Who extends Component {
             <CustomListItem
               //height="auto"
               // animation="slide-left"
-              // color="$black"
-              // bgColor="orange"
-              border="1px solid blue"
+              color="white"
+                bgColor={colors.blue2}
+              // border="1px solid blue"
               borderRad
-              classNames="who__card-font"
+              classNames="why__card-font"
             >
               {/* <div>&#8226;</div> */}
               <div><i className="underline">Value:</i> The benefit of a global distribution system lies in it’s network and
@@ -124,11 +127,11 @@ class Who extends Component {
             <CustomListItem
               //height="auto"
               // animation="slide-left"
-              // color="$black"
-              // bgColor="orange"
-              border="1px solid blue"
+              color="white"
+                bgColor={colors.gray}
+              // border="1px solid blue"
               borderRad
-              classNames="who__card-font"
+              classNames="why__card-font"
             >
               {/* <div>&#8226;</div> */}
               <p><i className="underline">Cost:</i> Availability and pricing information can be slow and spotty since
@@ -156,11 +159,11 @@ class Who extends Component {
             <CustomListItem
               //height="auto"
               // animation="slide-left"
-              // color="$black"
-              // bgColor="orange"
-              border="1px solid blue"
+              color="white"
+                bgColor={colors.blue2}
+              // border="1px solid blue"
               borderRad
-              classNames="who__card-font"
+              classNames="why__card-font"
             >
               {/* <div>&#8226;</div> */}
               <div><i className="underline">Value:</i> Online travel agencies are easy to use and can provide discounts
@@ -168,13 +171,13 @@ class Who extends Component {
               </div>
             </CustomListItem>
             <CustomListItem
-              //height="auto"
+              height="small"
               // animation="slide-left"
-              // color="$black"
-              // bgColor="orange"
-              border="1px solid blue"
+              color="white"
+                bgColor={colors.gray}
+              // border="1px solid blue"
               borderRad
-              classNames="who__card-font"
+              classNames="why__card-font"
             >
               {/* <div>&#8226;</div> */}
               <p><i className="underline">Cost:</i> High commission rates charged by OTAs and various payment reconciliation
@@ -204,11 +207,11 @@ class Who extends Component {
             <CustomListItem
               //height="auto"
               // animation="slide-left"
-              // color="$black"
-              // bgColor="orange"
-              border="1px solid blue"
+              color="white"
+                bgColor={colors.blue2}
+              // border="1px solid blue"
               borderRad
-              classNames="who__card-font"
+              classNames="why__card-font"
             >
               {/* <div>&#8226;</div> */}
               <div><i className="underline">Value:</i> Automates much of the hotel’s inventory planning and centralizes
@@ -218,11 +221,11 @@ class Who extends Component {
             <CustomListItem
               //height="auto"
               // animation="slide-left"
-              // color="$black"
-              // bgColor="orange"
-              border="1px solid blue"
+              color="white"
+                bgColor={colors.gray}
+              // border="1px solid blue"
               borderRad
-              classNames="who__card-font"
+              classNames="why__card-font"
             >
               {/* <div>&#8226;</div> */}
               <p><i className="underline">Cost:</i> Most channel management companies operate on the software as
@@ -245,11 +248,11 @@ class Who extends Component {
             <CustomListItem
               //height="auto"
               // animation="slide-left"
-              // color="$black"
-              // bgColor="orange"
-              border="1px solid blue"
+              color="white"
+                bgColor={colors.blue2}
+              // border="1px solid blue"
               borderRad
-              classNames="who__card-font"
+              classNames="why__card-font"
             >
               {/* <div>&#8226;</div> */}
               <div><i className="underline">Value:</i> A good property management system can make the life of a hotelier
@@ -259,11 +262,11 @@ class Who extends Component {
             <CustomListItem
               //height="auto"
               // animation="slide-left"
-              // color="$black"
-              // bgColor="orange"
-              border="1px solid blue"
+              color="white"
+              bgColor={colors.gray}
+              // border="1px solid blue"
               borderRad
-              classNames="who__card-font"
+              classNames="why__card-font"
             >
               {/* <div>&#8226;</div> */}
               <p><i className="underline">Cost:</i> Lack of customization and complicated interfaces makes it difficult

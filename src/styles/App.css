@@ -25,16 +25,32 @@
 .underline {
   text-decoration: underline; }
 
-.why {
+.what {
   background-color: #474747;
   color: #FFF; }
 
-.solutions {
-  background-color: #06203d;
-  padding: 10px 0; }
+.why {
+  background-color: #0d4785;
+  color: white; }
 
-.white {
+.who {
+  background-color: #474747;
   color: #FFF; }
+
+.how {
+  background-color: #474747;
+  color: #FFF; }
+
+.steps {
+  background-color: #474747;
+  color: #FFF; }
+
+.problems {
+  background-color: white;
+  color: #464749; }
+
+.solutions {
+  background-color: #0d4785; }
 
 p {
   font-family: Titillium Web, sans-serif; }
@@ -87,7 +103,7 @@ h2, h3 {
 
 .who__card-font {
   font-weight: 300;
-  font-size: 14px; }
+  font-size: 18px; }
 
 .how__card-font {
   font-weight: 300;
