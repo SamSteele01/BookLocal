@@ -21,7 +21,7 @@ class Why extends Component {
             Why
           </Heading> */}
           <div className='heading'>Why</div>
-          <Paragraph size='medium' margin='small'>
+          <Paragraph align='center' size='medium' margin='small'>
             To understand the motivation for BookLocal we identify a few key issues with
             the current hotel reservation model and propose solutions.
           </Paragraph>

@@ -15,7 +15,7 @@ class Solutions extends Component {
           tag='h3'>
           Solutions
         </Heading>
-        <Paragraph 
+        <Paragraph align='center' 
         // className="white"
         >
           BookLocal will design a platform that incorporates the best features of the current system while omitting middlemen.

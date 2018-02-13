@@ -13,7 +13,7 @@ class Problems extends Component {
           tag='h3'>
           Problems
         </Heading>
-        <Paragraph size='medium' margin='small'>
+        <Paragraph align='center' size='medium' margin='small'>
           The hotel booking industry is fragmented with no fewer than five different
           groups working for commission between travelers and hotels. Problems include:
         </Paragraph>

@@ -19,7 +19,7 @@ export default class Steps extends Component {
                     Steps    
                 </Heading> */}
                 <div className='heading'>Steps</div>
-                <Paragraph size='medium' margin='small'>
+                <Paragraph align='center' size='medium' margin='small'>
                     Below are the key benchmarks toward full adoption.
                 </Paragraph>
 
@@ -30,14 +30,14 @@ export default class Steps extends Component {
                         tag='h2'>
                         The Exchange Building
                 </Heading>
-                <Paragraph size='medium' margin='small'>
+                <Paragraph align='center' size='medium' margin='small'>
                     The Exchange Building in Memphis, Tennessee will host the first version of
                     BookLocal as it’s own proprietary property management system.
                 </Paragraph>
 
                 {/* 5.1.1 */}
                 <CustomList title="Proof of Concept"> 
-                    <Paragraph size='medium' margin='small'>
+                    <Paragraph align='center' size='medium' margin='small'>
                         We proposed a rentable token model (ERC-809) that extends a non-fungible
                         token (as introduced in ERC-721) to provide temporary access for non-owners.
                         Applied to a hotel, our model does the following:
@@ -95,7 +95,7 @@ export default class Steps extends Component {
 
                 {/* 5.1.2 */}
                 <CustomList title="Minimum Viable Product"> 
-                    <Paragraph size='medium' margin='small'>
+                    <Paragraph align='center' size='medium' margin='small'>
                         The minimum viable product will extend the Proof of Concept to incorporate
                         full payment functionality and user interfaces.
                     </Paragraph>
@@ -108,7 +108,7 @@ export default class Steps extends Component {
                             1. Multisignature Wallets
                         </Heading>
 
-                        <Paragraph size='medium' margin='small'>
+                        <Paragraph align='center' size='medium' margin='small'>
                             To ensure secure payments, we will use industry standard code for our
                             multisignature wallet.
                         </Paragraph>
@@ -122,7 +122,7 @@ export default class Steps extends Component {
                             2. Traveler Interface
                         </Heading>
 
-                        <Paragraph size='medium' margin='small'>
+                        <Paragraph align='center' size='medium' margin='small'>
                             Each “Traveler” object inherits functions from a standard wallet. Thus,
                             the minimum viable interface for a traveler will extend the wallet to provide
                             a graphical interface for the following methods:
@@ -207,7 +207,7 @@ export default class Steps extends Component {
                             3. Hotel Interface
                         </Heading>
 
-                        <Paragraph size='medium' margin='small'>
+                        <Paragraph align='center' size='medium' margin='small'>
                             Each “Hotel” object inherits functions from a standard multisignature
                             wallet in order to appropriately handle payments being sent to the contract.
                             In addition to base wallet features, the Hotel will also have access
@@ -281,7 +281,7 @@ export default class Steps extends Component {
                     tag='h2'>
                     Early Adopters
                 </Heading>
-                <Paragraph size='medium' margin='small'>
+                <Paragraph align='center' size='medium' margin='small'>
                     Once the BookLocal platform is successfully tested at the Exchange Building, we
                     will market the application for use by adventurous travelers, independent hotels,
                     and individuals with extra space. Toward this end, our goal is to provide the
@@ -294,7 +294,7 @@ export default class Steps extends Component {
                     tag='h3'>
                     Free interface for travelers.
                 </Heading>
-                <Paragraph size='medium' margin='small'>
+                <Paragraph align='center' size='medium' margin='small'>
                     In particular, we will target the Ethereum development community in order to
                     nurture early versions of the product.
                 </Paragraph>
@@ -305,7 +305,7 @@ export default class Steps extends Component {
                     tag='h3'>
                     Free interface for individual hosts.
                 </Heading>
-                <Paragraph size='medium' margin='small'>
+                <Paragraph align='center' size='medium' margin='small'>
                     In order to encourage use, we will provide a free interface for individuals to rent
                     access to their extra space (similar to the AirBnB model).
                 </Paragraph>
@@ -316,7 +316,7 @@ export default class Steps extends Component {
                     tag='h3'>
                     Paid interface for hotels.
                 </Heading>
-                <Paragraph size='medium' margin='small'>
+                <Paragraph align='center' size='medium' margin='small'>
                     To address unique attributes of each hotel, we plan to offer custom hotel interfaces
                     as a service (i.e. software-as-a-service) in order to provide each early
                     adopting hotel with their ideal property management system.
@@ -328,7 +328,7 @@ export default class Steps extends Component {
                     tag='h2'>
                     More Adopters
                 </Heading>
-                <Paragraph size='medium' margin='small'>
+                <Paragraph align='center' size='medium' margin='small'>
                     Once we have a strong community of users, we will target chain hotels by adding
                     features that allow for corporate oversight on overall and hotel specific performance.
                 </Paragraph>
