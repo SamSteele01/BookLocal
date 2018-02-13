@@ -13,7 +13,8 @@ export default class Steps extends Component {
                 <Section margin={{top: 'large'}}> 
 
                 {/* 5 */}
-                {/* <Heading align='center'
+                {/* <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
                     tag='h1'>
                     Steps    
                 </Heading> */}
@@ -23,7 +24,9 @@ export default class Steps extends Component {
                 </Paragraph>
 
                 {/* 5.1 */}
-                <Heading align='center'
+                <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
+                        margin='medium'
                         tag='h2'>
                         The Exchange Building
                 </Heading>
@@ -99,7 +102,8 @@ export default class Steps extends Component {
                     <CustomList>
 
                         {/* <div>1.</div> */}
-                        <Heading align='center'
+                        <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
                             tag='h3'>
                             1. Multisignature Wallets
                         </Heading>
@@ -112,7 +116,8 @@ export default class Steps extends Component {
                     <CustomList>
 
                         {/* <div>2.</div> */}
-                        <Heading align='center'
+                        <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
                             tag='h3'>
                             2. Traveler Interface
                         </Heading>
@@ -196,7 +201,8 @@ export default class Steps extends Component {
                     <CustomList>
 
                         {/* <div>3.</div> */}
-                        <Heading align='center'
+                        <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
                             tag='h3'>
                             3. Hotel Interface
                         </Heading>
@@ -270,7 +276,8 @@ export default class Steps extends Component {
 
 
                 {/* 5.2 */}
-                <Heading align='center'
+                <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
                     tag='h2'>
                     Early Adopters
                 </Heading>
@@ -282,7 +289,8 @@ export default class Steps extends Component {
                 </Paragraph>
 
                 {/* 5.2.1 */}
-                <Heading align='center'
+                <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
                     tag='h3'>
                     Free interface for travelers.
                 </Heading>
@@ -292,7 +300,8 @@ export default class Steps extends Component {
                 </Paragraph>
 
                 {/* 5.2.2 */}
-                <Heading align='center'
+                <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
                     tag='h3'>
                     Free interface for individual hosts.
                 </Heading>
@@ -302,7 +311,8 @@ export default class Steps extends Component {
                 </Paragraph>
 
                 {/* 5.2.3 */}
-                <Heading align='center'
+                <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
                     tag='h3'>
                     Paid interface for hotels.
                 </Heading>
@@ -313,7 +323,8 @@ export default class Steps extends Component {
                 </Paragraph>
 
                 {/* 5.3 */}
-                <Heading align='center'
+                <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
                     tag='h2'>
                     More Adopters
                 </Heading>

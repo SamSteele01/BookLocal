@@ -15,7 +15,8 @@ class Why extends Component {
     return (
       <div className="why">
         <Section margin={{top: 'large'}} pad={{vertical: 'large'}}> 
-          {/* <Heading align='center'
+          {/* <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
             tag='h1'>
             Why
           </Heading> */}

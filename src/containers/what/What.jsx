@@ -29,7 +29,8 @@ class What extends Component {
         <Section margin={{top: 'large'}} pad={{vertical: 'large'}}> 
 
           {/* 1 */}
-          {/* <Heading align='center'
+          {/* <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
             tag='h1'>
             What
           </Heading> */}

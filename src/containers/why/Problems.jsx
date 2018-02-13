@@ -8,7 +8,8 @@ class Problems extends Component {
     return (
       <div>
         {/* 2.1 */}
-        <Heading align='center'
+        <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
           tag='h3'>
           Problems
         </Heading>

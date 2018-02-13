@@ -16,7 +16,8 @@ export default class How extends Component {
                 <Section margin={{top: 'large'}}> 
 
                     {/* 4 */}
-                    {/* <Heading align='center'
+                    {/* <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
                         tag='h2'>
                         How
                     </Heading> */}
@@ -101,7 +102,8 @@ export default class How extends Component {
                     </CustomList>
 
                     {/* 4.2 */}
-                    <Heading align='center'
+                    <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
                         tag='h2'>
                         Traveler
                     </Heading>
@@ -112,7 +114,8 @@ export default class How extends Component {
                     </Paragraph>
 
                     {/* 4.2.1 */}
-                    <Heading align='center'
+                    <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
                         tag='h3'>
                         Search
                     </Heading>
@@ -127,7 +130,8 @@ export default class How extends Component {
                     </Paragraph>
 
                     {/* 4.2.2 */}
-                    <Heading align='center'
+                    <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
                         tag='h3'>
                         Compare
                     </Heading>
@@ -194,7 +198,8 @@ export default class How extends Component {
                     </CustomList>
 
                     {/* 4.2.4 */}
-                    <Heading align='center'
+                    <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
                         tag='h3'>
                         Purchase
                     </Heading>
@@ -216,7 +221,8 @@ export default class How extends Component {
                     </Paragraph>
 
                     {/* 4.3 */}
-                    <Heading align='center'
+                    <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
                         tag='h2'>
                         Hotel
                     </Heading>
@@ -225,7 +231,8 @@ export default class How extends Component {
                     </Paragraph>
 
                     {/* 4.3.1 */}
-                    <Heading align='center'
+                    <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
                         tag='h3'>
                         Guest Management
                     </Heading>
@@ -237,7 +244,8 @@ export default class How extends Component {
                     </Paragraph>
 
                     {/* 4.3.2 */}
-                    <Heading align='center'
+                    <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
                         tag='h3'>
                         Housekeeping and Maintenance
                     </Heading>
@@ -248,7 +256,8 @@ export default class How extends Component {
                     </Paragraph>
 
                     {/* 4.3.3 */}
-                    <Heading align='center'
+                    <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
                         tag='h3'>
                         Revenue Management
                     </Heading>
@@ -258,7 +267,8 @@ export default class How extends Component {
                     </Paragraph>
 
                     {/* 4.3.4 */}
-                    <Heading align='center'
+                    <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
                         tag='h3'>
                         Payment Processing
                     </Heading>
@@ -271,7 +281,8 @@ export default class How extends Component {
                     </Paragraph>
 
                     {/* 4.3.5 */}
-                    <Heading align='center'
+                    <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
                         tag='h3'>
                         Report Generation
                     </Heading>
@@ -281,7 +292,8 @@ export default class How extends Component {
                     </Paragraph>
 
                     {/* 4.3.6 */}
-                    <Heading align='center'
+                    <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
                         tag='h3'>
                         Channel Management
                     </Heading>
@@ -293,7 +305,8 @@ export default class How extends Component {
                     </Paragraph>
 
                     {/* 4.4 */}
-                    <Heading align='center'
+                    <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
                         tag='h2'>
                         Dispute
                     </Heading>

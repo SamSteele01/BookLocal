@@ -10,7 +10,8 @@ class Solutions extends Component {
       // className="solutions white"
       >
         {/* 2.2 */}
-        <Heading align='center'
+        <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
           tag='h3'>
           Solutions
         </Heading>

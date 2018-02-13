@@ -17,7 +17,8 @@ class Who extends Component {
         <Section margin={{top: 'large'}}> 
 
           {/* 3 */}
-          {/* <Heading align='center'
+          {/* <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
             tag='h2'>
             Who
           </Heading> */}
@@ -40,7 +41,8 @@ class Who extends Component {
           />
 
           {/* 3.2 */}
-          <Heading align='center'
+          <Heading align='center' 
+ 	 	 	 	 	 	 margin='medium'
             tag='h3'> 
             Players
           </Heading>
