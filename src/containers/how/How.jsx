@@ -29,7 +29,10 @@ export default class How extends Component {
                     </Paragraph>
 
                     {/* 4.1 */}
-                    <CustomList title="Data"> 
+                    <CustomList 
+                        title="Data"
+                        pad="medium"
+                        > 
                         <Paragraph align='center' size='medium' margin='small'>
                             BookLocal allows travelers to connect directly to the Hotel by way of the
                             room. Figure 3 below represents this flow of information for a simple
@@ -45,24 +48,27 @@ export default class How extends Component {
                         </Paragraph>
                         <CustomListItem
                             //height="auto"
+                            margin="10px"
                             // animation="slide-left"
                             // color="$black"
                             // bgColor="orange"
                             border="1px solid blue"
-                            borderRad
+                            borderRad="5px"
                             classNames="how__card-font"
                         >
                         {/* <div>&#8226;</div> */}
-                            <p><u className="bold">BookLocal API:</u> The programming interface for the smart contracts.
+                            <p><u className="bold">BookLocal API:</u></p>
+                            <p> The programming interface for the smart contracts.
                             </p>
                         </CustomListItem>
                         <CustomListItem
                             //height="auto"
+                            margin="10px"
                             // animation="slide-left"
                             // color="$black"
                             // bgColor="orange"
                             border="1px solid blue"
-                            borderRad
+                            borderRad="5px"
                             classNames="how__card-font"
                         >
                         {/* <div>&#8226;</div> */}
@@ -74,11 +80,12 @@ export default class How extends Component {
                         </CustomListItem>
                         <CustomListItem
                             //height="auto"
+                            margin="10px"
                             // animation="slide-left"
                             // color="$black"
                             // bgColor="orange"
                             border="1px solid blue"
-                            borderRad
+                            borderRad="5px"
                             classNames="how__card-font"
                         >
                         {/* <div>&#8226;</div> */}
