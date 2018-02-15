@@ -83,14 +83,26 @@ p {
   font-family: Titillium Web, sans-serif;
 }
 
+.grommetux-paragraph {
+  max-width: 576px;
+  margin-left: 0;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.375;
+  color: white;
+}
+
 .heading {
   font-family: Segoe UI, Arial, sans-serif;
-  margin: .75em;
+  padding: 1.5em;
   font-size: 2.25rem;
   line-height: 1.125;
   text-align: center;
   font-weight: 300;
   max-width: 100%;
+  border-bottom: 5px solid #E66E1C;
 }
 
 h2, h3 {
@@ -150,4 +162,14 @@ h2, h3 {
 .steps__card-font {
   font-weight: 300;
   font-size: 14px;
+}
+
+.App-footer {
+  background-color: $header-gray;
+  height: 45px;
+  // display: table-cell;
+  // vertical-align: middle;
+  line-height: 45px;
+  border-top: 5px solid #E66E1C;
+  color: white;
 }
