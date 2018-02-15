@@ -9,6 +9,7 @@ class CustomListItem extends Component {
 
     const {
       height,
+      margin,
       animation,
       color,
       bgColor,
@@ -21,7 +22,8 @@ class CustomListItem extends Component {
       color: color, 
       backgroundColor: bgColor,
       border: border,
-      borderRadius: borderRad
+      borderRadius: borderRad,
+      margin: margin
     };
 
     return (
@@ -40,7 +42,7 @@ class CustomListItem extends Component {
               responsive={false}
               wrap={false}
               pad='large'
-              // margin='small'
+              
               >
               {this.props.children}
             </Box>
@@ -55,6 +57,7 @@ CustomListItem.propTypes = {
   // children: PropTypes.element,
   // icon: PropTypes.string.isRequired,
   height: PropTypes.string,
+  margin: PropTypes.string,
   animation: PropTypes.string,
   color: PropTypes.string,
   bgColor: PropTypes.string,
@@ -63,6 +66,7 @@ CustomListItem.propTypes = {
 
 CustomListItem.defaultProps = {
   height: "xsmall",
+  margin: "none",
   animation: "slide-right",
   color: "#464749", //font-gray
   bgColor: "white"
