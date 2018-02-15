@@ -40,12 +40,15 @@ class CustomList extends Component {
           pad={pad}
           // margin='small'
         >
+        {this.props.title ?
           <Heading 
             align='center'
             margin='medium'
             tag='h4'>
             {this.props.title}
-          </Heading>
+          </Heading> :
+          null }
+
           <Columns 
             responsive={false}
             masonry={false}
