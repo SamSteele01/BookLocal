@@ -9,6 +9,7 @@ import Why from './why/Why';
 import Who from './who/Who';
 import How from './how/How';
 import Steps from './Steps';
+import Footer from '../components/Footer';
 
 class App extends Component {
   render() {
@@ -23,6 +24,7 @@ class App extends Component {
         <How/>
         <Hero image="exchange-building"/>
         <Steps/>
+        <Footer/>
       </div>
     );
   }
