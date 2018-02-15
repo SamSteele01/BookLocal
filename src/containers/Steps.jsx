@@ -69,7 +69,7 @@ export default class Steps extends Component {
                         borderRad
                         classNames="steps__card-font"
                     >
-                        {/* {/* <div>&#8226;</div> */} */}
+                         {/* <div>&#8226;</div> */} 
                         <div>
                             Stores a list of reservations that, 1) map each room to a time, and 2)
                             maps each time to a renter
