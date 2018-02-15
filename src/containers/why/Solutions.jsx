@@ -11,7 +11,7 @@ class Solutions extends Component {
       >
         {/* 2.2 */}
         <Heading align='center' 
- 	 	 	 	 	 	 margin='medium'
+ 	 	 	 	 	 	 margin='large'
           tag='h2'>
           Solutions
         </Heading>

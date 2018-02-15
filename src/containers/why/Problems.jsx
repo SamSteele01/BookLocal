@@ -9,7 +9,7 @@ class Problems extends Component {
       <div className="problems">
         {/* 2.1 */}
         <Heading align='center' 
- 	 	 	 	 	 	 margin='medium'
+ 	 	 	 	 	 	 margin='large'
           tag='h2'>
           Problems
         </Heading>
