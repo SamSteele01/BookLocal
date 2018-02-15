@@ -88,10 +88,10 @@ class Who extends Component {
               classNames="why__card-font"
             >
               {/* <div>&#8226;</div> */}
-              <p><i className="underline">Cost:</i> Conflicts of interest may arise when the travel agent is secretly
+              <div><i className="underline">Cost:</i> Conflicts of interest may arise when the travel agent is secretly
               incentivized by higher paying hotels. In these cases, the traveler may not
               receive the best available deal for their preferences.
-              </p>
+              </div>
             </CustomListItem>
           </CustomList>
 
@@ -134,10 +134,10 @@ class Who extends Component {
               classNames="why__card-font"
             >
               {/* <div>&#8226;</div> */}
-              <p><i className="underline">Cost:</i> Availability and pricing information can be slow and spotty since
+              <div><i className="underline">Cost:</i> Availability and pricing information can be slow and spotty since
               global distribution systems typically act between service providers and
               travel agents rather than communicating directly with the travelers.
-              </p>
+              </div>
             </CustomListItem>
           </CustomList>
 
@@ -180,7 +180,7 @@ class Who extends Component {
               classNames="why__card-font"
             >
               {/* <div>&#8226;</div> */}
-              <p><i className="underline">Cost:</i> High commission rates charged by OTAs and various payment reconciliation
+              <div><i className="underline">Cost:</i> High commission rates charged by OTAs and various payment reconciliation
                 methods add costs to the hotel which ultimately falls, at least
                 in part, to the traveler. Further, booking through an OTA complicates the
                 resolution of any disputes between the hotel and traveler (i.e. if a traveler
@@ -188,7 +188,7 @@ class Who extends Component {
                 through the OTA rather than working directly with hotel management).
                 And finally, the sheer size of the two main OTAs allow for uneven and
                 inconsistent legal agreements.
-              </p>
+              </div>
             </CustomListItem>
           </CustomList>
 
@@ -228,10 +228,10 @@ class Who extends Component {
               classNames="why__card-font"
             >
               {/* <div>&#8226;</div> */}
-              <p><i className="underline">Cost:</i> Most channel management companies operate on the software as
+              <div><i className="underline">Cost:</i> Most channel management companies operate on the software as
               a service (SaaS) model which further increases the hotel’s operating cost
               and adds complexity into the hotel ecosystem.
-              </p>
+              </div>
             </CustomListItem>
           </CustomList>
 
@@ -269,9 +269,9 @@ class Who extends Component {
               classNames="why__card-font"
             >
               {/* <div>&#8226;</div> */}
-              <p><i className="underline">Cost:</i> Lack of customization and complicated interfaces makes it difficult
+              <div><i className="underline">Cost:</i> Lack of customization and complicated interfaces makes it difficult
               to train new workers.
-              </p>
+              </div>
             </CustomListItem>
           </CustomList>
 
