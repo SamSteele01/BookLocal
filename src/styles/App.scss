@@ -49,7 +49,7 @@ $gray: rgb(71, 71, 71);
 }
 
 .why {
-  background-color: $blue3;
+  background-color: $blue2;
   color: white;
 }
 
@@ -74,7 +74,8 @@ $gray: rgb(71, 71, 71);
 }
 
 .solutions {
-  background-color: $blue3;
+  background-color: white;
+  color: $font-gray;
   // background-color: rgb(6, 32, 61);
   // padding: 10px 0;
 }
@@ -83,7 +84,7 @@ p {
   font-family: Titillium Web, sans-serif;
 }
 
-.grommetux-paragraph {
+.paragraph {
   max-width: 576px;
   margin-left: 0;
   margin-top: 24px;
@@ -96,13 +97,14 @@ p {
 
 .heading {
   font-family: Segoe UI, Arial, sans-serif;
-  padding: 1.5em;
-  font-size: 2.25rem;
+  padding: .75em;
+  font-size: 4rem;
   line-height: 1.125;
   text-align: center;
   font-weight: 300;
   max-width: 100%;
-  border-bottom: 5px solid #E66E1C;
+  color: white;
+  border-top: 5px solid #E66E1C;
 }
 
 h2, h3 {
