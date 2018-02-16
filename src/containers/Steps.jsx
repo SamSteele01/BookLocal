@@ -12,8 +12,11 @@ export default class Steps extends Component {
             <div className="steps">
                 <Section 
                     // margin={{top: 'large'}}
-                    pad="none"
-                    > 
+                    pad='none'
+                    align='stretch'
+                    alignContent='center'
+                    appCentered='true'
+                > 
 
                 {/* 5 */}
                 {/* <Heading align='center' 

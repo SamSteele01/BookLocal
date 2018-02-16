@@ -15,8 +15,11 @@ export default class How extends Component {
         return (
             <div className="how">
                 <Section 
-                     margin="none"
-                     pad='none'
+                    margin="none"
+                    pad='none'
+                    align='stretch'
+                    alignContent='center'
+                    appCentered='true'
                 > 
 
                     {/* 4 */}
@@ -44,6 +47,7 @@ export default class How extends Component {
                         <Image 
                             size='large' 
                             src={expandedEcosystemImg}
+                            full='true'
                             caption='Figure 3: Expanded BookLocal Ecosystem' 
                         />
                         <p className='paragraph'>
@@ -109,6 +113,7 @@ export default class How extends Component {
                         <Image 
                             size='large' 
                             src={plasmaChainImg} 
+                            full='true'
                         />
                     </CustomList>
 
