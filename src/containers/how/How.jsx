@@ -35,24 +35,30 @@ export default class How extends Component {
                     </p>
 
                     {/* 4.1 */}
+                    <Heading 
+                        align='center'
+                        margin='medium'
+                        tag='h4'>
+                        Data
+                    </Heading>
+                    <p className='paragraph'>
+                        BookLocal allows travelers to connect directly to the Hotel by way of the
+                        room. Figure 3 below represents this flow of information for a simple
+                        ecosystem consisting of three hotels and three successful travelers.
+                    </p>
+                    <Image 
+                        size='large' 
+                        src={expandedEcosystemImg}
+                        full='true'
+                        caption='Figure 3: Expanded BookLocal Ecosystem' 
+                    />
+                    <p className='paragraph'>
+                        Take note of the following systems:
+                    </p>
                     <CustomList 
-                        title="Data"
                         pad="medium"
-                        > 
-                        <p className='paragraph'>
-                            BookLocal allows travelers to connect directly to the Hotel by way of the
-                            room. Figure 3 below represents this flow of information for a simple
-                            ecosystem consisting of three hotels and three successful travelers.
-                        </p>
-                        <Image 
-                            size='large' 
-                            src={expandedEcosystemImg}
-                            full='true'
-                            caption='Figure 3: Expanded BookLocal Ecosystem' 
-                        />
-                        <p className='paragraph'>
-                            Take note of the following systems:
-                        </p>
+                        bgColor={colors.gray}
+                    > 
                         <CustomListItem
                             //height="auto"
                             margin="10px"
@@ -100,22 +106,22 @@ export default class How extends Component {
                                 for available rooms, compare room attributes, and book the room.
                             </p>
                         </CustomListItem>
-                        <p className='paragraph'>
-                            The ultimate goal for BookLocal is to maintain it’s own plasma subchain (or
-                            similar off-chain solution) to handle the bulk of the transactional data. This
-                            works to reduce the number of updates to the main Ethereum chain and thus
-                            save in transaction fees and increase speed. Further, upon making a
-                            reservation, a new subchain (or payment channel) could be created for the
-                            hotel guest (a traveler who commits to a hotel becomes a guest) and will
-                            terminate upon checkout whereby the final balances are settled. Visually we
-                            represent the flow of data below:
-                        </p>
-                        <Image 
-                            size='large' 
-                            src={plasmaChainImg} 
-                            full='true'
-                        />
                     </CustomList>
+                    <p className='paragraph'>
+                        The ultimate goal for BookLocal is to maintain it’s own plasma subchain (or
+                        similar off-chain solution) to handle the bulk of the transactional data. This
+                        works to reduce the number of updates to the main Ethereum chain and thus
+                        save in transaction fees and increase speed. Further, upon making a
+                        reservation, a new subchain (or payment channel) could be created for the
+                        hotel guest (a traveler who commits to a hotel becomes a guest) and will
+                        terminate upon checkout whereby the final balances are settled. Visually we
+                        represent the flow of data below:
+                    </p>
+                    <Image 
+                        size='large' 
+                        src={plasmaChainImg} 
+                        full='true'
+                    />
 
                     {/* 4.2 */}
                     <Heading align='center' 

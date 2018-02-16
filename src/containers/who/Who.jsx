@@ -90,7 +90,7 @@ class Who extends Component {
             </CustomListItem>
             <CustomListItem
               //height="auto"
-              // animation="slide-left"
+              animation="slide-left"
               color="white"
               bgColor={colors.gray}
               // border="1px solid blue"
@@ -106,17 +106,23 @@ class Who extends Component {
           </CustomList>
 
           {/* 3.2.2 */}
-          <CustomList title="Global Distribution System (GDS)"> 
-            <p className='paragraph'>
-              Global distribution systems originally began in the airline industry (eAAsy
-              Sabre) to provide a central platform for airlines and travel agents to aggregate
-              flight data. By 1991, the Hotel Reservation Network (now Hotels.com)
-              was founded to extend this idea directly to the customer for hotel bookings using
-              a toll-free phone number. Currently, global distribution systems are largely
-              outdated and seeking ways to reinvent themselves since online travel agents are
-              now able to bypass their networks and work directly with the service providers
-              (i.e hotels, airlines, and rental car companies).
-            </p>
+          <Heading 
+            align='center'
+            margin='medium'
+            tag='h4'>
+            Global Distribution System (GDS)
+          </Heading>
+          <p className='paragraph'>
+            Global distribution systems originally began in the airline industry (eAAsy
+            Sabre) to provide a central platform for airlines and travel agents to aggregate
+            flight data. By 1991, the Hotel Reservation Network (now Hotels.com)
+            was founded to extend this idea directly to the customer for hotel bookings using
+            a toll-free phone number. Currently, global distribution systems are largely
+            outdated and seeking ways to reinvent themselves since online travel agents are
+            now able to bypass their networks and work directly with the service providers
+            (i.e hotels, airlines, and rental car companies).
+          </p>
+          <CustomList > 
             <CustomListItem
               //height="auto"
               // animation="slide-left"
@@ -136,7 +142,7 @@ class Who extends Component {
             </CustomListItem>
             <CustomListItem
               //height="auto"
-              // animation="slide-left"
+              animation="slide-left"
               color="white"
                 bgColor={colors.gray}
               // border="1px solid blue"
@@ -152,20 +158,26 @@ class Who extends Component {
           </CustomList>
 
           {/* 3.2.3 */}
-          <CustomList title="Online Travel Agent (OTA)"> 
-            <p className='paragraph'>
-              Online travel agents represent the most dramatic change to the travel industry
-              in the last decade. Initially, OTAs tapped directly into the GDS networks to
-              find availabilities and sell directly to the interested traveler, however, channel
-              management software packages now allow OTAs the option of bypassing the
-              GDS and learning of availability information directly from the hotel or other
-              service provider. While much of this has truly improved the travelers experience
-              only two main parent companies currently exist - Priceline Group and Expedia
-              Inc. - each with many subsidiary companies that creates the illusion of competion.
-              This duopoly has predictably led to high commission rates and uneven
-              legal agreements, the burden of which is shared by the hotel and the traveler in
-              the form of lower profit and higher rates.
-            </p>
+          <Heading 
+            align='center'
+            margin='medium'
+            tag='h4'>
+            Online Travel Agent (OTA)
+          </Heading>
+          <p className='paragraph'>
+            Online travel agents represent the most dramatic change to the travel industry
+            in the last decade. Initially, OTAs tapped directly into the GDS networks to
+            find availabilities and sell directly to the interested traveler, however, channel
+            management software packages now allow OTAs the option of bypassing the
+            GDS and learning of availability information directly from the hotel or other
+            service provider. While much of this has truly improved the travelers experience
+            only two main parent companies currently exist - Priceline Group and Expedia
+            Inc. - each with many subsidiary companies that creates the illusion of competion.
+            This duopoly has predictably led to high commission rates and uneven
+            legal agreements, the burden of which is shared by the hotel and the traveler in
+            the form of lower profit and higher rates.
+          </p>
+          <CustomList > 
             <CustomListItem
               //height="auto"
               // animation="slide-left"
@@ -182,7 +194,7 @@ class Who extends Component {
             </CustomListItem>
             <CustomListItem
               height="small"
-              // animation="slide-left"
+              animation="slide-left"
               color="white"
                 bgColor={colors.gray}
               // border="1px solid blue"
@@ -203,7 +215,12 @@ class Who extends Component {
           </CustomList>
 
           {/* 3.2.4 */}
-          <CustomList title="Channel Manager"> 
+            <Heading 
+              align='center'
+              margin='medium'
+              tag='h4'>
+              Global Distribution System (GDS)
+            </Heading>
             <p className='paragraph'>
               Channel management software allows the hotel to automatically update their
               availability and pricing information across their distribution network. This technology
@@ -214,6 +231,7 @@ class Who extends Component {
               allowed online travel agencies to bypass the global distribution system’s
               information network and take hold of the market.
             </p>
+          <CustomList title="Channel Manager"> 
             <CustomListItem
               //height="auto"
               // animation="slide-left"
@@ -230,7 +248,7 @@ class Who extends Component {
             </CustomListItem>
             <CustomListItem
               //height="auto"
-              // animation="slide-left"
+              animation="slide-left"
               color="white"
                 bgColor={colors.gray}
               // border="1px solid blue"
@@ -246,15 +264,21 @@ class Who extends Component {
           </CustomList>
 
           {/* 3.2.5 */}
-          <CustomList title="Property Management System (PMS)"> 
-            <p className='paragraph'>
-              The hotel’s property management system (PMS) refers to any piece of software
-              designed to help manage the daily requirements of running a hotel. At it’s most
-              basic, a PMS will include functions to manage guest arrivals and departures and
-              then generate the necessary reports for auditing. More advanced systems can
-              include a housekeeping module, payment processor, and revenue management
-              tools.
-            </p>
+          <Heading 
+            align='center'
+            margin='medium'
+            tag='h4'>
+            Property Management System (PMS)
+          </Heading>
+          <p className='paragraph'>
+            The hotel’s property management system (PMS) refers to any piece of software
+            designed to help manage the daily requirements of running a hotel. At it’s most
+            basic, a PMS will include functions to manage guest arrivals and departures and
+            then generate the necessary reports for auditing. More advanced systems can
+            include a housekeeping module, payment processor, and revenue management
+            tools.
+          </p>
+          <CustomList > 
             <CustomListItem
               //height="auto"
               // animation="slide-left"
@@ -271,7 +295,7 @@ class Who extends Component {
             </CustomListItem>
             <CustomListItem
               //height="auto"
-              // animation="slide-left"
+              animation="slide-left"
               color="white"
               bgColor={colors.gray}
               // border="1px solid blue"
@@ -286,13 +310,19 @@ class Who extends Component {
           </CustomList>
 
           {/* 3.3 */}
-          <CustomList title="Proposed Ecosystem"> 
+          <Heading 
+            align='center'
+            margin='medium'
+            tag='h4'>
+            Proposed Ecosystem
+          </Heading>
             <p className='paragraph'>
               Since BookLocal will act as a property management system, channel manager,
               and payment processor for the hotel and provide metasearch capabilities for
               the traveler, much of the current ecosystem can be bypassed. As such, figure 2
               represents our vision after full implementation.
             </p>
+          {/* <CustomList >  */}
             <Image 
               size='large' 
               src={ecosystem2}
@@ -303,7 +333,7 @@ class Who extends Component {
               agencies in order to provide seamless integration for early-adopting hotels and
               late-adopting travelers.
             </p>
-          </CustomList>
+          {/* </CustomList> */}
         </Section>
       </div>
     );
