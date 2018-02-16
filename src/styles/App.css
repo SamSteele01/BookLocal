@@ -30,11 +30,11 @@
   color: #FFF; }
 
 .why {
-  background-color: #185FAC;
-  color: white; }
+  background-color: white;
+  color: #3C5BBE; }
 
 .who {
-  background-color: #474747;
+  background-color: #80b2e7;
   color: #FFF; }
 
 .how {
@@ -49,6 +49,26 @@
   background-color: white;
   color: #464749; }
 
+.what__card-font {
+  font-weight: 300;
+  font-size: 26px; }
+
+.why__card-font {
+  font-weight: 300;
+  font-size: 14px; }
+
+.who__card-font {
+  font-weight: 300;
+  font-size: 18px; }
+
+.how__card-font {
+  font-weight: 300;
+  font-size: 14px; }
+
+.steps__card-font {
+  font-weight: 300;
+  font-size: 14px; }
+
 .solutions {
   background-color: white;
   color: #464749; }
@@ -56,26 +76,29 @@
 p {
   font-family: Titillium Web, sans-serif; }
 
-.paragraph {
+.paragraph-white, .paragraph-gray {
   max-width: 576px;
   margin-left: 0;
   margin-top: 24px;
   margin-bottom: 24px;
   font-size: 16px;
   font-weight: 300;
-  line-height: 1.375;
+  line-height: 1.375; }
+
+.paragraph-white {
   color: white; }
+
+.paragraph-gray {
+  color: #464749; }
 
 .heading {
   font-family: Segoe UI, Arial, sans-serif;
   padding: .75em;
-  font-size: 4rem;
+  font-size: 5rem;
   line-height: 1.125;
   text-align: center;
   font-weight: 300;
-  max-width: 100%;
-  color: white;
-  border-top: 5px solid #E66E1C; }
+  max-width: 100%; }
 
 h2, h3 {
   font-family: PT Sans Narrow; }
@@ -105,26 +128,6 @@ h2, h3 {
   z-index: 1;
   display: table-cell;
   vertical-align: middle; }
-
-.what__card-font {
-  font-weight: 300;
-  font-size: 26px; }
-
-.why__card-font {
-  font-weight: 300;
-  font-size: 14px; }
-
-.who__card-font {
-  font-weight: 300;
-  font-size: 18px; }
-
-.how__card-font {
-  font-weight: 300;
-  font-size: 14px; }
-
-.steps__card-font {
-  font-weight: 300;
-  font-size: 14px; }
 
 .App-footer {
   background-color: #3C3C3C;

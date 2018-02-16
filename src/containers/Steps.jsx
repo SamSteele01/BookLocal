@@ -22,9 +22,9 @@ export default class Steps extends Component {
                     Steps    
                 </Heading> */}
                 <div className='heading'>Steps</div>
-                <Paragraph align='center' size='medium' margin='small'>
+                <p className='paragraph-white'>
                     Below are the key benchmarks toward full adoption.
-                </Paragraph>
+                </p>
 
                 {/* 5.1 */}
                 <Heading align='center' 
@@ -33,18 +33,18 @@ export default class Steps extends Component {
                         tag='h2'>
                         The Exchange Building
                 </Heading>
-                <Paragraph align='center' size='medium' margin='small'>
+                <p className='paragraph-white'>
                     The Exchange Building in Memphis, Tennessee will host the first version of
                     BookLocal as it’s own proprietary property management system.
-                </Paragraph>
+                </p>
 
                 {/* 5.1.1 */}
                 <CustomList title="Proof of Concept"> 
-                    <Paragraph align='center' size='medium' margin='small'>
+                    <p className='paragraph-gray'>
                         We proposed a rentable token model (ERC-809) that extends a non-fungible
                         token (as introduced in ERC-721) to provide temporary access for non-owners.
                         Applied to a hotel, our model does the following:
-                    </Paragraph>
+                    </p>
                     <CustomListItem
                         //height="auto"
                         // animation="slide-left"
@@ -90,18 +90,18 @@ export default class Steps extends Component {
                             the “renter” address of a specific room’s attributes.
                         </div>
                     </CustomListItem>
-                    <Paragraph>
+                    <p className='paragraph-gray'>
                         The contracts for the proof of concept (written in solidity) are available online.
-                    </Paragraph>
+                    </p>
                     {/* make link to github */}
                 </CustomList>
 
                 {/* 5.1.2 */}
                 <CustomList title="Minimum Viable Product"> 
-                    <Paragraph align='center' size='medium' margin='small'>
+                    <p className='paragraph-gray'>
                         The minimum viable product will extend the Proof of Concept to incorporate
                         full payment functionality and user interfaces.
-                    </Paragraph>
+                    </p>
                     <CustomList>
 
                         {/* <div>1.</div> */}
@@ -111,10 +111,10 @@ export default class Steps extends Component {
                             1. Multisignature Wallets
                         </Heading>
 
-                        <Paragraph align='center' size='medium' margin='small'>
+                        <p className='paragraph-gray'>
                             To ensure secure payments, we will use industry standard code for our
                             multisignature wallet.
-                        </Paragraph>
+                        </p>
                     </CustomList>
                     <CustomList>
 
@@ -125,11 +125,11 @@ export default class Steps extends Component {
                             2. Traveler Interface
                         </Heading>
 
-                        <Paragraph align='center' size='medium' margin='small'>
+                        <p className='paragraph-gray'>
                             Each “Traveler” object inherits functions from a standard wallet. Thus,
                             the minimum viable interface for a traveler will extend the wallet to provide
                             a graphical interface for the following methods:
-                        </Paragraph>
+                        </p>
                         <CustomListItem
                             //height="auto"
                             // animation="slide-left"
@@ -210,14 +210,14 @@ export default class Steps extends Component {
                             3. Hotel Interface
                         </Heading>
 
-                        <Paragraph align='center' size='medium' margin='small'>
+                        <p className='paragraph-gray'>
                             Each “Hotel” object inherits functions from a standard multisignature
                             wallet in order to appropriately handle payments being sent to the contract.
                             In addition to base wallet features, the Hotel will also have access
                             to all methods callable by the traveler (as listed above) with special owner
                             permissions. Further, the minimum viable interface for a hotel will also
                             include a graphical interface for the following methods:
-                        </Paragraph>
+                        </p>
                         <CustomListItem
                             //height="auto"
                             // animation="slide-left"
@@ -284,12 +284,12 @@ export default class Steps extends Component {
                     tag='h2'>
                     Early Adopters
                 </Heading>
-                <Paragraph align='center' size='medium' margin='small'>
+                <p className='paragraph-white'>
                     Once the BookLocal platform is successfully tested at the Exchange Building, we
                     will market the application for use by adventurous travelers, independent hotels,
                     and individuals with extra space. Toward this end, our goal is to provide the
                     following:
-                </Paragraph>
+                </p>
 
                 {/* 5.2.1 */}
                 <Heading align='center' 
@@ -297,10 +297,10 @@ export default class Steps extends Component {
                     tag='h3'>
                     Free interface for travelers.
                 </Heading>
-                <Paragraph align='center' size='medium' margin='small'>
+                <p className='paragraph-white'>
                     In particular, we will target the Ethereum development community in order to
                     nurture early versions of the product.
-                </Paragraph>
+                </p>
 
                 {/* 5.2.2 */}
                 <Heading align='center' 
@@ -308,10 +308,10 @@ export default class Steps extends Component {
                     tag='h3'>
                     Free interface for individual hosts.
                 </Heading>
-                <Paragraph align='center' size='medium' margin='small'>
+                <p className='paragraph-white'>
                     In order to encourage use, we will provide a free interface for individuals to rent
                     access to their extra space (similar to the AirBnB model).
-                </Paragraph>
+                </p>
 
                 {/* 5.2.3 */}
                 <Heading align='center' 
@@ -319,11 +319,11 @@ export default class Steps extends Component {
                     tag='h3'>
                     Paid interface for hotels.
                 </Heading>
-                <Paragraph align='center' size='medium' margin='small'>
+                <p className='paragraph-white'>
                     To address unique attributes of each hotel, we plan to offer custom hotel interfaces
                     as a service (i.e. software-as-a-service) in order to provide each early
                     adopting hotel with their ideal property management system.
-                </Paragraph>
+                </p>
 
                 {/* 5.3 */}
                 <Heading align='center' 
@@ -331,10 +331,10 @@ export default class Steps extends Component {
                     tag='h2'>
                     More Adopters
                 </Heading>
-                <Paragraph align='center' size='medium' margin='small'>
+                <p className='paragraph-white'>
                     Once we have a strong community of users, we will target chain hotels by adding
                     features that allow for corporate oversight on overall and hotel specific performance.
-                </Paragraph>
+                </p>
 
                 </Section>
             </div>
