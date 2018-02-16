@@ -13,7 +13,9 @@ class Solutions extends Component {
         {/* 2.2 */}
         <Heading align='center' 
  	 	 	 	 	 	 margin='large'
-          tag='h2'>
+          tag='h1'
+          style={{color: colors.logoBlue}}
+          >
           Solutions
         </Heading>
         <p className='paragraph-gray'>

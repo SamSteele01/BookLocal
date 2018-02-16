@@ -13,7 +13,7 @@ class Problems extends Component {
           align='center' 
  	 	 	 	 	margin='large'
           tag='h1'
-          style={{color: colors.orange3}}
+          style={{color: colors.logoBlue}}
         >
           Problems
         </Heading>
