@@ -2,6 +2,7 @@ const colors = {
     orange1: "rgb(231, 158, 109)",
     orange2: "rgb(226, 124, 57)",
     orange3: "#E66E1C",
+    logoBlue: "#3C5BBE",
     blue1: "rgb(66, 128, 194)",
     blue2: "#185FAC",
     blue3: "rgb(13, 71, 133)",
