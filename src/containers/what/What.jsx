@@ -29,6 +29,10 @@ class What extends Component {
         <Section 
           // margin={{top: 'large'}} 
           pad='none'
+          align='stretch'
+          alignContent='center'
+          // alignSelf='stretch'
+          appCentered='true'
         > 
 
           {/* 1 */}
@@ -53,16 +57,17 @@ class What extends Component {
             for both hotel workers and travelers will be designed to provide full service
             functionality and replace inefficiencies in the current ecosystem.
           </p>
+          <p className='paragraph-white'>
+            To the traveler, BookLocal will provide the following features:
+          </p>
           
           <CustomList 
             bgColor={colors.gray}
+            
           >
-            <p className='paragraph-white'>
-              To the traveler, BookLocal will provide the following features:
-            </p>
             <CustomListItem 
               // height="auto"
-              animation="slide-left"
+              // animation="slide-left"
               color="$black"
               // bgColor="orange"
               border={`1px solid ${colors.blue1}`}
@@ -112,7 +117,8 @@ class What extends Component {
               <div></div>
             </CustomListItem>
             <CustomListItem
-              //height="xsmall"           animation="slide-left"
+              //height="xsmall"
+              animation="slide-left"
               // color="$black"
               // bgColor="orange"
               border="1px solid blue"
@@ -137,7 +143,7 @@ class What extends Component {
           >
             <CustomListItem
               // height="xsmall"
-              animation="slide-left"
+              // animation="slide-left"
               // color="$black"
               // bgColor="orange"
               border="1px solid blue"
@@ -169,7 +175,7 @@ class What extends Component {
             </CustomListItem>
             <CustomListItem
               // height="xsmall"
-              animation="slide-left"
+              // animation="slide-left"
               // color="$black"
               // bgColor="orange"
               border="1px solid blue"
@@ -185,7 +191,7 @@ class What extends Component {
             </CustomListItem>
             <CustomListItem
               // height="xsmall"
-              // animation="slide-left"
+              animation="slide-left"
               // color="$black"
               // bgColor="orange"
               border="1px solid blue"
@@ -217,7 +223,7 @@ class What extends Component {
             </CustomListItem>
             <CustomListItem
               // height="xsmall"
-              // animation="slide-left"
+              animation="slide-left"
               // color="$black"
               // bgColor="orange"
               border="1px solid blue"
