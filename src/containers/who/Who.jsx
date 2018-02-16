@@ -16,7 +16,10 @@ class Who extends Component {
       <div className="who">
         <Section 
           // margin={{top: 'large'}}
-          pad="none"
+          pad='none'
+          align='stretch'
+          alignContent='center'
+          appCentered='true'
         > 
 
           {/* 3 */}
@@ -40,6 +43,7 @@ class Who extends Component {
           <Image 
             size='large' 
             src={ecosystem}
+            full='true'
             caption='Figure 1: Current Ecosystem' 
           />
 
@@ -55,13 +59,19 @@ class Who extends Component {
           </p>
 
           {/* 3.2.1 */}
-          <CustomList title="Travel Agent"> 
-            <p className='paragraph'>
-              Travel agents appeared first as an intermediary between travelers and hotels
-              in order to facilitate trip planning. While the internet has left brick and mortar
-              travel agencies largely obsolete, they do still exist and are often helpful in
-              booking group trips.
-            </p>
+          <Heading 
+            align='center'
+            margin='medium'
+            tag='h4'>
+            Travel Agent
+          </Heading>
+          <p className='paragraph'>
+            Travel agents appeared first as an intermediary between travelers and hotels
+            in order to facilitate trip planning. While the internet has left brick and mortar
+            travel agencies largely obsolete, they do still exist and are often helpful in
+            booking group trips.
+          </p>
+          <CustomList> 
             <CustomListItem
               //height="auto"
               // animation="slide-left"
