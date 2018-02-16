@@ -37,7 +37,9 @@ class CustomList extends Component {
           alignContent='stretch'
           wrap={true}
           responsive={true}
-          pad={pad}
+          pad={{vertical: 'large'}}
+          size='full'
+          // full='true'
           // margin='small'
         >
         {this.props.title ?
