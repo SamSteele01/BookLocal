@@ -26,10 +26,12 @@ class Why extends Component {
             Why
           </Heading> */}
           <div className='heading'>Why</div>
-          <Paragraph align='center' size='medium' margin='small'>
+          {/* <Paragraph align='center' size='medium' margin='small'> */}
+          <div className="paragraph">
             To understand the motivation for BookLocal we identify a few key issues with
             the current hotel reservation model and propose solutions.
-          </Paragraph>
+          </div>
+          {/* </Paragraph> */}
           <Problems>
             <CustomList title="High commission payments." 
               // colorIndex='warning'
@@ -183,15 +185,15 @@ class Why extends Component {
           <Solutions>
             <CustomList 
               title="Brand new revenue structure."
-              color="white"
-              bgColor={colors.blue3}
+              color={colors.fontGray}
+              // bgColor={colors.blue3}
               >
               <CustomListItem
                 // height="xsmall"
                 // animation="slide-left"
-                // color="$black"
-                bgColor="white"
-                // border="1px solid blue"
+                color="white"
+                bgColor={colors.headerGray}
+                border={`2px solid ${colors.orange3}`}
                 borderRad
                 classNames="who__card-font"
               >
@@ -201,15 +203,15 @@ class Why extends Component {
             </CustomList>
             <CustomList 
               title="Open sourced contracts."
-              color="white"
-              bgColor={colors.blue3}
+              color={colors.fontGray}
+              // bgColor={colors.blue3}
             >
               <CustomListItem
                 // height="xsmall"
                 // animation="slide-left"
-                // color="$black"
-                // bgColor="orange"
-                // border="1px solid blue"
+                color="white"
+                bgColor={colors.blue2}
+                // border={`2px solid ${colors.orange3}`}
                 borderRad
                 classNames="who__card-font"
               >
@@ -220,15 +222,15 @@ class Why extends Component {
             </CustomList>
             <CustomList 
               title="Holistic design."
-              color="white"
-              bgColor={colors.blue3}
+              color={colors.fontGray}
+              // bgColor={colors.blue3}
               >
               <CustomListItem
                 // height="xsmall"
                 // animation="slide-left"
-                // color="$black"
-                // bgColor="orange"
-                // border="1px solid blue"
+                color="white"
+                bgColor={colors.headerGray}
+                border={`2px solid ${colors.orange3}`}
                 borderRad
                 classNames="who__card-font"
               >
@@ -239,9 +241,9 @@ class Why extends Component {
               <CustomListItem
                 // height="xsmall"
                 // animation="slide-left"
-                // color="$black"
-                // bgColor="orange"
-                // border="1px solid blue"
+                color="white"
+                bgColor={colors.gray}
+                border={`2px solid ${colors.orange3}`}
                 borderRad
                 classNames="who__card-font"
               >

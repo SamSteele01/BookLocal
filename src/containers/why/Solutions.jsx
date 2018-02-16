@@ -15,11 +15,9 @@ class Solutions extends Component {
           tag='h2'>
           Solutions
         </Heading>
-        <Paragraph align='center' 
-        // className="white"
-        >
+        <p className='paragraph'>
           BookLocal will design a platform that incorporates the best features of the current system while omitting middlemen.
-        </Paragraph>
+        </p>
         {this.props.children}
       </div>
     );

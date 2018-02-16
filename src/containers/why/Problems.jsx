@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Paragraph from 'grommet/components/Paragraph';
 import Heading from 'grommet/components/Heading';
+import colors from '../../styles/colors';
 
 class Problems extends Component {
 
@@ -13,10 +14,10 @@ class Problems extends Component {
           tag='h2'>
           Problems
         </Heading>
-        <Paragraph align='center' size='medium' margin='small'>
+        <p className='paragraph' style={{color: colors.fontGray}}>
           The hotel booking industry is fragmented with no fewer than five different
           groups working for commission between travelers and hotels. Problems include:
-        </Paragraph>
+        </p>
         {this.props.children}
       </div>
     );
