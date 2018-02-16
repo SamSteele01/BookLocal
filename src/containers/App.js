@@ -18,11 +18,16 @@ class App extends Component {
         <Header/>
         <Logo/>
         <Hero image="blockchain"/>
+        <Header/>
         <What/>
+        <Header/>
         <Why/>
+        <Header/>
         <Who/>
+        <Header/>
         <How/>
         <Hero image="exchange-building"/>
+        <Header/>
         <Steps/>
         <Footer/>
       </div>
