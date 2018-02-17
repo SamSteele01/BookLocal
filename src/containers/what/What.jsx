@@ -5,10 +5,6 @@ import Heading from 'grommet/components/Heading';
 import Image from 'grommet/components/Image';
 import CustomList from '../CustomList';
 import CustomListItem from '../CustomListItem';
-// import SearchIcon from 'grommet/components/icons/base/Search';
-// import CompareIcon from 'grommet/components/icons/base/Compare';
-// import CheckboxSelectedIcon from 'grommet/components/icons/base/CheckboxSelected';
-// import MoneyIcon from 'grommet/components/icons/base/Money';
 import Search from '../../icons/search.png';
 import Compare from '../../icons/git-compare.png';
 import Reception from '../../icons/hotel_reception-512-bw.png';
@@ -27,20 +23,13 @@ class What extends Component {
     return (
       <div className='what'>
         <Section 
-          // margin={{top: 'large'}} 
           pad='none'
           align='stretch'
           alignContent='center'
-          // alignSelf='stretch'
           appCentered='true'
         > 
 
           {/* 1 */}
-          {/* <Heading align='center' 
- 	 	 	 	 	 	 margin='medium'
-            tag='h1'>
-            What
-          </Heading> */}
           <div className='heading'>What</div>
           <p className='paragraph-white'>
             The vision for BookLocal is to connect travelers directly to their hotel of choice

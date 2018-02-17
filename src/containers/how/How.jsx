@@ -25,11 +25,6 @@ export default class How extends Component {
                 > 
 
                     {/* 4 */}
-                    {/* <Heading align='center' 
- 	 	 	 	 	 	 margin='medium'
-                        tag='h2'>
-                        How
-                    </Heading> */}
                     <div className='heading'>How</div>
                     <p className='paragraph'>
                         The heart of BookLocal will reside in a series of smart contracts on the public
@@ -48,6 +43,7 @@ export default class How extends Component {
                         room. Figure 3 below represents this flow of information for a simple
                         ecosystem consisting of three hotels and three successful travelers.
                     </p>
+
                     <div className='image-container'>
                         <img
                             src={expandedEcosystemImg}
@@ -55,8 +51,7 @@ export default class How extends Component {
                         />
                         <span>Figure 3: Expanded BookLocal Ecosystem</span>
                     </div>
-                        {/* size='large'  */}
-                        {/* full='true' */}
+
                     <p className='paragraph'>
                         Take note of the following systems:
                     </p>
@@ -122,12 +117,12 @@ export default class How extends Component {
                         terminate upon checkout whereby the final balances are settled. Visually we
                         represent the flow of data below:
                     </p>
+
                     <div className='image-container'>
                         <img
                             src={plasmaChainImg}
                             className='image'
                         />
-                        {/* <span>Figure 3: Expanded BookLocal Ecosystem</span> */}
                     </div>
                     
                     {/* 4.2 */}
@@ -172,16 +167,6 @@ export default class How extends Component {
                     </p>
 
                     {/* 4.2.3 */}
-                    {/* <CustomList 
-                        pad
-                        title="Book"
-                        maxCount={3}
-                        color
-                        bgColor
-                        border
-                        borderRad
-                        classNames
-                    >  */}
                     <Heading align='center' 
  	 	 	 	 	 	 margin='medium'
                         tag='h4'>
@@ -196,7 +181,6 @@ export default class How extends Component {
                         masonry={false}
                         justify='center'
                         maxCount={3}
-                        // size='small'
                     >
                         <CustomListItem
                             //height="auto"
@@ -207,7 +191,6 @@ export default class How extends Component {
                             borderRad="5px"
                             classNames="how__card-font"
                         >
-                            {/* <div>&#8226;</div> */}
                             <div>
                                 Send exactly the asking rate.
                             </div>
@@ -221,7 +204,6 @@ export default class How extends Component {
                             borderRad="5px"
                             classNames="how__card-font"
                         >
-                            {/* <div>&#8226;</div> */}
                             <div>
                                 Send more than the asking rate and use the BookLocal wallet to pay for
                                 food and activities during the trip. This works as a budgeting commitment
@@ -237,7 +219,6 @@ export default class How extends Component {
                             borderRad="5px"
                             classNames="how__card-font"
                         >
-                            {/* <div>&#8226;</div> */}
                             <div>
                                 Send some amount less than the upfront asking rate (if booking well in
                                 advance) to hold your room for a period of time and pay the remainder
@@ -246,7 +227,6 @@ export default class How extends Component {
                             </div>
                         </CustomListItem>
                     </Columns>
-                    {/* </CustomList> */}
 
                     {/* 4.2.4 */}
                     <Heading align='center' 

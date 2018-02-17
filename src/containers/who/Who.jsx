@@ -15,7 +15,6 @@ class Who extends Component {
     return (
       <div className="who">
         <Section 
-          // margin={{top: 'large'}}
           pad='none'
           align='stretch'
           alignContent='center'
@@ -23,11 +22,6 @@ class Who extends Component {
         > 
 
           {/* 3 */}
-          {/* <Heading align='center' 
- 	 	 	 	 	 	 margin='medium'
-            tag='h2'>
-            Who
-          </Heading> */}
           <div className='heading'>Who</div>
           <p className='paragraph'>
             The current ecosystem has too many players trying to earn a share of the final room price. Figure 1 shows the network of relationships, each of which is explained below.
@@ -83,7 +77,6 @@ class Who extends Component {
               borderRad
               classNames="why__card-font"
             >
-              {/* <div>&#8226;</div> */}
               <div><i className="underline">Value:</i> Travel agents at their best will remove the burden of research and
                 planning from the customer and provide individualized travel suggestions.
                 Further, the hotel industry stands to benefit since the commission rates
@@ -99,7 +92,6 @@ class Who extends Component {
               borderRad
               classNames="why__card-font"
             >
-              {/* <div>&#8226;</div> */}
               <div><i className="underline">Cost:</i> Conflicts of interest may arise when the travel agent is secretly
               incentivized by higher paying hotels. In these cases, the traveler may not
               receive the best available deal for their preferences.
@@ -134,7 +126,6 @@ class Who extends Component {
               borderRad
               classNames="why__card-font"
             >
-              {/* <div>&#8226;</div> */}
               <div><i className="underline">Value:</i> The benefit of a global distribution system lies in it’s network and
               the consequent ability to bundle airline deals with hotel and car rental
               service providers. However, online travel agents (OTAs) are now able
@@ -151,7 +142,6 @@ class Who extends Component {
               borderRad
               classNames="why__card-font"
             >
-              {/* <div>&#8226;</div> */}
               <div><i className="underline">Cost:</i> Availability and pricing information can be slow and spotty since
               global distribution systems typically act between service providers and
               travel agents rather than communicating directly with the travelers.
@@ -189,7 +179,6 @@ class Who extends Component {
               borderRad
               classNames="why__card-font"
             >
-              {/* <div>&#8226;</div> */}
               <div><i className="underline">Value:</i> Online travel agencies are easy to use and can provide discounts
               when bundling a flight, room, and rental car.
               </div>
@@ -203,7 +192,6 @@ class Who extends Component {
               borderRad
               classNames="why__card-font"
             >
-              {/* <div>&#8226;</div> */}
               <div><i className="underline">Cost:</i> High commission rates charged by OTAs and various payment reconciliation
                 methods add costs to the hotel which ultimately falls, at least
                 in part, to the traveler. Further, booking through an OTA complicates the
@@ -243,7 +231,6 @@ class Who extends Component {
               borderRad
               classNames="why__card-font"
             >
-              {/* <div>&#8226;</div> */}
               <div><i className="underline">Value:</i> Automates much of the hotel’s inventory planning and centralizes
               access to various distribution channels.
               </div>
@@ -257,7 +244,6 @@ class Who extends Component {
               borderRad
               classNames="why__card-font"
             >
-              {/* <div>&#8226;</div> */}
               <div><i className="underline">Cost:</i> Most channel management companies operate on the software as
               a service (SaaS) model which further increases the hotel’s operating cost
               and adds complexity into the hotel ecosystem.
@@ -290,7 +276,6 @@ class Who extends Component {
               borderRad
               classNames="why__card-font"
             >
-              {/* <div>&#8226;</div> */}
               <div><i className="underline">Value:</i> A good property management system can make the life of a hotelier
               much easier by automating and centralizing many of the daily operations.
               </div>
@@ -304,7 +289,6 @@ class Who extends Component {
               borderRad
               classNames="why__card-font"
             >
-              {/* <div>&#8226;</div> */}
               <div><i className="underline">Cost:</i> Lack of customization and complicated interfaces makes it difficult
               to train new workers.
               </div>
@@ -324,8 +308,7 @@ class Who extends Component {
             the traveler, much of the current ecosystem can be bypassed. As such, figure 2
             represents our vision after full implementation.
           </p>
-          {/* <CustomList >  */}
-          
+
           <div className='image-container'>
               <img
                   src={ecosystem2}
@@ -339,7 +322,6 @@ class Who extends Component {
               agencies in order to provide seamless integration for early-adopting hotels and
               late-adopting travelers.
             </p>
-          {/* </CustomList> */}
         </Section>
       </div>
     );
