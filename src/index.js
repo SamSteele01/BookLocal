@@ -21,6 +21,7 @@ ReactDOM.render((
             <Route path="/home" component={Home} />
             <Route path="/register" component={ApplicationForm} />
             <Route path="/about" component={Prospectus}/>
+            <Route exact path="/" component={Home} />
           </BaseLayout>
       </Router>
   ),
