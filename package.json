@@ -52,11 +52,13 @@
   "devDependencies": {
     "node-sass": "^4.7.2",
     "npm-run-all": "^4.1.2",
-    "sass-loader": "^6.0.6"
+    "sass-loader": "^6.0.6",
+    "sync-files": "^1.0.3"
   },
   "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
+    "sync-assets": "sync-files $(dirname $(node -p 'require.resolve(\"@aragon/ui\")')) public/aragon-ui",
+    "build": "npm run sync-assets && node scripts/build.js",
+    "start": "npm run sync-assets && node scripts/start.js",
     "test": "node scripts/test.js --env=jsdom",
     "gen:sass-watch": "sass --watch src/styles/App.scss:src/styles/App.css",
     "dev": "npm-run-all --parallel start gen:sass-watch"
