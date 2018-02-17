@@ -11,17 +11,35 @@ $font-gray: #464749;
 $header-gray: #3C3C3C;
 $gray: rgb(71, 71, 71);
 
+// media queries //
+$mob: 480px;
+$tab: 768px;
+$desk: 992px;
+$xldesk: 1200px;
+
+
 .App {
   text-align: center;
 }
 
+//header navigation styles //
+
 .App-header {
-  background-color: $header-gray;
-  height: 70px;
-  /*padding: 20px;*/
-  border-bottom: 5px solid #E66E1C;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 20px;
+  border-bottom: 1px solid $gray;
   color: white;
+  @media (min-width: $tab) {
+    justify-content: flex-start;
+  }
   /*hide on scroll*/
+}
+
+.logo {
+  width: 200px;
 }
 
 .App-title {
@@ -48,19 +66,19 @@ $gray: rgb(71, 71, 71);
 .what {
   background-color: $gray;
   color: #FFF;
-  
+
 }
 
 .why {
   background-color: white;
   color: $logo-blue;
-  
+
 }
 
 .who {
   background-color: white;
   color: $font-gray;
-  
+
 }
 
 .how {
@@ -115,7 +133,7 @@ p {
 }
 
 %paragraph {
-  
+
   // max-width: 576px;
   margin-left: 0;
   margin-top: 24px;
