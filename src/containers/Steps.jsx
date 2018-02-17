@@ -53,7 +53,9 @@ export default class Steps extends Component {
                     token (as introduced in ERC-721) to provide temporary access for non-owners.
                     Applied to a hotel, our model does the following:
                 </p>
-                <CustomList > 
+                <CustomList 
+                    bgColor={colors.gray}
+                > 
                     <CustomListItem
                         //height="auto"
                         // animation="slide-left"
@@ -86,7 +88,7 @@ export default class Steps extends Component {
                     </CustomListItem>
                     <CustomListItem
                         //height="auto"
-                        // animation="slide-left"
+                        animation="slide-left"
                         // color="$black"
                         // bgColor="orange"
                         border="1px solid blue"
@@ -146,7 +148,9 @@ export default class Steps extends Component {
                     the minimum viable interface for a traveler will extend the wallet to provide
                     a graphical interface for the following methods:
                 </p>
-                <CustomList>
+                <CustomList
+                    bgColor={colors.gray}
+                >
                     <CustomListItem
                         //height="auto"
                         // animation="slide-left"
@@ -191,7 +195,7 @@ export default class Steps extends Component {
                     </CustomListItem>
                     <CustomListItem
                         //height="auto"
-                        // animation="slide-left"
+                        animation="slide-left"
                         // color="$black"
                         // bgColor="orange"
                         border="1px solid blue"
@@ -205,7 +209,7 @@ export default class Steps extends Component {
                     </CustomListItem>
                     <CustomListItem
                         //height="auto"
-                        // animation="slide-left"
+                        animation="slide-left"
                         // color="$black"
                         // bgColor="orange"
                         border="1px solid blue"
@@ -234,7 +238,9 @@ export default class Steps extends Component {
                     permissions. Further, the minimum viable interface for a hotel will also
                     include a graphical interface for the following methods:
                 </p>
-                <CustomList>
+                <CustomList
+                    bgColor={colors.gray}
+                >
                     <CustomListItem
                         //height="auto"
                         // animation="slide-left"
@@ -265,7 +271,7 @@ export default class Steps extends Component {
                     </CustomListItem>
                     <CustomListItem
                         //height="auto"
-                        // animation="slide-left"
+                        animation="slide-left"
                         // color="$black"
                         // bgColor="orange"
                         border="1px solid blue"
@@ -279,7 +285,7 @@ export default class Steps extends Component {
                     </CustomListItem>
                     <CustomListItem
                         //height="auto"
-                        // animation="slide-left"
+                        animation="slide-left"
                         // color="$black"
                         // bgColor="orange"
                         border="1px solid blue"
