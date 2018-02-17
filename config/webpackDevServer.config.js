@@ -52,7 +52,8 @@ module.exports = function(proxy, allowedHost) {
     contentBase: [
         path.dirname(require.resolve('@aragon/ui')),
         path.join(__dirname, 'public'),
-        paths.appPublic],
+        paths.appPublic
+      ],
     // By default files from `contentBase` will not trigger a page reload.
     watchContentBase: true,
     // Enable hot reloading server. It will provide /sockjs-node/ endpoint
