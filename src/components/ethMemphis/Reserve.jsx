@@ -6,7 +6,7 @@ let web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"));
 
 let RRAbi = require('../../../abis/RoomRentingAbi.js');
 let RRAddress = '0x345ca3e014aaf5dca488057592ee47305d9b3e10';
-let RR = web3.eth.contract(RRAbi).at(RRAddress);
+let RR = new web3.eth.Contract(RRAbi, RRAddress);
 
 
 class Reserve extends Component{
