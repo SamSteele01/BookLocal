@@ -15,21 +15,20 @@ class Prospectus extends Component {
   render() {
     return (
       <div className="Prospectus">
-        <Header/>
+        {/* <Header/> */}
         <Logo/>
         <Hero image="blockchain"/>
-        <Header/>
+        {/* <Header/> */}
         <What/>
-        <Header/>
+        {/* <Header/> */}
         <Why/>
-        <Header/>
+        {/* <Header/> */}
         <Who/>
-        <Header/>
+        {/* <Header/> */}
         <How/>
         <Hero image="exchange-building"/>
-        <Header/>
+        {/* <Header/> */}
         <Steps/>
-        <Footer/>
       </div>
     );
   }
