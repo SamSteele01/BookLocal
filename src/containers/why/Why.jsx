@@ -33,6 +33,7 @@ class Why extends Component {
           </div>
           {/* </Paragraph> */}
           <Problems>
+            {/* needs to only be one or three cards wide, not two */}
             <CustomList title="High commission payments." 
               // colorIndex='warning'
               >
@@ -50,7 +51,7 @@ class Why extends Component {
               </CustomListItem>
               <CustomListItem 
                 // height="xsmall"
-                animation="slide-left"
+                // animation="slide-left"
                 color="white"
                 bgColor={colors.gray}
                 border={`2px solid ${colors.orange3}`}
@@ -63,7 +64,7 @@ class Why extends Component {
               </CustomListItem>
               <CustomListItem 
                 // height="xsmall"
-                // animation="slide-left"
+                animation="slide-left"
                 color="white"
                 bgColor={colors.headerGray}
                 border={`2px solid ${colors.orange3}`}
@@ -77,7 +78,7 @@ class Why extends Component {
             </CustomList>
             <Box
               direction='row'
-              justify='between'
+              justify='around'
               align='center'
               alignSelf='stretch'
               // full='horizontal'
@@ -91,6 +92,14 @@ class Why extends Component {
               <div style={{fontSize: 18}}>
                 Abuse of power in legal agreements.
               </div>
+
+              {/* <div className='image-container'>
+                <img
+                    src={ecosystem2}
+                    className='image'
+                />
+                <span>Figure 2: BookLocal Ecosystem</span>
+              </div> */}
               <Image
                 size='thumb'
                 src={LegalScale}
@@ -118,7 +127,7 @@ class Why extends Component {
               </CustomListItem>
               <CustomListItem
                 // height="xsmall"
-                animation="slide-left"
+                // animation="slide-left"
                 color="white"
                 bgColor={colors.blue1}
                 // border={`2px solid ${colors.orange3}`}
@@ -134,7 +143,7 @@ class Why extends Component {
               </CustomListItem>
               <CustomListItem
                 // height="xsmall"
-                // animation="slide-left"
+                animation="slide-left"
                 color="white"
                 bgColor={colors.blue2}
                 // border={`2px solid ${colors.orange3}`}
@@ -151,7 +160,7 @@ class Why extends Component {
             <CustomList title="Fragmented computer systems.">
               <CustomListItem
                 // height="xsmall"
-                animation="slide-left"
+                // animation="slide-left"
                 color="white"
                 bgColor={colors.headerGray}
                 border={`2px solid ${colors.orange3}`}
@@ -167,7 +176,7 @@ class Why extends Component {
               </CustomListItem>
               <CustomListItem
                 // height="xsmall"
-                // animation="slide-left"
+                animation="slide-left"
                 color="white"
                 bgColor={colors.gray}
                 border={`2px solid ${colors.orange3}`}
@@ -240,7 +249,7 @@ class Why extends Component {
               </CustomListItem>
               <CustomListItem
                 // height="xsmall"
-                // animation="slide-left"
+                animation="slide-left"
                 color="white"
                 bgColor={colors.gray}
                 border={`2px solid ${colors.orange3}`}
