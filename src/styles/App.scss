@@ -11,17 +11,41 @@ $font-gray: #464749;
 $header-gray: #3C3C3C;
 $gray: rgb(71, 71, 71);
 
+$mob: 480px;
+$tab: 768px;
+$desk: 922px;
+$xldesk: 1200px;
+
+/* Todo
+- Figure out logo size
+- Set flex variables for browsers
+*/
+
 .App {
   text-align: center;
 }
 
+
+// header navigation styles //
 .App-header {
-  background-color: $header-gray;
-  height: 70px;
-  /*padding: 20px;*/
-  border-bottom: 5px solid #E66E1C;
-  color: white;
+  background-color: white;
+  padding: 5px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $header-gray;
+  border-bottom: solid 1px $gray;
   /*hide on scroll*/
+  @media (min-width: $tab) {
+    justify-content: flex-start;
+  }
+}
+
+.logo {
+  max-width: 200px;
+  @media (min-width: $desk) {
+    max-width: 250px;
+  }
 }
 
 .App-title {
@@ -112,7 +136,6 @@ p {
 }
 
 %paragraph {
-  max-width: 576px;
   margin-left: 0;
   margin-top: 24px;
   margin-bottom: 24px;
@@ -138,7 +161,6 @@ p {
   line-height: 1.125;
   text-align: center;
   font-weight: 300;
-  max-width: 100%;
   // color: white;
   // border-top: 5px solid #E66E1C;
 }
