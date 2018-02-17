@@ -11,7 +11,7 @@ $font-gray: #464749;
 $header-gray: #3C3C3C;
 $gray: rgb(71, 71, 71);
 
-.Prospectus {
+.App {
   text-align: center;
 }
 
@@ -31,6 +31,93 @@ $gray: rgb(71, 71, 71);
 .App-intro {
   font-size: large;
 }
+
+/* NAVBAR */
+
+.navbar {
+  position: fixed;
+  padding: 5px;
+  background: #0c1a2b;
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
+}
+
+.navbar a {
+  color: #fff;
+}
+
+.navbar a:active,
+.navbar a:focus,
+.navbar a:hover {
+  background: #233e5e;
+}
+
+.navbar .pure-menu-heading {
+  font-weight: bold;
+  text-transform: none;
+}
+
+.navbar .navbar-right {
+  float: right;
+}
+
+.navbar .uport-logo {
+  height: 16px;
+  margin-right: 10px;
+}
+#loader {
+  width: 100px;
+  display: none;
+}
+
+  /* Eth-Memphis */
+
+  @media screen and (min-width: 1326px){
+    .Container {
+      background-color: gray;
+      display: grid;
+      grid-template-columns: repeat(3, 2fr);
+      gridAutoRow: '60px 60px 60px';
+      gridAutoColumn: '90px 90px 90px';
+      gridAutoFlow: 'row';
+      alignItems: 'start';
+      justifyItems: '';
+      gridTemplateAreas: '';
+      alignContent: 'center';
+    }
+  }
+  
+  @media screen and (max-width: 1325px) and (min-width: 911px) {
+      .Container {
+          background-color: lavender;
+          display: grid;
+          grid-template-columns: repeat(2, 2fr);
+          gridAutoRow: '60px 60px 60px';
+          gridAutoColumn: '90px 90px 90px';
+          gridAutoFlow: 'row';
+          alignItems: 'start';
+          justifyItems: '';
+          gridTemplateAreas: '';
+          alignContent: 'center';
+      }
+  }
+  
+  
+  @media screen and (max-width: 910px) {
+    .Container {
+      background-color: lightgreen;
+      display: grid;
+      grid-template-columns:  2fr;
+      gridAutoRow: '60px 60px 60px';
+      gridAutoColumn: '90px 90px 90px';
+      gridAutoFlow: 'row';
+      alignItems: 'start';
+      justifyItems: '';
+      gridTemplateAreas: '';
+      alignContent: 'center';
+    }
+  }
+  
+/* Prospectus */
 
 .Logo {
   margin: 15px auto;
