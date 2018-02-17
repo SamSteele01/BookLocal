@@ -48,16 +48,19 @@ $gray: rgb(71, 71, 71);
 .what {
   background-color: $gray;
   color: #FFF;
+  
 }
 
 .why {
   background-color: white;
   color: $logo-blue;
+  
 }
 
 .who {
-  background-color: $blue1;
-  color: #FFF;
+  background-color: white;
+  color: $font-gray;
+  
 }
 
 .how {
@@ -112,7 +115,8 @@ p {
 }
 
 %paragraph {
-  max-width: 576px;
+  
+  // max-width: 576px;
   margin-left: 0;
   margin-top: 24px;
   margin-bottom: 24px;
@@ -151,19 +155,6 @@ h2, h3 {
   font-weight: bold;
 }
 
-.blue-web {
-  background-image: url('../images/blue-web.jpeg');
-}
-.blockchain {
-  background-image: url('../images/blockchain-technologies.jpg');
-}
-.blue-world-dots {
-  background-image: url('../images/blue-world-dots.jpeg');
-}
-.exchange-building {
-  background-image: url('../images/exchange-building.jpg');
-}
-
 .hero-img {
   height: 60vw;
   width: 100vw;
@@ -175,6 +166,34 @@ h2, h3 {
   display: table-cell;
   vertical-align: middle;
 
+}
+
+.blue-web {
+  background-image: url('../images/blue-web.jpeg');
+}
+.blockchain {
+  background-image: url('../images/blockchain-technologies.jpg');
+}
+.blue-world-dots {
+  background-image: url('../images/blue-world-dots.jpeg');
+}
+.exchange-building {
+  background-image: url('../images/exchange-building.jpg');
+  background-position: top;
+}
+
+.image-container {
+  margin-top: 24px;
+  margin-bottom: 48px;
+
+}
+
+.image {
+  margin: auto;
+  display: block;
+  height: auto;
+  // width: 576px;
+  max-width: 100%;
 }
 
 
