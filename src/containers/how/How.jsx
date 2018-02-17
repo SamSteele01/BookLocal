@@ -20,6 +20,8 @@ export default class How extends Component {
                     align='stretch'
                     alignContent='center'
                     appCentered='true'
+                    alignSelf='center'
+                    // justify='center'
                 > 
 
                     {/* 4 */}
@@ -46,12 +48,15 @@ export default class How extends Component {
                         room. Figure 3 below represents this flow of information for a simple
                         ecosystem consisting of three hotels and three successful travelers.
                     </p>
-                    <Image 
-                        size='large' 
-                        src={expandedEcosystemImg}
-                        full='true'
-                        caption='Figure 3: Expanded BookLocal Ecosystem' 
-                    />
+                    <div className='image-container'>
+                        <img
+                            src={expandedEcosystemImg}
+                            className='image'
+                        />
+                        <span>Figure 3: Expanded BookLocal Ecosystem</span>
+                    </div>
+                        {/* size='large'  */}
+                        {/* full='true' */}
                     <p className='paragraph'>
                         Take note of the following systems:
                     </p>
@@ -117,12 +122,14 @@ export default class How extends Component {
                         terminate upon checkout whereby the final balances are settled. Visually we
                         represent the flow of data below:
                     </p>
-                    <Image 
-                        size='large' 
-                        src={plasmaChainImg} 
-                        full='true'
-                    />
-
+                    <div className='image-container'>
+                        <img
+                            src={plasmaChainImg}
+                            className='image'
+                        />
+                        {/* <span>Figure 3: Expanded BookLocal Ecosystem</span> */}
+                    </div>
+                    
                     {/* 4.2 */}
                     <Heading align='center' 
  	 	 	 	 	 	 margin='medium'
@@ -197,7 +204,7 @@ export default class How extends Component {
                             // color="$black"
                             // bgColor="orange"
                             border="1px solid blue"
-                            borderRad
+                            borderRad="5px"
                             classNames="how__card-font"
                         >
                             {/* <div>&#8226;</div> */}
@@ -211,7 +218,7 @@ export default class How extends Component {
                             // color="$black"
                             // bgColor="orange"
                             border="1px solid blue"
-                            borderRad
+                            borderRad="5px"
                             classNames="how__card-font"
                         >
                             {/* <div>&#8226;</div> */}
@@ -227,7 +234,7 @@ export default class How extends Component {
                             // color="$black"
                             // bgColor="orange"
                             border="1px solid blue"
-                            borderRad
+                            borderRad="5px"
                             classNames="how__card-font"
                         >
                             {/* <div>&#8226;</div> */}
