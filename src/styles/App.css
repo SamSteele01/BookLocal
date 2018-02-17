@@ -3,12 +3,20 @@
   text-align: center; }
 
 .App-header {
-  background-color: #3C3C3C;
-  height: 70px;
-  /*padding: 20px;*/
-  border-bottom: 5px solid #E66E1C;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 20px;
+  border-bottom: 1px solid #474747;
   color: white;
   /*hide on scroll*/ }
+  @media (min-width: 768px) {
+    .App-header {
+      justify-content: flex-start; } }
+
+.logo {
+  width: 200px; }
 
 .App-title {
   font-size: 1.5em; }
