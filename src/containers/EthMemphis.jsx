@@ -12,14 +12,14 @@ import Access from '../components/ethMemphis/Access';
 import Settle from '../components/ethMemphis/Settle';
 import CancelReservation from '../components/ethMemphis/CancelReservation';
 import GetCurrentTime from '../components/ethMemphis/GetCurrentTime';
-import TextInput from '@aragon/ui';
-import Field from '@aragon/ui';
+import TextInput from '@aragon/ui/dist/index.cjs';
+import Field from '@aragon/ui/dist/index.cjs';
 
 let web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"))
 
 let RBAbi = require('../../abis/RoomBaseAbi.js');
 let RBAddress = '0x8273e4b8ed6c78e252a9fca5563adfcc75c91b2a';
-let RB = web3.eth.contract(RBAbi).at(RBAddress);
+let RB = new web3.eth.Contract(RBAbi, RBAddress);
 
 // let ROAbi = require('../../abis/RoomOwnershipAbi.js');
 // let ROAddress = '0x8f0483125fcb9aaaefa9209d8e9d7b9c8b9fb90f';
@@ -27,7 +27,7 @@ let RB = web3.eth.contract(RBAbi).at(RBAddress);
 
 let RRAbi = require('../../abis/RoomRentingAbi.js');
 let RRAddress = '0x345ca3e014aaf5dca488057592ee47305d9b3e10';
-let RR = web3.eth.contract(RRAbi).at(RRAddress);
+let RR = new web3.eth.Contract(RRAbi, RRAddress);
 
 let balance = web3.fromWei(web3.eth.getBalance(web3.eth.coinbase)).toString();
 let ceo = RR.ceo();
