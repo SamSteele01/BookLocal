@@ -40,13 +40,15 @@ class Who extends Component {
               can book a room. The red arrows indicate the most used reservation path.
             </p>
           </CustomList>
-          <Image 
-            size='large' 
-            src={ecosystem}
-            full='true'
-            caption='Figure 1: Current Ecosystem' 
-          />
 
+          <div className='image-container'>
+              <img
+                  src={ecosystem}
+                  className='image'
+              />
+              <span>Figure 1: Current Ecosystem</span>
+          </div>
+         
           {/* 3.2 */}
           <Heading align='center' 
  	 	 	 	 	 	 margin='medium'
@@ -316,18 +318,22 @@ class Who extends Component {
             tag='h4'>
             Proposed Ecosystem
           </Heading>
-            <p className='paragraph'>
-              Since BookLocal will act as a property management system, channel manager,
-              and payment processor for the hotel and provide metasearch capabilities for
-              the traveler, much of the current ecosystem can be bypassed. As such, figure 2
-              represents our vision after full implementation.
-            </p>
+          <p className='paragraph'>
+            Since BookLocal will act as a property management system, channel manager,
+            and payment processor for the hotel and provide metasearch capabilities for
+            the traveler, much of the current ecosystem can be bypassed. As such, figure 2
+            represents our vision after full implementation.
+          </p>
           {/* <CustomList >  */}
-            <Image 
-              size='large' 
-              src={ecosystem2}
-              caption='Figure 2: BookLocal Ecosystem' 
-            />
+          
+          <div className='image-container'>
+              <img
+                  src={ecosystem2}
+                  className='image'
+              />
+              <span>Figure 2: BookLocal Ecosystem</span>
+          </div>
+           
             <p className='paragraph'>
               Note that BookLocal seeks to be fully compatible with current online travel
               agencies in order to provide seamless integration for early-adopting hotels and
