@@ -11,7 +11,7 @@ const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
+// var CopyWebpackPlugin = require('copy-webpack-plugin');
 var fs = require('fs');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
@@ -263,14 +263,14 @@ module.exports = {
     // https://github.com/jmblog/how-to-optimize-momentjs-with-webpack
     // You can remove this if you don't use Moment.js:
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-    new CopyWebpackPlugin([
-      {
-        from: path.dirname(require.resolve('@aragon/ui')),
-        to: path.resolve(
-          path.join(__dirname, 'dist/public')
-        ),
-      },
-    ]),
+    // new CopyWebpackPlugin([
+    //   {
+    //     from: path.dirname(require.resolve('@aragon/ui')),
+    //     to: path.resolve(
+    //       path.join(__dirname, 'dist/public')
+    //     ),
+    //   },
+    // ]),
   ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
