@@ -8,12 +8,14 @@ class Header extends Component {
     return (
       <div>
           <nav>
-            <div className="Logo">
+            <div className="Logo"><Link to="/home">
               <img
                  src={Logo5}
                 alt="BookLocal Logo"
                 // srcSet="http://booklocal.in/wp-content/uploads/2017/07/logo5.png 320w, http://booklocal.in/wp-content/uploads/2017/07/logo5-768x316.png 768w"
               />
+            </Link>
+
             </div>
             <div className="nav-items">
             <Link to="/home" className="pure-menu-heading pure-menu-link">Home</Link>
