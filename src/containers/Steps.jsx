@@ -14,7 +14,7 @@ export default class Steps extends Component {
                     pad='none'
                     align='stretch'
                     alignContent='center'
-                    appCentered='true'
+                    // appCentered='true'
                 > 
 
                 {/* 5 */}
