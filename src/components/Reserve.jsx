@@ -88,13 +88,15 @@ class Reserve extends Component{
       padding: '10px',
     //   fontWeight: 'bold',
       width: '90vw',
+      maxWidth: '750px',
       marginTop: '5px',
       marginBottom: '5px',
     }
     const fieldset={
-        border: 'none',
+      border: 'none',
       borderLeft: '2px solid #E66E1C',
       borderRight: '2px solid #E66E1C',
+
     }
     const legendStyle={
       textDecoration: 'overline underline',
