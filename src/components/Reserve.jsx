@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Web3 from 'web3';
+import moment from 'moment';
 
 let reserve;
 // let web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"));
@@ -28,8 +29,8 @@ class Reserve extends Component{
     super(props)
     this.state = {
       tokenId : '',
-      start: '',
-      stop: '',
+      start: '05/17/2018',
+      stop: '05/21/2018',
       accessCode: '',
       availability: ''
     }
@@ -44,14 +45,20 @@ class Reserve extends Component{
     }
   }
 
+  dateConverter = (mmddyyyy) => {
+    return Math.floor(moment(mmddyyyy).unix() / 86400);
+  }
+
   handleSubmit = (event) => {
     event.preventDefault();
+    // console.log( this.dateConverter(this.state.start));
+    // console.log(this.dateConverter(this.state.stop));
     console.log("Reserve fired!");
     console.log("("+web3.toBigNumber(this.state.tokenId)+","+web3.toBigNumber(this.state.start)+","+web3.toBigNumber(this.state.stop)+","+web3.fromAscii(this.state.accessCode,32)+",{from: "+web3.eth.accounts[0]+", gas: 3000000}");
     reserve = RR.reserve(
       web3.toBigNumber(this.state.tokenId),
-      web3.toBigNumber(this.state.start),
-      web3.toBigNumber(this.state.stop),
+      web3.toBigNumber(this.dateConverter(this.state.start)),
+      web3.toBigNumber(this.dateConverter(this.state.stop)),
       web3.fromAscii(this.state.accessCode,32),
       {from: web3.eth.accounts[0], gas: 3000000},
       (err,res) => {
@@ -77,15 +84,17 @@ class Reserve extends Component{
 
   render(){
     const style={
-      backgroundColor: '#4D4D4D',
+    //   backgroundColor: '#4D4D4D',
       padding: '10px',
-      fontWeight: 'bold',
-      width: '420px',
+    //   fontWeight: 'bold',
+      width: '90vw',
       marginTop: '5px',
       marginBottom: '5px',
     }
     const fieldset={
-      border: '2px solid #F4BE41'
+        border: 'none',
+      borderLeft: '2px solid #E66E1C',
+      borderRight: '2px solid #E66E1C',
     }
     const legendStyle={
       textDecoration: 'overline underline',
@@ -94,29 +103,51 @@ class Reserve extends Component{
       backgroundColor: 'white',
       textAlign: 'center',
       fontSize: '40px',
-      color: '#3973B5'
+      fontWeight: '200',
+      color: '#3C5BBE',
+      marginBottom: '25px'
     }
     const labelStyle={
-      border: "2px solid #383838",
-      borderTop: "2px solid red",
+    //   border: "2px solid #383838",
+    //   borderTop: "2px solid red",
       backgroundColor: "white",
+
+      padding: "10px 30px",
+      display: "flex"
     }
+    const inputStyle={
+        height: "18px",
+        flexGrow: "1",
+        marginLeft: "6px",
+        border: "1px solid #ccc",
+        boxShadow: "inset 0 1px 3px #ddd",
+        borderRadius: "4px",
+        fontSize: "12px"
+      }
+      const inputButtonStyle={
+          marginTop: '25px',
+          borderRadius: "4px"
+      }
     return(
       <div style={style} className="reserve">
         <fieldset style={fieldset}>
           <legend style={legendStyle}>Reserve Your Room</legend>
-            <label style={labelStyle}>Room Id:
-              <input id="tokenId" type="text" onChange={this.handleTextChange} value={this.state.tokenId} />
-            <div style={labelStyle}> Start: </div>
-              <input id="start" type="text" onChange={this.handleTextChange} value={this.state.start} />
-            <div style={labelStyle}> Stop: </div>
-              <input id="stop" type="text" onChange={this.handleTextChange} value={this.state.stop} />
-            <div style={labelStyle}> Access Code: </div>
-              <input id="accessCode" type="text" onChange={this.handleTextChange} value={this.state.accessCode} />
-            <hr />
-            <input id="search" type="submit" value="Reserve" onClick={this.handleSubmit} />
+            <div style={labelStyle}>Room Id: 
+              <input id="tokenId" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.tokenId} />
+            </div>
+            <div style={labelStyle}> Check-in date: 
+              <input id="start" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.start} />
+            </div>
+            <div style={labelStyle}> Check-out date: 
+              <input id="stop" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.stop} />
+            </div>
+            <div style={labelStyle}> Access Code: 
+              <input id="accessCode" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.accessCode} />
+            </div>
+            {/* <hr /> */}
+            <input id="search" type="submit" style={inputButtonStyle} value="Reserve" onClick={this.handleSubmit} />
             {this.state.availability}
-          </label>
+          {/* </label> */}
         </fieldset>
       </div>
     )
