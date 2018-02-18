@@ -4,24 +4,24 @@ $orange2: rgb(226, 124, 57);
 $orange3: #E66E1C;
 $logo-blue: #3C5BBE;
 $blue1: rgb(128, 178, 231);
-
 $blue2: #185FAC;
 $blue3: rgb(13, 71, 133);
 $font-gray: #464749;
 $header-gray: #3C3C3C;
 $gray: rgb(71, 71, 71);
 
-.App {
+$navy-blue: #0c1a2b;
+
+.base-layout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   text-align: center;
 }
 
-.App-header {
-  background-color: $header-gray;
-  height: 70px;
-  /*padding: 20px;*/
-  border-bottom: 5px solid #E66E1C;
-  color: white;
-  /*hide on scroll*/
+.home {
+  // text-align: center;
 }
 
 .App-title {
@@ -32,17 +32,47 @@ $gray: rgb(71, 71, 71);
   font-size: large;
 }
 
+.App-footer {
+  background-color: $navy-blue;
+  height: 45px;
+  // display: table-cell;
+  vertical-align: bottom;
+  line-height: 45px;
+  border-top: 5px solid #E66E1C;
+  color: white;
+}
+
 /* NAVBAR */
+
+.App-header {
+  background-color: $navy-blue;
+  height: 70px;
+  /*padding: 20px;*/
+  border-bottom: 5px solid #E66E1C;
+  color: white;
+  /*hide on scroll*/
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 
 .navbar {
   position: fixed;
+  height: 70px;
+  width: 50vw;
+  min-width: 275px;
   padding: 5px;
   background: #0c1a2b;
   font-family: 'Oswald', 'Arial Narrow', sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbar a {
   color: #fff;
+
 }
 
 .navbar a:active,
@@ -54,6 +84,7 @@ $gray: rgb(71, 71, 71);
 .navbar .pure-menu-heading {
   font-weight: bold;
   text-transform: none;
+  // height: 70px;
 }
 
 .navbar .navbar-right {
@@ -69,55 +100,105 @@ $gray: rgb(71, 71, 71);
   display: none;
 }
 
+/* Register */
+
+body,
+.pure-g [class*=pure-u] {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
+}
+
+pre {
+  display: block;
+  margin: 20px 0 15px 0;
+  padding: 10px;
+  background: #eee;
+}
+
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 45px 20px;
+}
+
+.pure-button-primary {
+  background-color: #0c1a2b;
+}
+
+.pure-button-primary:hover {
+  background-color: #233e5e;
+}
+
+.pure-form input[type="text"]:focus {
+  border-color: #0c1a2b;
+}
+
+.app {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.reserve {
+
+}
+
   /* Eth-Memphis */
 
-  @media screen and (min-width: 1326px){
-    .Container {
-      background-color: gray;
-      display: grid;
-      grid-template-columns: repeat(3, 2fr);
-      gridAutoRow: '60px 60px 60px';
-      gridAutoColumn: '90px 90px 90px';
-      gridAutoFlow: 'row';
-      alignItems: 'start';
-      justifyItems: '';
-      gridTemplateAreas: '';
-      alignContent: 'center';
-    }
-  }
+  // @media screen and (min-width: 1326px){
+  //   .Container {
+  //     background-color: gray;
+  //     display: grid;
+  //     grid-template-columns: repeat(3, 2fr);
+  //     gridAutoRow: '60px 60px 60px';
+  //     gridAutoColumn: '90px 90px 90px';
+  //     gridAutoFlow: 'row';
+  //     alignItems: 'start';
+  //     justifyItems: '';
+  //     gridTemplateAreas: '';
+  //     alignContent: 'center';
+  //   }
+  // }
   
-  @media screen and (max-width: 1325px) and (min-width: 911px) {
-      .Container {
-          background-color: lavender;
-          display: grid;
-          grid-template-columns: repeat(2, 2fr);
-          gridAutoRow: '60px 60px 60px';
-          gridAutoColumn: '90px 90px 90px';
-          gridAutoFlow: 'row';
-          alignItems: 'start';
-          justifyItems: '';
-          gridTemplateAreas: '';
-          alignContent: 'center';
-      }
-  }
+  // @media screen and (max-width: 1325px) and (min-width: 911px) {
+  //     .Container {
+  //         background-color: lavender;
+  //         display: grid;
+  //         grid-template-columns: repeat(2, 2fr);
+  //         gridAutoRow: '60px 60px 60px';
+  //         gridAutoColumn: '90px 90px 90px';
+  //         gridAutoFlow: 'row';
+  //         alignItems: 'start';
+  //         justifyItems: '';
+  //         gridTemplateAreas: '';
+  //         alignContent: 'center';
+  //     }
+  // }
   
   
-  @media screen and (max-width: 910px) {
-    .Container {
-      background-color: lightgreen;
-      display: grid;
-      grid-template-columns:  2fr;
-      gridAutoRow: '60px 60px 60px';
-      gridAutoColumn: '90px 90px 90px';
-      gridAutoFlow: 'row';
-      alignItems: 'start';
-      justifyItems: '';
-      gridTemplateAreas: '';
-      alignContent: 'center';
-    }
-  }
+  // @media screen and (max-width: 910px) {
+  //   .Container {
+  //     background-color: lightgreen;
+  //     display: grid;
+  //     grid-template-columns:  2fr;
+  //     gridAutoRow: '60px 60px 60px';
+  //     gridAutoColumn: '90px 90px 90px';
+  //     gridAutoFlow: 'row';
+  //     alignItems: 'start';
+  //     justifyItems: '';
+  //     gridTemplateAreas: '';
+  //     alignContent: 'center';
+  //   }
+  // }
   
-/* Prospectus */
+/* Prospectus aka About*/
+
+.prospectus {
+  text-align: center;
+}
 
 .Logo {
   margin: 15px auto;
@@ -284,12 +365,3 @@ h2, h3 {
 }
 
 
-.App-footer {
-  background-color: $header-gray;
-  height: 45px;
-  // display: table-cell;
-  // vertical-align: middle;
-  line-height: 45px;
-  border-top: 5px solid #E66E1C;
-  color: white;
-}
