@@ -8,7 +8,7 @@ import registerServiceWorker from './registerServiceWorker';
 // import App from './containers/App';
 import BaseLayout from './containers/BaseLayout'
 import Home from './components/Home'
-import ApplicationForm from './components/ApplicationForm'
+import App from './containers/App'
 import Prospectus from './containers/Prospectus';
 import './styles/index.css';
 
@@ -19,7 +19,7 @@ ReactDOM.render((
       <Router history={history}>
           <BaseLayout>
             <Route path="/home" component={Home} />
-            <Route path="/register" component={ApplicationForm} />
+            <Route path="/register" component={App} />
             <Route path="/about" component={Prospectus}/>
             <Route exact path="/" component={Home} />
           </BaseLayout>
