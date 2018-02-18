@@ -18,7 +18,7 @@ class Who extends Component {
           pad='none'
           align='stretch'
           alignContent='center'
-          appCentered='true'
+          // appCentered='true'
         > 
 
           {/* 3 */}

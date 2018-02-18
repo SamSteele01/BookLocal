@@ -19,7 +19,7 @@ export default class How extends Component {
                     pad='none'
                     align='stretch'
                     alignContent='center'
-                    appCentered='true'
+                    // appCentered='true'
                     alignSelf='center'
                     // justify='center'
                 > 
