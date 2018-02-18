@@ -136,32 +136,35 @@ class ApplicationForm extends Component{
       width: "-webkit-fill-available"
     }
     return(
-      <div style={style} className="ApplicationForm">
-        <fieldset style={fieldset}>
-          <legend style={roomStyle}>Apply Here!</legend>
-          <p style={labelStyle}>First Name:
-            <input id="firstName" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.firstName} />
-          </p>
-          <p style={labelStyle}>Last Name:
-            <input id="lastName" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.lastName} />
-          </p>
-          <p style={labelStyle}>Email:
-            <input id="email" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.email} />
-          </p>
-          <p style={labelStyle}>GitHub URL:
-            <input id="gitHubUrl" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.gitHubUrl} />
-          </p>
-          <p style={labelStyle}>LinkedIn URL:
-            <input id="linkedInUrl" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.linkedInUrl} />
-          </p>
-          <p style={labelStyle}>Your skills and interests:
-            <input id="interest" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.interest} />
-          </p>
-          <hr/>
-          <p style={labelStyle}>
-            <input id="submit" type="submit" value="Apply!" style={inputStyle} onClick={this.handleSubmit} />
-          </p>
-        </fieldset>
+      <div>
+        
+        <div style={style} className="ApplicationForm">
+          <fieldset style={fieldset}>
+            <legend style={roomStyle}>Register!</legend>
+            <p style={labelStyle}>First Name:
+              <input id="firstName" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.firstName} />
+            </p>
+            <p style={labelStyle}>Last Name:
+              <input id="lastName" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.lastName} />
+            </p>
+            <p style={labelStyle}>Email:
+              <input id="email" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.email} />
+            </p>
+            <p style={labelStyle}>GitHub URL:
+              <input id="gitHubUrl" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.gitHubUrl} />
+            </p>
+            <p style={labelStyle}>LinkedIn URL:
+              <input id="linkedInUrl" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.linkedInUrl} />
+            </p>
+            <p style={labelStyle}>Your skills and interests:
+              <input id="interest" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.interest} />
+            </p>
+            <hr/>
+            <p style={labelStyle}>
+              <input id="submit" type="submit" value="Apply!" style={inputStyle} onClick={this.handleSubmit} />
+            </p>
+          </fieldset>
+        </div>
       </div>
     )
   }
