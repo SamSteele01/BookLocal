@@ -14,7 +14,7 @@ import Reserve from '../../icons/reserve-book.png';
 import ShoppingCart from '../../icons/shopping-cart.png';
 import Sale from '../../icons/point-of-sale.png';
 import Report from '../../icons/report.png';
-import Channel from '../../icons/channel-management.png';
+import Channel from '../../icons/channel.png';
 import colors from '../../styles/colors';
 
 class What extends Component {
@@ -22,12 +22,12 @@ class What extends Component {
   render() {
     return (
       <div className='what'>
-        <Section 
+        <Section
           pad='none'
           align='stretch'
           alignContent='center'
           // appCentered='true'
-        > 
+        >
 
           {/* 1 */}
           <div className='heading'>What</div>
@@ -49,78 +49,45 @@ class What extends Component {
           <p className='paragraph-white'>
             To the traveler, BookLocal will provide the following features:
           </p>
-          
-          <CustomList 
-            bgColor={colors.gray}
-            
-          >
-            <CustomListItem 
-              // height="auto"
-              // animation="slide-left"
-              color="$black"
-              // bgColor="orange"
-              border={`1px solid ${colors.blue1}`}
-              borderRad="5px"
-              classNames="what__card-font"
-            >
+
+          <CustomList bgColor={colors.gray}>
+            <CustomListItem classNames="what__card-font">
               {/* <SearchIcon/> */}
-              <Image
-                size='thumb'
-                src={Search}
-              />
-              Search
-              <div></div>
+              <div className="text-wrapper">
+                <h4 class="search-icon">Search</h4>
+              </div>
             </CustomListItem>
+
             <CustomListItem
               //height="auto"
               // animation="slide-left"
               // color="$black"
               // bgColor="orange"
-              border="1px solid blue"
-              borderRad
+
               classNames="what__card-font"
             >
               {/* <CompareIcon/> */}
-              <Image
-                size='thumb'
-                src={Compare}
-              />
-              Compare
-              <div></div>
+              <h4 class="compare-icon">Compare</h4>
             </CustomListItem>
             <CustomListItem
               //height="auto"
               animation="slide-left"
               // color="$black"
               // bgColor="orange"
-              border="1px solid blue"
-              borderRad
+
               classNames="what__card-font"
             >
               {/* <CheckboxSelectedIcon/> */}
-              <Image
-                size='thumb'
-                src={Reserve}
-              />
-              Book
-              <div></div>
+              <h4 className="book-icon">Booking</h4>
             </CustomListItem>
             <CustomListItem
               //height="xsmall"
               animation="slide-left"
-              // color="$black"
-              // bgColor="orange"
-              border="1px solid blue"
-              borderRad
+
               classNames="what__card-font"
             >
               {/* <MoneyIcon/> */}
-              <Image
-                size='thumb'
-                src={ShoppingCart}
-              />
-              Purchase
-              <div></div>
+              <h4 className="cart-icon">Purchase</h4>
             </CustomListItem>
           </CustomList>
           <p className='paragraph-white'>
@@ -139,12 +106,7 @@ class What extends Component {
               borderRad
               classNames="what__card-font"
             >
-              <Image
-                size='thumb'
-                src={Reception}
-              />
-              Guest Management
-              <div></div>
+              <h4 className="guest-icon">Guest Management</h4>
             </CustomListItem>
             <CustomListItem
               // height="xsmall"
@@ -155,12 +117,7 @@ class What extends Component {
               borderRad
               classNames="what__card-font"
             >
-              <Image
-                size='thumb'
-                src={Housekeeping}
-              />
-              Housekeeping and Maintenance
-              <div></div>
+              <h4 className="housekeeping-icon">Housekeeping and Maintenance</h4>
             </CustomListItem>
             <CustomListItem
               // height="xsmall"
@@ -171,12 +128,7 @@ class What extends Component {
               borderRad
               classNames="what__card-font"
             >
-              <Image
-                size='thumb'
-                src={Revenue}
-              />              
-              Revenue Management
-              <div></div>
+            <h4 className="revenue-icon">Revenue Management</h4>
             </CustomListItem>
             <CustomListItem
               // height="xsmall"
@@ -203,12 +155,7 @@ class What extends Component {
                 borderRad
                 classNames="what__card-font"
               >
-              <Image
-                size='thumb'
-                src={Report}
-              />
-              Report Generation
-              <div></div>
+              <h4 className="report-icon">Report Generation</h4>
             </CustomListItem>
             <CustomListItem
               // height="xsmall"
@@ -219,11 +166,8 @@ class What extends Component {
               borderRad
               classNames="what__card-font"
             >
-              <Image
-                size='thumb'
-                src={Channel}
-              />
-              Channel Management
+
+              <h4 class="channel-icon">Channel Management</h4>
               <div></div>
             </CustomListItem>
           </CustomList>

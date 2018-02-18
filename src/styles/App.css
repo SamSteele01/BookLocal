@@ -115,7 +115,7 @@ nav {
 
 /* Register */
 .app {
-  background-image: url("../images/pattern.jpg");
+  background-image: url("../images/charlotte-coneybeer-108074.jpg");
   background-position: center;
   height: 100%;
   width: 100%;
@@ -139,6 +139,51 @@ nav {
     @media (min-width: 768px) {
       .reserve fieldset h1 {
         font-size: 45px; } }
+
+.channel-icon::before {
+  content: "\f201";
+  padding-right: 5px;
+  font-family: fontawesome; }
+
+.search-icon::before {
+  content: "\f002";
+  padding-right: 5px;
+  font-family: fontawesome; }
+
+.book-icon::before {
+  content: "\f2b9";
+  padding-right: 5px;
+  font-family: fontawesome; }
+
+.compare-icon::before {
+  content: "\f07E";
+  padding-right: 5px;
+  font-family: fontawesome; }
+
+.cart-icon::before {
+  content: "\f07a";
+  padding-right: 5px;
+  font-family: fontawesome; }
+
+.guest-icon::before {
+  content: "\f0c0";
+  padding-right: 5px;
+  font-family: fontawesome; }
+
+.revenue-icon::before {
+  content: "\f09D";
+  padding-right: 5px;
+  font-family: fontawesome; }
+
+.report-icon::before {
+  content: "\f080";
+  padding-right: 5px;
+  font-family: fontawesome; }
+
+.housekeeping-icon::before {
+  content: "\f015";
+  padding-right: 5px;
+  font-family: fontawesome; }
 
 /* Eth-Memphis */
 /* Prospectus aka About*/
@@ -184,7 +229,10 @@ nav {
 
 .what__card-font {
   font-weight: 300;
-  font-size: 26px; }
+  font-size: 26px;
+  border: solid 1px black;
+  height: 100px;
+  display: flex; }
 
 .why__card-font {
   font-weight: 300;
@@ -224,9 +272,9 @@ p {
   color: #464749; }
 
 .heading {
-  font-family: Segoe UI, Arial, sans-serif;
+  font-family: Titillium Web, sans-serif;
   padding: .75em;
-  font-size: 5rem;
+  font-size: 20px;
   line-height: 1.125;
   text-align: center;
   font-weight: 300;
@@ -239,7 +287,7 @@ h2, h3 {
   font-weight: bold; }
 
 .hero-img {
-  height: 60vw;
+  height: 70vh;
   width: 100vw;
   background-repeat: no-repeat;
   background-position: center;
@@ -249,11 +297,16 @@ h2, h3 {
   display: table-cell;
   vertical-align: middle; }
 
+.hero-text {
+  color: white;
+  font-size: 35px;
+  padding: 0px 25px; }
+
 .blue-web {
   background-image: url("../images/blue-web.jpeg"); }
 
 .blockchain {
-  background-image: url("../images/blockchain-technologies.jpg"); }
+  background-image: url("../images/willian-justen-de-vasconcellos-555198.jpg"); }
 
 .blue-world-dots {
   background-image: url("../images/blue-world-dots.jpeg"); }
