@@ -6,44 +6,25 @@
   justify-content: space-between;
   text-align: center; }
 
-.App-title {
-  font-size: 1.5em; }
-
-.App-intro {
-  font-size: large; }
-
 .App-footer {
-  background-color: #0c1a2b;
-  height: 45px;
-  vertical-align: bottom;
-  line-height: 45px;
-  border-top: 5px solid #E66E1C;
-  color: white; }
+  background-color: #474747;
+  color: white;
+  padding: 15px;
+  font-size: 15px; }
 
 /* NAVBAR */
-.App-header {
-  background-color: #0c1a2b;
-  height: 70px;
-  /*padding: 20px;*/
-  border-bottom: 5px solid #E66E1C;
-  color: white;
-  /*hide on scroll*/
-  display: flex;
-  flex-direction: row;
-  justify-content: center; }
-
-.navbar {
+nav {
+  display: flex !important;
   position: fixed;
-  height: 70px;
-  width: 50vw;
-  min-width: 275px;
-  padding: 5px;
-  background: #0c1a2b;
-  font-family: 'Oswald', 'Arial Narrow', sans-serif;
-  display: flex;
-  flex-direction: row;
+  z-index: 3;
+  width: 100%;
+  background-color: white;
   justify-content: space-between;
-  align-items: center; }
+  flex-direction: column;
+  border-bottom: solid 1px #474747; }
+  @media (min-width: 768px) {
+    nav {
+      flex-direction: row; } }
 
 .navbar a {
   color: #fff; }
@@ -67,6 +48,39 @@
 #loader {
   width: 100px;
   display: none; }
+
+/*( HOME PAGE) */
+.home {
+  background-image: url("../images/trains.jpg");
+  background-position: center;
+  height: 100%;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; }
+
+.home:after {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.5);
+  content: ""; }
+
+.register-message {
+  display: absolute;
+  z-index: 3;
+  font-size: 2px;
+  color: white;
+  font-size: 20px;
+  padding: 0 20px; }
+  @media (min-width: 768px) {
+    .register-message {
+      font-size: 40px; } }
 
 /* Register */
 body,
@@ -106,11 +120,15 @@ pre {
 .prospectus {
   text-align: center; }
 
-.Logo {
-  margin: 15px auto;
+.Logo img {
+  width: 200px;
   height: auto;
-  width: auto;
-  z-index: 5; }
+  padding: 5px 5px 2px 5px; }
+
+.nav-items {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 .underline {
   text-decoration: underline; }

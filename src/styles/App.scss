@@ -9,8 +9,12 @@ $blue3: rgb(13, 71, 133);
 $font-gray: #464749;
 $header-gray: #3C3C3C;
 $gray: rgb(71, 71, 71);
-
 $navy-blue: #0c1a2b;
+
+$mob: 480px;
+$tab: 768px;
+$desk: 992;
+$xldesk: 1200px;
 
 .base-layout {
   height: 100vh;
@@ -20,59 +24,31 @@ $navy-blue: #0c1a2b;
   text-align: center;
 }
 
-.home {
-  // text-align: center;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
+//footer
 .App-footer {
-  background-color: $navy-blue;
-  height: 45px;
-  // display: table-cell;
-  vertical-align: bottom;
-  line-height: 45px;
-  border-top: 5px solid #E66E1C;
+  background-color: $gray;
   color: white;
+  padding: 15px;
+  font-size: 15px;
 }
 
 /* NAVBAR */
-
-.App-header {
-  background-color: $navy-blue;
-  height: 70px;
-  /*padding: 20px;*/
-  border-bottom: 5px solid #E66E1C;
-  color: white;
-  /*hide on scroll*/
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.navbar {
+nav {
+  display: flex!important;
   position: fixed;
-  height: 70px;
-  width: 50vw;
-  min-width: 275px;
-  padding: 5px;
-  background: #0c1a2b;
-  font-family: 'Oswald', 'Arial Narrow', sans-serif;
-  display: flex;
-  flex-direction: row;
+  z-index: 3;
+  width: 100%;
+  background-color: white;
   justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  border-bottom: solid 1px $gray;
+  @media (min-width: $tab) {
+    flex-direction: row;
+  }
 }
 
 .navbar a {
   color: #fff;
-
 }
 
 .navbar a:active,
@@ -84,7 +60,6 @@ $navy-blue: #0c1a2b;
 .navbar .pure-menu-heading {
   font-weight: bold;
   text-transform: none;
-  // height: 70px;
 }
 
 .navbar .navbar-right {
@@ -98,6 +73,43 @@ $navy-blue: #0c1a2b;
 #loader {
   width: 100px;
   display: none;
+}
+
+/*( HOME PAGE) */
+
+.home {
+  background-image: url('../images/trains.jpg');
+  background-position: center;
+  height: 100%;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.home:after {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  z-index: 2;
+  background: rgba(0,0,0,.5);
+  content: "";
+}
+
+.register-message {
+  display: absolute;
+  z-index: 3;
+  font-size: 2px;
+  color: white;
+  font-size: 20px;
+  padding: 0 20px;
+  @media (min-width: $tab) {
+    font-size: 40px;
+  }
 }
 
 /* Register */
@@ -162,7 +174,7 @@ pre {
   //     alignContent: 'center';
   //   }
   // }
-  
+
   // @media screen and (max-width: 1325px) and (min-width: 911px) {
   //     .Container {
   //         background-color: lavender;
@@ -177,8 +189,8 @@ pre {
   //         alignContent: 'center';
   //     }
   // }
-  
-  
+
+
   // @media screen and (max-width: 910px) {
   //   .Container {
   //     background-color: lightgreen;
@@ -193,20 +205,23 @@ pre {
   //     alignContent: 'center';
   //   }
   // }
-  
+
 /* Prospectus aka About*/
 
 .prospectus {
   text-align: center;
 }
 
-.Logo {
-  margin: 15px auto;
-  // display: block;
-  // max-width: 100%;
+.Logo img {
+  width: 200px;
   height: auto;
-  width: auto;
-  z-index: 5;
+  padding: 5px 5px 2px 5px;
+}
+
+.nav-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .underline {
@@ -216,19 +231,19 @@ pre {
 .what {
   background-color: $gray;
   color: #FFF;
-  
+
 }
 
 .why {
   background-color: white;
   color: $logo-blue;
-  
+
 }
 
 .who {
   background-color: white;
   color: $font-gray;
-  
+
 }
 
 .how {
@@ -283,7 +298,7 @@ p {
 }
 
 %paragraph {
-  
+
   // max-width: 576px;
   margin-left: 0;
   margin-top: 24px;
@@ -363,5 +378,3 @@ h2, h3 {
   // width: 576px;
   max-width: 100%;
 }
-
-
