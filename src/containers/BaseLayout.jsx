@@ -6,7 +6,7 @@ export default class BaseLayout extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="base-layout">
         <Header/>
             {this.props.children}
         <Footer/>

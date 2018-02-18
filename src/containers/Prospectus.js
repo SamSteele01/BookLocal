@@ -14,7 +14,7 @@ import Footer from '../components/Footer';
 class Prospectus extends Component {
   render() {
     return (
-      <div className="Prospectus">
+      <div className="prospectus">
         {/* <Header/> */}
         <Logo/>
         <Hero image="blockchain"/>
