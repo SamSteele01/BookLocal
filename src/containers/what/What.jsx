@@ -2,19 +2,8 @@ import React, { Component } from 'react';
 import Paragraph from 'grommet/components/Paragraph';
 import Section from 'grommet/components/Section';
 import Heading from 'grommet/components/Heading';
-import Image from 'grommet/components/Image';
 import CustomList from '../CustomList';
 import CustomListItem from '../CustomListItem';
-import Search from '../../icons/search.png';
-import Compare from '../../icons/git-compare.png';
-import Reception from '../../icons/hotel_reception-512-bw.png';
-import Housekeeping from '../../icons/housekeeping-round-bw.svg';
-import Revenue from '../../icons/revenue-management.png';
-import Reserve from '../../icons/reserve-book.png';
-import ShoppingCart from '../../icons/shopping-cart.png';
-import Sale from '../../icons/point-of-sale.png';
-import Report from '../../icons/report.png';
-import Channel from '../../icons/channel.png';
 import colors from '../../styles/colors';
 
 class What extends Component {
@@ -30,7 +19,7 @@ class What extends Component {
         >
 
           {/* 1 */}
-          <div className='heading'>What</div>
+          <div className='heading'>What Do we Do?</div>
           <p className='paragraph-white'>
             The vision for BookLocal is to connect travelers directly to their hotel of choice
             by creating the first two way property management system accessible as both
@@ -46,37 +35,19 @@ class What extends Component {
             for both hotel workers and travelers will be designed to provide full service
             functionality and replace inefficiencies in the current ecosystem.
           </p>
-          <p className='paragraph-white'>
-            To the traveler, BookLocal will provide the following features:
-          </p>
+            <h2>To the traveler, BookLocal will provide the following features:</h2>
 
           <CustomList bgColor={colors.gray}>
             <CustomListItem classNames="what__card-font">
               {/* <SearchIcon/> */}
-              <div className="text-wrapper">
                 <h4 class="search-icon">Search</h4>
-              </div>
             </CustomListItem>
 
-            <CustomListItem
-              //height="auto"
-              // animation="slide-left"
-              // color="$black"
-              // bgColor="orange"
-
-              classNames="what__card-font"
-            >
+            <CustomListItem classNames="what__card-font">
               {/* <CompareIcon/> */}
               <h4 class="compare-icon">Compare</h4>
             </CustomListItem>
-            <CustomListItem
-              //height="auto"
-              animation="slide-left"
-              // color="$black"
-              // bgColor="orange"
-
-              classNames="what__card-font"
-            >
+            <CustomListItem animation="slide-left" classNames="what__card-font">
               {/* <CheckboxSelectedIcon/> */}
               <h4 className="book-icon">Booking</h4>
             </CustomListItem>
@@ -90,9 +61,9 @@ class What extends Component {
               <h4 className="cart-icon">Purchase</h4>
             </CustomListItem>
           </CustomList>
-          <p className='paragraph-white'>
-            To the hotel, BookLocal will provide modules for:
-          </p>
+
+            <h2>To the hotel, BookLocal will provide modules for:</h2>
+
           {/* add icons */}
           <CustomList
             bgColor={colors.gray}
@@ -102,8 +73,7 @@ class What extends Component {
               // animation="slide-left"
               // color="$black"
               // bgColor="orange"
-              border="1px solid blue"
-              borderRad
+
               classNames="what__card-font"
             >
               <h4 className="guest-icon">Guest Management</h4>
@@ -113,8 +83,7 @@ class What extends Component {
               // animation="slide-left"
               // color="$black"
               // bgColor="orange"
-              border="1px solid blue"
-              borderRad
+
               classNames="what__card-font"
             >
               <h4 className="housekeeping-icon">Housekeeping and Maintenance</h4>
@@ -124,8 +93,6 @@ class What extends Component {
               // animation="slide-left"
               // color="$black"
               // bgColor="orange"
-              border="1px solid blue"
-              borderRad
               classNames="what__card-font"
             >
             <h4 className="revenue-icon">Revenue Management</h4>
@@ -135,14 +102,9 @@ class What extends Component {
               animation="slide-left"
               // color="$black"
               // bgColor="orange"
-              border="1px solid blue"
-              borderRad
               classNames="what__card-font"
             >
-              <Image
-                size='thumb'
-                src={Sale}
-              />
+
               Payment Processing and Point of Sale
               <div></div>
             </CustomListItem>
@@ -151,19 +113,14 @@ class What extends Component {
                 animation="slide-left"
                 // color="$black"
                 // bgColor="orange"
-                border="1px solid blue"
-                borderRad
                 classNames="what__card-font"
               >
               <h4 className="report-icon">Report Generation</h4>
             </CustomListItem>
             <CustomListItem
-              // height="xsmall"
+
               animation="slide-left"
-              // color="$black"
-              // bgColor="orange"
-              border="1px solid blue"
-              borderRad
+
               classNames="what__card-font"
             >
 

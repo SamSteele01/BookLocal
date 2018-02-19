@@ -199,6 +199,9 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center; }
+  @media (min-width: 992) {
+    .nav-items {
+      padding-right: 10px; } }
 
 .underline {
   text-decoration: underline; }
@@ -230,9 +233,10 @@ nav {
 .what__card-font {
   font-weight: 300;
   font-size: 26px;
-  border: solid 1px black;
-  height: 100px;
-  display: flex; }
+  border: solid 1px black; }
+
+.grommetux-box--pad-vertical-large {
+  padding: 30px 0 !important; }
 
 .why__card-font {
   font-weight: 300;
@@ -259,11 +263,12 @@ p {
 
 .paragraph-white, .paragraph-gray {
   margin-left: 0;
-  margin-top: 24px;
-  margin-bottom: 24px;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.375; }
+  @media (min-width: 768px) {
+    .paragraph-white, .paragraph-gray {
+      font-size: 18px; } }
 
 .paragraph-white {
   color: white; }
@@ -271,23 +276,29 @@ p {
 .paragraph-gray {
   color: #464749; }
 
+.grommetux-box--pad-large {
+  display: flex !important;
+  justify-content: center !important; }
+
 .heading {
   font-family: Titillium Web, sans-serif;
-  padding: .75em;
-  font-size: 20px;
-  line-height: 1.125;
+  text-transform: uppercase;
+  padding: 25px 0;
+  font-size: 25px;
   text-align: center;
-  font-weight: 300;
-  max-width: 100%; }
+  font-weight: 700; }
+  @media (min-width: 768px) {
+    .heading {
+      font-size: 35px; } }
 
 h2, h3 {
   font-family: PT Sans Narrow; }
 
-.bold {
-  font-weight: bold; }
+.grommetux-section {
+  padding: 15px !important; }
 
 .hero-img {
-  height: 70vh;
+  height: 60vh;
   width: 100vw;
   background-repeat: no-repeat;
   background-position: center;
@@ -299,8 +310,12 @@ h2, h3 {
 
 .hero-text {
   color: white;
-  font-size: 35px;
+  font-size: 30px;
   padding: 0px 25px; }
+  @media (min-width: 768px) {
+    .hero-text {
+      font-size: 60px;
+      margin-top: 50px; } }
 
 .blue-web {
   background-image: url("../images/blue-web.jpeg"); }
