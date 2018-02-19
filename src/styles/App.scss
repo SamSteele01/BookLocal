@@ -10,12 +10,14 @@ $font-gray: #464749;
 $header-gray: #3C3C3C;
 $gray: rgb(71, 71, 71);
 $navy-blue: #0c1a2b;
+$bl-blue: #3675B6;
 
 //Break points
 $mob: 480px;
 $tab: 768px;
 $desk: 992;
 $xldesk: 1200px;
+
 
 //Base styles
 .base-layout {
@@ -226,7 +228,7 @@ nav {
 }
 
 .revenue-icon::before {
-  content: "\f09D";
+  content: "\f155";
   padding-right: 5px;
   font-family: fontawesome;
 }
@@ -239,6 +241,12 @@ nav {
 
 .housekeeping-icon::before {
   content: "\f015";
+  padding-right: 5px;
+  font-family: fontawesome;
+}
+
+.pos-icon::before {
+  content: '\f09D';
   padding-right: 5px;
   font-family: fontawesome;
 }
@@ -320,34 +328,42 @@ nav {
 .what {
   background-color: $gray;
   color: #FFF;
-
 }
 
 .why {
-  background-color: white;
-  color: $logo-blue;
+  background-color: $bl-blue;
+  color: white;
+  padding: 15px;
 
 }
 
 .who {
   background-color: white;
   color: $font-gray;
+  padding: 15px;
+
 
 }
 
 .how {
   background-color: $gray;
   color: #FFF;
+  padding: 15px;
+
 }
 
 .steps {
   background-color: $gray;
   color: #FFF;
+  padding: 15px;
+
 }
 
 .problems {
-  background-color: white;
-  color: $font-gray;
+  background-color: #1a3a5a;
+  color: white;
+  padding: 15px;
+
 }
 
 .what__card-font {
@@ -378,11 +394,15 @@ nav {
 .steps__card-font {
   font-weight: 300;
   font-size: 14px;
+  border: solid 1px #3675B6;
+
 }
 
 .solutions {
-  background-color: white;
+  background-color: #b6cfe9;
   color: $font-gray;
+  padding: 15px;
+
   // background-color: rgb(6, 32, 61);
   // padding: 10px 0;
 }

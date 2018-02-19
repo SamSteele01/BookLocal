@@ -171,7 +171,7 @@ nav {
   font-family: fontawesome; }
 
 .revenue-icon::before {
-  content: "\f09D";
+  content: "\f155";
   padding-right: 5px;
   font-family: fontawesome; }
 
@@ -182,6 +182,11 @@ nav {
 
 .housekeeping-icon::before {
   content: "\f015";
+  padding-right: 5px;
+  font-family: fontawesome; }
+
+.pos-icon::before {
+  content: '\f09D';
   padding-right: 5px;
   font-family: fontawesome; }
 
@@ -211,24 +216,29 @@ nav {
   color: #FFF; }
 
 .why {
-  background-color: white;
-  color: #3C5BBE; }
+  background-color: #3675B6;
+  color: white;
+  padding: 15px; }
 
 .who {
   background-color: white;
-  color: #464749; }
+  color: #464749;
+  padding: 15px; }
 
 .how {
   background-color: #474747;
-  color: #FFF; }
+  color: #FFF;
+  padding: 15px; }
 
 .steps {
   background-color: #474747;
-  color: #FFF; }
+  color: #FFF;
+  padding: 15px; }
 
 .problems {
-  background-color: white;
-  color: #464749; }
+  background-color: #1a3a5a;
+  color: white;
+  padding: 15px; }
 
 .what__card-font {
   font-weight: 300;
@@ -252,11 +262,13 @@ nav {
 
 .steps__card-font {
   font-weight: 300;
-  font-size: 14px; }
+  font-size: 14px;
+  border: solid 1px #3675B6; }
 
 .solutions {
-  background-color: white;
-  color: #464749; }
+  background-color: #b6cfe9;
+  color: #464749;
+  padding: 15px; }
 
 p {
   font-family: Titillium Web, sans-serif; }

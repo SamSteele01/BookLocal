@@ -12,9 +12,10 @@ import colors from '../../styles/colors';
 
 export default class How extends Component {
     render() {
+
         return (
             <div className="how">
-                <Section 
+                <Section
                     margin="none"
                     pad='none'
                     align='stretch'
@@ -22,7 +23,7 @@ export default class How extends Component {
                     // appCentered='true'
                     alignSelf='center'
                     // justify='center'
-                > 
+                >
 
                     {/* 4 */}
                     <div className='heading'>How</div>
@@ -32,7 +33,7 @@ export default class How extends Component {
                     </p>
 
                     {/* 4.1 */}
-                    <Heading 
+                    <Heading
                         align='center'
                         margin='medium'
                         tag='h4'>
@@ -55,18 +56,17 @@ export default class How extends Component {
                     <p className='paragraph'>
                         Take note of the following systems:
                     </p>
-                    <CustomList 
+                    <CustomList
                         pad="medium"
                         bgColor={colors.gray}
-                    > 
+                    >
                         <CustomListItem
                             //height="auto"
                             margin="10px"
                             // animation="slide-left"
                             // color="$black"
                             // bgColor="orange"
-                            border="1px solid blue"
-                            borderRad="5px"
+                            border="1px solid {blue}"
                             classNames="how__card-font"
                         >
                         {/* <div>&#8226;</div> */}
@@ -80,8 +80,7 @@ export default class How extends Component {
                             // animation="slide-left"
                             // color="$black"
                             // bgColor="orange"
-                            border="1px solid blue"
-                            borderRad="5px"
+                            border="1px solid #3675B6"
                             classNames="how__card-font"
                         >
                         {/* <div>&#8226;</div> */}
@@ -97,8 +96,7 @@ export default class How extends Component {
                             // animation="slide-left"
                             // color="$black"
                             // bgColor="orange"
-                            border="1px solid blue"
-                            borderRad="5px"
+                            border="1px solid #3675B6"
                             classNames="how__card-font"
                         >
                         {/* <div>&#8226;</div> */}
@@ -124,9 +122,9 @@ export default class How extends Component {
                             className='image'
                         />
                     </div>
-                    
+
                     {/* 4.2 */}
-                    <Heading align='center' 
+                    <Heading align='center'
  	 	 	 	 	 	 margin='medium'
                         tag='h2'>
                         Traveler
@@ -138,7 +136,7 @@ export default class How extends Component {
                     </p>
 
                     {/* 4.2.1 */}
-                    <Heading align='center' 
+                    <Heading align='center'
  	 	 	 	 	 	 margin='medium'
                         tag='h3'>
                         Search
@@ -154,7 +152,7 @@ export default class How extends Component {
                     </p>
 
                     {/* 4.2.2 */}
-                    <Heading align='center' 
+                    <Heading align='center'
  	 	 	 	 	 	 margin='medium'
                         tag='h3'>
                         Compare
@@ -167,7 +165,7 @@ export default class How extends Component {
                     </p>
 
                     {/* 4.2.3 */}
-                    <Heading align='center' 
+                    <Heading align='center'
  	 	 	 	 	 	 margin='medium'
                         tag='h4'>
                         Book
@@ -176,7 +174,7 @@ export default class How extends Component {
                         When the traveler has found a room they like, they can book the room in one
                         of several ways:
                     </p>
-                    <Columns 
+                    <Columns
                         responsive={false}
                         masonry={false}
                         justify='center'
@@ -187,8 +185,7 @@ export default class How extends Component {
                             // animation="slide-left"
                             // color="$black"
                             // bgColor="orange"
-                            border="1px solid blue"
-                            borderRad="5px"
+                            border="1px solid #3675B6"
                             classNames="how__card-font"
                         >
                             <div>
@@ -200,8 +197,7 @@ export default class How extends Component {
                             // animation="slide-left"
                             // color="$black"
                             // bgColor="orange"
-                            border="1px solid blue"
-                            borderRad="5px"
+                            border="1px solid #3675B6"
                             classNames="how__card-font"
                         >
                             <div>
@@ -215,8 +211,7 @@ export default class How extends Component {
                             // animation="slide-left"
                             // color="$black"
                             // bgColor="orange"
-                            border="1px solid blue"
-                            borderRad="5px"
+                            border="1px solid #3675B6"
                             classNames="how__card-font"
                         >
                             <div>
@@ -229,7 +224,7 @@ export default class How extends Component {
                     </Columns>
 
                     {/* 4.2.4 */}
-                    <Heading align='center' 
+                    <Heading align='center'
  	 	 	 	 	 	 margin='medium'
                         tag='h3'>
                         Purchase
@@ -252,7 +247,7 @@ export default class How extends Component {
                     </p>
 
                     {/* 4.3 */}
-                    <Heading align='center' 
+                    <Heading align='center'
  	 	 	 	 	 	 margin='medium'
                         tag='h2'>
                         Hotel
@@ -262,7 +257,7 @@ export default class How extends Component {
                     </p>
 
                     {/* 4.3.1 */}
-                    <Heading align='center' 
+                    <Heading align='center'
  	 	 	 	 	 	 margin='medium'
                         tag='h3'>
                         Guest Management
@@ -275,7 +270,7 @@ export default class How extends Component {
                     </p>
 
                     {/* 4.3.2 */}
-                    <Heading align='center' 
+                    <Heading align='center'
  	 	 	 	 	 	 margin='medium'
                         tag='h3'>
                         Housekeeping and Maintenance
@@ -287,7 +282,7 @@ export default class How extends Component {
                     </p>
 
                     {/* 4.3.3 */}
-                    <Heading align='center' 
+                    <Heading align='center'
  	 	 	 	 	 	 margin='medium'
                         tag='h3'>
                         Revenue Management
@@ -298,7 +293,7 @@ export default class How extends Component {
                     </p>
 
                     {/* 4.3.4 */}
-                    <Heading align='center' 
+                    <Heading align='center'
  	 	 	 	 	 	 margin='medium'
                         tag='h3'>
                         Payment Processing
@@ -312,7 +307,7 @@ export default class How extends Component {
                     </p>
 
                     {/* 4.3.5 */}
-                    <Heading align='center' 
+                    <Heading align='center'
  	 	 	 	 	 	 margin='medium'
                         tag='h3'>
                         Report Generation
@@ -323,7 +318,7 @@ export default class How extends Component {
                     </p>
 
                     {/* 4.3.6 */}
-                    <Heading align='center' 
+                    <Heading align='center'
  	 	 	 	 	 	 margin='medium'
                         tag='h3'>
                         Channel Management
@@ -336,7 +331,7 @@ export default class How extends Component {
                     </p>
 
                     {/* 4.4 */}
-                    <Heading align='center' 
+                    <Heading align='center'
  	 	 	 	 	 	 margin='medium'
                         tag='h2'>
                         Dispute

@@ -102,11 +102,10 @@ class What extends Component {
               animation="slide-left"
               // color="$black"
               // bgColor="orange"
-              classNames="what__card-font"
-            >
+              classNames="what__card-font">
 
-              Payment Processing and Point of Sale
-              <div></div>
+              <h4 className="pos-icon">Payment Processing and Point of Sale</h4>
+
             </CustomListItem>
             <CustomListItem
                 // height="xsmall"
