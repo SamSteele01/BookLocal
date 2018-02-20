@@ -8,6 +8,8 @@ import Why from './why/Why';
 import Who from './who/Who';
 import How from './how/How';
 import Steps from './Steps';
+import Traveler from "./Traveler";
+import Hotel from "./Hotel";
 import Footer from '../components/Footer';
 
 class Prospectus extends Component {
@@ -24,6 +26,8 @@ class Prospectus extends Component {
         <Who/>
         {/* <Header/> */}
         <How/>
+        <Traveler/>
+        <Hotel/>
         <Hero image="exchange-building"/>
         {/* <Header/> */}
         <Steps/>

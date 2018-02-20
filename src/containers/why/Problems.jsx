@@ -9,15 +9,13 @@ class Problems extends Component {
     return (
       <div className="problems">
         {/* 2.1 */}
-        <Heading 
-          align='center' 
- 	 	 	 	 	margin='large'
-          tag='h1'
-          style={{color: colors.logoBlue}}
+        <Heading
+
+          tag='h2'
         >
           Problems
         </Heading>
-        <p className='paragraph-gray'>
+        <p className='paragraph-white'>
           The hotel booking industry is fragmented with no fewer than five different
           groups working for commission between travelers and hotels. Problems include:
         </p>

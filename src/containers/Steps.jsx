@@ -8,14 +8,15 @@ import colors from '../styles/colors';
 
 export default class Steps extends Component {
     render() {
+
         return (
             <div className="steps">
-                <Section 
+                <Section
                     pad='none'
                     align='stretch'
                     alignContent='center'
                     // appCentered='true'
-                > 
+                >
 
                 {/* 5 */}
                 <div className='heading'>Steps</div>
@@ -24,7 +25,7 @@ export default class Steps extends Component {
                 </p>
 
                 {/* 5.1 */}
-                <Heading align='center' 
+                <Heading align='center'
  	 	 	 	 	 	 margin='medium'
                         margin='medium'
                         tag='h2'>
@@ -36,7 +37,7 @@ export default class Steps extends Component {
                 </p>
 
                 {/* 5.1.1 */}
-                <Heading 
+                <Heading
                     align='center'
                     margin='medium'
                     tag='h4'>
@@ -47,16 +48,13 @@ export default class Steps extends Component {
                     token (as introduced in ERC-721) to provide temporary access for non-owners.
                     Applied to a hotel, our model does the following:
                 </p>
-                <CustomList 
+                <CustomList
                     bgColor={colors.gray}
-                > 
+                >
                     <CustomListItem
                         //height="auto"
                         // animation="slide-left"
                         // color="$black"
-                        // bgColor="orange"
-                        border="1px solid blue"
-                        borderRad
                         classNames="steps__card-font"
                     >
                         <div>
@@ -69,8 +67,7 @@ export default class Steps extends Component {
                         // animation="slide-left"
                         // color="$black"
                         // bgColor="orange"
-                        border="1px solid blue"
-                        borderRad
+
                         classNames="steps__card-font"
                     >
                         <div>
@@ -83,8 +80,7 @@ export default class Steps extends Component {
                         animation="slide-left"
                         // color="$black"
                         // bgColor="orange"
-                        border="1px solid blue"
-                        borderRad
+
                         classNames="steps__card-font"
                     >
                         <div>
@@ -99,13 +95,13 @@ export default class Steps extends Component {
                     </p>
 
                 {/* 5.1.2 */}
-                <Heading 
+                <Heading
                     align='center'
                     margin='medium'
                     tag='h2'>
                     Proof of Concept
                 </Heading>
-                <Heading 
+                <Heading
                     align='center'
                     margin='medium'
                     tag='h3'>
@@ -115,8 +111,8 @@ export default class Steps extends Component {
                     The minimum viable product will extend the Proof of Concept to incorporate
                     full payment functionality and user interfaces.
                 </p>
-                
-                <Heading align='center' 
+
+                <Heading align='center'
                     margin='medium'
                     tag='h3'>
                     1. Multisignature Wallets
@@ -125,8 +121,8 @@ export default class Steps extends Component {
                     To ensure secure payments, we will use industry standard code for our
                     multisignature wallet.
                 </p>
-                   
-                <Heading align='center' 
+
+                <Heading align='center'
                     margin='medium'
                     tag='h3'>
                     2. Traveler Interface
@@ -145,8 +141,7 @@ export default class Steps extends Component {
                         // animation="slide-left"
                         // color="$black"
                         // bgColor="orange"
-                        border="1px solid blue"
-                        borderRad
+
                         classNames="steps__card-font"
                     >
                         <div>
@@ -158,8 +153,7 @@ export default class Steps extends Component {
                         // animation="slide-left"
                         // color="$black"
                         // bgColor="orange"
-                        border="1px solid blue"
-                        borderRad
+
                         classNames="steps__card-font"
                     >
                         <div>
@@ -171,8 +165,7 @@ export default class Steps extends Component {
                         // animation="slide-left"
                         // color="$black"
                         // bgColor="orange"
-                        border="1px solid blue"
-                        borderRad
+
                         classNames="steps__card-font"
                     >
                         <div>
@@ -184,8 +177,7 @@ export default class Steps extends Component {
                         animation="slide-left"
                         // color="$black"
                         // bgColor="orange"
-                        border="1px solid blue"
-                        borderRad
+
                         classNames="steps__card-font"
                     >
                         <div>
@@ -196,9 +188,7 @@ export default class Steps extends Component {
                         //height="auto"
                         animation="slide-left"
                         // color="$black"
-                        // bgColor="orange"
-                        border="1px solid blue"
-                        borderRad
+
                         classNames="steps__card-font"
                     >
                         <div>
@@ -207,7 +197,7 @@ export default class Steps extends Component {
                     </CustomListItem>
                 </CustomList>
 
-                <Heading align='center' 
+                <Heading align='center'
                     margin='medium'
                     tag='h3'>
                     3. Hotel Interface
@@ -229,8 +219,7 @@ export default class Steps extends Component {
                         // animation="slide-left"
                         // color="$black"
                         // bgColor="orange"
-                        border="1px solid blue"
-                        borderRad
+
                         classNames="steps__card-font"
                     >
                         <div>
@@ -241,9 +230,7 @@ export default class Steps extends Component {
                         //height="auto"
                         // animation="slide-left"
                         // color="$black"
-                        // bgColor="orange"
-                        border="1px solid blue"
-                        borderRad
+
                         classNames="steps__card-font"
                     >
                         <div>
@@ -253,10 +240,7 @@ export default class Steps extends Component {
                     <CustomListItem
                         //height="auto"
                         animation="slide-left"
-                        // color="$black"
-                        // bgColor="orange"
-                        border="1px solid blue"
-                        borderRad
+
                         classNames="steps__card-font"
                     >
                         <div>
@@ -268,7 +252,7 @@ export default class Steps extends Component {
                         animation="slide-left"
                         // color="$black"
                         // bgColor="orange"
-                        border="1px solid blue"
+                        border="1px solid $bl-blue"
                         borderRad
                         classNames="steps__card-font"
                     >
@@ -277,11 +261,11 @@ export default class Steps extends Component {
                         </div>
                     </CustomListItem>
                 </CustomList>
-                
+
 
 
                 {/* 5.2 */}
-                <Heading align='center' 
+                <Heading align='center'
  	 	 	 	 	 	 margin='medium'
                     tag='h2'>
                     Early Adopters
@@ -294,7 +278,7 @@ export default class Steps extends Component {
                 </p>
 
                 {/* 5.2.1 */}
-                <Heading align='center' 
+                <Heading align='center'
  	 	 	 	 	 	 margin='medium'
                     tag='h3'>
                     Free interface for travelers.
@@ -305,7 +289,7 @@ export default class Steps extends Component {
                 </p>
 
                 {/* 5.2.2 */}
-                <Heading align='center' 
+                <Heading align='center'
  	 	 	 	 	 	 margin='medium'
                     tag='h3'>
                     Free interface for individual hosts.
@@ -316,7 +300,7 @@ export default class Steps extends Component {
                 </p>
 
                 {/* 5.2.3 */}
-                <Heading align='center' 
+                <Heading align='center'
  	 	 	 	 	 	 margin='medium'
                     tag='h3'>
                     Paid interface for hotels.
@@ -328,7 +312,7 @@ export default class Steps extends Component {
                 </p>
 
                 {/* 5.3 */}
-                <Heading align='center' 
+                <Heading align='center'
  	 	 	 	 	 	 margin='medium'
                     tag='h2'>
                     More Adopters
