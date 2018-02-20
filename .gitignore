@@ -10,7 +10,9 @@
 /build
 
 #sass
-/.sass-cache
+.sass-cache
+.sass-cache/34d0fe442bf2c934092d9e8d5616db9f4554d8fc/App.scssc
+.sass-cache/34d0fe442bf2c934092d9e8d5616db9f4554d8fc/App.scssc
 /src/styles/App.css.map
 
 # misc

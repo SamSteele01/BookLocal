@@ -19,8 +19,7 @@ if (typeof web3 !== 'undefined') {
 
 // stolen code zone ^^^
 
-// let RRAbi = require('../../ABIs/RoomRentingAbi.js');
-let RRAbi = require('../../abis/RoomRentingAbi.js');
+let RRAbi = require('../../ABIs/RoomRentingAbi.js');
 let RRAddress = require('../../contractAddress/rinkebyAddress.js');
 let RR = web3.eth.contract(RRAbi).at(RRAddress);
 
@@ -98,7 +97,8 @@ class Reserve extends Component{
     const inputStyle={
         height: "35px",
         flexGrow: "1",
-        marginLeft: "6px",
+        marginLeft: "10px",
+        paddingLeft: "10px",
         border: "1px solid #ccc",
         fontSize: "15px",
       }
@@ -106,7 +106,7 @@ class Reserve extends Component{
           marginTop: '25px',
           color: "#777",
           fontWeight: "900",
-          backgroundColor: "#3675B6",
+          backgroundColor: "rgb(60, 91, 190)",
           padding: '5px 15px',
           color: "white",
           textTransform: "uppercase"
