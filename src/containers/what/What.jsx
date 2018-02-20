@@ -2,19 +2,8 @@ import React, { Component } from 'react';
 import Paragraph from 'grommet/components/Paragraph';
 import Section from 'grommet/components/Section';
 import Heading from 'grommet/components/Heading';
-import Image from 'grommet/components/Image';
 import CustomList from '../CustomList';
 import CustomListItem from '../CustomListItem';
-import Search from '../../icons/search.png';
-import Compare from '../../icons/git-compare.png';
-import Reception from '../../icons/hotel_reception-512-bw.png';
-import Housekeeping from '../../icons/housekeeping-round-bw.svg';
-import Revenue from '../../icons/revenue-management.png';
-import Reserve from '../../icons/reserve-book.png';
-import ShoppingCart from '../../icons/shopping-cart.png';
-import Sale from '../../icons/point-of-sale.png';
-import Report from '../../icons/report.png';
-import Channel from '../../icons/channel-management.png';
 import colors from '../../styles/colors';
 
 class What extends Component {
@@ -22,15 +11,15 @@ class What extends Component {
   render() {
     return (
       <div className='what'>
-        <Section 
+        <Section
           pad='none'
           align='stretch'
           alignContent='center'
           // appCentered='true'
-        > 
+        >
 
           {/* 1 */}
-          <div className='heading'>What</div>
+          <div className='heading'>What Do we Do?</div>
           <p className='paragraph-white'>
             The vision for BookLocal is to connect travelers directly to their hotel of choice
             by creating the first two way property management system accessible as both
@@ -49,83 +38,76 @@ class What extends Component {
           <p className='paragraph-white'>
             To the traveler, BookLocal will provide the following features:
           </p>
-          
-          <CustomList 
+
+          <CustomList
             bgColor={colors.gray}
-            
+
           >
-            <CustomListItem 
+            <CustomListItem
               // height="auto"
               // animation="slide-left"
               color="$black"
               // bgColor="orange"
-              border={`1px solid ${colors.blue1}`}
-              borderRad="5px"
-              classNames="what__card-font"
-            >
-              {/* <SearchIcon/> */}
-              <Image
-                size='thumb'
-                src={Search}
-              />
-              Search
-              <div></div>
+              //border={`1px solid ${colors.blue1}`}
+              //borderRad="5px"
+              classNames="what__card-font">
+              {/* <SearchIcon/>   <Image
+                  size='thumb'
+                  src={Search}
+                /> */}
+
+              <h3><i class="fas fa-search"></i> Search</h3>
             </CustomListItem>
             <CustomListItem
               //height="auto"
               // animation="slide-left"
               // color="$black"
               // bgColor="orange"
-              border="1px solid blue"
-              borderRad
-              classNames="what__card-font"
-            >
-              {/* <CompareIcon/> */}
-              <Image
-                size='thumb'
-                src={Compare}
-              />
-              Compare
-              <div></div>
+            //  border="1px solid blue"
+            //  borderRad
+              classNames="what__card-font">
+              {/* <CompareIcon/>   <Image
+                  size='thumb'
+                  src={Compare}
+                /> */}
+
+              <h3><i class="fas fa-exchange-alt"></i> Compare</h3>
             </CustomListItem>
             <CustomListItem
               //height="auto"
               animation="slide-left"
               // color="$black"
               // bgColor="orange"
-              border="1px solid blue"
-              borderRad
+            //  border="1px solid blue"
+              //borderRad
               classNames="what__card-font"
             >
-              {/* <CheckboxSelectedIcon/> */}
-              <Image
-                size='thumb'
-                src={Reserve}
-              />
-              Book
-              <div></div>
+              {/* <CheckboxSelectedIcon/>   <Image
+                  size='thumb'
+                  src={Reserve}
+                />*/}
+
+              <h3><i class="far fa-address-book"></i> Book</h3>
             </CustomListItem>
             <CustomListItem
               //height="xsmall"
               animation="slide-left"
               // color="$black"
               // bgColor="orange"
-              border="1px solid blue"
-              borderRad
-              classNames="what__card-font"
-            >
-              {/* <MoneyIcon/> */}
-              <Image
-                size='thumb'
-                src={ShoppingCart}
-              />
-              Purchase
-              <div></div>
+            //  border="1px solid blue"
+              //borderRad
+              classNames="what__card-font">
+              {/* <MoneyIcon/>     <Image
+                    size='thumb'
+                    src={ShoppingCart}
+                  /> */}
+
+              <h3><i class="fas fa-shopping-cart"></i> Purchase</h3>
             </CustomListItem>
           </CustomList>
-          <p className='paragraph-white'>
-            To the hotel, BookLocal will provide modules for:
-          </p>
+
+            <h2>To the hotel, BookLocal will provide modules for:</h2>
+
           {/* add icons */}
           <CustomList
             bgColor={colors.gray}
@@ -135,96 +117,89 @@ class What extends Component {
               // animation="slide-left"
               // color="$black"
               // bgColor="orange"
-              border="1px solid blue"
-              borderRad
-              classNames="what__card-font"
-            >
-              <Image
+              //border="1px solid blue"
+              //borderRad
+              classNames="what__card-font">
+              {/* <Image
                 size='thumb'
                 src={Reception}
-              />
-              Guest Management
-              <div></div>
+              />*/}
+              <h3><i class="fas fa-users"></i> Guest Management</h3>
             </CustomListItem>
             <CustomListItem
               // height="xsmall"
               // animation="slide-left"
               // color="$black"
               // bgColor="orange"
-              border="1px solid blue"
-              borderRad
+              //border="1px solid blue"
+            //  borderRad
               classNames="what__card-font"
             >
-              <Image
+          {    /*<Image
                 size='thumb'
                 src={Housekeeping}
-              />
-              Housekeeping and Maintenance
-              <div></div>
+              />*/}
+              <h3><i class="fas fa-home"></i> Housekeeping and Maintenance</h3>
             </CustomListItem>
             <CustomListItem
               // height="xsmall"
               // animation="slide-left"
               // color="$black"
               // bgColor="orange"
-              border="1px solid blue"
-              borderRad
+              // border="1px solid blue"
+              // borderRad
               classNames="what__card-font"
             >
-              <Image
+              {/*<Image
                 size='thumb'
                 src={Revenue}
-              />              
-              Revenue Management
-              <div></div>
+              />*/}
+              <h3><i class="fas fa-money-bill-alt"></i> Revenue Management</h3>
             </CustomListItem>
             <CustomListItem
               // height="xsmall"
               animation="slide-left"
               // color="$black"
               // bgColor="orange"
-              border="1px solid blue"
-              borderRad
+              //border="1px solid blue"
+              // borderRad
               classNames="what__card-font"
             >
-              <Image
+              {/*<Image
                 size='thumb'
                 src={Sale}
-              />
-              Payment Processing and Point of Sale
-              <div></div>
+              />*/}
+               <h3><i class="far fa-credit-card"></i> Payment Processing and Point of Sale</h3>
             </CustomListItem>
             <CustomListItem
                 // height="xsmall"
                 animation="slide-left"
                 // color="$black"
                 // bgColor="orange"
-                border="1px solid blue"
-                borderRad
+                //border="1px solid blue"
+                //borderRad
                 classNames="what__card-font"
               >
-              <Image
+              {/*<Image
                 size='thumb'
                 src={Report}
-              />
-              Report Generation
-              <div></div>
+              />*/}
+              <h3><i class="fas fa-chart-line"></i> Report Generation</h3>
             </CustomListItem>
             <CustomListItem
-              // height="xsmall"
+
               animation="slide-left"
               // color="$black"
               // bgColor="orange"
-              border="1px solid blue"
-              borderRad
+              //border="1px solid blue"
+              //borderRad
               classNames="what__card-font"
             >
-              <Image
+            {  /*<Image
                 size='thumb'
                 src={Channel}
-              />
-              Channel Management
-              <div></div>
+              />*/}
+              <h3><i class="fas fa-arrows-alt"></i> Channel Management</h3>
             </CustomListItem>
           </CustomList>
         </Section>

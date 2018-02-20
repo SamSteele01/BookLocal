@@ -6,69 +6,6 @@
   justify-content: space-between;
   text-align: center; }
 
-.App-title {
-  font-size: 1.5em; }
-
-.App-intro {
-  font-size: large; }
-
-.App-footer {
-  background-color: #0c1a2b;
-  height: 45px;
-  vertical-align: bottom;
-  line-height: 45px;
-  border-top: 5px solid #E66E1C;
-  color: white; }
-
-/* NAVBAR */
-.App-header {
-  background-color: #0c1a2b;
-  height: 70px;
-  /*padding: 20px;*/
-  border-bottom: 5px solid #E66E1C;
-  color: white;
-  /*hide on scroll*/
-  display: flex;
-  flex-direction: row;
-  justify-content: center; }
-
-.navbar {
-  position: fixed;
-  height: 70px;
-  width: 50vw;
-  min-width: 275px;
-  padding: 5px;
-  background: #0c1a2b;
-  font-family: 'Oswald', 'Arial Narrow', sans-serif;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center; }
-
-.navbar a {
-  color: #fff; }
-
-.navbar a:active,
-.navbar a:focus,
-.navbar a:hover {
-  background: #233e5e; }
-
-.navbar .pure-menu-heading {
-  font-weight: bold;
-  text-transform: none; }
-
-.navbar .navbar-right {
-  float: right; }
-
-.navbar .uport-logo {
-  height: 16px;
-  margin-right: 10px; }
-
-#loader {
-  width: 100px;
-  display: none; }
-
-/* Register */
 body,
 .pure-g [class*=pure-u] {
   font-family: 'Open Sans', sans-serif; }
@@ -101,16 +38,176 @@ pre {
   flex-direction: row;
   justify-content: center; }
 
+.App-footer {
+  background-color: white;
+  color: #464749;
+  padding: 15px;
+  font-size: 16px;
+  border-top: solid 1px #474747; }
+
+/* NAVBAR */
+nav {
+  display: flex !important;
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  background-color: white;
+  justify-content: space-between;
+  flex-direction: column;
+  border-bottom: solid 1px #474747; }
+  @media (min-width: 768px) {
+    nav {
+      flex-direction: row; } }
+
+.navbar a {
+  color: #fff; }
+
+.navbar a:active,
+.navbar a:focus,
+.navbar a:hover {
+  background: #233e5e; }
+
+.navbar .pure-menu-heading {
+  font-weight: bold;
+  text-transform: none; }
+
+.navbar .navbar-right {
+  float: right; }
+
+.navbar .uport-logo {
+  height: 16px;
+  margin-right: 10px; }
+
+#loader {
+  width: 100px;
+  display: none; }
+
+.home {
+  background-image: url("../images/trains.jpg");
+  background-position: center;
+  height: 100%;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; }
+
+.home:after {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.5);
+  content: ""; }
+
+.register-message {
+  display: absolute;
+  z-index: 3;
+  font-size: 2px;
+  color: white;
+  font-size: 20px;
+  padding: 0 20px; }
+  @media (min-width: 768px) {
+    .register-message {
+      font-size: 40px; } }
+
+/* Register */
+.app {
+  background-image: url("../images/charlotte-coneybeer-108074.jpg");
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 92px; }
+
+.reserve fieldset {
+  background-color: white;
+  padding: 25px 15px;
+  margin-top: 40px; }
+  @media (min-width: 768px) {
+    .reserve fieldset {
+      padding: 50px 100px; } }
+  .reserve fieldset h1 {
+    font-size: 35px;
+    color: #474747; }
+    @media (min-width: 768px) {
+      .reserve fieldset h1 {
+        font-size: 45px; } }
+
+.channel-icon::before {
+  content: "\f201";
+  padding-right: 5px;
+  font-family: fontawesome; }
+
+.search-icon::before {
+  content: "\f002";
+  padding-right: 5px;
+  font-family: fontawesome; }
+
+.book-icon::before {
+  content: "\f2b9";
+  padding-right: 5px;
+  font-family: fontawesome; }
+
+.compare-icon::before {
+  content: "\f07E";
+  padding-right: 5px;
+  font-family: fontawesome; }
+
+.cart-icon::before {
+  content: "\f07a";
+  padding-right: 5px;
+  font-family: fontawesome; }
+
+.guest-icon::before {
+  content: "\f0c0";
+  padding-right: 5px;
+  font-family: fontawesome; }
+
+.revenue-icon::before {
+  content: "\f155";
+  padding-right: 5px;
+  font-family: fontawesome; }
+
+.report-icon::before {
+  content: "\f080";
+  padding-right: 5px;
+  font-family: fontawesome; }
+
+.housekeeping-icon::before {
+  content: "\f015";
+  padding-right: 5px;
+  font-family: fontawesome; }
+
+.pos-icon::before {
+  content: '\f09D';
+  padding-right: 5px;
+  font-family: fontawesome; }
+
 /* Eth-Memphis */
 /* Prospectus aka About*/
 .prospectus {
   text-align: center; }
 
-.Logo {
-  margin: 15px auto;
+.Logo img {
+  width: 200px;
   height: auto;
-  width: auto;
-  z-index: 5; }
+  padding: 5px 5px 2px 5px; }
+
+.nav-items {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  @media (min-width: 992) {
+    .nav-items {
+      padding-right: 10px; } }
 
 .underline {
   text-decoration: underline; }
@@ -120,28 +217,94 @@ pre {
   color: #FFF; }
 
 .why {
-  background-color: white;
-  color: #3C5BBE; }
+  background-color: #3675B6;
+  color: white;
+  padding: 15px; }
 
 .who {
   background-color: white;
-  color: #464749; }
+  color: #464749;
+  padding: 15px; }
 
 .how {
   background-color: #474747;
-  color: #FFF; }
+  color: #FFF;
+  padding: 15px; }
+
+.how-section-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  flex-direction: column;
+  justify-content: center; }
+  @media (min-width: 768px) {
+    .how-section-wrapper {
+      margin: 0 100px; } }
+
+.img-md {
+  width: 500px;
+  height: 100%; }
+
+.purchase-wrapper {
+  margin-top: 50px;
+  background-color: #3675B6;
+  padding: 10px;
+  color: white; }
+
+.how__card-font {
+  font-size: 14px;
+  padding: 10px;
+  border: solid 1px #3675B6; }
+  .how__card-font strong {
+    font-size: 20px; }
 
 .steps {
   background-color: #474747;
-  color: #FFF; }
+  color: #FFF;
+  padding: 15px; }
+
+.traveler-block {
+  border: solid 1px black;
+  padding: 20px;
+  flex: 1; }
+
+.traveler-wrapper {
+  padding: 15px; }
+  .traveler-wrapper h3 {
+    padding: 0 50px;
+    color: #3675B6;
+    font-size: 25px; }
+
+.image-sml {
+  height: 140px;
+  width: auto; }
+
+.traveler-block-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%; }
+  .traveler-block-wrapper ul {
+    font-size: 14px;
+    list-style: none;
+    margin-left: 0; }
+  @media (min-width: 768px) {
+    .traveler-block-wrapper {
+      flex-direction: row; } }
 
 .problems {
-  background-color: white;
-  color: #464749; }
+  background-color: #1a3a5a;
+  color: white;
+  padding: 25px; }
 
 .what__card-font {
   font-weight: 300;
-  font-size: 26px; }
+  font-size: 26px;
+  border: solid 1px #3675B6; }
+  .what__card-font h3 {
+    width: 100%;
+    text-align: center;
+    color: #464749; }
 
 .why__card-font {
   font-weight: 300;
@@ -151,28 +314,27 @@ pre {
   font-weight: 300;
   font-size: 18px; }
 
-.how__card-font {
-  font-weight: 300;
-  font-size: 14px; }
-
 .steps__card-font {
   font-weight: 300;
-  font-size: 14px; }
+  font-size: 14px;
+  border: solid 1px #3675B6; }
 
 .solutions {
   background-color: white;
-  color: #464749; }
+  color: #464749;
+  padding: 25px; }
 
 p {
   font-family: Titillium Web, sans-serif; }
 
 .paragraph-white, .paragraph-gray {
   margin-left: 0;
-  margin-top: 24px;
-  margin-bottom: 24px;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.375; }
+  @media (min-width: 768px) {
+    .paragraph-white, .paragraph-gray {
+      font-size: 18px; } }
 
 .paragraph-white {
   color: white; }
@@ -180,23 +342,29 @@ p {
 .paragraph-gray {
   color: #464749; }
 
+.grommetux-box--pad-large {
+  display: flex !important;
+  justify-content: center !important; }
+
 .heading {
-  font-family: Segoe UI, Arial, sans-serif;
-  padding: .75em;
-  font-size: 5rem;
-  line-height: 1.125;
+  font-family: Titillium Web, sans-serif;
+  text-transform: uppercase;
+  padding: 25px 0;
+  font-size: 25px;
   text-align: center;
-  font-weight: 300;
-  max-width: 100%; }
+  font-weight: 700; }
+  @media (min-width: 768px) {
+    .heading {
+      font-size: 35px; } }
 
 h2, h3 {
   font-family: PT Sans Narrow; }
 
-.bold {
-  font-weight: bold; }
+.grommetux-section {
+  padding: 15px !important; }
 
 .hero-img {
-  height: 60vw;
+  height: 60vh;
   width: 100vw;
   background-repeat: no-repeat;
   background-position: center;
@@ -206,11 +374,20 @@ h2, h3 {
   display: table-cell;
   vertical-align: middle; }
 
+.hero-text {
+  color: white;
+  font-size: 30px;
+  padding: 0px 25px; }
+  @media (min-width: 768px) {
+    .hero-text {
+      font-size: 60px;
+      margin-top: 50px; } }
+
 .blue-web {
   background-image: url("../images/blue-web.jpeg"); }
 
 .blockchain {
-  background-image: url("../images/blockchain-technologies.jpg"); }
+  background-image: url("../images/willian-justen-de-vasconcellos-555198.jpg"); }
 
 .blue-world-dots {
   background-image: url("../images/blue-world-dots.jpeg"); }
@@ -220,8 +397,11 @@ h2, h3 {
   background-position: top; }
 
 .image-container {
-  margin-top: 24px;
-  margin-bottom: 48px; }
+  display: flex;
+  flex-direction: column; }
+  .image-container span {
+    font-weight: 900;
+    margin-top: 5px; }
 
 .image {
   margin: auto;

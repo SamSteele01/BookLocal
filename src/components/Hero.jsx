@@ -13,7 +13,6 @@ class Hero extends Component {
     return (
       <div className={`hero-img ${image}`}>
         {/* <p className="hero-text">{this.props.heroText}</p> */}
-        <p>{heroText}</p>
       </div>
     );
   }

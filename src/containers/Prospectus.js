@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import '../styles/App.css';
 import 'grommet/grommet.min.css'; //vanilla styles
 import Header from '../components/Header';
-import Logo from '../components/Logo';
 import Hero from '../components/Hero';
 import What from './what/What';
 import Why from './why/Why';
 import Who from './who/Who';
 import How from './how/How';
 import Steps from './Steps';
+import Traveler from "./Traveler";
+import Hotel from "./Hotel";
 import Footer from '../components/Footer';
 
 class Prospectus extends Component {
@@ -16,7 +17,6 @@ class Prospectus extends Component {
     return (
       <div className="prospectus">
         {/* <Header/> */}
-        <Logo/>
         <Hero image="blockchain"/>
         {/* <Header/> */}
         <What/>
@@ -26,6 +26,8 @@ class Prospectus extends Component {
         <Who/>
         {/* <Header/> */}
         <How/>
+        <Traveler/>
+        <Hotel/>
         <Hero image="exchange-building"/>
         {/* <Header/> */}
         <Steps/>
