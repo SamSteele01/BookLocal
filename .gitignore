@@ -10,6 +10,7 @@
 /build
 
 #sass
+.sass-cache/*/App.scssc
 /.sass-cache
 /src/styles/App.css.map
 
