@@ -19,8 +19,7 @@ if (typeof web3 !== 'undefined') {
 
 // stolen code zone ^^^
 
-// let RRAbi = require('../../ABIs/RoomRentingAbi.js');
-let RRAbi = require('../../abis/RoomRentingAbi.js');
+let RRAbi = require('../../ABIs/RoomRentingAbi.js');
 let RRAddress = require('../../contractAddress/rinkebyAddress.js');
 let RR = web3.eth.contract(RRAbi).at(RRAddress);
 
