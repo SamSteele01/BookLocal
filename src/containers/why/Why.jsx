@@ -9,16 +9,15 @@ import Solutions from './Solutions';
 import CustomList from '../CustomList';
 import CustomListItem from '../CustomListItem';
 import colors from '../../styles/colors';
-import LegalScale from '../../icons/tipped-scale.png';
 
 class Why extends Component {
 
   render() {
     return (
       <div className="why">
-        <Section 
+        <Section
           pad="none"
-          > 
+          >
           <div className='heading'>Why</div>
           <div className="paragraph-gray">
             To understand the motivation for BookLocal we identify a few key issues with
@@ -26,9 +25,9 @@ class Why extends Component {
           </div>
           <Problems>
             {/* needs to only be one or three cards wide, not two */}
-            <CustomList title="High commission payments." 
+            <CustomList title="High commission payments."
               >
-              <CustomListItem 
+              <CustomListItem
                 // height="xsmall"
                 // animation="slide-left"
                 color="white"
@@ -39,7 +38,7 @@ class Why extends Component {
               >
                 Online travel agents (OTA) receive 15-25% commission per room.
               </CustomListItem>
-              <CustomListItem 
+              <CustomListItem
                 // height="xsmall"
                 // animation="slide-left"
                 color="white"
@@ -51,7 +50,7 @@ class Why extends Component {
                 Other necessary software packages (i.e. channel manager and property
                 management systems) also require monthly usage fees.
               </CustomListItem>
-              <CustomListItem 
+              <CustomListItem
                 // height="xsmall"
                 animation="slide-left"
                 color="white"
@@ -88,10 +87,7 @@ class Why extends Component {
                 />
                 <span>Figure 2: BookLocal Ecosystem</span>
               </div> */}
-              <Image
-                size='thumb'
-                src={LegalScale}
-              />
+
             </Box>
             <CustomList >
               <CustomListItem
@@ -173,7 +169,7 @@ class Why extends Component {
             </CustomList>
           </Problems>
           <Solutions>
-            <CustomList 
+            <CustomList
               title="Brand new revenue structure."
               color={colors.fontGray}
               // bgColor={colors.blue3}
@@ -190,7 +186,7 @@ class Why extends Component {
                 Designed to lower the room prices for travelers and increase hotel profits.
               </CustomListItem>
             </CustomList>
-            <CustomList 
+            <CustomList
               title="Open sourced contracts."
               color={colors.fontGray}
               // bgColor={colors.blue3}
@@ -208,7 +204,7 @@ class Why extends Component {
                 and consistent terms.
               </CustomListItem>
             </CustomList>
-            <CustomList 
+            <CustomList
               title="Holistic design."
               color={colors.fontGray}
               // bgColor={colors.blue3}

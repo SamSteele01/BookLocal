@@ -10,6 +10,7 @@ $font-gray: #464749;
 $header-gray: #3C3C3C;
 $gray: rgb(71, 71, 71);
 $navy-blue: #0c1a2b;
+$logo-blue: #3675B6;
 
 //Break points
 $mob: 480px;
@@ -294,6 +295,11 @@ nav {
 .what__card-font {
   font-weight: 300;
   font-size: 26px;
+  border: solid 1px $logo-blue;
+  h3 {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .why__card-font {
