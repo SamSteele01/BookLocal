@@ -294,7 +294,7 @@ nav {
 .problems {
   background-color: #1a3a5a;
   color: white;
-  padding: 15px; }
+  padding: 25px; }
 
 .what__card-font {
   font-weight: 300;
@@ -302,7 +302,8 @@ nav {
   border: solid 1px #3675B6; }
   .what__card-font h3 {
     width: 100%;
-    text-align: center; }
+    text-align: center;
+    color: #464749; }
 
 .why__card-font {
   font-weight: 300;
@@ -318,9 +319,9 @@ nav {
   border: solid 1px #3675B6; }
 
 .solutions {
-  background-color: #b6cfe9;
+  background-color: white;
   color: #464749;
-  padding: 15px; }
+  padding: 25px; }
 
 p {
   font-family: Titillium Web, sans-serif; }

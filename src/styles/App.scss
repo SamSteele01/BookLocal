@@ -433,7 +433,7 @@ nav {
 .problems {
   background-color: #1a3a5a;
   color: white;
-  padding: 15px;
+  padding: 25px;
 }
 
 .what__card-font {
@@ -443,6 +443,7 @@ nav {
   h3 {
     width: 100%;
     text-align: center;
+    color: rgb(70, 71, 73);
   }
 }
 
@@ -466,9 +467,9 @@ nav {
 }
 
 .solutions {
-  background-color: #b6cfe9;
+  background-color: white;
   color: $font-gray;
-  padding: 15px;
+  padding: 25px;
 
   // background-color: rgb(6, 32, 61);
   // padding: 10px 0;
