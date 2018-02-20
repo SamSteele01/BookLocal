@@ -35,30 +35,74 @@ class What extends Component {
             for both hotel workers and travelers will be designed to provide full service
             functionality and replace inefficiencies in the current ecosystem.
           </p>
-            <h2>To the traveler, BookLocal will provide the following features:</h2>
+          <p className='paragraph-white'>
+            To the traveler, BookLocal will provide the following features:
+          </p>
 
-          <CustomList bgColor={colors.gray}>
-            <CustomListItem classNames="what__card-font">
-              {/* <SearchIcon/> */}
-                <h4 class="search-icon">Search</h4>
-            </CustomListItem>
+          <CustomList
+            bgColor={colors.gray}
 
-            <CustomListItem classNames="what__card-font">
-              {/* <CompareIcon/> */}
-              <h4 class="compare-icon">Compare</h4>
+          >
+            <CustomListItem
+              // height="auto"
+              // animation="slide-left"
+              color="$black"
+              // bgColor="orange"
+              //border={`1px solid ${colors.blue1}`}
+              //borderRad="5px"
+              classNames="what__card-font">
+              {/* <SearchIcon/>   <Image
+                  size='thumb'
+                  src={Search}
+                /> */}
+
+              <h3><i class="fas fa-search"></i> Search</h3>
             </CustomListItem>
-            <CustomListItem animation="slide-left" classNames="what__card-font">
-              {/* <CheckboxSelectedIcon/> */}
-              <h4 className="book-icon">Booking</h4>
+            <CustomListItem
+              //height="auto"
+              // animation="slide-left"
+              // color="$black"
+              // bgColor="orange"
+            //  border="1px solid blue"
+            //  borderRad
+              classNames="what__card-font">
+              {/* <CompareIcon/>   <Image
+                  size='thumb'
+                  src={Compare}
+                /> */}
+
+              <h3><i class="fas fa-exchange-alt"></i> Compare</h3>
+            </CustomListItem>
+            <CustomListItem
+              //height="auto"
+              animation="slide-left"
+              // color="$black"
+              // bgColor="orange"
+            //  border="1px solid blue"
+              //borderRad
+              classNames="what__card-font"
+            >
+              {/* <CheckboxSelectedIcon/>   <Image
+                  size='thumb'
+                  src={Reserve}
+                />*/}
+
+              <h3><i class="far fa-address-book"></i> Book</h3>
             </CustomListItem>
             <CustomListItem
               //height="xsmall"
               animation="slide-left"
+              // color="$black"
+              // bgColor="orange"
+            //  border="1px solid blue"
+              //borderRad
+              classNames="what__card-font">
+              {/* <MoneyIcon/>     <Image
+                    size='thumb'
+                    src={ShoppingCart}
+                  /> */}
 
-              classNames="what__card-font"
-            >
-              {/* <MoneyIcon/> */}
-              <h4 className="cart-icon">Purchase</h4>
+              <h3><i class="fas fa-shopping-cart"></i> Purchase</h3>
             </CustomListItem>
           </CustomList>
 
@@ -73,58 +117,89 @@ class What extends Component {
               // animation="slide-left"
               // color="$black"
               // bgColor="orange"
-
-              classNames="what__card-font"
-            >
-              <h4 className="guest-icon">Guest Management</h4>
+              //border="1px solid blue"
+              //borderRad
+              classNames="what__card-font">
+              {/* <Image
+                size='thumb'
+                src={Reception}
+              />*/}
+              <h3><i class="fas fa-users"></i> Guest Management</h3>
             </CustomListItem>
             <CustomListItem
               // height="xsmall"
               // animation="slide-left"
               // color="$black"
               // bgColor="orange"
-
+              //border="1px solid blue"
+            //  borderRad
               classNames="what__card-font"
             >
-              <h4 className="housekeeping-icon">Housekeeping and Maintenance</h4>
+          {    /*<Image
+                size='thumb'
+                src={Housekeeping}
+              />*/}
+              <h3><i class="fas fa-home"></i> Housekeeping and Maintenance</h3>
             </CustomListItem>
             <CustomListItem
               // height="xsmall"
               // animation="slide-left"
               // color="$black"
               // bgColor="orange"
+              // border="1px solid blue"
+              // borderRad
               classNames="what__card-font"
             >
-            <h4 className="revenue-icon">Revenue Management</h4>
+              {/*<Image
+                size='thumb'
+                src={Revenue}
+              />*/}
+              <h3><i class="fas fa-money-bill-alt"></i> Revenue Management</h3>
             </CustomListItem>
             <CustomListItem
               // height="xsmall"
               animation="slide-left"
               // color="$black"
               // bgColor="orange"
-              classNames="what__card-font">
-
-              <h4 className="pos-icon">Payment Processing and Point of Sale</h4>
-
+              //border="1px solid blue"
+              // borderRad
+              classNames="what__card-font"
+            >
+              {/*<Image
+                size='thumb'
+                src={Sale}
+              />*/}
+               <h3><i class="far fa-credit-card"></i> Payment Processing and Point of Sale</h3>
             </CustomListItem>
             <CustomListItem
                 // height="xsmall"
                 animation="slide-left"
                 // color="$black"
                 // bgColor="orange"
+                //border="1px solid blue"
+                //borderRad
                 classNames="what__card-font"
               >
-              <h4 className="report-icon">Report Generation</h4>
+              {/*<Image
+                size='thumb'
+                src={Report}
+              />*/}
+              <h3><i class="fas fa-chart-line"></i> Report Generation</h3>
             </CustomListItem>
             <CustomListItem
 
               animation="slide-left"
-
+              // color="$black"
+              // bgColor="orange"
+              //border="1px solid blue"
+              //borderRad
               classNames="what__card-font"
             >
-
-              <h4 class="channel-icon">Channel Management</h4>
-              <div></div>
+            {  /*<Image
+                size='thumb'
+                src={Channel}
+              />*/}
+              <h3><i class="fas fa-arrows-alt"></i> Channel Management</h3>
             </CustomListItem>
           </CustomList>
         </Section>
