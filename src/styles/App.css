@@ -164,7 +164,7 @@ nav {
 
 .why {
   background-color: white;
-  color: #3C5BBE; }
+  color: #3675B6; }
 
 .who {
   background-color: white;
@@ -184,7 +184,11 @@ nav {
 
 .what__card-font {
   font-weight: 300;
-  font-size: 26px; }
+  font-size: 26px;
+  border: solid 1px #3675B6; }
+  .what__card-font h3 {
+    width: 100%;
+    text-align: center; }
 
 .why__card-font {
   font-weight: 300;
