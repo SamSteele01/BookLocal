@@ -27,31 +27,32 @@ export default class How extends Component {
 
                     {/* 4 */}
                     <div className='heading'>How</div>
-                    <p className='paragraph'>
+                    <div className="how-section-wrapper">
+                    <p className='paragraph-white'>
                         The heart of BookLocal will reside in a series of smart contracts on the public
-                        Ethereum blockchain.
+                        Ethereum blockchain. BookLocal allows travelers to connect directly to the Hotel by way of the
+                        room. Figure 3 below represents this flow of information for a simple
+                        ecosystem consisting of three hotels and three successful travelers.
                     </p>
+                    <div className='image-container'>
+                        <img
+                            src={expandedEcosystemImg}
+                            clvassName='image'
+                        />
+                        <span>Figure 3: Expanded BookLocal Ecosystem</span>
+                    </div>
+                  </div>
 
                     {/* 4.1 */}
-                    <Heading
+                  {  /*<Heading
                         align='center'
                         margin='medium'
                         tag='h4'>
                         Data
-                    </Heading>
-                    <p className='paragraph'>
-                        BookLocal allows travelers to connect directly to the Hotel by way of the
-                        room. Figure 3 below represents this flow of information for a simple
-                        ecosystem consisting of three hotels and three successful travelers.
-                    </p>
+                    </Heading> */}
 
-                    <div className='image-container'>
-                        <img
-                            src={expandedEcosystemImg}
-                            className='image'
-                        />
-                        <span>Figure 3: Expanded BookLocal Ecosystem</span>
-                    </div>
+
+
 
                     <p className='paragraph'>
                         Take note of the following systems:
