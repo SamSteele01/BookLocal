@@ -39,10 +39,11 @@ pre {
   justify-content: center; }
 
 .App-footer {
-  background-color: #474747;
-  color: white;
+  background-color: white;
+  color: #464749;
   padding: 15px;
-  font-size: 15px; }
+  font-size: 16px;
+  border-top: solid 1px #474747; }
 
 /* NAVBAR */
 nav {
