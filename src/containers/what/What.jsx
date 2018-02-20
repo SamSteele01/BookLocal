@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Paragraph from 'grommet/components/Paragraph';
 import Section from 'grommet/components/Section';
 import Heading from 'grommet/components/Heading';
-import Image from 'grommet/components/Image';
 import CustomList from '../CustomList';
 import CustomListItem from '../CustomListItem';
 import colors from '../../styles/colors';
@@ -20,7 +19,7 @@ class What extends Component {
         >
 
           {/* 1 */}
-          <div className='heading'>What</div>
+          <div className='heading'>What Do we Do?</div>
           <p className='paragraph-white'>
             The vision for BookLocal is to connect travelers directly to their hotel of choice
             by creating the first two way property management system accessible as both
@@ -106,9 +105,9 @@ class What extends Component {
               <h3><i class="fas fa-shopping-cart"></i> Purchase</h3>
             </CustomListItem>
           </CustomList>
-          <p className='paragraph-white'>
-            To the hotel, BookLocal will provide modules for:
-          </p>
+
+            <h2>To the hotel, BookLocal will provide modules for:</h2>
+
           {/* add icons */}
           <CustomList
             bgColor={colors.gray}
@@ -188,7 +187,7 @@ class What extends Component {
               <h3><i class="fas fa-chart-line"></i> Report Generation</h3>
             </CustomListItem>
             <CustomListItem
-              // height="xsmall"
+
               animation="slide-left"
               // color="$black"
               // bgColor="orange"

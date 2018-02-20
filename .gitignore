@@ -9,6 +9,10 @@
 # production
 /build
 
+#sass
+/.sass-cache
+/src/styles/App.css.map
+
 # misc
 .DS_Store
 .env.local

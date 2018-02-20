@@ -4,7 +4,7 @@ import Box from 'grommet/components/Box';
 import Heading from 'grommet/components/Heading';
 import Columns from 'grommet/components/Columns';
 
-// TODO: add window listener to feed media break 
+// TODO: add window listener to feed media break
 // padding, color, bgcolor as props
 class CustomList extends Component {
 
@@ -22,7 +22,7 @@ class CustomList extends Component {
     } = this.props;
 
     var divStyle = {
-      color: color, 
+      color: color,
       backgroundColor: bgColor,
       border: border,
       borderRadius: borderRad
@@ -43,7 +43,7 @@ class CustomList extends Component {
           // margin='small'
         >
         {this.props.title ?
-          <Heading 
+          <Heading
             align='center'
             margin='medium'
             tag='h4'>
@@ -51,7 +51,7 @@ class CustomList extends Component {
           </Heading> :
           null }
 
-          <Columns 
+          <Columns
             responsive={false}
             masonry={false}
             justify='center'
@@ -82,8 +82,6 @@ CustomList.propTypes = {
 
 CustomList.defaultProps = {
   pad: "none",
-  color: "#464749", //font-gray
-  bgColor: "white"
 };
 
 export default CustomList;
