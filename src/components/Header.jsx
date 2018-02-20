@@ -19,9 +19,9 @@ class Header extends Component {
 
           </div>
           <div className="nav-items">
-            <Link to="/home" className="pure-menu-heading pure-menu-link">Home</Link>
-            <Link to="/about" className="pure-menu-heading pure-menu-link">About</Link>
-            <Link to="/register" className="pure-menu-heading pure-menu-link">Register</Link>
+            <Link to="/home" className="pure-menu-heading header-menu-link">Home</Link>
+            <Link to="/about" className="pure-menu-heading header-menu-link">About</Link>
+            <Link to="/register" className="pure-menu-heading header-menu-link">Register</Link>
           </div>
         </nav>
       </div>
