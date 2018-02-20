@@ -33,11 +33,6 @@ pre {
 .pure-form input[type="text"]:focus {
   border-color: #0c1a2b; }
 
-.app {
-  display: flex;
-  flex-direction: row;
-  justify-content: center; }
-
 .App-footer {
   background-color: white;
   color: #464749;
@@ -50,26 +45,43 @@ nav {
   display: flex !important;
   position: fixed;
   z-index: 3;
-  width: 100%;
+  width: 100vw;
   background-color: white;
   justify-content: space-between;
   flex-direction: column;
   border-bottom: solid 1px #474747; }
   @media (min-width: 768px) {
     nav {
-      flex-direction: row; } }
+      flex-direction: row;
+      width: 90vw;
+      padding: 0 5vw; } }
+
+.Logo img {
+  width: 180px;
+  height: auto;
+  padding: 7px 5px 0px 5px; }
 
 .navbar a {
   color: #fff; }
 
-.navbar a:active,
-.navbar a:focus,
-.navbar a:hover {
-  background: #233e5e; }
+a:focus,
+a:active {
+  font-weight: 700; }
 
-.navbar .pure-menu-heading {
+a:hover {
+  color: #E66E1C; }
+
+.navbar .pure-menu-heading,
+.navbar .header-menu-link {
   font-weight: bold;
   text-transform: none; }
+  .navbar .pure-menu-heading:hover,
+  .navbar .header-menu-link:hover {
+    color: #233e5e;
+    background-color: #fff; }
+  .navbar .pure-menu-heading:active,
+  .navbar .header-menu-link:active {
+    font-weight: 500; }
 
 .navbar .navbar-right {
   float: right; }
@@ -77,6 +89,14 @@ nav {
 .navbar .uport-logo {
   height: 16px;
   margin-right: 10px; }
+
+.nav-items {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  @media (min-width: 992) {
+    .nav-items {
+      padding-right: 10px; } }
 
 #loader {
   width: 100px;
@@ -116,6 +136,9 @@ nav {
 
 /* Register */
 .app {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   background-image: url("../images/charlotte-coneybeer-108074.jpg");
   background-position: center;
   height: 100%;
@@ -125,7 +148,7 @@ nav {
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-top: 92px; }
+  margin-top: 80px; }
 
 .reserve fieldset {
   background-color: white;
@@ -195,19 +218,6 @@ nav {
 /* Prospectus aka About*/
 .prospectus {
   text-align: center; }
-
-.Logo img {
-  width: 200px;
-  height: auto;
-  padding: 5px 5px 2px 5px; }
-
-.nav-items {
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-  @media (min-width: 992) {
-    .nav-items {
-      padding-right: 10px; } }
 
 .underline {
   text-decoration: underline; }
