@@ -70,10 +70,11 @@ pre {
 
 //footer
 .App-footer {
-  background-color: $gray;
-  color: white;
+  background-color: white;
+  color: $font-gray;
   padding: 15px;
-  font-size: 15px;
+  font-size: 16px;
+  border-top: solid 1px #474747;
 }
 
 /* NAVBAR */
