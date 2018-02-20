@@ -5,7 +5,7 @@ export default class RegisterMessage extends Component {
         return (
             <div className="register-message">
                 <h2>
-                    Register for a free stay at the Exchange Building during ETHMemphis this May. <br/>Sponsored by BookLocal.
+                    Register for a free stay at the Exchange Building during ETHMemphis this May. Sponsored by BookLocal.
                 </h2>
             </div>
         )

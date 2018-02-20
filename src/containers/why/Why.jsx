@@ -9,48 +9,55 @@ import Solutions from './Solutions';
 import CustomList from '../CustomList';
 import CustomListItem from '../CustomListItem';
 import colors from '../../styles/colors';
+import LegalScale from '../../icons/tipped-scale.png';
 
 class Why extends Component {
 
   render() {
     return (
       <div className="why">
-        <Section
+        <Section 
           pad="none"
-          >
+          > 
           <div className='heading'>Why</div>
-          <p className="paragraph-white">
+          <div className="paragraph-gray">
             To understand the motivation for BookLocal we identify a few key issues with
             the current hotel reservation model and propose solutions.
-          </p>
+          </div>
           <Problems>
             {/* needs to only be one or three cards wide, not two */}
-            <CustomList title="High commission payments."
+            <CustomList title="High commission payments." 
               >
-              <CustomListItem
+              <CustomListItem 
                 // height="xsmall"
                 // animation="slide-left"
                 color="white"
                 bgColor={colors.headerGray}
+                border={`2px solid ${colors.orange3}`}
+                borderRad
                 classNames="why__card-font"
               >
                 Online travel agents (OTA) receive 15-25% commission per room.
               </CustomListItem>
-              <CustomListItem
+              <CustomListItem 
                 // height="xsmall"
                 // animation="slide-left"
                 color="white"
                 bgColor={colors.gray}
+                border={`2px solid ${colors.orange3}`}
+                borderRad
                 classNames="why__card-font"
               >
                 Other necessary software packages (i.e. channel manager and property
                 management systems) also require monthly usage fees.
               </CustomListItem>
-              <CustomListItem
+              <CustomListItem 
                 // height="xsmall"
                 animation="slide-left"
                 color="white"
                 bgColor={colors.headerGray}
+                border={`2px solid ${colors.orange3}`}
+                borderRad
                 classNames="why__card-font"
               >
                 These additional payments increase rates for travelers while lowering profit
@@ -67,10 +74,10 @@ class Why extends Component {
               // size={{height: height, width: 'full'}}
               responsive={false}
               wrap={false}
-              pad='medium'
+              pad='large'
               margin='small'
             >
-              <div style={{fontSize: 18, marginBottom: -55}}>
+              <div style={{fontSize: 18}}>
                 Abuse of power in legal agreements.
               </div>
 
@@ -81,7 +88,10 @@ class Why extends Component {
                 />
                 <span>Figure 2: BookLocal Ecosystem</span>
               </div> */}
-
+              <Image
+                size='thumb'
+                src={LegalScale}
+              />
             </Box>
             <CustomList >
               <CustomListItem
@@ -89,6 +99,8 @@ class Why extends Component {
                 // animation="slide-left"
                 color="white"
                 bgColor={colors.blue2}
+                // border={`2px solid ${colors.orange3}`}
+                borderRad
                 classNames="why__card-font"
               >
                 <div>
@@ -103,6 +115,8 @@ class Why extends Component {
                 // animation="slide-left"
                 color="white"
                 bgColor={colors.blue1}
+                // border={`2px solid ${colors.orange3}`}
+                borderRad
                 classNames="why__card-font"
               >
                 <div>
@@ -116,6 +130,8 @@ class Why extends Component {
                 animation="slide-left"
                 color="white"
                 bgColor={colors.blue2}
+                // border={`2px solid ${colors.orange3}`}
+                borderRad
                 classNames="why__card-font"
               >
                 <div>
@@ -130,6 +146,8 @@ class Why extends Component {
                 // animation="slide-left"
                 color="white"
                 bgColor={colors.headerGray}
+                border={`2px solid ${colors.orange3}`}
+                borderRad
                 classNames="why__card-font"
               >
                 Since many of the computers systems are only designed to handle specific
@@ -143,6 +161,8 @@ class Why extends Component {
                 animation="slide-left"
                 color="white"
                 bgColor={colors.gray}
+                border={`2px solid ${colors.orange3}`}
+                borderRad
                 classNames="why__card-font"
               >
                 Current property management systems allow for various rate plans, seasonal
@@ -153,7 +173,7 @@ class Why extends Component {
             </CustomList>
           </Problems>
           <Solutions>
-            <CustomList
+            <CustomList 
               title="Brand new revenue structure."
               color={colors.fontGray}
               // bgColor={colors.blue3}
@@ -163,12 +183,14 @@ class Why extends Component {
                 // animation="slide-left"
                 color="white"
                 bgColor={colors.headerGray}
+                border={`2px solid ${colors.orange3}`}
+                borderRad
                 classNames="who__card-font"
               >
                 Designed to lower the room prices for travelers and increase hotel profits.
               </CustomListItem>
             </CustomList>
-            <CustomList
+            <CustomList 
               title="Open sourced contracts."
               color={colors.fontGray}
               // bgColor={colors.blue3}
@@ -186,7 +208,7 @@ class Why extends Component {
                 and consistent terms.
               </CustomListItem>
             </CustomList>
-            <CustomList
+            <CustomList 
               title="Holistic design."
               color={colors.fontGray}
               // bgColor={colors.blue3}
@@ -196,6 +218,8 @@ class Why extends Component {
                 // animation="slide-left"
                 color="white"
                 bgColor={colors.headerGray}
+                border={`2px solid ${colors.orange3}`}
+                borderRad
                 classNames="who__card-font"
               >
                 This is the first travel application designed to accomodate the entire booking
@@ -206,6 +230,8 @@ class Why extends Component {
                 animation="slide-left"
                 color="white"
                 bgColor={colors.gray}
+                border={`2px solid ${colors.orange3}`}
+                borderRad
                 classNames="who__card-font"
               >
                 Integrating features into a single system will put the guest and hotel in

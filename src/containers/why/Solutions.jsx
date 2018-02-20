@@ -7,12 +7,14 @@ class Solutions extends Component {
 
   render() {
     return (
-      <div
+      <div 
       className="solutions"
       >
         {/* 2.2 */}
-        <Heading align='center'
-          tag='h2'
+        <Heading align='center' 
+ 	 	 	 	 	 	 margin='large'
+          tag='h1'
+          style={{color: colors.logoBlue}}
           >
           Solutions
         </Heading>
