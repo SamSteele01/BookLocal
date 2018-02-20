@@ -75,13 +75,6 @@ a:hover {
 .navbar .header-menu-link {
   font-weight: bold;
   text-transform: none; }
-  .navbar .pure-menu-heading:hover,
-  .navbar .header-menu-link:hover {
-    color: #233e5e;
-    background-color: #fff; }
-  .navbar .pure-menu-heading:active,
-  .navbar .header-menu-link:active {
-    font-weight: 500; }
 
 .navbar .navbar-right {
   float: right; }
@@ -227,7 +220,7 @@ a:hover {
   color: #FFF; }
 
 .why {
-  background-color: #3675B6;
+  background-color: #3C5BBE;
   color: white;
   padding: 15px; }
 
@@ -257,14 +250,14 @@ a:hover {
 
 .purchase-wrapper {
   margin-top: 50px;
-  background-color: #3675B6;
+  background-color: #3C5BBE;
   padding: 10px;
   color: white; }
 
 .how__card-font {
   font-size: 14px;
   padding: 10px;
-  border: solid 1px #3675B6; }
+  border: solid 1px #3C5BBE; }
   .how__card-font strong {
     font-size: 20px; }
 
@@ -282,7 +275,7 @@ a:hover {
   padding: 15px; }
   .traveler-wrapper h3 {
     padding: 0 50px;
-    color: #3675B6;
+    color: #3C5BBE;
     font-size: 25px; }
 
 .image-sml {
@@ -310,7 +303,7 @@ a:hover {
 .what__card-font {
   font-weight: 300;
   font-size: 26px;
-  border: solid 1px #3675B6; }
+  border: solid 1px #3C5BBE; }
   .what__card-font h3 {
     width: 100%;
     text-align: center;
