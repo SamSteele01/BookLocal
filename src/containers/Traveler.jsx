@@ -6,6 +6,8 @@ import Columns from 'grommet/components/Columns';
 import CustomList from './CustomList';
 import CustomListItem from './CustomListItem';
 import Image from 'grommet/components/Image';
+import "../styles/Traveler.scss";
+
 
 
 class Traveler extends Component {
