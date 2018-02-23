@@ -157,56 +157,6 @@ a:hover {
       .reserve fieldset h1 {
         font-size: 45px; } }
 
-.channel-icon::before {
-  content: "\f201";
-  padding-right: 5px;
-  font-family: fontawesome; }
-
-.search-icon::before {
-  content: "\f002";
-  padding-right: 5px;
-  font-family: fontawesome; }
-
-.book-icon::before {
-  content: "\f2b9";
-  padding-right: 5px;
-  font-family: fontawesome; }
-
-.compare-icon::before {
-  content: "\f07E";
-  padding-right: 5px;
-  font-family: fontawesome; }
-
-.cart-icon::before {
-  content: "\f07a";
-  padding-right: 5px;
-  font-family: fontawesome; }
-
-.guest-icon::before {
-  content: "\f0c0";
-  padding-right: 5px;
-  font-family: fontawesome; }
-
-.revenue-icon::before {
-  content: "\f155";
-  padding-right: 5px;
-  font-family: fontawesome; }
-
-.report-icon::before {
-  content: "\f080";
-  padding-right: 5px;
-  font-family: fontawesome; }
-
-.housekeeping-icon::before {
-  content: "\f015";
-  padding-right: 5px;
-  font-family: fontawesome; }
-
-.pos-icon::before {
-  content: '\f09D';
-  padding-right: 5px;
-  font-family: fontawesome; }
-
 /* Eth-Memphis */
 /* Prospectus aka About*/
 .prospectus {
@@ -220,7 +170,7 @@ a:hover {
   color: #FFF; }
 
 .why {
-  background-color: #3C5BBE;
+  background-color: #1b75bb;
   color: white;
   padding: 15px; }
 
@@ -250,14 +200,14 @@ a:hover {
 
 .purchase-wrapper {
   margin-top: 50px;
-  background-color: #3C5BBE;
+  background-color: #1b75bb;
   padding: 10px;
   color: white; }
 
 .how__card-font {
   font-size: 14px;
   padding: 10px;
-  border: solid 1px #3C5BBE; }
+  border: solid 1px #1b75bb; }
   .how__card-font strong {
     font-size: 20px; }
 
@@ -266,34 +216,9 @@ a:hover {
   color: #FFF;
   padding: 15px; }
 
-.traveler-block {
-  border: solid 1px black;
-  padding: 20px;
-  flex: 1; }
-
-.traveler-wrapper {
-  padding: 15px; }
-  .traveler-wrapper h3 {
-    padding: 0 50px;
-    color: #3C5BBE;
-    font-size: 25px; }
-
 .image-sml {
   height: 140px;
   width: auto; }
-
-.traveler-block-wrapper {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%; }
-  .traveler-block-wrapper ul {
-    font-size: 14px;
-    list-style: none;
-    margin-left: 0; }
-  @media (min-width: 768px) {
-    .traveler-block-wrapper {
-      flex-direction: row; } }
 
 .problems {
   background-color: #1a3a5a;
@@ -303,7 +228,7 @@ a:hover {
 .what__card-font {
   font-weight: 300;
   font-size: 26px;
-  border: solid 1px #3C5BBE; }
+  border: solid 1px #1b75bb; }
   .what__card-font h3 {
     width: 100%;
     text-align: center;
@@ -385,15 +310,6 @@ h2, h3 {
     .hero-text {
       font-size: 60px;
       margin-top: 50px; } }
-
-.blue-web {
-  background-image: url("../images/blue-web.jpeg"); }
-
-.blockchain {
-  background-image: url("../images/willian-justen-de-vasconcellos-555198.jpg"); }
-
-.blue-world-dots {
-  background-image: url("../images/blue-world-dots.jpeg"); }
 
 .exchange-building {
   background-image: url("../images/exchange-building.jpg");

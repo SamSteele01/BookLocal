@@ -38,7 +38,7 @@ export default class How extends Component {
                     <div className='image-container'>
                         <img
                             src={expandedEcosystemImg}
-                            clvassName='image'
+                            className='image'
                         />
                         <span>Figure 3: Expanded BookLocal Ecosystem</span>
                     </div>
