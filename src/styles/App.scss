@@ -10,6 +10,32 @@
   text-align: center;
 }
 
+.textbox {
+  margin-top: 50px;
+  background-color: $logo-blue;
+  padding: 20px;
+  color: white;
+  line-height: 1.5;
+  border: solid 1px white;
+  h2 {
+    font-size: 25px;
+  }
+  p {
+    font-size: 15px;
+    @media (min-width: $tab) {
+      font-size: 18px;
+    }
+  }
+}
+
+.section--wrapper {
+  padding: 15px;
+  h3 {
+    padding: 0 50px;
+    font-size: 25px;
+  }
+}
+
 body,
 .pure-g [class*=pure-u] {
   font-family: 'Open Sans', sans-serif;
@@ -293,12 +319,6 @@ a:hover {
   height: 100%;
 }
 
-.purchase-wrapper {
-  margin-top: 50px;
-  background-color: $logo-blue;
-  padding: 10px;
-  color: white
-}
 
 .how__card-font {
   font-size: 14px;
@@ -310,7 +330,7 @@ a:hover {
   }
 }
 
-.steps {
+.steps__section {
   background-color: $gray;
   color: #FFF;
   padding: 15px;
@@ -440,10 +460,11 @@ h2, h3 {
   }
 }
 
+/*
 .exchange-building {
   background-image: url('../images/exchange-building.jpg');
   background-position: top;
-}
+}*/
 
 .image-container {
   display: flex;

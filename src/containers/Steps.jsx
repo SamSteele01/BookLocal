@@ -7,22 +7,23 @@ import colors from '../styles/colors';
 
 export default class Steps extends Component {
     render() {
-
         return (
-
-            <div className="steps">
-                <Section
+            <section className="steps__section section--wrapper">
+              <Heading align='center' margin='medium' tag='h2' className="heading">
+                  Steps - Proof of Concept
+              </Heading>
+                {/*<Section
                     pad='none'
                     align='stretch'
                     alignContent='center'
                     // appCentered='true'
-                >
+                >*/}
 
                 {/* 5 */}
-                <div className='heading'>Steps</div>
+            {   /* <div className='heading'>Steps</div>
                 <p className='paragraph-white'>
                     Below are the key benchmarks toward full adoption.
-                </p>
+                </p>*/}
 
                 {/* 5.1 */}
             {  /*  <Heading align='center'
@@ -37,17 +38,17 @@ export default class Steps extends Component {
                 </p>*/}
 
                 {/* 5.1.1 */}
-                <Heading
+                {/*<Heading
                     align='center'
                     margin='medium'
                     tag='h4'>
                     Proof of Concept
-                </Heading>
-                <p className='paragraph-white'>
+                </Heading>*/}
+                <h3>
                     We proposed a rentable token model (ERC-809) that extends a non-fungible
                     token (as introduced in ERC-721) to provide temporary access for non-owners.
                     Applied to a hotel, our model does the following:
-                </p>
+                </h3>
                 <CustomList
                     bgColor={colors.gray}
                 >
@@ -90,9 +91,6 @@ export default class Steps extends Component {
                     </CustomListItem>
                     {/* make link to github */}
                 </CustomList>
-                    <p className='paragraph-white'>
-                        The contracts for the proof of concept (written in solidity) are available online.
-                    </p>
 
                 {/* 5.1.2 */}
                 <Heading
@@ -321,9 +319,12 @@ export default class Steps extends Component {
                     Once we have a strong community of users, we will target chain hotels by adding
                     features that allow for corporate oversight on overall and hotel specific performance.
                 </p>
+                <div className="textbox">
+                  <h2>Contracts</h2>
+                  <p>The contracts for the proof of concept (written in solidity) are available online.</p>
 
-                </Section>
-            </div>
+                </div>
+            </section>
         )
     }
 }

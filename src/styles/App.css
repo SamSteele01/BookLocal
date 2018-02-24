@@ -6,6 +6,27 @@
   justify-content: space-between;
   text-align: center; }
 
+.textbox {
+  margin-top: 50px;
+  background-color: #1b75bb;
+  padding: 20px;
+  color: white;
+  line-height: 1.5;
+  border: solid 1px white; }
+  .textbox h2 {
+    font-size: 25px; }
+  .textbox p {
+    font-size: 15px; }
+    @media (min-width: 768px) {
+      .textbox p {
+        font-size: 18px; } }
+
+.section--wrapper {
+  padding: 15px; }
+  .section--wrapper h3 {
+    padding: 0 50px;
+    font-size: 25px; }
+
 body,
 .pure-g [class*=pure-u] {
   font-family: 'Open Sans', sans-serif; }
@@ -198,12 +219,6 @@ a:hover {
   width: 500px;
   height: 100%; }
 
-.purchase-wrapper {
-  margin-top: 50px;
-  background-color: #1b75bb;
-  padding: 10px;
-  color: white; }
-
 .how__card-font {
   font-size: 14px;
   padding: 10px;
@@ -211,7 +226,7 @@ a:hover {
   .how__card-font strong {
     font-size: 20px; }
 
-.steps {
+.steps__section {
   background-color: #474747;
   color: #FFF;
   padding: 15px; }
@@ -311,10 +326,11 @@ h2, h3 {
       font-size: 60px;
       margin-top: 50px; } }
 
-/*.exchange-building {
-  background-image: url("../images/exchange-building.jpg");
-  background-position: top; } */
-
+/*
+.exchange-building {
+  background-image: url('../images/exchange-building.jpg');
+  background-position: top;
+}*/
 .image-container {
   display: flex;
   flex-direction: column; }

@@ -7,8 +7,7 @@ import "../styles/Traveler.scss";
 class Traveler extends Component {
   render() {
     return(
-
-      <div className="traveler-wrapper">
+    <section className="traveler__section section--wrapper">
       <Heading align='center'
       margin='medium'
           tag='div' className="heading">
@@ -21,8 +20,8 @@ class Traveler extends Component {
       </h3>
 
       {/* 4.2.1 */}
-      <div className="traveler-block-wrapper">
-      <div class="traveler-block">
+      <div className="traveler__blocks">
+      <div class="traveler__block">
       <Heading align='center'
       margin='medium'
           tag='h3'>
@@ -40,7 +39,7 @@ class Traveler extends Component {
     </div>
 
       {/* 4.2.2 */}
-      <div class="traveler-block">
+      <div class="traveler__block">
       <Heading align='center'
       margin='medium'
           tag='h3'>
@@ -56,7 +55,7 @@ class Traveler extends Component {
     </div>
 
       {/* 4.2.3 */}
-      <div class="traveler-block">
+      <div class="traveler__block">
 
       <Heading align='center'
       margin='medium'
@@ -131,15 +130,14 @@ class Traveler extends Component {
       </Columns>*/}
 
       {/* 4.2.4 */}
-      <div class="purchase-wrapper">
+      <div class="textbox">
       {/*Heading align='center'
       margin='medium'
           tag='h3'>
           Purchase
       </Heading>*/}
-      <p className='paragraph'>
         <h2>Purchase</h2>
-          The purchase function will act as a simple wallet enabling the guest to pay for
+          <p>The purchase function will act as a simple wallet enabling the guest to pay for
           food, drinks, and events in the local ecosystem.
           To give an example: let’s say a traveler, Ann, is willing to spend at most $400
           for a day and night in Paris. She uses BookLocal to find a hotel that costs
@@ -153,7 +151,7 @@ class Traveler extends Component {
           didn’t spend will be immediately returned to her upon checkout.
       </p>
       </div>
-    </div>
+    </section>
     );
   }
 }

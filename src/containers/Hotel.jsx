@@ -6,7 +6,7 @@ import "../styles/Hotel.scss";
 class Hotel extends Component {
   render() {
     return(
-      <section className="hotel-wrapper">
+      <section className="hotel-wrapper section--wrapper">
       <Heading align='center' margin='medium' tag='h2' className="heading">
           Hotel
       </Heading>
@@ -94,15 +94,12 @@ class Hotel extends Component {
       {/*<Heading align='center'
     margin='medium'
           tag='h2'>*/}
-          <div class="dispute-wrapper">
-      <p className='paragraph'>
+      <div class="textbox">
         <h2>Dispute</h2>
-
-          In case of a disputed room charge or rate, the guest or hotel can open a dispute.
+          <p>In case of a disputed room charge or rate, the guest or hotel can open a dispute.
           Both the guest and hotel will have a specified amount of time (i.e. two-weeks)
           to submit their claim after which BookLocal will make the final decision. Here,
-          the guest’s subchain stays open and unresolved until BookLocal’s decision.
-      </p>
+          the guest’s subchain stays open and unresolved until BookLocal’s decision.</p>
     </div>
     </section>
     )

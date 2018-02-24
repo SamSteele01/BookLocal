@@ -1,13 +1,10 @@
-@import "Variables"; 
+@import "Variables";
 
 .hotel-wrapper {
   background-color: #808080;
-  padding: 15px;
   color: white;
 
   h3 {
-    padding: 0 50px;
-    font-size: 25px;
     color: $header-gray;
   }
 }
@@ -42,11 +39,4 @@
     flex-direction: row;
     flex-wrap: wrap;
   }
-}
-
-.dispute-wrapper {
-  margin-top: 50px;
-  background-color: $logo-blue;
-  padding: 10px;
-  color: white
 }
