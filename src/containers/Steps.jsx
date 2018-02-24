@@ -5,6 +5,7 @@ import CustomList from './CustomList';
 import CustomListItem from './CustomListItem';
 import colors from '../styles/colors';
 import Helpers from "../styles/Helpers.scss";
+import WalletImg from "../images/wallet.jpg";
 
 export default class Steps extends Component {
     render() {
@@ -127,8 +128,8 @@ export default class Steps extends Component {
                     </Heading>
                     <p className='paragraph'>
                         To ensure secure payments, we will use industry standard code for our
-                        multisignature wallet.
-                    </p>
+                        multisignature wallet.</p>
+                        <img className="image-md" alt="wallet" src={WalletImg}/>
                   </div>
                   <div className="content-card">
                     <Heading align='center'

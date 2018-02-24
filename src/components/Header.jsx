@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Logo5 from '../images/logo5.png';
+import Logo from '../images/logo.png';
 
 class Header extends Component {
 
@@ -11,7 +11,7 @@ class Header extends Component {
           <div className="Logo">
             <Link to="/home">
               <img
-                src={Logo5}
+                src={Logo}
                 alt="BookLocal Logo"
                 // srcSet="http://booklocal.in/wp-content/uploads/2017/07/logo5.png 320w, http://booklocal.in/wp-content/uploads/2017/07/logo5-768x316.png 768w"
               />

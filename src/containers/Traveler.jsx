@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Heading from 'grommet/components/Heading';
 import "../styles/Traveler.scss";
+import Bed from "../images/bed.jpg";
 
 
 
@@ -51,7 +52,7 @@ class Traveler extends Component {
           reviews and pictures from other guests as well as more formal descriptions from
           the hotel itself.
       </p>
-      <img className="image-sml" alt="hotel-bed" src="https://images.unsplash.com/photo-1515362655824-9a74989f318e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1ea8d1494f9311d9f9fad346fcbd6252&auto=format&fit=crop&w=2850&q=80"/>
+      <img className="image-sml" alt="hotel-bed" src={Bed}/>
     </div>
 
       {/* 4.2.3 */}

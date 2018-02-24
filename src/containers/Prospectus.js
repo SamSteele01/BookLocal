@@ -18,7 +18,7 @@ class Prospectus extends Component {
     return (
       <div className="prospectus">
         {/* <Header/> */}
-        <Hero image="blockchain"/>
+        <Hero image="hero-pattern"/>
         {/* <Header/> */}
         <What/>
         {/* <Header/> */}

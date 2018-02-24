@@ -35,9 +35,9 @@ class What extends Component {
             for both hotel workers and travelers will be designed to provide full service
             functionality and replace inefficiencies in the current ecosystem.
           </p>
-          <p className='paragraph-white'>
-            To the traveler, BookLocal will provide the following features:
-          </p>
+
+            <h2>To the traveler, BookLocal will provide the following features:</h2>
+
 
           <CustomList
             bgColor={colors.gray}
