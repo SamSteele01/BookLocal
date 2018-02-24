@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
-import Paragraph from 'grommet/components/Paragraph';
-import Section from 'grommet/components/Section';
 import Heading from 'grommet/components/Heading';
-import Columns from 'grommet/components/Columns';
-import CustomList from './CustomList';
-import CustomListItem from './CustomListItem';
-import Image from 'grommet/components/Image';
 import "../styles/Traveler.scss";
 
 
@@ -58,7 +52,7 @@ class Traveler extends Component {
           reviews and pictures from other guests as well as more formal descriptions from
           the hotel itself.
       </p>
-      <img className="image-sml" src="https://images.unsplash.com/photo-1515362655824-9a74989f318e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1ea8d1494f9311d9f9fad346fcbd6252&auto=format&fit=crop&w=2850&q=80"/>
+      <img className="image-sml" alt="hotel-bed" src="https://images.unsplash.com/photo-1515362655824-9a74989f318e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1ea8d1494f9311d9f9fad346fcbd6252&auto=format&fit=crop&w=2850&q=80"/>
     </div>
 
       {/* 4.2.3 */}

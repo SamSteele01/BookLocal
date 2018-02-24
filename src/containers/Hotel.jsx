@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
-import Paragraph from 'grommet/components/Paragraph';
-import Section from 'grommet/components/Section';
 import Heading from 'grommet/components/Heading';
-import Columns from 'grommet/components/Columns';
-import CustomList from './CustomList';
-import CustomListItem from './CustomListItem';
-import Image from 'grommet/components/Image';
 import "../styles/Hotel.scss";
 
 

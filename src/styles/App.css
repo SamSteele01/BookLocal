@@ -311,9 +311,9 @@ h2, h3 {
       font-size: 60px;
       margin-top: 50px; } }
 
-.exchange-building {
+/*.exchange-building {
   background-image: url("../images/exchange-building.jpg");
-  background-position: top; }
+  background-position: top; } */
 
 .image-container {
   display: flex;

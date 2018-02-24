@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Paragraph from 'grommet/components/Paragraph';
 import Section from 'grommet/components/Section';
 import Heading from 'grommet/components/Heading';
 import CustomList from './CustomList';
@@ -10,6 +9,7 @@ export default class Steps extends Component {
     render() {
 
         return (
+
             <div className="steps">
                 <Section
                     pad='none'
@@ -25,7 +25,7 @@ export default class Steps extends Component {
                 </p>
 
                 {/* 5.1 */}
-                <Heading align='center'
+            {  /*  <Heading align='center'
  	 	 	 	 	 	 margin='medium'
                         margin='medium'
                         tag='h2'>
@@ -34,7 +34,7 @@ export default class Steps extends Component {
                 <p className='paragraph-white'>
                     The Exchange Building in Memphis, Tennessee will host the first version of
                     BookLocal as it’s own proprietary property management system.
-                </p>
+                </p>*/}
 
                 {/* 5.1.1 */}
                 <Heading

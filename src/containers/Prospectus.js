@@ -11,6 +11,7 @@ import Steps from './Steps';
 import Traveler from "./Traveler";
 import Hotel from "./Hotel";
 import Footer from '../components/Footer';
+import Exchange from "./Exchange";
 
 class Prospectus extends Component {
   render() {
@@ -28,8 +29,9 @@ class Prospectus extends Component {
         <How/>
         <Traveler/>
         <Hotel/>
-        <Hero image="exchange-building"/>
+        {/*<Hero image="exchange-building"/>*/}
         {/* <Header/> */}
+        <Exchange/>
         <Steps/>
       </div>
     );

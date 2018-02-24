@@ -1,0 +1,30 @@
+@import "Variables";
+
+.exchange-building--wrapper {
+  display: flex;
+  padding: 15px;
+  align-items: center;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  @media (min-width: $tab) {
+    flex-direction: row;
+  }
+  @media (min-width: $desk) {
+    align-items: flex-start;
+  }
+  h3 {
+    font-size: 25px;
+    padding: 0 50px;
+  }
+  a {
+    color: $logo-blue;
+    font: 20px;
+  }
+}
+
+.exchange-building--map {
+  max-width: 80vw;
+  @media (min-width: $tab) {
+    max-width: 40vw;
+  }
+}

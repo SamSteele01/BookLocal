@@ -104,7 +104,6 @@ class Reserve extends Component{
       }
       const inputButtonStyle={
           marginTop: '25px',
-          color: "#777",
           fontWeight: "900",
           backgroundColor: "rgb(60, 91, 190)",
           padding: '5px 15px',
