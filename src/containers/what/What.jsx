@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import Paragraph from 'grommet/components/Paragraph';
 import Section from 'grommet/components/Section';
-import Heading from 'grommet/components/Heading';
 import CustomList from '../CustomList';
 import CustomListItem from '../CustomListItem';
 import colors from '../../styles/colors';
@@ -10,7 +8,7 @@ class What extends Component {
 
   render() {
     return (
-      <div className='what'>
+      <div className='what section--wrapper'>
         <Section
           pad='none'
           align='stretch'

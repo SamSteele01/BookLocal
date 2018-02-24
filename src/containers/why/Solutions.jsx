@@ -6,7 +6,7 @@ class Solutions extends Component {
   render() {
     return (
       <div
-      className="solutions"
+      className="solutions section--wrapper"
       >
         {/* 2.2 */}
         <Heading align='center'

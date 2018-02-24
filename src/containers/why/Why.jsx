@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import Section from 'grommet/components/Section';
-import Heading from 'grommet/components/Heading';
 import Box from 'grommet/components/Box';
-import Image from 'grommet/components/Image';
-import Paragraph from 'grommet/components/Paragraph';
 import Problems from './Problems';
 import Solutions from './Solutions';
 import CustomList from '../CustomList';
@@ -14,7 +11,7 @@ class Why extends Component {
 
   render() {
     return (
-      <div className="why">
+      <div className="why section--wrapper">
         <Section
           pad="none"
           >

@@ -5,7 +5,7 @@ class Problems extends Component {
 
   render() {
     return (
-      <div className="problems">
+      <div className="problems section--wrapper">
         {/* 2.1 */}
         <Heading
 

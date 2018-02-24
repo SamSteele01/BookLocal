@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import Section from 'grommet/components/Section';
 import Heading from 'grommet/components/Heading';
 import CustomList from './CustomList';
 import CustomListItem from './CustomListItem';
 import colors from '../styles/colors';
-import Helpers from "../styles/Helpers.scss";
 import WalletImg from "../images/wallet.jpg";
 import CouchImg from "../images/couch.jpg";
 import HotelImg from "../images/hotel.jpg";
@@ -14,7 +12,7 @@ export default class Steps extends Component {
     render() {
         return (
             <section className="steps__section section--wrapper">
-              <Heading align='center' margin='medium' tag='h2' className="heading">
+              <Heading align='center' tag='h2' className="heading">
                   Steps - Proof of Concept
               </Heading>
                 {/*<Section
@@ -52,7 +50,7 @@ export default class Steps extends Component {
                 <h3>
                     We proposed a rentable token model (ERC-809) that extends a non-fungible
                     token (as introduced in ERC-721) to provide temporary access for non-owners.
-                    Applied to a hotel, our model does the following:
+                    <br/>Applied to a hotel, our model does the following:
                 </h3>
                 <CustomList
                     bgColor={colors.gray}

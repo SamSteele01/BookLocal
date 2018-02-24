@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Heading from 'grommet/components/Heading';
-import "../styles/Traveler.scss";
+import "../styles/Sections.scss";
 import Bed from "../images/bed.jpg";
 
 
@@ -10,7 +10,6 @@ class Traveler extends Component {
     return(
     <section className="traveler__section section--wrapper">
       <Heading align='center'
-      margin='medium'
           tag='div' className="heading">
           Traveler
       </Heading>
@@ -21,8 +20,8 @@ class Traveler extends Component {
       </h3>
 
       {/* 4.2.1 */}
-      <div className="traveler__blocks">
-      <div class="traveler__block">
+      <div className="content-card--wrapper">
+      <div class="content-card">
       <Heading align='center'
       margin='medium'
           tag='h3'>
@@ -40,7 +39,7 @@ class Traveler extends Component {
     </div>
 
       {/* 4.2.2 */}
-      <div class="traveler__block">
+      <div class="content-card">
       <Heading align='center'
       margin='medium'
           tag='h3'>
@@ -56,7 +55,7 @@ class Traveler extends Component {
     </div>
 
       {/* 4.2.3 */}
-      <div class="traveler__block">
+      <div class="content-card">
 
       <Heading align='center'
       margin='medium'

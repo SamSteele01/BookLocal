@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
 import 'grommet/grommet.min.css'; //vanilla styles
-import Header from '../components/Header';
 import Hero from '../components/Hero';
 import What from './what/What';
 import Why from './why/Why';
@@ -10,7 +9,6 @@ import How from './how/How';
 import Steps from './Steps';
 import Traveler from "./Traveler";
 import Hotel from "./Hotel";
-import Footer from '../components/Footer';
 import Exchange from "./Exchange";
 
 class Prospectus extends Component {

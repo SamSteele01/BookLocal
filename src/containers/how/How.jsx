@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import Paragraph from 'grommet/components/Paragraph';
 import Section from 'grommet/components/Section';
-import Heading from 'grommet/components/Heading';
-import Columns from 'grommet/components/Columns';
 import CustomList from '../CustomList';
 import CustomListItem from '../CustomListItem';
-import Image from 'grommet/components/Image';
 import expandedEcosystemImg from '../../images/expanded-ecosystem.png';
 import plasmaChainImg from '../../images/plasma-chain.png';
 import colors from '../../styles/colors';
@@ -14,7 +10,7 @@ export default class How extends Component {
     render() {
 
         return (
-            <div className="how">
+            <section className="how section--wrapper">
                 <Section
                     margin="none"
                     pad='none'
@@ -39,6 +35,7 @@ export default class How extends Component {
                         <img
                             src={expandedEcosystemImg}
                             className='image'
+                            alt="ecosystem"
                         />
                         <span>Figure 3: Expanded BookLocal Ecosystem</span>
                     </div>
@@ -120,6 +117,7 @@ export default class How extends Component {
                         <img
                             src={plasmaChainImg}
                             className='image'
+                            alt="plasma chain"
                         />
                     </div>
                   </div>
@@ -129,7 +127,7 @@ export default class How extends Component {
 
 
                 </Section>
-            </div>
+            </section>
         )
     }
 }

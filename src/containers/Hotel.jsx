@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import Heading from 'grommet/components/Heading';
-import "../styles/Hotel.scss";
+import "../styles/Sections.scss";
 
 
 class Hotel extends Component {
   render() {
     return(
       <section className="hotel-wrapper section--wrapper">
-      <Heading align='center' margin='medium' tag='h2' className="heading">
+      <Heading align='center' tag='h2' className="heading">
           Hotel
       </Heading>
       <h3>
