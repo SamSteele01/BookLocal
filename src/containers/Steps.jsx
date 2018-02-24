@@ -4,6 +4,7 @@ import Heading from 'grommet/components/Heading';
 import CustomList from './CustomList';
 import CustomListItem from './CustomListItem';
 import colors from '../styles/colors';
+import Helpers from "../styles/Helpers.scss";
 
 export default class Steps extends Component {
     render() {
@@ -91,9 +92,17 @@ export default class Steps extends Component {
                     </CustomListItem>
                     {/* make link to github */}
                 </CustomList>
+                <div class="textbox margin-bottom--med">
+                  <h2>Minimum Viable Product</h2>
+                  <p>
+                    The minimum viable product will extend the Proof of Concept to incorporate
+                    full payment functionality and user interfaces.
+                  </p>
+                </div>
+
 
                 {/* 5.1.2 */}
-                <Heading
+              { /*<Heading
                     align='center'
                     margin='medium'
                     tag='h2'>
@@ -108,30 +117,40 @@ export default class Steps extends Component {
                 <p className='paragraph-white'>
                     The minimum viable product will extend the Proof of Concept to incorporate
                     full payment functionality and user interfaces.
-                </p>
+                </p>*/}
+                <div className="content-card--wrapper">
+                  <div className="content-card">
+                    <Heading align='center'
+                        margin='medium'
+                        tag='h3'>
+                        1. Multisignature Wallets
+                    </Heading>
+                    <p className='paragraph'>
+                        To ensure secure payments, we will use industry standard code for our
+                        multisignature wallet.
+                    </p>
+                  </div>
+                  <div className="content-card">
+                    <Heading align='center'
+                        margin='medium'
+                        tag='h3'>
+                        2. Traveler Interface
+                    </Heading>
+                    <p className='paragraph'>
+                        Each “Traveler” object inherits functions from a standard wallet. Thus,
+                        the minimum viable interface for a traveler will extend the wallet to provide
+                        a graphical interface for the following methods:</p>
+                        <ul>
+                          <li>checkRoomStatus(_roomId)</li>
+                          <li>reserve(_roomId,_startDate,_stopDate)</li>
+                          <li>checkIn(_roomId)</li>
+                          <li>checkRoomStatus(_roomId)</li>
+                          <li>checkOut(_roomId)</li>
+                          <li>cancel(_roomId,_startDate,_stopDate)</li>
+                        </ul>
+                  </div>
 
-                <Heading align='center'
-                    margin='medium'
-                    tag='h3'>
-                    1. Multisignature Wallets
-                </Heading>
-                <p className='paragraph-white'>
-                    To ensure secure payments, we will use industry standard code for our
-                    multisignature wallet.
-                </p>
-
-                <Heading align='center'
-                    margin='medium'
-                    tag='h3'>
-                    2. Traveler Interface
-                </Heading>
-
-                <p className='paragraph-white'>
-                    Each “Traveler” object inherits functions from a standard wallet. Thus,
-                    the minimum viable interface for a traveler will extend the wallet to provide
-                    a graphical interface for the following methods:
-                </p>
-                <CustomList
+              {/*  <CustomList
                     bgColor={colors.gray}
                 >
                     <CustomListItem
@@ -193,33 +212,38 @@ export default class Steps extends Component {
                             cancel(_roomId,_startDate,_stopDate)
                         </div>
                     </CustomListItem>
-                </CustomList>
+                </CustomList>*/}
+                <div className="content-card">
+                  <Heading align='center'
+                      margin='medium'
+                      tag='h3'>
+                      3. Hotel Interface
+                  </Heading>
+                  <p className='paragraph'>
+                      Each “Hotel” object inherits functions from a standard multisignature
+                      wallet in order to appropriately handle payments being sent to the contract.
+                      In addition to base wallet features, the Hotel will also have access
+                      to all methods callable by the traveler (as listed above) with special owner
+                      permissions. Further, the minimum viable interface for a hotel will also
+                      include a graphical interface for the following methods:</p>
+                      <ul>
+                        <li>newRoom()</li>
+                        <li>changeDescription(_roomId)</li>
+                        <li>remove(_roomId)</li>
+                        <li>hide(_roomId)</li>
+                      </ul>
+                </div>
+              </div>
 
-                <Heading align='center'
-                    margin='medium'
-                    tag='h3'>
-                    3. Hotel Interface
-                </Heading>
 
-                <p className='paragraph-white'>
-                    Each “Hotel” object inherits functions from a standard multisignature
-                    wallet in order to appropriately handle payments being sent to the contract.
-                    In addition to base wallet features, the Hotel will also have access
-                    to all methods callable by the traveler (as listed above) with special owner
-                    permissions. Further, the minimum viable interface for a hotel will also
-                    include a graphical interface for the following methods:
-                </p>
-                <CustomList
-                    bgColor={colors.gray}
-                >
+
+                {/*<CustomList bgColor={colors.gray >
                     <CustomListItem
                         //height="auto"
                         // animation="slide-left"
                         // color="$black"
                         // bgColor="orange"
-
-                        classNames="steps__card-font"
-                    >
+                        classNames="steps__card-font">
                         <div>
                             newRoom()
                         </div>
@@ -258,7 +282,7 @@ export default class Steps extends Component {
                             hide(_roomId)
                         </div>
                     </CustomListItem>
-                </CustomList>
+                </CustomList> */}
 
 
 

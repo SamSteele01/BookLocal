@@ -15,8 +15,8 @@ class Hotel extends Component {
       </h3>
 
       {/* 4.3.1 */}
-      <div className="hotel-block-wrapper">
-      <div className="hotel-block">
+      <div className="content-card--wrapper">
+      <div className="content-card">
       <Heading align='center' margin='medium' tag='h3'>
           <i class="fas fa-users"></i> Guest Management
       </Heading>
@@ -29,7 +29,7 @@ class Hotel extends Component {
     </div>
 
       {/* 4.3.2 */}
-      <div className="hotel-block">
+      <div className="content-card">
         <Heading align='center' margin='medium' tag='h3'>
           <i class="fas fa-home"></i> Housekeeping and Maintenance
       </Heading>
@@ -41,7 +41,7 @@ class Hotel extends Component {
     </div>
 
       {/* 4.3.3 */}
-      <div className="hotel-block">
+      <div className="content-card">
         <Heading align='center' margin='medium' tag='h3'>
           <i class="fas fa-money-bill-alt"></i> Revenue Management
         </Heading>
@@ -52,7 +52,7 @@ class Hotel extends Component {
     </div>
 
       {/* 4.3.4 */}
-      <div className="hotel-block">
+      <div className="content-card">
       <Heading align='center' margin='medium' tag='h3'>
           <i class="fas fa-credit-card"></i> Payment Processing
       </Heading>
@@ -67,7 +67,7 @@ class Hotel extends Component {
 
       {/* 4.3.5 */}
 
-      <div className="hotel-block">
+      <div className="content-card">
       <Heading align='center' margin='medium' tag='h3'>
           <i class="fas fa-chart-line"></i> Report Generation
       </Heading>
@@ -78,7 +78,7 @@ class Hotel extends Component {
     </div>
 
       {/* 4.3.6 */}
-      <div className="hotel-block">
+      <div className="content-card">
         <Heading align='center' margin='medium' tag='h3'>
             <i class="fas fa-arrows-alt"></i> Channel Management
           </Heading>

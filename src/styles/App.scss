@@ -11,7 +11,7 @@
 }
 
 .textbox {
-  margin-top: 50px;
+  margin: 25px 0 0 0;
   background-color: $logo-blue;
   padding: 20px;
   color: white;
@@ -25,6 +25,52 @@
     @media (min-width: $tab) {
       font-size: 18px;
     }
+  }
+}
+
+.content-card {
+  border: solid 1px black;
+  padding: 20px;
+  flex: 1;
+  background-color: white;
+  color: $gray;
+  p, li {
+    font-size: 18px;
+  }
+  li {
+    padding: 10px 0;
+    &:nth-child(even) {
+      background-color: #EAEAEA;
+    }
+    &:nth-child(odd) {
+      background-color: #D1D1D1;
+    }
+
+
+  }
+  @media (min-width: $tab) {
+    flex-basis: 25%;
+  }
+}
+
+.content-card--wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  @media (min-width: $tab) {
+    justify-content: space-around;
+    align-content: space-around;
+  }
+
+  width: 100%;
+  ul {
+    font-size: 14px;
+    list-style: none;
+    margin: 0;
+  }
+  @media (min-width: $tab) {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 

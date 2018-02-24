@@ -7,7 +7,7 @@
   text-align: center; }
 
 .textbox {
-  margin-top: 50px;
+  margin: 25px 0 0 0;
   background-color: #1b75bb;
   padding: 20px;
   color: white;
@@ -20,6 +20,42 @@
     @media (min-width: 768px) {
       .textbox p {
         font-size: 18px; } }
+
+.content-card {
+  border: solid 1px black;
+  padding: 20px;
+  flex: 1;
+  background-color: white;
+  color: #474747; }
+  .content-card p, .content-card li {
+    font-size: 18px; }
+  .content-card li {
+    padding: 10px 0; }
+    .content-card li:nth-child(even) {
+      background-color: #EAEAEA; }
+    .content-card li:nth-child(odd) {
+      background-color: #D1D1D1; }
+  @media (min-width: 768px) {
+    .content-card {
+      flex-basis: 25%; } }
+
+.content-card--wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%; }
+  @media (min-width: 768px) {
+    .content-card--wrapper {
+      justify-content: space-around;
+      align-content: space-around; } }
+  .content-card--wrapper ul {
+    font-size: 14px;
+    list-style: none;
+    margin: 0; }
+  @media (min-width: 768px) {
+    .content-card--wrapper {
+      flex-direction: row;
+      flex-wrap: wrap; } }
 
 .section--wrapper {
   padding: 15px; }

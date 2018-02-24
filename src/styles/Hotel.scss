@@ -8,35 +8,3 @@
     color: $header-gray;
   }
 }
-
-.hotel-block {
-  border: solid 1px black;
-  padding: 20px;
-  flex: 1;
-  background-color: white;
-  color: $gray;
-  @media (min-width: $tab) {
-    flex-basis: 25%;
-  }
-}
-
-.hotel-block-wrapper {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  @media (min-width: $tab) {
-    justify-content: space-around;
-    align-content: space-around;
-  }
-
-  width: 100%;
-  ul {
-    font-size: 14px;
-    list-style: none;
-    margin-left: 0;
-  }
-  @media (min-width: $tab) {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-}
