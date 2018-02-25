@@ -18,7 +18,7 @@ class Hotel extends Component {
       <div className="content-card--wrapper">
       <div className="content-card">
       <Heading align='center' margin='medium' tag='h3'>
-          <i class="fas fa-users"></i> Guest Management
+          <i className="fas fa-users"></i> Guest Management
       </Heading>
       <p className='paragraph'>
           Guest management includes managing arrivals and departures with any special
@@ -31,7 +31,7 @@ class Hotel extends Component {
       {/* 4.3.2 */}
       <div className="content-card">
         <Heading align='center' margin='medium' tag='h3'>
-          <i class="fas fa-home"></i> Housekeeping and Maintenance
+          <i className="fas fa-home"></i> Housekeeping and Maintenance
       </Heading>
       <p className='paragraph'>
           The housekeeping module will include messaging capabilities, room specific
@@ -43,7 +43,7 @@ class Hotel extends Component {
       {/* 4.3.3 */}
       <div className="content-card">
         <Heading align='center' margin='medium' tag='h3'>
-          <i class="fas fa-money-bill-alt"></i> Revenue Management
+          <i className="fas fa-money-bill-alt"></i> Revenue Management
         </Heading>
       <p className='paragraph'>
           Revenue management will act as a recommendation system to provide different
@@ -54,7 +54,7 @@ class Hotel extends Component {
       {/* 4.3.4 */}
       <div className="content-card">
       <Heading align='center' margin='medium' tag='h3'>
-          <i class="fas fa-credit-card"></i> Payment Processing
+          <i className="fas fa-credit-card"></i> Payment Processing
       </Heading>
       <p className='paragraph'>
           Upon checkout, BookLocal will finalize the guest’s plasma chain (or state channel),
@@ -69,7 +69,7 @@ class Hotel extends Component {
 
       <div className="content-card">
       <Heading align='center' margin='medium' tag='h3'>
-          <i class="fas fa-chart-line"></i> Report Generation
+          <i className="fas fa-chart-line"></i> Report Generation
       </Heading>
       <p className='paragraph'>
           This module will generate industry specific reports used during night audits as
@@ -80,7 +80,7 @@ class Hotel extends Component {
       {/* 4.3.6 */}
       <div className="content-card">
         <Heading align='center' margin='medium' tag='h3'>
-            <i class="fas fa-arrows-alt"></i> Channel Management
+            <i className="fas fa-arrows-alt"></i> Channel Management
           </Heading>
           <p className='paragraph'>
           In order to feasibly integrate into the current ecosystem, BookLocal will include
@@ -94,7 +94,7 @@ class Hotel extends Component {
       {/*<Heading align='center'
     margin='medium'
           tag='h2'>*/}
-      <div class="textbox">
+      <div className="textbox">
         <h2>Dispute</h2>
           <p>In case of a disputed room charge or rate, the guest or hotel can open a dispute.
           Both the guest and hotel will have a specified amount of time (i.e. two-weeks)

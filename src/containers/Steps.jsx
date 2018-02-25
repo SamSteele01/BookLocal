@@ -94,7 +94,7 @@ export default class Steps extends Component {
                     </CustomListItem>
                     {/* make link to github */}
                 </CustomList>
-                <div class="textbox margin-bottom--med">
+                <div className="textbox margin-bottom--med">
                   <h2>Minimum Viable Product</h2>
                   <p>
                     The minimum viable product will extend the Proof of Concept to incorporate

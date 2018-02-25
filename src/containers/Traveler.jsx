@@ -21,11 +21,11 @@ class Traveler extends Component {
 
       {/* 4.2.1 */}
       <div className="content-card--wrapper">
-      <div class="content-card">
+      <div className="content-card">
       <Heading align='center'
       margin='medium'
           tag='h3'>
-          <i class="fas fa-search"></i> Search
+          <i className="fas fa-search"></i> Search
       </Heading>
       <p className='paragraph'>
           The search feature will be a read only function (i.e. constant insofar as it
@@ -39,11 +39,11 @@ class Traveler extends Component {
     </div>
 
       {/* 4.2.2 */}
-      <div class="content-card">
+      <div className="content-card">
       <Heading align='center'
       margin='medium'
           tag='h3'>
-          <i class="fas fa-exchange-alt"></i> Compare
+          <i className="fas fa-exchange-alt"></i> Compare
       </Heading>
       <p className='paragraph'>
           Compare will again be a read only function that allows the traveler to select
@@ -55,12 +55,12 @@ class Traveler extends Component {
     </div>
 
       {/* 4.2.3 */}
-      <div class="content-card">
+      <div className="content-card">
 
       <Heading align='center'
       margin='medium'
           tag='h3'>
-          <i class="fas fa-book"></i> Book
+          <i className="fas fa-book"></i> Book
       </Heading>
       <p className='paragraph'>
           When the traveler has found a room they like, they can book the room in one
@@ -130,7 +130,7 @@ class Traveler extends Component {
       </Columns>*/}
 
       {/* 4.2.4 */}
-      <div class="textbox">
+      <div className="textbox">
       {/*Heading align='center'
       margin='medium'
           tag='h3'>

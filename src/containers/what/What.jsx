@@ -54,7 +54,7 @@ class What extends Component {
                   src={Search}
                 /> */}
 
-              <h3><i class="fas fa-search"></i> Search</h3>
+              <h3><i className="fas fa-search"></i> Search</h3>
             </CustomListItem>
             <CustomListItem
               //height="auto"
@@ -69,7 +69,7 @@ class What extends Component {
                   src={Compare}
                 /> */}
 
-              <h3><i class="fas fa-exchange-alt"></i> Compare</h3>
+              <h3><i className="fas fa-exchange-alt"></i> Compare</h3>
             </CustomListItem>
             <CustomListItem
               //height="auto"
@@ -85,7 +85,7 @@ class What extends Component {
                   src={Reserve}
                 />*/}
 
-              <h3><i class="far fa-address-book"></i> Book</h3>
+              <h3><i className="far fa-address-book"></i> Book</h3>
             </CustomListItem>
             <CustomListItem
               //height="xsmall"
@@ -100,7 +100,7 @@ class What extends Component {
                     src={ShoppingCart}
                   /> */}
 
-              <h3><i class="fas fa-shopping-cart"></i> Purchase</h3>
+              <h3><i className="fas fa-shopping-cart"></i> Purchase</h3>
             </CustomListItem>
           </CustomList>
 
@@ -122,7 +122,7 @@ class What extends Component {
                 size='thumb'
                 src={Reception}
               />*/}
-              <h3><i class="fas fa-users"></i> Guest Management</h3>
+              <h3><i className="fas fa-users"></i> Guest Management</h3>
             </CustomListItem>
             <CustomListItem
               // height="xsmall"
@@ -137,7 +137,7 @@ class What extends Component {
                 size='thumb'
                 src={Housekeeping}
               />*/}
-              <h3><i class="fas fa-home"></i> Housekeeping and Maintenance</h3>
+              <h3><i className="fas fa-home"></i> Housekeeping and Maintenance</h3>
             </CustomListItem>
             <CustomListItem
               // height="xsmall"
@@ -152,7 +152,7 @@ class What extends Component {
                 size='thumb'
                 src={Revenue}
               />*/}
-              <h3><i class="fas fa-money-bill-alt"></i> Revenue Management</h3>
+              <h3><i className="fas fa-money-bill-alt"></i> Revenue Management</h3>
             </CustomListItem>
             <CustomListItem
               // height="xsmall"
@@ -167,7 +167,7 @@ class What extends Component {
                 size='thumb'
                 src={Sale}
               />*/}
-               <h3><i class="far fa-credit-card"></i> Payment Processing and Point of Sale</h3>
+               <h3><i className="far fa-credit-card"></i> Payment Processing and Point of Sale</h3>
             </CustomListItem>
             <CustomListItem
                 // height="xsmall"
@@ -182,7 +182,7 @@ class What extends Component {
                 size='thumb'
                 src={Report}
               />*/}
-              <h3><i class="fas fa-chart-line"></i> Report Generation</h3>
+              <h3><i className="fas fa-chart-line"></i> Report Generation</h3>
             </CustomListItem>
             <CustomListItem
 
@@ -197,7 +197,7 @@ class What extends Component {
                 size='thumb'
                 src={Channel}
               />*/}
-              <h3><i class="fas fa-arrows-alt"></i> Channel Management</h3>
+              <h3><i className="fas fa-arrows-alt"></i> Channel Management</h3>
             </CustomListItem>
           </CustomList>
         </Section>
