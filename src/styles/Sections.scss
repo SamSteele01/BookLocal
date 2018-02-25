@@ -1,0 +1,87 @@
+@import "Variables";
+@import "Typography";
+
+// Traveler Section
+.traveler__section {
+  h3 {
+    padding: 0 50px;
+    color: $logo-blue;
+    font-size: 25px;
+  }
+}
+
+//Hotel Section
+.hotel-wrapper {
+  background-color: #808080;
+  color: $white;
+
+  h3 {
+    color: $header-gray;
+  }
+}
+
+// Exchange Building Section
+.exchange-building__section {
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  @media (min-width: $tab) {
+    flex-direction: row;
+  }
+  @media (min-width: $desk) {
+    align-items: flex-start;
+  }
+  a {
+    color: $logo-blue;
+    font: 20px;
+  }
+}
+
+.exchange-building__map {
+  max-width: 80vw;
+  @media (min-width: $tab) {
+    max-width: 40vw;
+  }
+}
+
+//Problems Section
+.problems {
+  background-color: #1a3a5a;
+  color: white;
+}
+
+// Solutions Section
+.solutions {
+  background-color: $white;
+  color: $font-gray;
+}
+
+//Steps Section
+.steps__section {
+  background-color: $gray;
+  color: $white;
+  padding: 15px;
+}
+
+
+/* Prospectus aka About*/
+.what {
+  background-color: $gray;
+  color: $white;
+}
+
+.why {
+  background-color: $logo-blue;
+  color: $white;
+}
+
+.who {
+  background-color: $white;
+  color: $font-gray;
+}
+
+.how {
+  background-color: $gray;
+  color: $white;
+}

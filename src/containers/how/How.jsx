@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import Paragraph from 'grommet/components/Paragraph';
 import Section from 'grommet/components/Section';
-import Heading from 'grommet/components/Heading';
-import Columns from 'grommet/components/Columns';
 import CustomList from '../CustomList';
 import CustomListItem from '../CustomListItem';
-import Image from 'grommet/components/Image';
 import expandedEcosystemImg from '../../images/expanded-ecosystem.png';
 import plasmaChainImg from '../../images/plasma-chain.png';
 import colors from '../../styles/colors';
@@ -14,7 +10,7 @@ export default class How extends Component {
     render() {
 
         return (
-            <div className="how">
+            <section className="how section--wrapper">
                 <Section
                     margin="none"
                     pad='none'
@@ -39,6 +35,7 @@ export default class How extends Component {
                         <img
                             src={expandedEcosystemImg}
                             className='image'
+                            alt="ecosystem"
                         />
                         <span>Figure 3: Expanded BookLocal Ecosystem</span>
                     </div>
@@ -70,7 +67,7 @@ export default class How extends Component {
                             classNames="how__card-font"
                         >
                         {/* <div>&#8226;</div> */}
-                            <p><strong><i class="fas fa-edit"></i> BookLocal API: <br/></strong>The programming interface for the smart contracts.
+                            <p><strong><i className="fas fa-edit"></i> BookLocal API: <br/></strong>The programming interface for the smart contracts.
                             </p>
                         </CustomListItem>
                         <CustomListItem
@@ -83,7 +80,7 @@ export default class How extends Component {
                             classNames="how__card-font"
                         >
                         {/* <div>&#8226;</div> */}
-                            <p><strong><i class="fas fa-building"></i> Hotel PMS: <br/></strong>The hotel interface. The first version (minimum viable
+                            <p><strong><i className="fas fa-building"></i> Hotel PMS: <br/></strong>The hotel interface. The first version (minimum viable
                                 product) will provide a simple graphical user interface to interact with
                                 the BookLocal API. Full implementation will add the necessary off-chain
                                 features described below.
@@ -99,7 +96,7 @@ export default class How extends Component {
                             classNames="how__card-font"
                         >
                         {/* <div>&#8226;</div> */}
-                            <p><strong><i class="fas fa-user"></i> Traveler Interface:<br/></strong> The travelers interface will allow a traveler to search
+                            <p><strong><i className="fas fa-user"></i> Traveler Interface:<br/></strong> The travelers interface will allow a traveler to search
                                 for available rooms, compare room attributes, and book the room.
                             </p>
                         </CustomListItem>
@@ -120,6 +117,7 @@ export default class How extends Component {
                         <img
                             src={plasmaChainImg}
                             className='image'
+                            alt="plasma chain"
                         />
                     </div>
                   </div>
@@ -129,7 +127,7 @@ export default class How extends Component {
 
 
                 </Section>
-            </div>
+            </section>
         )
     }
 }

@@ -1,22 +1,15 @@
 import React, { Component } from 'react';
-import Paragraph from 'grommet/components/Paragraph';
-import Section from 'grommet/components/Section';
 import Heading from 'grommet/components/Heading';
-import Columns from 'grommet/components/Columns';
-import CustomList from './CustomList';
-import CustomListItem from './CustomListItem';
-import Image from 'grommet/components/Image';
-import "../styles/Traveler.scss";
+import "../styles/Sections.scss";
+import Bed from "../images/bed.jpg";
 
 
 
 class Traveler extends Component {
   render() {
     return(
-
-      <div className="traveler-wrapper">
+    <section className="traveler__section section--wrapper">
       <Heading align='center'
-      margin='medium'
           tag='div' className="heading">
           Traveler
       </Heading>
@@ -27,12 +20,12 @@ class Traveler extends Component {
       </h3>
 
       {/* 4.2.1 */}
-      <div className="traveler-block-wrapper">
-      <div class="traveler-block">
+      <div className="content-card--wrapper">
+      <div className="content-card">
       <Heading align='center'
       margin='medium'
           tag='h3'>
-          <i class="fas fa-search"></i> Search
+          <i className="fas fa-search"></i> Search
       </Heading>
       <p className='paragraph'>
           The search feature will be a read only function (i.e. constant insofar as it
@@ -46,11 +39,11 @@ class Traveler extends Component {
     </div>
 
       {/* 4.2.2 */}
-      <div class="traveler-block">
+      <div className="content-card">
       <Heading align='center'
       margin='medium'
           tag='h3'>
-          <i class="fas fa-exchange-alt"></i> Compare
+          <i className="fas fa-exchange-alt"></i> Compare
       </Heading>
       <p className='paragraph'>
           Compare will again be a read only function that allows the traveler to select
@@ -58,16 +51,16 @@ class Traveler extends Component {
           reviews and pictures from other guests as well as more formal descriptions from
           the hotel itself.
       </p>
-      <img className="image-sml" src="https://images.unsplash.com/photo-1515362655824-9a74989f318e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1ea8d1494f9311d9f9fad346fcbd6252&auto=format&fit=crop&w=2850&q=80"/>
+      <img className="image-sml" alt="hotel-bed" src={Bed}/>
     </div>
 
       {/* 4.2.3 */}
-      <div class="traveler-block">
+      <div className="content-card">
 
       <Heading align='center'
       margin='medium'
           tag='h3'>
-          <i class="fas fa-book"></i> Book
+          <i className="fas fa-book"></i> Book
       </Heading>
       <p className='paragraph'>
           When the traveler has found a room they like, they can book the room in one
@@ -137,15 +130,14 @@ class Traveler extends Component {
       </Columns>*/}
 
       {/* 4.2.4 */}
-      <div class="purchase-wrapper">
+      <div className="textbox">
       {/*Heading align='center'
       margin='medium'
           tag='h3'>
           Purchase
       </Heading>*/}
-      <p className='paragraph'>
         <h2>Purchase</h2>
-          The purchase function will act as a simple wallet enabling the guest to pay for
+          <p>The purchase function will act as a simple wallet enabling the guest to pay for
           food, drinks, and events in the local ecosystem.
           To give an example: let’s say a traveler, Ann, is willing to spend at most $400
           for a day and night in Paris. She uses BookLocal to find a hotel that costs
@@ -159,7 +151,7 @@ class Traveler extends Component {
           didn’t spend will be immediately returned to her upon checkout.
       </p>
       </div>
-    </div>
+    </section>
     );
   }
 }

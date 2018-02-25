@@ -1,4 +1,78 @@
 /*Colors*/
+.what__card-font {
+  font-weight: 300;
+  font-size: 26px;
+  border: solid 1px #1b75bb; }
+  .what__card-font h3 {
+    width: 100%;
+    text-align: center;
+    color: #464749; }
+
+.why__card-font {
+  font-weight: 300;
+  font-size: 14px; }
+
+.who__card-font {
+  font-weight: 300;
+  font-size: 18px; }
+
+.steps__card-font {
+  font-weight: 300;
+  font-size: 14px;
+  border: solid 1px #3675B6; }
+
+.paragraph-white, .paragraph-gray {
+  margin-left: 0;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.375; }
+  @media (min-width: 768px) {
+    .paragraph-white, .paragraph-gray {
+      font-size: 18px; } }
+
+.paragraph-white {
+  color: white; }
+
+.paragraph-gray {
+  color: #464749; }
+
+.heading {
+  font-family: "Titillium Web", sans-serif;
+  text-transform: uppercase;
+  padding: 25px 0;
+  font-size: 25px;
+  text-align: center;
+  font-weight: 700; }
+  @media (min-width: 768px) {
+    .heading {
+      font-size: 35px; } }
+
+h2, h3 {
+  font-family: "PT Sans Narrow", serif; }
+
+.how__card-font {
+  font-size: 14px;
+  padding: 10px;
+  border: solid 1px #1b75bb; }
+  .how__card-font strong {
+    font-size: 20px; }
+
+body,
+.pure-g [class*=pure-u] {
+  font-family: "Open Sans", sans-serif; }
+
+h1, h2, h3 {
+  font-family: "Oswald", "Arial Narrow", sans-serif; }
+
+p {
+  font-family: "Titillium Web", sans-serif; }
+
+pre {
+  display: block;
+  margin: 20px 0 15px 0;
+  padding: 10px;
+  background: #eee; }
+
 .base-layout {
   height: 100vh;
   display: flex;
@@ -6,18 +80,66 @@
   justify-content: space-between;
   text-align: center; }
 
-body,
-.pure-g [class*=pure-u] {
-  font-family: 'Open Sans', sans-serif; }
+.textbox {
+  margin: 25px 0 0 0;
+  background-color: #1b75bb;
+  padding: 20px;
+  color: white;
+  line-height: 1.5;
+  border: solid 1px white; }
+  .textbox h2 {
+    font-size: 25px; }
+  .textbox p {
+    font-size: 15px; }
+    @media (min-width: 768px) {
+      .textbox p {
+        font-size: 18px; } }
 
-h1, h2, h3 {
-  font-family: 'Oswald', 'Arial Narrow', sans-serif; }
+.content-card {
+  border: solid 1px black;
+  padding: 20px;
+  flex: 1;
+  background-color: white;
+  color: #474747; }
+  .content-card p {
+    font-size: 18px; }
+  .content-card li {
+    padding: 10px;
+    font-size: 16px; }
+    .content-card li:nth-child(even) {
+      background-color: #EAEAEA; }
+    .content-card li:nth-child(odd) {
+      background-color: #D1D1D1; }
+  @media (min-width: 768px) {
+    .content-card {
+      flex-basis: 25%; } }
 
-pre {
-  display: block;
-  margin: 20px 0 15px 0;
-  padding: 10px;
-  background: #eee; }
+.content-card--wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%; }
+  @media (min-width: 768px) {
+    .content-card--wrapper {
+      justify-content: space-around;
+      align-content: space-around; } }
+  .content-card--wrapper ul {
+    font-size: 14px;
+    list-style: none;
+    margin: 0; }
+  @media (min-width: 768px) {
+    .content-card--wrapper {
+      flex-direction: row;
+      flex-wrap: wrap; } }
+
+.section--wrapper {
+  padding: 15px; }
+  .section--wrapper h3 {
+    padding: 0 50px;
+    font-size: 20px; }
+    @media (min-width: 768px) {
+      .section--wrapper h3 {
+        font-size: 25px; } }
 
 .container {
   box-sizing: border-box;
@@ -45,29 +167,29 @@ nav {
   display: flex !important;
   position: fixed;
   z-index: 3;
-  width: 100vw;
+  width: 100%;
   background-color: white;
   justify-content: space-between;
   flex-direction: column;
   border-bottom: solid 1px #474747; }
   @media (min-width: 768px) {
     nav {
-      flex-direction: row;
-      width: 90vw;
-      padding: 0 5vw; } }
-
-.Logo img {
-  width: 180px;
-  height: auto;
-  padding: 7px 5px 0px 5px; }
+      flex-direction: row; }
+      nav .Logo {
+        padding-left: 25px; }
+      nav .nav-items {
+        padding-right: 25px; } }
 
 .navbar a {
   color: #fff; }
 
+/* Hannah: I have removed this, because changing a font weight on an action causes the page to jump
+because it has not allocated that space. Maybe add an underline on hover instead? If you really want the
+font weight to change, I can trick it another way with nesting
 a:focus,
 a:active {
-  font-weight: 700; }
-
+  font-weight: 700;
+}*/
 a:hover {
   color: #E66E1C; }
 
@@ -95,8 +217,44 @@ a:hover {
   width: 100px;
   display: none; }
 
+.image-md {
+  height: 250px;
+  width: auto; }
+  @media (min-width: 768px) {
+    .image-md {
+      height: 300px; } }
+
+.Logo img {
+  width: 180px;
+  height: auto;
+  padding: 7px 5px 0px 5px; }
+
+.image-container {
+  display: flex;
+  flex-direction: column; }
+  .image-container span {
+    font-weight: 900;
+    margin-top: 5px; }
+
+.hero-pattern {
+  background-image: url("../images/bluepattern.jpg"); }
+
+.image {
+  margin: auto;
+  display: block;
+  height: auto;
+  max-width: 100%; }
+
+.img-md {
+  width: 500px;
+  height: 100%; }
+
+.image-sml {
+  height: 140px;
+  width: auto; }
+
 .home {
-  background-image: url("../images/trains.jpg");
+  background-image: url("../images/movement.jpg");
   background-position: center;
   height: 100%;
   background-size: cover;
@@ -132,7 +290,7 @@ a:hover {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-image: url("../images/charlotte-coneybeer-108074.jpg");
+  background-image: url("../images/room.jpg");
   background-position: center;
   height: 100%;
   width: 100%;
@@ -158,135 +316,9 @@ a:hover {
         font-size: 45px; } }
 
 /* Eth-Memphis */
-/* Prospectus aka About*/
-.prospectus {
-  text-align: center; }
-
-.underline {
-  text-decoration: underline; }
-
-.what {
-  background-color: #474747;
-  color: #FFF; }
-
-.why {
-  background-color: #1b75bb;
-  color: white;
-  padding: 15px; }
-
-.who {
-  background-color: white;
-  color: #464749;
-  padding: 15px; }
-
-.how {
-  background-color: #474747;
-  color: #FFF;
-  padding: 15px; }
-
-.how-section-wrapper {
-  display: flex;
-  align-items: center;
-  margin: 0 10px;
-  flex-direction: column;
-  justify-content: center; }
-  @media (min-width: 768px) {
-    .how-section-wrapper {
-      margin: 0 100px; } }
-
-.img-md {
-  width: 500px;
-  height: 100%; }
-
-.purchase-wrapper {
-  margin-top: 50px;
-  background-color: #1b75bb;
-  padding: 10px;
-  color: white; }
-
-.how__card-font {
-  font-size: 14px;
-  padding: 10px;
-  border: solid 1px #1b75bb; }
-  .how__card-font strong {
-    font-size: 20px; }
-
-.steps {
-  background-color: #474747;
-  color: #FFF;
-  padding: 15px; }
-
-.image-sml {
-  height: 140px;
-  width: auto; }
-
-.problems {
-  background-color: #1a3a5a;
-  color: white;
-  padding: 25px; }
-
-.what__card-font {
-  font-weight: 300;
-  font-size: 26px;
-  border: solid 1px #1b75bb; }
-  .what__card-font h3 {
-    width: 100%;
-    text-align: center;
-    color: #464749; }
-
-.why__card-font {
-  font-weight: 300;
-  font-size: 14px; }
-
-.who__card-font {
-  font-weight: 300;
-  font-size: 18px; }
-
-.steps__card-font {
-  font-weight: 300;
-  font-size: 14px;
-  border: solid 1px #3675B6; }
-
-.solutions {
-  background-color: white;
-  color: #464749;
-  padding: 25px; }
-
-p {
-  font-family: Titillium Web, sans-serif; }
-
-.paragraph-white, .paragraph-gray {
-  margin-left: 0;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1.375; }
-  @media (min-width: 768px) {
-    .paragraph-white, .paragraph-gray {
-      font-size: 18px; } }
-
-.paragraph-white {
-  color: white; }
-
-.paragraph-gray {
-  color: #464749; }
-
 .grommetux-box--pad-large {
   display: flex !important;
   justify-content: center !important; }
-
-.heading {
-  font-family: Titillium Web, sans-serif;
-  text-transform: uppercase;
-  padding: 25px 0;
-  font-size: 25px;
-  text-align: center;
-  font-weight: 700; }
-  @media (min-width: 768px) {
-    .heading {
-      font-size: 35px; } }
-
-h2, h3 {
-  font-family: PT Sans Narrow; }
 
 .grommetux-section {
   padding: 15px !important; }
@@ -311,21 +343,10 @@ h2, h3 {
       font-size: 60px;
       margin-top: 50px; } }
 
+/*
 .exchange-building {
-  background-image: url("../images/exchange-building.jpg");
-  background-position: top; }
-
-.image-container {
-  display: flex;
-  flex-direction: column; }
-  .image-container span {
-    font-weight: 900;
-    margin-top: 5px; }
-
-.image {
-  margin: auto;
-  display: block;
-  height: auto;
-  max-width: 100%; }
+  background-image: url('../images/exchange-building.jpg');
+  background-position: top;
+}*/
 
 /*# sourceMappingURL=App.css.map */

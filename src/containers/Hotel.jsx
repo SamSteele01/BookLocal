@@ -1,19 +1,13 @@
 import React, { Component } from 'react';
-import Paragraph from 'grommet/components/Paragraph';
-import Section from 'grommet/components/Section';
 import Heading from 'grommet/components/Heading';
-import Columns from 'grommet/components/Columns';
-import CustomList from './CustomList';
-import CustomListItem from './CustomListItem';
-import Image from 'grommet/components/Image';
-import "../styles/Hotel.scss";
+import "../styles/Sections.scss";
 
 
 class Hotel extends Component {
   render() {
     return(
-      <section className="hotel-wrapper">
-      <Heading align='center' margin='medium' tag='h2' className="heading">
+      <section className="hotel-wrapper section--wrapper">
+      <Heading align='center' tag='h2' className="heading">
           Hotel
       </Heading>
       <h3>
@@ -21,10 +15,10 @@ class Hotel extends Component {
       </h3>
 
       {/* 4.3.1 */}
-      <div className="hotel-block-wrapper">
-      <div className="hotel-block">
+      <div className="content-card--wrapper">
+      <div className="content-card">
       <Heading align='center' margin='medium' tag='h3'>
-          <i class="fas fa-users"></i> Guest Management
+          <i className="fas fa-users"></i> Guest Management
       </Heading>
       <p className='paragraph'>
           Guest management includes managing arrivals and departures with any special
@@ -35,9 +29,9 @@ class Hotel extends Component {
     </div>
 
       {/* 4.3.2 */}
-      <div className="hotel-block">
+      <div className="content-card">
         <Heading align='center' margin='medium' tag='h3'>
-          <i class="fas fa-home"></i> Housekeeping and Maintenance
+          <i className="fas fa-home"></i> Housekeeping and Maintenance
       </Heading>
       <p className='paragraph'>
           The housekeeping module will include messaging capabilities, room specific
@@ -47,9 +41,9 @@ class Hotel extends Component {
     </div>
 
       {/* 4.3.3 */}
-      <div className="hotel-block">
+      <div className="content-card">
         <Heading align='center' margin='medium' tag='h3'>
-          <i class="fas fa-money-bill-alt"></i> Revenue Management
+          <i className="fas fa-money-bill-alt"></i> Revenue Management
         </Heading>
       <p className='paragraph'>
           Revenue management will act as a recommendation system to provide different
@@ -58,9 +52,9 @@ class Hotel extends Component {
     </div>
 
       {/* 4.3.4 */}
-      <div className="hotel-block">
+      <div className="content-card">
       <Heading align='center' margin='medium' tag='h3'>
-          <i class="fas fa-credit-card"></i> Payment Processing
+          <i className="fas fa-credit-card"></i> Payment Processing
       </Heading>
       <p className='paragraph'>
           Upon checkout, BookLocal will finalize the guest’s plasma chain (or state channel),
@@ -73,9 +67,9 @@ class Hotel extends Component {
 
       {/* 4.3.5 */}
 
-      <div className="hotel-block">
+      <div className="content-card">
       <Heading align='center' margin='medium' tag='h3'>
-          <i class="fas fa-chart-line"></i> Report Generation
+          <i className="fas fa-chart-line"></i> Report Generation
       </Heading>
       <p className='paragraph'>
           This module will generate industry specific reports used during night audits as
@@ -84,9 +78,9 @@ class Hotel extends Component {
     </div>
 
       {/* 4.3.6 */}
-      <div className="hotel-block">
+      <div className="content-card">
         <Heading align='center' margin='medium' tag='h3'>
-            <i class="fas fa-arrows-alt"></i> Channel Management
+            <i className="fas fa-arrows-alt"></i> Channel Management
           </Heading>
           <p className='paragraph'>
           In order to feasibly integrate into the current ecosystem, BookLocal will include
@@ -100,15 +94,12 @@ class Hotel extends Component {
       {/*<Heading align='center'
     margin='medium'
           tag='h2'>*/}
-          <div class="dispute-wrapper">
-      <p className='paragraph'>
+      <div className="textbox">
         <h2>Dispute</h2>
-
-          In case of a disputed room charge or rate, the guest or hotel can open a dispute.
+          <p>In case of a disputed room charge or rate, the guest or hotel can open a dispute.
           Both the guest and hotel will have a specified amount of time (i.e. two-weeks)
           to submit their claim after which BookLocal will make the final decision. Here,
-          the guest’s subchain stays open and unresolved until BookLocal’s decision.
-      </p>
+          the guest’s subchain stays open and unresolved until BookLocal’s decision.</p>
     </div>
     </section>
     )

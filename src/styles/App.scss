@@ -1,22 +1,19 @@
 @import "Variables";
+@import "Typography";
 
 
-//Base styles
-.base-layout {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
-}
-
+//Base styles and components
 body,
 .pure-g [class*=pure-u] {
-  font-family: 'Open Sans', sans-serif;
+  font-family: $main-font;
 }
 
 h1, h2, h3 {
-  font-family: 'Oswald', 'Arial Narrow', sans-serif;
+  font-family: $body-font;
+}
+
+p {
+  font-family: $header-font;
 }
 
 pre {
@@ -26,11 +23,101 @@ pre {
   background: #eee;
 }
 
+.base-layout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.textbox {
+  margin: 25px 0 0 0;
+  background-color: $logo-blue;
+  padding: 20px;
+  color: white;
+  line-height: 1.5;
+  border: solid 1px white;
+  h2 {
+    font-size: 25px;
+  }
+  p {
+    font-size: 15px;
+    @media (min-width: $tab) {
+      font-size: 18px;
+    }
+  }
+}
+
+.content-card {
+  border: solid 1px black;
+  padding: 20px;
+  flex: 1;
+  background-color: white;
+  color: $gray;
+  p {
+    font-size: 18px;
+  }
+
+  li {
+    padding: 10px;
+    font-size: 16px;
+
+    &:nth-child(even) {
+      background-color: #EAEAEA;
+    }
+
+    &:nth-child(odd) {
+      background-color: #D1D1D1;
+    }
+  }
+
+  @media (min-width: $tab) {
+    flex-basis: 25%;
+  }
+}
+
+.content-card--wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+
+  @media (min-width: $tab) {
+    justify-content: space-around;
+    align-content: space-around;
+  }
+
+  ul {
+    font-size: 14px;
+    list-style: none;
+    margin: 0;
+  }
+
+  @media (min-width: $tab) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.section--wrapper {
+  padding: 15px;
+  h3 {
+    padding: 0 50px;
+    font-size: 20px;
+    @media (min-width: $tab) {
+      font-size: 25px;
+    }
+  }
+}
+
 .container {
   box-sizing: border-box;
   width: 100%;
   padding: 45px 20px;
 }
+
+// Buttons and form
 
 .pure-button-primary {
   background-color: #0c1a2b;
@@ -58,32 +145,33 @@ nav {
   display: flex!important;
   position: fixed;
   z-index: 3;
-  width: 100vw;
+  width: 100%;
   background-color: white;
   justify-content: space-between;
   flex-direction: column;
   border-bottom: solid 1px $gray;
   @media (min-width: $tab) {
     flex-direction: row;
-    width: 90vw;
-    padding: 0 5vw;
+    .Logo {
+      padding-left: 25px;
+    }
+    .nav-items {
+      padding-right: 25px;
+    }
   }
-}
-
-.Logo img {
-  width: 180px;
-  height: auto;
-  padding: 7px 5px 0px 5px;
 }
 
 .navbar a {
   color: #fff;
 }
 
+/* Hannah: I have removed this, because changing a font weight on an action causes the page to jump
+because it has not allocated that space. Maybe add an underline on hover instead? If you really want the
+font weight to change, I can trick it another way with nesting
 a:focus,
 a:active {
   font-weight: 700;
-}
+}*/
 
 a:hover {
   color: $orange3;
@@ -118,10 +206,55 @@ a:hover {
   display: none;
 }
 
-// Home page
+//Images
+.image-md {
+  height: 250px;
+  width: auto;
+  @media (min-width: $tab) {
+    height: 300px;
+  }
+}
 
+.Logo img {
+  width: 180px;
+  height: auto;
+  padding: 7px 5px 0px 5px;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  span {
+    font-weight: 900;
+    margin-top: 5px;
+  }
+}
+
+.hero-pattern {
+  background-image: url("../images/bluepattern.jpg");
+}
+
+.image {
+  margin: auto;
+  display: block;
+  height: auto;
+  // width: 576px;
+  max-width: 100%;
+}
+
+.img-md {
+  width: 500px;
+  height: 100%;
+}
+
+.image-sml {
+  height: 140px;
+  width: auto;
+}
+
+// Home page
 .home {
-  background-image: url('../images/trains.jpg');
+  background-image: url('../images/movement.jpg');
   background-position: center;
   height: 100%;
   background-size: cover;
@@ -156,12 +289,11 @@ a:hover {
 }
 
 /* Register */
-
 .app {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-image: url("../images/charlotte-coneybeer-108074.jpg");
+  background-image: url("../images/room.jpg");
   background-position: center;
   height: 100%;
   width: 100%;
@@ -239,184 +371,19 @@ a:hover {
   //   }
   // }
 
-/* Prospectus aka About*/
-
-.prospectus {
-  text-align: center;
-}
-
-.underline {
-  text-decoration: underline;
-}
-
-.what {
-  background-color: $gray;
-  color: #FFF;
-}
-
-.why {
-  background-color: $logo-blue;
-  color: white;
-  padding: 15px;
-
-}
-
-.who {
-  background-color: white;
-  color: $font-gray;
-  padding: 15px;
-
-
-}
-
-// HOW SECTION //
-
-.how {
-  background-color: $gray;
-  color: #FFF;
-  padding: 15px;
-}
-
-.how-section-wrapper {
-  display: flex;
-  align-items: center;
-  margin: 0 10px;
-  flex-direction: column;
-  justify-content: center;
-  @media (min-width: $tab) {
-    margin: 0 100px;
-  }
-}
-
-.img-md {
-  width: 500px;
-  height: 100%;
-}
-
-.purchase-wrapper {
-  margin-top: 50px;
-  background-color: $logo-blue;
-  padding: 10px;
-  color: white
-}
-
-.how__card-font {
-  font-size: 14px;
-  padding: 10px;
-  border: solid 1px $logo-blue;
-
-  strong {
-    font-size: 20px;
-  }
-}
-
-.steps {
-  background-color: $gray;
-  color: #FFF;
-  padding: 15px;
-}
-
-.image-sml {
-  height: 140px;
-  width: auto;
-}
-
-
-.problems {
-  background-color: #1a3a5a;
-  color: white;
-  padding: 25px;
-}
-
-.what__card-font {
-  font-weight: 300;
-  font-size: 26px;
-  border: solid 1px $logo-blue;
-  h3 {
-    width: 100%;
-    text-align: center;
-    color: rgb(70, 71, 73);
-  }
-}
-
-.why__card-font {
-  font-weight: 300;
-  font-size: 14px;
-}
-
-.who__card-font {
-  font-weight: 300;
-  font-size: 18px;
-}
-
-
-
-.steps__card-font {
-  font-weight: 300;
-  font-size: 14px;
-  border: solid 1px #3675B6;
-
-}
-
-.solutions {
-  background-color: white;
-  color: $font-gray;
-  padding: 25px;
-
-  // background-color: rgb(6, 32, 61);
-  // padding: 10px 0;
-}
-
-p {
-  font-family: Titillium Web, sans-serif;
-}
-
-%paragraph {
-
-  // max-width: 576px;
-  margin-left: 0;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1.375;
-  @media (min-width: $tab) {
-    font-size: 18px;
-  }
-}
-
-.paragraph-white {
-  @extend %paragraph;
-  color: white;
-}
-
-.paragraph-gray {
-  @extend %paragraph;
-  color: $font-gray;
-}
+// Grommet Stuff
 
 .grommetux-box--pad-large {
   display: flex!important;
   justify-content: center!important;
 }
 
-.heading {
-  font-family: Titillium Web, sans-serif;
-  text-transform: uppercase;
-  padding: 25px 0;
-  font-size: 25px;
-  text-align: center;
-  font-weight: 700;
-  @media(min-width: $tab) {
-    font-size: 35px;
-  }
-}
-
-h2, h3 {
-  font-family: PT Sans Narrow;
-}
-
 .grommetux-section {
   padding: 15px!important;
 }
+
+
+//Home page
 
 .hero-img {
   height: 60vh;
@@ -440,24 +407,8 @@ h2, h3 {
   }
 }
 
+/*
 .exchange-building {
   background-image: url('../images/exchange-building.jpg');
   background-position: top;
-}
-
-.image-container {
-  display: flex;
-  flex-direction: column;
-  span {
-    font-weight: 900;
-    margin-top: 5px;
-  }
-}
-
-.image {
-  margin: auto;
-  display: block;
-  height: auto;
-  // width: 576px;
-  max-width: 100%;
-}
+}*/
