@@ -94,15 +94,16 @@ class Reserve extends Component{
     // let debug1 = 
     console.log("("+web3.toBigNumber(this.state.tokenId)+","+web3.toBigNumber(this.dateConverter(this.state.start))+","+web3.toBigNumber(this.dateConverter(this.state.stop))+","+web3.fromAscii(this.state.accessCode, 32)+",{from: "+web3.eth.accounts[0]+", gas: 3000000})");
     reserve = RR.reserve(
-      web3.toBigNumber(this.state.tokenId),
-      web3.toBigNumber(this.dateConverter(this.state.start)),
-      web3.toBigNumber(this.dateConverter(this.state.stop)),
-      web3.fromAscii(this.state.accessCode, 32),
-      {from: web3.eth.accounts[0], gas: 3000000},
+      parseInt(this.state.tokenId),
+      this.dateConverter(this.state.start),
+      this.dateConverter(this.state.stop),
+      web3.fromAscii(this.state.accessCode),
+      {from: RRAddress, gas: 3000000},
+      // {from: web3.eth.accounts[0], gas: 3000000},
       (err,res) => {
         if(err){
           console.log(
-            'availability: "false"'
+            'availability: "false" '+err
           );
           this.setState({
             availability: "Oops! Something went wrong :-("
@@ -117,7 +118,7 @@ class Reserve extends Component{
         });
       }
     );
-    // console.log(reserve);
+    console.log(reserve);
   }
 
   render(){
