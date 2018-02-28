@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 // import getWeb3 from '../utils/getWeb3'
-import Web3 from 'web3';
+import Web3 from 'web3';  // from node module
 
 let reserve;
 let RRAbi = require('../../ABIs/RoomRentingAbi.js');
@@ -94,7 +94,7 @@ class Reserve extends Component{
     // let debug1 = 
     console.log("("+web3.toBigNumber(this.state.tokenId)+","+web3.toBigNumber(this.dateConverter(this.state.start))+","+web3.toBigNumber(this.dateConverter(this.state.stop))+","+web3.fromAscii(this.state.accessCode, 32)+",{from: "+web3.eth.accounts[0]+", gas: 3000000})");
     reserve = RR.reserve(
-      parseInt(this.state.tokenId),
+      parseInt(this.state.tokenId, 10),
       this.dateConverter(this.state.start),
       this.dateConverter(this.state.stop),
       web3.fromAscii(this.state.accessCode),
