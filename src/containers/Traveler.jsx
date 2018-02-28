@@ -57,9 +57,10 @@ class Traveler extends Component {
       {/* 4.2.3 */}
       <div className="content-card">
 
-      <Heading align='center'
-      margin='medium'
-          tag='h3'>
+      <Heading 
+        align='center'
+        margin='medium'
+        tag='h3'>
           <i className="fas fa-book"></i> Book
       </Heading>
       <p className='paragraph'>
@@ -131,12 +132,14 @@ class Traveler extends Component {
 
       {/* 4.2.4 */}
       <div className="textbox">
-      {/*Heading align='center'
-      margin='medium'
-          tag='h3'>
-          Purchase
-      </Heading>*/}
-        <h2>Purchase</h2>
+      <Heading 
+        align='center'
+        margin='medium'
+        tag='h2'
+        >
+        <i className="fas fa-shopping-cart"></i> Purchase
+      </Heading>
+        {/* <h2>Purchase</h2> */}
           <p>The purchase function will act as a simple wallet enabling the guest to pay for
           food, drinks, and events in the local ecosystem.
           To give an example: let’s say a traveler, Ann, is willing to spend at most $400
