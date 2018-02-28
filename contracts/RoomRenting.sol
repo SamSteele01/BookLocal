@@ -101,7 +101,7 @@ contract RoomRenting is RoomOwnership {
     }
 
     function _validAccessCode(bytes32 _accessCode) internal view returns (bool) {
-        for (uint i=0; i<accessCodes.length; i++) {
+        for (uint i = 0; i<accessCodes.length; i++) {
             if (_accessCode == accessCodes[i]) {
                 return true;
             }
@@ -114,7 +114,7 @@ contract RoomRenting is RoomOwnership {
         uint256 _index;
         bool _valid = false;
 
-        for (uint i=0; i<accessCodes.length; i++) {
+        for (uint i = 0; i<accessCodes.length; i++) {
             if (_accessCode == accessCodes[i]) {
                 _index = i;
                 _valid = true;
