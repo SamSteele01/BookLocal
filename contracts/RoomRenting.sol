@@ -100,8 +100,8 @@ contract RoomRenting is RoomOwnership {
         _codesLeft = accessCodes.length;
     }
 
-    function _validAccessCode(bytes32 _accessCode) internal view returns (bool){
-        for (uint i=0; i<accessCodes.length; i++) {
+    function _validAccessCode(bytes32 _accessCode) internal view returns (bool) {
+        for (uint i = 0; i<accessCodes.length; i++) {
             if (_accessCode == accessCodes[i]) {
                 return true;
             }
@@ -114,7 +114,7 @@ contract RoomRenting is RoomOwnership {
         uint256 _index;
         bool _valid = false;
 
-        for (uint i=0; i<accessCodes.length; i++) {
+        for (uint i = 0; i<accessCodes.length; i++) {
             if (_accessCode == accessCodes[i]) {
                 _index = i;
                 _valid = true;
@@ -131,7 +131,7 @@ contract RoomRenting is RoomOwnership {
     function _remove(uint256 _index) internal returns(bool) {
         require(_index <= accessCodes.length-1);
 
-        for (uint i = _index; i<accessCodes.length-1; i++){
+        for (uint i = _index; i<accessCodes.length-1; i++) {
             accessCodes[i] = accessCodes[i+1];
         }
         delete accessCodes[accessCodes.length-1];

@@ -1,33 +1,36 @@
 import React, { Component } from 'react';
-import Web3 from 'web3';
 import moment from 'moment';
+// import getWeb3 from '../utils/getWeb3'
+import Web3 from 'web3';  // from node module
 
 let reserve;
-// let web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"));
-let web3 = window.web3
-// stolen code zone vvv
-
-if (typeof web3 !== 'undefined') {
-  // Use Mist/MetaMask's provider
-  web3 = new Web3(window.web3.currentProvider);
-  console.log("first case");
-} else {
-  console.log('No web3? You should consider trying MetaMask!')
-    // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
-  web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"));
-}
-
-// stolen code zone ^^^
-
 let RRAbi = require('../../ABIs/RoomRentingAbi.js');
-let RRAddress = require('../../contractAddress/rinkebyAddress.js');
+// note: should switch between localAddress and rinkeyAddress based on web3 provider
+let RRAddress = require('../../contractAddress/localAddress.js');
+// let RRAddress = require('../../contractAddress/rinkebyAddress.js');
+let web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"));
 let RR = web3.eth.contract(RRAbi).at(RRAddress);
+// let web3 = window.web3
+
+// stolen code zone vvv
+// if (typeof web3 !== 'undefined') {
+//   // Use Mist/MetaMask's provider
+//   web3 = new Web3(window.web3.currentProvider);
+//   console.log("first case");
+// } else {
+//   console.log('No web3? You should consider trying MetaMask!')
+//     // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
+//   web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"));
+// }
+// stolen code zone ^^^
 
 
 class Reserve extends Component{
   constructor(props){
     super(props)
     this.state = {
+      // web3: null,
+      // RR: null,
       tokenId : '',
       start: '05/17/2018',
       stop: '05/21/2018',
@@ -38,6 +41,39 @@ class Reserve extends Component{
     this.handleSubmit=this.handleSubmit.bind(this);
     this.handleTextChange=this.handleTextChange.bind(this);
   }
+
+  // componentWillMount() {
+  //   // Get network provider and web3 instance.
+  //   // See utils/getWeb3 for more info.
+  
+  //   getWeb3
+  //   .then(results => {
+  //     this.setState({
+  //       web3: results.web3
+  //     })
+  
+  //     // Instantiate contract once web3 provided.
+  //     this.instantiateContract()
+  //   })
+  //   .catch(() => {
+  //     console.log('Error finding web3.')
+  //   })
+  // }
+
+  // componentDidUpdate(prevProps, prevState){
+  //   if(prevState.RR!==this.state.RR)
+  //     console.log(this.state.RR);
+  // }
+
+  // instantiateContract = () => {
+  //   let web3 = this.state.web3;
+  //   console.log('web3: ', web3);
+    
+  //   this.setState({
+  //     RR: web3.eth.contract(RRAbi).at(RRAddress)
+  //   })
+  //   // RoomRenting.deployed().then(function(res){RR = RoomRenting.at(res.address)})
+  // }
 
   handleTextChange = (event) => {
     if(this.state[event.target.id] !== undefined){
@@ -51,20 +87,23 @@ class Reserve extends Component{
 
   handleSubmit = (event) => {
     event.preventDefault();
+    // let web3 = this.state.web3;
     console.log(this.dateConverter(this.state.start));
     console.log(this.dateConverter(this.state.stop));
     console.log("Reserve fired!");
-    console.log("("+web3.toBigNumber(this.state.tokenId)+","+web3.toBigNumber(this.dateConverter(this.state.start))+","+web3.toBigNumber(this.dateConverter(this.state.stop))+","+web3.fromAscii(this.state.accessCode,32)+",{from: "+web3.eth.accounts[0]+", gas: 3000000})");
+    // let debug1 = 
+    console.log("("+web3.toBigNumber(this.state.tokenId)+","+web3.toBigNumber(this.dateConverter(this.state.start))+","+web3.toBigNumber(this.dateConverter(this.state.stop))+","+web3.fromAscii(this.state.accessCode, 32)+",{from: "+web3.eth.accounts[0]+", gas: 3000000})");
     reserve = RR.reserve(
-      web3.toBigNumber(this.state.tokenId),
-      web3.toBigNumber(this.dateConverter(this.state.start)),
-      web3.toBigNumber(this.dateConverter(this.state.stop)),
-      web3.fromAscii(this.state.accessCode,32),
-      {from: web3.eth.accounts[0], gas: 3000000},
+      parseInt(this.state.tokenId, 10),
+      this.dateConverter(this.state.start),
+      this.dateConverter(this.state.stop),
+      web3.fromAscii(this.state.accessCode),
+      {from: RRAddress, gas: 3000000},
+      // {from: web3.eth.accounts[0], gas: 3000000},
       (err,res) => {
         if(err){
           console.log(
-            'availability: "false"'
+            'availability: "false" '+err
           );
           this.setState({
             availability: "Oops! Something went wrong :-("
