@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import moment from 'moment';
-// import getWeb3 from '../utils/getWeb3'
-import Web3 from 'web3';  // from node module
+import getWeb3 from '../utils/getWeb3';
+// import Web3 from 'web3';  // from node module
 
 let reserve;
 let RRAbi = require('../../ABIs/RoomRentingAbi.js');
 // note: should switch between localAddress and rinkeyAddress based on web3 provider
-let RRAddress = require('../../contractAddress/localAddress.js');
-// let RRAddress = require('../../contractAddress/rinkebyAddress.js');
-let web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"));
-let RR = web3.eth.contract(RRAbi).at(RRAddress);
+// let RRAddress = require('../../contractAddress/localAddress.js');
+let RRAddress = require('../../contractAddress/rinkebyAddress.js');
+// let web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"));
+// let RR = web3.eth.contract(RRAbi).at(RRAddress);
 // let web3 = window.web3
 
 // stolen code zone vvv
@@ -29,8 +29,9 @@ class Reserve extends Component{
   constructor(props){
     super(props)
     this.state = {
-      // web3: null,
-      // RR: null,
+      web3: null,
+      RR: null,
+      err: null,
       tokenId : '',
       start: '05/17/2018',
       stop: '05/21/2018',
@@ -42,38 +43,41 @@ class Reserve extends Component{
     this.handleTextChange=this.handleTextChange.bind(this);
   }
 
-  // componentWillMount() {
-  //   // Get network provider and web3 instance.
-  //   // See utils/getWeb3 for more info.
-  
-  //   getWeb3
-  //   .then(results => {
-  //     this.setState({
-  //       web3: results.web3
-  //     })
-  
-  //     // Instantiate contract once web3 provided.
-  //     this.instantiateContract()
-  //   })
-  //   .catch(() => {
-  //     console.log('Error finding web3.')
-  //   })
-  // }
+  componentWillMount() {
+    // Get network provider and web3 instance.
+    // See utils/getWeb3 for more info.
+    getWeb3
+    .then(results => {
+      console.log('results: ', results);
 
-  // componentDidUpdate(prevProps, prevState){
-  //   if(prevState.RR!==this.state.RR)
-  //     console.log(this.state.RR);
-  // }
+      this.setState({
+        web3: results.web3
+      })
+      // Instantiate contract once web3 provided.
+      this.instantiateContract()
+    })
+    .catch(error => {
+      console.log(error)
+      this.setState({
+        err: error.error
+      })
+    })
+  }
 
-  // instantiateContract = () => {
-  //   let web3 = this.state.web3;
-  //   console.log('web3: ', web3);
+  componentDidUpdate(prevProps, prevState){
+    if(prevState.RR!==this.state.RR)
+      console.log(this.state.RR);
+  }
+
+  instantiateContract = () => {
+    let web3 = this.state.web3;
+    console.log('web3: ', web3);
     
-  //   this.setState({
-  //     RR: web3.eth.contract(RRAbi).at(RRAddress)
-  //   })
-  //   // RoomRenting.deployed().then(function(res){RR = RoomRenting.at(res.address)})
-  // }
+    this.setState({
+      RR: web3.eth.contract(RRAbi).at(RRAddress)
+    })
+    // RoomRenting.deployed().then(function(res){RR = RoomRenting.at(res.address)})
+  }
 
   handleTextChange = (event) => {
     if(this.state[event.target.id] !== undefined){
@@ -87,19 +91,19 @@ class Reserve extends Component{
 
   handleSubmit = (event) => {
     event.preventDefault();
-    // let web3 = this.state.web3;
+    let web3 = this.state.web3;
     console.log(this.dateConverter(this.state.start));
     console.log(this.dateConverter(this.state.stop));
     console.log("Reserve fired!");
     // let debug1 = 
     console.log("("+web3.toBigNumber(this.state.tokenId)+","+web3.toBigNumber(this.dateConverter(this.state.start))+","+web3.toBigNumber(this.dateConverter(this.state.stop))+","+web3.fromAscii(this.state.accessCode, 32)+",{from: "+web3.eth.accounts[0]+", gas: 3000000})");
-    reserve = RR.reserve(
+    reserve = this.state.RR.reserve(
       parseInt(this.state.tokenId, 10),
       this.dateConverter(this.state.start),
       this.dateConverter(this.state.stop),
       web3.fromAscii(this.state.accessCode),
-      {from: RRAddress, gas: 3000000},
-      // {from: web3.eth.accounts[0], gas: 3000000},
+      // {from: RRAddress, gas: 3000000},
+      {from: web3.eth.accounts[0], gas: 3000000},
       (err,res) => {
         if(err){
           console.log(
@@ -153,6 +157,9 @@ class Reserve extends Component{
       <div className="reserve">
         <fieldset>
           <h1>Reserve Your Room</h1>
+          {this.state.err && <div 
+          className="warning"
+          >{this.state.err}</div>}
             <div style={labelStyle}>Room Id:
               <input id="tokenId" type="text" selected="true"style={inputStyle} onChange={this.handleTextChange} value={this.state.tokenId} />
             </div>
