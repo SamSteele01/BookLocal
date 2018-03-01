@@ -4,10 +4,10 @@ import RegisterMessage from './RegisterMessage';
 export default class Home extends Component {
     render() {
         return (
-            <div className='home'>
+            <section className='home'>
                 {/* <h1>Home</h1> */}
                 <RegisterMessage/>
-            </div>
+            </section>
         )
     }
 }

@@ -1,3 +1,3 @@
-const localAddress = "0x345ca3e014aaf5dca488057592ee47305d9b3e10"
+const localAddress = "0x627306090abab3a6e1400e9345bc60c78a8bef57"
 
 module.exports = localAddress;

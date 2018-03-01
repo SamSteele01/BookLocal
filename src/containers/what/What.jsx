@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import Paragraph from 'grommet/components/Paragraph';
 import Section from 'grommet/components/Section';
-import Heading from 'grommet/components/Heading';
 import CustomList from '../CustomList';
 import CustomListItem from '../CustomListItem';
 import colors from '../../styles/colors';
@@ -10,7 +8,7 @@ class What extends Component {
 
   render() {
     return (
-      <div className='what'>
+      <div className='what section--wrapper'>
         <Section
           pad='none'
           align='stretch'
@@ -35,9 +33,9 @@ class What extends Component {
             for both hotel workers and travelers will be designed to provide full service
             functionality and replace inefficiencies in the current ecosystem.
           </p>
-          <p className='paragraph-white'>
-            To the traveler, BookLocal will provide the following features:
-          </p>
+
+            <h2>To the traveler, BookLocal will provide the following features:</h2>
+
 
           <CustomList
             bgColor={colors.gray}
@@ -56,7 +54,7 @@ class What extends Component {
                   src={Search}
                 /> */}
 
-              <h3><i class="fas fa-search"></i> Search</h3>
+              <h3><i className="fas fa-search"></i> Search</h3>
             </CustomListItem>
             <CustomListItem
               //height="auto"
@@ -71,7 +69,7 @@ class What extends Component {
                   src={Compare}
                 /> */}
 
-              <h3><i class="fas fa-exchange-alt"></i> Compare</h3>
+              <h3><i className="fas fa-exchange-alt"></i> Compare</h3>
             </CustomListItem>
             <CustomListItem
               //height="auto"
@@ -87,7 +85,7 @@ class What extends Component {
                   src={Reserve}
                 />*/}
 
-              <h3><i class="far fa-address-book"></i> Book</h3>
+              <h3><i className="far fa-address-book"></i> Book</h3>
             </CustomListItem>
             <CustomListItem
               //height="xsmall"
@@ -102,7 +100,7 @@ class What extends Component {
                     src={ShoppingCart}
                   /> */}
 
-              <h3><i class="fas fa-shopping-cart"></i> Purchase</h3>
+              <h3><i className="fas fa-shopping-cart"></i> Purchase</h3>
             </CustomListItem>
           </CustomList>
 
@@ -124,7 +122,7 @@ class What extends Component {
                 size='thumb'
                 src={Reception}
               />*/}
-              <h3><i class="fas fa-users"></i> Guest Management</h3>
+              <h3><i className="fas fa-users"></i> Guest Management</h3>
             </CustomListItem>
             <CustomListItem
               // height="xsmall"
@@ -139,7 +137,7 @@ class What extends Component {
                 size='thumb'
                 src={Housekeeping}
               />*/}
-              <h3><i class="fas fa-home"></i> Housekeeping and Maintenance</h3>
+              <h3><i className="fas fa-home"></i> Housekeeping and Maintenance</h3>
             </CustomListItem>
             <CustomListItem
               // height="xsmall"
@@ -154,7 +152,7 @@ class What extends Component {
                 size='thumb'
                 src={Revenue}
               />*/}
-              <h3><i class="fas fa-money-bill-alt"></i> Revenue Management</h3>
+              <h3><i className="fas fa-money-bill-alt"></i> Revenue Management</h3>
             </CustomListItem>
             <CustomListItem
               // height="xsmall"
@@ -169,7 +167,7 @@ class What extends Component {
                 size='thumb'
                 src={Sale}
               />*/}
-               <h3><i class="far fa-credit-card"></i> Payment Processing and Point of Sale</h3>
+               <h3><i className="far fa-credit-card"></i> Payment Processing and Point of Sale</h3>
             </CustomListItem>
             <CustomListItem
                 // height="xsmall"
@@ -184,7 +182,7 @@ class What extends Component {
                 size='thumb'
                 src={Report}
               />*/}
-              <h3><i class="fas fa-chart-line"></i> Report Generation</h3>
+              <h3><i className="fas fa-chart-line"></i> Report Generation</h3>
             </CustomListItem>
             <CustomListItem
 
@@ -199,7 +197,7 @@ class What extends Component {
                 size='thumb'
                 src={Channel}
               />*/}
-              <h3><i class="fas fa-arrows-alt"></i> Channel Management</h3>
+              <h3><i className="fas fa-arrows-alt"></i> Channel Management</h3>
             </CustomListItem>
           </CustomList>
         </Section>

@@ -11,8 +11,8 @@ class CustomList extends Component {
   render() {
 
     const {
-      pad,
-      title,
+      // pad,
+      // title,
       maxCount,
       color,
       bgColor,

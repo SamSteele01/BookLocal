@@ -1,0 +1,78 @@
+$main-font: 'Open Sans', sans-serif;
+$header-font: 'Titillium Web', sans-serif;
+$body-font: 'Oswald', 'Arial Narrow', sans-serif;
+$secondary-header: "PT Sans Narrow", serif;
+
+.what__card-font {
+  font-weight: 300;
+  font-size: 26px;
+  border: solid 1px $logo-blue;
+  h3 {
+    width: 100%;
+    text-align: center;
+    color: rgb(70, 71, 73);
+  }
+}
+
+.why__card-font {
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.who__card-font {
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.steps__card-font {
+  font-weight: 300;
+  font-size: 14px;
+  border: solid 1px #3675B6;
+}
+
+%paragraph {
+  // max-width: 576px;
+  margin-left: 0;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.375;
+  @media (min-width: $tab) {
+    font-size: 18px;
+  }
+}
+
+.paragraph-white {
+  @extend %paragraph;
+  color: white;
+}
+
+.paragraph-gray {
+  @extend %paragraph;
+  color: $font-gray;
+}
+
+.heading {
+  font-family: $header-font;
+  text-transform: uppercase;
+  padding: 25px 0;
+  font-size: 25px;
+  text-align: center;
+  font-weight: 700;
+  @media(min-width: $tab) {
+    font-size: 35px;
+  }
+}
+
+h2, h3 {
+  font-family: $secondary-header;
+}
+
+.how__card-font {
+  font-size: 14px;
+  padding: 10px;
+  border: solid 1px $logo-blue;
+
+  strong {
+    font-size: 20px;
+  }
+}

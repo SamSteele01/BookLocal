@@ -7,7 +7,7 @@ class Hero extends Component {
 
     const {
       image,
-      heroText
+      // heroText
     } = this.props
 
     return (
