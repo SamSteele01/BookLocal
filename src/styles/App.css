@@ -57,6 +57,139 @@ h2, h3 {
   .how__card-font strong {
     font-size: 20px; }
 
+/*Colors*/
+.what__card-font {
+  font-weight: 300;
+  font-size: 26px;
+  border: solid 1px #1b75bb; }
+  .what__card-font h3 {
+    width: 100%;
+    text-align: center;
+    color: #464749; }
+
+.why__card-font {
+  font-weight: 300;
+  font-size: 14px; }
+
+.who__card-font {
+  font-weight: 300;
+  font-size: 18px; }
+
+.steps__card-font {
+  font-weight: 300;
+  font-size: 14px;
+  border: solid 1px #3675B6; }
+
+.paragraph-white, .paragraph-gray {
+  margin-left: 0;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.375; }
+  @media (min-width: 768px) {
+    .paragraph-white, .paragraph-gray {
+      font-size: 18px; } }
+
+.paragraph-white {
+  color: white; }
+
+.paragraph-gray {
+  color: #464749; }
+
+.heading {
+  font-family: "Titillium Web", sans-serif;
+  text-transform: uppercase;
+  padding: 25px 0;
+  font-size: 25px;
+  text-align: center;
+  font-weight: 700; }
+  @media (min-width: 768px) {
+    .heading {
+      font-size: 35px; } }
+
+h2, h3 {
+  font-family: "PT Sans Narrow", serif; }
+
+.how__card-font {
+  font-size: 14px;
+  padding: 10px;
+  border: solid 1px #1b75bb; }
+  .how__card-font strong {
+    font-size: 20px; }
+
+.traveler__section h3 {
+  padding: 0 50px;
+  color: #1b75bb;
+  font-size: 25px; }
+.traveler__section h2 {
+  padding: 0 50px;
+  color: white;
+  font-size: 25px; }
+
+.hotel-wrapper {
+  background-color: #808080;
+  color: #FFFFFF; }
+  .hotel-wrapper h3 {
+    color: #3C3C3C; }
+
+.exchange-building__section {
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+  justify-content: space-between; }
+  @media (min-width: 768px) {
+    .exchange-building__section {
+      flex-direction: row; } }
+  @media (min-width: 992) {
+    .exchange-building__section {
+      align-items: flex-start; } }
+  .exchange-building__section a {
+    color: #1b75bb;
+    font: 20px; }
+
+.exchange-building__map {
+  max-width: 80vw; }
+  @media (min-width: 768px) {
+    .exchange-building__map {
+      max-width: 40vw; } }
+
+.problems {
+  background-color: #1a3a5a;
+  color: white; }
+
+.solutions {
+  background-color: #FFFFFF;
+  color: #464749; }
+
+.steps__section {
+  background-color: #474747;
+  color: #FFFFFF;
+  padding: 15px; }
+
+/* Prospectus aka About*/
+.what {
+  background-color: #474747;
+  color: #FFFFFF; }
+
+.why {
+  background-color: #1b75bb;
+  color: #FFFFFF; }
+
+.who {
+  background-color: #FFFFFF;
+  color: #464749; }
+
+.how {
+  background-color: #474747;
+  color: #FFFFFF; }
+
+/*Colors*/
+.margin-bottom--med {
+  margin-bottom: 25px; }
+
+.reserve-warning {
+  color: #E66E1C;
+  padding-top: 15px; }
+
 body,
 .pure-g [class*=pure-u] {
   font-family: "Open Sans", sans-serif; }

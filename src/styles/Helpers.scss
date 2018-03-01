@@ -1,5 +1,11 @@
+@import "Variables";
+
 .margin-bottom--med {
   margin-bottom: 25px;
 }
 
+.reserve-warning {
+  color: $orange3;
+  padding-top: 15px;
+}
 // For misc spacing, etc. add helpers here 
