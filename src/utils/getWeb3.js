@@ -4,6 +4,7 @@ let getWeb3 = new Promise(function(resolve, reject) {
   // Wait for loading completion to avoid race conditions with web3 injection timing.
   window.addEventListener('load', function() {
     var results
+    var error
     var web3 = window.web3
 
     // Checking if Web3 has been injected by the browser (Mist/MetaMask)
@@ -23,17 +24,18 @@ let getWeb3 = new Promise(function(resolve, reject) {
       // use the development console's port by default.
         // testrpc or ganache use "http://localhost:8545"
         // truffle develop uses "http://localhost:9545"
-      var provider = new Web3.providers.HttpProvider('http://localhost:9545')
+      // var provider = new Web3.providers.HttpProvider('http://localhost:9545')
 
-      web3 = new Web3(provider)
-
-      results = {
-        web3: web3
+      // web3 = new Web3(provider)
+      // results = {
+        // web3: web3
+      // }
+      console.log('No web3 instance injected.');
+      // resolve(results)
+      error = {
+        error: "You must have a Metamask or mist installed and aimed at the Rinkeby test network."
       }
-
-      console.log('No web3 instance injected, using Local web3.');
-
-      resolve(results)
+      reject(error)
     }
   })
 })
