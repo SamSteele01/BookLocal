@@ -36,7 +36,8 @@ class Reserve extends Component{
       start: '05/17/2018',
       stop: '05/21/2018',
       accessCode: '',
-      availability: ''
+      availability: '',
+      response: null
     }
 
     this.handleSubmit=this.handleSubmit.bind(this);
@@ -101,7 +102,7 @@ class Reserve extends Component{
       parseInt(this.state.tokenId, 10),
       this.dateConverter(this.state.start),
       this.dateConverter(this.state.stop),
-      web3.fromAscii(this.state.accessCode),
+      this.state.accessCode,
       // {from: RRAddress, gas: 3000000},
       {from: web3.eth.accounts[0], gas: 3000000},
       (err,res) => {
@@ -118,7 +119,8 @@ class Reserve extends Component{
         );
         console.log(res);
         this.setState({
-          availability: "Success!"
+          availability: "Success!",
+          response: res
         });
       }
     );
@@ -148,7 +150,7 @@ class Reserve extends Component{
       const inputButtonStyle={
           marginTop: '25px',
           fontWeight: "900",
-          backgroundColor: "rgb(60, 91, 190)",
+          backgroundColor: "rgb(27, 117, 187)",
           padding: '5px 15px',
           color: "white",
           textTransform: "uppercase"
@@ -158,9 +160,9 @@ class Reserve extends Component{
         <fieldset>
           <h1>Reserve Your Room</h1>
           {this.state.err && <div 
-          className="warning"
+          className="reserve-warning"
           >{this.state.err}</div>}
-            <div style={labelStyle}>Room Id:
+            <div style={labelStyle}>Token Id:
               <input id="tokenId" type="text" selected="true"style={inputStyle} onChange={this.handleTextChange} value={this.state.tokenId} />
             </div>
             <div style={labelStyle}> Check-in date:
@@ -174,7 +176,8 @@ class Reserve extends Component{
             </div>
             {/* <hr /> */}
             <input id="search" type="submit" style={inputButtonStyle} value="Reserve" onClick={this.handleSubmit} />
-            {this.state.availability}
+            {this.state.availability && <div className="reserve-warning">{this.state.availability}</div>}
+            {this.state.response && <div className="reserve-warning">See the transaction on <a href={`https://rinkeby.etherscan.io/tx/${this.state.response}`} target="_blank" rel="noopener noreferrer">Etherscan.</a></div>}
           {/* </label> */}
         </fieldset>
       </div>
