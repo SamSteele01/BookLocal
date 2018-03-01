@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import Heading from 'grommet/components/Heading';
-import "../styles/Sections.scss";
-
 
 class Hotel extends Component {
   render() {
