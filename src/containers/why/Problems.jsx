@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import Paragraph from 'grommet/components/Paragraph';
 import Heading from 'grommet/components/Heading';
-import colors from '../../styles/colors';
 
 class Problems extends Component {
 
   render() {
     return (
-      <div className="problems">
+      <div className="problems section--wrapper">
         {/* 2.1 */}
         <Heading
 

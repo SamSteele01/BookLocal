@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {MemoryRouter, Router, Route, Switch, Link} from 'react-router-dom';
+import {Router, Route} from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import registerServiceWorker from './registerServiceWorker';
 
@@ -13,7 +13,7 @@ import Prospectus from './containers/Prospectus';
 import './styles/index.css';
 
 const history = createHistory();
-const location = history.location;
+// const location = history.location;
 
 ReactDOM.render((
       <Router history={history}>

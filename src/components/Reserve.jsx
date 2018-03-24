@@ -6,10 +6,10 @@ import getWeb3 from '../utils/getWeb3';
 let reserve;
 let RRAbi = require('../../ABIs/RoomRentingAbi.js');
 // note: should switch between localAddress and rinkeyAddress based on web3 provider
-let RRAddress = require('../../contractAddress/localAddress.js');
-// let RRAddress = require('../../contractAddress/rinkebyAddress.js');
-let web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"));
-let RR = web3.eth.contract(RRAbi).at(RRAddress);
+// let RRAddress = require('../../contractAddress/localAddress.js');
+let RRAddress = require('../../contractAddress/rinkebyAddress.js');
+// let web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"));
+// let RR = web3.eth.contract(RRAbi).at(RRAddress);
 // let web3 = window.web3
 
 // stolen code zone vvv
@@ -29,13 +29,15 @@ class Reserve extends Component{
   constructor(props){
     super(props)
     this.state = {
-      // web3: null,
-      // RR: null,
+      web3: null,
+      RR: null,
+      err: null,
       tokenId : '',
       start: '05/17/2018',
       stop: '05/21/2018',
       accessCode: '',
-      availability: ''
+      availability: '',
+      response: null
     }
 
     this.handleSubmit=this.handleSubmit.bind(this);
@@ -45,18 +47,21 @@ class Reserve extends Component{
   componentWillMount() {
     // Get network provider and web3 instance.
     // See utils/getWeb3 for more info.
-  
     getWeb3
     .then(results => {
+      console.log('results: ', results);
+
       this.setState({
         web3: results.web3
       })
-  
       // Instantiate contract once web3 provided.
       this.instantiateContract()
     })
-    .catch(() => {
-      console.log('Error finding web3.')
+    .catch(error => {
+      console.log(error)
+      this.setState({
+        err: error.error
+      })
     })
   }
 
@@ -87,20 +92,19 @@ class Reserve extends Component{
 
   handleSubmit = (event) => {
     event.preventDefault();
-    // let web3 = this.state.web3;
+    let web3 = this.state.web3;
     console.log(this.dateConverter(this.state.start));
     console.log(this.dateConverter(this.state.stop));
     console.log("Reserve fired!");
     
     console.log("("+web3.toBigNumber(this.state.tokenId)+","+web3.toBigNumber(this.dateConverter(this.state.start))+","+web3.toBigNumber(this.dateConverter(this.state.stop))+","+web3.fromAscii(this.state.accessCode, 32)+",{from: "+web3.eth.accounts[0]+", gas: 3000000})");
-    
-    reserve = RR.reserve(
-      // parseInt(this.state.tokenId, 10),
+    reserve = this.state.RR.reserve(
+      parseInt(this.state.tokenId, 10),
       this.dateConverter(this.state.start),
       this.dateConverter(this.state.stop),
-      // web3.fromAscii(this.state.accessCode),
-      {from: RRAddress, gas: 3000000},
-      // {from: web3.eth.accounts[0], gas: 3000000},
+      this.state.accessCode,
+      // {from: RRAddress, gas: 3000000},
+      {from: web3.eth.accounts[0], gas: 3000000},
       (err,res) => {
         if(err){
           console.log(
@@ -115,7 +119,8 @@ class Reserve extends Component{
         );
         console.log(res);
         this.setState({
-          availability: "Success!"
+          availability: "Success!",
+          response: res
         });
       }
     );
@@ -135,27 +140,29 @@ class Reserve extends Component{
       textTransform:"uppercase"
     }
     const inputStyle={
-      height: "35px",
-      flexGrow: "1",
-      marginLeft: "10px",
-      paddingLeft: "10px",
-      border: "1px solid #ccc",
-      fontSize: "15px",
-    }
-    const inputButtonStyle={
-      marginTop: '25px',
-      // color: "#777",
-      fontWeight: "900",
-      backgroundColor: "rgb(60, 91, 190)",
-      padding: '5px 15px',
-      color: "white",
-      textTransform: "uppercase"
-    }
+        height: "35px",
+        flexGrow: "1",
+        marginLeft: "10px",
+        paddingLeft: "10px",
+        border: "1px solid #ccc",
+        fontSize: "15px",
+      }
+      const inputButtonStyle={
+          marginTop: '25px',
+          fontWeight: "900",
+          backgroundColor: "rgb(27, 117, 187)",
+          padding: '5px 15px',
+          color: "white",
+          textTransform: "uppercase"
+      }
     return(
       <div className="reserve">
         <fieldset>
           <h1>Reserve Your Room</h1>
-            {/* <div style={labelStyle}>Room Id:
+          {this.state.err && <div 
+          className="reserve-warning"
+          >{this.state.err}</div>}
+            <div style={labelStyle}>Token Id:
               <input id="tokenId" type="text" selected="true"style={inputStyle} onChange={this.handleTextChange} value={this.state.tokenId} />
             </div> */}
             <div style={labelStyle}> Check-in date:
@@ -169,7 +176,8 @@ class Reserve extends Component{
             </div> */}
             {/* <hr /> */}
             <input id="search" type="submit" style={inputButtonStyle} value="Reserve" onClick={this.handleSubmit} />
-            {this.state.availability}
+            {this.state.availability && <div className="reserve-warning">{this.state.availability}</div>}
+            {this.state.response && <div className="reserve-warning">See the transaction on <a href={`https://rinkeby.etherscan.io/tx/${this.state.response}`} target="_blank" rel="noopener noreferrer">Etherscan.</a></div>}
           {/* </label> */}
         </fieldset>
       </div>

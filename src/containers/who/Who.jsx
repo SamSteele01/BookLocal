@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import Paragraph from 'grommet/components/Paragraph';
 import Section from 'grommet/components/Section';
 import Heading from 'grommet/components/Heading';
 import CustomList from '../CustomList';
 import CustomListItem from '../CustomListItem';
-import Image from 'grommet/components/Image';
 import ecosystem from '../../images/hotel-current-ecosystem.png';
 import ecosystem2 from '../../images/booklocal-ecosystem.png';
 import colors from '../../styles/colors';
@@ -13,13 +11,13 @@ class Who extends Component {
 
   render() {
     return (
-      <div className="who">
-        <Section 
+      <div className="who section--wrapper">
+        <Section
           pad='none'
           align='stretch'
           alignContent='center'
           // appCentered='true'
-        > 
+        >
 
           {/* 3 */}
           <div className='heading'>Who</div>
@@ -28,7 +26,7 @@ class Who extends Component {
           </p>
 
           {/* 3.1 */}
-          <CustomList title="Ecosystem"> 
+          <CustomList title="Ecosystem">
             <p className='paragraph'>
               Below is a visual representation of the various paths through which a traveler
               can book a room. The red arrows indicate the most used reservation path.
@@ -39,14 +37,15 @@ class Who extends Component {
               <img
                   src={ecosystem}
                   className='image'
+                  alt="ecosystem"
               />
               <span>Figure 1: Current Ecosystem</span>
           </div>
-         
+
           {/* 3.2 */}
-          <Heading align='center' 
+          <Heading align='center'
  	 	 	 	 	 	 margin='medium'
-            tag='h3'> 
+            tag='h3'>
             Players
           </Heading>
           <p className='paragraph'>
@@ -55,7 +54,7 @@ class Who extends Component {
           </p>
 
           {/* 3.2.1 */}
-          <Heading 
+          <Heading
             align='center'
             margin='medium'
             tag='h4'>
@@ -67,7 +66,7 @@ class Who extends Component {
             travel agencies largely obsolete, they do still exist and are often helpful in
             booking group trips.
           </p>
-          <CustomList> 
+          <CustomList>
             <CustomListItem
               //height="auto"
               // animation="slide-left"
@@ -100,7 +99,7 @@ class Who extends Component {
           </CustomList>
 
           {/* 3.2.2 */}
-          <Heading 
+          <Heading
             align='center'
             margin='medium'
             tag='h4'>
@@ -116,7 +115,7 @@ class Who extends Component {
             now able to bypass their networks and work directly with the service providers
             (i.e hotels, airlines, and rental car companies).
           </p>
-          <CustomList > 
+          <CustomList >
             <CustomListItem
               //height="auto"
               // animation="slide-left"
@@ -150,7 +149,7 @@ class Who extends Component {
           </CustomList>
 
           {/* 3.2.3 */}
-          <Heading 
+          <Heading
             align='center'
             margin='medium'
             tag='h4'>
@@ -169,7 +168,7 @@ class Who extends Component {
             legal agreements, the burden of which is shared by the hotel and the traveler in
             the form of lower profit and higher rates.
           </p>
-          <CustomList > 
+          <CustomList >
             <CustomListItem
               //height="auto"
               // animation="slide-left"
@@ -205,7 +204,7 @@ class Who extends Component {
           </CustomList>
 
           {/* 3.2.4 */}
-            <Heading 
+            <Heading
               align='center'
               margin='medium'
               tag='h4'>
@@ -221,7 +220,7 @@ class Who extends Component {
               allowed online travel agencies to bypass the global distribution system’s
               information network and take hold of the market.
             </p>
-          <CustomList title="Channel Manager"> 
+          <CustomList title="Channel Manager">
             <CustomListItem
               //height="auto"
               // animation="slide-left"
@@ -252,7 +251,7 @@ class Who extends Component {
           </CustomList>
 
           {/* 3.2.5 */}
-          <Heading 
+          <Heading
             align='center'
             margin='medium'
             tag='h4'>
@@ -266,7 +265,7 @@ class Who extends Component {
             include a housekeeping module, payment processor, and revenue management
             tools.
           </p>
-          <CustomList > 
+          <CustomList >
             <CustomListItem
               //height="auto"
               // animation="slide-left"
@@ -296,7 +295,7 @@ class Who extends Component {
           </CustomList>
 
           {/* 3.3 */}
-          <Heading 
+          <Heading
             align='center'
             margin='medium'
             tag='h4'>
@@ -313,10 +312,11 @@ class Who extends Component {
               <img
                   src={ecosystem2}
                   className='image'
+                  alt="ecosystem"
               />
               <span>Figure 2: BookLocal Ecosystem</span>
           </div>
-           
+
             <p className='paragraph'>
               Note that BookLocal seeks to be fully compatible with current online travel
               agencies in order to provide seamless integration for early-adopting hotels and
