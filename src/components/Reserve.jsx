@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
-// import getWeb3 from '../utils/getWeb3'
-import Web3 from 'web3';  // from node module
+import getWeb3 from '../utils/getWeb3';
+// import Web3 from 'web3';  // from node module
 
 let reserve;
 let RRAbi = require('../../ABIs/RoomRentingAbi.js');
@@ -42,38 +42,38 @@ class Reserve extends Component{
     this.handleTextChange=this.handleTextChange.bind(this);
   }
 
-  // componentWillMount() {
-  //   // Get network provider and web3 instance.
-  //   // See utils/getWeb3 for more info.
+  componentWillMount() {
+    // Get network provider and web3 instance.
+    // See utils/getWeb3 for more info.
   
-  //   getWeb3
-  //   .then(results => {
-  //     this.setState({
-  //       web3: results.web3
-  //     })
+    getWeb3
+    .then(results => {
+      this.setState({
+        web3: results.web3
+      })
   
-  //     // Instantiate contract once web3 provided.
-  //     this.instantiateContract()
-  //   })
-  //   .catch(() => {
-  //     console.log('Error finding web3.')
-  //   })
-  // }
+      // Instantiate contract once web3 provided.
+      this.instantiateContract()
+    })
+    .catch(() => {
+      console.log('Error finding web3.')
+    })
+  }
 
-  // componentDidUpdate(prevProps, prevState){
-  //   if(prevState.RR!==this.state.RR)
-  //     console.log(this.state.RR);
-  // }
+  componentDidUpdate(prevProps, prevState){
+    if(prevState.RR!==this.state.RR)
+      console.log(this.state.RR);
+  }
 
-  // instantiateContract = () => {
-  //   let web3 = this.state.web3;
-  //   console.log('web3: ', web3);
+  instantiateContract = () => {
+    let web3 = this.state.web3;
+    console.log('web3: ', web3);
     
-  //   this.setState({
-  //     RR: web3.eth.contract(RRAbi).at(RRAddress)
-  //   })
-  //   // RoomRenting.deployed().then(function(res){RR = RoomRenting.at(res.address)})
-  // }
+    this.setState({
+      RR: web3.eth.contract(RRAbi).at(RRAddress)
+    })
+    // RoomRenting.deployed().then(function(res){RR = RoomRenting.at(res.address)})
+  }
 
   handleTextChange = (event) => {
     if(this.state[event.target.id] !== undefined){
@@ -95,10 +95,10 @@ class Reserve extends Component{
     console.log("("+web3.toBigNumber(this.state.tokenId)+","+web3.toBigNumber(this.dateConverter(this.state.start))+","+web3.toBigNumber(this.dateConverter(this.state.stop))+","+web3.fromAscii(this.state.accessCode, 32)+",{from: "+web3.eth.accounts[0]+", gas: 3000000})");
     
     reserve = RR.reserve(
-      parseInt(this.state.tokenId, 10),
+      // parseInt(this.state.tokenId, 10),
       this.dateConverter(this.state.start),
       this.dateConverter(this.state.stop),
-      web3.fromAscii(this.state.accessCode),
+      // web3.fromAscii(this.state.accessCode),
       {from: RRAddress, gas: 3000000},
       // {from: web3.eth.accounts[0], gas: 3000000},
       (err,res) => {
@@ -135,38 +135,38 @@ class Reserve extends Component{
       textTransform:"uppercase"
     }
     const inputStyle={
-        height: "35px",
-        flexGrow: "1",
-        marginLeft: "10px",
-        paddingLeft: "10px",
-        border: "1px solid #ccc",
-        fontSize: "15px",
-      }
-      const inputButtonStyle={
-          marginTop: '25px',
-          // color: "#777",
-          fontWeight: "900",
-          backgroundColor: "rgb(60, 91, 190)",
-          padding: '5px 15px',
-          color: "white",
-          textTransform: "uppercase"
-      }
+      height: "35px",
+      flexGrow: "1",
+      marginLeft: "10px",
+      paddingLeft: "10px",
+      border: "1px solid #ccc",
+      fontSize: "15px",
+    }
+    const inputButtonStyle={
+      marginTop: '25px',
+      // color: "#777",
+      fontWeight: "900",
+      backgroundColor: "rgb(60, 91, 190)",
+      padding: '5px 15px',
+      color: "white",
+      textTransform: "uppercase"
+    }
     return(
       <div className="reserve">
         <fieldset>
           <h1>Reserve Your Room</h1>
-            <div style={labelStyle}>Room Id:
+            {/* <div style={labelStyle}>Room Id:
               <input id="tokenId" type="text" selected="true"style={inputStyle} onChange={this.handleTextChange} value={this.state.tokenId} />
-            </div>
+            </div> */}
             <div style={labelStyle}> Check-in date:
               <input id="start" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.start} />
             </div>
             <div style={labelStyle}> Check-out date:
               <input id="stop" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.stop} />
             </div>
-            <div style={labelStyle}> Access Code:
+            {/* <div style={labelStyle}> Access Code:
               <input id="accessCode" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.accessCode} />
-            </div>
+            </div> */}
             {/* <hr /> */}
             <input id="search" type="submit" style={inputButtonStyle} value="Reserve" onClick={this.handleSubmit} />
             {this.state.availability}
