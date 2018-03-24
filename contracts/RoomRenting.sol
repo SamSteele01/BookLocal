@@ -2,7 +2,6 @@ pragma solidity ^0.4.17;
 
 import './RoomOwnership.sol';
 
-
 // @title ERC809 draft
 // @author stevenLee <steven@booklocal.in>
 // @date 1.6.17
@@ -31,7 +30,7 @@ import './RoomOwnership.sol';
     /** METHODS ***
 
     ### Temporary for EthMemphis ###
-    addAccessCode(bytes32)................add new access code for ethMemphis aplicants
+    addAccessCode(address[])................add new access code for ethMemphis aplicants
     getNumberOfAccessCodes()..............see total outstanding access codes
 
     ### Non-Fungible ###
@@ -58,21 +57,31 @@ import './RoomOwnership.sol';
     */
 
 // room renting adds ERC-809 renting interface to room ownership
+
 contract RoomRenting is RoomOwnership {
 
     /**
         STORAGE
     */
 
-    bytes32[] accessCodes;
+    // address array for people that can book a free room
+    address[] accessCodes;
+
+    // current bedId
+    // this is just used to automate the room/bed assignment for this event
+    // would not make a production version, but since we are only giving away
+    // free beds (and people will need to share rooms) this makes the process
+    // easier.
+    uint256 nextAssignedBed = 1;
 
     /**
         CONSTRUCTOR
     */
 
-    //sets the ceo of bookLocal
+    //sets the ceo of bookLocal and add the zeroth room
     function RoomRenting() public {
         ceo = msg.sender;
+        addRoom(1, 0);
     }
 
     /**
@@ -80,8 +89,9 @@ contract RoomRenting is RoomOwnership {
     */
 
     // only let a guests with valid access code reserve the room
-    modifier onlyEthMemphis(bytes32 _accessCode) {
-        require(_validAccessCode(_accessCode));
+    modifier onlyEthMemphis() {
+        address _guest = msg.sender;
+        require(_validAccessCode(_guest));
         _;
     }
 
@@ -92,16 +102,20 @@ contract RoomRenting is RoomOwnership {
     /// *** ADD ACCESS CODE *** \\\
     /// only left here for use at ETH memephis
     /// will remove for future versions
-    function addAccessCode(bytes32 _accessCode) external onlyCLevel {
-        accessCodes.push(_accessCode);
+    function addAccessCode(address[] _accessCodes) external onlyCLevel {
+
+        for (uint i=0; i<_accessCodes.length; i++) {
+            accessCodes.push(_accessCodes[i]);
+        }
+
     }
 
     function getNumberOfAccessCodes() external view returns (uint256 _codesLeft) {
         _codesLeft = accessCodes.length;
     }
 
-    function _validAccessCode(bytes32 _accessCode) internal view returns (bool) {
-        for (uint i = 0; i<accessCodes.length; i++) {
+    function _validAccessCode(address _accessCode) internal view returns (bool){
+        for (uint i=0; i<accessCodes.length; i++) {
             if (_accessCode == accessCodes[i]) {
                 return true;
             }
@@ -109,12 +123,12 @@ contract RoomRenting is RoomOwnership {
         return false;
     }
 
-    function _removeAccessCode(bytes32 _accessCode) internal returns(bool) {
+    function _removeAccessCode(address _accessCode) internal returns(bool) {
 
         uint256 _index;
         bool _valid = false;
 
-        for (uint i = 0; i<accessCodes.length; i++) {
+        for (uint i=0; i<accessCodes.length; i++) {
             if (_accessCode == accessCodes[i]) {
                 _index = i;
                 _valid = true;
@@ -131,7 +145,7 @@ contract RoomRenting is RoomOwnership {
     function _remove(uint256 _index) internal returns(bool) {
         require(_index <= accessCodes.length-1);
 
-        for (uint i = _index; i<accessCodes.length-1; i++) {
+        for (uint i = _index; i<accessCodes.length-1; i++){
             accessCodes[i] = accessCodes[i+1];
         }
         delete accessCodes[accessCodes.length-1];
@@ -139,19 +153,29 @@ contract RoomRenting is RoomOwnership {
         return true;
     }
 
+    // automate bed assignments for ethMemphis
+    function _incrementBedId() internal returns (uint256) {
+        uint256 totalBeds = totalSupply();
+        require(nextAssignedBed < totalBeds);
+
+        nextAssignedBed ++;
+    }
+
     /**
        ERC-809 FUNCTIONS
     */
 
     // @dev reserve future access to an asset
-    function reserve(uint256 _tokenId, uint256 _start, uint256 _stop, bytes32 _accessCode)
+    // for this version return the auto assigned tokenId
+    function reserve(uint256 _start, uint256 _stop)
 
     external
-    onlyEthMemphis(_accessCode)
+    onlyEthMemphis()
 
-    returns (bool)
+    returns (uint256)
     {
-        address guest = msg.sender;
+        address _guest = msg.sender;
+        uint256 _tokenId = nextAssignedBed;
 
         // comment out for debug and testing
         // require(_isFuture(_start));
@@ -160,18 +184,19 @@ contract RoomRenting is RoomOwnership {
         // check availability (for all dates in range)
         for (uint i = _start; i <= _stop; i ++) {
             if (! _isAvailable(_tokenId, i)) {
-                return false;
+                return 0;
             }
         }
 
         // make reservation
         for (i = _start; i <= _stop; i ++) {
-            reservations[_tokenId][i] = guest;
+            reservations[_tokenId][i] = _guest;
         }
 
-        _removeAccessCode(_accessCode);
+        _removeAccessCode(_guest);
+        _incrementBedId();
 
-        return true;
+        return _tokenId;
     }
 
     // @dev access your asset

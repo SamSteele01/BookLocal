@@ -10,7 +10,7 @@ contract RoomOwnership is RoomBase {
     */
 
     // @dev find number of rooms (i.e. number of tokens)
-    function totalSupply() external view returns(uint256 supply){
+    function totalSupply() public view returns(uint256 supply){
         supply = rooms.length;
     }
 
@@ -21,6 +21,8 @@ contract RoomOwnership is RoomBase {
         return owner;
     }
 
+    // @dev find owner using a different implementation.
+    // this is just to test the difference in gas used
     function ownerOf_2(uint256 _tokenId) external view returns (address owner) {
         Room storage r = rooms[_tokenId];
         owner = r.owner;
