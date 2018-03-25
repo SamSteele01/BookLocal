@@ -188,10 +188,20 @@ contract RoomRenting is RoomOwnership {
             }
         }
 
-        // make reservation
+        // hold reservation
         for (i = _start; i <= _stop; i ++) {
             reservations[_tokenId][i] = _guest;
         }
+
+        // store reservation for easy search
+        Reservation memory _res = Reservation({
+            guest: _guest,
+            tokenId: _tokenId,
+            start: _start,
+            stop: _stop
+        });
+
+        reservationByGuest[_guest] = _res;
 
         _removeAccessCode(_guest);
         _incrementBedId();

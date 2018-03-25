@@ -1,4 +1,4 @@
-const RRAbi = [
+const RRAbi =  [
   {
     "constant": false,
     "inputs": [
@@ -56,6 +56,33 @@ const RRAbi = [
     "outputs": [
       {
         "name": "_codesLeft",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_guest",
+        "type": "address"
+      }
+    ],
+    "name": "getNextReservation",
+    "outputs": [
+      {
+        "name": "_tokenId",
+        "type": "uint256"
+      },
+      {
+        "name": "_start",
+        "type": "uint256"
+      },
+      {
+        "name": "_stop",
         "type": "uint256"
       }
     ],
@@ -510,6 +537,37 @@ const RRAbi = [
       {
         "name": "",
         "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "reservationByGuest",
+    "outputs": [
+      {
+        "name": "guest",
+        "type": "address"
+      },
+      {
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "name": "start",
+        "type": "uint256"
+      },
+      {
+        "name": "stop",
+        "type": "uint256"
       }
     ],
     "payable": false,

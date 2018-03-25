@@ -11,7 +11,7 @@ contract RoomOwnership is RoomBase {
 
     // @dev find number of rooms (i.e. number of tokens)
     function totalSupply() public view returns(uint256 supply){
-        supply = rooms.length;
+        supply = rooms.length-1;
     }
 
     // @dev find owner of specific room
