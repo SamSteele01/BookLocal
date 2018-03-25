@@ -93,7 +93,7 @@ class Reserve extends Component{
             'availability: "false" '+err
           );
           this.setState({
-            availability: "Oops! Something went wrong :-("
+            availability: `Oops! Something went wrong ${err}`
           })
         }
         console.log(
@@ -101,16 +101,12 @@ class Reserve extends Component{
         );
         console.log(res);
         this.setState({
-          availability: "Success!",
           response: res, //txn
           account: web3.eth.accounts[0]
         });
       }
     );
     console.log(reserve);
-    this.setState({
-      tokenId: reserve
-    })
   }
 
   render(){
