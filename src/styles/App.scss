@@ -25,7 +25,7 @@ pre {
 }
 
 .base-layout {
-  height: 100vh;
+  // height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -139,6 +139,8 @@ pre {
   padding: 15px;
   font-size: 16px;
   border-top: solid 1px #474747;
+  bottom: 0;
+  z-index: 3;
 }
 
 /* NAVBAR */
@@ -169,10 +171,11 @@ nav {
 /* Hannah: I have removed this, because changing a font weight on an action causes the page to jump
 because it has not allocated that space. Maybe add an underline on hover instead? If you really want the
 font weight to change, I can trick it another way with nesting
+*/
 a:focus,
 a:active {
   font-weight: 700;
-}*/
+}
 
 a:hover {
   color: $orange3;
@@ -191,6 +194,18 @@ a:hover {
 .navbar .uport-logo {
   height: 16px;
   margin-right: 10px;
+}
+
+.pure-menu-heading {
+  display: block;
+  text-decoration: none;
+  white-space: nowrap;
+  display: inline-block;
+  zoom:1;
+  vertical-align: middle;
+  text-transform: uppercase;
+  color:#565d64;
+  padding:.5em 1em;
 }
 
 .nav-items {
@@ -257,12 +272,13 @@ a:hover {
 .home {
   background-image: url('../images/movement.jpg');
   background-position: center;
-  height: 100%;
+  height: 92.5vh;
   background-size: cover;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
+  // position: relative;
 }
 
 .home:after {
@@ -283,6 +299,7 @@ a:hover {
   font-size: 2px;
   color: white;
   font-size: 20px;
+  margin-top: 18vh;
   padding: 0 20px;
   @media (min-width: $tab) {
     font-size: 40px;
@@ -292,37 +309,47 @@ a:hover {
 /* Register */
 .app {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
   background-image: url("../images/room.jpg");
-  background-position: center;
-  height: 100%;
+  background-position: cover;
+  background-attachment: fixed;
+  // background-repeat: repeat-y;
+  height: auto;
   width: 100%;
   background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // position: relative;
   margin-top: 80px;
 }
 
-.reserve fieldset {
+.reserve, .settle, .check-available, .get-room-info, .access {
   background-color: white;
-  padding: 25px 15px;
+  padding: 15px 25px;
   margin-top: 40px;
   @media (min-width: $tab) {
-    padding: 50px 100px;
+    padding: 30px 50px;
   }
-
-  h1 {
-    font-size: 35px;
-    color: $gray;
-    @media(min-width: $tab) {
-      font-size: 45px;
+  fieldset {
+    background-color: white;
+    padding: 25px;
+  
+    h1 {
+      font-size: 35px;
+      color: $gray;
+      @media(min-width: $tab) {
+        font-size: 45px;
+      }
     }
   }
 }
 
+.settle {
+  margin-bottom: 40px;
+}
 
   /* Eth-Memphis */
 
@@ -382,7 +409,6 @@ a:hover {
 .grommetux-section {
   padding: 15px!important;
 }
-
 
 //Home page
 
