@@ -1,4 +1,4 @@
-const RRAbi = [
+const RRAbi =  [
   {
     "constant": false,
     "inputs": [
@@ -50,8 +50,29 @@ const RRAbi = [
     "type": "function"
   },
   {
-    "constant": false,
+    "constant": true,
+    "inputs": [],
+    "name": "getNumberOfAccessCodes",
+    "outputs": [
+      {
+        "name": "_codesLeft",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
     "inputs": [
+      {
+        "name": "_guest",
+        "type": "address"
+      }
+    ],
+    "name": "getNextReservation",
+    "outputs": [
       {
         "name": "_tokenId",
         "type": "uint256"
@@ -62,31 +83,6 @@ const RRAbi = [
       },
       {
         "name": "_stop",
-        "type": "uint256"
-      },
-      {
-        "name": "_accessCode",
-        "type": "bytes32"
-      }
-    ],
-    "name": "reserve",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "getNumberOfAccessCodes",
-    "outputs": [
-      {
-        "name": "_codesLeft",
         "type": "uint256"
       }
     ],
@@ -131,6 +127,10 @@ const RRAbi = [
         "type": "uint256"
       },
       {
+        "name": "roomNumber",
+        "type": "uint256"
+      },
+      {
         "name": "numBeds",
         "type": "uint16"
       }
@@ -170,6 +170,47 @@ const RRAbi = [
       }
     ],
     "name": "transferFrom",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_start",
+        "type": "uint256"
+      },
+      {
+        "name": "_stop",
+        "type": "uint256"
+      }
+    ],
+    "name": "reserve",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_numBeds",
+        "type": "uint16[]"
+      },
+      {
+        "name": "_roomNumber",
+        "type": "uint256[]"
+      }
+    ],
+    "name": "addRooms",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -357,6 +398,33 @@ const RRAbi = [
       {
         "name": "_tokenId",
         "type": "uint256"
+      },
+      {
+        "name": "_start",
+        "type": "uint256"
+      },
+      {
+        "name": "_stop",
+        "type": "uint256"
+      }
+    ],
+    "name": "getReservations",
+    "outputs": [
+      {
+        "name": "_renters",
+        "type": "address[]"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_tokenId",
+        "type": "uint256"
       }
     ],
     "name": "getRoomInfo",
@@ -371,6 +439,10 @@ const RRAbi = [
       },
       {
         "name": "minRentTime",
+        "type": "uint256"
+      },
+      {
+        "name": "roomNumber",
         "type": "uint256"
       },
       {
@@ -399,25 +471,6 @@ const RRAbi = [
     ],
     "payable": false,
     "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_numBeds",
-        "type": "uint16"
-      }
-    ],
-    "name": "addRoom",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -491,17 +544,34 @@ const RRAbi = [
     "type": "function"
   },
   {
-    "constant": false,
+    "constant": true,
     "inputs": [
       {
-        "name": "_accessCode",
-        "type": "bytes32"
+        "name": "",
+        "type": "address"
       }
     ],
-    "name": "addAccessCode",
-    "outputs": [],
+    "name": "reservationByGuest",
+    "outputs": [
+      {
+        "name": "guest",
+        "type": "address"
+      },
+      {
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "name": "start",
+        "type": "uint256"
+      },
+      {
+        "name": "stop",
+        "type": "uint256"
+      }
+    ],
     "payable": false,
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -516,6 +586,24 @@ const RRAbi = [
     ],
     "payable": false,
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_tokenId",
+        "type": "uint256"
+      },
+      {
+        "name": "_roomNumber",
+        "type": "uint8"
+      }
+    ],
+    "name": "changeRoomNum",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -617,6 +705,20 @@ const RRAbi = [
     "type": "function"
   },
   {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_accessCodes",
+        "type": "address[]"
+      }
+    ],
+    "name": "addAccessCode",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
     "constant": true,
     "inputs": [],
     "name": "getCLevel",
@@ -648,11 +750,29 @@ const RRAbi = [
     "type": "function"
   },
   {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_numBeds",
+        "type": "uint16"
+      },
+      {
+        "name": "_roomNumber",
+        "type": "uint256"
+      }
+    ],
+    "name": "addRoom",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
     "type": "constructor"
   }
-]
+];
 
 module.exports = RRAbi

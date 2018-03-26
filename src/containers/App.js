@@ -1,49 +1,95 @@
 import React, { Component } from 'react'
-// import { Link } from 'react-router-dom'
-// import { HiddenOnlyAuth, VisibleOnlyAuth } from './util/wrappers.js'
 
-// UI Components
-// import LoginButtonContainer from './user/ui/loginbutton/LoginButtonContainer'
-// import LogoutButtonContainer from './user/ui/logoutbutton/LogoutButtonContainer'
 import Reserve from '../components/Reserve';
+import GetNextReservation from '../components/GetNextReservation';
+import CheckAvailable from '../components/CheckAvailable';
+import GetRoomInfo from '../components/GetRoomInfo';
+import Access from '../components/Access';
+import Settle from '../components/Settle';
+import getWeb3 from '../utils/getWeb3';
+// import Web3 from 'web3';  // from node module
 
-// Styles
-// import '../styles/oswald.css'
-// import '../styles/open-sans.css'
-import '../styles/pure-min.css'
 import '../styles/App.css'
 
-class App extends Component {
-  render() {
-    // const OnlyAuthLinks = VisibleOnlyAuth(() =>
-    //   <span>
-    //     <li className="pure-menu-item">
-    //       <Link to="/dashboard" className="pure-menu-link">Dashboard</Link>
-    //     </li>
-    //     <li className="pure-menu-item">
-    //       <Link to="/profile" className="pure-menu-link">Profile</Link>
-    //     </li>
-    //     <LogoutButtonContainer />
-    //   </span>
-    // )
+let RRAbi = require('../../ABIs/RoomRentingAbi.js');
+// note: should switch between localAddress and rinkeyAddress based on web3 provider
+// let RRAddress = require('../../contractAddress/localAddress.js');
+let RRAddress = require('../../contractAddress/rinkebyAddress.js');
 
-    // const OnlyGuestLinks = HiddenOnlyAuth(() =>
-    //   <span>
-    //     <LoginButtonContainer />
-    //   </span>
-    // )
+class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      web3: null,
+      RR: null,
+      web3error: null,
+      start: '05/17/2018',
+      stop: '05/21/2018',
+      tokenId : null,
+      account: null,
+      availability: '',
+      response: null
+    }
+    // this.handleSubmit=this.handleSubmit.bind(this);
+    // this.handleTextChange=this.handleTextChange.bind(this);
+  }
+
+  componentWillMount() {
+    /** Get network provider and web3 instance.
+     See utils/getWeb3 for more info. */
+    getWeb3
+    .then(results => {
+      console.log('results: ', results);
+      this.setState({
+        web3: results.web3
+      })
+    })
+    .catch(error => {
+      console.log(error)
+      this.setState({
+        web3error: error.error
+      })
+    })
+  }
+
+  componentDidUpdate(prevProps, prevState){
+    if(prevState.web3!==this.state.web3) {
+      console.log(this.state.web3);
+      this.instantiateContract();
+    }
+    if(prevState.RR!==this.state.RR) {
+      console.log(this.state.RR);
+    }
+  }
+
+  instantiateContract = () => {    
+    this.setState({
+      RR: this.state.web3.eth.contract(RRAbi).at(RRAddress)
+    })
+    // RoomRenting.deployed().then(function(res){RR = RoomRenting.at(res.address)})
+  }
+
+  returnTokenId = (event) => {
+    this.setState({
+      tokenId: event
+    })
+  }
+
+  render() {
+
 
     return (
       <div className="app">
-        {/* <nav className="navbar pure-menu pure-menu-horizontal">
-          <Link to="/" className="pure-menu-heading pure-menu-link">Truffle Box</Link>
-          <ul className="pure-menu-list navbar-right">
-            <OnlyGuestLinks />
-            <OnlyAuthLinks />
-          </ul>
-        </nav> */}
-
-        <Reserve/>
+        <Reserve web3={this.state.web3} RR={this.state.RR} web3error={this.state.web3error}/>
+        <GetNextReservation web3={this.state.web3} RR={this.state.RR} returnTokenId={this.returnTokenId}/>
+        {this.state.tokenId &&
+          <div>
+            <GetRoomInfo web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId}/>
+            <CheckAvailable web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId}/>
+            <Access web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId}/>
+            <Settle web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId}/>
+          </div>
+        }
       </div>
     );
   }
