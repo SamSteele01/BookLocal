@@ -1,19 +1,11 @@
 import React, { Component } from 'react';
-import Web3 from 'web3';
 
 let access;
-let web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"));
-
-let RRAbi = require('../../ABIs/RoomRentingAbi.js');
-let RRAddress = '0x345ca3e014aaf5dca488057592ee47305d9b3e10';
-let RR = web3.eth.contract(RRAbi).at(RRAddress);
-
 
 class Access extends Component{
   constructor(props){
     super(props)
     this.state = {
-      tokenId : '',
       access : '',
     }
 
@@ -30,11 +22,20 @@ class Access extends Component{
   handleSubmit = (event) => {
     event.preventDefault();
     console.log("Access fired!");
-    access = RR.access(web3.toBigNumber(this.state.tokenId));
-    console.log(access);
-    this.setState({
-      access: access,
-    });
+    access = this.props.RR.access(this.props.tokenId,
+      {from: this.props.web3.eth.accounts[0], gas: 3000000},
+      (err,res) => {
+        if(err){
+          console.log(
+            'Error getting next reservation '+err
+          );
+        }
+        console.log(res);
+        this.setState({
+          access: res
+        });
+      }
+    );
   }
 
   render(){
@@ -66,11 +67,13 @@ class Access extends Component{
       <div className="access">
         <fieldset >
           <h1>Access</h1>
-            <div style={labelStyle}>Room Id:
-              <input id="tokenId" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.tokenId} />
+            <div style={labelStyle}>Token Id:
+              <input id="tokenId" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.props.tokenId} />
             </div>
-              <input id="search" type="submit" value="Gain Access" style={inputButtonStyle} onClick={this.handleSubmit} />
-              {this.state.access}
+              <input id="search" type="submit" value="Check In" style={inputButtonStyle} onClick={this.handleSubmit} />
+              {this.state.access &&
+                <div className="reserve-warning">See the transaction on <a href={`https://rinkeby.etherscan.io/tx/${this.state.access}`} target="_blank" rel="noopener noreferrer">Etherscan.io.</a></div>
+              }
         </fieldset>
       </div>
     )

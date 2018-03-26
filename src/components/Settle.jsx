@@ -1,19 +1,12 @@
 import React, { Component } from 'react';
-import Web3 from 'web3';
 
 let settle;
-let web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"));
-
-let RRAbi = require('../../ABIs/RoomRentingAbi.js');
-let RRAddress = '0x345ca3e014aaf5dca488057592ee47305d9b3e10';
-let RR = web3.eth.contract(RRAbi).at(RRAddress);
-
 
 class Settle extends Component{
   constructor(props){
     super(props)
     this.state = {
-      tokenId : '',
+      tokenId : this.props.tokenId,
       settle : '',
     }
 
@@ -30,12 +23,20 @@ class Settle extends Component{
   handleSubmit = (event) => {
     event.preventDefault();
     console.log("Settle fired!");
-    settle = RR.settle(this.state.tokenId);
-    settle = String(settle);
-    console.log(settle);
-    this.setState({
-      settle: settle,
-    });
+    settle = this.props.RR.settle(this.state.tokenId,
+      {from: this.props.web3.eth.accounts[0], gas: 3000000},
+      (err,res) => {
+        if(err){
+          console.log(
+            'Error sending Settle request '+err
+          );
+        }
+        console.log(res);
+        this.setState({
+          settle: res
+        });
+      }
+    );
   }
 
   render(){
@@ -67,10 +68,10 @@ class Settle extends Component{
       <div className="settle">
         <fieldset>
           <h1>Settle</h1>
-            <div style={labelStyle}>Room Id:
+            <div style={labelStyle}>Token Id:
               <input id="tokenId" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.tokenId} />
             </div>
-            <input id="submit" type="submit" value="Settle up" style={inputButtonStyle} onClick={this.handleSubmit} />
+            <input id="submit" type="submit" value="Check Out" style={inputButtonStyle} onClick={this.handleSubmit} />
             {this.state.settle}
         </fieldset>
       </div>

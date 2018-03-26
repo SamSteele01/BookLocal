@@ -1,23 +1,17 @@
 import React, { Component } from 'react';
 import moment from 'moment';
-import getWeb3 from '../utils/getWeb3';
-// import Web3 from 'web3';  // from node module
 
 let reserve;
-let RRAbi = require('../../ABIs/RoomRentingAbi.js');
-// note: should switch between localAddress and rinkeyAddress based on web3 provider
-// let RRAddress = require('../../contractAddress/localAddress.js');
-let RRAddress = require('../../contractAddress/rinkebyAddress.js');
 
 class Reserve extends Component{
   constructor(props){
     super(props)
     this.state = {
-      web3: null,
-      RR: null,
+      // web3: null,
+      // RR: null,
       web3error: null,
-      start: '05/17/2018',
-      stop: '05/21/2018',
+      start: '05/17/2018', // preset for EthMemphis
+      stop: '05/21/2018', // preset for EthMemphis
       tokenId : null,
       account: null,
       availability: '',
@@ -26,41 +20,6 @@ class Reserve extends Component{
 
     this.handleSubmit=this.handleSubmit.bind(this);
     this.handleTextChange=this.handleTextChange.bind(this);
-  }
-
-  componentWillMount() {
-    /** Get network provider and web3 instance.
-     See utils/getWeb3 for more info. */
-    getWeb3
-    .then(results => {
-      console.log('results: ', results);
-      this.setState({
-        web3: results.web3
-      })
-      // Instantiate contract once web3 provided.
-      this.instantiateContract()
-    })
-    .catch(error => {
-      console.log(error)
-      this.setState({
-        web3error: error.error
-      })
-    })
-  }
-
-  componentDidUpdate(prevProps, prevState){
-    if(prevState.RR!==this.state.RR)
-      console.log(this.state.RR);
-  }
-
-  instantiateContract = () => {
-    let web3 = this.state.web3;
-    console.log('web3: ', web3);
-    
-    this.setState({
-      RR: web3.eth.contract(RRAbi).at(RRAddress)
-    })
-    // RoomRenting.deployed().then(function(res){RR = RoomRenting.at(res.address)})
   }
 
   handleTextChange = (event) => {
@@ -75,7 +34,7 @@ class Reserve extends Component{
 
   handleSubmit = (event) => {
     event.preventDefault();
-    let web3 = this.state.web3;
+    let web3 = this.props.web3;
     console.log(this.dateConverter(this.state.start));
     console.log(this.dateConverter(this.state.stop));
     console.log("Reserve fired!");
@@ -83,7 +42,7 @@ class Reserve extends Component{
     web3.toBigNumber(this.dateConverter(this.state.start))+","+
     web3.toBigNumber(this.dateConverter(this.state.stop))+","+
     ",{from: "+web3.eth.accounts[0]+", gas: 3000000})");
-    reserve = this.state.RR.reserve(
+    reserve = this.props.RR.reserve(
       this.dateConverter(this.state.start),
       this.dateConverter(this.state.stop),
       {from: web3.eth.accounts[0], gas: 3000000},
@@ -135,15 +94,16 @@ class Reserve extends Component{
       color: "white",
       textTransform: "uppercase"
     }
+
+    // add date picker to inputs
     return(
       <div className="reserve">
         { this.state.response ?
           <div>
             <h1>Room Reserved!</h1>
             <p>Thank you for booking your room with BookLocal! We can't wait to meet you at EthMemphis.</p>
-            <div>Your token is: {this.state.tokenId}. You will need this to access your room.</div>
             <div>The address that you used to book is: {this.state.account}</div>
-            <div className="reserve-warning">See the transaction on <a href={`https://rinkeby.etherscan.io/tx/${this.state.response}`} target="_blank" rel="noopener noreferrer">Etherscan.</a></div>
+            <div className="reserve-warning">See the transaction on <a href={`https://rinkeby.etherscan.io/tx/${this.state.response}`} target="_blank" rel="noopener noreferrer">Etherscan.io.</a></div>
           </div>
           :
           <fieldset>

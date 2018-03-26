@@ -1,21 +1,14 @@
 import React, { Component } from 'react';
-import Web3 from 'web3';
 
 let available;
-let web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"));
-
-let RRAbi = require('../../ABIs/RoomRentingAbi.js');
-let RRAddress = '0x345ca3e014aaf5dca488057592ee47305d9b3e10';
-let RR = web3.eth.contract(RRAbi).at(RRAddress);
-
 
 class CheckAvailable extends Component{
   constructor(props){
     super(props)
     this.state = {
-      tokenId : '',
+      tokenId : this.props.tokenId,
       time: '',
-      availability: '',
+      availability: null
     }
 
     this.handleSubmit=this.handleSubmit.bind(this);
@@ -31,11 +24,23 @@ class CheckAvailable extends Component{
   handleSubmit = (event) => {
     event.preventDefault();
     console.log("CheckAvailable fired!");
-    available = RR.checkAvailable(this.state.tokenId, this.state.time);
-    console.log(available);
-    this.setState({
-      availability: available,
-    });
+    available = this.props.RR.checkAvailable(this.state.tokenId, this.state.time,
+      (err,res) => {
+        if(err){
+          console.log(
+            'Error getting next reservation '+err
+          );
+        }
+        console.log(res);
+        this.setState({
+          availability: res.toString(),
+        });
+      }
+    );
+    // console.log(available);
+    // this.setState({
+    //   availability: available,
+    // });
   }
 
   render(){
@@ -63,18 +68,21 @@ class CheckAvailable extends Component{
       color: "white",
       textTransform: "uppercase"
     }
+    // time input needs to be converted to unix time. Could take dates with hours.
     return(
       <div className="check-available">
         <fieldset>
           <h1>Check availability</h1>
-            <div style={labelStyle}>Room Id:
+            <div style={labelStyle}>Token Id:
               <input id="tokenId" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.tokenId} />
             </div>
             <div style={labelStyle}> Time: 
               <input id="time" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.time} />
             </div>
             <input id="search" type="submit" value="Check Availability" style={inputButtonStyle} onClick={this.handleSubmit} />
-            {this.state.availability}
+            {this.state.availability &&
+              <div style={labelStyle}>{this.state.availability}</div>
+            }
         </fieldset>
       </div>
     )
