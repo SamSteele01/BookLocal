@@ -444,23 +444,27 @@ a:hover {
   height: auto;
   width: 100%;
   background-size: cover;
-  margin-top: 80px; }
+  margin-top: 120px; }
+  @media (min-width: 768px) {
+    .app {
+      margin-top: 84px; } }
 
-.reserve, .settle, .check-available, .get-room-info, .access {
+.reserve, .get-token, .settle, .check-available, .get-room-info, .access {
   background-color: white;
   padding: 15px 25px;
   margin-top: 40px; }
   @media (min-width: 768px) {
-    .reserve, .settle, .check-available, .get-room-info, .access {
+    .reserve, .get-token, .settle, .check-available, .get-room-info, .access {
       padding: 30px 50px; } }
-  .reserve fieldset, .settle fieldset, .check-available fieldset, .get-room-info fieldset, .access fieldset {
+  .reserve fieldset, .get-token fieldset, .settle fieldset, .check-available fieldset, .get-room-info fieldset, .access fieldset {
     background-color: white;
-    padding: 25px; }
-    .reserve fieldset h1, .settle fieldset h1, .check-available fieldset h1, .get-room-info fieldset h1, .access fieldset h1 {
+    padding: 25px;
+    margin-bottom: 0; }
+    .reserve fieldset h1, .get-token fieldset h1, .settle fieldset h1, .check-available fieldset h1, .get-room-info fieldset h1, .access fieldset h1 {
       font-size: 35px;
       color: #474747; }
       @media (min-width: 768px) {
-        .reserve fieldset h1, .settle fieldset h1, .check-available fieldset h1, .get-room-info fieldset h1, .access fieldset h1 {
+        .reserve fieldset h1, .get-token fieldset h1, .settle fieldset h1, .check-available fieldset h1, .get-room-info fieldset h1, .access fieldset h1 {
           font-size: 45px; } }
 
 .settle {

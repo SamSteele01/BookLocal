@@ -315,18 +315,16 @@ a:hover {
   background-image: url("../images/room.jpg");
   background-position: cover;
   background-attachment: fixed;
-  // background-repeat: repeat-y;
   height: auto;
   width: 100%;
   background-size: cover;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  // position: relative;
-  margin-top: 80px;
+  margin-top: 120px;
+  @media (min-width: $tab){
+    margin-top: 84px;
+  }
 }
 
-.reserve, .settle, .check-available, .get-room-info, .access {
+.reserve, .get-token, .settle, .check-available, .get-room-info, .access {
   background-color: white;
   padding: 15px 25px;
   margin-top: 40px;
@@ -336,7 +334,7 @@ a:hover {
   fieldset {
     background-color: white;
     padding: 25px;
-  
+    margin-bottom: 0;
     h1 {
       font-size: 35px;
       color: $gray;
