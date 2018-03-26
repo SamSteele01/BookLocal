@@ -1,83 +1,25 @@
 import React, { Component } from 'react';
 import moment from 'moment';
-import getWeb3 from '../utils/getWeb3';
-// import Web3 from 'web3';  // from node module
 
 let reserve;
-let RRAbi = require('../../ABIs/RoomRentingAbi.js');
-// note: should switch between localAddress and rinkeyAddress based on web3 provider
-// let RRAddress = require('../../contractAddress/localAddress.js');
-let RRAddress = require('../../contractAddress/rinkebyAddress.js');
-// let web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"));
-// let RR = web3.eth.contract(RRAbi).at(RRAddress);
-// let web3 = window.web3
-
-// stolen code zone vvv
-// if (typeof web3 !== 'undefined') {
-//   // Use Mist/MetaMask's provider
-//   web3 = new Web3(window.web3.currentProvider);
-//   console.log("first case");
-// } else {
-//   console.log('No web3? You should consider trying MetaMask!')
-//     // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
-//   web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"));
-// }
-// stolen code zone ^^^
-
 
 class Reserve extends Component{
   constructor(props){
     super(props)
     this.state = {
-      web3: null,
-      RR: null,
-      err: null,
-      tokenId : '',
-      start: '05/17/2018',
-      stop: '05/21/2018',
-      accessCode: '',
+      // web3: null,
+      // RR: null,
+      web3error: null,
+      start: '05/17/2018', // preset for EthMemphis
+      stop: '05/21/2018', // preset for EthMemphis
+      tokenId : null,
+      account: null,
       availability: '',
       response: null
     }
 
     this.handleSubmit=this.handleSubmit.bind(this);
     this.handleTextChange=this.handleTextChange.bind(this);
-  }
-
-  componentWillMount() {
-    // Get network provider and web3 instance.
-    // See utils/getWeb3 for more info.
-    getWeb3
-    .then(results => {
-      console.log('results: ', results);
-
-      this.setState({
-        web3: results.web3
-      })
-      // Instantiate contract once web3 provided.
-      this.instantiateContract()
-    })
-    .catch(error => {
-      console.log(error)
-      this.setState({
-        err: error.error
-      })
-    })
-  }
-
-  componentDidUpdate(prevProps, prevState){
-    if(prevState.RR!==this.state.RR)
-      console.log(this.state.RR);
-  }
-
-  instantiateContract = () => {
-    let web3 = this.state.web3;
-    console.log('web3: ', web3);
-    
-    this.setState({
-      RR: web3.eth.contract(RRAbi).at(RRAddress)
-    })
-    // RoomRenting.deployed().then(function(res){RR = RoomRenting.at(res.address)})
   }
 
   handleTextChange = (event) => {
@@ -92,18 +34,17 @@ class Reserve extends Component{
 
   handleSubmit = (event) => {
     event.preventDefault();
-    let web3 = this.state.web3;
+    let web3 = this.props.web3;
     console.log(this.dateConverter(this.state.start));
     console.log(this.dateConverter(this.state.stop));
     console.log("Reserve fired!");
-    // let debug1 = 
-    console.log("("+web3.toBigNumber(this.state.tokenId)+","+web3.toBigNumber(this.dateConverter(this.state.start))+","+web3.toBigNumber(this.dateConverter(this.state.stop))+","+web3.fromAscii(this.state.accessCode, 32)+",{from: "+web3.eth.accounts[0]+", gas: 3000000})");
-    reserve = this.state.RR.reserve(
-      parseInt(this.state.tokenId, 10),
+    console.log("("+
+    web3.toBigNumber(this.dateConverter(this.state.start))+","+
+    web3.toBigNumber(this.dateConverter(this.state.stop))+","+
+    ",{from: "+web3.eth.accounts[0]+", gas: 3000000})");
+    reserve = this.props.RR.reserve(
       this.dateConverter(this.state.start),
       this.dateConverter(this.state.stop),
-      this.state.accessCode,
-      // {from: RRAddress, gas: 3000000},
       {from: web3.eth.accounts[0], gas: 3000000},
       (err,res) => {
         if(err){
@@ -111,7 +52,7 @@ class Reserve extends Component{
             'availability: "false" '+err
           );
           this.setState({
-            availability: "Oops! Something went wrong :-("
+            availability: `Oops! Something went wrong ${err}`
           })
         }
         console.log(
@@ -119,8 +60,8 @@ class Reserve extends Component{
         );
         console.log(res);
         this.setState({
-          availability: "Success!",
-          response: res
+          response: res, //txn
+          account: web3.eth.accounts[0]
         });
       }
     );
@@ -130,8 +71,6 @@ class Reserve extends Component{
   render(){
 
     const labelStyle={
-    //   border: "2px solid #383838",
-    //   borderTop: "2px solid red",
       backgroundColor: "white",
       padding: "10px 0px",
       display: "flex",
@@ -140,46 +79,49 @@ class Reserve extends Component{
       textTransform:"uppercase"
     }
     const inputStyle={
-        height: "35px",
-        flexGrow: "1",
-        marginLeft: "10px",
-        paddingLeft: "10px",
-        border: "1px solid #ccc",
-        fontSize: "15px",
-      }
-      const inputButtonStyle={
-          marginTop: '25px',
-          fontWeight: "900",
-          backgroundColor: "rgb(27, 117, 187)",
-          padding: '5px 15px',
-          color: "white",
-          textTransform: "uppercase"
-      }
+      height: "35px",
+      flexGrow: "1",
+      marginLeft: "10px",
+      paddingLeft: "10px",
+      border: "1px solid #ccc",
+      fontSize: "15px",
+    }
+    const inputButtonStyle={
+      marginTop: '25px',
+      fontWeight: "900",
+      backgroundColor: "rgb(27, 117, 187)",
+      padding: '5px 15px',
+      color: "white",
+      textTransform: "uppercase"
+    }
+
+    // add date picker to inputs
     return(
       <div className="reserve">
-        <fieldset>
-          <h1>Reserve Your Room</h1>
-          {this.state.err && <div 
-          className="reserve-warning"
-          >{this.state.err}</div>}
-            <div style={labelStyle}>Token Id:
-              <input id="tokenId" type="text" selected="true"style={inputStyle} onChange={this.handleTextChange} value={this.state.tokenId} />
-            </div>
-            <div style={labelStyle}> Check-in date:
-              <input id="start" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.start} />
-            </div>
-            <div style={labelStyle}> Check-out date:
-              <input id="stop" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.stop} />
-            </div>
-            <div style={labelStyle}> Access Code:
-              <input id="accessCode" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.accessCode} />
-            </div>
-            {/* <hr /> */}
-            <input id="search" type="submit" style={inputButtonStyle} value="Reserve" onClick={this.handleSubmit} />
-            {this.state.availability && <div className="reserve-warning">{this.state.availability}</div>}
-            {this.state.response && <div className="reserve-warning">See the transaction on <a href={`https://rinkeby.etherscan.io/tx/${this.state.response}`} target="_blank" rel="noopener noreferrer">Etherscan.</a></div>}
-          {/* </label> */}
-        </fieldset>
+        { this.state.response ?
+          <div>
+            <h1>Room Reserved!</h1>
+            <p>Thank you for booking your room with BookLocal! We can't wait to meet you at EthMemphis.</p>
+            <div>The address that you used to book is: {this.state.account}</div>
+            <div className="reserve-warning">See the transaction on <a href={`https://rinkeby.etherscan.io/tx/${this.state.response}`} target="_blank" rel="noopener noreferrer">Etherscan.io.</a></div>
+          </div>
+          :
+          <fieldset>
+            <h1>Reserve Your Room</h1>
+            {this.state.err && <div 
+            className="reserve-warning">
+            {this.state.err}</div>}
+              <div style={labelStyle}> Check-in date:
+                <input id="start" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.start} />
+              </div>
+              <div style={labelStyle}> Check-out date:
+                <input id="stop" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.stop} />
+              </div>
+              <input id="search" type="submit" style={inputButtonStyle} value="Reserve" onClick={this.handleSubmit} />
+              {this.state.availability && <div className="reserve-warning">{this.state.availability}</div>
+            }
+          </fieldset>
+        }
       </div>
     )
   }

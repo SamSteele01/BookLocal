@@ -207,7 +207,6 @@ pre {
   background: #eee; }
 
 .base-layout {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -293,7 +292,9 @@ pre {
   color: #464749;
   padding: 15px;
   font-size: 16px;
-  border-top: solid 1px #474747; }
+  border-top: solid 1px #474747;
+  bottom: 0;
+  z-index: 3; }
 
 /* NAVBAR */
 nav {
@@ -319,10 +320,11 @@ nav {
 /* Hannah: I have removed this, because changing a font weight on an action causes the page to jump
 because it has not allocated that space. Maybe add an underline on hover instead? If you really want the
 font weight to change, I can trick it another way with nesting
+*/
 a:focus,
 a:active {
-  font-weight: 700;
-}*/
+  font-weight: 700; }
+
 a:hover {
   color: #E66E1C; }
 
@@ -337,6 +339,17 @@ a:hover {
 .navbar .uport-logo {
   height: 16px;
   margin-right: 10px; }
+
+.pure-menu-heading {
+  display: block;
+  text-decoration: none;
+  white-space: nowrap;
+  display: inline-block;
+  zoom: 1;
+  vertical-align: middle;
+  text-transform: uppercase;
+  color: #565d64;
+  padding: .5em 1em; }
 
 .nav-items {
   display: flex;
@@ -389,12 +402,12 @@ a:hover {
 .home {
   background-image: url("../images/movement.jpg");
   background-position: center;
-  height: 100%;
+  height: 92.5vh;
   background-size: cover;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  position: relative; }
+  align-items: center; }
 
 .home:after {
   position: absolute;
@@ -413,6 +426,7 @@ a:hover {
   font-size: 2px;
   color: white;
   font-size: 20px;
+  margin-top: 18vh;
   padding: 0 20px; }
   @media (min-width: 768px) {
     .register-message {
@@ -421,32 +435,40 @@ a:hover {
 /* Register */
 .app {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
   background-image: url("../images/room.jpg");
-  background-position: center;
-  height: 100%;
+  background-position: cover;
+  background-attachment: fixed;
+  height: auto;
   width: 100%;
   background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  margin-top: 80px; }
+  margin-top: 120px; }
+  @media (min-width: 768px) {
+    .app {
+      margin-top: 84px; } }
 
-.reserve fieldset {
+.reserve, .get-token, .settle, .check-available, .get-room-info, .access {
   background-color: white;
-  padding: 25px 15px;
+  padding: 15px 25px;
   margin-top: 40px; }
   @media (min-width: 768px) {
-    .reserve fieldset {
-      padding: 50px 100px; } }
-  .reserve fieldset h1 {
-    font-size: 35px;
-    color: #474747; }
-    @media (min-width: 768px) {
-      .reserve fieldset h1 {
-        font-size: 45px; } }
+    .reserve, .get-token, .settle, .check-available, .get-room-info, .access {
+      padding: 30px 50px; } }
+  .reserve fieldset, .get-token fieldset, .settle fieldset, .check-available fieldset, .get-room-info fieldset, .access fieldset {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 0; }
+    .reserve fieldset h1, .get-token fieldset h1, .settle fieldset h1, .check-available fieldset h1, .get-room-info fieldset h1, .access fieldset h1 {
+      font-size: 35px;
+      color: #474747; }
+      @media (min-width: 768px) {
+        .reserve fieldset h1, .get-token fieldset h1, .settle fieldset h1, .check-available fieldset h1, .get-room-info fieldset h1, .access fieldset h1 {
+          font-size: 45px; } }
+
+.settle {
+  margin-bottom: 40px; }
 
 /* Eth-Memphis */
 .grommetux-box--pad-large {
