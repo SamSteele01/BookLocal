@@ -1,6 +1,6 @@
 {
   "name": "booklocal",
-  "homepage": "http://BookLocal.github.io/EthMemphis",
+  "homepage": "http://BookLocal.github.io/EthMemphis/home",
   "version": "0.2.0",
   "private": true,
   "dependencies": {
