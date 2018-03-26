@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Heading from 'grommet/components/Heading';
-import "../styles/Sections.scss";
 import Bed from "../images/bed.jpg";
 
 

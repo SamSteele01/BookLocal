@@ -11,6 +11,7 @@ Dev merges pull requests from other branches.
 
 Pull from Dev and then make a branch with your name or the issue you are working on. Only push to that branch. Pull from Dev and merge, and run locally to catch errors before opening a pull request.
 
+
 ### Admin calls
 1) addRooms(uint[] beds, uint[] roomNum)
 2) addAccessCode(address[] guest)............... add your own for testing
@@ -28,3 +29,4 @@ Pull from Dev and then make a branch with your name or the issue you are working
 
 ### CheckOut
 7) settle(token_Id)...... optional. We can call that for them.
+
