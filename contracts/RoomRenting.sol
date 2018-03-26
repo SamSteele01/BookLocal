@@ -102,12 +102,8 @@ contract RoomRenting is RoomOwnership {
     /// *** ADD ACCESS CODE *** \\\
     /// only left here for use at ETH memephis
     /// will remove for future versions
-    function addAccessCode(address[] _accessCodes) external onlyCLevel {
-
-        for (uint i=0; i<_accessCodes.length; i++) {
-            accessCodes.push(_accessCodes[i]);
-        }
-
+    function addAccessCode(address _accessCode) external onlyCLevel {
+            accessCodes.push(_accessCode);       
     }
 
     function getNumberOfAccessCodes() external view returns (uint256 _codesLeft) {
