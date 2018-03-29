@@ -79,7 +79,7 @@ class GetRoomInfo extends Component{
         <fieldset >
           <h1>Room Details</h1>
           <div style={labelStyle}>Token ID:
-            <input id="roomId" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.tokenId} />
+            <input id="tokenId" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.tokenId} />
           </div>
           <input id="search" type="submit" value="Get Room Info" style={inputButtonStyle} onClick={this.handleSubmit} />
           <p style={labelStyle}>Owner: {this.state.owner}</p>
