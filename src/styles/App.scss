@@ -324,7 +324,7 @@ a:hover {
   }
 }
 
-.reserve, .get-token, .settle, .check-available, .get-room-info, .access {
+.reserve, .get-token, .get-reservations, .settle, .check-available, .get-room-info, .access {
   background-color: white;
   padding: 15px 25px;
   margin-top: 40px;
@@ -343,6 +343,15 @@ a:hover {
       }
     }
   }
+}
+
+.react-datepicker__input-container input {
+  height: 35px;
+  flex-grow: 1;
+  margin-left: 10px;
+  padding-left: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
 }
 
 .settle {
