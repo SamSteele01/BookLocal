@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter, Route} from 'react-router-dom';
-import createHistory from 'history/createBrowserHistory';
+// import createHistory from 'history/createBrowserHistory';
 import registerServiceWorker from './registerServiceWorker';
 
 // Layouts
@@ -12,11 +12,11 @@ import App from './containers/App'
 import Prospectus from './containers/Prospectus';
 import './styles/index.css';
 
-const history = createHistory();
+// const history = createHistory();
 // const location = history.location;
 
 ReactDOM.render((
-      <BrowserRouter history={history} basename="/EthMemphis">
+      <BrowserRouter basename="/EthMemphis">
           <BaseLayout>
             <Route path="/home" component={Home} />
             <Route path="/register" component={App} />
