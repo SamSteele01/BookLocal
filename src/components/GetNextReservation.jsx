@@ -7,22 +7,26 @@ class GetNextReservation extends Component{
     super(props)
     this.state = {
       tokenId : null,
-      start: null,
-      stop: null
+      checkInDate: null,
+      checkOutDate: null
     }
     this.handleSubmit=this.handleSubmit.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState){
-    if(prevState.tokenId!==this.state.tokenId){
-        this.props.returnTokenId(this.state.tokenId);
-        console.log('returnTokenId fired!');
+    if(prevState!==this.state){
+        this.props.returnComponentState(this.state);
+        console.log('returnComponentState fired!');
     }
+  }
+
+  convertFromUnixTime = (time) => {
+    return (time*86400)
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Access fired!");
+    console.log("getNextReservation fired!");
     getNextReservation = this.props.RR.getNextReservation(this.props.web3.eth.accounts[0],
       (err,res) => {
         if(err){
@@ -31,8 +35,11 @@ class GetNextReservation extends Component{
           );
         }
         this.setState({
-          tokenId: res[0].c
+          tokenId: res[0].c,
+          checkInDate: res[1].c,
+          checkOutDate: res[2].c
         });
+        console.log('res: ', res);
       }
     );
   }
@@ -46,14 +53,14 @@ class GetNextReservation extends Component{
       color: "#777",
       textTransform:"uppercase"
     }
-    // const inputStyle={
-    //   height: "35px",
-    //   flexGrow: "1",
-    //   marginLeft: "10px",
-    //   paddingLeft: "10px",
-    //   border: "1px solid #ccc",
-    //   fontSize: "15px",
-    // }
+    const inputStyle={
+      height: "35px",
+      flexGrow: "1",
+      marginLeft: "10px",
+      paddingLeft: "10px",
+      border: "1px solid #ccc",
+      fontSize: "15px",
+    }
     const inputButtonStyle={
       marginTop: '25px',
       fontWeight: "900",
@@ -67,9 +74,18 @@ class GetNextReservation extends Component{
         <fieldset >
           <h1>Get Token</h1>
           {this.state.tokenId ?
-            <div style={labelStyle}>Token Id: 
-              {this.state.tokenId}
-            </div> :
+            <div>
+              <div style={labelStyle}>Token Id: 
+                <input id="tokenId" type="text" style={inputStyle} value={this.state.tokenId} readOnly/>
+              </div> 
+              <div style={labelStyle}>Check In Date:
+                <input id="checkInDate" type="text" style={inputStyle} value={this.state.checkInDate} readOnly/>
+              </div>
+              <div style={labelStyle}>Check Out Date:
+                <input id="checkOutDate" type="text" style={inputStyle} value={this.state.checkOutDate} readOnly/>
+              </div>
+            </div>
+            :
             <input id="search" type="submit" value="Get Token" style={inputButtonStyle} onClick={this.handleSubmit} />
           }
         </fieldset>
