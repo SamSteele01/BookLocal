@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import Reserve from '../components/Reserve';
+import GetReservations from '../components/GetReservations';
 import GetNextReservation from '../components/GetNextReservation';
 import CheckAvailable from '../components/CheckAvailable';
 import GetRoomInfo from '../components/GetRoomInfo';
@@ -23,14 +24,11 @@ class App extends Component {
       web3: null,
       RR: null,
       web3error: null,
-      start: '05/17/2018',
-      stop: '05/21/2018',
       tokenId : null,
-      account: null,
-      availability: '',
-      response: null
+      checkInDate: null,
+      checkOutDate: null
     }
-    // this.handleSubmit=this.handleSubmit.bind(this);
+    this.returnComponentState=this.returnComponentState.bind(this);
     // this.handleTextChange=this.handleTextChange.bind(this);
   }
 
@@ -69,21 +67,23 @@ class App extends Component {
     // RoomRenting.deployed().then(function(res){RR = RoomRenting.at(res.address)})
   }
 
-  returnTokenId = (event) => {
+  returnComponentState = (componentState) => {
     this.setState({
-      tokenId: event
+      tokenId: componentState.tokenId,
+      checkInDate: componentState.checkInDate,
+      checkOutDate: componentState.checkOutDate
     })
   }
 
   render() {
 
-
     return (
       <div className="app">
         <Reserve web3={this.state.web3} RR={this.state.RR} web3error={this.state.web3error}/>
-        <GetNextReservation web3={this.state.web3} RR={this.state.RR} returnTokenId={this.returnTokenId}/>
+        <GetNextReservation web3={this.state.web3} RR={this.state.RR} returnComponentState={this.returnComponentState}/>
         {this.state.tokenId &&
           <div>
+            <GetReservations web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId} checkInDate={this.state.checkInDate} checkOutDate={this.state.checkOutDate} />
             <GetRoomInfo web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId}/>
             <CheckAvailable web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId}/>
             <Access web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId}/>
