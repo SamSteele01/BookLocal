@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 
-let getNextReservation;
 
 class GetNextReservation extends Component{
   constructor(props){
@@ -21,12 +21,13 @@ class GetNextReservation extends Component{
   }
 
   convertFromUnixTime = (time) => {
-    return (time*86400)
+    return moment.unix(time*86400+43200).format("MM/DD/YYYY")
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
     console.log("getNextReservation fired!");
+    let getNextReservation;
     getNextReservation = this.props.RR.getNextReservation(this.props.web3.eth.accounts[0],
       (err,res) => {
         if(err){
@@ -35,9 +36,9 @@ class GetNextReservation extends Component{
           );
         }
         this.setState({
-          tokenId: res[0].c,
-          checkInDate: res[1].c,
-          checkOutDate: res[2].c
+          tokenId: res[0].c[0],
+          checkInDate: this.convertFromUnixTime(res[1].c[0]),
+          checkOutDate: this.convertFromUnixTime(res[2].c[0])
         });
         console.log('res: ', res);
       }
