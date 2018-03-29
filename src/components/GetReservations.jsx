@@ -23,10 +23,17 @@ class GetReservations extends Component{
     }
   }
 
+  dateConverter = (mmddyyyy) => {
+    return Math.floor(moment(mmddyyyy).unix() / 86400);
+  }
+
   handleSubmit = (event) => {
     event.preventDefault();
     console.log("getReservations fired!");
-    getReservations = this.props.RR.getReservations(this.state.tokenId, this.state.checkInDate, this.state.checkOutDate,
+    getReservations = this.props.RR.getReservations(
+      this.state.tokenId,
+      this.dateConverter(this.state.checkInDate),
+      this.dateConverter(this.state.checkOutDate),
       (err,res) => {
         if(err){
           console.log(
@@ -58,6 +65,10 @@ class GetReservations extends Component{
       border: "1px solid #ccc",
       fontSize: "15px",
     }
+    const inputStyle2={
+      width: "90%",
+      marginLeft: "0",
+    }
     const inputButtonStyle={
       marginTop: '25px',
       fontWeight: "900",
@@ -82,9 +93,11 @@ class GetReservations extends Component{
             </div>
             <input id="search" type="submit" value="Get Token" style={inputButtonStyle} onClick={this.handleSubmit} />
           {this.state.return &&
-            <div style={labelStyle}>Renter Address: 
-                <input id="renterAddress" type="text" style={inputStyle} value={this.state.return} readOnly/>
-            </div> 
+            <div>
+              <div style={labelStyle}>Renter Address: 
+              </div> 
+              <input id="renterAddress" type="text" style={Object.assign({}, inputStyle, inputStyle2)} value={this.state.return} readOnly/>
+            </div>
           }
         </fieldset>
       </div>
