@@ -10,17 +10,31 @@ class GetReservations extends Component{
     super(props)
     this.state = {
         tokenId : this.props.tokenId,
-        checkInDate: this.props.checkInDate,
-        checkOutDate: this.props.checkOutDate,
-        return: null // renter address
+        checkInDate: moment(this.props.checkInDate),
+        checkOutDate: moment(this.props.checkOutDate),
+        return: null // renter address array
     }
     this.handleSubmit=this.handleSubmit.bind(this);
+    this.handleStartChange=this.handleStartChange.bind(this);
+    this.handleStopChange=this.handleStopChange.bind(this);
   }
 
   handleTextChange = (event) => {
     if(this.state[event.target.id] !== undefined){
       this.setState({[event.target.id]: event.target.value});
     }
+  }
+
+  handleStartChange(date) {
+    this.setState({
+      checkInDate: date
+    });
+  }
+
+  handleStopChange(date) {
+    this.setState({
+      checkOutDate: date
+    });
   }
 
   dateConverter = (mmddyyyy) => {
@@ -42,10 +56,27 @@ class GetReservations extends Component{
         }
         console.log('res: ', res);
         this.setState({
-            return: res[0]
+            return: res
         });
       }
     );
+  }
+
+  displayAddresses(addressArray, inputStyle, inputStyle2, labelStyle){
+    if(addressArray!=null){
+      let addressInputs = addressArray.map((address, index) =>{
+        return( <input key={index} id="renterAddress" type="text" style={Object.assign({}, inputStyle, inputStyle2)} value={address} readOnly/>)
+      })
+      return(
+        <div>
+          <div classname="label-style">Renter Address Mappings: 
+          </div> 
+          {addressInputs}
+        </div>
+      )
+    }else{
+      return null;
+    }
   }
 
   render(){
@@ -77,28 +108,45 @@ class GetReservations extends Component{
       color: "white",
       textTransform: "uppercase"
     }
+  
     return(
       <div className="get-reservations">
         <fieldset >
           <h1>Get Reservations</h1>
           {/* <p>For checking on </p> */}
-            <div style={labelStyle}>Token Id: 
+            <div classname="label-style">Token Id: 
                 <input id="tokenId" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.tokenId} />
             </div> 
-            <div style={labelStyle}>Check In Date:
+            <div classname="label-style">Check In Date:
                 <input id="checkInDate" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.checkInDate} />
+                <DatePicker
+                  selected={this.state.checkInDate}
+                  onChange={this.handleStartChange}
+                  selectsStart
+                  startDate={this.state.checkInDate}
+                  endDate={this.state.checkOutDate}
+                  // minDate={moment([2018, 4, 17])}
+                  // maxDate={this.state.stop}
+                  placeholderText="Select an arrival date"
+                  // style={inputStyle}
+                />
             </div>
-            <div style={labelStyle}>Check Out Date:
+            <div classname="label-style">Check Out Date:
                 <input id="checkOutDate" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.checkOutDate} />
+                <DatePicker
+                  selected={this.state.checkOutDate}
+                  onChange={this.handleStopChange}
+                  selectsEnd
+                  startDate={this.state.checkInDate}
+                  endDate={this.state.checkOutDate}
+                  // minDate={this.state.start}
+                  // maxDate={moment([2018, 4, 21])}
+                  placeholderText="Select an departure date"
+                  // style={inputStyle}
+                />
             </div>
-            <input id="search" type="submit" value="Get Token" style={inputButtonStyle} onClick={this.handleSubmit} />
-          {this.state.return &&
-            <div>
-              <div style={labelStyle}>Renter Address: 
-              </div> 
-              <input id="renterAddress" type="text" style={Object.assign({}, inputStyle, inputStyle2)} value={this.state.return} readOnly/>
-            </div>
-          }
+            <input id="search" type="submit" value="Get Address Mappings" style={inputButtonStyle} onClick={this.handleSubmit} />
+          {this.displayAddresses(this.state.return, inputStyle, inputStyle2, labelStyle)}
         </fieldset>
       </div>
     )
