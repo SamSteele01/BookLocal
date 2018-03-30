@@ -116,6 +116,10 @@ h2, h3 {
   .how__card-font strong {
     font-size: 20px; }
 
+.prospectus {
+  margin: 0;
+  padding: 0; }
+
 .traveler__section h3 {
   padding: 0 50px;
   color: #1b75bb;
@@ -207,6 +211,8 @@ pre {
   background: #eee; }
 
 .base-layout {
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -448,24 +454,59 @@ a:hover {
   @media (min-width: 768px) {
     .app {
       margin-top: 84px; } }
+  .app > div:last-child {
+    margin-bottom: 40px; }
 
 .reserve, .get-token, .get-reservations, .settle, .check-available, .get-room-info, .access {
   background-color: white;
   padding: 15px 25px;
-  margin-top: 40px; }
+  margin-top: 40px;
+  max-width: 70vw; }
   @media (min-width: 768px) {
     .reserve, .get-token, .get-reservations, .settle, .check-available, .get-room-info, .access {
       padding: 30px 50px; } }
   .reserve fieldset, .get-token fieldset, .get-reservations fieldset, .settle fieldset, .check-available fieldset, .get-room-info fieldset, .access fieldset {
     background-color: white;
     padding: 25px;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    min-width: 400px; }
     .reserve fieldset h1, .get-token fieldset h1, .get-reservations fieldset h1, .settle fieldset h1, .check-available fieldset h1, .get-room-info fieldset h1, .access fieldset h1 {
       font-size: 35px;
       color: #474747; }
       @media (min-width: 768px) {
         .reserve fieldset h1, .get-token fieldset h1, .get-reservations fieldset h1, .settle fieldset h1, .check-available fieldset h1, .get-room-info fieldset h1, .access fieldset h1 {
           font-size: 45px; } }
+
+.label-style {
+  background-color: white;
+  padding: 10px 0px;
+  display: flex;
+  align-items: center;
+  color: #777;
+  text-transform: uppercase; }
+
+.input-style {
+  height: 35px;
+  flex-grow: 1;
+  margin-left: 10px;
+  padding-left: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px; }
+
+.input-style-2 {
+  width: 90%;
+  margin-left: 0; }
+
+.array-mappings {
+  box-sizing: border-box; }
+
+.input-button-style {
+  margin-top: 25px;
+  font-weight: 900;
+  background-color: #1b75bb;
+  padding: 5px 15px;
+  color: white;
+  text-transform: uppercase; }
 
 .react-datepicker__input-container input {
   height: 35px;
@@ -474,9 +515,6 @@ a:hover {
   padding-left: 10px;
   border: 1px solid #ccc;
   font-size: 15px; }
-
-.settle {
-  margin-bottom: 40px; }
 
 /* Eth-Memphis */
 .grommetux-box--pad-large {

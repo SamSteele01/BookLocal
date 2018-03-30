@@ -26,6 +26,8 @@ pre {
 
 .base-layout {
   // height: 100vh;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -310,6 +312,7 @@ a:hover {
 .app {
   display: flex;
   flex-direction: column;
+  // flex-wrap: wrap;
   justify-content: start;
   align-items: center;
   background-image: url("../images/room.jpg");
@@ -322,12 +325,16 @@ a:hover {
   @media (min-width: $tab){
     margin-top: 84px;
   }
+  >div:last-child {
+    margin-bottom: 40px;
+  }
 }
 
 .reserve, .get-token, .get-reservations, .settle, .check-available, .get-room-info, .access {
   background-color: white;
   padding: 15px 25px;
   margin-top: 40px;
+  max-width: 70vw;
   @media (min-width: $tab) {
     padding: 30px 50px;
   }
@@ -335,6 +342,7 @@ a:hover {
     background-color: white;
     padding: 25px;
     margin-bottom: 0;
+    min-width: 400px;
     h1 {
       font-size: 35px;
       color: $gray;
@@ -343,6 +351,42 @@ a:hover {
       }
     }
   }
+}
+
+.label-style {
+  background-color: white;
+  padding: 10px 0px;
+  display: flex;
+  align-items: center;
+  color: #777;
+  text-transform: uppercase;
+}
+
+.input-style {
+  height: 35px;
+  flex-grow: 1;
+  margin-left: 10px;
+  padding-left: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.input-style-2 {
+  width: 90%;
+  margin-left: 0;
+}
+
+.array-mappings {
+  box-sizing: border-box
+}
+
+.input-button-style {
+  margin-top: 25px;
+  font-weight: 900;
+  background-color: rgb(27, 117, 187);
+  padding: 5px 15px;
+  color: white;
+  text-transform: uppercase;
 }
 
 .react-datepicker__input-container input {
@@ -354,9 +398,6 @@ a:hover {
   font-size: 15px;
 }
 
-.settle {
-  margin-bottom: 40px;
-}
 
   /* Eth-Memphis */
 
