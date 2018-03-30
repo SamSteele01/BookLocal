@@ -46,48 +46,24 @@ class GetNextReservation extends Component{
   }
 
   render(){
-    const labelStyle={
-      backgroundColor: "white",
-      padding: "10px 0px",
-      display: "flex",
-      alignItems: "center",
-      color: "#777",
-      textTransform:"uppercase"
-    }
-    const inputStyle={
-      height: "35px",
-      flexGrow: "1",
-      marginLeft: "10px",
-      paddingLeft: "10px",
-      border: "1px solid #ccc",
-      fontSize: "15px",
-    }
-    const inputButtonStyle={
-      marginTop: '25px',
-      fontWeight: "900",
-      backgroundColor: "rgb(27, 117, 187)",
-      padding: '5px 15px',
-      color: "white",
-      textTransform: "uppercase"
-    }
     return(
       <div className="get-token">
         <fieldset >
           <h1>Get Token</h1>
           {this.state.tokenId ?
             <div>
-              <div style={labelStyle}>Token Id: 
-                <input id="tokenId" type="text" style={inputStyle} value={this.state.tokenId} readOnly/>
+              <div className="label-style">Token Id: 
+                <input id="tokenId" type="text" className="input-style" value={this.state.tokenId} readOnly/>
               </div> 
-              <div style={labelStyle}>Check In Date:
-                <input id="checkInDate" type="text" style={inputStyle} value={this.state.checkInDate} readOnly/>
+              <div className="label-style">Check In Date:
+                <input id="checkInDate" type="text" className="input-style" value={this.state.checkInDate} readOnly/>
               </div>
-              <div style={labelStyle}>Check Out Date:
-                <input id="checkOutDate" type="text" style={inputStyle} value={this.state.checkOutDate} readOnly/>
+              <div className="label-style">Check Out Date:
+                <input id="checkOutDate" type="text" className="input-style" value={this.state.checkOutDate} readOnly/>
               </div>
             </div>
             :
-            <input id="search" type="submit" value="Get Token" style={inputButtonStyle} onClick={this.handleSubmit} />
+            <input id="search" type="submit" value="Get Token" className="input-button-style" onClick={this.handleSubmit} />
           }
         </fieldset>
       </div>

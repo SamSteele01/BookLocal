@@ -53,7 +53,7 @@ class Reserve extends Component{
     console.log("("+
     web3.toBigNumber(this.dateConverter(this.state.start))+","+
     web3.toBigNumber(this.dateConverter(this.state.stop))+","+
-    ",{from: "+web3.eth.accounts[0]+", gas: 3000000})");
+    "{from: "+web3.eth.accounts[0]+", gas: 3000000})");
     reserve = this.props.RR.reserve(
       this.dateConverter(this.state.start),
       this.dateConverter(this.state.stop),
@@ -81,33 +81,6 @@ class Reserve extends Component{
   }
 
   render(){
-
-    const labelStyle={
-      backgroundColor: "white",
-      padding: "10px 0px",
-      display: "flex",
-      alignItems: "center",
-      color: "#777",
-      textTransform:"uppercase"
-    }
-    const inputStyle={
-      height: "35px",
-      flexGrow: "1",
-      marginLeft: "10px",
-      paddingLeft: "10px",
-      border: "1px solid #ccc",
-      fontSize: "15px",
-    }
-    const inputButtonStyle={
-      marginTop: '25px',
-      fontWeight: "900",
-      backgroundColor: "rgb(27, 117, 187)",
-      padding: '5px 15px',
-      color: "white",
-      textTransform: "uppercase"
-    }
-
-    console.log(Math.floor(moment(this.state.start).unix() / 86400));
     return(
       <div className="reserve">
         { this.state.response ?
@@ -123,35 +96,35 @@ class Reserve extends Component{
             {this.props.web3error && <div 
             className="reserve-warning">
             {this.props.web3error}</div>}
-              <div style={labelStyle}> Check-in date:
+              <div className="label-style"> Check-in date:
                 <DatePicker
                   selected={this.state.start}
                   onChange={this.handleStartChange}
                   selectsStart
                   startDate={this.state.start}
                   endDate={this.state.stop}
-                  minDate={moment([2018, 4, 17])}
-                  maxDate={this.state.stop}
+                  // minDate={moment([2018, 4, 17])}
+                  // maxDate={this.state.stop}
                   placeholderText="Select an arrival date"
-                  style={inputStyle}
+                  className="input-style"
                 />
-                {/* <input id="start" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.start} /> */}
+                {/* <input id="start" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.start} /> */}
               </div>
-              <div style={labelStyle}> Check-out date:
+              <div className="label-style"> Check-out date:
                 <DatePicker
                   selected={this.state.stop}
                   onChange={this.handleStopChange}
                   selectsEnd
                   startDate={this.state.start}
                   endDate={this.state.stop}
-                  minDate={this.state.start}
-                  maxDate={moment([2018, 4, 21])}
+                  // minDate={this.state.start}
+                  // maxDate={moment([2018, 4, 21])}
                   placeholderText="Select an departure date"
-                  style={inputStyle}
+                  className="input-style"
                 />
-                {/* <input id="stop" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.stop} /> */}
+                {/* <input id="stop" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.stop} /> */}
               </div>
-              <input id="search" type="submit" style={inputButtonStyle} value="Reserve" onClick={this.handleSubmit} />
+              <input id="search" type="submit" className="input-button-style" value="Reserve" onClick={this.handleSubmit} />
               {this.state.availability && <div className="reserve-warning">{this.state.availability}</div>
             }
           </fieldset>
