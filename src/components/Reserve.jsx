@@ -84,7 +84,7 @@ class Reserve extends Component{
     return(
       <div className="reserve">
         { this.state.response ?
-          <div>
+          <div className="label-style">
             <h1>Room Reserved!</h1>
             <p>Thank you for booking your room with BookLocal! We can't wait to meet you at EthMemphis.</p>
             <div>The address that you used to book is: {this.state.account}</div>
