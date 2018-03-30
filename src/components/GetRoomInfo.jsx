@@ -16,11 +16,25 @@ class GetRoomInfo extends Component{
 
     this.handleSubmit=this.handleSubmit.bind(this);
     this.handleTextChange=this.handleTextChange.bind(this);
+    this.convertUnixToDays=this.convertUnixToDays.bind(this);
   }
 
   handleTextChange = (event) => {
     if(this.state[event.target.id] !== undefined){
       this.setState({[event.target.id]: event.target.value});
+    }
+  }
+
+  convertUnixToDays = (time) => {
+    console.log('time: ', time);
+    if(time===''){
+      return ''
+    }
+    if(Math.floor(time/86400)===1){
+      return time/86400 + " day"
+    }
+    else {
+      return time/86400 + " days"
     }
   }
 
@@ -47,46 +61,35 @@ class GetRoomInfo extends Component{
   }
 
   render(){
-    const labelStyle={
-      backgroundColor: "white",
-      marginTop: "1.5rem",
-      marginBottom: "0",
-      display: "flex",
-      alignItems: "center",
-      color: "#777",
-      textTransform:"uppercase"
-    }
-    const inputStyle={
-      height: "35px",
-      flexGrow: "1",
-      marginLeft: "10px",
-      paddingLeft: "10px",
-      border: "1px solid #ccc",
-      fontSize: "15px",
-    }
-    const inputButtonStyle={
-      marginTop: '25px',
-      fontWeight: "900",
-      backgroundColor: "rgb(27, 117, 187)",
-      padding: '5px 15px',
-      color: "white",
-      textTransform: "uppercase"
-    }
-
-
     return(
       <div className="get-room-info">
         <fieldset >
           <h1>Room Details</h1>
-          <div style={labelStyle}>Token ID:
-            <input id="tokenId" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.tokenId} />
+          <div className="label-style">Token ID:
+            <input id="tokenId" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.tokenId} />
           </div>
-          <input id="search" type="submit" value="Get Room Info" style={inputButtonStyle} onClick={this.handleSubmit} />
-          <p style={labelStyle}>Owner: {this.state.owner}</p>
-          <p style={labelStyle}>Renter: {this.state.renter}</p>
-          <p style={labelStyle}>Minimum Rent Time:   {this.state.minRentTime}</p>
-          <p style={labelStyle}>Room Number:         {this.state.roomNumber}</p>
-          <p style={labelStyle}>Number of Beds:      {this.state.numBeds}</p>
+          <input id="search" type="submit" value="Get Room Info" className="input-button-style" onClick={this.handleSubmit} />
+          
+          <div className="label-style">Owner:
+            <input id="owner" type="text" className="input-style" value={this.state.owner} readOnly/>
+          
+          </div>
+          <div className="label-style">Renter:
+            <input id="renter" type="text" className="input-style" value={this.state.renter} readOnly/>
+          
+          </div>
+          <div className="label-style">Minimum Rent Time:
+            <input id="minRentTime" type="text" className="input-style" value={this.convertUnixToDays(this.state.minRentTime)} readOnly/>
+          
+          </div>
+          <div className="label-style">Room Number:
+            <input id="roomNumber" type="text" className="input-style" value={this.state.roomNumber} readOnly/>
+          
+          </div>
+          <div className="label-style">Number of Beds:
+            <input id="numBeds" type="text" className="input-style" value={this.state.numBeds} readOnly/>
+          
+          </div>
         </fieldset>
       </div>
     )
