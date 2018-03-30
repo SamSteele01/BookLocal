@@ -15,20 +15,14 @@ class Prospectus extends Component {
   render() {
     return (
       <div className="prospectus">
-        {/* <Header/> */}
         <Hero image="hero-pattern"/>
-        {/* <Header/> */}
         <What/>
-        {/* <Header/> */}
         <Why/>
-        {/* <Header/> */}
         <Who/>
-        {/* <Header/> */}
         <How/>
         <Traveler/>
         <Hotel/>
         {/*<Hero image="exchange-building"/>*/}
-        {/* <Header/> */}
         <Exchange/>
         <Steps/>
       </div>
