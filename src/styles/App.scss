@@ -53,20 +53,16 @@ pre {
   p {
     font-size: 18px;
   }
-
   li {
     padding: 10px;
     font-size: 16px;
-
     &:nth-child(even) {
       background-color: #EAEAEA;
     }
-
     &:nth-child(odd) {
       background-color: #D1D1D1;
     }
   }
-
   @media (min-width: $tablet) {
     flex-basis: 25%;
   }
@@ -77,18 +73,15 @@ pre {
   justify-content: center;
   flex-direction: column;
   width: 100%;
-
   @media (min-width: $tablet) {
     justify-content: space-around;
     align-content: space-around;
   }
-
   ul {
     font-size: 14px;
     list-style: none;
     margin: 0;
   }
-
   @media (min-width: $tablet) {
     flex-direction: row;
     flex-wrap: wrap;
@@ -145,13 +138,17 @@ pre {
   background-image: url('../images/movement.jpg');
   background-position: center;
   // height: 92.5vh;
-  height: auto;
+  height: calc(100vh - 162px);
+  width: 100%;
   background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
+  @media (min-width: $tablet) {
+    height: calc(100vh - 128px);
+  }
 }
 
 .home:after {
@@ -167,13 +164,15 @@ pre {
 }
 
 .register-message {
-  display: absolute;
+  // position: absolute;
   z-index: 3;
-  font-size: 2px;
   color: white;
-  font-size: 20px;
-  margin-top: 18vh;
+  margin: 10vh 0;
   padding: 0 20px;
+  font-size: 20px;
+  @media (min-width: $mobile) {
+    font-size: 30px;
+  }
   @media (min-width: $tablet) {
     font-size: 40px;
   }
