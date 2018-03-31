@@ -221,6 +221,12 @@ h2, h3 {
 .heading-clickable {
   cursor: pointer; }
 
+.text-shadow-raised {
+  text-shadow: 5px 2px 5px rgba(0, 0, 0, 0.4); }
+
+.text-shadow-lowered {
+  text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.4); }
+
 .section--wrapper {
   padding: 15px; }
   .section--wrapper h3 {
@@ -273,16 +279,22 @@ h2, h3 {
   .hotel-wrapper h3 {
     color: #3C3C3C; }
 
-.exchange-building__section {
+.steps__section {
+  background-color: #474747;
+  color: #FFFFFF; }
+
+.exchange {
   background-color: #FFFFFF;
-  color: #464749;
+  color: #464749; }
+
+.exchange-building__section {
   display: flex;
   align-items: center;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: space-between; }
   @media (min-width: 768px) {
     .exchange-building__section {
-      flex-direction: row; } }
+      flex-direction: row-reverse; } }
   @media (min-width: 992) {
     .exchange-building__section {
       align-items: flex-start; } }
@@ -296,10 +308,13 @@ h2, h3 {
     .exchange-building__map {
       max-width: 40vw; } }
 
-.steps__section {
-  background-color: #474747;
-  color: #FFFFFF;
-  padding: 15px; }
+.proof-of-concept {
+  background-color: #1b75bb;
+  color: #FFFFFF; }
+
+.early-adopters {
+  background-color: white;
+  color: #1a3a5a; }
 
 /*Colors*/
 .margin-bottom--med {
@@ -493,12 +508,13 @@ pre {
 .home {
   background-image: url("../images/movement.jpg");
   background-position: center;
-  height: 92.5vh;
+  height: auto;
   background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  position: relative; }
 
 .home:after {
   position: absolute;

@@ -144,13 +144,14 @@ pre {
 .home {
   background-image: url('../images/movement.jpg');
   background-position: center;
-  height: 92.5vh;
+  // height: 92.5vh;
+  height: auto;
   background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // position: relative;
+  position: relative;
 }
 
 .home:after {
