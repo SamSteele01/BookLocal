@@ -6,24 +6,23 @@ import What from './what/What';
 import Why from './why/Why';
 import Who from './who/Who';
 import How from './how/How';
-import Steps from './Steps';
+import Steps from './steps/Steps';
 import Traveler from "./Traveler";
 import Hotel from "./Hotel";
-import Exchange from "./Exchange";
+
 
 class Prospectus extends Component {
   render() {
     return (
       <div className="prospectus">
-        <Hero image="hero-pattern"/>
+        {/* <Hero image="hero-pattern"/> */}
         <What/>
         <Why/>
         <Who/>
         <How/>
         <Traveler/>
         <Hotel/>
-        {/*<Hero image="exchange-building"/>*/}
-        <Exchange/>
+        {/*<Hero image="exchange-building"/>*/}     
         <Steps/>
       </div>
     );
