@@ -39,38 +39,14 @@ class Access extends Component{
   }
 
   render(){
-    const labelStyle={
-      backgroundColor: "white",
-      padding: "10px 0px",
-      display: "flex",
-      alignItems: "center",
-      color: "#777",
-      textTransform:"uppercase"
-    }
-    const inputStyle={
-      height: "35px",
-      flexGrow: "1",
-      marginLeft: "10px",
-      paddingLeft: "10px",
-      border: "1px solid #ccc",
-      fontSize: "15px",
-    }
-    const inputButtonStyle={
-      marginTop: '25px',
-      fontWeight: "900",
-      backgroundColor: "rgb(27, 117, 187)",
-      padding: '5px 15px',
-      color: "white",
-      textTransform: "uppercase"
-    }
     return(
       <div className="access">
         <fieldset >
           <h1>Access</h1>
-            <div style={labelStyle}>Token Id:
-              <input id="tokenId" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.props.tokenId} />
+            <div className="label-style">Token Id:
+              <input id="tokenId" type="text" className="input-style" onChange={this.handleTextChange} value={this.props.tokenId} />
             </div>
-              <input id="search" type="submit" value="Check In" style={inputButtonStyle} onClick={this.handleSubmit} />
+              <input id="search" type="submit" value="Check In" className="input-button-style" onClick={this.handleSubmit} />
               {this.state.access &&
                 <div className="reserve-warning">See the transaction on <a href={`https://rinkeby.etherscan.io/tx/${this.state.access}`} target="_blank" rel="noopener noreferrer">Etherscan.io.</a></div>
               }

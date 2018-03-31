@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import HeadingDropDown from '../components/HeadingDropDown';
 import Heading from 'grommet/components/Heading';
 import Bed from "../images/bed.jpg";
 
@@ -7,11 +8,8 @@ import Bed from "../images/bed.jpg";
 class Traveler extends Component {
   render() {
     return(
-    <section className="traveler__section section--wrapper">
-      <Heading align='center'
-          tag='div' className="heading">
-          Traveler
-      </Heading>
+    // <section className="traveler__section section--wrapper">
+    <HeadingDropDown className="traveler" headingName="Traveler">
       <h3>
           With BookLocal, the traveler will be able to search, compare, and book a hotel
           room. Additionally, we will incorporate a wallet feature that allows the guest
@@ -153,7 +151,7 @@ class Traveler extends Component {
           didn’t spend will be immediately returned to her upon checkout.
       </p>
       </div>
-    </section>
+    </HeadingDropDown>
     );
   }
 }

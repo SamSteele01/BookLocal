@@ -6,7 +6,7 @@ class Header extends Component {
 
   render() {
     return (
-      <div>
+      <div className="header">
         <nav>
           <div className="Logo">
             <Link to="/home">
@@ -24,6 +24,7 @@ class Header extends Component {
             <Link to="/register" className="pure-menu-heading header-menu-link">Register</Link>
           </div>
         </nav>
+        <div className="header-spacer"></div>
       </div>
     );
   }

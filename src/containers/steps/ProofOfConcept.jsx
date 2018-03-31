@@ -1,52 +1,21 @@
 import React, { Component } from 'react';
 import Heading from 'grommet/components/Heading';
-import CustomList from './CustomList';
-import CustomListItem from './CustomListItem';
-import colors from '../styles/colors';
-import WalletImg from "../images/wallet.jpg";
-import CouchImg from "../images/couch.jpg";
-import HotelImg from "../images/hotel.jpg";
-import TravelersImg from "../images/travelers.jpg";
+import HeadingDropDown from '../../components/HeadingDropDown';
+import CustomList from '../CustomList';
+import CustomListItem from '../CustomListItem';
+import colors from '../../styles/colors';
+import WalletImg from "../../images/wallet.jpg";
 
-export default class Steps extends Component {
+export default class ProofOfConcept extends Component {
     render() {
         return (
-            <section className="steps__section section--wrapper">
-              <Heading align='center' tag='h2' className="heading">
-                  Steps - Proof of Concept
-              </Heading>
-                {/*<Section
-                    pad='none'
-                    align='stretch'
-                    alignContent='center'
-                    // appCentered='true'
-                >*/}
-
+            <HeadingDropDown className="proof-of-concept" subHeadingName="Proof of Concept">
                 {/* 5 */}
-            {   /* <div className='heading'>Steps</div>
+                {/* <div className='heading'>Steps</div>
                 <p className='paragraph-white'>
                     Below are the key benchmarks toward full adoption.
-                </p>*/}
-
-                {/* 5.1 */}
-            {  /*  <Heading align='center'
- 	 	 	 	 	 	 margin='medium'
-                        margin='medium'
-                        tag='h2'>
-                        The Exchange Building
-                </Heading>
-                <p className='paragraph-white'>
-                    The Exchange Building in Memphis, Tennessee will host the first version of
-                    BookLocal as it’s own proprietary property management system.
-                </p>*/}
-
+                </p>  */}
                 {/* 5.1.1 */}
-                {/*<Heading
-                    align='center'
-                    margin='medium'
-                    tag='h4'>
-                    Proof of Concept
-                </Heading>*/}
                 <h3>
                     We proposed a rentable token model (ERC-809) that extends a non-fungible
                     token (as introduced in ERC-721) to provide temporary access for non-owners.
@@ -101,25 +70,7 @@ export default class Steps extends Component {
                     full payment functionality and user interfaces.
                   </p>
                 </div>
-
-
                 {/* 5.1.2 */}
-              { /*<Heading
-                    align='center'
-                    margin='medium'
-                    tag='h2'>
-                    Proof of Concept
-                </Heading>
-                <Heading
-                    align='center'
-                    margin='medium'
-                    tag='h3'>
-                    Minimum Viable Product
-                </Heading>
-                <p className='paragraph-white'>
-                    The minimum viable product will extend the Proof of Concept to incorporate
-                    full payment functionality and user interfaces.
-                </p>*/}
                 <div className="content-card--wrapper">
                   <div className="content-card">
                     <Heading align='center'
@@ -285,78 +236,7 @@ export default class Steps extends Component {
                         </div>
                     </CustomListItem>
                 </CustomList> */}
-
-
-
-                {/* 5.2 */}
-                <Heading align='center' margin='medium' tag='h2' className="heading">
-                    Early Adopters
-                </Heading>
-                <h3>Once the BookLocal platform is successfully tested at the Exchange Building, we
-                    will market the application for use by adventurous travelers, independent hotels,
-                    and individuals with extra space. Once we have a strong community of users, we will target chain hotels by adding
-                        features that allow for corporate oversight on overall and hotel specific performance. Toward this end, our goal is to provide the
-                    following:</h3>
-
-
-                {/* 5.2.1 */}
-                <div className="content-card--wrapper">
-                  <div className="content-card">
-                <Heading align='center' margin='medium' tag='h3'>
-                    Free interface for travelers.
-                </Heading>
-                <p className='paragraph'>
-                    In particular, we will target the Ethereum development community in order to
-                    nurture early versions of the product.
-                </p>
-                <img className="image-md" alt="hotel-bed" src={TravelersImg}/>
-
-              </div>
-
-                {/* 5.2.2 */}
-                <div className="content-card">
-                <Heading align='center' margin='medium' tag='h3'>
-                    Free interface for individual hosts.
-                </Heading>
-                <p className='paragraph'>
-                    In order to encourage use, we will provide a free interface for individuals to rent
-                    access to their extra space (similar to the AirBnB model).
-                </p>
-                <img className="image-md" alt="hotel-bed" src={CouchImg}/>
-
-              </div>
-
-                {/* 5.2.3 */}
-                <div className="content-card">
-                <Heading align='center' margin='medium' tag='h3'>
-                    Paid interface for hotels.
-                </Heading>
-                <p className='paragraph'>
-                    To address unique attributes of each hotel, we plan to offer custom hotel interfaces
-                    as a service (i.e. software-as-a-service) in order to provide each early
-                    adopting hotel with their ideal property management system.
-                </p>
-                <img className="image-md" alt="hotel-bed" src={HotelImg}/>
-
-              </div>
-            </div>
-
-                {/* 5.3 */}
-                {/*<Heading align='center'
- 	 	 	 	 	 	 margin='medium'
-                    tag='h2'>
-                    More Adopters
-                </Heading>
-                <p className='paragraph-white'>
-                    Once we have a strong community of users, we will target chain hotels by adding
-                    features that allow for corporate oversight on overall and hotel specific performance.
-                </p> */}
-                <div className="textbox">
-                  <h2>Contracts</h2>
-                  <p>The contracts for the proof of concept (written in solidity) are available online.</p>
-
-                </div>
-            </section>
+            </HeadingDropDown>
         )
     }
 }

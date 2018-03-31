@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Section from 'grommet/components/Section';
+// import Section from 'grommet/components/Section';
+import HeadingDropDown from '../../components/HeadingDropDown';
 import CustomList from '../CustomList';
 import CustomListItem from '../CustomListItem';
 import expandedEcosystemImg from '../../images/expanded-ecosystem.png';
@@ -10,19 +11,11 @@ export default class How extends Component {
     render() {
 
         return (
-            <section className="how section--wrapper">
-                <Section
-                    margin="none"
-                    pad='none'
-                    align='stretch'
-                    alignContent='center'
-                    // appCentered='true'
-                    alignSelf='center'
-                    // justify='center'
-                >
+            // <section className="how section--wrapper">
+            <HeadingDropDown className="how" headingName="How">
 
                     {/* 4 */}
-                    <div className='heading'>How</div>
+                    {/* <div className='heading'>How</div> */}
                     <div className="how-section-wrapper">
                     <p className='paragraph-white'>
                         The heart of BookLocal will reside in a series of smart contracts on the public
@@ -48,10 +41,6 @@ export default class How extends Component {
                         tag='h4'>
                         Data
                     </Heading> */}
-
-
-
-
 
                     <CustomList
                         pad="medium"
@@ -100,34 +89,29 @@ export default class How extends Component {
                                 for available rooms, compare room attributes, and book the room.
                             </p>
                         </CustomListItem>
-                    </CustomList>
+                </CustomList>
                     <div className="how-section-wrapper">
-                    <p className='paragraph'>
-                        The ultimate goal for BookLocal is to maintain it’s own plasma subchain (or
-                        similar off-chain solution) to handle the bulk of the transactional data. This
-                        works to reduce the number of updates to the main Ethereum chain and thus
-                        save in transaction fees and increase speed. Further, upon making a
-                        reservation, a new subchain (or payment channel) could be created for the
-                        hotel guest (a traveler who commits to a hotel becomes a guest) and will
-                        terminate upon checkout whereby the final balances are settled. Visually we
-                        represent the flow of data below:
-                    </p>
+                        <p className='paragraph'>
+                            The ultimate goal for BookLocal is to maintain it’s own plasma subchain (or
+                            similar off-chain solution) to handle the bulk of the transactional data. This
+                            works to reduce the number of updates to the main Ethereum chain and thus
+                            save in transaction fees and increase speed. Further, upon making a
+                            reservation, a new subchain (or payment channel) could be created for the
+                            hotel guest (a traveler who commits to a hotel becomes a guest) and will
+                            terminate upon checkout whereby the final balances are settled. Visually we
+                            represent the flow of data below:
+                        </p>
 
-                    <div className='image-container'>
-                        <img
-                            src={plasmaChainImg}
-                            className='image'
-                            alt="plasma chain"
-                        />
+                        <div className='image-container'>
+                            <img
+                                src={plasmaChainImg}
+                                className='image'
+                                alt="plasma chain"
+                            />
+                        </div>
                     </div>
-                  </div>
-
-
-                    {/* 4.3 */}
-
-
-                </Section>
-            </section>
+                    {/* 4.3 */}                
+            </HeadingDropDown>
         )
     }
 }

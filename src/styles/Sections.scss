@@ -2,36 +2,102 @@
 @import "Typography";
 
 // Traveler Section
-.traveler__section {
+
+.prospectus {
+  // width: 100vw;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading-clickable {
+  cursor: pointer;
+}
+
+.section--wrapper {
+  padding: 15px;
   h3 {
     padding: 0 50px;
-    color: $logo-blue;
-    font-size: 25px;
-  }
-  h2 {
-    padding: 0 50px;
-    color: white;
-    font-size: 25px;
+    font-size: 20px;
+    @media (min-width: $tablet) {
+      font-size: 25px;
+    }
   }
 }
 
-//Hotel Section
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 45px 20px;
+}
+
+/* Prospectus aka About*/
+.what {
+  background-color: $gray;
+  color: $white;
+}
+
+.why {
+  background-color: $logo-blue;
+  color: $white;
+}
+
+.problems {
+  // background-color: #1a3a5a;
+  // color: white;
+  background-color: $white;
+  color: $font-gray;
+}
+
+.solutions {
+  // background-color: $white;
+  // color: $font-gray;
+  background-color: #1a3a5a;
+  color: white;
+}
+
+.who {
+  background-color: $white;
+  color: $font-gray;
+}
+
+.how {
+  background-color: $gray;
+  color: $white;
+}
+
+.traveler {
+  h3 {
+    padding: 0 50px;
+    color: $logo-blue;
+    // font-size: 25px;
+  }
+  h2 {
+    padding: 0 50px;
+    color: $logo-blue;
+    // font-size: 25px;
+  }
+}
+
 .hotel-wrapper {
   background-color: #808080;
   color: $white;
-
   h3 {
     color: $header-gray;
   }
 }
 
-// Exchange Building Section
 .exchange-building__section {
+  background-color: $white;
+  color: $font-gray;
   display: flex;
   align-items: center;
   flex-direction: column-reverse;
   justify-content: space-between;
-  @media (min-width: $tab) {
+  @media (min-width: $tablet) {
     flex-direction: row;
   }
   @media (min-width: $desk) {
@@ -45,48 +111,17 @@
 
 .exchange-building__map {
   max-width: 80vw;
-  @media (min-width: $tab) {
+  @media (min-width: $tablet) {
     max-width: 40vw;
   }
 }
 
-//Problems Section
-.problems {
-  background-color: #1a3a5a;
-  color: white;
-}
+// .proof-of-concept {}
 
-// Solutions Section
-.solutions {
-  background-color: $white;
-  color: $font-gray;
-}
+// .early-adopters {}
 
-//Steps Section
 .steps__section {
   background-color: $gray;
   color: $white;
   padding: 15px;
-}
-
-
-/* Prospectus aka About*/
-.what {
-  background-color: $gray;
-  color: $white;
-}
-
-.why {
-  background-color: $logo-blue;
-  color: $white;
-}
-
-.who {
-  background-color: $white;
-  color: $font-gray;
-}
-
-.how {
-  background-color: $gray;
-  color: $white;
 }

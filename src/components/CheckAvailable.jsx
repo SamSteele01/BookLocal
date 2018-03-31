@@ -37,51 +37,23 @@ class CheckAvailable extends Component{
         });
       }
     );
-    // console.log(available);
-    // this.setState({
-    //   availability: available,
-    // });
   }
 
   render(){
-    const labelStyle={
-      backgroundColor: "white",
-      padding: "10px 0px",
-      display: "flex",
-      alignItems: "center",
-      color: "#777",
-      textTransform:"uppercase"
-    }
-    const inputStyle={
-      height: "35px",
-      flexGrow: "1",
-      marginLeft: "10px",
-      paddingLeft: "10px",
-      border: "1px solid #ccc",
-      fontSize: "15px",
-    }
-    const inputButtonStyle={
-      marginTop: '25px',
-      fontWeight: "900",
-      backgroundColor: "rgb(27, 117, 187)",
-      padding: '5px 15px',
-      color: "white",
-      textTransform: "uppercase"
-    }
-    // time input needs to be converted to unix time. Could take dates with hours.
+    /** time input needs to be converted to unix time. Could take dates with hours. Checks if bed is available? */
     return(
       <div className="check-available">
         <fieldset>
           <h1>Check availability</h1>
-            <div style={labelStyle}>Token Id:
-              <input id="tokenId" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.tokenId} />
+            <div className="label-style">Token Id:
+              <input id="tokenId" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.tokenId} />
             </div>
-            <div style={labelStyle}> Time: 
-              <input id="time" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.time} />
+            <div className="label-style"> Time: 
+              <input id="time" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.time} />
             </div>
-            <input id="search" type="submit" value="Check Availability" style={inputButtonStyle} onClick={this.handleSubmit} />
+            <input id="search" type="submit" value="Check Availability" className="input-button-style" onClick={this.handleSubmit} />
             {this.state.availability &&
-              <div style={labelStyle}>{this.state.availability}</div>
+              <div className="label-style">{this.state.availability}</div>
             }
         </fieldset>
       </div>
