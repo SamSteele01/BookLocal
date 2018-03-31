@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Section from 'grommet/components/Section';
+// import Section from 'grommet/components/Section';
+import HeadingDropDown from '../../components/HeadingDropDown';
 import Heading from 'grommet/components/Heading';
 import CustomList from '../CustomList';
 import CustomListItem from '../CustomListItem';
@@ -11,13 +12,8 @@ class Who extends Component {
 
   render() {
     return (
-      <div className="who section--wrapper">
-        <Section
-          pad='none'
-          align='stretch'
-          alignContent='center'
-          // appCentered='true'
-        >
+      // <div className="who section--wrapper">
+      <HeadingDropDown className="who" headingName="Who">
 
           {/* 3 */}
           <div className='heading'>Who</div>
@@ -322,8 +318,8 @@ class Who extends Component {
               agencies in order to provide seamless integration for early-adopting hotels and
               late-adopting travelers.
             </p>
-        </Section>
-      </div>
+      {/* </div> */}
+      </HeadingDropDown>
     );
   }
 

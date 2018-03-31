@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
+import HeadingDropDown from '../components/HeadingDropDown';
 import Heading from 'grommet/components/Heading';
 
 class Hotel extends Component {
   render() {
     return(
-      <section className="hotel-wrapper section--wrapper">
-      <Heading align='center' tag='h2' className="heading">
+      // <section className="hotel-wrapper section--wrapper">
+      <HeadingDropDown className="hotel-wrapper" headingName="Hotel">
+      {/* <Heading align='center' tag='h2' className="heading">
           Hotel
-      </Heading>
+      </Heading> */}
       <h3>
           The hotel interface will require the following functionality:
       </h3>
@@ -99,7 +101,8 @@ class Hotel extends Component {
           to submit their claim after which BookLocal will make the final decision. Here,
           the guest’s subchain stays open and unresolved until BookLocal’s decision.</p>
     </div>
-    </section>
+    {/* </section> */}
+    </HeadingDropDown>
     )
   }
 }

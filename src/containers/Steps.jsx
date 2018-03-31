@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Heading from 'grommet/components/Heading';
+import HeadingDropDown from '../components/HeadingDropDown';
 import CustomList from './CustomList';
 import CustomListItem from './CustomListItem';
 import colors from '../styles/colors';
@@ -7,29 +8,26 @@ import WalletImg from "../images/wallet.jpg";
 import CouchImg from "../images/couch.jpg";
 import HotelImg from "../images/hotel.jpg";
 import TravelersImg from "../images/travelers.jpg";
+import Exchange from "./Exchange";
 
 export default class Steps extends Component {
     render() {
         return (
-            <section className="steps__section section--wrapper">
+            // <section className="steps__section section--wrapper">
+            <HeadingDropDown className="steps__section" headingName="Steps">
+                <Exchange/>
               <Heading align='center' tag='h2' className="heading">
-                  Steps - Proof of Concept
+                  Proof of Concept
               </Heading>
-                {/*<Section
-                    pad='none'
-                    align='stretch'
-                    alignContent='center'
-                    // appCentered='true'
-                >*/}
-
+        
                 {/* 5 */}
-            {   /* <div className='heading'>Steps</div>
+                {/* <div className='heading'>Steps</div>
                 <p className='paragraph-white'>
                     Below are the key benchmarks toward full adoption.
-                </p>*/}
+                </p>  */}
 
                 {/* 5.1 */}
-            {  /*  <Heading align='center'
+                {/* <Heading align='center'
  	 	 	 	 	 	 margin='medium'
                         margin='medium'
                         tag='h2'>
@@ -38,15 +36,15 @@ export default class Steps extends Component {
                 <p className='paragraph-white'>
                     The Exchange Building in Memphis, Tennessee will host the first version of
                     BookLocal as it’s own proprietary property management system.
-                </p>*/}
+                </p>  */}
 
                 {/* 5.1.1 */}
-                {/*<Heading
+                {/* <Heading
                     align='center'
                     margin='medium'
                     tag='h4'>
                     Proof of Concept
-                </Heading>*/}
+                </Heading> */}
                 <h3>
                     We proposed a rentable token model (ERC-809) that extends a non-fungible
                     token (as introduced in ERC-721) to provide temporary access for non-owners.
@@ -356,7 +354,8 @@ export default class Steps extends Component {
                   <p>The contracts for the proof of concept (written in solidity) are available online.</p>
 
                 </div>
-            </section>
+            {/* </section> */}
+            </HeadingDropDown>
         )
     }
 }
