@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import Heading from 'grommet/components/Heading';
-import HeadingDropDown from '../../components/HeadingDropDown';
-import CouchImg from "../../images/couch.jpg";
-import HotelImg from "../../images/hotel.jpg";
-import TravelersImg from "../../images/travelers.jpg";
+import HeadingDropDown from 'components/HeadingDropDown';
+import CouchImg from "images/couch.jpg";
+import HotelImg from "images/hotel.jpg";
+import TravelersImg from "images/travelers.jpg";
 
 export default class EarlyAdoptors extends Component {
     render() {

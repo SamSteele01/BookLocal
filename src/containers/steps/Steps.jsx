@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HeadingDropDown from '../../components/HeadingDropDown';
+import HeadingDropDown from 'components/HeadingDropDown';
 import Exchange from "./Exchange";
 import ProofOfConcept from "./ProofOfConcept";
 import EarlyAdoptors from "./EarlyAdoptors";

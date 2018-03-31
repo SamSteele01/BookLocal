@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 // import Section from 'grommet/components/Section';
-import HeadingDropDown from '../../components/HeadingDropDown';
+import HeadingDropDown from 'components/HeadingDropDown';
 import Heading from 'grommet/components/Heading';
-import CustomList from '../CustomList';
-import CustomListItem from '../CustomListItem';
-import ecosystem from '../../images/hotel-current-ecosystem.png';
-import ecosystem2 from '../../images/booklocal-ecosystem.png';
-import colors from '../../styles/colors';
+import CustomList from 'components/CustomList';
+import CustomListItem from 'components/CustomListItem';
+import ecosystem from 'images/hotel-current-ecosystem.png';
+import ecosystem2 from 'images/booklocal-ecosystem.png';
+import colors from 'styles/colors';
 
 class Who extends Component {
 

@@ -1,31 +1,31 @@
 import React, { Component } from 'react';
 import Web3 from 'web3';
-import '../styles/App.css';
+import 'styles/App.css';
 
-import RoomInfo from '../components/ethMemphis/RoomInfo';
-import TotalSupply from '../components/ethMemphis/TotalSupply';
-import OwnerOf from '../components/ethMemphis/OwnerOf';
-import Approve from '../components/ethMemphis/Approve';
-import CheckAvailable from '../components/ethMemphis/CheckAvailable';
-import Reserve from '../components/ethMemphis/Reserve';
-import Access from '../components/ethMemphis/Access';
-import Settle from '../components/ethMemphis/Settle';
-import CancelReservation from '../components/ethMemphis/CancelReservation';
-import GetCurrentTime from '../components/ethMemphis/GetCurrentTime';
+import RoomInfo from 'components/ethMemphis/RoomInfo';
+import TotalSupply from 'components/ethMemphis/TotalSupply';
+import OwnerOf from 'components/ethMemphis/OwnerOf';
+import Approve from 'components/ethMemphis/Approve';
+import CheckAvailable from 'components/ethMemphis/CheckAvailable';
+import Reserve from 'components/ethMemphis/Reserve';
+import Access from 'components/ethMemphis/Access';
+import Settle from 'components/ethMemphis/Settle';
+import CancelReservation from 'components/ethMemphis/CancelReservation';
+import GetCurrentTime from 'components/ethMemphis/GetCurrentTime';
 import TextInput from '@aragon/ui/dist/index.cjs';
 import Field from '@aragon/ui/dist/index.cjs';
 
 let web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"))
 
-let RBAbi = require('../../abis/RoomBaseAbi.js');
+let RBAbi = require('abis/RoomBaseAbi.js');
 let RBAddress = '0x8273e4b8ed6c78e252a9fca5563adfcc75c91b2a';
 let RB = new web3.eth.Contract(RBAbi, RBAddress);
 
-// let ROAbi = require('../../abis/RoomOwnershipAbi.js');
+// let ROAbi = require('abis/RoomOwnershipAbi.js');
 // let ROAddress = '0x8f0483125fcb9aaaefa9209d8e9d7b9c8b9fb90f';
 // let RO = web3.eth.contract(ROAbi).at(ROAddress);
 
-let RRAbi = require('../../abis/RoomRentingAbi.js');
+let RRAbi = require('abis/RoomRentingAbi.js');
 let RRAddress = '0x345ca3e014aaf5dca488057592ee47305d9b3e10';
 let RR = new web3.eth.Contract(RRAbi, RRAddress);
 

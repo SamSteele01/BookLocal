@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Section from 'grommet/components/Section';
-import HeadingDropDown from '../../components/HeadingDropDown';
+import HeadingDropDown from 'components/HeadingDropDown';
 import Box from 'grommet/components/Box';
 import Problems from './Problems';
 import Solutions from './Solutions';
-import CustomList from '../CustomList';
-import CustomListItem from '../CustomListItem';
-import colors from '../../styles/colors';
+import CustomList from 'components/CustomList';
+import CustomListItem from 'components/CustomListItem';
+import colors from 'styles/colors';
 
 class Why extends Component {
 

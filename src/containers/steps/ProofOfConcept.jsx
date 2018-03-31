@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Heading from 'grommet/components/Heading';
-import HeadingDropDown from '../../components/HeadingDropDown';
-import CustomList from '../CustomList';
-import CustomListItem from '../CustomListItem';
-import colors from '../../styles/colors';
-import WalletImg from "../../images/wallet.jpg";
+import HeadingDropDown from 'components/HeadingDropDown';
+import CustomList from 'components/CustomList';
+import CustomListItem from 'components/CustomListItem';
+import colors from 'styles/colors';
+import WalletImg from "images/wallet.jpg";
 
 export default class ProofOfConcept extends Component {
     render() {

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 // import Section from 'grommet/components/Section';
-import HeadingDropDown from '../../components/HeadingDropDown';
-import CustomList from '../CustomList';
-import CustomListItem from '../CustomListItem';
-import colors from '../../styles/colors';
+import HeadingDropDown from 'components/HeadingDropDown';
+import CustomList from 'components/CustomList';
+import CustomListItem from 'components/CustomListItem';
+import colors from 'styles/colors';
 
 class What extends Component {
 

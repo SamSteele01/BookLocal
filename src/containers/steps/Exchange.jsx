@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Heading from 'grommet/components/Heading';
-import Map from "../../images/map.png";
+import Map from "images/map.png";
 
 
 export default class Exchange extends Component {

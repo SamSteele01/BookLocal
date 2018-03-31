@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import HeadingDropDown from '../components/HeadingDropDown';
+import HeadingDropDown from 'components/HeadingDropDown';
 import Heading from 'grommet/components/Heading';
-import Bed from "../images/bed.jpg";
+import Bed from "images/bed.jpg";
 
 
 
