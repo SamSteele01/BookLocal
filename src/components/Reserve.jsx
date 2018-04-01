@@ -101,12 +101,12 @@ class Reserve extends Component{
                   selected={this.state.start}
                   onChange={this.handleStartChange}
                   selectsStart
+                  readOnly
                   startDate={this.state.start}
                   endDate={this.state.stop}
                   // minDate={moment([2018, 4, 17])}
-                  // maxDate={this.state.stop}
+                  maxDate={this.state.stop}
                   placeholderText="Select an arrival date"
-                  className="input-style"
                 />
                 {/* <input id="start" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.start} /> */}
               </div>
@@ -115,12 +115,12 @@ class Reserve extends Component{
                   selected={this.state.stop}
                   onChange={this.handleStopChange}
                   selectsEnd
+                  readOnly
                   startDate={this.state.start}
                   endDate={this.state.stop}
-                  // minDate={this.state.start}
+                  minDate={this.state.start}
                   // maxDate={moment([2018, 4, 21])}
                   placeholderText="Select an departure date"
-                  className="input-style"
                 />
                 {/* <input id="stop" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.stop} /> */}
               </div>

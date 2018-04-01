@@ -88,32 +88,30 @@ class GetReservations extends Component{
             <div className="label-style">Token Id: 
                 <input id="tokenId" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.tokenId} />
             </div> 
-            <div className="label-style">Check In Date:
-                
+            <div className="label-style">Check In Date:        
                 <DatePicker
                   selected={this.state.checkInDate}
                   onChange={this.handleStartChange}
                   selectsStart
+                  readOnly
                   startDate={this.state.checkInDate}
                   endDate={this.state.checkOutDate}
                   // minDate={moment([2018, 4, 17])}
-                  // maxDate={this.state.stop}
+                  maxDate={this.state.stop}
                   placeholderText="Select an arrival date"
-                  // className="input-style"
                 />
             </div>
-            <div className="label-style">Check Out Date:
-                
+            <div className="label-style">Check Out Date:             
                 <DatePicker
                   selected={this.state.checkOutDate}
                   onChange={this.handleStopChange}
                   selectsEnd
+                  readOnly
                   startDate={this.state.checkInDate}
                   endDate={this.state.checkOutDate}
-                  // minDate={this.state.start}
+                  minDate={this.state.start}
                   // maxDate={moment([2018, 4, 21])}
                   placeholderText="Select an departure date"
-                  // className="input-style"
                 />
             </div>
             <input id="search" type="submit" value="Get Address Mappings" className="input-button-style" onClick={this.handleSubmit} />
