@@ -13,8 +13,20 @@
   flex-direction: column;
 }
 
+// .heading-drop-down-container {
+
+// }
+
+.drop-down-contents {
+  padding-bottom: 40px;
+
+}
+
 .heading-clickable {
   cursor: pointer;
+  h2, h3 {
+    margin: 0;
+  }
 }
 
 .text-shadow-raised {
@@ -42,7 +54,23 @@
   padding: 45px 20px;
 }
 
-/* Prospectus aka About*/
+.textbox {
+  background-color: $logo-blue;
+  padding: 20px;
+  color: white;
+  line-height: 1.5;
+  border: solid 1px white;
+  h2 {
+    font-size: 25px;
+  }
+  p {
+    font-size: 15px;
+    @media (min-width: $tablet) {
+      font-size: 18px;
+    }
+  }
+}
+
 .what {
   background-color: $gray;
   color: $white;
@@ -78,24 +106,22 @@
 }
 
 .traveler {
-  h3 {
-    padding: 0 50px;
-    color: $logo-blue;
+  padding: 0 50px;
+  color: $logo-blue;
     // font-size: 25px;
-  }
-  h2 {
-    padding: 0 50px;
-    color: $logo-blue;
-    // font-size: 25px;
-  }
+  // h2 {
+  //   padding: 0 50px;
+  //   color: $logo-blue;
+  //   // font-size: 25px;
+  // }
 }
 
 .hotel-wrapper {
   background-color: #808080;
   color: $white;
-  h3 {
-    color: $header-gray;
-  }
+  // h3 {
+  //   color: $header-gray;
+  // }
 }
 
 .steps__section {
