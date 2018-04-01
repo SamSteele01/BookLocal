@@ -43,7 +43,7 @@ export default class HeadingDropDown extends Component {
                     }
                 </div>
                 {this.state.dropDownOpen &&
-                    <div className={`${this.props.childClassName}`}>
+                    <div className={`drop-down-contents ${this.props.childClassName}`}>
                         {this.props.children}
                     </div>
                 }
@@ -51,5 +51,4 @@ export default class HeadingDropDown extends Component {
         )
     }
 }
-
 
