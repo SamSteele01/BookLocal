@@ -230,8 +230,13 @@ h2, h3 {
   display: flex;
   flex-direction: column; }
 
+.drop-down-contents {
+  padding-bottom: 40px; }
+
 .heading-clickable {
   cursor: pointer; }
+  .heading-clickable h2, .heading-clickable h3 {
+    margin: 0; }
 
 .text-shadow-raised {
   text-shadow: 5px 2px 5px rgba(0, 0, 0, 0.4); }
@@ -253,7 +258,20 @@ h2, h3 {
   width: 100%;
   padding: 45px 20px; }
 
-/* Prospectus aka About*/
+.textbox {
+  background-color: #1b75bb;
+  padding: 20px;
+  color: white;
+  line-height: 1.5;
+  border: solid 1px white; }
+  .textbox h2 {
+    font-size: 25px; }
+  .textbox p {
+    font-size: 15px; }
+    @media (min-width: 768px) {
+      .textbox p {
+        font-size: 18px; } }
+
 .what {
   background-color: #474747;
   color: #FFFFFF; }
@@ -278,18 +296,13 @@ h2, h3 {
   background-color: #474747;
   color: #FFFFFF; }
 
-.traveler h3 {
-  padding: 0 50px;
-  color: #1b75bb; }
-.traveler h2 {
+.traveler {
   padding: 0 50px;
   color: #1b75bb; }
 
 .hotel-wrapper {
   background-color: #808080;
   color: #FFFFFF; }
-  .hotel-wrapper h3 {
-    color: #3C3C3C; }
 
 .steps__section {
   background-color: #474747;
@@ -397,6 +410,10 @@ h2, h3 {
   width: 90%;
   margin-left: 0; }
 
+input:focus {
+  outline-offset: -2px;
+  outline: #E66E1C auto 5px; }
+
 .array-mappings {
   box-sizing: border-box; }
 
@@ -431,21 +448,6 @@ pre {
   margin: 20px 0 15px 0;
   padding: 10px;
   background: #eee; }
-
-.textbox {
-  margin: 25px 0 0 0;
-  background-color: #1b75bb;
-  padding: 20px;
-  color: white;
-  line-height: 1.5;
-  border: solid 1px white; }
-  .textbox h2 {
-    font-size: 25px; }
-  .textbox p {
-    font-size: 15px; }
-    @media (min-width: 768px) {
-      .textbox p {
-        font-size: 18px; } }
 
 .content-card {
   border: solid 1px black;

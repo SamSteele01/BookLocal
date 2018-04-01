@@ -26,24 +26,6 @@ pre {
   background: #eee;
 }
 
-.textbox {
-  margin: 25px 0 0 0;
-  background-color: $logo-blue;
-  padding: 20px;
-  color: white;
-  line-height: 1.5;
-  border: solid 1px white;
-  h2 {
-    font-size: 25px;
-  }
-  p {
-    font-size: 15px;
-    @media (min-width: $tablet) {
-      font-size: 18px;
-    }
-  }
-}
-
 .content-card {
   border: solid 1px black;
   padding: 20px;
