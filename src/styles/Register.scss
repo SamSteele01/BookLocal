@@ -71,6 +71,11 @@
     width: 90%;
     margin-left: 0;
   }
+
+  input:focus {
+    outline-offset: -2px;
+    outline: $orange3 auto 5px;
+  }
   
   .array-mappings {
     box-sizing: border-box
