@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import BlueWeb from '../images/blue-web';
+// import BlueWeb from 'images/blue-web';
 
 class Hero extends Component {
 

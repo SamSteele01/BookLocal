@@ -58,12 +58,19 @@ h2, h3 {
     font-size: 20px; }
 
 .base-layout {
+  min-height: 100vh;
+  width: 100vw;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  text-align: center; }
+  text-align: center;
+  align-items: center; }
+
+.header {
+  width: 100vw;
+  z-index: 3; }
 
 .header-spacer {
   z-index: 1;
@@ -95,7 +102,7 @@ nav {
   position: fixed;
   z-index: 3;
   box-sizing: border-box;
-  width: 100%;
+  width: 100vw;
   background-color: white;
   justify-content: space-between;
   flex-direction: column;
@@ -145,11 +152,16 @@ a:hover {
 .footer {
   background-color: white;
   color: #464749;
+  box-sizing: border-box;
+  width: 100vw;
   padding: 15px;
-  font-size: 16px;
   border-top: solid 1px #474747;
   bottom: 0;
-  z-index: 3; }
+  z-index: 3;
+  font-size: 12px; }
+  @media (min-width: 480px) {
+    .footer {
+      font-size: 14px; } }
 
 /*Colors*/
 .what__card-font {
@@ -221,6 +233,12 @@ h2, h3 {
 .heading-clickable {
   cursor: pointer; }
 
+.text-shadow-raised {
+  text-shadow: 5px 2px 5px rgba(0, 0, 0, 0.4); }
+
+.text-shadow-lowered {
+  text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.4); }
+
 .section--wrapper {
   padding: 15px; }
   .section--wrapper h3 {
@@ -273,16 +291,22 @@ h2, h3 {
   .hotel-wrapper h3 {
     color: #3C3C3C; }
 
-.exchange-building__section {
+.steps__section {
+  background-color: #474747;
+  color: #FFFFFF; }
+
+.exchange {
   background-color: #FFFFFF;
-  color: #464749;
+  color: #464749; }
+
+.exchange-building__section {
   display: flex;
   align-items: center;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: space-between; }
   @media (min-width: 768px) {
     .exchange-building__section {
-      flex-direction: row; } }
+      flex-direction: row-reverse; } }
   @media (min-width: 992) {
     .exchange-building__section {
       align-items: flex-start; } }
@@ -296,10 +320,13 @@ h2, h3 {
     .exchange-building__map {
       max-width: 40vw; } }
 
-.steps__section {
-  background-color: #474747;
-  color: #FFFFFF;
-  padding: 15px; }
+.proof-of-concept {
+  background-color: #1b75bb;
+  color: #FFFFFF; }
+
+.early-adopters {
+  background-color: white;
+  color: #1a3a5a; }
 
 /*Colors*/
 .margin-bottom--med {
@@ -319,28 +346,30 @@ h2, h3 {
   background-position: cover;
   background-attachment: fixed;
   height: auto;
-  width: 100%;
-  background-size: cover;
-  margin-top: 120px; }
-  @media (min-width: 768px) {
-    .app {
-      margin-top: 84px; } }
+  width: 100vw;
+  background-size: cover; }
   .app > div:last-child {
     margin-bottom: 40px; }
 
 .reserve, .get-token, .get-reservations, .settle, .check-available, .get-room-info, .access {
   background-color: white;
-  padding: 15px 25px;
-  margin-top: 40px;
-  max-width: 70vw; }
+  overflow: hidden;
+  padding: 10px 16px;
+  margin-top: 40px; }
+  @media (min-width: 480px) {
+    .reserve, .get-token, .get-reservations, .settle, .check-available, .get-room-info, .access {
+      padding: 15px 25px;
+      max-width: 80vw; } }
   @media (min-width: 768px) {
     .reserve, .get-token, .get-reservations, .settle, .check-available, .get-room-info, .access {
-      padding: 30px 50px; } }
+      padding: 30px 50px;
+      max-width: 60vw; } }
   .reserve fieldset, .get-token fieldset, .get-reservations fieldset, .settle fieldset, .check-available fieldset, .get-room-info fieldset, .access fieldset {
     background-color: white;
+    box-sizing: border-box;
     padding: 25px;
     margin-bottom: 0;
-    min-width: 400px; }
+    max-width: 100vw; }
     .reserve fieldset h1, .get-token fieldset h1, .get-reservations fieldset h1, .settle fieldset h1, .check-available fieldset h1, .get-room-info fieldset h1, .access fieldset h1 {
       font-size: 35px;
       color: #474747; }
@@ -493,12 +522,17 @@ pre {
 .home {
   background-image: url("../images/movement.jpg");
   background-position: center;
-  height: 92.5vh;
+  height: calc(100vh - 162px);
+  width: 100%;
   background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  position: relative; }
+  @media (min-width: 768px) {
+    .home {
+      height: calc(100vh - 128px); } }
 
 .home:after {
   position: absolute;
@@ -512,13 +546,14 @@ pre {
   content: ""; }
 
 .register-message {
-  display: absolute;
   z-index: 3;
-  font-size: 2px;
   color: white;
-  font-size: 20px;
-  margin-top: 18vh;
-  padding: 0 20px; }
+  margin: 10vh 0;
+  padding: 0 20px;
+  font-size: 20px; }
+  @media (min-width: 480px) {
+    .register-message {
+      font-size: 30px; } }
   @media (min-width: 768px) {
     .register-message {
       font-size: 40px; } }

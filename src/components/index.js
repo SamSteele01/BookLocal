@@ -1,5 +1,7 @@
 export {default as Access} from "./Access";
 export {default as CheckAvailable} from "./CheckAvailable";
+export {default as CustomList} from "./CustomList";
+export {default as CustomListItem} from "./CustomListItem";
 export {default as FLIPanimate} from "./FLIPanimate";
 export {default as Footer} from "./Footer";
 export {default as GetNextReservation} from "./GetNextReservation";

@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
 
-import Reserve from '../components/Reserve';
-import GetReservations from '../components/GetReservations';
-import GetNextReservation from '../components/GetNextReservation';
-import CheckAvailable from '../components/CheckAvailable';
-import GetRoomInfo from '../components/GetRoomInfo';
-import Access from '../components/Access';
-import Settle from '../components/Settle';
-import getWeb3 from '../utils/getWeb3';
+import Reserve from 'components/Reserve';
+import GetReservations from 'components/GetReservations';
+import GetNextReservation from 'components/GetNextReservation';
+import CheckAvailable from 'components/CheckAvailable';
+import GetRoomInfo from 'components/GetRoomInfo';
+import Access from 'components/Access';
+import Settle from 'components/Settle';
+import getWeb3 from 'utils/getWeb3';
 // import Web3 from 'web3';  // from node module
 
-import '../styles/App.css'
+import 'styles/App.css'
 
 let RRAbi = require('../../ABIs/RoomRentingAbi.js');
 // note: should switch between localAddress and rinkeyAddress based on web3 provider
-// let RRAddress = require('../../contractAddress/localAddress.js');
+// let RRAddress = require('contractAddress/localAddress.js');
 let RRAddress = require('../../contractAddress/rinkebyAddress.js');
 
 class App extends Component {

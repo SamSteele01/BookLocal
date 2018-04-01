@@ -6,6 +6,7 @@ export default class HeadingDropDown extends Component {
         super(props)
         this.state = {
           dropDownOpen: false,
+          textShadow: "text-shadow-raised"
         }
         this.toggleDropDownState=this.toggleDropDownState.bind(this);
       }
@@ -13,12 +14,20 @@ export default class HeadingDropDown extends Component {
     static propTypes = {
         headingName: PropTypes.string,
         subHeadingName: PropTypes.string,
-        className: PropTypes.string
+        className: PropTypes.string,
+        childClassName: PropTypes.string
     }
 
     toggleDropDownState = () => {
+        let setTextShadow = ""
+        if(this.state.dropDownOpen){
+            setTextShadow = "text-shadow-raised"
+        }else{
+            setTextShadow = "text-shadow-lowered"
+        }
         this.setState({
-            dropDownOpen: !this.state.dropDownOpen
+            dropDownOpen: !this.state.dropDownOpen,
+            textShadow: setTextShadow
         })
     }
 
@@ -27,14 +36,14 @@ export default class HeadingDropDown extends Component {
             <div className={`heading-drop-down-container ${this.props.className}`}>
                 <div className="heading-typography heading-clickable" onClick={this.toggleDropDownState}>
                     {this.props.headingName &&
-                        <h2>{this.props.headingName}</h2>
+                        <h2 className={`${this.state.textShadow}`}>{this.props.headingName}</h2>
                     }
                     {this.props.subHeadingName &&
-                        <h3>{this.props.subHeadingName}</h3>
+                        <h3 className={`${this.state.textShadow}`}>{this.props.subHeadingName}</h3>
                     }
                 </div>
                 {this.state.dropDownOpen &&
-                    <div>
+                    <div className={`${this.props.childClassName}`}>
                         {this.props.children}
                     </div>
                 }

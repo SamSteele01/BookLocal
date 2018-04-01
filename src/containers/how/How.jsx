@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 // import Section from 'grommet/components/Section';
-import HeadingDropDown from '../../components/HeadingDropDown';
-import CustomList from '../CustomList';
-import CustomListItem from '../CustomListItem';
-import expandedEcosystemImg from '../../images/expanded-ecosystem.png';
-import plasmaChainImg from '../../images/plasma-chain.png';
-import colors from '../../styles/colors';
+import HeadingDropDown from 'components/HeadingDropDown';
+import CustomList from 'components/CustomList';
+import CustomListItem from 'components/CustomListItem';
+import expandedEcosystemImg from 'images/expanded-ecosystem.png';
+import plasmaChainImg from 'images/plasma-chain.png';
+import colors from 'styles/colors';
 
 export default class How extends Component {
     render() {

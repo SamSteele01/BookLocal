@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 // import Heading from 'grommet/components/Heading';
-import HeadingDropDown from '../../components/HeadingDropDown';
+import HeadingDropDown from 'components/HeadingDropDown';
 import Box from 'grommet/components/Box';
-import CustomList from '../CustomList';
-import CustomListItem from '../CustomListItem';
-import colors from '../../styles/colors';
+import CustomList from 'components/CustomList';
+import CustomListItem from 'components/CustomListItem';
+import colors from 'styles/colors';
 
 class Solutions extends Component {
 

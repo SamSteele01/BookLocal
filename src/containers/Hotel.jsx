@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HeadingDropDown from '../components/HeadingDropDown';
+import HeadingDropDown from 'components/HeadingDropDown';
 import Heading from 'grommet/components/Heading';
 
 class Hotel extends Component {
