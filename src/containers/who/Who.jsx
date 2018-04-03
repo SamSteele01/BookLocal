@@ -6,21 +6,18 @@ import CustomList from 'components/CustomList';
 import CustomListItem from 'components/CustomListItem';
 import ecosystem from 'images/hotel-current-ecosystem.png';
 import ecosystem2 from 'images/booklocal-ecosystem.png';
-import colors from 'styles/colors';
+import colors from 'const/colors';
 
 class Who extends Component {
 
   render() {
     return (
-      // <div className="who section--wrapper">
       <HeadingDropDown className="who" headingName="Who">
-
           {/* 3 */}
           <div className='heading'>Who</div>
           <p className='paragraph'>
             The current ecosystem has too many players trying to earn a share of the final room price. Figure 1 shows the network of relationships, each of which is explained below.
           </p>
-
           {/* 3.1 */}
           <CustomList title="Ecosystem">
             <p className='paragraph'>
@@ -28,7 +25,6 @@ class Who extends Component {
               can book a room. The red arrows indicate the most used reservation path.
             </p>
           </CustomList>
-
           <div className='image-container'>
               <img
                   src={ecosystem}
@@ -37,7 +33,6 @@ class Who extends Component {
               />
               <span>Figure 1: Current Ecosystem</span>
           </div>
-
           {/* 3.2 */}
           <Heading align='center'
  	 	 	 	 	 	 margin='medium'
@@ -48,7 +43,6 @@ class Who extends Component {
             We describe the main players in the ecosystem by including a brief history and
             discussing the value they add and cost they subtract from the industry.
           </p>
-
           {/* 3.2.1 */}
           <Heading
             align='center'
@@ -93,7 +87,6 @@ class Who extends Component {
               </div>
             </CustomListItem>
           </CustomList>
-
           {/* 3.2.2 */}
           <Heading
             align='center'
@@ -143,7 +136,6 @@ class Who extends Component {
               </div>
             </CustomListItem>
           </CustomList>
-
           {/* 3.2.3 */}
           <Heading
             align='center'
@@ -198,7 +190,6 @@ class Who extends Component {
               </div>
             </CustomListItem>
           </CustomList>
-
           {/* 3.2.4 */}
             <Heading
               align='center'
@@ -245,7 +236,6 @@ class Who extends Component {
               </div>
             </CustomListItem>
           </CustomList>
-
           {/* 3.2.5 */}
           <Heading
             align='center'
@@ -289,7 +279,6 @@ class Who extends Component {
               </div>
             </CustomListItem>
           </CustomList>
-
           {/* 3.3 */}
           <Heading
             align='center'
@@ -303,7 +292,6 @@ class Who extends Component {
             the traveler, much of the current ecosystem can be bypassed. As such, figure 2
             represents our vision after full implementation.
           </p>
-
           <div className='image-container'>
               <img
                   src={ecosystem2}
@@ -312,13 +300,11 @@ class Who extends Component {
               />
               <span>Figure 2: BookLocal Ecosystem</span>
           </div>
-
             <p className='paragraph'>
               Note that BookLocal seeks to be fully compatible with current online travel
               agencies in order to provide seamless integration for early-adopting hotels and
               late-adopting travelers.
             </p>
-      {/* </div> */}
       </HeadingDropDown>
     );
   }

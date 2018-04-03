@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import HeadingDropDown from 'components/HeadingDropDown';
 import CustomList from 'components/CustomList';
 import CustomListItem from 'components/CustomListItem';
-import colors from 'styles/colors';
+import colors from 'const/colors';
 
 class What extends Component {
 

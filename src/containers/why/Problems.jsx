@@ -4,20 +4,17 @@ import HeadingDropDown from 'components/HeadingDropDown';
 import Box from 'grommet/components/Box';
 import CustomList from 'components/CustomList';
 import CustomListItem from 'components/CustomListItem';
-import colors from 'styles/colors';
+import colors from 'const/colors';
 
 class Problems extends Component {
 
   render() {
     return (
-      // <div className="problems section--wrapper">
-        
         <HeadingDropDown className="problems" subHeadingName="Problems">
-          <p className='paragraph-white'>
+          <p className='paragraph-gray'>
             The hotel booking industry is fragmented with no fewer than five different
             groups working for commission between travelers and hotels. Problems include:
           </p>
-        
             {/* needs to only be one or three cards wide, not two */}
             <CustomList title="High commission payments."
               >
@@ -67,15 +64,6 @@ class Problems extends Component {
               <div style={{fontSize: 18, marginBottom: -55}}>
                 Abuse of power in legal agreements.
               </div>
-
-              {/* <div className='image-container'>
-                <img
-                    src={ecosystem2}
-                    className='image'
-                />
-                <span>Figure 2: BookLocal Ecosystem</span>
-              </div> */}
-
             </Box>
             <CustomList >
               <CustomListItem
@@ -146,7 +134,6 @@ class Problems extends Component {
               </CustomListItem>
             </CustomList>
         </HeadingDropDown>  
-      // </div>
     );
   }
 
