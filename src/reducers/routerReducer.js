@@ -6,6 +6,7 @@ const initialState = {
   queries: {},
   hash: '',
 };
+
 export const routerReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOCATION_CHANGE:

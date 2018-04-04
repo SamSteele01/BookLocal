@@ -1,4 +1,5 @@
 import { combineReducers, applyMiddleware, compose, createStore } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 // import { routerReducer, routerMiddleware } from 'redux-json-router';
 import { routerReducer } from 'reducers/routerReducer';
 import { routerMiddleware } from './middleware'
@@ -18,6 +19,6 @@ function configureStore(history, initialState = {}) {
   
   const enhancers = [applyMiddleware(...middlewares)];
   
-  return createStore(makeRootReducer(), initialState, compose(...enhancers));
+  return createStore(makeRootReducer(), initialState, composeWithDevTools(...enhancers));
 }
 export { configureStore };
