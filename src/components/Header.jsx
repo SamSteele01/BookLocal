@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'Link';
 import Logo from 'images/logo.png';
 
 class Header extends Component {
