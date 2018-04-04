@@ -91,7 +91,6 @@ h2, h3 {
   white-space: nowrap;
   display: inline-block;
   zoom: 1;
-  vertical-align: middle;
   text-transform: uppercase;
   color: #565d64;
   padding: .5em 1em; }
