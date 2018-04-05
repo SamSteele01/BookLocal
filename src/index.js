@@ -16,13 +16,13 @@ import { startListener } from './listener'
 import { RouterContainer } from './Router';
 import { configureStore } from './store';
 // import routes from './routes.json'; // webpack-loaded JSON routing config
-import { routes } from 'const/constants'; // plain JavaScript routing config
+import { routes } from 'routes/routes'; // plain JavaScript routing config
 
 // Layouts
-import BaseLayout from './containers/BaseLayout'
-import Home from './components/Home'
-import App from './containers/App'
-import Prospectus from './containers/Prospectus';
+import BaseLayout from './wrappers/BaseLayout'
+import RegisterMessage from './components/RegisterMessage'  // if these are not imported the style sheet won't load initially
+import App from './containers/App'  // if these are not imported the style sheet won't load initially
+import Prospectus from './containers/Prospectus';  // if these are not imported the style sheet won't load initially
 import 'styles/index.css';
 
 // create a history singleton
