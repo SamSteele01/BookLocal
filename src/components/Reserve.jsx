@@ -81,6 +81,7 @@ class Reserve extends Component{
     console.log(reserve);
   }
 
+  /** Add input for hotel. Auto set to Exchange Building */
   render(){
     return(
       <Home>

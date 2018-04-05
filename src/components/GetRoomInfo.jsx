@@ -60,6 +60,7 @@ class GetRoomInfo extends Component{
     );
   }
 
+  /** Add inputs to display Hotel Name and Location. Auto fill - hard code */
   render(){
     return(
       <div className="get-room-info">
