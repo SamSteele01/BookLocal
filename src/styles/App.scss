@@ -1,7 +1,9 @@
 @import "Variables";
 @import "Typography";
+@import "BaseLayout";
 @import "Sections";
 @import "Helpers";
+@import "Register";
 
 //Base styles and components
 body,
@@ -24,32 +26,6 @@ pre {
   background: #eee;
 }
 
-.base-layout {
-  // height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
-}
-
-.textbox {
-  margin: 25px 0 0 0;
-  background-color: $logo-blue;
-  padding: 20px;
-  color: white;
-  line-height: 1.5;
-  border: solid 1px white;
-  h2 {
-    font-size: 25px;
-  }
-  p {
-    font-size: 15px;
-    @media (min-width: $tab) {
-      font-size: 18px;
-    }
-  }
-}
-
 .content-card {
   border: solid 1px black;
   padding: 20px;
@@ -59,21 +35,17 @@ pre {
   p {
     font-size: 18px;
   }
-
   li {
     padding: 10px;
     font-size: 16px;
-
     &:nth-child(even) {
       background-color: #EAEAEA;
     }
-
     &:nth-child(odd) {
       background-color: #D1D1D1;
     }
   }
-
-  @media (min-width: $tab) {
+  @media (min-width: $tablet) {
     flex-basis: 25%;
   }
 }
@@ -83,137 +55,18 @@ pre {
   justify-content: center;
   flex-direction: column;
   width: 100%;
-
-  @media (min-width: $tab) {
+  @media (min-width: $tablet) {
     justify-content: space-around;
     align-content: space-around;
   }
-
   ul {
     font-size: 14px;
     list-style: none;
     margin: 0;
   }
-
-  @media (min-width: $tab) {
+  @media (min-width: $tablet) {
     flex-direction: row;
     flex-wrap: wrap;
-  }
-}
-
-.section--wrapper {
-  padding: 15px;
-  h3 {
-    padding: 0 50px;
-    font-size: 20px;
-    @media (min-width: $tab) {
-      font-size: 25px;
-    }
-  }
-}
-
-.container {
-  box-sizing: border-box;
-  width: 100%;
-  padding: 45px 20px;
-}
-
-// Buttons and form
-
-.pure-button-primary {
-  background-color: #0c1a2b;
-}
-
-.pure-button-primary:hover {
-  background-color: #233e5e;
-}
-
-.pure-form input[type="text"]:focus {
-  border-color: #0c1a2b;
-}
-
-//footer
-.App-footer {
-  background-color: white;
-  color: $font-gray;
-  padding: 15px;
-  font-size: 16px;
-  border-top: solid 1px #474747;
-  bottom: 0;
-  z-index: 3;
-}
-
-/* NAVBAR */
-nav {
-  display: flex!important;
-  position: fixed;
-  z-index: 3;
-  width: 100%;
-  background-color: white;
-  justify-content: space-between;
-  flex-direction: column;
-  border-bottom: solid 1px $gray;
-  @media (min-width: $tab) {
-    flex-direction: row;
-    .Logo {
-      padding-left: 25px;
-    }
-    .nav-items {
-      padding-right: 25px;
-    }
-  }
-}
-
-.navbar a {
-  color: #fff;
-}
-
-/* Hannah: I have removed this, because changing a font weight on an action causes the page to jump
-because it has not allocated that space. Maybe add an underline on hover instead? If you really want the
-font weight to change, I can trick it another way with nesting
-*/
-a:focus,
-a:active {
-  font-weight: 700;
-}
-
-a:hover {
-  color: $orange3;
-}
-
-.navbar .pure-menu-heading,
-.navbar .header-menu-link {
-  font-weight: bold;
-  text-transform: none;
-}
-
-.navbar .navbar-right {
-  float: right;
-}
-
-.navbar .uport-logo {
-  height: 16px;
-  margin-right: 10px;
-}
-
-.pure-menu-heading {
-  display: block;
-  text-decoration: none;
-  white-space: nowrap;
-  display: inline-block;
-  zoom:1;
-  vertical-align: middle;
-  text-transform: uppercase;
-  color:#565d64;
-  padding:.5em 1em;
-}
-
-.nav-items {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @media (min-width: $desk) {
-    padding-right: 10px;
   }
 }
 
@@ -226,15 +79,9 @@ a:hover {
 .image-md {
   height: 250px;
   width: auto;
-  @media (min-width: $tab) {
+  @media (min-width: $tablet) {
     height: 300px;
   }
-}
-
-.Logo img {
-  width: 180px;
-  height: auto;
-  padding: 7px 5px 0px 5px;
 }
 
 .image-container {
@@ -272,13 +119,18 @@ a:hover {
 .home {
   background-image: url('../images/movement.jpg');
   background-position: center;
-  height: 92.5vh;
+  // height: 92.5vh;
+  width: 100%;
   background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // position: relative;
+  position: relative;
+  height: calc(100vh - 162px);
+  @media (min-width: $tablet) {
+    height: calc(100vh - 128px);
+  }
 }
 
 .home:after {
@@ -294,59 +146,18 @@ a:hover {
 }
 
 .register-message {
-  display: absolute;
+  // position: absolute;
   z-index: 3;
-  font-size: 2px;
   color: white;
-  font-size: 20px;
-  margin-top: 18vh;
+  margin: 10vh 0;
   padding: 0 20px;
-  @media (min-width: $tab) {
+  font-size: 20px;
+  @media (min-width: $mobile) {
+    font-size: 30px;
+  }
+  @media (min-width: $tablet) {
     font-size: 40px;
   }
-}
-
-/* Register */
-.app {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  background-image: url("../images/room.jpg");
-  background-position: cover;
-  background-attachment: fixed;
-  height: auto;
-  width: 100%;
-  background-size: cover;
-  margin-top: 120px;
-  @media (min-width: $tab){
-    margin-top: 84px;
-  }
-}
-
-.reserve, .get-token, .settle, .check-available, .get-room-info, .access {
-  background-color: white;
-  padding: 15px 25px;
-  margin-top: 40px;
-  @media (min-width: $tab) {
-    padding: 30px 50px;
-  }
-  fieldset {
-    background-color: white;
-    padding: 25px;
-    margin-bottom: 0;
-    h1 {
-      font-size: 35px;
-      color: $gray;
-      @media(min-width: $tab) {
-        font-size: 45px;
-      }
-    }
-  }
-}
-
-.settle {
-  margin-bottom: 40px;
 }
 
   /* Eth-Memphis */
@@ -418,7 +229,7 @@ a:hover {
   background-size: cover;
   background-attachment: fixed;
   z-index: 1;
-  display: table-cell;
+  // display: table-cell;
   vertical-align: middle;
 }
 
@@ -426,7 +237,7 @@ a:hover {
   color: white;
   font-size: 30px;
   padding: 0px 25px;
-  @media (min-width: $tab) {
+  @media (min-width: $tablet) {
     font-size: 60px;
     margin-top: 50px;
   }

@@ -28,8 +28,8 @@ class CustomListItem extends Component {
 
     return (
       <div>
-        <Animate enter={{"animation": animation, "duration": 1000, "delay": 0}}
-            keep={true} visible="scroll">
+        {/* <Animate enter={{"animation": animation, "duration": 1000, "delay": 0}}
+            keep={true} visible="scroll"> */}
           <div style={divStyle} className={classNames}>
             <Box
               direction='row'
@@ -47,7 +47,7 @@ class CustomListItem extends Component {
               {this.props.children}
             </Box>
           </div>
-        </Animate>
+        {/* </Animate> */}
       </div>
     );
   }

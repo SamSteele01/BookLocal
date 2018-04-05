@@ -2,37 +2,146 @@
 @import "Typography";
 
 // Traveler Section
-.traveler__section {
-  h3 {
-    padding: 0 50px;
-    color: $logo-blue;
-    font-size: 25px;
-  }
-  h2 {
-    padding: 0 50px;
-    color: white;
-    font-size: 25px;
+
+.prospectus {
+  // width: 100vw;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+// .heading-drop-down-container {
+
+// }
+
+.drop-down-contents {
+  padding-bottom: 40px;
+
+}
+
+.heading-clickable {
+  cursor: pointer;
+  h2, h3 {
+    margin: 0;
   }
 }
 
-//Hotel Section
+.text-shadow-raised {
+  text-shadow: 5px 2px 5px rgba(0, 0, 0, .4);
+}
+
+.text-shadow-lowered {
+  text-shadow: 2px 1px 2px rgba(0, 0, 0, .4);
+}
+
+.section--wrapper {
+  padding: 15px;
+  h3 {
+    padding: 0 50px;
+    font-size: 20px;
+    @media (min-width: $tablet) {
+      font-size: 25px;
+    }
+  }
+}
+
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 45px 20px;
+}
+
+.textbox {
+  background-color: $logo-blue;
+  padding: 20px;
+  color: white;
+  line-height: 1.5;
+  border: solid 1px white;
+  h2 {
+    font-size: 25px;
+  }
+  p {
+    font-size: 15px;
+    @media (min-width: $tablet) {
+      font-size: 18px;
+    }
+  }
+}
+
+.what {
+  background-color: $gray;
+  color: $white;
+}
+
+.why {
+  background-color: $logo-blue;
+  color: $white;
+}
+
+.problems {
+  // background-color: #1a3a5a;
+  // color: white;
+  background-color: $white;
+  color: $font-gray;
+}
+
+.solutions {
+  // background-color: $white;
+  // color: $font-gray;
+  background-color: #1a3a5a;
+  color: white;
+}
+
+.who {
+  background-color: $white;
+  color: $font-gray;
+}
+
+.how {
+  background-color: $gray;
+  color: $white;
+}
+
+.traveler {
+  padding: 0 50px;
+  color: $logo-blue;
+    // font-size: 25px;
+  // h2 {
+  //   padding: 0 50px;
+  //   color: $logo-blue;
+  //   // font-size: 25px;
+  // }
+}
+
 .hotel-wrapper {
   background-color: #808080;
   color: $white;
-
-  h3 {
-    color: $header-gray;
-  }
+  // h3 {
+  //   color: $header-gray;
+  // }
 }
 
-// Exchange Building Section
+.steps__section {
+  background-color: $gray;
+  color: $white;
+  // padding: 15px;
+}
+
+.exchange {
+  background-color: $white;
+  color: $font-gray;
+}
+
 .exchange-building__section {
   display: flex;
   align-items: center;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: space-between;
-  @media (min-width: $tab) {
-    flex-direction: row;
+  @media (min-width: $tablet) {
+    flex-direction: row-reverse;
   }
   @media (min-width: $desk) {
     align-items: flex-start;
@@ -45,48 +154,18 @@
 
 .exchange-building__map {
   max-width: 80vw;
-  @media (min-width: $tab) {
+  @media (min-width: $tablet) {
     max-width: 40vw;
   }
 }
 
-//Problems Section
-.problems {
-  background-color: #1a3a5a;
-  color: white;
-}
-
-// Solutions Section
-.solutions {
-  background-color: $white;
-  color: $font-gray;
-}
-
-//Steps Section
-.steps__section {
-  background-color: $gray;
-  color: $white;
-  padding: 15px;
-}
-
-
-/* Prospectus aka About*/
-.what {
-  background-color: $gray;
-  color: $white;
-}
-
-.why {
+.proof-of-concept {
   background-color: $logo-blue;
   color: $white;
 }
 
-.who {
-  background-color: $white;
-  color: $font-gray;
+.early-adopters {
+  background-color: white;
+  color: #1a3a5a;
 }
 
-.how {
-  background-color: $gray;
-  color: $white;
-}

@@ -1,23 +1,17 @@
 import React, { Component } from 'react';
+import HeadingDropDown from 'components/HeadingDropDown';
 import Heading from 'grommet/components/Heading';
-import Bed from "../images/bed.jpg";
-
-
+import Bed from "images/bed.jpg";
 
 class Traveler extends Component {
   render() {
     return(
-    <section className="traveler__section section--wrapper">
-      <Heading align='center'
-          tag='div' className="heading">
-          Traveler
-      </Heading>
+    <HeadingDropDown className="traveler" headingName="Traveler">
       <h3>
           With BookLocal, the traveler will be able to search, compare, and book a hotel
           room. Additionally, we will incorporate a wallet feature that allows the guest
           to use their phone to pay for dinner, events, or other travel related activities.
       </h3>
-
       {/* 4.2.1 */}
       <div className="content-card--wrapper">
       <div className="content-card">
@@ -36,7 +30,6 @@ class Traveler extends Component {
           they want.
       </p>
     </div>
-
       {/* 4.2.2 */}
       <div className="content-card">
       <Heading align='center'
@@ -52,10 +45,8 @@ class Traveler extends Component {
       </p>
       <img className="image-sml" alt="hotel-bed" src={Bed}/>
     </div>
-
       {/* 4.2.3 */}
       <div className="content-card">
-
       <Heading 
         align='center'
         margin='medium'
@@ -75,60 +66,9 @@ class Traveler extends Component {
         advance) to hold your room for a period of time and pay the remainder
         closer to the actual check-in date. This option will likely cost more due
         to the convenience.</li>
-
-
       </ul>
     </div>
   </div>
-{  /*  <Columns
-          responsive={false}
-          masonry={false}
-          justify='center'
-          maxCount={3}
-      >
-          <CustomListItem
-              //height="auto"
-              // animation="slide-left"
-              // color="$black"
-              // bgColor="orange"
-              border="1px solid #3675B6"
-              classNames="how__card-font"
-          >
-              <div>
-                  Send exactly the asking rate.
-              </div>
-          </CustomListItem>
-          <CustomListItem
-              //height="auto"
-              // animation="slide-left"
-              // color="$black"
-              // bgColor="orange"
-              border="1px solid #3675B6"
-              classNames="how__card-font"
-          >
-              <div>
-                  Send more than the asking rate and use the BookLocal wallet to pay for
-                  food and activities during the trip. This works as a budgeting commitment
-                  device to ensure you don’t overspend during your trip.
-              </div>
-          </CustomListItem>
-          <CustomListItem
-              //height="auto"
-              // animation="slide-left"
-              // color="$black"
-              // bgColor="orange"
-              border="1px solid #3675B6"
-              classNames="how__card-font"
-          >
-              <div>
-                  Send some amount less than the upfront asking rate (if booking well in
-                  advance) to hold your room for a period of time and pay the remainder
-                  closer to the actual check-in date. This option will likely cost more due
-                  to the convenience.
-              </div>
-          </CustomListItem>
-      </Columns>*/}
-
       {/* 4.2.4 */}
       <div className="textbox">
       <Heading 
@@ -153,7 +93,7 @@ class Traveler extends Component {
           didn’t spend will be immediately returned to her upon checkout.
       </p>
       </div>
-    </section>
+    </HeadingDropDown>
     );
   }
 }

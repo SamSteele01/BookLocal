@@ -36,7 +36,7 @@
 .paragraph-gray {
   color: #464749; }
 
-.heading {
+.heading-typography {
   font-family: "Titillium Web", sans-serif;
   text-transform: uppercase;
   padding: 25px 0;
@@ -44,7 +44,7 @@
   text-align: center;
   font-weight: 700; }
   @media (min-width: 768px) {
-    .heading {
+    .heading-typography {
       font-size: 35px; } }
 
 h2, h3 {
@@ -56,6 +56,111 @@ h2, h3 {
   border: solid 1px #1b75bb; }
   .how__card-font strong {
     font-size: 20px; }
+
+.base-layout {
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center; }
+
+.header {
+  width: 100vw;
+  z-index: 5; }
+
+.header-spacer {
+  z-index: 1;
+  position: relative;
+  height: 120px; }
+  @media (min-width: 768px) {
+    .header-spacer {
+      height: 86px; } }
+
+.Logo img {
+  width: 180px;
+  height: auto;
+  padding: 7px 5px 0px 5px; }
+
+.pure-menu-heading {
+  display: block;
+  text-decoration: none;
+  white-space: nowrap;
+  display: inline-block;
+  zoom: 1;
+  text-transform: uppercase;
+  color: #565d64;
+  padding: .5em 1em; }
+
+/* NAVBAR */
+nav {
+  display: flex !important;
+  position: fixed;
+  z-index: 3;
+  box-sizing: border-box;
+  width: 100vw;
+  background-color: white;
+  justify-content: space-between;
+  flex-direction: column;
+  border-bottom: solid 1px #474747; }
+  @media (min-width: 768px) {
+    nav {
+      flex-direction: row; }
+      nav .Logo {
+        padding-left: 25px; }
+      nav .nav-items {
+        padding-right: 25px; } }
+
+.navbar a {
+  color: #fff; }
+
+/* Hannah: I have removed this, because changing a font weight on an action causes the page to jump
+because it has not allocated that space. Maybe add an underline on hover instead? If you really want the
+font weight to change, I can trick it another way with nesting
+*/
+a:focus,
+a:active {
+  font-weight: 700; }
+
+a:hover {
+  color: #E66E1C; }
+
+.navbar .pure-menu-heading,
+.navbar .header-menu-link {
+  font-weight: bold;
+  text-transform: none; }
+
+.navbar .navbar-right {
+  float: right; }
+
+.navbar .uport-logo {
+  height: 16px;
+  margin-right: 10px; }
+
+.nav-items {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  @media (min-width: 992) {
+    .nav-items {
+      padding-right: 10px; } }
+
+.footer {
+  background-color: white;
+  color: #464749;
+  box-sizing: border-box;
+  width: 100vw;
+  padding: 15px;
+  border-top: solid 1px #474747;
+  bottom: 0;
+  z-index: 3;
+  font-size: 12px; }
+  @media (min-width: 480px) {
+    .footer {
+      font-size: 14px; } }
 
 /*Colors*/
 .what__card-font {
@@ -95,7 +200,7 @@ h2, h3 {
 .paragraph-gray {
   color: #464749; }
 
-.heading {
+.heading-typography {
   font-family: "Titillium Web", sans-serif;
   text-transform: uppercase;
   padding: 25px 0;
@@ -103,7 +208,7 @@ h2, h3 {
   text-align: center;
   font-weight: 700; }
   @media (min-width: 768px) {
-    .heading {
+    .heading-typography {
       font-size: 35px; } }
 
 h2, h3 {
@@ -116,29 +221,104 @@ h2, h3 {
   .how__card-font strong {
     font-size: 20px; }
 
-.traveler__section h3 {
-  padding: 0 50px;
-  color: #1b75bb;
-  font-size: 25px; }
-.traveler__section h2 {
-  padding: 0 50px;
+.prospectus {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; }
+
+.drop-down-contents {
+  padding-bottom: 40px; }
+
+.heading-clickable {
+  cursor: pointer; }
+  .heading-clickable h2, .heading-clickable h3 {
+    margin: 0; }
+
+.text-shadow-raised {
+  text-shadow: 5px 2px 5px rgba(0, 0, 0, 0.4); }
+
+.text-shadow-lowered {
+  text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.4); }
+
+.section--wrapper {
+  padding: 15px; }
+  .section--wrapper h3 {
+    padding: 0 50px;
+    font-size: 20px; }
+    @media (min-width: 768px) {
+      .section--wrapper h3 {
+        font-size: 25px; } }
+
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 45px 20px; }
+
+.textbox {
+  background-color: #1b75bb;
+  padding: 20px;
   color: white;
-  font-size: 25px; }
+  line-height: 1.5;
+  border: solid 1px white; }
+  .textbox h2 {
+    font-size: 25px; }
+  .textbox p {
+    font-size: 15px; }
+    @media (min-width: 768px) {
+      .textbox p {
+        font-size: 18px; } }
+
+.what {
+  background-color: #474747;
+  color: #FFFFFF; }
+
+.why {
+  background-color: #1b75bb;
+  color: #FFFFFF; }
+
+.problems {
+  background-color: #FFFFFF;
+  color: #464749; }
+
+.solutions {
+  background-color: #1a3a5a;
+  color: white; }
+
+.who {
+  background-color: #FFFFFF;
+  color: #464749; }
+
+.how {
+  background-color: #474747;
+  color: #FFFFFF; }
+
+.traveler {
+  padding: 0 50px;
+  color: #1b75bb; }
 
 .hotel-wrapper {
   background-color: #808080;
   color: #FFFFFF; }
-  .hotel-wrapper h3 {
-    color: #3C3C3C; }
+
+.steps__section {
+  background-color: #474747;
+  color: #FFFFFF; }
+
+.exchange {
+  background-color: #FFFFFF;
+  color: #464749; }
 
 .exchange-building__section {
   display: flex;
   align-items: center;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: space-between; }
   @media (min-width: 768px) {
     .exchange-building__section {
-      flex-direction: row; } }
+      flex-direction: row-reverse; } }
   @media (min-width: 992) {
     .exchange-building__section {
       align-items: flex-start; } }
@@ -152,35 +332,13 @@ h2, h3 {
     .exchange-building__map {
       max-width: 40vw; } }
 
-.problems {
-  background-color: #1a3a5a;
-  color: white; }
-
-.solutions {
-  background-color: #FFFFFF;
-  color: #464749; }
-
-.steps__section {
-  background-color: #474747;
-  color: #FFFFFF;
-  padding: 15px; }
-
-/* Prospectus aka About*/
-.what {
-  background-color: #474747;
-  color: #FFFFFF; }
-
-.why {
+.proof-of-concept {
   background-color: #1b75bb;
   color: #FFFFFF; }
 
-.who {
-  background-color: #FFFFFF;
-  color: #464749; }
-
-.how {
-  background-color: #474747;
-  color: #FFFFFF; }
+.early-adopters {
+  background-color: white;
+  color: #1a3a5a; }
 
 /*Colors*/
 .margin-bottom--med {
@@ -189,6 +347,94 @@ h2, h3 {
 .reserve-warning {
   color: #E66E1C;
   padding-top: 15px; }
+
+/* Register */
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  background-image: url("../images/room.jpg");
+  background-position: cover;
+  background-attachment: fixed;
+  min-height: calc(100vh - 162px);
+  width: 100vw;
+  background-size: cover; }
+  @media (min-width: 768px) {
+    .app {
+      min-height: calc(100vh - 128px); } }
+  .app > div:last-child {
+    margin-bottom: 40px; }
+
+.reserve, .get-token, .get-reservations, .settle, .check-available, .get-room-info, .access {
+  background-color: white;
+  overflow: hidden;
+  padding: 10px 16px;
+  margin-top: 40px;
+  z-index: 4; }
+  @media (min-width: 480px) {
+    .reserve, .get-token, .get-reservations, .settle, .check-available, .get-room-info, .access {
+      padding: 15px 25px;
+      max-width: 80vw; } }
+  @media (min-width: 768px) {
+    .reserve, .get-token, .get-reservations, .settle, .check-available, .get-room-info, .access {
+      padding: 30px 50px;
+      max-width: 60vw; } }
+  .reserve fieldset, .get-token fieldset, .get-reservations fieldset, .settle fieldset, .check-available fieldset, .get-room-info fieldset, .access fieldset {
+    background-color: white;
+    box-sizing: border-box;
+    padding: 25px;
+    margin-bottom: 0;
+    max-width: 100vw; }
+    .reserve fieldset h1, .get-token fieldset h1, .get-reservations fieldset h1, .settle fieldset h1, .check-available fieldset h1, .get-room-info fieldset h1, .access fieldset h1 {
+      font-size: 35px;
+      color: #474747; }
+      @media (min-width: 768px) {
+        .reserve fieldset h1, .get-token fieldset h1, .get-reservations fieldset h1, .settle fieldset h1, .check-available fieldset h1, .get-room-info fieldset h1, .access fieldset h1 {
+          font-size: 45px; } }
+
+.label-style {
+  background-color: white;
+  padding: 10px 0px;
+  display: flex;
+  align-items: center;
+  color: #777;
+  text-transform: uppercase; }
+
+.input-style {
+  height: 35px;
+  flex-grow: 1;
+  margin-left: 10px;
+  padding-left: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px; }
+
+.input-style-2 {
+  width: 90%;
+  margin-left: 0; }
+
+input:focus {
+  outline-offset: -2px;
+  outline: #E66E1C auto 5px; }
+
+.array-mappings {
+  box-sizing: border-box; }
+
+.input-button-style {
+  margin-top: 25px;
+  font-weight: 900;
+  background-color: #1b75bb;
+  padding: 5px 15px;
+  color: white;
+  text-transform: uppercase; }
+
+.react-datepicker__input-container input {
+  height: 35px;
+  flex-grow: 1;
+  margin-left: 10px;
+  padding-left: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px; }
 
 body,
 .pure-g [class*=pure-u] {
@@ -205,27 +451,6 @@ pre {
   margin: 20px 0 15px 0;
   padding: 10px;
   background: #eee; }
-
-.base-layout {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center; }
-
-.textbox {
-  margin: 25px 0 0 0;
-  background-color: #1b75bb;
-  padding: 20px;
-  color: white;
-  line-height: 1.5;
-  border: solid 1px white; }
-  .textbox h2 {
-    font-size: 25px; }
-  .textbox p {
-    font-size: 15px; }
-    @media (min-width: 768px) {
-      .textbox p {
-        font-size: 18px; } }
 
 .content-card {
   border: solid 1px black;
@@ -264,101 +489,6 @@ pre {
       flex-direction: row;
       flex-wrap: wrap; } }
 
-.section--wrapper {
-  padding: 15px; }
-  .section--wrapper h3 {
-    padding: 0 50px;
-    font-size: 20px; }
-    @media (min-width: 768px) {
-      .section--wrapper h3 {
-        font-size: 25px; } }
-
-.container {
-  box-sizing: border-box;
-  width: 100%;
-  padding: 45px 20px; }
-
-.pure-button-primary {
-  background-color: #0c1a2b; }
-
-.pure-button-primary:hover {
-  background-color: #233e5e; }
-
-.pure-form input[type="text"]:focus {
-  border-color: #0c1a2b; }
-
-.App-footer {
-  background-color: white;
-  color: #464749;
-  padding: 15px;
-  font-size: 16px;
-  border-top: solid 1px #474747;
-  bottom: 0;
-  z-index: 3; }
-
-/* NAVBAR */
-nav {
-  display: flex !important;
-  position: fixed;
-  z-index: 3;
-  width: 100%;
-  background-color: white;
-  justify-content: space-between;
-  flex-direction: column;
-  border-bottom: solid 1px #474747; }
-  @media (min-width: 768px) {
-    nav {
-      flex-direction: row; }
-      nav .Logo {
-        padding-left: 25px; }
-      nav .nav-items {
-        padding-right: 25px; } }
-
-.navbar a {
-  color: #fff; }
-
-/* Hannah: I have removed this, because changing a font weight on an action causes the page to jump
-because it has not allocated that space. Maybe add an underline on hover instead? If you really want the
-font weight to change, I can trick it another way with nesting
-*/
-a:focus,
-a:active {
-  font-weight: 700; }
-
-a:hover {
-  color: #E66E1C; }
-
-.navbar .pure-menu-heading,
-.navbar .header-menu-link {
-  font-weight: bold;
-  text-transform: none; }
-
-.navbar .navbar-right {
-  float: right; }
-
-.navbar .uport-logo {
-  height: 16px;
-  margin-right: 10px; }
-
-.pure-menu-heading {
-  display: block;
-  text-decoration: none;
-  white-space: nowrap;
-  display: inline-block;
-  zoom: 1;
-  vertical-align: middle;
-  text-transform: uppercase;
-  color: #565d64;
-  padding: .5em 1em; }
-
-.nav-items {
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-  @media (min-width: 992) {
-    .nav-items {
-      padding-right: 10px; } }
-
 #loader {
   width: 100px;
   display: none; }
@@ -369,11 +499,6 @@ a:hover {
   @media (min-width: 768px) {
     .image-md {
       height: 300px; } }
-
-.Logo img {
-  width: 180px;
-  height: auto;
-  padding: 7px 5px 0px 5px; }
 
 .image-container {
   display: flex;
@@ -402,12 +527,17 @@ a:hover {
 .home {
   background-image: url("../images/movement.jpg");
   background-position: center;
-  height: 92.5vh;
+  width: 100%;
   background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  position: relative;
+  height: calc(100vh - 162px); }
+  @media (min-width: 768px) {
+    .home {
+      height: calc(100vh - 128px); } }
 
 .home:after {
   position: absolute;
@@ -421,54 +551,17 @@ a:hover {
   content: ""; }
 
 .register-message {
-  display: absolute;
   z-index: 3;
-  font-size: 2px;
   color: white;
-  font-size: 20px;
-  margin-top: 18vh;
-  padding: 0 20px; }
+  margin: 10vh 0;
+  padding: 0 20px;
+  font-size: 20px; }
+  @media (min-width: 480px) {
+    .register-message {
+      font-size: 30px; } }
   @media (min-width: 768px) {
     .register-message {
       font-size: 40px; } }
-
-/* Register */
-.app {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  background-image: url("../images/room.jpg");
-  background-position: cover;
-  background-attachment: fixed;
-  height: auto;
-  width: 100%;
-  background-size: cover;
-  margin-top: 120px; }
-  @media (min-width: 768px) {
-    .app {
-      margin-top: 84px; } }
-
-.reserve, .get-token, .settle, .check-available, .get-room-info, .access {
-  background-color: white;
-  padding: 15px 25px;
-  margin-top: 40px; }
-  @media (min-width: 768px) {
-    .reserve, .get-token, .settle, .check-available, .get-room-info, .access {
-      padding: 30px 50px; } }
-  .reserve fieldset, .get-token fieldset, .settle fieldset, .check-available fieldset, .get-room-info fieldset, .access fieldset {
-    background-color: white;
-    padding: 25px;
-    margin-bottom: 0; }
-    .reserve fieldset h1, .get-token fieldset h1, .settle fieldset h1, .check-available fieldset h1, .get-room-info fieldset h1, .access fieldset h1 {
-      font-size: 35px;
-      color: #474747; }
-      @media (min-width: 768px) {
-        .reserve fieldset h1, .get-token fieldset h1, .settle fieldset h1, .check-available fieldset h1, .get-room-info fieldset h1, .access fieldset h1 {
-          font-size: 45px; } }
-
-.settle {
-  margin-bottom: 40px; }
 
 /* Eth-Memphis */
 .grommetux-box--pad-large {
@@ -486,7 +579,6 @@ a:hover {
   background-size: cover;
   background-attachment: fixed;
   z-index: 1;
-  display: table-cell;
   vertical-align: middle; }
 
 .hero-text {

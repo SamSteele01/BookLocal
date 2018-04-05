@@ -36,7 +36,7 @@ $secondary-header: "PT Sans Narrow", serif;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.375;
-  @media (min-width: $tab) {
+  @media (min-width: $tablet) {
     font-size: 18px;
   }
 }
@@ -51,14 +51,14 @@ $secondary-header: "PT Sans Narrow", serif;
   color: $font-gray;
 }
 
-.heading {
+.heading-typography {
   font-family: $header-font;
   text-transform: uppercase;
   padding: 25px 0;
   font-size: 25px;
   text-align: center;
   font-weight: 700;
-  @media(min-width: $tab) {
+  @media(min-width: $tablet) {
     font-size: 35px;
   }
 }

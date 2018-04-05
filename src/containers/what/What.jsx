@@ -1,23 +1,19 @@
 import React, { Component } from 'react';
-import Section from 'grommet/components/Section';
-import CustomList from '../CustomList';
-import CustomListItem from '../CustomListItem';
-import colors from '../../styles/colors';
+// import Section from 'grommet/components/Section';
+import HeadingDropDown from 'components/HeadingDropDown';
+import CustomList from 'components/CustomList';
+import CustomListItem from 'components/CustomListItem';
+import colors from 'const/colors';
 
 class What extends Component {
 
   render() {
     return (
-      <div className='what section--wrapper'>
-        <Section
-          pad='none'
-          align='stretch'
-          alignContent='center'
-          // appCentered='true'
-        >
+      // <div className='what section--wrapper'>
+      <HeadingDropDown className="what" headingName="What">
 
           {/* 1 */}
-          <div className='heading'>What Do we Do?</div>
+          {/* <div className='heading'>What Do we Do?</div> */}
           <p className='paragraph-white'>
             The vision for BookLocal is to connect travelers directly to their hotel of choice
             by creating the first two way property management system accessible as both
@@ -200,8 +196,10 @@ class What extends Component {
               <h3><i className="fas fa-arrows-alt"></i> Channel Management</h3>
             </CustomListItem>
           </CustomList>
-        </Section>
-      </div>
+
+        {/* </Section> */}
+      </HeadingDropDown>
+      // </div>
     );
   }
 

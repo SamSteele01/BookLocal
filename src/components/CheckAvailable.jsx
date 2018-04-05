@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
-
-let available;
+import moment from 'moment';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 class CheckAvailable extends Component{
   constructor(props){
     super(props)
     this.state = {
       tokenId : this.props.tokenId,
-      time: '',
+      date: moment([2018, 4, 17]),
       availability: null
     }
 
     this.handleSubmit=this.handleSubmit.bind(this);
     this.handleTextChange=this.handleTextChange.bind(this);
+    this.handleDateChange=this.handleDateChange.bind(this);
   }
 
   handleTextChange = (event) => {
@@ -21,10 +23,21 @@ class CheckAvailable extends Component{
     }
   }
 
+  handleDateChange(date) {
+    this.setState({
+      date: date
+    });
+  }
+
+  dateConverter = (mmddyyyy) => {
+    return Math.floor(moment(mmddyyyy).unix() / 86400);
+  }
+
   handleSubmit = (event) => {
     event.preventDefault();
+    let available = "";
     console.log("CheckAvailable fired!");
-    available = this.props.RR.checkAvailable(this.state.tokenId, this.state.time,
+    available = this.props.RR.checkAvailable(this.state.tokenId, this.dateConverter(this.state.date),
       (err,res) => {
         if(err){
           console.log(
@@ -37,51 +50,28 @@ class CheckAvailable extends Component{
         });
       }
     );
-    // console.log(available);
-    // this.setState({
-    //   availability: available,
-    // });
   }
 
   render(){
-    const labelStyle={
-      backgroundColor: "white",
-      padding: "10px 0px",
-      display: "flex",
-      alignItems: "center",
-      color: "#777",
-      textTransform:"uppercase"
-    }
-    const inputStyle={
-      height: "35px",
-      flexGrow: "1",
-      marginLeft: "10px",
-      paddingLeft: "10px",
-      border: "1px solid #ccc",
-      fontSize: "15px",
-    }
-    const inputButtonStyle={
-      marginTop: '25px',
-      fontWeight: "900",
-      backgroundColor: "rgb(27, 117, 187)",
-      padding: '5px 15px',
-      color: "white",
-      textTransform: "uppercase"
-    }
-    // time input needs to be converted to unix time. Could take dates with hours.
+    /** time input needs to be converted to unix time. Could take dates with hours. Checks if bed is available? */
     return(
       <div className="check-available">
         <fieldset>
           <h1>Check availability</h1>
-            <div style={labelStyle}>Token Id:
-              <input id="tokenId" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.tokenId} />
+            <div className="label-style">Token Id:
+              <input id="tokenId" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.tokenId} />
             </div>
-            <div style={labelStyle}> Time: 
-              <input id="time" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.time} />
+            <div className="label-style"> Date: 
+              <DatePicker
+                    selected={this.state.date}
+                    onChange={this.handleDateChange}
+                    readOnly
+                    placeholderText="Select a date"
+                  />
             </div>
-            <input id="search" type="submit" value="Check Availability" style={inputButtonStyle} onClick={this.handleSubmit} />
+            <input id="search" type="submit" value="Check Availability" className="input-button-style" onClick={this.handleSubmit} />
             {this.state.availability &&
-              <div style={labelStyle}>{this.state.availability}</div>
+              <div className="label-style">{this.state.availability}</div>
             }
         </fieldset>
       </div>

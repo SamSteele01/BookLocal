@@ -106,12 +106,18 @@ contract RoomRenting is RoomOwnership {
             accessCodes.push(_accessCode);       
     }
 
+    function addAccessCodes(address[] _accessCodes) external onlyCLevel {
+        for (uint i = 0; i < _accessCodes.length; i++) {
+            accessCodes.push(_accessCodes[i]);
+        }
+    }
+
     function getNumberOfAccessCodes() external view returns (uint256 _codesLeft) {
         _codesLeft = accessCodes.length;
     }
 
-    function _validAccessCode(address _accessCode) internal view returns (bool){
-        for (uint i=0; i<accessCodes.length; i++) {
+    function _validAccessCode(address _accessCode) internal view returns (bool) {
+        for (uint i = 0; i < accessCodes.length; i++) {
             if (_accessCode == accessCodes[i]) {
                 return true;
             }
@@ -124,13 +130,12 @@ contract RoomRenting is RoomOwnership {
         uint256 _index;
         bool _valid = false;
 
-        for (uint i=0; i<accessCodes.length; i++) {
+        for (uint i = 0; i < accessCodes.length; i++) {
             if (_accessCode == accessCodes[i]) {
                 _index = i;
                 _valid = true;
             }
         }
-
         if (_valid) {
             _remove(_index);
         } else {
