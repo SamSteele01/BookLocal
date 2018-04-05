@@ -1,8 +1,8 @@
 export const routes = [
-//   {
-//     path: '/',
-//     load: () => Promise.resolve(require('./components/Home').default), // file loaded in the main code chunk
-//   },
+  {
+    path: '/EthMemphis',
+    load: () => Promise.resolve(require('components/RegisterMessage').default), // file loaded in the main code chunk
+  },
   {
     path: '/',  
     load: () => Promise.resolve(require('components/RegisterMessage').default), 

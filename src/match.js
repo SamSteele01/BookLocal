@@ -10,6 +10,8 @@ function parsePathname(pathname) {
  * Tries to match a path (parameterized or exact) with the routing config
  */
 function matchPath(routes, path) {
+  console.log('routes: ', routes);
+  console.log('path: ', path);
   const params = {};
   const index = routes.findIndex((route) => {
     if (/^\/:/.test(route.path)) {
@@ -25,6 +27,8 @@ function matchPath(routes, path) {
  * Tries to match a nested pathname (parsed into an array) with the routing config
  */
 function matchPaths(routes, paths) {
+  console.log('routes: ', routes);
+  console.log('paths: ', paths);
   // Try matching the first string in the paths array to the route configuration
   const { index: matchingIndex, params } = matchPath(routes, paths[0]);
 
@@ -50,7 +54,9 @@ function matchPaths(routes, paths) {
 /**
  * Parse pathname into paths array before recursively matching the paths
  */
-function match(routes, pathname) {
+function match(routes, pathname) { // routes are [] of all, from routes.js pathname is from url
+  console.log('routes: ', routes);
+  console.log('pathname: ', pathname);
   let paths = parsePathname(pathname);
   paths = paths.length ? paths : [''];
   return matchPaths(routes, paths);
