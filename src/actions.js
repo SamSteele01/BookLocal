@@ -1,4 +1,4 @@
-import { parse } from 'query-string';
+// import { parse } from 'query-string'; // does not minify into a production build. Should open an issue on their repo
 import { PUSH, REPLACE, GO, GO_BACK, GO_FORWARD, LOCATION_CHANGE } from 'const/constants';
 
 export const push = (href) => ({
@@ -24,7 +24,7 @@ export const locationChange = ({ pathname, search, hash }) => ({
   payload: {
     pathname,
     search,
-    queries: parse(search),
+    // queries: parse(search),
     hash,
   },
 });
