@@ -1,7 +1,7 @@
 import { LOCATION_CHANGE } from 'const/constants';
 
 const initialState = {
-  pathname: '/',
+  pathname: '/home',
   search: '',
   queries: {},
   hash: '',

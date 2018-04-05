@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 // import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 // import { combineReducers, applyMiddleware, createStore } from 'redux' // moved to store.js
-// import {BrowserRouter, Route} from 'react-router-dom'; // not needed
+// import { BrowserRouter, Route } from 'react-router-dom'; // not needed
 // import createHistory from 'history/createBrowserHistory';
 import { createBrowserHistory } from 'history'
 import registerServiceWorker from './registerServiceWorker';
@@ -19,12 +19,11 @@ import { configureStore } from './store';
 import { routes } from 'const/constants'; // plain JavaScript routing config
 
 // Layouts
-// import App from './containers/App';
 import BaseLayout from './containers/BaseLayout'
-// import Home from './components/Home'
-// import App from './containers/App'
-// import Prospectus from './containers/Prospectus';
-import './styles/index.css';
+import Home from './components/Home'
+import App from './containers/App'
+import Prospectus from './containers/Prospectus';
+import 'styles/index.css';
 
 // create a history singleton
 const history = createBrowserHistory();
@@ -62,6 +61,16 @@ startListener(history, store);
 // render the application with <Router /> to match the current URL to the routing config
 ReactDOM.render(
   <Provider store={store}>
+    {/* <BrowserRouter 
+    // basename="/EthMemphis"
+    >
+      <BaseLayout>
+        <Route path="/home" component={Home} />
+        <Route path="/register" component={App} />
+        <Route path="/about" component={Prospectus}/>
+        <Route exact path="/" component={Home} />
+      </BaseLayout>
+    </BrowserRouter> */}
     <BaseLayout>
       <RouterContainer routes={routes} />
     </BaseLayout>

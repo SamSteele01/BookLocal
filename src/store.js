@@ -11,7 +11,7 @@ const makeRootReducer = () => combineReducers({
   router: routerReducer
 });
 
-function configureStore(history, initialState = {}) {
+function configureStore(history) {
   // add `routerMiddleware` to your middlewares, passing it the history singleton from the app's entry point
   const middlewares = [
     //   ...otherMiddlewares, 
@@ -19,6 +19,6 @@ function configureStore(history, initialState = {}) {
   
   const enhancers = [applyMiddleware(...middlewares)];
   
-  return createStore(makeRootReducer(), initialState, composeWithDevTools(...enhancers));
+  return createStore(makeRootReducer(), composeWithDevTools(...enhancers));
 }
 export { configureStore };
