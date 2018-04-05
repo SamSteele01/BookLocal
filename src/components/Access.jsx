@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Home from 'wrappers/Home'
 
 let access;
 
@@ -40,18 +41,20 @@ class Access extends Component{
 
   render(){
     return(
-      <div className="access">
-        <fieldset >
-          <h1>Access</h1>
-            <div className="label-style">Token Id:
-              <input id="tokenId" type="text" className="input-style" onChange={this.handleTextChange} value={this.props.tokenId} />
-            </div>
-              <input id="search" type="submit" value="Check In" className="input-button-style" onClick={this.handleSubmit} />
-              {this.state.access &&
-                <div className="reserve-warning">See the transaction on <a href={`https://rinkeby.etherscan.io/tx/${this.state.access}`} target="_blank" rel="noopener noreferrer">Etherscan.io.</a></div>
-              }
-        </fieldset>
-      </div>
+      <Home>
+        <div className="access">
+          <fieldset >
+            <h1>Access</h1>
+              <div className="label-style">Token Id:
+                <input id="tokenId" type="text" className="input-style" onChange={this.handleTextChange} value={this.props.tokenId} />
+              </div>
+                <input id="search" type="submit" value="Check In" className="input-button-style" onClick={this.handleSubmit} />
+                {this.state.access &&
+                  <div className="reserve-warning">See the transaction on <a href={`https://rinkeby.etherscan.io/tx/${this.state.access}`} target="_blank" rel="noopener noreferrer">Etherscan.io.</a></div>
+                }
+          </fieldset>
+        </div>
+      </Home>
     )
   }
 }

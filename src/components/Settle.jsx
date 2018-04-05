@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Home from 'wrappers/Home'
 
 let settle;
 
@@ -41,16 +42,18 @@ class Settle extends Component{
 
   render(){
     return(
-      <div className="settle">
-        <fieldset>
-          <h1>Settle</h1>
-            <div className="label-style">Token Id:
-              <input id="tokenId" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.tokenId} />
-            </div>
-            <input id="submit" type="submit" value="Check Out" className="input-button-style" onClick={this.handleSubmit} />
-            {this.state.settle}
-        </fieldset>
-      </div>
+      <Home>
+        <div className="settle">
+          <fieldset>
+            <h1>Settle</h1>
+              <div className="label-style">Token Id:
+                <input id="tokenId" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.tokenId} />
+              </div>
+              <input id="submit" type="submit" value="Check Out" className="input-button-style" onClick={this.handleSubmit} />
+              {this.state.settle}
+          </fieldset>
+        </div>
+      </Home>
     )
   }
 }
