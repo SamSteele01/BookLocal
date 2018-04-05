@@ -2,6 +2,7 @@ import UniversalRouter from 'universal-router'
 import routes from './routes'
 import generateUrls from 'universal-router/generateUrls'
 
+/** This is not yet used */
 const router = new UniversalRouter(routes, {
   resolveRoute(context, params) {
     if (typeof context.route.load === 'function') {
