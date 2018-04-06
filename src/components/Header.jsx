@@ -8,6 +8,11 @@ class Header extends Component {
     return (
       <div className="header">
         <nav>
+          <div className="nav-items">
+            <Link to="/register" className="pure-menu-heading header-menu-link">Book</Link>
+            <Link to="/checkIn" className="pure-menu-heading header-menu-link">Check In</Link>
+            <Link to="/checkOut" className="pure-menu-heading header-menu-link">Check Out</Link>
+          </div>
           <div className="Logo">
             <Link to="/home">
               <img
@@ -19,9 +24,9 @@ class Header extends Component {
 
           </div>
           <div className="nav-items">
-            <Link to="/home" className="pure-menu-heading header-menu-link">Home</Link>
+            <Link to="/status" className="pure-menu-heading header-menu-link">Status</Link>
             <Link to="/about" className="pure-menu-heading header-menu-link">About</Link>
-            <Link to="/register" className="pure-menu-heading header-menu-link">Register</Link>
+            <Link to="/contact" className="pure-menu-heading header-menu-link">Contact</Link>
           </div>
         </nav>
         <div className="header-spacer"></div>
