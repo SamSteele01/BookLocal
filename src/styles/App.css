@@ -102,17 +102,11 @@ nav {
   z-index: 3;
   box-sizing: border-box;
   width: 100vw;
+  padding-right: 10px;
   background-color: white;
   justify-content: space-between;
-  flex-direction: column;
+  flex-direction: row;
   border-bottom: solid 1px #474747; }
-  @media (min-width: 768px) {
-    nav {
-      flex-direction: row; }
-      nav .Logo {
-        padding-left: 25px; }
-      nav .nav-items {
-        padding-right: 25px; } }
 
 .navbar a {
   color: #fff; }
@@ -143,10 +137,11 @@ a:hover {
 .nav-items {
   display: flex;
   justify-content: center;
-  align-items: center; }
-  @media (min-width: 992) {
+  align-items: center;
+  flex-direction: column; }
+  @media (min-width: 768px) {
     .nav-items {
-      padding-right: 10px; } }
+      flex-direction: row; } }
 
 .footer {
   background-color: white;
