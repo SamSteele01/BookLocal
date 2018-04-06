@@ -8,9 +8,9 @@ export default class Status extends Component {
   render() {
     return (
         <div className="app">
-            <GetNextReservation web3={this.state.web3} RR={this.state.RR} returnComponentState={this.returnComponentState}/>
-            <GetRoomInfo web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId}/>
-            <GetReservations web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId} checkInDate={this.state.checkInDate} checkOutDate={this.state.checkOutDate} />
+            <GetNextReservation web3={this.props.web3} RR={this.props.RR} returnComponentprops={this.returnComponentState}/>
+            <GetRoomInfo web3={this.props.web3} RR={this.props.RR} tokenId={this.props.tokenId}/>
+            <GetReservations web3={this.props.web3} RR={this.props.RR} tokenId={this.props.tokenId} checkInDate={this.props.checkInDate} checkOutDate={this.props.checkOutDate} />
         </div>
     )
   }
