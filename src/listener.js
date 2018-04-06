@@ -1,4 +1,4 @@
-import { locationChange } from './actions'
+import { locationChange } from 'actions/navActions'
 
 export function startListener(history, store) {
   store.dispatch(locationChange({

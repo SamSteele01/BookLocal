@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import requiredIf from 'react-required-if';
-import { push, replace, goBack, goForward } from 'actions';
+import { push, replace, goBack, goForward } from 'actions/navActions';
 
 const Link = (props) => {
   const { to, action, onClick, children, dispatch, ...other } = props;
