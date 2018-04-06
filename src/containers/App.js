@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
-
+import {Router, Route} from 'react-router-dom';
+import RegisterMessage from 'components/RegisterMessage'
 import Reserve from 'components/Reserve';
-import GetReservations from 'components/GetReservations';
-import GetNextReservation from 'components/GetNextReservation';
-import CheckAvailable from 'components/CheckAvailable';
-import GetRoomInfo from 'components/GetRoomInfo';
+// import GetReservations from 'components/GetReservations';
+// import GetNextReservation from 'components/GetNextReservation';
+// import CheckAvailable from 'components/CheckAvailable';
+// import GetRoomInfo from 'components/GetRoomInfo';
 import Access from 'components/Access';
 import Settle from 'components/Settle';
+import Status from 'containers/Status'
+import Contact from 'components/Contact'
+import Prospectus from 'containers/Prospectus';
 import getWeb3 from 'utils/getWeb3';
 // import Web3 from 'web3';  // from node module
 
@@ -78,18 +82,19 @@ class App extends Component {
   render() {
 
     return (
-      <div className="app">
-        <Reserve web3={this.state.web3} RR={this.state.RR} web3error={this.state.web3error}/>
-        <GetNextReservation web3={this.state.web3} RR={this.state.RR} returnComponentState={this.returnComponentState}/>
-        {this.state.tokenId &&
+      <div>
+        <Router history={this.props.history}>
           <div>
-            <GetReservations web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId} checkInDate={this.state.checkInDate} checkOutDate={this.state.checkOutDate} />
-            <GetRoomInfo web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId}/>
-            <CheckAvailable web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId}/>
-            <Access web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId}/>
-            <Settle web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId}/>
+            <Route path="/home" component={RegisterMessage} />
+            <Route path="/register" render={(props)=>(<Reserve web3={this.state.web3} RR={this.state.RR} web3error={this.state.web3error} />)} />
+            <Route path="/checkIn" render={(props)=>(<Access web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId} />)} />
+            <Route path="/checkOut" render={(props)=>(<Settle web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId} />)} />
+            <Route path="/status" render={(props)=>(<Status web3={this.state.web3} RR={this.state.RR} returnComponentState={this.returnComponentState} checkInDate={this.state.checkInDate} checkOutDate={this.state.checkOutDate} />)} />
+            <Route path="/about" component={Prospectus} />
+            <Route path="/contact" component={Contact} />
+            <Route exact path="/" component={RegisterMessage} />
           </div>
-        }
+        </Router>
       </div>
     );
   }
