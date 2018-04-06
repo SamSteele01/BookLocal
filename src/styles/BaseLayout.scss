@@ -13,13 +13,13 @@
   .header {
     width: 100vw;
     // position: fixed;
-    z-index: 3;
+    z-index: 5;
   }
 
 .header-spacer {
     z-index: 1;
     position: relative;
-    height: 120px;
+    height: 102px;
     @media (min-width: $tablet) {
         height: 86px;
     }

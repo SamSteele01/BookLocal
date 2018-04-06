@@ -70,12 +70,12 @@ h2, h3 {
 
 .header {
   width: 100vw;
-  z-index: 3; }
+  z-index: 5; }
 
 .header-spacer {
   z-index: 1;
   position: relative;
-  height: 120px; }
+  height: 102px; }
   @media (min-width: 768px) {
     .header-spacer {
       height: 86px; } }
@@ -353,12 +353,12 @@ h2, h3 {
   background-image: url("../images/room.jpg");
   background-position: cover;
   background-attachment: fixed;
-  min-height: calc(100vh - 162px);
+  min-height: calc(100vh - 150px);
   width: 100vw;
   background-size: cover; }
   @media (min-width: 768px) {
     .app {
-      min-height: calc(100vh - 128px); } }
+      min-height: calc(100vh - 133px); } }
   .app > div:last-child {
     margin-bottom: 40px; }
 
@@ -523,8 +523,8 @@ pre {
 .home {
   background-image: url("../images/movement.jpg");
   background-position: center;
-  height: calc(100vh - 162px);
-  width: 100%;
+  height: calc(100vh - 150px);
+  width: 100vw;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -533,7 +533,7 @@ pre {
   position: relative; }
   @media (min-width: 768px) {
     .home {
-      height: calc(100vh - 128px); } }
+      height: calc(100vh - 133px); } }
 
 .home:after {
   position: absolute;

@@ -8,9 +8,9 @@
   background-image: url("../images/room.jpg");
   background-position: cover;
   background-attachment: fixed;
-  min-height: calc(100vh - 162px);
+  min-height: calc(100vh - 150px);
   @media (min-width: $tablet) {
-    min-height: calc(100vh - 128px);
+    min-height: calc(100vh - 133px);
   }
   width: 100vw;
   background-size: cover;

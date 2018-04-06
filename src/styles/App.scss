@@ -120,8 +120,8 @@ pre {
   background-image: url('../images/movement.jpg');
   background-position: center;
   // height: 92.5vh;
-  height: calc(100vh - 162px);
-  width: 100%;
+  height: calc(100vh - 150px);
+  width: 100vw;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -129,7 +129,7 @@ pre {
   align-items: center;
   position: relative;
   @media (min-width: $tablet) {
-    height: calc(100vh - 128px);
+    height: calc(100vh - 133px);
   }
 }
 
