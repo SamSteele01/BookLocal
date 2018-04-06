@@ -1,5 +1,5 @@
 import moment from 'moment';
-import { WEB3, WEB3_ERROR, CURRENT_NETWORK, RR, ETH_MEM_START, ETH_MEM_STOP, RESPONSE_TXN, CHECK_IN_DATE, CHECK_OUT_DATE } from 'const/constants';
+import { WEB3, WEB3_ERROR, CURRENT_NETWORK, RR, ETH_MEM_START, ETH_MEM_STOP, RESPONSE_TXN, CHECK_IN_DATE, CHECK_OUT_DATE, SET_STORE } from 'const/constants';
 
 const initialState = {
     web3: null,
@@ -59,6 +59,10 @@ export const dataReducer = (state = initialState, action) => {
     case CHECK_OUT_DATE:
       return Object.assign({}, state, {
         checkOutDate: action.payload
+      })
+    case SET_STORE:
+      return Object.assign({}, state, {
+        [action.payload.key]: action.payload.value
       })
     default:
       return state;

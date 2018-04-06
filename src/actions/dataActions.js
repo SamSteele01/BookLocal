@@ -1,4 +1,4 @@
-import { WEB3, WEB3_ERROR, CURRENT_NETWORK, RR, ETH_MEM_START, ETH_MEM_STOP, RESPONSE_TXN, CHECK_IN_DATE, CHECK_OUT_DATE } from 'const/constants';
+import { WEB3, WEB3_ERROR, CURRENT_NETWORK, RR, ETH_MEM_START, ETH_MEM_STOP, RESPONSE_TXN, CHECK_IN_DATE, CHECK_OUT_DATE, SET_STORE } from 'const/constants';
 
 export const web3 = (instance) => ({
   type: WEB3,
@@ -35,6 +35,10 @@ export const checkInDate = (date) => ({
 export const checkOutDate = (date) => ({
   type: CHECK_OUT_DATE,
   payload: date,
+});
+export const setStore = (key, value) => ({
+  type: SET_STORE,
+  payload: {key: key, value: value}
 });
 // export const locationChange = ({ pathname, search, hash }) => ({
 //   type: LOCATION_CHANGE,

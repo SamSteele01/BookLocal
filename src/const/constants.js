@@ -24,3 +24,4 @@ export const ROOM_NUMBER = 'DATA/ROOM_NUMBER';
 export const NUM_BEDS = 'DATA/NUM_BEDS';
 
 export const DATA_CHANGE = 'DATA/DATA_CHANGE';
+export const SET_STORE = 'DATA/SET_STORE';
