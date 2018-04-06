@@ -45,24 +45,21 @@
   
 /* NAVBAR */
 nav {
-    display: flex!important;
-    position: fixed;
-    z-index: 3;
-    box-sizing: border-box;
-    width: 100vw;
-    background-color: white;
-    justify-content: space-between;
-    flex-direction: column;
-    border-bottom: solid 1px $gray;
-    @media (min-width: $tablet) {
-        flex-direction: row;
-        .Logo {
-        padding-left: 25px;
-        }
-        .nav-items {
-        padding-right: 25px;
-        }
+  display: flex!important;
+  position: fixed;
+  z-index: 3;
+  box-sizing: border-box;
+  width: 100vw;
+  padding-right: 10px;
+  background-color: white;
+  justify-content: space-between;
+  flex-direction: row;
+  border-bottom: solid 1px $gray;
+  @media (min-width: $tablet) {
+    .Logo {
+      // padding-left: 25px;
     }
+  }
 }
 
   .navbar a {
@@ -102,8 +99,13 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     @media (min-width: $desk) {
-      padding-right: 10px;
+      // padding-right: 10px;
+    }
+    @media (min-width: $tablet) {
+      flex-direction: row;
+      // padding-right: 25px;
     }
   }
 

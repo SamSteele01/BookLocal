@@ -103,17 +103,11 @@ nav {
   z-index: 3;
   box-sizing: border-box;
   width: 100vw;
+  padding-right: 10px;
   background-color: white;
   justify-content: space-between;
-  flex-direction: column;
+  flex-direction: row;
   border-bottom: solid 1px #474747; }
-  @media (min-width: 768px) {
-    nav {
-      flex-direction: row; }
-      nav .Logo {
-        padding-left: 25px; }
-      nav .nav-items {
-        padding-right: 25px; } }
 
 .navbar a {
   color: #fff; }
@@ -144,10 +138,11 @@ a:hover {
 .nav-items {
   display: flex;
   justify-content: center;
-  align-items: center; }
-  @media (min-width: 992) {
+  align-items: center;
+  flex-direction: column; }
+  @media (min-width: 768px) {
     .nav-items {
-      padding-right: 10px; } }
+      flex-direction: row; } }
 
 .footer {
   background-color: white;
@@ -358,9 +353,12 @@ h2, h3 {
   background-image: url("../images/room.jpg");
   background-position: cover;
   background-attachment: fixed;
-  height: auto;
+  min-height: calc(100vh - 162px);
   width: 100vw;
   background-size: cover; }
+  @media (min-width: 768px) {
+    .app {
+      min-height: calc(100vh - 128px); } }
   .app > div:last-child {
     margin-bottom: 40px; }
 
@@ -368,7 +366,8 @@ h2, h3 {
   background-color: white;
   overflow: hidden;
   padding: 10px 16px;
-  margin-top: 40px; }
+  margin-top: 40px;
+  z-index: 4; }
   @media (min-width: 480px) {
     .reserve, .get-token, .get-reservations, .settle, .check-available, .get-room-info, .access {
       padding: 15px 25px;
