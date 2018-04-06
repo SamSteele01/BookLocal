@@ -2,12 +2,13 @@ import { combineReducers, applyMiddleware, compose, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 // import { routerReducer, routerMiddleware } from 'redux-json-router';
 import { routerReducer } from 'reducers/routerReducer';
+import { dataReducer } from 'reducers/dataReducer';
 import { routerMiddleware } from './middleware'
 // import { otherReducers, otherMiddlewares } from './other';
 
 // add `routerReducer` to your root reducer
 const makeRootReducer = () => combineReducers({
-//   ...otherReducers,
+  data:  dataReducer,
   router: routerReducer
 });
 
