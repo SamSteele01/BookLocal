@@ -13,7 +13,7 @@ export const routes = [
   },
   {
     path: '/register',
-    load: () => Promise.resolve(require('components/Reserve').default),
+    load: () => Promise.resolve(require('containers/ReserveContainer').default),
   },
   {
     path: '/checkIn',
