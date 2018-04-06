@@ -5,11 +5,15 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
 
 // Layouts
-// import App from './containers/App';
-import BaseLayout from './containers/BaseLayout'
-import Home from './components/Home'
-import App from './containers/App'
-import Prospectus from './containers/Prospectus';
+// import App from 'containers/App';
+import BaseLayout from 'wrappers/BaseLayout'
+import RegisterMessage from 'components/RegisterMessage'
+import Reserve from 'components/Reserve'
+import Access from 'components/Access'
+import Settle from 'components/Settle'
+import Status from 'containers/Status'
+import Contact from 'components/Contact'
+import Prospectus from 'containers/Prospectus';
 import './styles/index.css';
 
 // const history = createHistory();
@@ -18,10 +22,14 @@ import './styles/index.css';
 ReactDOM.render((
       <BrowserRouter basename="/EthMemphis">
           <BaseLayout>
-            <Route path="/home" component={Home} />
-            <Route path="/register" component={App} />
+            <Route path="/home" component={RegisterMessage} />
+            <Route path="/register" component={Reserve} />
+            <Route path="/checkIn" component={Access} />
+            <Route path="/checkOut" component={Settle} />
+            <Route path="/status" component={Status} />
             <Route path="/about" component={Prospectus}/>
-            <Route exact path="/" component={Home} />
+            <Route path="/contact" component={Contact}/>
+            <Route exact path="/" component={RegisterMessage} />
           </BaseLayout>
       </BrowserRouter>
   ),
