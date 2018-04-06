@@ -82,53 +82,55 @@ class Reserve extends Component{
 
   render(){
     return(
-      <div className="reserve">
-        { this.state.response ?
-          <div className="label-style">
-            <h1>Room Reserved!</h1>
-            <p>Thank you for booking your room with BookLocal! We can't wait to meet you at EthMemphis.</p>
-            <div>The address that you used to book is: {this.state.account}</div>
-            <div className="reserve-warning">See the transaction on <a href={`https://rinkeby.etherscan.io/tx/${this.state.response}`} target="_blank" rel="noopener noreferrer">Etherscan.io.</a></div>
-          </div>
-          :
-          <fieldset>
-            <h1>Reserve Your Room</h1>
-            {this.props.web3error && <div 
-            className="reserve-warning">
-            {this.props.web3error}</div>}
-              <div className="label-style"> Check-in date:
-                <DatePicker
-                  selected={this.state.start}
-                  onChange={this.handleStartChange}
-                  selectsStart
-                  readOnly
-                  startDate={this.state.start}
-                  endDate={this.state.stop}
-                  // minDate={moment([2018, 4, 17])}
-                  maxDate={this.state.stop}
-                  placeholderText="Select an arrival date"
-                />
-                {/* <input id="start" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.start} /> */}
-              </div>
-              <div className="label-style"> Check-out date:
-                <DatePicker
-                  selected={this.state.stop}
-                  onChange={this.handleStopChange}
-                  selectsEnd
-                  readOnly
-                  startDate={this.state.start}
-                  endDate={this.state.stop}
-                  minDate={this.state.start}
-                  // maxDate={moment([2018, 4, 21])}
-                  placeholderText="Select an departure date"
-                />
-                {/* <input id="stop" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.stop} /> */}
-              </div>
-              <input id="search" type="submit" className="input-button-style" value="Reserve" onClick={this.handleSubmit} />
-              {this.state.availability && <div className="reserve-warning">{this.state.availability}</div>
-            }
-          </fieldset>
-        }
+      <div className="home">
+        <div className="reserve">
+          { this.state.response ?
+            <div className="label-style">
+              <h1>Room Reserved!</h1>
+              <p>Thank you for booking your room with BookLocal! We can't wait to meet you at EthMemphis.</p>
+              <div>The address that you used to book is: {this.state.account}</div>
+              <div className="reserve-warning">See the transaction on <a href={`https://rinkeby.etherscan.io/tx/${this.state.response}`} target="_blank" rel="noopener noreferrer">Etherscan.io.</a></div>
+            </div>
+            :
+            <fieldset>
+              <h1>Reserve Your Room</h1>
+              {this.props.web3error && <div 
+              className="reserve-warning">
+              {this.props.web3error}</div>}
+                <div className="label-style"> Check-in date:
+                  <DatePicker
+                    selected={this.state.start}
+                    onChange={this.handleStartChange}
+                    selectsStart
+                    readOnly
+                    startDate={this.state.start}
+                    endDate={this.state.stop}
+                    // minDate={moment([2018, 4, 17])}
+                    maxDate={this.state.stop}
+                    placeholderText="Select an arrival date"
+                  />
+                  {/* <input id="start" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.start} /> */}
+                </div>
+                <div className="label-style"> Check-out date:
+                  <DatePicker
+                    selected={this.state.stop}
+                    onChange={this.handleStopChange}
+                    selectsEnd
+                    readOnly
+                    startDate={this.state.start}
+                    endDate={this.state.stop}
+                    minDate={this.state.start}
+                    // maxDate={moment([2018, 4, 21])}
+                    placeholderText="Select an departure date"
+                  />
+                  {/* <input id="stop" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.stop} /> */}
+                </div>
+                <input id="search" type="submit" className="input-button-style" value="Reserve" onClick={this.handleSubmit} />
+                {this.state.availability && <div className="reserve-warning">{this.state.availability}</div>
+              }
+            </fieldset>
+          }
+        </div>
       </div>
     )
   }
