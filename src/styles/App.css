@@ -553,13 +553,19 @@ pre {
   color: white;
   margin: 10vh 0;
   padding: 0 20px;
-  font-size: 20px; }
+  font-size: 18px; }
+  .register-message a {
+    color: white; }
+  .register-message a:hover {
+    color: #E66E1C; }
   @media (min-width: 480px) {
     .register-message {
-      font-size: 30px; } }
+      font-size: 27px;
+      padding: 10px 30px; } }
   @media (min-width: 768px) {
     .register-message {
-      font-size: 40px; } }
+      font-size: 36px;
+      padding: 20px 40px; } }
 
 /* Eth-Memphis */
 .grommetux-box--pad-large {

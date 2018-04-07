@@ -150,13 +150,21 @@ pre {
   z-index: 3;
   color: white;
   margin: 10vh 0;
+  a {
+    color: white;
+  }
+  a:hover {
+    color: $orange3;
+  }
   padding: 0 20px;
-  font-size: 20px;
+  font-size: 18px;
   @media (min-width: $mobile) {
-    font-size: 30px;
+    font-size: 27px;
+    padding: 10px 30px;
   }
   @media (min-width: $tablet) {
-    font-size: 40px;
+    font-size: 36px;
+    padding: 20px 40px;
   }
 }
 
