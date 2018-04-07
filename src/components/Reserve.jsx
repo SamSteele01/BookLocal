@@ -94,39 +94,43 @@ class Reserve extends Component{
             :
             <fieldset>
               <h1>Reserve Your Room</h1>
-              {this.props.web3error && <div 
-              className="reserve-warning">
-              {this.props.web3error}</div>}
-                <div className="label-style"> Check-in date:
-                  <DatePicker
-                    selected={this.state.start}
-                    onChange={this.handleStartChange}
-                    selectsStart
-                    readOnly
-                    startDate={this.state.start}
-                    endDate={this.state.stop}
-                    // minDate={moment([2018, 4, 17])} // gray out dates before
-                    maxDate={this.state.stop} 
-                    placeholderText="Select an arrival date"
-                  />
-                  {/* <input id="start" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.start} /> */}
-                </div>
-                <div className="label-style"> Check-out date:
-                  <DatePicker
-                    selected={this.state.stop}
-                    onChange={this.handleStopChange}
-                    selectsEnd
-                    readOnly
-                    startDate={this.state.start}
-                    endDate={this.state.stop}
-                    minDate={this.state.start}
-                    // maxDate={moment([2018, 4, 21])} // gray out dated after
-                    placeholderText="Select an departure date"
-                  />
-                  {/* <input id="stop" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.stop} /> */}
-                </div>
-                <input id="search" type="submit" className="input-button-style" value="Reserve" onClick={this.handleSubmit} />
-                {this.state.availability && <div className="reserve-warning">{this.state.availability}</div>
+              {this.props.web3error && 
+                <div className="reserve-warning">{this.props.web3error}</div>
+              }
+              <div className="label-style"> Hotel:
+                <input id="Hotel" type="text" className="input-style" onChange={this.handleTextChange} value="The Exchange Building" readOnly />
+              </div>
+              <div className="label-style"> Check-in date:
+                <DatePicker
+                  selected={this.state.start}
+                  onChange={this.handleStartChange}
+                  selectsStart
+                  readOnly
+                  startDate={this.state.start}
+                  endDate={this.state.stop}
+                  // minDate={moment([2018, 4, 17])} // gray out dates before
+                  maxDate={this.state.stop} 
+                  placeholderText="Select an arrival date"
+                />
+                {/* <input id="start" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.start} /> */}
+              </div>
+              <div className="label-style"> Check-out date:
+                <DatePicker
+                  selected={this.state.stop}
+                  onChange={this.handleStopChange}
+                  selectsEnd
+                  readOnly
+                  startDate={this.state.start}
+                  endDate={this.state.stop}
+                  minDate={this.state.start}
+                  // maxDate={moment([2018, 4, 21])} // gray out dated after
+                  placeholderText="Select an departure date"
+                />
+                {/* <input id="stop" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.stop} /> */}
+              </div>
+              <input id="search" type="submit" className="input-button-style" value="Reserve" onClick={this.handleSubmit} />
+              {this.state.availability && 
+                <div className="reserve-warning">{this.state.availability}</div>
               }
             </fieldset>
           }
