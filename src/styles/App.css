@@ -59,7 +59,8 @@ h2, h3 {
 
 .base-layout {
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
   display: flex;
@@ -87,12 +88,10 @@ h2, h3 {
   padding: 7px 5px 0px 5px; }
 
 .pure-menu-heading {
-  display: block;
   text-decoration: none;
   white-space: nowrap;
   display: inline-block;
   zoom: 1;
-  vertical-align: middle;
   text-transform: uppercase;
   color: #565d64;
   padding: .5em 1em; }
@@ -330,19 +329,33 @@ h2, h3 {
   justify-content: start;
   align-items: center;
   background-image: url("../images/exchange-building-SU.jpg");
+  background-size: cover;
   background-attachment: fixed;
   background-position: center;
   min-height: calc(100vh - 150px);
-  width: 100vw;
-  background-size: cover; }
+  width: 100vw; }
   @media (min-width: 768px) {
     .app {
       min-height: calc(100vh - 133px); } }
   .app > div:last-child {
     margin-bottom: 40px; }
 
+.app:after {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.5);
+  content: ""; }
+
 .get-reservations, .get-room-info, .get-token {
   margin-top: 40px; }
+
+.z-above-after {
+  z-index: 4; }
 
 .reserve, .get-token, .get-reservations, .settle, .check-available, .get-room-info, .access {
   background-color: white;
@@ -387,7 +400,6 @@ h2, h3 {
   font-size: 15px; }
 
 .input-style-2 {
-  width: 90%;
   margin-left: 0; }
 
 input:focus {
@@ -395,7 +407,9 @@ input:focus {
   outline: #E66E1C auto 5px; }
 
 .array-mappings {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column; }
 
 .input-button-style {
   margin-top: 25px;
@@ -504,7 +518,7 @@ pre {
 .home {
   background-image: url("../images/ethMemphis.jpg");
   background-position: center;
-  height: calc(100vh - 150px);
+  height: calc(100vh - 149px);
   width: 100vw;
   background-size: cover;
   display: flex;
@@ -530,9 +544,8 @@ pre {
 .register-message {
   z-index: 3;
   color: white;
-  margin: 10vh 0;
-  padding: 0 20px;
-  font-size: 18px; }
+  font-size: 22px;
+  padding: 10px 20px; }
   .register-message a {
     color: white; }
   .register-message a:hover {
