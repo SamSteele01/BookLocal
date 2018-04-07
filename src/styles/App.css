@@ -351,7 +351,7 @@ h2, h3 {
   background: rgba(0, 0, 0, 0.5);
   content: ""; }
 
-.get-reservations, .get-room-info, .get-token {
+.get-reservations, .get-room-info, .get-token, .check-available {
   margin-top: 40px; }
 
 .z-above-after {
