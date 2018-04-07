@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Logo from 'images/logo.png';
 
 class Header extends Component {
@@ -9,9 +9,10 @@ class Header extends Component {
       <div className="header">
         <nav>
           <div className="nav-items">
-            <Link to="/register" className="pure-menu-heading header-menu-link">Book</Link>
-            <Link to="/checkIn" className="pure-menu-heading header-menu-link">Check In</Link>
-            <Link to="/checkOut" className="pure-menu-heading header-menu-link">Check Out</Link>
+            <NavLink to="/register" activeClassName="link-active" className="pure-menu-heading">Book</NavLink>
+            <NavLink to="/checkIn" activeClassName="link-active" className="pure-menu-heading">Check In</NavLink>
+            <NavLink to="/checkOut" activeClassName="link-active" className="pure-menu-heading">Check Out</NavLink>
+            
           </div>
           <div className="Logo">
             <Link to="/home">
@@ -24,9 +25,9 @@ class Header extends Component {
 
           </div>
           <div className="nav-items">
-            <Link to="/status" className="pure-menu-heading header-menu-link">Status</Link>
-            <Link to="/about" className="pure-menu-heading header-menu-link">About</Link>
-            <Link to="/contact" className="pure-menu-heading header-menu-link">Contact</Link>
+            <NavLink to="/status" activeClassName="link-active" className="pure-menu-heading">Status</NavLink>
+            <NavLink to="/about" activeClassName="link-active" className="pure-menu-heading">About</NavLink>
+            <NavLink to="/contact" activeClassName="link-active" className="pure-menu-heading">Contact</NavLink>
           </div>
         </nav>
         <div className="header-spacer"></div>
