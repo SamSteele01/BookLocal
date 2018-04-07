@@ -24,7 +24,7 @@ export default class Status extends Component {
         <div className="app">
             <GetNextReservation web3={this.props.web3} RR={this.props.RR} tokenId={this.state.tokenId} returnComponentState={this.returnComponentState} checkInDate={this.props.checkInDate} checkOutDate={this.props.checkOutDate} />
             {this.state.tokenId &&
-                <div>
+                <div className="z-above-after">
                     <GetRoomInfo web3={this.props.web3} RR={this.props.RR} tokenId={this.props.tokenId}/>
                     <GetReservations web3={this.props.web3} RR={this.props.RR} tokenId={this.props.tokenId} checkInDate={this.props.checkInDate} checkOutDate={this.props.checkOutDate} />
                 </div>
