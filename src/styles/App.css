@@ -362,11 +362,13 @@ h2, h3 {
   .app > div:last-child {
     margin-bottom: 40px; }
 
+.get-reservations, .get-room-info, .get-token {
+  margin-top: 40px; }
+
 .reserve, .get-token, .get-reservations, .settle, .check-available, .get-room-info, .access {
   background-color: white;
   overflow: hidden;
   padding: 10px 16px;
-  margin-top: 40px;
   z-index: 4; }
   @media (min-width: 480px) {
     .reserve, .get-token, .get-reservations, .settle, .check-available, .get-room-info, .access {

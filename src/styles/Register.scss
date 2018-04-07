@@ -19,36 +19,39 @@
   }
 }
   
-  .reserve, .get-token, .get-reservations, .settle, .check-available, .get-room-info, .access {
+.get-reservations, .get-room-info, .get-token {
+  margin-top: 40px;
+}
+
+.reserve, .get-token, .get-reservations, .settle, .check-available, .get-room-info, .access {
+  background-color: white;
+  overflow: hidden;
+  padding: 10px 16px;
+  z-index: 4;
+  @media (min-width: $mobile) {
+    padding: 15px 25px;
+    max-width: 80vw;
+  }
+  @media (min-width: $tablet) {
+    padding: 30px 50px;
+    max-width: 60vw;
+  }
+  fieldset {
     background-color: white;
-    overflow: hidden;
-    padding: 10px 16px;
-    margin-top: 40px;
-    z-index: 4;
-    @media (min-width: $mobile) {
-      padding: 15px 25px;
-      max-width: 80vw;
-    }
-    @media (min-width: $tablet) {
-      padding: 30px 50px;
-      max-width: 60vw;
-    }
-    fieldset {
-      background-color: white;
-      box-sizing: border-box;
-      padding: 25px;
-      margin-bottom: 0;
-      // min-width: 400px;
-      max-width: 100vw;
-      h1 {
-        font-size: 35px;
-        color: $gray;
-        @media(min-width: $tablet) {
-          font-size: 45px;
-        }
+    box-sizing: border-box;
+    padding: 25px;
+    margin-bottom: 0;
+    // min-width: 400px;
+    max-width: 100vw;
+    h1 {
+      font-size: 35px;
+      color: $gray;
+      @media(min-width: $tablet) {
+        font-size: 45px;
       }
     }
   }
+}
   
   .label-style {
     background-color: white;
