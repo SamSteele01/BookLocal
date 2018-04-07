@@ -28,7 +28,7 @@ class App extends Component {
       web3: null,
       RR: null,
       web3error: null,
-      tokenId : null,
+      tokenId : "",
       checkInDate: null,
       checkOutDate: null
     }
@@ -82,20 +82,20 @@ class App extends Component {
   render() {
 
     return (
-      <div>
+      // <div>
         <Router history={this.props.history}>
           <div>
             <Route path="/home" component={RegisterMessage} />
             <Route path="/register" render={(props)=>(<Reserve web3={this.state.web3} RR={this.state.RR} web3error={this.state.web3error} />)} />
             <Route path="/checkIn" render={(props)=>(<Access web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId} />)} />
             <Route path="/checkOut" render={(props)=>(<Settle web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId} />)} />
-            <Route path="/status" render={(props)=>(<Status web3={this.state.web3} RR={this.state.RR} returnComponentState={this.returnComponentState} checkInDate={this.state.checkInDate} checkOutDate={this.state.checkOutDate} />)} />
+            <Route path="/status" render={(props)=>(<Status web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId} returnComponentState={this.returnComponentState} checkInDate={this.state.checkInDate} checkOutDate={this.state.checkOutDate} />)} />
             <Route path="/about" component={Prospectus} />
             <Route path="/contact" component={Contact} />
             <Route exact path="/" component={RegisterMessage} />
           </div>
         </Router>
-      </div>
+      // </div>
     );
   }
 }
