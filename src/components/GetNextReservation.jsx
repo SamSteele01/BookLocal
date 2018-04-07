@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 
 
@@ -6,9 +7,9 @@ class GetNextReservation extends Component{
   constructor(props){
     super(props)
     this.state = {
-      tokenId : null,
-      checkInDate: null,
-      checkOutDate: null
+      tokenId : props.tokenId ? props.tokenId : null,
+      checkInDate: props.checkInDate ? props.checkInDate : "",
+      checkOutDate: props.checkOutDate ? props.checkOutDate : ""
     }
     this.handleSubmit=this.handleSubmit.bind(this);
   }
@@ -21,6 +22,7 @@ class GetNextReservation extends Component{
   }
 
   convertFromUnixTime = (time) => {
+    console.log('time: ', time);
     return moment.unix(time*86400+43200).format("MM/DD/YYYY")
   }
 
@@ -69,6 +71,11 @@ class GetNextReservation extends Component{
       </div>
     )
   }
+}
+GetNextReservation.propTypes = {
+  web3: PropTypes.object,
+  RR: PropTypes.object,
+  returnComponentState: PropTypes.func
 }
 
 export default GetNextReservation

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 let getRoomInfo;
 
@@ -17,6 +18,17 @@ class GetRoomInfo extends Component{
     this.handleSubmit=this.handleSubmit.bind(this);
     this.handleTextChange=this.handleTextChange.bind(this);
     this.convertUnixToDays=this.convertUnixToDays.bind(this);
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    console.log('prevState: ', prevState);
+    console.log('nextProps: ', nextProps);
+
+    if(nextProps.tokenId!==prevState.tokenId){
+      return {tokenId: nextProps.tokenId}
+    }else{
+      return null
+    }
   }
 
   handleTextChange = (event) => {
@@ -94,6 +106,11 @@ class GetRoomInfo extends Component{
       </div>
     )
   }
+}
+GetRoomInfo.propTypes = {
+  web3: PropTypes.object,
+  RR: PropTypes.object,
+  tokenId: PropTypes.number, //?
 }
 
 export default GetRoomInfo
