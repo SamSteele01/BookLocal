@@ -120,7 +120,7 @@ pre {
   background-image: url('../images/ethMemphis.jpg');
   background-position: center;
   // height: 92.5vh;
-  height: calc(100vh - 150px);
+  height: calc(100vh - 149px);
   width: 100vw;
   background-size: cover;
   display: flex;
@@ -149,15 +149,15 @@ pre {
   // position: absolute;
   z-index: 3;
   color: white;
-  margin: 10vh 0;
+  // margin: 10vh 0;
   a {
     color: white;
   }
   a:hover {
     color: $orange3;
   }
-  padding: 0 20px;
-  font-size: 18px;
+  font-size: 22px;
+  padding: 10px 20px;
   @media (min-width: $mobile) {
     font-size: 27px;
     padding: 10px 30px;
