@@ -350,9 +350,9 @@ h2, h3 {
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  background-image: url("../images/room.jpg");
-  background-position: cover;
+  background-image: url("../images/exchange-building-SU.jpg");
   background-attachment: fixed;
+  background-position: center;
   min-height: calc(100vh - 150px);
   width: 100vw;
   background-size: cover; }
@@ -523,7 +523,7 @@ pre {
   width: auto; }
 
 .home {
-  background-image: url("../images/movement.jpg");
+  background-image: url("../images/ethMemphis.jpg");
   background-position: center;
   height: calc(100vh - 150px);
   width: 100vw;
