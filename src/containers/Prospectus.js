@@ -9,12 +9,13 @@ import How from './how/How';
 import Steps from './steps/Steps';
 import Traveler from "./Traveler";
 import Hotel from "./Hotel";
-
+import DownloadButton from 'components/DownloadButton';
 
 class Prospectus extends Component {
   render() {
     return (
       <div className="prospectus">
+        <DownloadButton label="Get " buttonText="Download Whitepaper" href="https://github.com/BookLocal/prospectus/raw/master/BookLocal_prospectus.pdf" fileName="BookLocal-Prospectus" />
         {/* <Hero image="hero-pattern"/> */}
         <What/>
         <Why/>
