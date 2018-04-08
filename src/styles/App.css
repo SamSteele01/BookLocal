@@ -203,6 +203,9 @@ h2, h3 {
   display: flex;
   flex-direction: column; }
 
+.heading-drop-down-container {
+  width: 100%; }
+
 .drop-down-contents {
   padding-bottom: 40px; }
 
@@ -279,10 +282,13 @@ h2, h3 {
   color: #FFFFFF; }
 
 .traveler {
-  padding: 0 50px;
+  padding: 0 20px;
+  box-sizing: border-box;
   color: #1b75bb; }
 
 .hotel-wrapper {
+  padding: 0 20px;
+  box-sizing: border-box;
   background-color: #808080;
   color: #FFFFFF; }
 
@@ -299,9 +305,6 @@ h2, h3 {
   align-items: center;
   flex-direction: column;
   justify-content: space-between; }
-  @media (min-width: 768px) {
-    .exchange-building__section {
-      flex-direction: row-reverse; } }
   @media (min-width: 992) {
     .exchange-building__section {
       align-items: flex-start; } }
@@ -330,6 +333,9 @@ h2, h3 {
 .reserve-warning {
   color: #E66E1C;
   padding-top: 15px; }
+
+.flex-end {
+  justify-content: flex-end; }
 
 /* Register */
 .app {

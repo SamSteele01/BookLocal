@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import HeadingDropDown from 'components/HeadingDropDown';
 import Problems from './Problems';
-import Solutions from './Solutions';
+// import Solutions from './Solutions';
 
 class Why extends Component {
 
@@ -15,7 +15,7 @@ class Why extends Component {
             the current hotel reservation model and propose solutions.
           </p>
           <Problems/>
-          <Solutions/>
+          {/* <Solutions/> */}
       {/* </div> */}
       </HeadingDropDown>
     );

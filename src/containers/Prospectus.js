@@ -15,12 +15,12 @@ class Prospectus extends Component {
   render() {
     return (
       <div className="prospectus">
-        <DownloadButton label="Get " buttonText="Download Whitepaper" href="https://github.com/BookLocal/prospectus/raw/master/BookLocal_prospectus.pdf" fileName="BookLocal-Prospectus" />
+        <DownloadButton label="Get more information " buttonText="Download Whitepaper" href="https://github.com/BookLocal/prospectus/raw/master/BookLocal_prospectus.pdf" fileName="BookLocal-Prospectus" />
         {/* <Hero image="hero-pattern"/> */}
         <What/>
         <Why/>
         <Who/>
-        <How/>
+        {/* <How/> */}
         <Traveler/>
         <Hotel/>
         {/*<Hero image="exchange-building"/>*/}     

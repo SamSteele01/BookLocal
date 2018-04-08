@@ -13,9 +13,9 @@
   flex-direction: column;
 }
 
-// .heading-drop-down-container {
-
-// }
+.heading-drop-down-container {
+  width: 100%;
+}
 
 .drop-down-contents {
   padding-bottom: 40px;
@@ -116,7 +116,8 @@
 }
 
 .traveler {
-  padding: 0 50px;
+  padding: 0 20px;
+  box-sizing: border-box;
   color: $logo-blue;
     // font-size: 25px;
   // h2 {
@@ -127,6 +128,8 @@
 }
 
 .hotel-wrapper {
+  padding: 0 20px;
+  box-sizing: border-box;
   background-color: #808080;
   color: $white;
   // h3 {
@@ -150,9 +153,9 @@
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-  @media (min-width: $tablet) {
-    flex-direction: row-reverse;
-  }
+  // @media (min-width: $tablet) {
+  //   flex-direction: row-reverse;
+  // }
   @media (min-width: $desk) {
     align-items: flex-start;
   }
