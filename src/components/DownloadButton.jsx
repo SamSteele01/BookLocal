@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const DownloadButton = ( props ) => {
   return (
-    <div className="label-style">{props.label} 
+    <div className="label-style flex-end">{props.label} 
       <a className="download-button" href={props.href} download={props.fileName}>{props.buttonText}</a>
     </div>
   )
