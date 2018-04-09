@@ -22,7 +22,7 @@ export default class Status extends Component {
 
   render() {
     return (
-        <div className="app">
+        <div className="home darken margin-at-bottom">
             <GetNextReservation web3={this.props.web3} RR={this.props.RR} tokenId={this.state.tokenId} returnComponentState={this.returnComponentState} checkInDate={this.props.checkInDate} checkOutDate={this.props.checkOutDate} />
             {this.state.tokenId &&
                 <div className="z-above-after">
