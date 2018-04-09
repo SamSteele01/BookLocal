@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import 'styles/App.css';
 import 'grommet/grommet.min.css'; //vanilla styles
-import Hero from 'components/Hero';
+// import Hero from 'components/Hero';
 import What from './what/What';
 import Why from './why/Why';
 import Who from './who/Who';
-import How from './how/How';
+// import How from './how/How';
 import Steps from './steps/Steps';
 import Traveler from "./Traveler";
 import Hotel from "./Hotel";
