@@ -9,9 +9,12 @@
   // background-attachment: fixed;
   // background-position: center;
   background-color: rgb(162, 162, 162);
-  min-height: calc(100vh - 150px);
+  min-height: calc(100vh - 131px);
+  @media (min-width: $mobile) {
+    min-height: calc(100vh - 149px);
+  }
   @media (min-width: $tablet) {
-    min-height: calc(100vh - 133px);
+    min-height: calc(100vh - 131px);
   }
   width: 100vw;
   >div:last-child {

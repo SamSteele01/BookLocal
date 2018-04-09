@@ -18,21 +18,31 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding: 0 40px;
+  box-sizing: border-box;
+  width: 100vw;
   overflow: hidden;
+  padding: 20px;
   z-index: 4;
   color: $font-gray;
   background-color: rgb(162, 162, 162);
-  min-height: calc(100vh - 150px);
-  @media (min-width: $tablet) {
-    min-height: calc(100vh - 133px);
+  // background-color: 
+  min-height: calc(100vh - 131px);
+  @media (min-width: $mobile) {
+    min-height: calc(100vh - 149px);
+    padding: 30px;
   }
-  width: 100vw;
+  @media (min-width: $tablet) {
+    min-height: calc(100vh - 131px);
+    padding: 40px;
+  }
   a {
       color: $logo-blue;
   }
   a:hover {
       color: $orange3;
+  }
+  h1 {
+    margin-bottom: 0;
   }
 }
 
