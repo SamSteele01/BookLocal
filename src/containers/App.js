@@ -10,7 +10,7 @@ import Access from 'components/Access';
 import Settle from 'components/Settle';
 import Status from 'containers/Status'
 import Contact from 'components/Contact'
-import Prospectus from 'containers/Prospectus';
+import About from 'components/About';
 import getWeb3 from 'utils/getWeb3';
 // import Web3 from 'web3';  // from node module
 
@@ -90,7 +90,7 @@ class App extends Component {
             <Route path="/checkIn" render={(props)=>(<Access web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId} />)} />
             <Route path="/checkOut" render={(props)=>(<Settle web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId} />)} />
             <Route path="/status" render={(props)=>(<Status web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId} returnComponentState={this.returnComponentState} checkInDate={this.state.checkInDate} checkOutDate={this.state.checkOutDate} />)} />
-            <Route path="/about" component={Prospectus} />
+            <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route exact path="/" component={RegisterMessage} />
           </div>
