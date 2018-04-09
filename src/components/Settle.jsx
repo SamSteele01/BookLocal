@@ -41,7 +41,7 @@ class Settle extends Component{
 
   render(){
     return(
-      <div className="home">
+      <div className="home darken">
         <div className="settle">
           <fieldset>
             <h1>Check Out</h1>

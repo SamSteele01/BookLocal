@@ -82,8 +82,8 @@ class Reserve extends Component{
 
   render(){
     return(
-      <div className="home">
-        <div className="reserve">
+      <div className="home darken">
+        <div className="reserve ">
           { this.state.response ?
             <div className="label-style">
               <h1>Room Reserved!</h1>

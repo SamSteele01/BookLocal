@@ -40,7 +40,7 @@ class Access extends Component{
 
   render(){
     return(
-      <div className="home">
+      <div className="home darken">
         <div className="access">
           <fieldset >
             <h1>Check In</h1>
