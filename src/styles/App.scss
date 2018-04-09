@@ -120,21 +120,22 @@ pre {
 .home {
   background-image: url('../images/exchange-building-SU.jpg');
   background-position: top;
-  height: calc(100vh - 149px);
-  width: 100vw;
+  background-attachment: fixed;
   background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
+  // position: relative;
+  width: 100vw;
+  min-height: calc(100vh - 149px);
   @media (min-width: $tablet) {
-    height: calc(100vh - 133px);
+    min-height: calc(100vh - 133px);
   }
 }
 
 .darken:after {
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 0;
   bottom: 0;
@@ -143,6 +144,10 @@ pre {
   z-index: 2;
   background: rgba(0,0,0,.5);
   content: "";
+}
+
+.margin-at-bottom>div:last-child {
+  margin-bottom: 40px;
 }
 
 .register-message {
@@ -182,9 +187,13 @@ pre {
 }
 
 .margin {
-  position: absolute;
+  // position: absolute;
   margin: 40px;
   width: 90%;
+  height: calc(100vh - 229px);
+  @media (min-width: $tablet) {
+    height: calc(100vh - 213px);
+  }
 }
 
   /* Eth-Memphis */

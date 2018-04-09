@@ -2,14 +2,13 @@
 .app {
   display: flex;
   flex-direction: column;
-  // flex-wrap: wrap;
   justify-content: start;
   align-items: center;
-  background-image: url("../images/exchange-building-SU.jpg");
-  // background-position: cover;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
+  // background-image: url("../images/exchange-building-SU.jpg");
+  // background-size: cover;
+  // background-attachment: fixed;
+  // background-position: center;
+  background-color: lightgray;
   min-height: calc(100vh - 150px);
   @media (min-width: $tablet) {
     min-height: calc(100vh - 133px);

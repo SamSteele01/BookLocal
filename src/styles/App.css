@@ -343,10 +343,7 @@ h2, h3 {
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  background-image: url("../images/exchange-building-SU.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
+  background-color: lightgray;
   min-height: calc(100vh - 150px);
   width: 100vw; }
   @media (min-width: 768px) {
@@ -584,20 +581,20 @@ pre {
 .home {
   background-image: url("../images/exchange-building-SU.jpg");
   background-position: top;
-  height: calc(100vh - 149px);
-  width: 100vw;
+  background-attachment: fixed;
   background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative; }
+  width: 100vw;
+  min-height: calc(100vh - 149px); }
   @media (min-width: 768px) {
     .home {
-      height: calc(100vh - 133px); } }
+      min-height: calc(100vh - 133px); } }
 
 .darken:after {
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 0;
   bottom: 0;
@@ -606,6 +603,9 @@ pre {
   z-index: 2;
   background: rgba(0, 0, 0, 0.5);
   content: ""; }
+
+.margin-at-bottom > div:last-child {
+  margin-bottom: 40px; }
 
 .register-message {
   display: flex;
@@ -640,9 +640,12 @@ pre {
   background: rgba(0, 0, 0, 0.6); }
 
 .margin {
-  position: absolute;
   margin: 40px;
-  width: 90%; }
+  width: 90%;
+  height: calc(100vh - 229px); }
+  @media (min-width: 768px) {
+    .margin {
+      height: calc(100vh - 213px); } }
 
 /* Eth-Memphis */
 .grommetux-box--pad-large {
