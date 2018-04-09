@@ -15,14 +15,18 @@
   width: 100vw;
   z-index: 5;
   box-sizing: border-box;
+  
 }
 
 .header-spacer {
   z-index: 1;
   position: relative;
-  height: 102px;
+  height: 86px;
+  @media (min-width: $mobile) {
+    height: 102px;
+  }
   @media (min-width: $tablet) {
-      height: 86px;
+    height: 86px;
   }
 }
 
@@ -30,6 +34,10 @@
   width: 180px;
   height: auto;
   padding: 7px 5px 0px 5px;
+}
+
+.margin-left {
+  margin-left: 50px;
 }
 
 .pure-menu-heading {
@@ -46,25 +54,67 @@
   
 nav {
   display: flex!important;
+  flex-direction: row;
+  justify-content: space-between;
   position: fixed;
   z-index: 3;
   box-sizing: border-box;
   width: 100vw;
+  overflow: visible;
   background-color: white;
-  justify-content: space-between;
-  flex-direction: row;
   border-bottom: solid 1px $gray;
+  height: 86px;
+  @media (min-width: $mobile) {
+    height: 102px;
+  }
+  @media (min-width: $tablet) {
+    height: 86px;
+  }
 }
 
 .nav-items {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  @media (min-width: $mobile) {
+    justify-content: center;
+    align-items: center;
+  }
   @media (min-width: $tablet) {
     flex-direction: row;
   }
 }
+
+.nav-menu-button {
+  height: 32px;
+  width: 32px;
+  margin: 10px;
+  color: $font-gray;
+
+}
+
+.nav-drop-down {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-end;
+  z-index: 6;
+  // margin: 5px;
+  // padding: 5px;
+  background-color: white;
+  border-bottom: solid 1px $gray;
+  border-left: solid 1px $gray;
+  width: 130px;
+  right: 0;
+}
+
+// .drop-down-links {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: start;
+//   align-items: flex-start;
+// }
 
 .link-active {
   font-weight: 700;
