@@ -203,6 +203,26 @@ h2, h3 {
   display: flex;
   flex-direction: column; }
 
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 40px;
+  overflow: hidden;
+  z-index: 4;
+  color: #464749;
+  background-color: #a2a2a2;
+  min-height: calc(100vh - 150px);
+  width: 100vw; }
+  @media (min-width: 768px) {
+    .about {
+      min-height: calc(100vh - 133px); } }
+  .about a {
+    color: #1b75bb; }
+  .about a:hover {
+    color: #E66E1C; }
+
 .heading-drop-down-container {
   width: 100%; }
 
@@ -337,13 +357,19 @@ h2, h3 {
 .flex-end {
   justify-content: flex-end; }
 
+.space-around {
+  justify-content: space-around; }
+
+.bg-white {
+  background-color: white; }
+
 /* Register */
 .app {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
-  background-color: lightgray;
+  background-color: #a2a2a2;
   min-height: calc(100vh - 150px);
   width: 100vw; }
   @media (min-width: 768px) {
@@ -351,17 +377,6 @@ h2, h3 {
       min-height: calc(100vh - 133px); } }
   .app > div:last-child {
     margin-bottom: 40px; }
-
-.app:after {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  display: block;
-  z-index: 2;
-  background: rgba(0, 0, 0, 0.5);
-  content: ""; }
 
 .get-reservations, .get-room-info, .get-token, .check-available {
   margin-top: 40px; }
@@ -389,6 +404,7 @@ h2, h3 {
     margin-bottom: 0;
     max-width: 100vw; }
     .reserve fieldset h1, .get-token fieldset h1, .get-reservations fieldset h1, .settle fieldset h1, .check-available fieldset h1, .get-room-info fieldset h1, .access fieldset h1 {
+      margin-top: 0;
       font-size: 35px;
       color: #474747; }
       @media (min-width: 768px) {
@@ -627,6 +643,8 @@ pre {
     .register-message {
       font-size: 36px;
       padding: 20px 40px; } }
+  .register-message h2, .register-message h4 {
+    margin: 0; }
 
 .dark-glass {
   box-sizing: border-box;
