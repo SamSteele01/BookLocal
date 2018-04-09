@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import GetNextReservation from 'components/GetNextReservation';
 import GetRoomInfo from 'components/GetRoomInfo';
 import GetReservations from 'components/GetReservations';
-import CheckAvailable from 'components/CheckAvailable';
+// import CheckAvailable from 'components/CheckAvailable';
 
 export default class Status extends Component {
     constructor(props) {
@@ -28,7 +28,7 @@ export default class Status extends Component {
                 <div className="z-above-after">
                     <GetRoomInfo web3={this.props.web3} RR={this.props.RR} tokenId={this.props.tokenId}/>
                     <GetReservations web3={this.props.web3} RR={this.props.RR} tokenId={this.props.tokenId} checkInDate={this.props.checkInDate} checkOutDate={this.props.checkOutDate} />
-                    <CheckAvailable web3={this.props.web3} RR={this.props.RR} tokenId={this.props.tokenId} />
+                    {/* <CheckAvailable web3={this.props.web3} RR={this.props.RR} tokenId={this.props.tokenId} /> */}
                 </div>
             }
         </div>
