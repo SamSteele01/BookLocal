@@ -1,17 +1,12 @@
 {
-  "main.css": "static/css/main.27d656e5.css",
-  "main.css.map": "static/css/main.27d656e5.css.map",
-  "main.js": "static/js/main.66f14246.js",
-  "main.js.map": "static/js/main.66f14246.js.map",
-  "static/media/bed.jpg": "static/media/bed.5403ccdc.jpg",
+  "main.css": "static/css/main.6bf393d1.css",
+  "main.css.map": "static/css/main.6bf393d1.css.map",
+  "main.js": "static/js/main.6bd6eccd.js",
+  "main.js.map": "static/js/main.6bd6eccd.js.map",
+  "static/media/AaronAnderson.jpg": "static/media/AaronAnderson.0f2bafb3.jpg",
+  "static/media/SamSteele.jpg": "static/media/SamSteele.ab78cf52.jpg",
+  "static/media/SardorU.jpg": "static/media/SardorU.f1fb7038.jpg",
+  "static/media/StevenLee.jpg": "static/media/StevenLee.374fdc73.jpg",
   "static/media/bluepattern.jpg": "static/media/bluepattern.a4d84c73.jpg",
-  "static/media/couch.jpg": "static/media/couch.32f6d968.jpg",
-  "static/media/ethMemphis.jpg": "static/media/ethMemphis.4631402d.jpg",
-  "static/media/exchange-building-SU.jpg": "static/media/exchange-building-SU.47bd3f7f.jpg",
-  "static/media/expanded-ecosystem.png": "static/media/expanded-ecosystem.6af7855b.png",
-  "static/media/hotel-current-ecosystem.png": "static/media/hotel-current-ecosystem.fb4ddb84.png",
-  "static/media/hotel.jpg": "static/media/hotel.35f2330c.jpg",
-  "static/media/plasma-chain.png": "static/media/plasma-chain.48f39465.png",
-  "static/media/travelers.jpg": "static/media/travelers.e4fefe26.jpg",
-  "static/media/wallet.jpg": "static/media/wallet.e3154ecd.jpg"
+  "static/media/exchange-building-SU.jpg": "static/media/exchange-building-SU.47bd3f7f.jpg"
 }
