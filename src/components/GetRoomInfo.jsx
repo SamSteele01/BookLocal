@@ -86,7 +86,7 @@ class GetRoomInfo extends Component{
             <input id="owner" type="text" className="input-style" value={this.state.owner} readOnly/>
           
           </div>
-          <div className="label-style">Renter:
+          <div className="label-style">Current Renter:
             <input id="renter" type="text" className="input-style" value={this.state.renter} readOnly/>
           
           </div>

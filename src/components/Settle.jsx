@@ -44,7 +44,7 @@ class Settle extends Component{
       <div className="home">
         <div className="settle">
           <fieldset>
-            <h1>Settle</h1>
+            <h1>Check Out</h1>
               <div className="label-style">Token Id:
                 <input id="tokenId" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.tokenId} />
               </div>
