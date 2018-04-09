@@ -13,6 +13,29 @@
   flex-direction: column;
 }
 
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 40px;
+  overflow: hidden;
+  z-index: 4;
+  color: $font-gray;
+  background-color: rgb(162, 162, 162);
+  min-height: calc(100vh - 150px);
+  @media (min-width: $tablet) {
+    min-height: calc(100vh - 133px);
+  }
+  width: 100vw;
+  a {
+      color: $logo-blue;
+  }
+  a:hover {
+      color: $orange3;
+  }
+}
+
 .heading-drop-down-container {
   width: 100%;
 }
