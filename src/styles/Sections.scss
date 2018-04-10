@@ -24,7 +24,7 @@
   padding: 20px;
   z-index: 4;
   color: $font-gray;
-  background-color: rgb(162, 162, 162);
+  background-color: $parchment;
   // background-color: 
   min-height: calc(100vh - 131px);
   @media (min-width: $mobile) {
