@@ -9,8 +9,8 @@ const RegisterMessage = () => (
                 {/* Register for a free stay at the Exchange Building during ETHMemphis this May. <br/>Sponsored by BookLocal. */}
                 Welcome to BookLocal. 
             </h2>
-            <h4>If you've received an email about a free stay at EthMemphis, click <Link to="/register">here</Link>.</h4>
-            <h4> To learn more about us, click <Link to="/about">here</Link>.</h4>
+            <p>If you've received an email about a free stay at EthMemphis, click <Link to="/register">here</Link>.</p>
+            <p> To learn more about us, click <Link to="/about">here</Link>.</p>
         </div>
     </div>
 
