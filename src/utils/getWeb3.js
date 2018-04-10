@@ -29,7 +29,7 @@ let getWeb3 = new Promise(function(resolve, reject) {
       console.log('No web3 instance injected.');
       // resolve(results)
       error = {
-        error: "You must have a Metamask or mist installed and aimed at the Rinkeby test network."
+        error: "You must have a MetaMask or Mist installed and aimed at the Rinkeby test network."
       }
       reject(error)
     }
