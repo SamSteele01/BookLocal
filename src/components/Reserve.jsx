@@ -83,19 +83,24 @@ class Reserve extends Component{
   render(){
     return(
       <div className="home darken">
-        <div className="reserve ">
+        <div className="reserve">
           { this.state.response ?
-            <div className="label-style">
-              <h1>Room Reserved!</h1>
-              <p>Thank you for booking your room with BookLocal! We can't wait to meet you at EthMemphis.</p>
-              <div>The address that you used to book is: {this.state.account}</div>
-              <div className="reserve-warning">See the transaction on <a href={`https://rinkeby.etherscan.io/tx/${this.state.response}`} target="_blank" rel="noopener noreferrer">Etherscan.io.</a></div>
+            <div >
+              <fieldset>
+                <h1>Room Reserved!</h1>
+                <p>Thank you for booking your room with BookLocal! We can't wait to meet you at EthMemphis.</p>
+                <div>The address that you used to book is: {this.state.account}</div>
+                <div className="reserve-warning">See the transaction on <a href={`https://rinkeby.etherscan.io/tx/${this.state.response}`} target="_blank" rel="noopener noreferrer">Etherscan.io.</a></div>
+              </fieldset>
             </div>
             :
             <fieldset>
               <h1>Reserve Your Room</h1>
               {this.props.web3error && 
-                <div className="reserve-warning">{this.props.web3error}</div>
+                <div className="reserve-warning">{this.props.web3error} To download MetaMask click <a href='https://metamask.io'>here</a>.</div>
+              }
+              {this.props.netIdError &&
+                <div className="reserve-warning">{this.props.netIdError}</div>
               }
               <div className="label-style"> Hotel:
                 <input id="Hotel" type="text" className="input-style" onChange={this.handleTextChange} value="The Exchange Building" readOnly />
