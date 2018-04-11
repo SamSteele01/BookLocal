@@ -21,12 +21,12 @@
 .header-spacer {
   z-index: 1;
   position: relative;
-  height: 86px;
+  height: 84px;
   @media (min-width: $mobile) {
-    height: 102px;
+    height: 100px;
   }
   @media (min-width: $tablet) {
-    height: 86px;
+    height: 84px;
   }
 }
 
@@ -37,7 +37,10 @@
 }
 
 .margin-left {
-  margin-left: 50px;
+  // @media (min-width: 375px) {
+  //   margin-left: 50px;
+  // }
+  margin: 0 calc((100vw - 322px)/2);
 }
 
 .pure-menu-heading {

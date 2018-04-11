@@ -77,13 +77,13 @@ h2, h3 {
 .header-spacer {
   z-index: 1;
   position: relative;
-  height: 86px; }
+  height: 84px; }
   @media (min-width: 425px) {
     .header-spacer {
-      height: 102px; } }
+      height: 100px; } }
   @media (min-width: 768px) {
     .header-spacer {
-      height: 86px; } }
+      height: 84px; } }
 
 .Logo img {
   width: 180px;
@@ -91,7 +91,7 @@ h2, h3 {
   padding: 7px 5px 0px 5px; }
 
 .margin-left {
-  margin-left: 50px; }
+  margin: 0 calc((100vw - 322px)/2); }
 
 .pure-menu-heading {
   text-decoration: none;
