@@ -77,10 +77,10 @@ h2, h3 {
 .header-spacer {
   z-index: 1;
   position: relative;
-  height: 84px; }
+  height: 85px; }
   @media (min-width: 425px) {
     .header-spacer {
-      height: 100px; } }
+      height: 101px; } }
   @media (min-width: 768px) {
     .header-spacer {
       height: 84px; } }
