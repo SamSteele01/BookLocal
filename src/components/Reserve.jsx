@@ -66,8 +66,8 @@ class Reserve extends Component{
         if(err){console.log('availability: "false" '+err);
           this.setState({availability: `Oops! Something went wrong ${err}`})}
         if(!err){
-          console.log('availability: "true"');
-          console.log(res);
+          // console.log('availability: "true"');
+          // console.log(res);
           this.setState({
             response: res, // switch to response page
             account: web3.eth.accounts[0]})
@@ -94,14 +94,14 @@ class Reserve extends Component{
   }
 
   transaction = (txn) => {
-    let blockNum = null
+    // let blockNum = null
     this.props.web3.eth.getTransaction(txn, (error, result) => {
       if(!error) {
         // console.log(JSON.stringify(result));
-        console.log('result: ', result);
-        blockNum = result.blockNumber // null until mined
+        // console.log('result: ', result);
+        // blockNum = result.blockNumber // null until mined
         this.setState({blockNum: result.blockNumber})
-        console.log('blockNum: ', blockNum);
+        // console.log('blockNum: ', blockNum);
       }else{
         console.error(error);
         console.log(result);
@@ -111,13 +111,13 @@ class Reserve extends Component{
   }
 
   getTxnReceipt = (txn) => {
-    let status = null
+    // let status = null
     this.props.web3.eth.getTransactionReceipt(txn, (error, result) => {
       if(!error) {
         // console.log(JSON.stringify(result));
-        console.log('result: ', result);
-        status = result.status // '0x0' = fail '0x1' = success
-        console.log('status: ', status);
+        // console.log('result: ', result);
+        // status = result.status // '0x0' = fail '0x1' = success
+        // console.log('status: ', status);
         this.setState({status: status})
       }else{
         console.error(error);
