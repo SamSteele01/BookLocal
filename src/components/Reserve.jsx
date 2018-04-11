@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import moment from 'moment';
+import moment from 'moment/moment';
 import DatePicker from 'react-datepicker';
+import { PulseLoader } from 'react-spinners';
 import 'react-datepicker/dist/react-datepicker.css';
 
 let reserve;
@@ -14,7 +15,10 @@ class Reserve extends Component{
       tokenId : null,
       account: null,
       availability: '',
-      response: null
+      displayResponse: false,
+      blockNum: null,
+      response: null,
+      status: null
     }
 
     this.handleSubmit=this.handleSubmit.bind(this);
@@ -47,37 +51,79 @@ class Reserve extends Component{
   handleSubmit = (event) => {
     event.preventDefault();
     let web3 = this.props.web3;
-    console.log(this.dateConverter(this.state.start));
-    console.log(this.dateConverter(this.state.stop));
-    console.log("Reserve fired!");
-    console.log("("+
-    web3.toBigNumber(this.dateConverter(this.state.start))+","+
-    web3.toBigNumber(this.dateConverter(this.state.stop))+","+
-    "{from: "+web3.eth.accounts[0]+", gas: 3000000})");
+    // console.log(this.dateConverter(this.state.start));
+    // console.log(this.dateConverter(this.state.stop));
+    // console.log("Reserve fired!");
+    // console.log("("+
+    // web3.toBigNumber(this.dateConverter(this.state.start))+","+
+    // web3.toBigNumber(this.dateConverter(this.state.stop))+","+
+    // "{from: "+web3.eth.accounts[0]+", gas: 3000000})");
     reserve = this.props.RR.reserve(
       this.dateConverter(this.state.start),
       this.dateConverter(this.state.stop),
       {from: web3.eth.accounts[0], gas: 3000000},
       (err,res) => {
-        if(err){
-          console.log(
-            'availability: "false" '+err
-          );
+        if(err){console.log('availability: "false" '+err);
+          this.setState({availability: `Oops! Something went wrong ${err}`})}
+        if(!err){
+          console.log('availability: "true"');
+          console.log(res);
           this.setState({
-            availability: `Oops! Something went wrong ${err}`
-          })
+            response: res, // switch to response page
+            account: web3.eth.accounts[0]})
+          // console.log(this.transaction(res)) // undefined
+          this.setTxnListener(res)
         }
-        console.log(
-          'availability: "true"'
-        );
-        console.log(res);
-        this.setState({
-          response: res, //txn
-          account: web3.eth.accounts[0]
-        });
       }
     );
     console.log(reserve);
+  }
+
+  setTxnListener = (txn) => {
+    // this.setState({response: null})
+    // let getTxn
+    let listener = setInterval( () => {
+      this.transaction(txn)
+      // console.log('getTxn: ', getTxn);
+      if (this.state.blockNum !== null) {
+        // this.setState({response: getTxn})
+        this.getTxnReceipt(txn)
+        clearInterval(listener)
+      }
+    }, 2000)
+  }
+
+  transaction = (txn) => {
+    let blockNum = null
+    this.props.web3.eth.getTransaction(txn, (error, result) => {
+      if(!error) {
+        // console.log(JSON.stringify(result));
+        console.log('result: ', result);
+        blockNum = result.blockNumber // null until mined
+        this.setState({blockNum: result.blockNumber})
+        console.log('blockNum: ', blockNum);
+      }else{
+        console.error(error);
+        console.log(result);
+      }
+    })
+    // return (blockNum) // doesn't work
+  }
+
+  getTxnReceipt = (txn) => {
+    let status = null
+    this.props.web3.eth.getTransactionReceipt(txn, (error, result) => {
+      if(!error) {
+        // console.log(JSON.stringify(result));
+        console.log('result: ', result);
+        status = result.status // '0x0' = fail '0x1' = success
+        console.log('status: ', status);
+        this.setState({status: status})
+      }else{
+        console.error(error);
+        console.log(result);
+      }
+    })
   }
 
   render(){
@@ -87,9 +133,24 @@ class Reserve extends Component{
           { this.state.response ?
             <div >
               <fieldset>
-                <h1>Room Reserved!</h1>
-                <p>Thank you for booking your room with BookLocal! We can't wait to meet you at EthMemphis.</p>
-                <div>The address that you used to book is: {this.state.account}</div>
+                { (this.state.blockNum && this.state.status!==null) ? 
+                  <div>
+                    {this.state.status==="0x1" ?
+                      <div>
+                        <h1>Room Reserved!</h1>
+                        <div>Thank you for booking your room with BookLocal! We can't wait to meet you at EthMemphis.</div> 
+                      </div> :
+                      <div className="reserve-warning">There was a problem and the reservation failed. You should contact ____</div>
+                    }
+                  </div> :
+                  // spinner
+                <div>
+                  <PulseLoader color='#E66E1C' loading={true} />
+                  <div>Please wait while the transaction gets mined. This could take a minute or two.</div>
+                </div>
+                }
+                
+                <p>The address that you used to book is: {this.state.account}</p>
                 <div className="reserve-warning">See the transaction on <a href={`https://rinkeby.etherscan.io/tx/${this.state.response}`} target="_blank" rel="noopener noreferrer">Etherscan.io.</a></div>
               </fieldset>
             </div>
