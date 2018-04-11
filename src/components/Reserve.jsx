@@ -118,7 +118,7 @@ class Reserve extends Component{
         // console.log('result: ', result);
         // status = result.status // '0x0' = fail '0x1' = success
         // console.log('status: ', status);
-        this.setState({status: status})
+        this.setState({status: result.status})
       }else{
         console.error(error);
         console.log(result);
