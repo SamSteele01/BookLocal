@@ -2,7 +2,7 @@ pragma solidity ^0.4.17;
 
 contract PermissionedAccess {
     // Basic permission functionality.
-    // Doesn't do anything with pauses but probably should to handle bugs
+    // Doesn't do anything with pauses but will later to handle bugs
 
     // initalize address types
     address public ceo;
@@ -86,7 +86,7 @@ contract PermissionedAccess {
     }
 
     function getCLevel() external view returns (
-        
+
         address _ceo,
         address _cfo,
         address _coo)

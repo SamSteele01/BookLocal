@@ -6,6 +6,16 @@
 
 .reserve-warning {
   color: $orange3;
-  padding-top: 15px;
+  padding-bottom: 15px;
 }
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.flex-column {
+  flex-direction: column;
+  justify-content: center;
+}
+
 // For misc spacing, etc. add helpers here 
