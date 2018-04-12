@@ -57,6 +57,7 @@ class GetNextReservation extends Component{
               <div className="label-style">Token Id: 
                 <input id="tokenId" type="text" className="input-style" value={this.state.tokenId} readOnly/>
               </div> 
+              <div>Make sure to remember your token.</div>
               <div className="label-style">Check In Date:
                 <input id="checkInDate" type="text" className="input-style" value={this.state.checkInDate} readOnly/>
               </div>
