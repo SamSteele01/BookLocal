@@ -1,28 +1,35 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import moment from 'moment';
 
-let getNextReservation;
 
 class GetNextReservation extends Component{
   constructor(props){
     super(props)
     this.state = {
-      tokenId : null,
-      start: null,
-      stop: null
+      tokenId : props.tokenId ? props.tokenId : null,
+      checkInDate: props.checkInDate ? props.checkInDate : "",
+      checkOutDate: props.checkOutDate ? props.checkOutDate : ""
     }
     this.handleSubmit=this.handleSubmit.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState){
-    if(prevState.tokenId!==this.state.tokenId){
-        this.props.returnTokenId(this.state.tokenId);
-        console.log('returnTokenId fired!');
+    if(prevState!==this.state){
+        this.props.returnComponentState(this.state);
+        console.log('returnComponentState fired!');
     }
+  }
+
+  convertFromUnixTime = (time) => {
+    console.log('time: ', time);
+    return moment.unix(time*86400+43200).format("MM/DD/YYYY")
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Access fired!");
+    console.log("getNextReservation fired!");
+    let getNextReservation;
     getNextReservation = this.props.RR.getNextReservation(this.props.web3.eth.accounts[0],
       (err,res) => {
         if(err){
@@ -31,51 +38,44 @@ class GetNextReservation extends Component{
           );
         }
         this.setState({
-          tokenId: res[0].c
+          tokenId: res[0].c[0],
+          checkInDate: this.convertFromUnixTime(res[1].c[0]),
+          checkOutDate: this.convertFromUnixTime(res[2].c[0])
         });
+        console.log('res: ', res);
       }
     );
   }
 
   render(){
-    const labelStyle={
-      backgroundColor: "white",
-      padding: "10px 0px",
-      display: "flex",
-      alignItems: "center",
-      color: "#777",
-      textTransform:"uppercase"
-    }
-    // const inputStyle={
-    //   height: "35px",
-    //   flexGrow: "1",
-    //   marginLeft: "10px",
-    //   paddingLeft: "10px",
-    //   border: "1px solid #ccc",
-    //   fontSize: "15px",
-    // }
-    const inputButtonStyle={
-      marginTop: '25px',
-      fontWeight: "900",
-      backgroundColor: "rgb(27, 117, 187)",
-      padding: '5px 15px',
-      color: "white",
-      textTransform: "uppercase"
-    }
     return(
       <div className="get-token">
         <fieldset >
           <h1>Get Token</h1>
           {this.state.tokenId ?
-            <div style={labelStyle}>Token Id: 
-              {this.state.tokenId}
-            </div> :
-            <input id="search" type="submit" value="Get Token" style={inputButtonStyle} onClick={this.handleSubmit} />
+            <div>
+              <div className="label-style">Token Id: 
+                <input id="tokenId" type="text" className="input-style" value={this.state.tokenId} readOnly/>
+              </div> 
+              <div className="label-style">Check In Date:
+                <input id="checkInDate" type="text" className="input-style" value={this.state.checkInDate} readOnly/>
+              </div>
+              <div className="label-style">Check Out Date:
+                <input id="checkOutDate" type="text" className="input-style" value={this.state.checkOutDate} readOnly/>
+              </div>
+            </div>
+            :
+            <input id="search" type="submit" value="Get Token" className="input-button-style" onClick={this.handleSubmit} />
           }
         </fieldset>
       </div>
     )
   }
+}
+GetNextReservation.propTypes = {
+  web3: PropTypes.object,
+  RR: PropTypes.object,
+  returnComponentState: PropTypes.func
 }
 
 export default GetNextReservation

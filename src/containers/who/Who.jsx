@@ -1,30 +1,23 @@
 import React, { Component } from 'react';
-import Section from 'grommet/components/Section';
+// import Section from 'grommet/components/Section';
+import HeadingDropDown from 'components/HeadingDropDown';
 import Heading from 'grommet/components/Heading';
-import CustomList from '../CustomList';
-import CustomListItem from '../CustomListItem';
-import ecosystem from '../../images/hotel-current-ecosystem.png';
-import ecosystem2 from '../../images/booklocal-ecosystem.png';
-import colors from '../../styles/colors';
+import CustomList from 'components/CustomList';
+import CustomListItem from 'components/CustomListItem';
+import ecosystem from 'images/hotel-current-ecosystem.png';
+import ecosystem2 from 'images/booklocal-ecosystem.png';
+import colors from 'const/colors';
 
 class Who extends Component {
 
   render() {
     return (
-      <div className="who section--wrapper">
-        <Section
-          pad='none'
-          align='stretch'
-          alignContent='center'
-          // appCentered='true'
-        >
-
+      <HeadingDropDown className="who" headingName="Who">
           {/* 3 */}
           <div className='heading'>Who</div>
           <p className='paragraph'>
             The current ecosystem has too many players trying to earn a share of the final room price. Figure 1 shows the network of relationships, each of which is explained below.
           </p>
-
           {/* 3.1 */}
           <CustomList title="Ecosystem">
             <p className='paragraph'>
@@ -32,7 +25,6 @@ class Who extends Component {
               can book a room. The red arrows indicate the most used reservation path.
             </p>
           </CustomList>
-
           <div className='image-container'>
               <img
                   src={ecosystem}
@@ -41,7 +33,6 @@ class Who extends Component {
               />
               <span>Figure 1: Current Ecosystem</span>
           </div>
-
           {/* 3.2 */}
           <Heading align='center'
  	 	 	 	 	 	 margin='medium'
@@ -52,9 +43,8 @@ class Who extends Component {
             We describe the main players in the ecosystem by including a brief history and
             discussing the value they add and cost they subtract from the industry.
           </p>
-
           {/* 3.2.1 */}
-          <Heading
+          {/* <Heading
             align='center'
             margin='medium'
             tag='h4'>
@@ -65,8 +55,8 @@ class Who extends Component {
             in order to facilitate trip planning. While the internet has left brick and mortar
             travel agencies largely obsolete, they do still exist and are often helpful in
             booking group trips.
-          </p>
-          <CustomList>
+          </p> */}
+          {/* <CustomList>
             <CustomListItem
               //height="auto"
               // animation="slide-left"
@@ -96,16 +86,15 @@ class Who extends Component {
               receive the best available deal for their preferences.
               </div>
             </CustomListItem>
-          </CustomList>
-
+          </CustomList> */}
           {/* 3.2.2 */}
-          <Heading
+          {/* <Heading
             align='center'
             margin='medium'
             tag='h4'>
             Global Distribution System (GDS)
-          </Heading>
-          <p className='paragraph'>
+          </Heading> */}
+          {/* <p className='paragraph'>
             Global distribution systems originally began in the airline industry (eAAsy
             Sabre) to provide a central platform for airlines and travel agents to aggregate
             flight data. By 1991, the Hotel Reservation Network (now Hotels.com)
@@ -114,8 +103,8 @@ class Who extends Component {
             outdated and seeking ways to reinvent themselves since online travel agents are
             now able to bypass their networks and work directly with the service providers
             (i.e hotels, airlines, and rental car companies).
-          </p>
-          <CustomList >
+          </p> */}
+          {/* <CustomList >
             <CustomListItem
               //height="auto"
               // animation="slide-left"
@@ -146,8 +135,7 @@ class Who extends Component {
               travel agents rather than communicating directly with the travelers.
               </div>
             </CustomListItem>
-          </CustomList>
-
+          </CustomList> */}
           {/* 3.2.3 */}
           <Heading
             align='center'
@@ -202,13 +190,12 @@ class Who extends Component {
               </div>
             </CustomListItem>
           </CustomList>
-
           {/* 3.2.4 */}
             <Heading
               align='center'
               margin='medium'
               tag='h4'>
-              Global Distribution System (GDS)
+              Channel Manager
             </Heading>
             <p className='paragraph'>
               Channel management software allows the hotel to automatically update their
@@ -220,7 +207,7 @@ class Who extends Component {
               allowed online travel agencies to bypass the global distribution system’s
               information network and take hold of the market.
             </p>
-          <CustomList title="Channel Manager">
+          <CustomList >
             <CustomListItem
               //height="auto"
               // animation="slide-left"
@@ -249,7 +236,6 @@ class Who extends Component {
               </div>
             </CustomListItem>
           </CustomList>
-
           {/* 3.2.5 */}
           <Heading
             align='center'
@@ -293,9 +279,8 @@ class Who extends Component {
               </div>
             </CustomListItem>
           </CustomList>
-
           {/* 3.3 */}
-          <Heading
+          {/* <Heading
             align='center'
             margin='medium'
             tag='h4'>
@@ -307,7 +292,6 @@ class Who extends Component {
             the traveler, much of the current ecosystem can be bypassed. As such, figure 2
             represents our vision after full implementation.
           </p>
-
           <div className='image-container'>
               <img
                   src={ecosystem2}
@@ -316,14 +300,12 @@ class Who extends Component {
               />
               <span>Figure 2: BookLocal Ecosystem</span>
           </div>
-
             <p className='paragraph'>
               Note that BookLocal seeks to be fully compatible with current online travel
               agencies in order to provide seamless integration for early-adopting hotels and
               late-adopting travelers.
-            </p>
-        </Section>
-      </div>
+            </p> */}
+      </HeadingDropDown>
     );
   }
 

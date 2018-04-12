@@ -40,40 +40,18 @@ class Settle extends Component{
   }
 
   render(){
-    const labelStyle={
-      backgroundColor: "white",
-      padding: "10px 0px",
-      display: "flex",
-      alignItems: "center",
-      color: "#777",
-      textTransform:"uppercase"
-    }
-    const inputStyle={
-      height: "35px",
-      flexGrow: "1",
-      marginLeft: "10px",
-      paddingLeft: "10px",
-      border: "1px solid #ccc",
-      fontSize: "15px",
-    }
-    const inputButtonStyle={
-      marginTop: '25px',
-      fontWeight: "900",
-      backgroundColor: "rgb(27, 117, 187)",
-      padding: '5px 15px',
-      color: "white",
-      textTransform: "uppercase"
-    }
     return(
-      <div className="settle">
-        <fieldset>
-          <h1>Settle</h1>
-            <div style={labelStyle}>Token Id:
-              <input id="tokenId" type="text" style={inputStyle} onChange={this.handleTextChange} value={this.state.tokenId} />
-            </div>
-            <input id="submit" type="submit" value="Check Out" style={inputButtonStyle} onClick={this.handleSubmit} />
-            {this.state.settle}
-        </fieldset>
+      <div className="home darken">
+        <div className="settle">
+          <fieldset>
+            <h1>Check Out</h1>
+              <div className="label-style">Token Id:
+                <input id="tokenId" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.tokenId} />
+              </div>
+              <input id="submit" type="submit" value="Check Out" className="input-button-style" onClick={this.handleSubmit} />
+              {this.state.settle}
+          </fieldset>
+        </div>
       </div>
     )
   }
