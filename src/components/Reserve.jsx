@@ -140,7 +140,7 @@ class Reserve extends Component{
                         <h1>Room Reserved!</h1>
                         <div>Thank you for booking your room with BookLocal! We can't wait to meet you at EthMemphis.</div> 
                       </div> :
-                      <div className="reserve-warning">There was a problem and the reservation failed. You should contact ____</div>
+                      <div className="reserve-warning">There was a problem and the reservation failed. Please contact Steve Lee: steven@booklocal.in</div>
                     }
                   </div> :
                   // spinner
