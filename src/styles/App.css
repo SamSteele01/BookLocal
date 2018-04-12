@@ -77,13 +77,13 @@ h2, h3 {
 .header-spacer {
   z-index: 1;
   position: relative;
-  height: 85px; }
+  height: calc(86px - 1px); }
   @media (min-width: 425px) {
     .header-spacer {
-      height: 101px; } }
+      height: calc(102px - 1px); } }
   @media (min-width: 768px) {
     .header-spacer {
-      height: 84px; } }
+      height: calc(86px - 1px); } }
 
 .Logo img {
   width: 180px;
@@ -159,11 +159,16 @@ a:hover {
   color: #E66E1C; }
 
 .footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
   background-color: white;
   color: #464749;
   box-sizing: border-box;
   width: 100vw;
-  padding: 15px;
+  height: 45px;
+  padding: 12px;
   border-top: solid 1px #474747;
   bottom: 0;
   z-index: 3;
@@ -171,6 +176,12 @@ a:hover {
   @media (min-width: 425px) {
     .footer {
       font-size: 14px; } }
+
+.mit-symbol {
+  width: 100px; }
+
+.ethereum-symbol {
+  width: 158px; }
 
 /*Colors*/
 .what__card-font {
@@ -405,6 +416,12 @@ h2, h3 {
   flex-direction: column;
   justify-content: center; }
 
+.flex-row-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+
 /* Register */
 .app {
   display: flex;
@@ -638,7 +655,11 @@ pre {
   height: 100%; }
 
 .image-sml {
-  height: 140px;
+  height: 70px;
+  width: auto; }
+
+.image-xsml {
+  height: 20px;
   width: auto; }
 
 .home {
@@ -654,7 +675,7 @@ pre {
   min-height: calc(100vh - 131px); }
   @media (min-width: 425px) {
     .home {
-      min-height: calc(100vh - 149px); } }
+      min-height: calc(100vh - 147px); } }
   @media (min-width: 768px) {
     .home {
       min-height: calc(100vh - 131px); } }
