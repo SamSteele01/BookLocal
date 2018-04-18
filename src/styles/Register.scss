@@ -39,6 +39,7 @@
 }
 
 .z-above-after {
+  filter: brightness(1); // safari 
   z-index: 4;
 }
 
@@ -47,6 +48,7 @@
   background-color: white;
   overflow: hidden;
   z-index: 4;
+  filter: brightness(1);
   padding: 10px 16px;
   @media (min-width: $mobile) {
     padding: 15px 25px;

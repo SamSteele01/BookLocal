@@ -142,6 +142,11 @@ pre {
   }
 }
 
+// .darken {
+//   filter: brightness(.4);
+//   z-index: 2;
+// }
+
 .darken:after {
   position: fixed;
   width: 100%;
@@ -162,6 +167,7 @@ pre {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  min-height: 300px;
   z-index: 3;
   color: white;
   a {
@@ -170,18 +176,32 @@ pre {
   a:hover {
     color: $orange3;
   }
-  font-size: 22px;
+  h2 {
+    font-size: 20px;
+    margin-top: 1em;
+  }
+  font-size: 16px;
   padding: 10px 20px;
+  @media (min-width: $smMobile) {
+    font-size: 22px;
+    padding: 10px 30px;
+    h2 {
+      font-size: 28px;
+    }
+  }
   @media (min-width: $mobile) {
     font-size: 27px;
     padding: 10px 30px;
+    h2 {
+      font-size: 36px;
+    }
   }
   @media (min-width: $tablet) {
     font-size: 36px;
     padding: 20px 40px;
-  }
-  h2, h4 {
-    margin: 0;
+    h2 {
+      font-size: 44px;
+    }
   }
 }
 

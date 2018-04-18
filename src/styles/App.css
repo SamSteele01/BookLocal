@@ -444,6 +444,7 @@ h2, h3 {
   margin-top: 40px; }
 
 .z-above-after {
+  filter: brightness(1);
   z-index: 4; }
 
 .reserve, .get-token, .get-reservations, .settle, .check-available, .get-room-info, .access {
@@ -451,6 +452,7 @@ h2, h3 {
   background-color: white;
   overflow: hidden;
   z-index: 4;
+  filter: brightness(1);
   padding: 10px 16px; }
   @media (min-width: 425px) {
     .reserve, .get-token, .get-reservations, .settle, .check-available, .get-room-info, .access {
@@ -698,24 +700,36 @@ pre {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  min-height: 300px;
   z-index: 3;
   color: white;
-  font-size: 22px;
+  font-size: 16px;
   padding: 10px 20px; }
   .register-message a {
     color: white; }
   .register-message a:hover {
     color: #E66E1C; }
+  .register-message h2 {
+    font-size: 20px;
+    margin-top: 1em; }
+  @media (min-width: 370px) {
+    .register-message {
+      font-size: 22px;
+      padding: 10px 30px; }
+      .register-message h2 {
+        font-size: 28px; } }
   @media (min-width: 425px) {
     .register-message {
       font-size: 27px;
-      padding: 10px 30px; } }
+      padding: 10px 30px; }
+      .register-message h2 {
+        font-size: 36px; } }
   @media (min-width: 768px) {
     .register-message {
       font-size: 36px;
-      padding: 20px 40px; } }
-  .register-message h2, .register-message h4 {
-    margin: 0; }
+      padding: 20px 40px; }
+      .register-message h2 {
+        font-size: 44px; } }
 
 .dark-glass {
   box-sizing: border-box;
