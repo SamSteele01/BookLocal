@@ -107,7 +107,16 @@ class Access extends Component{
                 <div className="label-style">Token Id:
                   <input id="tokenId" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.tokenId} />
                 </div>
-                <input id="search" type="submit" value="Check In" className="input-button-style" onClick={this.handleSubmit} />
+                {this.props.account===null || this.props.account===undefined ?
+                  <div>
+                    <div className="reserve-warning">Please log in to MetaMask.</div>
+                    <input id="search" type="submit" className="input-button-style disabled" value="Check In" onClick={this.handleSubmit} disabled/>
+                  </div>
+                :
+                  <input id="search" type="submit" className="input-button-style" value="Check In" onClick={this.handleSubmit} />
+                }
+                {/* <input id="search" type="submit" value="Check In" className="input-button-style" onClick={this.handleSubmit} /> */}
+
               </div>
             }
           </fieldset>

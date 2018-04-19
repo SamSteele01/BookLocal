@@ -12,7 +12,7 @@ class Reserve extends Component{
     this.state = {
       start: moment([2018, 4, 17]), // preset for EthMemphis
       stop: moment([2018, 4, 21]), // preset for EthMemphis
-      account: null, // eth.accounts[0]
+      // account: null, // eth.accounts[0]
       availability: '',
       response: null,
       blockNum: null,
@@ -193,7 +193,14 @@ class Reserve extends Component{
                 />
                 {/* <input id="stop" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.stop} /> */}
               </div>
-              <input id="search" type="submit" className="input-button-style" value="Reserve" onClick={this.handleSubmit} />
+              {this.props.account===null || this.props.account===undefined ?
+                <div>
+                  <div className="reserve-warning">Please log in to MetaMask.</div>
+                  <input id="search" type="submit" className="input-button-style disabled" value="Reserve" onClick={this.handleSubmit} disabled/>
+                </div>
+              :
+                <input id="search" type="submit" className="input-button-style" value="Reserve" onClick={this.handleSubmit} />
+              }
               {this.state.availability && 
                 <div className="reserve-warning">{this.state.availability}</div>
               }

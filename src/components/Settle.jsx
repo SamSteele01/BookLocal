@@ -83,7 +83,6 @@ class Settle extends Component{
           <fieldset>
             { this.state.response ?
               <div>
-                
                 { (this.state.blockNum && this.state.status!==null) ? 
                   <div>
                     { this.state.status==="0x1" ?
@@ -109,7 +108,15 @@ class Settle extends Component{
                 <div className="label-style">Token Id:
                   <input id="tokenId" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.tokenId} />
                 </div>
-                <input id="submit" type="submit" value="Check Out" className="input-button-style" onClick={this.handleSubmit} />
+                {this.props.account===null || this.props.account===undefined ?
+                  <div>
+                    <div className="reserve-warning">Please log in to MetaMask.</div>
+                    <input id="search" type="submit" className="input-button-style disabled" value="Check Out" onClick={this.handleSubmit} disabled/>
+                  </div>
+                :
+                  <input id="search" type="submit" className="input-button-style" value="Check Out" onClick={this.handleSubmit} />
+                }
+                {/* <input id="submit" type="submit" value="Check Out" className="input-button-style" onClick={this.handleSubmit} /> */}
               </div>
             }
           </fieldset>
