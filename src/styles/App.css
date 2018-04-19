@@ -407,7 +407,7 @@ h2, h3 {
 
 .reserve-warning {
   color: #E66E1C;
-  padding-bottom: 15px; }
+  padding: 8px; }
 
 .flex-end {
   justify-content: flex-end; }
@@ -505,12 +505,15 @@ input:focus {
   flex-direction: column; }
 
 .input-button-style {
-  margin-top: 25px;
+  margin-top: 18px;
   font-weight: 900;
   background-color: #1b75bb;
   padding: 5px 15px;
   color: white;
   text-transform: uppercase; }
+
+.disabled {
+  cursor: not-allowed; }
 
 .react-datepicker__input-container input {
   height: 35px;
