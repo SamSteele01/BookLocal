@@ -7,7 +7,7 @@ export default class Footer extends Component {
             <div className="footer">
                 {/* <footer > */}
                 <div className="flex-row-center mit-symbol">
-                    <i class="fas fa-balance-scale"></i> MIT License 
+                    <i className="fas fa-balance-scale"></i> MIT License 
                 </div>
                 <div className="flex-row-center ethereum-symbol">
                     <img className="image-xsml" alt="Ethereum symbol" src={EthereumSymbol}/>  Powered by Ethereum
