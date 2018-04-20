@@ -123,6 +123,10 @@ pre {
 
 // Home page
 .home {
+  @media (max-width: $mobile) {
+    background-image: url('../images/booklocal-bg-sm.jpg');
+    filter: blur(3px);
+  }
   background-image: url('../images/booklocal-bg.jpg');
   background-position: top;
   background-attachment: fixed;
