@@ -1,11 +1,13 @@
 # EthMemphis
-The first version booking app made for EthMemphis
+The proof of concept version booking app made for EthMemphis. Uses ERC721 to define non-fungible tokens and ERC809 to interface with renting functions.
 
-This project was created using Truffle unbox React, and uses the [Grommet UI](http://grommet.io/) component library. Barely.
+Deployed on [github-pages.](http://booklocal.github.io/EthMemphis/)
 
-The ```npm run dev``` command runs a localhost and listens for changes in the .scss files. Don't change the .css file, it won't persist. You need [sass installed](https://sass-lang.com/install) globally on your machine to use this script. 
+This project was created using Truffle unbox React.
 
-Master branch is what is deployed on [Heroku](booklocal-prospectus.herokuapp.com)
+To run locally: clone or fork, ```npm install```, and ```npm start```. 
+
+To make changes to the style sheets: the ```npm run dev``` command runs a localhost and listens for changes in the .scss files. Don't change the .css file, it won't persist. You need [sass installed](https://sass-lang.com/install) globally on your machine to use this script. 
 
 Dev merges pull requests from other branches.
 
