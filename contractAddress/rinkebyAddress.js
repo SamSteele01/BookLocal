@@ -1,3 +1,6 @@
-const rinkebyAddress = "0xffb5ab18a5196745c8ac3f4d6e916c4e22767879";
+const rinkebyAddress = "0xFCd22674AC49236f9ffe37460e4f2bdFc77F047C";
 
 module.exports = rinkebyAddress;
+
+// previous addresses:
+// 0x6f6A4813A632Fbb1c6c72278D067278d27252939

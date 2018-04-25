@@ -10,11 +10,12 @@
 /build
 
 #sass
-.sass-cache/*/App.scssc
+.sass-cache/**/App.scssc
 /.sass-cache
 /src/styles/App.css.map
 
 # misc
+.vscode
 .DS_Store
 .env.local
 .env.development.local
