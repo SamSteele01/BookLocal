@@ -5,7 +5,7 @@ import CustomList from 'components/CustomList';
 import CustomListItem from 'components/CustomListItem';
 import expandedEcosystemImg from 'images/expanded-ecosystem.png';
 import plasmaChainImg from 'images/plasma-chain.png';
-import colors from 'styles/colors';
+import colors from 'const/colors';
 
 export default class How extends Component {
     render() {

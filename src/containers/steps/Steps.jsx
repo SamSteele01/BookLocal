@@ -10,7 +10,7 @@ export default class Steps extends Component {
             // <section className="steps__section section--wrapper">
             <HeadingDropDown className="steps__section" headingName="Steps">
                 <Exchange/>
-                <ProofOfConcept/>
+                {/* <ProofOfConcept/> */}
                 <EarlyAdoptors/> 
             </HeadingDropDown>
         )

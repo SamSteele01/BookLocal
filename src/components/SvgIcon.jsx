@@ -1,10 +1,11 @@
 import React from 'react';
-const {PropTypes} = React;
+import PropTypes from 'prop-types'
 
 const SvgIcon = props => {
   const styles = {
     svg: {
       display: 'inline-block',
+      // margin: '0 auto',
       verticalAlign: 'middle',
     },
     path: {
@@ -15,26 +16,30 @@ const SvgIcon = props => {
   return (
     <svg
       style={styles.svg}
+      aria-hidden="true"
       width={`${props.size}px`}
       height={`${props.size}px`}
-      viewBox="0 0 1024 1024"
+      viewBox={props.viewBox}
     >
       <path
-        style={styles.path}
+        fill={styles.path.fill}
         d={props.icon}
       ></path>
     </svg>
   );
 };
 
-Icon.propTypes = {
+SvgIcon.propTypes = {
   icon: PropTypes.string.isRequired,
+  viewBox: PropTypes.string,
   size: PropTypes.number,
   color: PropTypes.string,
 };
 
-Icon.defaultProps = {
+SvgIcon.defaultProps = {
+  viewBox: "0 0 1056 1056",
   size: 16,
+  color: "currentColor"
 };
 
 export default SvgIcon;

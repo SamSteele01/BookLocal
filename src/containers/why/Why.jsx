@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-import Section from 'grommet/components/Section';
 import HeadingDropDown from 'components/HeadingDropDown';
-import Box from 'grommet/components/Box';
 import Problems from './Problems';
-import Solutions from './Solutions';
-import CustomList from 'components/CustomList';
-import CustomListItem from 'components/CustomListItem';
-import colors from 'styles/colors';
+// import Solutions from './Solutions';
 
 class Why extends Component {
 
@@ -20,7 +15,7 @@ class Why extends Component {
             the current hotel reservation model and propose solutions.
           </p>
           <Problems/>
-          <Solutions/>
+          {/* <Solutions/> */}
       {/* </div> */}
       </HeadingDropDown>
     );

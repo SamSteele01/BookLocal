@@ -1,27 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter, Route} from 'react-router-dom';
-// import createHistory from 'history/createBrowserHistory';
 import registerServiceWorker from './registerServiceWorker';
 
-// Layouts
-// import App from './containers/App';
-import BaseLayout from './containers/BaseLayout'
-import Home from './components/Home'
-import App from './containers/App'
-import Prospectus from './containers/Prospectus';
-import './styles/index.css';
+import App from 'containers/App';
+import BaseLayout from 'wrappers/BaseLayout'
 
-// const history = createHistory();
-// const location = history.location;
+import './styles/index.css';
 
 ReactDOM.render((
       <BrowserRouter basename="/EthMemphis">
           <BaseLayout>
-            <Route path="/home" component={Home} />
-            <Route path="/register" component={App} />
-            <Route path="/about" component={Prospectus}/>
-            <Route exact path="/" component={Home} />
+             <Route path="/" component={App} />
           </BaseLayout>
       </BrowserRouter>
   ),

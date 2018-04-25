@@ -28,7 +28,7 @@ export default class EarlyAdoptors extends Component {
                 <img className="image-md" alt="hotel-bed" src={TravelersImg}/>
               </div>
                 {/* 5.2.2 */}
-                <div className="content-card">
+                {/* <div className="content-card">
                 <Heading align='center' margin='medium' tag='h3'>
                     Free interface for individual hosts.
                 </Heading>
@@ -37,7 +37,7 @@ export default class EarlyAdoptors extends Component {
                     access to their extra space (similar to the AirBnB model).
                 </p>
                 <img className="image-md" alt="hotel-bed" src={CouchImg}/>
-              </div>
+              </div> */}
                 {/* 5.2.3 */}
                 <div className="content-card">
                 <Heading align='center' margin='medium' tag='h3'>
@@ -61,10 +61,10 @@ export default class EarlyAdoptors extends Component {
                     Once we have a strong community of users, we will target chain hotels by adding
                     features that allow for corporate oversight on overall and hotel specific performance.
                 </p> */}
-                <div className="textbox">
+                {/* <div className="textbox">
                   <h2>Contracts</h2>
                   <p>The contracts for the proof of concept (written in solidity) are available online.</p>
-                </div>
+                </div> */}
             {/* </section> */}
             </HeadingDropDown>
         )

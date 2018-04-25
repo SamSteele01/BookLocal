@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
-
-let available;
+import PropTypes from 'prop-types';
+import moment from 'moment';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 class CheckAvailable extends Component{
   constructor(props){
     super(props)
     this.state = {
       tokenId : this.props.tokenId,
-      time: '',
+      date: moment([2018, 4, 17]),
       availability: null
     }
 
     this.handleSubmit=this.handleSubmit.bind(this);
     this.handleTextChange=this.handleTextChange.bind(this);
+    this.handleDateChange=this.handleDateChange.bind(this);
   }
 
   handleTextChange = (event) => {
@@ -21,10 +24,21 @@ class CheckAvailable extends Component{
     }
   }
 
+  handleDateChange(date) {
+    this.setState({
+      date: date
+    });
+  }
+
+  dateConverter = (mmddyyyy) => {
+    return Math.floor(moment(mmddyyyy).unix() / 86400);
+  }
+
   handleSubmit = (event) => {
     event.preventDefault();
+    let available = "";
     console.log("CheckAvailable fired!");
-    available = this.props.RR.checkAvailable(this.state.tokenId, this.state.time,
+    available = this.props.RR.checkAvailable(this.state.tokenId, this.dateConverter(this.state.date),
       (err,res) => {
         if(err){
           console.log(
@@ -48,8 +62,13 @@ class CheckAvailable extends Component{
             <div className="label-style">Token Id:
               <input id="tokenId" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.tokenId} />
             </div>
-            <div className="label-style"> Time: 
-              <input id="time" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.time} />
+            <div className="label-style"> Date: 
+              <DatePicker
+                    selected={this.state.date}
+                    onChange={this.handleDateChange}
+                    readOnly
+                    placeholderText="Select a date"
+                  />
             </div>
             <input id="search" type="submit" value="Check Availability" className="input-button-style" onClick={this.handleSubmit} />
             {this.state.availability &&
@@ -59,6 +78,11 @@ class CheckAvailable extends Component{
       </div>
     )
   }
+}
+CheckAvailable.propTypes = {
+  web3: PropTypes.object,
+  RR: PropTypes.object,
+  tokenId: PropTypes.number, //?
 }
 
 export default CheckAvailable

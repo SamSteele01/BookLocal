@@ -3,7 +3,7 @@ import Heading from 'grommet/components/Heading';
 import HeadingDropDown from 'components/HeadingDropDown';
 import CustomList from 'components/CustomList';
 import CustomListItem from 'components/CustomListItem';
-import colors from 'styles/colors';
+import colors from 'const/colors';
 import WalletImg from "images/wallet.jpg";
 
 export default class ProofOfConcept extends Component {
@@ -11,10 +11,6 @@ export default class ProofOfConcept extends Component {
         return (
             <HeadingDropDown className="proof-of-concept" subHeadingName="Proof of Concept">
                 {/* 5 */}
-                {/* <div className='heading'>Steps</div>
-                <p className='paragraph-white'>
-                    Below are the key benchmarks toward full adoption.
-                </p>  */}
                 {/* 5.1.1 */}
                 <h3>
                     We proposed a rentable token model (ERC-809) that extends a non-fungible
@@ -40,7 +36,6 @@ export default class ProofOfConcept extends Component {
                         // animation="slide-left"
                         // color="$black"
                         // bgColor="orange"
-
                         classNames="steps__card-font"
                     >
                         <div>
@@ -53,7 +48,6 @@ export default class ProofOfConcept extends Component {
                         animation="slide-left"
                         // color="$black"
                         // bgColor="orange"
-
                         classNames="steps__card-font"
                     >
                         <div>
@@ -102,7 +96,6 @@ export default class ProofOfConcept extends Component {
                           <li>cancel(_roomId,_startDate,_stopDate)</li>
                         </ul>
                   </div>
-
               {/*  <CustomList
                     bgColor={colors.gray}
                 >
@@ -111,7 +104,6 @@ export default class ProofOfConcept extends Component {
                         // animation="slide-left"
                         // color="$black"
                         // bgColor="orange"
-
                         classNames="steps__card-font"
                     >
                         <div>
@@ -123,7 +115,6 @@ export default class ProofOfConcept extends Component {
                         // animation="slide-left"
                         // color="$black"
                         // bgColor="orange"
-
                         classNames="steps__card-font"
                     >
                         <div>
@@ -135,7 +126,6 @@ export default class ProofOfConcept extends Component {
                         // animation="slide-left"
                         // color="$black"
                         // bgColor="orange"
-
                         classNames="steps__card-font"
                     >
                         <div>
@@ -147,7 +137,6 @@ export default class ProofOfConcept extends Component {
                         animation="slide-left"
                         // color="$black"
                         // bgColor="orange"
-
                         classNames="steps__card-font"
                     >
                         <div>
@@ -158,7 +147,6 @@ export default class ProofOfConcept extends Component {
                         //height="auto"
                         animation="slide-left"
                         // color="$black"
-
                         classNames="steps__card-font"
                     >
                         <div>
@@ -187,9 +175,6 @@ export default class ProofOfConcept extends Component {
                       </ul>
                 </div>
               </div>
-
-
-
                 {/*<CustomList bgColor={colors.gray >
                     <CustomListItem
                         //height="auto"
@@ -205,7 +190,6 @@ export default class ProofOfConcept extends Component {
                         //height="auto"
                         // animation="slide-left"
                         // color="$black"
-
                         classNames="steps__card-font"
                     >
                         <div>
@@ -215,7 +199,6 @@ export default class ProofOfConcept extends Component {
                     <CustomListItem
                         //height="auto"
                         animation="slide-left"
-
                         classNames="steps__card-font"
                     >
                         <div>
