@@ -5,6 +5,7 @@
 @import "Helpers";
 @import "Register";
 @import "Contact";
+@import "IronImage";
 
 //Base styles and components
 body,
@@ -123,18 +124,18 @@ pre {
 
 // Home page
 .home {
-  @media (max-width: $mobile) {
-    background-image: url('../images/booklocal-bg-sm.jpg');
-    filter: blur(3px);
-  }
-  background-image: url('../images/booklocal-bg.jpg');
-  background-position: top;
-  background-attachment: fixed;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  // @media (max-width: $mobile) {
+  //   background-image: filter(url('../images/booklocal-bg-sm.jpg'), blur(3px));
+  //   // filter: blur(3px);
+  // }
+  // background-image: url('../images/booklocal-bg.jpg');
+  // background-position: top;
+  // background-attachment: fixed;
+  // background-size: cover;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
   // position: relative;
   width: 100vw;
   min-height: calc(100vh - #{$headerHeight + $footerHeight});

@@ -575,6 +575,36 @@ input:focus {
   margin-left: -75px;
   width: 450px; }
 
+.iron-image-container {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 131px);
+  overflow: hidden; }
+
+.iron-image-preload {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  filter: blur(3px);
+  background-size: cover; }
+
+.iron-image-loaded {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 1s ease; }
+
+.iron-image-fade-in {
+  opacity: 1; }
+
 body,
 .pure-g [class*=pure-u] {
   font-family: "Open Sans", sans-serif; }
@@ -668,20 +698,8 @@ pre {
   width: auto; }
 
 .home {
-  background-image: url("../images/booklocal-bg.jpg");
-  background-position: top;
-  background-attachment: fixed;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100vw;
   min-height: calc(100vh - 131px); }
-  @media (max-width: 425px) {
-    .home {
-      background-image: url("../images/booklocal-bg-sm.jpg");
-      filter: blur(3px); } }
   @media (min-width: 425px) {
     .home {
       min-height: calc(100vh - 147px); } }
