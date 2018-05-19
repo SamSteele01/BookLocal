@@ -62,7 +62,7 @@ class GetRoomInfo extends Component{
         }
         console.log(res); 
         this.setState({
-          owner: res[0],
+          owner: "The Exchange Building",
           renter: res[1],
           minRentTime: res[2].c[0],
           roomNumber: res[3].c[0],
