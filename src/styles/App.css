@@ -77,13 +77,13 @@ h2, h3 {
 .header-spacer {
   z-index: 1;
   position: relative;
-  height: 85px; }
+  height: calc(86px - 1px); }
   @media (min-width: 425px) {
     .header-spacer {
-      height: 101px; } }
+      height: calc(102px - 1px); } }
   @media (min-width: 768px) {
     .header-spacer {
-      height: 84px; } }
+      height: calc(86px - 1px); } }
 
 .Logo img {
   width: 180px;
@@ -159,11 +159,16 @@ a:hover {
   color: #E66E1C; }
 
 .footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
   background-color: white;
   color: #464749;
   box-sizing: border-box;
   width: 100vw;
-  padding: 15px;
+  height: 45px;
+  padding: 12px;
   border-top: solid 1px #474747;
   bottom: 0;
   z-index: 3;
@@ -171,6 +176,12 @@ a:hover {
   @media (min-width: 425px) {
     .footer {
       font-size: 14px; } }
+
+.mit-symbol {
+  width: 100px; }
+
+.ethereum-symbol {
+  width: 158px; }
 
 /*Colors*/
 .what__card-font {
@@ -396,7 +407,7 @@ h2, h3 {
 
 .reserve-warning {
   color: #E66E1C;
-  padding-bottom: 15px; }
+  padding: 8px; }
 
 .flex-end {
   justify-content: flex-end; }
@@ -404,6 +415,12 @@ h2, h3 {
 .flex-column {
   flex-direction: column;
   justify-content: center; }
+
+.flex-row-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
 
 /* Register */
 .app {
@@ -427,6 +444,7 @@ h2, h3 {
   margin-top: 40px; }
 
 .z-above-after {
+  filter: brightness(1);
   z-index: 4; }
 
 .reserve, .get-token, .get-reservations, .settle, .check-available, .get-room-info, .access {
@@ -434,6 +452,7 @@ h2, h3 {
   background-color: white;
   overflow: hidden;
   z-index: 4;
+  filter: brightness(1);
   padding: 10px 16px; }
   @media (min-width: 425px) {
     .reserve, .get-token, .get-reservations, .settle, .check-available, .get-room-info, .access {
@@ -486,12 +505,15 @@ input:focus {
   flex-direction: column; }
 
 .input-button-style {
-  margin-top: 25px;
+  margin-top: 18px;
   font-weight: 900;
   background-color: #1b75bb;
   padding: 5px 15px;
   color: white;
   text-transform: uppercase; }
+
+.disabled {
+  cursor: not-allowed; }
 
 .react-datepicker__input-container input {
   height: 35px;
@@ -638,11 +660,15 @@ pre {
   height: 100%; }
 
 .image-sml {
-  height: 140px;
+  height: 70px;
+  width: auto; }
+
+.image-xsml {
+  height: 20px;
   width: auto; }
 
 .home {
-  background-image: url("../images/exchange-building-SU.jpg");
+  background-image: url("../images/booklocal-bg.jpg");
   background-position: top;
   background-attachment: fixed;
   background-size: cover;
@@ -654,7 +680,7 @@ pre {
   min-height: calc(100vh - 131px); }
   @media (min-width: 425px) {
     .home {
-      min-height: calc(100vh - 149px); } }
+      min-height: calc(100vh - 147px); } }
   @media (min-width: 768px) {
     .home {
       min-height: calc(100vh - 131px); } }
@@ -677,24 +703,36 @@ pre {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  min-height: 300px;
   z-index: 3;
   color: white;
-  font-size: 22px;
+  font-size: 16px;
   padding: 10px 20px; }
   .register-message a {
     color: white; }
   .register-message a:hover {
     color: #E66E1C; }
+  .register-message h2 {
+    font-size: 20px;
+    margin-top: 1em; }
+  @media (min-width: 370px) {
+    .register-message {
+      font-size: 22px;
+      padding: 10px 30px; }
+      .register-message h2 {
+        font-size: 28px; } }
   @media (min-width: 425px) {
     .register-message {
       font-size: 27px;
-      padding: 10px 30px; } }
+      padding: 10px 30px; }
+      .register-message h2 {
+        font-size: 36px; } }
   @media (min-width: 768px) {
     .register-message {
       font-size: 36px;
-      padding: 20px 40px; } }
-  .register-message h2, .register-message h4 {
-    margin: 0; }
+      padding: 20px 40px; }
+      .register-message h2 {
+        font-size: 44px; } }
 
 .dark-glass {
   box-sizing: border-box;

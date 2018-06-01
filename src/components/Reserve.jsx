@@ -13,13 +13,11 @@ class Reserve extends Component{
     this.state = {
       start: moment([2018, 4, 17]), // preset for EthMemphis
       stop: moment([2018, 4, 21]), // preset for EthMemphis
-      tokenId : null,
-      account: null,
+      // account: null, // eth.accounts[0]
       availability: '',
-      displayResponse: false,
-      blockNum: null,
       response: null,
-      status: null
+      blockNum: null,
+      status: null  // '0x0' = fail '0x1' = success
     }
 
     this.handleSubmit=this.handleSubmit.bind(this);
@@ -139,23 +137,24 @@ class Reserve extends Component{
                     {this.state.status==="0x1" ?
                       <div>
                         <h1>Room Reserved!</h1>
-                        <div>Thank you for booking your room with BookLocal! We can't wait to meet you at EthMemphis.</div>
+                        <div>Thank you for booking your room with BookLocal! We can't wait to meet you at EthMemphis. Go to the status page to get your room assignment.</div>
                       </div> :
-                      <div className="reserve-warning">There was a problem and the reservation failed. You should contact ____</div>
+                      <div className="reserve-warning">There was a problem and the reservation failed. Please contact Steve Lee: steven@booklocal.in</div>
                     }
-                  </div> :
+                  </div>
+                :
                   // spinner
-                <div>
-                  <PulseLoader color='#E66E1C' loading={true} />
-                  <div>Please wait while the transaction gets mined. This could take a minute or two.</div>
-                </div>
+                  <div>
+                    <PulseLoader color='#1b75bb' loading={true} />
+                    <div>Please wait while the transaction gets mined. This could take a minute or two.</div>
+                  </div>
                 }
 
                 <p>The address that you used to book is: {this.state.account}</p>
                 <div className="reserve-warning">See the transaction on <a href={`https://rinkeby.etherscan.io/tx/${this.state.response}`} target="_blank" rel="noopener noreferrer">Etherscan.io.</a></div>
               </fieldset>
             </div>
-            :
+          :
             <fieldset>
               <h1>Reserve Your Room</h1>
               {this.props.web3error &&
@@ -195,7 +194,14 @@ class Reserve extends Component{
                 />
                 {/* <input id="stop" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.stop} /> */}
               </div>
-              <input id="search" type="submit" className="input-button-style" value="Reserve" onClick={this.handleSubmit} />
+              {this.props.account===null || this.props.account===undefined ?
+                <div>
+                  <div className="reserve-warning">Please log in to MetaMask.</div>
+                  <input id="search" type="submit" className="input-button-style disabled" value="Reserve" onClick={this.handleSubmit} disabled/>
+                </div>
+              :
+                <input id="search" type="submit" className="input-button-style" value="Reserve" onClick={this.handleSubmit} />
+              }
               {this.state.availability &&
                 <div className="reserve-warning">{this.state.availability}</div>
               }

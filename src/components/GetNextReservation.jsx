@@ -63,10 +63,21 @@ class GetNextReservation extends Component{
               <div className="label-style">Check Out Date:
                 <input id="checkOutDate" type="text" className="input-style" value={this.state.checkOutDate} readOnly/>
               </div>
+              <div className="reserve-warning">Please store your tokenId for event check-in.</div>
             </div>
-            :
-            <input id="search" type="submit" value="Get Token" className="input-button-style" onClick={this.handleSubmit} />
+          :
+            <div>
+              {this.props.account===null || this.props.account===undefined ?
+                <div>
+                  <div className="reserve-warning">Please log in to MetaMask.</div>
+                  <input id="search" type="submit" className="input-button-style disabled" value="Get Token" onClick={this.handleSubmit} disabled/>
+                </div>
+              :
+                <input id="search" type="submit" className="input-button-style" value="Get Token" onClick={this.handleSubmit} />
+              }
+            </div>
           }
+            {/* <input id="search" type="submit" value="Get Token" className="input-button-style" onClick={this.handleSubmit} /> */}
         </fieldset>
       </div>
     )

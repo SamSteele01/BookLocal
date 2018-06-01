@@ -39,6 +39,7 @@
 }
 
 .z-above-after {
+  filter: brightness(1); // safari
   z-index: 4;
 }
 
@@ -47,6 +48,7 @@
   background-color: white;
   overflow: hidden;
   z-index: 4;
+  filter: brightness(1);
   padding: 10px 16px;
   @media (min-width: $mobile) {
     padding: 15px 25px;
@@ -73,54 +75,58 @@
   }
 }
 
-  .label-style {
-    background-color: white;
-    padding: 10px 0px;
-    display: flex;
-    align-items: center;
-    color: #777;
-    text-transform: uppercase;
-  }
+.label-style {
+  background-color: white;
+  padding: 10px 0px;
+  display: flex;
+  align-items: center;
+  color: #777;
+  text-transform: uppercase;
+}
 
-  .input-style {
-    height: 35px;
-    flex-grow: 1;
-    margin-left: 10px;
-    padding-left: 10px;
-    border: 1px solid #ccc;
-    font-size: 15px;
-  }
+.input-style {
+  height: 35px;
+  flex-grow: 1;
+  margin-left: 10px;
+  padding-left: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
 
-  .input-style-2 {
-    margin-left: 0;
-  }
+.input-style-2 {
+  margin-left: 0;
+}
 
-  input:focus {
-    outline-offset: -2px;
-    outline: $orange3 auto 5px;
-  }
+input:focus {
+  outline-offset: -2px;
+  outline: $orange3 auto 5px;
+}
 
-  .array-mappings {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
+.array-mappings {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 
-  }
+}
 
-  .input-button-style {
-    margin-top: 25px;
-    font-weight: 900;
-    background-color: rgb(27, 117, 187);
-    padding: 5px 15px;
-    color: white;
-    text-transform: uppercase;
-  }
+.input-button-style {
+  margin-top: 18px;
+  font-weight: 900;
+  background-color: rgb(27, 117, 187);
+  padding: 5px 15px;
+  color: white;
+  text-transform: uppercase;
+}
 
-  .react-datepicker__input-container input {
-    height: 35px;
-    flex-grow: 1;
-    margin-left: 10px;
-    padding-left: 10px;
-    border: 1px solid #ccc;
-    font-size: 15px;
-  }
+.disabled {
+  cursor: not-allowed;
+}
+
+.react-datepicker__input-container input {
+  height: 35px;
+  flex-grow: 1;
+  margin-left: 10px;
+  padding-left: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
