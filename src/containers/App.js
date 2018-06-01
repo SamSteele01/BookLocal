@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
-
+import {Router, Route} from 'react-router-dom';
+import RegisterMessage from 'components/RegisterMessage'
 import Reserve from 'components/Reserve';
-import GetReservations from 'components/GetReservations';
-import GetNextReservation from 'components/GetNextReservation';
-import CheckAvailable from 'components/CheckAvailable';
-import GetRoomInfo from 'components/GetRoomInfo';
+// import GetReservations from 'components/GetReservations';
+// import GetNextReservation from 'components/GetNextReservation';
+// import CheckAvailable from 'components/CheckAvailable';
+// import GetRoomInfo from 'components/GetRoomInfo';
 import Access from 'components/Access';
 import Settle from 'components/Settle';
+import Status from 'containers/Status'
+import Contact from 'components/Contact'
+import About from 'components/About';
 import getWeb3 from 'utils/getWeb3';
 // import Web3 from 'web3';  // from node module
 
@@ -24,7 +28,10 @@ class App extends Component {
       web3: null,
       RR: null,
       web3error: null,
-      tokenId : null,
+      account: null,
+      networkId: null,
+      netIdError: null,
+      tokenId : "",
       checkInDate: null,
       checkOutDate: null
     }
@@ -37,26 +44,30 @@ class App extends Component {
      See utils/getWeb3 for more info. */
     getWeb3
     .then(results => {
-      console.log('results: ', results);
+      // console.log('results: ', results);
       this.setState({
         web3: results.web3
       })
     })
     .catch(error => {
-      console.log(error)
+      // console.log(error)
       this.setState({
         web3error: error.error
       })
     })
+    // this.accountListener()
   }
 
   componentDidUpdate(prevProps, prevState){
     if(prevState.web3!==this.state.web3) {
-      console.log(this.state.web3);
       this.instantiateContract();
+      this.whichNetwork();
     }
-    if(prevState.RR!==this.state.RR) {
-      console.log(this.state.RR);
+    if(prevState.networkId!==this.state.networkId) {
+      this.reportNetwork(this.state.networkId);
+    }
+    if(this.state.web3!==null) {
+      this.accountListener()
     }
   }
 
@@ -65,6 +76,35 @@ class App extends Component {
       RR: this.state.web3.eth.contract(RRAbi).at(RRAddress)
     })
     // RoomRenting.deployed().then(function(res){RR = RoomRenting.at(res.address)})
+  }
+
+  whichNetwork = () => {
+    this.state.web3.version.getNetwork((err, netId) => {
+      if(err){console.log('err: ', err)}
+      this.setState({networkId: netId});
+    })
+  }
+
+  reportNetwork = (netId) => {
+    if(netId!=="4"){
+      this.setState({netIdError: "You must be on the Rinkeby network!"})
+    }
+    if(netId==="4"){
+      this.setState({netIdError: null})
+    }
+  }
+
+  accountListener = () => {
+    // var account = web3.eth.accounts[0];
+    setInterval(() => {
+      if (this.state.web3.eth.accounts[0] !== this.state.account) {
+        console.log('this.state.web3.eth.accounts[0]: ', this.state.web3.eth.accounts[0]);
+        console.log('this.state.account: ', this.state.account)
+        // account = web3.eth.accounts[0];
+        // updateInterface();
+        this.setState({account: this.state.web3.eth.accounts[0]})
+      }
+    }, 2000);
   }
 
   returnComponentState = (componentState) => {
@@ -76,21 +116,19 @@ class App extends Component {
   }
 
   render() {
-
     return (
-      <div className="app">
-        <Reserve web3={this.state.web3} RR={this.state.RR} web3error={this.state.web3error}/>
-        <GetNextReservation web3={this.state.web3} RR={this.state.RR} returnComponentState={this.returnComponentState}/>
-        {this.state.tokenId &&
+        <Router history={this.props.history}>
           <div>
-            <GetReservations web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId} checkInDate={this.state.checkInDate} checkOutDate={this.state.checkOutDate} />
-            <GetRoomInfo web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId}/>
-            <CheckAvailable web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId}/>
-            <Access web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId}/>
-            <Settle web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId}/>
+            <Route path="/home" component={RegisterMessage} />
+            <Route path="/register" render={(props)=>(<Reserve web3={this.state.web3} RR={this.state.RR} web3error={this.state.web3error} netIdError={this.state.netIdError} account={this.state.account} /> )} />
+            <Route path="/checkIn" render={(props)=>(<Access web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId} web3error={this.state.web3error} netIdError={this.state.netIdError} account={this.state.account} /> )} />
+            <Route path="/checkOut" render={(props)=>(<Settle web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId} web3error={this.state.web3error} netIdError={this.state.netIdError} account={this.state.account} /> )} />
+            <Route path="/status" render={(props)=>(<Status web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId} account={this.state.account} returnComponentState={this.returnComponentState} checkInDate={this.state.checkInDate} checkOutDate={this.state.checkOutDate} />)} />
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
+            <Route exact path="/" component={RegisterMessage} />
           </div>
-        }
-      </div>
+        </Router>
     );
   }
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -69,8 +70,7 @@ class GetReservations extends Component{
       })
       return(
         <div className="array-mappings">
-          <div className="label-style">Renter Address Mappings: 
-          </div> 
+          <div className="label-style">Renter Address Mappings: </div> 
           {addressInputs}
         </div>
       )
@@ -120,6 +120,13 @@ class GetReservations extends Component{
       </div>
     )
   }
+}
+GetReservations.propTypes = {
+  web3: PropTypes.object,
+  RR: PropTypes.object,
+  tokenId: PropTypes.number, //?
+  checkInDate: PropTypes.string, //?
+  checkOutDate: PropTypes.string
 }
 
 export default GetReservations

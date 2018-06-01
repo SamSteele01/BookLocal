@@ -1,17 +1,25 @@
-import React, { Component } from 'react'
-import Home from 'wrappers/Home'
+import React from 'react'
+import { Link } from "react-router-dom"
+import IronImage from "components/IronImage"
+import SmallBackground from "images/booklocal-bg-sm.jpg"
+import BackgroundImage from "images/booklocal-bg.jpg"
 
-export default class RegisterMessage extends Component {
-    render() {
-        return (
-            <Home>
-                <div className="register-message">
-                    <h2>
-                        Register for a free stay at the Exchange Building during ETHMemphis this May. <br/>Sponsored by BookLocal.
-                        {/* Welcome to the book local booking app. If you've received an email about a free stay at ethmemphis click here, to learn more about us click here. */}
-                    </h2>
-                </div>
-            </Home>
-        )
-    }
-}
+const RegisterMessage = () => (
+
+    <div
+    className="home"
+    >
+        <IronImage srcPreload={SmallBackground} srcLoaded={BackgroundImage} />
+        {/* <div className="register-message dark-glass margin">
+            <h2> */}
+                {/* Register for a free stay at the Exchange Building during ETHMemphis this May. <br/>Sponsored by BookLocal. */}
+                {/* Welcome to BookLocal.  */}
+            {/* </h2>
+            <p>If you've received an email about a free stay at EthMemphis, click <Link to="/register">here</Link>.</p>
+            <p> To learn more about us, click <Link to="/about">here</Link>.</p>
+        </div> */}
+    </div>
+
+)
+
+export default RegisterMessage

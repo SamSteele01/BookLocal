@@ -44,7 +44,7 @@ class Who extends Component {
             discussing the value they add and cost they subtract from the industry.
           </p>
           {/* 3.2.1 */}
-          <Heading
+          {/* <Heading
             align='center'
             margin='medium'
             tag='h4'>
@@ -55,8 +55,8 @@ class Who extends Component {
             in order to facilitate trip planning. While the internet has left brick and mortar
             travel agencies largely obsolete, they do still exist and are often helpful in
             booking group trips.
-          </p>
-          <CustomList>
+          </p> */}
+          {/* <CustomList>
             <CustomListItem
               //height="auto"
               // animation="slide-left"
@@ -86,15 +86,15 @@ class Who extends Component {
               receive the best available deal for their preferences.
               </div>
             </CustomListItem>
-          </CustomList>
+          </CustomList> */}
           {/* 3.2.2 */}
-          <Heading
+          {/* <Heading
             align='center'
             margin='medium'
             tag='h4'>
             Global Distribution System (GDS)
-          </Heading>
-          <p className='paragraph'>
+          </Heading> */}
+          {/* <p className='paragraph'>
             Global distribution systems originally began in the airline industry (eAAsy
             Sabre) to provide a central platform for airlines and travel agents to aggregate
             flight data. By 1991, the Hotel Reservation Network (now Hotels.com)
@@ -103,8 +103,8 @@ class Who extends Component {
             outdated and seeking ways to reinvent themselves since online travel agents are
             now able to bypass their networks and work directly with the service providers
             (i.e hotels, airlines, and rental car companies).
-          </p>
-          <CustomList >
+          </p> */}
+          {/* <CustomList >
             <CustomListItem
               //height="auto"
               // animation="slide-left"
@@ -135,7 +135,7 @@ class Who extends Component {
               travel agents rather than communicating directly with the travelers.
               </div>
             </CustomListItem>
-          </CustomList>
+          </CustomList> */}
           {/* 3.2.3 */}
           <Heading
             align='center'
@@ -195,7 +195,7 @@ class Who extends Component {
               align='center'
               margin='medium'
               tag='h4'>
-              Global Distribution System (GDS)
+              Channel Manager
             </Heading>
             <p className='paragraph'>
               Channel management software allows the hotel to automatically update their
@@ -207,7 +207,7 @@ class Who extends Component {
               allowed online travel agencies to bypass the global distribution system’s
               information network and take hold of the market.
             </p>
-          <CustomList title="Channel Manager">
+          <CustomList >
             <CustomListItem
               //height="auto"
               // animation="slide-left"
@@ -280,7 +280,7 @@ class Who extends Component {
             </CustomListItem>
           </CustomList>
           {/* 3.3 */}
-          <Heading
+          {/* <Heading
             align='center'
             margin='medium'
             tag='h4'>
@@ -304,7 +304,7 @@ class Who extends Component {
               Note that BookLocal seeks to be fully compatible with current online travel
               agencies in order to provide seamless integration for early-adopting hotels and
               late-adopting travelers.
-            </p>
+            </p> */}
       </HeadingDropDown>
     );
   }

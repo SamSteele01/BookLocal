@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 let getRoomInfo;
 
@@ -17,6 +18,17 @@ class GetRoomInfo extends Component{
     this.handleSubmit=this.handleSubmit.bind(this);
     this.handleTextChange=this.handleTextChange.bind(this);
     this.convertUnixToDays=this.convertUnixToDays.bind(this);
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    console.log('prevState: ', prevState);
+    console.log('nextProps: ', nextProps);
+
+    if(nextProps.tokenId!==prevState.tokenId){
+      return {tokenId: nextProps.tokenId}
+    }else{
+      return null
+    }
   }
 
   handleTextChange = (event) => {
@@ -50,7 +62,7 @@ class GetRoomInfo extends Component{
         }
         console.log(res); 
         this.setState({
-          owner: res[0],
+          owner: "The Exchange Building",
           renter: res[1],
           minRentTime: res[2].c[0],
           roomNumber: res[3].c[0],
@@ -75,7 +87,7 @@ class GetRoomInfo extends Component{
             <input id="owner" type="text" className="input-style" value={this.state.owner} readOnly/>
           
           </div>
-          <div className="label-style">Renter:
+          <div className="label-style">Current Renter:
             <input id="renter" type="text" className="input-style" value={this.state.renter} readOnly/>
           
           </div>
@@ -95,6 +107,11 @@ class GetRoomInfo extends Component{
       </div>
     )
   }
+}
+GetRoomInfo.propTypes = {
+  web3: PropTypes.object,
+  RR: PropTypes.object,
+  tokenId: PropTypes.number, //?
 }
 
 export default GetRoomInfo

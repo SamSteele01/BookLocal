@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -77,6 +78,11 @@ class CheckAvailable extends Component{
       </div>
     )
   }
+}
+CheckAvailable.propTypes = {
+  web3: PropTypes.object,
+  RR: PropTypes.object,
+  tokenId: PropTypes.number, //?
 }
 
 export default CheckAvailable

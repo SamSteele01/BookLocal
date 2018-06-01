@@ -59,7 +59,8 @@ h2, h3 {
 
 .base-layout {
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
   display: flex;
@@ -70,23 +71,29 @@ h2, h3 {
 
 .header {
   width: 100vw;
-  z-index: 5; }
+  z-index: 5;
+  box-sizing: border-box; }
 
 .header-spacer {
   z-index: 1;
   position: relative;
-  height: 120px; }
+  height: calc(86px - 1px); }
+  @media (min-width: 425px) {
+    .header-spacer {
+      height: calc(102px - 1px); } }
   @media (min-width: 768px) {
     .header-spacer {
-      height: 86px; } }
+      height: calc(86px - 1px); } }
 
 .Logo img {
   width: 180px;
   height: auto;
   padding: 7px 5px 0px 5px; }
 
+.margin-left {
+  margin: 0 calc((100vw - 322px)/2); }
+
 .pure-menu-heading {
-  display: block;
   text-decoration: none;
   white-space: nowrap;
   display: inline-block;
@@ -95,72 +102,86 @@ h2, h3 {
   color: #565d64;
   padding: .5em 1em; }
 
-/* NAVBAR */
 nav {
   display: flex !important;
+  flex-direction: row;
+  justify-content: space-between;
   position: fixed;
   z-index: 3;
   box-sizing: border-box;
   width: 100vw;
+  overflow: visible;
   background-color: white;
-  justify-content: space-between;
-  flex-direction: column;
-  border-bottom: solid 1px #474747; }
+  border-bottom: solid 1px #474747;
+  height: 86px; }
+  @media (min-width: 425px) {
+    nav {
+      height: 102px; } }
   @media (min-width: 768px) {
     nav {
-      flex-direction: row; }
-      nav .Logo {
-        padding-left: 25px; }
-      nav .nav-items {
-        padding-right: 25px; } }
+      height: 86px; } }
 
-.navbar a {
-  color: #fff; }
+.nav-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start; }
+  @media (min-width: 425px) {
+    .nav-items {
+      justify-content: center;
+      align-items: center; } }
+  @media (min-width: 768px) {
+    .nav-items {
+      flex-direction: row; } }
 
-/* Hannah: I have removed this, because changing a font weight on an action causes the page to jump
-because it has not allocated that space. Maybe add an underline on hover instead? If you really want the
-font weight to change, I can trick it another way with nesting
-*/
-a:focus,
-a:active {
+.nav-menu-button {
+  height: 32px;
+  width: 32px;
+  margin: 10px;
+  color: #464749; }
+
+.nav-drop-down {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-end;
+  z-index: 6;
+  background-color: white;
+  border-bottom: solid 1px #474747;
+  border-left: solid 1px #474747;
+  width: 130px;
+  right: 0; }
+
+.link-active {
   font-weight: 700; }
 
 a:hover {
   color: #E66E1C; }
 
-.navbar .pure-menu-heading,
-.navbar .header-menu-link {
-  font-weight: bold;
-  text-transform: none; }
-
-.navbar .navbar-right {
-  float: right; }
-
-.navbar .uport-logo {
-  height: 16px;
-  margin-right: 10px; }
-
-.nav-items {
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-  @media (min-width: 992) {
-    .nav-items {
-      padding-right: 10px; } }
-
 .footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
   background-color: white;
   color: #464749;
   box-sizing: border-box;
   width: 100vw;
-  padding: 15px;
+  height: 45px;
+  padding: 12px;
   border-top: solid 1px #474747;
   bottom: 0;
   z-index: 3;
   font-size: 12px; }
-  @media (min-width: 480px) {
+  @media (min-width: 425px) {
     .footer {
       font-size: 14px; } }
+
+.mit-symbol {
+  width: 100px; }
+
+.ethereum-symbol {
+  width: 158px; }
 
 /*Colors*/
 .what__card-font {
@@ -229,6 +250,37 @@ h2, h3 {
   display: flex;
   flex-direction: column; }
 
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100vw;
+  overflow: hidden;
+  padding: 20px;
+  z-index: 4;
+  color: #464749;
+  background-color: #ececec;
+  min-height: calc(100vh - 131px); }
+  @media (min-width: 425px) {
+    .about {
+      min-height: calc(100vh - 149px);
+      padding: 30px; } }
+  @media (min-width: 768px) {
+    .about {
+      min-height: calc(100vh - 131px);
+      padding: 40px; } }
+  .about a {
+    color: #1b75bb; }
+  .about a:hover {
+    color: #E66E1C; }
+  .about h1 {
+    margin-bottom: 0; }
+
+.heading-drop-down-container {
+  width: 100%; }
+
 .drop-down-contents {
   padding-bottom: 40px; }
 
@@ -242,6 +294,15 @@ h2, h3 {
 
 .text-shadow-lowered {
   text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.4); }
+
+.download-button {
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 900;
+  background-color: #1b75bb;
+  padding: 5px 15px;
+  color: white;
+  text-transform: uppercase; }
 
 .section--wrapper {
   padding: 15px; }
@@ -296,10 +357,13 @@ h2, h3 {
   color: #FFFFFF; }
 
 .traveler {
-  padding: 0 50px;
+  padding: 0 20px;
+  box-sizing: border-box;
   color: #1b75bb; }
 
 .hotel-wrapper {
+  padding: 0 20px;
+  box-sizing: border-box;
   background-color: #808080;
   color: #FFFFFF; }
 
@@ -316,9 +380,6 @@ h2, h3 {
   align-items: center;
   flex-direction: column;
   justify-content: space-between; }
-  @media (min-width: 768px) {
-    .exchange-building__section {
-      flex-direction: row-reverse; } }
   @media (min-width: 992) {
     .exchange-building__section {
       align-items: flex-start; } }
@@ -346,33 +407,54 @@ h2, h3 {
 
 .reserve-warning {
   color: #E66E1C;
-  padding-top: 15px; }
+  padding: 8px; }
+
+.flex-end {
+  justify-content: flex-end; }
+
+.flex-column {
+  flex-direction: column;
+  justify-content: center; }
+
+.flex-row-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
 
 /* Register */
 .app {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
-  background-image: url("../images/room.jpg");
-  background-position: cover;
-  background-attachment: fixed;
-  min-height: calc(100vh - 162px);
-  width: 100vw;
-  background-size: cover; }
+  background-color: #ececec;
+  min-height: calc(100vh - 131px);
+  width: 100vw; }
+  @media (min-width: 425px) {
+    .app {
+      min-height: calc(100vh - 149px); } }
   @media (min-width: 768px) {
     .app {
-      min-height: calc(100vh - 128px); } }
+      min-height: calc(100vh - 131px); } }
   .app > div:last-child {
     margin-bottom: 40px; }
 
+.get-reservations, .get-room-info, .get-token, .check-available {
+  margin-top: 40px; }
+
+.z-above-after {
+  filter: brightness(1);
+  z-index: 4; }
+
 .reserve, .get-token, .get-reservations, .settle, .check-available, .get-room-info, .access {
+  color: #464749;
   background-color: white;
   overflow: hidden;
-  padding: 10px 16px;
-  margin-top: 40px;
-  z-index: 4; }
-  @media (min-width: 480px) {
+  z-index: 4;
+  filter: brightness(1);
+  padding: 10px 16px; }
+  @media (min-width: 425px) {
     .reserve, .get-token, .get-reservations, .settle, .check-available, .get-room-info, .access {
       padding: 15px 25px;
       max-width: 80vw; } }
@@ -387,6 +469,7 @@ h2, h3 {
     margin-bottom: 0;
     max-width: 100vw; }
     .reserve fieldset h1, .get-token fieldset h1, .get-reservations fieldset h1, .settle fieldset h1, .check-available fieldset h1, .get-room-info fieldset h1, .access fieldset h1 {
+      margin-top: 0;
       font-size: 35px;
       color: #474747; }
       @media (min-width: 768px) {
@@ -410,7 +493,6 @@ h2, h3 {
   font-size: 15px; }
 
 .input-style-2 {
-  width: 90%;
   margin-left: 0; }
 
 input:focus {
@@ -418,15 +500,20 @@ input:focus {
   outline: #E66E1C auto 5px; }
 
 .array-mappings {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column; }
 
 .input-button-style {
-  margin-top: 25px;
+  margin-top: 18px;
   font-weight: 900;
   background-color: #1b75bb;
   padding: 5px 15px;
   color: white;
   text-transform: uppercase; }
+
+.disabled {
+  cursor: not-allowed; }
 
 .react-datepicker__input-container input {
   height: 35px;
@@ -435,6 +522,88 @@ input:focus {
   padding-left: 10px;
   border: 1px solid #ccc;
   font-size: 15px; }
+
+.contact-page {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 0 40px; }
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  overflow: hidden;
+  margin: 60px 30px 0;
+  padding: 30px;
+  z-index: 4;
+  color: #464749; }
+  .contact-card a {
+    color: #1b75bb; }
+  .contact-card a:hover {
+    color: #E66E1C; }
+
+.avatar-image-container {
+  height: 275px;
+  width: 275px;
+  margin-bottom: 20px;
+  z-index: 5;
+  overflow: hidden; }
+
+.avatar-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%; }
+
+.aaron-avatar {
+  top: 0;
+  margin-left: -30px;
+  width: 320px; }
+
+.sardor-avatar {
+  margin-top: -20px;
+  margin-left: -70px;
+  width: 450px; }
+
+.sam-avatar {
+  margin-top: -20px;
+  margin-left: -75px;
+  width: 450px; }
+
+.iron-image-container {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 131px);
+  overflow: hidden; }
+
+.iron-image-preload {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  filter: blur(3px);
+  background-size: cover; }
+
+.iron-image-loaded {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 1s ease; }
+
+.iron-image-fade-in {
+  opacity: 1; }
 
 body,
 .pure-g [class*=pure-u] {
@@ -521,26 +690,25 @@ pre {
   height: 100%; }
 
 .image-sml {
-  height: 140px;
+  height: 70px;
+  width: auto; }
+
+.image-xsml {
+  height: 20px;
   width: auto; }
 
 .home {
-  background-image: url("../images/movement.jpg");
-  background-position: center;
-  width: 100%;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  height: calc(100vh - 162px); }
+  width: 100vw;
+  min-height: calc(100vh - 131px); }
+  @media (min-width: 425px) {
+    .home {
+      min-height: calc(100vh - 147px); } }
   @media (min-width: 768px) {
     .home {
-      height: calc(100vh - 128px); } }
+      min-height: calc(100vh - 131px); } }
 
-.home:after {
-  position: absolute;
+.darken:after {
+  position: fixed;
   width: 100%;
   top: 0;
   bottom: 0;
@@ -550,18 +718,62 @@ pre {
   background: rgba(0, 0, 0, 0.5);
   content: ""; }
 
+.margin-at-bottom > div:last-child {
+  margin-bottom: 40px; }
+
 .register-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 300px;
   z-index: 3;
   color: white;
-  margin: 10vh 0;
-  padding: 0 20px;
-  font-size: 20px; }
-  @media (min-width: 480px) {
+  font-size: 16px;
+  padding: 10px 20px; }
+  .register-message a {
+    color: white; }
+  .register-message a:hover {
+    color: #E66E1C; }
+  .register-message h2 {
+    font-size: 20px;
+    margin-top: 1em; }
+  @media (min-width: 370px) {
     .register-message {
-      font-size: 30px; } }
+      font-size: 22px;
+      padding: 10px 30px; }
+      .register-message h2 {
+        font-size: 28px; } }
+  @media (min-width: 425px) {
+    .register-message {
+      font-size: 27px;
+      padding: 10px 30px; }
+      .register-message h2 {
+        font-size: 36px; } }
   @media (min-width: 768px) {
     .register-message {
-      font-size: 40px; } }
+      font-size: 36px;
+      padding: 20px 40px; }
+      .register-message h2 {
+        font-size: 44px; } }
+
+.dark-glass {
+  box-sizing: border-box;
+  padding: 40px;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.6); }
+
+.margin {
+  margin: 40px;
+  width: 90%;
+  height: calc(100vh - 229px); }
+  @media (min-width: 768px) {
+    .margin {
+      height: calc(100vh - 213px); } }
 
 /* Eth-Memphis */
 .grommetux-box--pad-large {
@@ -589,11 +801,5 @@ pre {
     .hero-text {
       font-size: 60px;
       margin-top: 50px; } }
-
-/*
-.exchange-building {
-  background-image: url('../images/exchange-building.jpg');
-  background-position: top;
-}*/
 
 /*# sourceMappingURL=App.css.map */

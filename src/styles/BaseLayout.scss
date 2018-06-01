@@ -1,124 +1,156 @@
 .base-layout {
-    min-height: 100vh;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    align-items: center;
-  }
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+}
 
-  .header {
-    width: 100vw;
-    // position: fixed;
-    z-index: 5;
-  }
+.header {
+  width: 100vw;
+  z-index: 5;
+  box-sizing: border-box;
+
+}
 
 .header-spacer {
-    z-index: 1;
-    position: relative;
-    height: 120px;
-    @media (min-width: $tablet) {
-        height: 86px;
-    }
+  z-index: 1;
+  position: relative;
+  height: calc(#{$headerHeight} - 1px);
+  @media (min-width: $mobile) {
+    height: calc(#{$headerTabletHeight} - 1px);
+  }
+  @media (min-width: $tablet) {
+    height: calc(#{$headerHeight} - 1px);
+  }
 }
 
-  .Logo img {
-    width: 180px;
-    height: auto;
-    padding: 7px 5px 0px 5px;
-  }
+.Logo img {
+  width: 180px;
+  height: auto;
+  padding: 7px 5px 0px 5px;
+}
 
-  .pure-menu-heading {
-    display: block;
-    text-decoration: none;
-    white-space: nowrap;
-    display: inline-block;
-    zoom:1;
-    // vertical-align: middle;
-    text-transform: uppercase;
-    color:#565d64;
-    padding:.5em 1em;
-  }
-  
-/* NAVBAR */
+.margin-left {
+  // @media (min-width: 375px) {
+  //   margin-left: 50px;
+  // }
+  margin: 0 calc((100vw - 322px)/2);
+}
+
+.pure-menu-heading {
+  // display: block;
+  text-decoration: none;
+  white-space: nowrap;
+  display: inline-block;
+  zoom:1;
+  // vertical-align: middle;
+  text-transform: uppercase;
+  color:#565d64;
+  padding:.5em 1em;
+}
+
 nav {
-    display: flex!important;
-    position: fixed;
-    z-index: 3;
-    box-sizing: border-box;
-    width: 100vw;
-    background-color: white;
-    justify-content: space-between;
-    flex-direction: column;
-    border-bottom: solid 1px $gray;
-    @media (min-width: $tablet) {
-        flex-direction: row;
-        .Logo {
-        padding-left: 25px;
-        }
-        .nav-items {
-        padding-right: 25px;
-        }
-    }
+  display: flex!important;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 3;
+  box-sizing: border-box;
+  width: 100vw;
+  overflow: visible;
+  background-color: white;
+  border-bottom: solid 1px $gray;
+  height: $headerHeight;
+  @media (min-width: $mobile) {
+    height: $headerTabletHeight;
+  }
+  @media (min-width: $tablet) {
+    height: $headerHeight;
+  }
 }
 
-  .navbar a {
-    color: #fff;
-  }
-  
-  /* Hannah: I have removed this, because changing a font weight on an action causes the page to jump
-  because it has not allocated that space. Maybe add an underline on hover instead? If you really want the
-  font weight to change, I can trick it another way with nesting
-  */
-  a:focus,
-  a:active {
-    font-weight: 700;
-  }
-  
-  a:hover {
-    color: $orange3;
-  }
-  
-  .navbar .pure-menu-heading,
-  .navbar .header-menu-link {
-    font-weight: bold;
-    text-transform: none;
-  }
-  
-  .navbar .navbar-right {
-    float: right;
-  }
-  
-  .navbar .uport-logo {
-    height: 16px;
-    margin-right: 10px;
-  }
-  
-
-  .nav-items {
-    display: flex;
+.nav-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  @media (min-width: $mobile) {
     justify-content: center;
     align-items: center;
-    @media (min-width: $desk) {
-      padding-right: 10px;
-    }
   }
+  @media (min-width: $tablet) {
+    flex-direction: row;
+  }
+}
 
-  //footer
+.nav-menu-button {
+  height: 32px;
+  width: 32px;
+  margin: 10px;
+  color: $font-gray;
+
+}
+
+.nav-drop-down {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-end;
+  z-index: 6;
+  // margin: 5px;
+  // padding: 5px;
+  background-color: white;
+  border-bottom: solid 1px $gray;
+  border-left: solid 1px $gray;
+  width: 130px;
+  right: 0;
+}
+
+// .drop-down-links {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: start;
+//   align-items: flex-start;
+// }
+
+.link-active {
+  font-weight: 700;
+}
+
+a:hover {
+  color: $orange3;
+}
+
 .footer {
-    background-color: white;
-    color: $font-gray;
-    box-sizing: border-box;
-    width: 100vw;
-    padding: 15px;
-    border-top: solid 1px #474747;
-    bottom: 0;
-    z-index: 3;
-    font-size: 12px;
-    @media (min-width: $mobile) {
-        font-size: 14px;
-    }
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  color: $font-gray;
+  box-sizing: border-box;
+  width: 100vw;
+  height: $footerHeight;
+  padding: 12px;
+  border-top: solid 1px #474747;
+  bottom: 0;
+  z-index: 3;
+  font-size: 12px;
+  @media (min-width: $mobile) {
+      font-size: 14px;
   }
+}
+
+.mit-symbol {
+  width: 100px;
+}
+
+.ethereum-symbol {
+  width: 158px;
+}
