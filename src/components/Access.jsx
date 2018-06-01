@@ -41,10 +41,10 @@ class Access extends Component{
 
   render(){
     return(
-      <Home>
+      <div className="home darken">
         <div className="access">
           <fieldset >
-            <h1>Access</h1>
+            <h1>Check In</h1>
               <div className="label-style">Token Id:
                 <input id="tokenId" type="text" className="input-style" onChange={this.handleTextChange} value={this.props.tokenId} />
               </div>
@@ -54,7 +54,7 @@ class Access extends Component{
                 }
           </fieldset>
         </div>
-      </Home>
+      </div>
     )
   }
 }

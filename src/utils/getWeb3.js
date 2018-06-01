@@ -11,13 +11,10 @@ let getWeb3 = new Promise(function(resolve, reject) {
     if (typeof web3 !== 'undefined') {
       // Use Mist/MetaMask's provider.
       web3 = new Web3(web3.currentProvider)
-
       results = {
         web3: web3
       }
-
       console.log('Injected web3 detected.');
-
       resolve(results)
     } else {
       // Fallback to localhost if no web3 injection. We've configured this to
@@ -25,7 +22,6 @@ let getWeb3 = new Promise(function(resolve, reject) {
         // testrpc or ganache use "http://localhost:8545"
         // truffle develop uses "http://localhost:9545"
       // var provider = new Web3.providers.HttpProvider('http://localhost:9545')
-
       // web3 = new Web3(provider)
       // results = {
         // web3: web3
@@ -33,7 +29,7 @@ let getWeb3 = new Promise(function(resolve, reject) {
       console.log('No web3 instance injected.');
       // resolve(results)
       error = {
-        error: "You must have a Metamask or mist installed and aimed at the Rinkeby test network."
+        error: "You must have a MetaMask or Mist installed and aimed at the Rinkeby test network."
       }
       reject(error)
     }

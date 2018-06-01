@@ -1,55 +1,78 @@
 /* Register */
 .app {
-    display: flex;
-    flex-direction: column;
-    // flex-wrap: wrap;
-    justify-content: start;
-    align-items: center;
-    background-image: url("../images/room.jpg");
-    background-position: cover;
-    background-attachment: fixed;
-    min-height: calc(100vh - 162px);
-    @media (min-width: $tablet) {
-      min-height: calc(100vh - 128px);
-    }
-    width: 100vw;
-    background-size: cover;
-    >div:last-child {
-      margin-bottom: 40px;
-    }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // background-image: url("../images/exchange-building-SU.jpg");
+  // background-size: cover;
+  // background-attachment: fixed;
+  // background-position: center;
+  background-color: $parchment;
+  min-height: calc(100vh - 131px);
+  @media (min-width: $mobile) {
+    min-height: calc(100vh - 149px);
   }
-  
-  .reserve, .get-token, .get-reservations, .settle, .check-available, .get-room-info, .access {
+  @media (min-width: $tablet) {
+    min-height: calc(100vh - 131px);
+  }
+  width: 100vw;
+  >div:last-child {
+    margin-bottom: 40px;
+  }
+}
+
+// .app:after {
+//   position: fixed;
+//   width: 100%;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   display: block;
+//   z-index: 2;
+//   background: rgba(0,0,0,.5);
+//   content: "";
+// }
+
+.get-reservations, .get-room-info, .get-token, .check-available {
+  margin-top: 40px;
+}
+
+.z-above-after {
+  z-index: 4;
+}
+
+.reserve, .get-token, .get-reservations, .settle, .check-available, .get-room-info, .access {
+  color: $font-gray;
+  background-color: white;
+  overflow: hidden;
+  z-index: 4;
+  padding: 10px 16px;
+  @media (min-width: $mobile) {
+    padding: 15px 25px;
+    max-width: 80vw;
+  }
+  @media (min-width: $tablet) {
+    padding: 30px 50px;
+    max-width: 60vw;
+  }
+  fieldset {
     background-color: white;
-    overflow: hidden;
-    padding: 10px 16px;
-    margin-top: 40px;
-    z-index: 4;
-    @media (min-width: $mobile) {
-      padding: 15px 25px;
-      max-width: 80vw;
-    }
-    @media (min-width: $tablet) {
-      padding: 30px 50px;
-      max-width: 60vw;
-    }
-    fieldset {
-      background-color: white;
-      box-sizing: border-box;
-      padding: 25px;
-      margin-bottom: 0;
-      // min-width: 400px;
-      max-width: 100vw;
-      h1 {
-        font-size: 35px;
-        color: $gray;
-        @media(min-width: $tablet) {
-          font-size: 45px;
-        }
+    box-sizing: border-box;
+    padding: 25px;
+    margin-bottom: 0;
+    max-width: 100vw;
+    h1 {
+      margin-top: 0;
+      font-size: 35px;
+      color: $gray;
+      @media(min-width: $tablet) {
+        font-size: 45px;
       }
     }
   }
-  
+}
+
   .label-style {
     background-color: white;
     padding: 10px 0px;
@@ -58,7 +81,7 @@
     color: #777;
     text-transform: uppercase;
   }
-  
+
   .input-style {
     height: 35px;
     flex-grow: 1;
@@ -67,9 +90,8 @@
     border: 1px solid #ccc;
     font-size: 15px;
   }
-  
+
   .input-style-2 {
-    width: 90%;
     margin-left: 0;
   }
 
@@ -77,11 +99,14 @@
     outline-offset: -2px;
     outline: $orange3 auto 5px;
   }
-  
+
   .array-mappings {
-    box-sizing: border-box
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+
   }
-  
+
   .input-button-style {
     margin-top: 25px;
     font-weight: 900;
@@ -90,7 +115,7 @@
     color: white;
     text-transform: uppercase;
   }
-  
+
   .react-datepicker__input-container input {
     height: 35px;
     flex-grow: 1;

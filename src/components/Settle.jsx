@@ -42,10 +42,10 @@ class Settle extends Component{
 
   render(){
     return(
-      <Home>
+      <div className="home darken">
         <div className="settle">
           <fieldset>
-            <h1>Settle</h1>
+            <h1>Check Out</h1>
               <div className="label-style">Token Id:
                 <input id="tokenId" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.tokenId} />
               </div>
@@ -53,7 +53,7 @@ class Settle extends Component{
               {this.state.settle}
           </fieldset>
         </div>
-      </Home>
+      </div>
     )
   }
 }

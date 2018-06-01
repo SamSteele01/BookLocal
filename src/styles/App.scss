@@ -4,6 +4,7 @@
 @import "Sections";
 @import "Helpers";
 @import "Register";
+@import "Contact";
 
 //Base styles and components
 body,
@@ -117,24 +118,27 @@ pre {
 
 // Home page
 .home {
-  background-image: url('../images/movement.jpg');
-  background-position: center;
-  // height: 92.5vh;
-  width: 100%;
+  background-image: url('../images/exchange-building-SU.jpg');
+  background-position: top;
+  background-attachment: fixed;
   background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
-  height: calc(100vh - 162px);
+  // position: relative;
+  width: 100vw;
+  min-height: calc(100vh - 131px);
+  @media (min-width: $mobile) {
+    min-height: calc(100vh - 149px);
+  }
   @media (min-width: $tablet) {
-    height: calc(100vh - 128px);
+    min-height: calc(100vh - 131px);
   }
 }
 
-.home:after {
-  position: absolute;
+.darken:after {
+  position: fixed;
   width: 100%;
   top: 0;
   bottom: 0;
@@ -145,18 +149,56 @@ pre {
   content: "";
 }
 
+.margin-at-bottom>div:last-child {
+  margin-bottom: 40px;
+}
+
 .register-message {
-  // position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   z-index: 3;
   color: white;
-  margin: 10vh 0;
-  padding: 0 20px;
-  font-size: 20px;
+  a {
+    color: white;
+  }
+  a:hover {
+    color: $orange3;
+  }
+  font-size: 22px;
+  padding: 10px 20px;
   @media (min-width: $mobile) {
-    font-size: 30px;
+    font-size: 27px;
+    padding: 10px 30px;
   }
   @media (min-width: $tablet) {
-    font-size: 40px;
+    font-size: 36px;
+    padding: 20px 40px;
+  }
+  h2, h4 {
+    margin: 0;
+  }
+}
+
+.dark-glass {
+  box-sizing: border-box;
+  padding: 40px;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: rgba(0,0,0,.6);
+}
+
+.margin {
+  // position: absolute;
+  margin: 40px;
+  width: 90%;
+  height: calc(100vh - 229px);
+  @media (min-width: $tablet) {
+    height: calc(100vh - 213px);
   }
 }
 
@@ -242,9 +284,3 @@ pre {
     margin-top: 50px;
   }
 }
-
-/*
-.exchange-building {
-  background-image: url('../images/exchange-building.jpg');
-  background-position: top;
-}*/
