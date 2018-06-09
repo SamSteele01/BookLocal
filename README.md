@@ -1,6 +1,6 @@
 # BookLocal Front-end
 
-This repo is for the Traveler and Hotel interfaces. It interacts with the smart contract and the backend server.
+This repo is for the Traveler interfaces. It interacts with the smart contract and the backend server.
 
 To run locally: clone or fork, ```npm install```, and ```npm start```.
 
@@ -13,3 +13,7 @@ Dev merges pull requests from other branches.
 Pull from Dev and then make a branch with your name or the issue you are working on. Only push to that branch.
 
 Pull from Dev, merge to your branch, and run locally to catch errors before opening a pull request.
+
+## Documentation
+
+The docs folder has lots of reading material. Not all of the suggestions have been implemented yet.
