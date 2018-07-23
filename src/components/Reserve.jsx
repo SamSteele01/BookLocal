@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import moment from 'moment/moment';
 import DatePicker from 'react-datepicker';
-import { PulseLoader } from 'react-spinners';
 import 'react-datepicker/dist/react-datepicker.css';
+import { PulseLoader } from 'react-spinners';
 import Home from 'wrappers/Home'
 
 let reserve;
@@ -138,7 +138,8 @@ class Reserve extends Component{
                       <div>
                         <h1>Room Reserved!</h1>
                         <div>Thank you for booking your room with BookLocal! We can't wait to meet you at EthMemphis. Go to the status page to get your room assignment.</div>
-                      </div> :
+                      </div>
+                    :
                       <div className="reserve-warning">There was a problem and the reservation failed. Please contact Steve Lee: steven@booklocal.in</div>
                     }
                   </div>
@@ -154,7 +155,7 @@ class Reserve extends Component{
                 <div className="reserve-warning">See the transaction on <a href={`https://rinkeby.etherscan.io/tx/${this.state.response}`} target="_blank" rel="noopener noreferrer">Etherscan.io.</a></div>
               </fieldset>
             </div>
-          :
+         :
             <fieldset>
               <h1>Reserve Your Room</h1>
               {this.props.web3error &&
