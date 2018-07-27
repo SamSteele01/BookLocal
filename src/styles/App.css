@@ -1,3 +1,13 @@
+/* External Styles */
+@import '../../node_modules/normalize.css/normalize.css';
+/* Original SASS stylesheet imports */
+@import './partials/_BaseLayout.css';
+@import './partials/_Contact.css';
+@import './partials/_Helpers.css';
+@import './partials/_Register.css';
+@import './partials/_Sections.css';
+@import './partials/_Typography.css';
+
 /* Temporary style changes added by Sean until a new design direction is decided on. 
 /* TODO: Refactor to follow style guide */
 :global(.home) :global(.reserve) {

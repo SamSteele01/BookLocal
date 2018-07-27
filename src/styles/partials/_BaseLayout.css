@@ -93,7 +93,7 @@ nav {
   height: 32px;
   width: 32px;
   margin: 10px;
-  color: $font-gray;
+  color: $fontGray;
 
 }
 
@@ -133,7 +133,7 @@ a:hover {
   justify-content: space-around;
   align-items: center;
   background-color: white;
-  color: $font-gray;
+  color: $fontGray;
   box-sizing: border-box;
   width: 100vw;
   height: $footerHeight;

@@ -44,7 +44,7 @@
 }
 
 .reserve, .get-token, .get-reservations, .settle, .check-available, .get-room-info, .access {
-  color: $font-gray;
+  color: $fontGray;
   background-color: white;
   overflow: hidden;
   z-index: 4;

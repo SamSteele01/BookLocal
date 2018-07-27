@@ -1,6 +1,3 @@
-@import "Variables";
-@import "Typography";
-
 // Traveler Section
 
 .prospectus {
@@ -23,7 +20,7 @@
   overflow: hidden;
   padding: 20px;
   z-index: 4;
-  color: $font-gray;
+  color: $fontGray;
   background-color: $parchment;
   // background-color: 
   min-height: calc(100vh - 131px);
@@ -36,7 +33,7 @@
     padding: 40px;
   }
   a {
-      color: $logo-blue;
+      color: $logoBlue;
   }
   a:hover {
       color: $orange3;
@@ -98,7 +95,7 @@
 }
 
 .textbox {
-  background-color: $logo-blue;
+  background-color: $logoBlue;
   padding: 20px;
   color: white;
   line-height: 1.5;
@@ -120,7 +117,7 @@
 }
 
 .why {
-  background-color: $logo-blue;
+  background-color: $logoBlue;
   color: $white;
 }
 
@@ -128,19 +125,19 @@
   // background-color: #1a3a5a;
   // color: white;
   background-color: $white;
-  color: $font-gray;
+  color: $fontGray;
 }
 
 .solutions {
   // background-color: $white;
-  // color: $font-gray;
+  // color: $fontGray;
   background-color: #1a3a5a;
   color: white;
 }
 
 .who {
   background-color: $white;
-  color: $font-gray;
+  color: $fontGray;
 }
 
 .how {
@@ -151,11 +148,11 @@
 .traveler {
   padding: 0 20px;
   box-sizing: border-box;
-  color: $logo-blue;
+  color: $logoBlue;
     // font-size: 25px;
   // h2 {
   //   padding: 0 50px;
-  //   color: $logo-blue;
+  //   color: $logoBlue;
   //   // font-size: 25px;
   // }
 }
@@ -178,7 +175,7 @@
 
 .exchange {
   background-color: $white;
-  color: $font-gray;
+  color: $fontGray;
 }
 
 .exchange-building__section {
@@ -193,7 +190,7 @@
     align-items: flex-start;
   }
   a {
-    color: $logo-blue;
+    color: $logoBlue;
     font: 20px;
   }
 }
@@ -206,7 +203,7 @@
 }
 
 .proof-of-concept {
-  background-color: $logo-blue;
+  background-color: $logoBlue;
   color: $white;
 }
 
