@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import moment from 'moment/moment';
+import moment from 'moment';
 import DatePicker from 'react-datepicker';
 import { PulseLoader } from 'react-spinners';
 import 'react-datepicker/dist/react-datepicker.css?raw';

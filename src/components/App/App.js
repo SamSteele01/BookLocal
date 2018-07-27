@@ -8,18 +8,18 @@ import Reserve from 'components/Reserve';
 // import GetRoomInfo from 'components/GetRoomInfo';
 import Access from 'components/Access';
 import Settle from 'components/Settle';
-import Status from 'containers/Status'
+import Status from 'components/Status'
 import Contact from 'components/Contact'
 import About from 'components/About';
 import getWeb3 from 'utils/getWeb3';
 // import Web3 from 'web3';  // from node module
 
-import '../styles/App.css'
+import '../../styles/App.css'
 
-let RRAbi = require('../../ABIs/RoomRentingAbi.js');
+let RRAbi = require('../../../ABIs/RoomRentingAbi');
 // note: should switch between localAddress and rinkeyAddress based on web3 provider
 // let RRAddress = require('contractAddress/localAddress.js');
-let RRAddress = require('../../contractAddress/rinkebyAddress.js');
+let RRAddress = require('../../../contractAddress/rinkebyAddress');
 
 class App extends Component {
   constructor(props){
