@@ -1,27 +1,27 @@
 
-.margin-bottom--med {
+:global(.margin-bottom--med ){
   margin-bottom: 25px;
 }
 
-.reserve-warning {
+:global(.reserve-warning ){
   color: $orange3;
   padding: 8px;
 }
 
-.flex-end {
+:global(.flex-end ){
   justify-content: flex-end;
 }
 
-.flex-column {
+:global(.flex-column ){
   flex-direction: column;
   justify-content: center;
 }
 
-.flex-row-center {
+:global(.flex-row-center ){
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-// For misc spacing, etc. add helpers here 
+// For misc spacing, etc:global(. add )helpers here 

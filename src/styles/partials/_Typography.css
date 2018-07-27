@@ -1,4 +1,4 @@
-.what__card-font {
+:global(.what__card-font ){
   font-weight: 300;
   font-size: 26px;
   border: solid 1px $logoBlue;
@@ -9,17 +9,17 @@
   }
 }
 
-.why__card-font {
+:global(.why__card-font ){
   font-weight: 300;
   font-size: 14px;
 }
 
-.who__card-font {
+:global(.who__card-font ){
   font-weight: 300;
   font-size: 18px;
 }
 
-.steps__card-font {
+:global(.steps__card-font ){
   font-weight: 300;
   font-size: 14px;
   border: solid 1px #3675B6;
@@ -36,17 +36,17 @@
   }
 }
 
-.paragraph-white {
+:global(.paragraph-white ){
   @extend %paragraph;
   color: white;
 }
 
-.paragraph-gray {
+:global(.paragraph-gray ){
   @extend %paragraph;
   color: $fontGray;
 }
 
-.heading-typography {
+:global(.heading-typography ){
   font-family: $headerFont;
   text-transform: uppercase;
   padding: 25px 0;
@@ -62,7 +62,7 @@ h2, h3 {
   font-family: $secondaryHeader;
 }
 
-.how__card-font {
+:global(.how__card-font ){
   font-size: 14px;
   padding: 10px;
   border: solid 1px $logoBlue;
