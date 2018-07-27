@@ -14,7 +14,7 @@ import About from 'components/About';
 import getWeb3 from 'utils/getWeb3';
 // import Web3 from 'web3';  // from node module
 
-import 'styles/App.css'
+import '../styles/App.css'
 
 let RRAbi = require('../../ABIs/RoomRentingAbi.js');
 // note: should switch between localAddress and rinkeyAddress based on web3 provider

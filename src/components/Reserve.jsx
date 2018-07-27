@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import moment from 'moment/moment';
 import DatePicker from 'react-datepicker';
 import { PulseLoader } from 'react-spinners';
-import 'react-datepicker/dist/react-datepicker.css';
+import 'react-datepicker/dist/react-datepicker.css?raw';
 
 let reserve;
 
