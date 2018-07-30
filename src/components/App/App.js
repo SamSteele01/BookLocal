@@ -13,8 +13,16 @@ import Contact from 'components/Contact'
 import About from 'components/About';
 import getWeb3 from 'utils/getWeb3';
 // import Web3 from 'web3';  // from node module
+import WebFont from 'webfontloader'
 
 import '../../styles/App.css'
+
+// Load in webfonts without creating a blocking CSS request
+WebFont.load({
+  google: {
+    families: ['Source Sans Pro:400, 700', 'sans-serif']
+  }
+});
 
 let RRAbi = require('../../../ABIs/RoomRentingAbi');
 // note: should switch between localAddress and rinkeyAddress based on web3 provider
