@@ -8,14 +8,17 @@ import ArrowIcon from 'components/ArrowIcon'
 import getStringItems from './utils'
 import './SearchForm.css'
 
-const items = [
-  {value: 'Memphis'},
-  {value: 'New York'},
-  {value: 'Los Angeles'},
-  {value: 'Chicago'},
-  {value: 'Philadelphia'},
-  {value: 'Atlanta'}
+const allItems = [
+  {name: 'Memphis', id: 'memphis'},
+  {name: 'New York', id: 'new york'},
+  {name: 'Los Angeles', id: 'los angeles'},
+  {name: 'Chicago', id: 'chicago'},
+  {name: 'Philadelphia', id: 'philadelphia'},
+  {name: 'Atlanta', id: 'atlanta'}
 ]
+const items = allItems.map(item => ({name: item.name, id: item.id.toLowerCase()}))
+
+const itemToString = i => (i ? i.name : '')
 
   // Using downshift to handle the autocomplete/suggest function here. Docs and relevant comparison code
   // Here: https://www.npmjs.com/package/downshift
@@ -42,7 +45,7 @@ const items = [
       <div>
       <Downshift
         onStateChange={this.handleStateChange}
-        itemToString={item => (item ? item.value : '')}
+        itemToString={itemToString}
       >
         {({
           getLabelProps,
@@ -55,7 +58,7 @@ const items = [
           clearSelection,
           selectedItem,
           inputValue,
-          highlightedIndex,
+          highlightedIndex
         }) => (
           <div>
             <label {...getLabelProps()}>Search for a city</label>
@@ -82,11 +85,11 @@ const items = [
               <ul {...getMenuProps({isOpen})} className="suggestionsDropdown">
                 {isOpen
                   ? items
-                    .filter(item => !inputValue || item.value.includes(inputValue))
+                    .filter(item => !inputValue || item.id.includes(inputValue))
                     .map((item, index) => (
                     <li
                     {...getItemProps({
-                      key: item.value,
+                      key: item.id,
                       item,
                       index,
                       style: {
@@ -96,7 +99,7 @@ const items = [
                       },
                       })}
                     >
-                      {item.value}
+                      {item.name}
                     </li>
                 
                 ))
