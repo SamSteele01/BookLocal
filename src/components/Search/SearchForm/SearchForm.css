@@ -1,0 +1,22 @@
+:global(.suggestionsDropdown) {
+    background: white;
+    padding: 0;
+    li {
+        list-style-type: none;
+        position: relative;
+        cursor: pointer;
+        display: block;
+        height: auto;
+        text-align: center;
+        border-top: none;
+        line-height: 1rem;
+        font-size: $fontSize;
+        text-transform: none;
+        padding: 0.8rem 1.1rem;
+        word-wrap: normal;
+        white-space: normal;
+    }
+    .isActive, .isSelected {
+        background: color(#fff blackness(15%));
+    }
+}
