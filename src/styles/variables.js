@@ -39,8 +39,8 @@ var globalVariable = {
   headerTabletHeight: '102px',
   footerHeight: '45px',
   // typography
-  mainFont: "'Open Sans', sans-serif",
-  headerFont: "'Titillium Web', sans-serif",
+  mainFont: "'Source Sans Pro', sans-serif",
+  headerFont: "'Source Sans Pro', sans-serif",
   bodyFont: "'Oswald', 'Arial Narrow', sans-serif",
   secondaryHeader: "'PT Sans Narrow', serif"
 

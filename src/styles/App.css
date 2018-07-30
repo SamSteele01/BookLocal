@@ -13,26 +13,25 @@
 :global(.home) :global(.reserve) {
   overflow: visible;
 }
-@import "Variables";
-@import "Typography";
-@import "BaseLayout";
-@import "Sections";
-@import "Helpers";
-@import "Register";
-@import "Contact";
-
+:global(.new-searchTemp) {
+  z-index: 30;
+  background: white;
+  border: 0.05rem solid color(#fff blackness(25%));
+  border-radius: 0.1rem;
+  margin-top: 2rem;
+}
 //Base styles and components
 body,
 :global(.pure-g [class*=pure-u]) {
-  font-family: $main-font;
+  @mixin SourceSans $fontSize;
 }
 
 h1, h2, h3 {
-  font-family: $body-font;
+  @mixin SourceSans calc($fontSize * 1.5);
 }
 
 p {
-  font-family: $header-font;
+  @mixin SourceSans $fontSize;
 }
 
 pre {
