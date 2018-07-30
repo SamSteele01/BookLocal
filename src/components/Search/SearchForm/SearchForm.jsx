@@ -4,8 +4,6 @@ import { render } from 'react-dom'
 import Downshift from 'downshift'
 import XIcon from 'components/XIcon'
 import ArrowIcon from 'components/ArrowIcon'
-// import test utilities from https://codesandbox.io/s/github/kentcdodds/downshift-examples
-import getStringItems from './utils'
 import './SearchForm.css'
 
 const allItems = [
@@ -32,11 +30,14 @@ const itemToString = i => (i ? i.name : '')
     }
     this.handleStateChange=this.handleStateChange.bind(this);
   }
-  handleStateChange = (changes, downshiftState) => {
+  handleStateChange = (changes) => {
       if(changes.hasOwnProperty('selectedItem')) {
-        this.setState({query: changes.SelectedItem})
+        this.setState({query: changes.selectedItem});
+        this.props.getSearchString(changes.selectedItem);
       } else if (changes.hasOwnProperty('inputValue')) {
-        this.setState({query: changes.inputValue})
+        this.setState({query: changes.inputValue});
+        this.props.getSearchString(changes.inputValue);
+
       }
       }
       
@@ -66,6 +67,7 @@ const itemToString = i => (i ? i.name : '')
               <input {...getInputProps({
                 isOpen,
                 placeholder: "Search for a city"})} 
+                className="searchCity"
               />
               {selectedItem ? (
                 <button 
@@ -82,7 +84,18 @@ const itemToString = i => (i ? i.name : '')
               )}
             </div>
             <div>
-              <ul {...getMenuProps({isOpen})} className="suggestionsDropdown">
+              <ul {...getMenuProps({
+                  isOpen,
+                  style: {
+                    border: 
+                      isOpen ? '0.1rem solid lightgray' : null,
+                    borderRadius: 
+                      isOpen ? '0.1rem' : null
+                  }
+                  })} 
+                  className="suggestionsDropdown"
+                  
+                >
                 {isOpen
                   ? items
                     .filter(item => !inputValue || item.id.includes(inputValue))

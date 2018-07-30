@@ -21,3 +21,6 @@
         background: color(#fff blackness(15%));
     }
 }
+:global(.searchCity) {
+    position: relative;
+}

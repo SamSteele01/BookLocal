@@ -1,0 +1,6 @@
+.container {
+    /* placeholder */
+    margin-top: 1rem;
+    border-top: 0.1rem solid color(#fff blackness(25%));
+    flex: 1 0 100%;
+}

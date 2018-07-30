@@ -155,10 +155,10 @@ pre {
   }
 }
 
-// :global(.darken ){
-//   filter: brightness(.4);
-//   z-index: 2;
-// }
+/* :global(.darken ){
+/*   filter: brightness(.4);
+/   z-index: 2;
+/ } */
 
 :global(.darken:after ){
   position: fixed;
@@ -242,7 +242,7 @@ pre {
 
   /* Eth-Memphis */
 
-  // @media screen and (min-width: 1326px){
+  /* // @media screen and (min-width: 1326px){
   //   :global(.Container ){
   //     background-color: gray;
   //     display: grid;
@@ -286,7 +286,7 @@ pre {
   //     gridTemplateAreas: '';
   //     alignContent: 'center';
   //   }
-  // }
+  // } */
 
 // Grommet Stuff
 
