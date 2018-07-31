@@ -24,10 +24,10 @@ WebFont.load({
   }
 });
 
-let RRAbi = require('../../../ABIs/RoomRentingAbi');
+// let RRAbi = require('../../../ABIs/RoomRentingAbi');
 // note: should switch between localAddress and rinkeyAddress based on web3 provider
 // let RRAddress = require('contractAddress/localAddress.js');
-let RRAddress = require('../../../contractAddress/rinkebyAddress');
+// let RRAddress = require('../../../contractAddress/rinkebyAddress');
 
 class App extends Component {
   constructor(props){
@@ -79,10 +79,10 @@ class App extends Component {
     }
   }
 
-  instantiateContract = () => {    
-    this.setState({
-      RR: this.state.web3.eth.contract(RRAbi).at(RRAddress)
-    })
+  instantiateContract = () => {
+    // this.setState({
+    //   RR: this.state.web3.eth.contract(RRAbi).at(RRAddress)
+    // })
     // RoomRenting.deployed().then(function(res){RR = RoomRenting.at(res.address)})
   }
 
@@ -104,15 +104,15 @@ class App extends Component {
 
   accountListener = () => {
     // var account = web3.eth.accounts[0];
-    setInterval(() => {
-      if (this.state.web3.eth.accounts[0] !== this.state.account) {
-        console.log('this.state.web3.eth.accounts[0]: ', this.state.web3.eth.accounts[0]);
-        console.log('this.state.account: ', this.state.account)
-        // account = web3.eth.accounts[0];
-        // updateInterface();
-        this.setState({account: this.state.web3.eth.accounts[0]})
-      }
-    }, 2000);
+    // setInterval(() => {
+    //   if (this.state.web3.eth.accounts[0] !== this.state.account) {
+    //     console.log('this.state.web3.eth.accounts[0]: ', this.state.web3.eth.accounts[0]);
+    //     console.log('this.state.account: ', this.state.account)
+    //     // account = web3.eth.accounts[0];
+    //     // updateInterface();
+    //     this.setState({account: this.state.web3.eth.accounts[0]})
+    //   }
+    // }, 2000);
   }
 
   returnComponentState = (componentState) => {
