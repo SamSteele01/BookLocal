@@ -70,12 +70,12 @@ class Search extends Component {
   render() {
     return(
       <div className="card" styleName="style.container">
-          <div className="formGroup" styleName="citySearch">
+          <div className="formGroup" styleName="style.citySearch">
             <SearchForm 
               getSearchString={this.getSearchString}
             />
           </div>
-          <div className="formGroup" styleName="startDate">          
+          <div className="formGroup" styleName="style.startDate">          
             <DatePicker
               selected={this.state.startDate}
               onChange={this.handleDateChangeStart}
@@ -86,7 +86,7 @@ class Search extends Component {
               className="startDate-datePicker"
             />
           </div>
-          <div className="formGroup" styleName="endDate">
+          <div className="formGroup" styleName="style.endDate">
             <DatePicker
               selected={this.state.endDate}
               onChange={this.handleDateChangeEnd}
@@ -97,8 +97,8 @@ class Search extends Component {
               classname="endDate-datePicker"
             />
           </div>
-          <div className="formGroup" styleName="searchSubmit">
-            <button onClick={this.handleSubmit}className="button" styleName="searchSubmitButton" value="Search for hotels">Search for hotels</button>
+          <div className="formGroup" styleName="style.searchSubmit">
+            <button onClick={this.handleSubmit}className="button" styleName="style.searchSubmitButton" value="Search for hotels">Search for hotels</button>
           </div>
           <div styleName="results">
             <SearchResults searchQuery={this.state.results} searchRunning={this.state.searchSubmitted} />

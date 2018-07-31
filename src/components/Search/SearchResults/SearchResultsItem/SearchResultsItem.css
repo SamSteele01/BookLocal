@@ -2,17 +2,19 @@
     /* placeholder */
     border-bottom: 0.15rem solid color(#fff blackness(30%));
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     align-items: center;
     &:last-child {
         border-bottom: none;
     }
 }
 .hotelName, .hotelLocation, .hotelBeds, .hotelPrice, .reserveRoomButton {
-    flex: 1 1 25%;
+    flex: 1 1 15%;
 }
 .hotelName {
     /* placeholder */
+    flex: 0 0 100%;
+    text-align: left;
     h4 {
         font-size: calc($fontSize * 1.25);
         color: $fontColorHeader;
@@ -20,6 +22,10 @@
 }
 .hotelImage {
     /* placeholder */
+    flex: 1 1 15%;
+    img {
+        width: 10vw;
+    }
 
 }
 .hotelLocation {

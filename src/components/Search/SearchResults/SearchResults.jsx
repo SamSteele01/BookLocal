@@ -7,17 +7,17 @@ import './SearchResults.css'
 // extended view: ameneties, pool, etc.
 
 const searchResults = [
-    {name: 'Hotel #1', city: 'memphis', beds: 2, price: 2.2, imgSrc: 'urlString'},
-    {name: 'Hotel #2', city: 'memphis', beds: 2, price: 4, imgSrc: 'urlString'},
-    {name: 'Hotel #3', city: 'memphis', beds: 1, price: 1.5, imgSrc: 'urlString'},
-    {name: 'Hotel #4', city: 'memphis', beds: 2, price: 1, imgSrc: 'urlString'},
-    {name: 'Hotel #5', city: 'memphis', beds: 3, price: 10, imgSrc: 'urlString'},
-    {name: 'Hotel #6', city: 'memphis', beds: 1, price: 1.1, imgSrc: 'urlString'},
-    {name: 'Hotel #7', city: 'memphis', beds: 2, price: 2.2, imgSrc: 'urlString'},
-    {name: 'Hotel #8', city: 'memphis', beds: 2, price: 2.15, imgSrc: 'urlString'},
-    {name: 'Hotel #9', city: 'memphis', beds: 1, price: 4, imgSrc: 'urlString'},
-    {name: 'Hotel #10', city: 'memphis', beds: 2, price: 5.5, imgSrc: 'urlString'},
-    {name: 'Hotel #11', city: 'memphis', beds: 1, price: 0.5, imgSrc: 'urlString'},
+    {name: 'Hotel #1', city: 'memphis', beds: 2, price: 2.2, imgSrc: '/media/hotel1.jpg'},
+    {name: 'Hotel #2', city: 'memphis', beds: 2, price: 4, imgSrc: '/media/hotel1.jpg'},
+    {name: 'Hotel #3', city: 'memphis', beds: 1, price: 1.5, imgSrc: '/media/hotel1.jpg'},
+    {name: 'Hotel #4', city: 'memphis', beds: 2, price: 1, imgSrc: '/media/hotel1.jpg'},
+    {name: 'Hotel #5', city: 'memphis', beds: 3, price: 10, imgSrc: '/media/hotel1.jpg'},
+    {name: 'Hotel #6', city: 'memphis', beds: 1, price: 1.1, imgSrc: '/media/hotel1.jpg'},
+    {name: 'Hotel #7', city: 'memphis', beds: 2, price: 2.2, imgSrc: '/media/hotel1.jpg'},
+    {name: 'Hotel #8', city: 'memphis', beds: 2, price: 2.15, imgSrc: '/media/hotel1.jpg'},
+    {name: 'Hotel #9', city: 'memphis', beds: 1, price: 4, imgSrc: '/media/hotel1.jpg'},
+    {name: 'Hotel #10', city: 'memphis', beds: 2, price: 5.5, imgSrc: '/media/hotel1.jpg'},
+    {name: 'Hotel #11', city: 'memphis', beds: 1, price: 0.5, imgSrc: '/media/hotel1.jpg'},
     
 ]
 

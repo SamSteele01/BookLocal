@@ -13,7 +13,8 @@ export default function SearchResultsItem({searchObject, callback}) {
             <div styleName="hotelName">
                 <h4>{searchObject.name}</h4>
             </div>
-            <div styleName="hotelImage">
+            <div styleName="hotelImage" data-image={searchObject.imgSrc}>
+                <img src={searchObject.imgSrc} />
             </div>
             <div styleName="hotelLocation">
                 City: <span>{searchObject.city}</span>
