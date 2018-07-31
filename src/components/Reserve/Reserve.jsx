@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import moment from 'moment/moment';
+import moment from 'moment';
 import DatePicker from 'react-datepicker';
 import { PulseLoader } from 'react-spinners';
-import 'react-datepicker/dist/react-datepicker.css';
-import Home from 'wrappers/Home'
+import 'react-datepicker/dist/react-datepicker.css?raw';
+import Search from 'components/Search'
 
 let reserve;
 
@@ -207,6 +207,9 @@ class Reserve extends Component{
               }
             </fieldset>
           }
+        </div>
+        <div className="new-searchTemp">
+          <Search />
         </div>
       </div>
     )

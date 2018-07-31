@@ -156,21 +156,11 @@ module.exports = {
             },
           },
           {
-            test: /\.scss$/,
-            use: [
-              {
-                loader: 'style-loader'
-              },
-              {
-                loader: 'css-loader'
-              },
-              {
-                loader: 'sass-loader',
-                // options: {
-                //   includePaths: ['./node_modules', './node_modules/grommet/node_modules']
-                // }
-              }
-            ]
+            // exclude specific css files from processing by the CSS loader with modules enabled by adding ?raw to the import statements in the .jsx files.
+            // Solution here: https://github.com/css-modules/css-modules/pull/65#issuecomment-354712147
+            test: /\.css$/,
+            resourceQuery: /^\?raw$/,
+            use: [require.resolve("style-loader"), require.resolve("css-loader")]
           },
           // "postcss" loader applies autoprefixer to our CSS.
           // "css" loader resolves paths in CSS and adds assets as dependencies.
@@ -185,15 +175,46 @@ module.exports = {
                 loader: require.resolve('css-loader'),
                 options: {
                   importLoaders: 1,
+                  modules: true,
+                  localIdentName: '[path]___[name]__[local]___[hash:base64:5]'
                 },
               },
               {
                 loader: require.resolve('postcss-loader'),
+                // TODO: Add in scss style syntax processing?
+                // Config here based (mostly) on https://github.com/DavidWells/PostCSS-tutorial
                 options: {
                   // Necessary for external CSS imports to work
                   // https://github.com/facebookincubator/create-react-app/issues/2677
+                  parser: 'postcss-scss',
                   ident: 'postcss',
                   plugins: () => [
+                    /* adding plugins here instead of postcss.config.js because the config is not reading currently */
+                    /* reset inherited rules */
+                    require('postcss-initial')({
+                      reset: 'inherited' // reset only inherited rules
+                    }),
+                    /* enable css @imports like Sass/Less */
+                    require('postcss-import'),
+                    /* enable mixins like Sass/Less */
+                    require('postcss-mixins')({
+                      mixins: require('../src/styles/mixins')
+                    }),
+                    /* enable nested css selectors like Sass/Less */
+                    require('postcss-nested'),
+                    /* require global variables */
+                    require('postcss-simple-vars')({
+                      variables: function variables() {
+                        return require('../src/styles/variables')
+                      },
+                      unknown: function unknown(node, name, result) {
+                        node.warn(result, 'Unknown variable ' + name)
+                      }
+                    }),
+                    /* PostCSS plugin for making calculations with math.js  */
+                    require('postcss-math'),
+                    /* transform W3C CSS color function to more compatible CSS. */
+                    require('postcss-color-function'),
                     require('postcss-flexbugs-fixes'),
                     autoprefixer({
                       browsers: [

@@ -1,9 +1,6 @@
-@import "Variables";
-@import "Typography";
-
 // Traveler Section
 
-.prospectus {
+:global(.prospectus ){
   // width: 100vw;
   box-sizing: border-box;
   width: 100%;
@@ -13,7 +10,7 @@
   flex-direction: column;
 }
 
-.about {
+:global(.about){
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -21,11 +18,11 @@
   box-sizing: border-box;
   width: 100vw;
   overflow: hidden;
-  padding: 20px;
+  padding: 5rem 1.2rem;
   z-index: 4;
-  color: $font-gray;
+  color: $fontGray;
   background-color: $parchment;
-  // background-color: 
+  height: 96vh;
   min-height: calc(100vh - 131px);
   @media (min-width: $mobile) {
     min-height: calc(100vh - 149px);
@@ -33,10 +30,11 @@
   }
   @media (min-width: $tablet) {
     min-height: calc(100vh - 131px);
-    padding: 40px;
+    padding: 5rem 1.2rem;
+
   }
   a {
-      color: $logo-blue;
+      color: $logoBlue;
   }
   a:hover {
       color: $orange3;
@@ -46,31 +44,31 @@
   }
 }
 
-.heading-drop-down-container {
+:global(.heading-drop-down-container ){
   width: 100%;
 }
 
-.drop-down-contents {
+:global(.drop-down-contents ){
   padding-bottom: 40px;
 
 }
 
-.heading-clickable {
+:global(.heading-clickable ){
   cursor: pointer;
   h2, h3 {
     margin: 0;
   }
 }
 
-.text-shadow-raised {
+:global(.text-shadow-raised ){
   text-shadow: 5px 2px 5px rgba(0, 0, 0, .4);
 }
 
-.text-shadow-lowered {
+:global(.text-shadow-lowered ){
   text-shadow: 2px 1px 2px rgba(0, 0, 0, .4);
 }
 
-.download-button {
+:global(.download-button ){
   text-decoration: none;
   margin: 0 10px;
   font-weight: 900;
@@ -80,7 +78,7 @@
   text-transform: uppercase;
 }
 
-.section--wrapper {
+:global(.section--wrapper ){
   padding: 15px;
   h3 {
     padding: 0 50px;
@@ -91,14 +89,14 @@
   }
 }
 
-.container {
+:global(.container ){
   box-sizing: border-box;
   width: 100%;
   padding: 45px 20px;
 }
 
-.textbox {
-  background-color: $logo-blue;
+:global(.textbox ){
+  background-color: $logoBlue;
   padding: 20px;
   color: white;
   line-height: 1.5;
@@ -114,53 +112,53 @@
   }
 }
 
-.what {
+:global(.what ){
   background-color: $gray;
   color: $white;
 }
 
-.why {
-  background-color: $logo-blue;
+:global(.why ){
+  background-color: $logoBlue;
   color: $white;
 }
 
-.problems {
+:global(.problems ){
   // background-color: #1a3a5a;
   // color: white;
   background-color: $white;
-  color: $font-gray;
+  color: $fontGray;
 }
 
-.solutions {
+:global(.solutions ){
   // background-color: $white;
-  // color: $font-gray;
+  // color: $fontGray;
   background-color: #1a3a5a;
   color: white;
 }
 
-.who {
+:global(.who ){
   background-color: $white;
-  color: $font-gray;
+  color: $fontGray;
 }
 
-.how {
+:global(.how ){
   background-color: $gray;
   color: $white;
 }
 
-.traveler {
+:global(.traveler ){
   padding: 0 20px;
   box-sizing: border-box;
-  color: $logo-blue;
+  color: $logoBlue;
     // font-size: 25px;
   // h2 {
   //   padding: 0 50px;
-  //   color: $logo-blue;
+  //   color: $logoBlue;
   //   // font-size: 25px;
   // }
 }
 
-.hotel-wrapper {
+:global(.hotel-wrapper ){
   padding: 0 20px;
   box-sizing: border-box;
   background-color: #808080;
@@ -170,18 +168,18 @@
   // }
 }
 
-.steps__section {
+:global(.steps__section ){
   background-color: $gray;
   color: $white;
   // padding: 15px;
 }
 
-.exchange {
+:global(.exchange ){
   background-color: $white;
-  color: $font-gray;
+  color: $fontGray;
 }
 
-.exchange-building__section {
+:global(.exchange-building__section ){
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -193,24 +191,24 @@
     align-items: flex-start;
   }
   a {
-    color: $logo-blue;
+    color: $logoBlue;
     font: 20px;
   }
 }
 
-.exchange-building__map {
+:global(.exchange-building__map ){
   max-width: 80vw;
   @media (min-width: $tablet) {
     max-width: 40vw;
   }
 }
 
-.proof-of-concept {
-  background-color: $logo-blue;
+:global(.proof-of-concept ){
+  background-color: $logoBlue;
   color: $white;
 }
 
-.early-adopters {
+:global(.early-adopters ){
   background-color: white;
   color: #1a3a5a;
 }

@@ -1,12 +1,7 @@
-$main-font: 'Open Sans', sans-serif;
-$header-font: 'Titillium Web', sans-serif;
-$body-font: 'Oswald', 'Arial Narrow', sans-serif;
-$secondary-header: "PT Sans Narrow", serif;
-
-.what__card-font {
+:global(.what__card-font ){
   font-weight: 300;
   font-size: 26px;
-  border: solid 1px $logo-blue;
+  border: solid 1px $logoBlue;
   h3 {
     width: 100%;
     text-align: center;
@@ -14,17 +9,17 @@ $secondary-header: "PT Sans Narrow", serif;
   }
 }
 
-.why__card-font {
+:global(.why__card-font ){
   font-weight: 300;
   font-size: 14px;
 }
 
-.who__card-font {
+:global(.who__card-font ){
   font-weight: 300;
   font-size: 18px;
 }
 
-.steps__card-font {
+:global(.steps__card-font ){
   font-weight: 300;
   font-size: 14px;
   border: solid 1px #3675B6;
@@ -41,18 +36,18 @@ $secondary-header: "PT Sans Narrow", serif;
   }
 }
 
-.paragraph-white {
+:global(.paragraph-white ){
   @extend %paragraph;
   color: white;
 }
 
-.paragraph-gray {
+:global(.paragraph-gray ){
   @extend %paragraph;
-  color: $font-gray;
+  color: $fontGray;
 }
 
-.heading-typography {
-  font-family: $header-font;
+:global(.heading-typography ){
+  font-family: $headerFont;
   text-transform: uppercase;
   padding: 25px 0;
   font-size: 25px;
@@ -64,13 +59,13 @@ $secondary-header: "PT Sans Narrow", serif;
 }
 
 h2, h3 {
-  font-family: $secondary-header;
+  font-family: $secondaryHeader;
 }
 
-.how__card-font {
+:global(.how__card-font ){
   font-size: 14px;
   padding: 10px;
-  border: solid 1px $logo-blue;
+  border: solid 1px $logoBlue;
 
   strong {
     font-size: 20px;

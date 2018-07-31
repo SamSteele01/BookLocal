@@ -1,5 +1,5 @@
 /* Register */
-.app {
+:global(.app ){
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,7 +22,7 @@
   }
 }
 
-// .app:after {
+// :global(.app:after ){
 //   position: fixed;
 //   width: 100%;
 //   top: 0;
@@ -34,17 +34,17 @@
 //   content: "";
 // }
 
-.get-reservations, .get-room-info, .get-token, .check-available {
+:global(.get-reservations ),:global(.get-room-info ),:global(.get-token ),:global(.check-available ){
   margin-top: 40px;
 }
 
-.z-above-after {
+:global(.z-above-after ){
   filter: brightness(1); // safari
   z-index: 4;
 }
 
-.reserve, .get-token, .get-reservations, .settle, .check-available, .get-room-info, .access {
-  color: $font-gray;
+:global(.reserve),:global(.get-token ),:global(.get-reservations),:global(.settle),:global(.check-available),:global(.get-room-info ),:global(.access){
+  color: $fontGray;
   background-color: white;
   overflow: hidden;
   z-index: 4;
@@ -75,7 +75,7 @@
   }
 }
 
-.label-style {
+:global(.label-style ){
   background-color: white;
   padding: 10px 0px;
   display: flex;
@@ -84,7 +84,7 @@
   text-transform: uppercase;
 }
 
-.input-style {
+:global(.input-style ){
   height: 35px;
   flex-grow: 1;
   margin-left: 10px;
@@ -93,7 +93,7 @@
   font-size: 15px;
 }
 
-.input-style-2 {
+:global(.input-style-2 ){
   margin-left: 0;
 }
 
@@ -102,14 +102,14 @@ input:focus {
   outline: $orange3 auto 5px;
 }
 
-.array-mappings {
+:global(.array-mappings ){
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
 
 }
 
-.input-button-style {
+:global(.input-button-style ){
   margin-top: 18px;
   font-weight: 900;
   background-color: rgb(27, 117, 187);
@@ -118,11 +118,11 @@ input:focus {
   text-transform: uppercase;
 }
 
-.disabled {
+:global(.disabled ){
   cursor: not-allowed;
 }
 
-.react-datepicker__input-container input {
+:global(.react-datepicker__input-container )input {
   height: 35px;
   flex-grow: 1;
   margin-left: 10px;
