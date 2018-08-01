@@ -14,7 +14,7 @@ export default function SearchResultsItem({searchObject, callback}) {
                 <h4>{searchObject.name}</h4>
             </div>
             <div styleName="hotelImage" data-image={searchObject.imgSrc}>
-                <img src={searchObject.imgSrc} />
+                <img src={searchObject.imgSrc} alt={searchObject.name} />
             </div>
             <div styleName="hotelLocation">
                 City: <span>{searchObject.city}</span>
@@ -32,7 +32,7 @@ export default function SearchResultsItem({searchObject, callback}) {
                     className="button"
                     styleName="reserveRoomButton"
                     value="Reserve"
-                    onClick={event => callback(searchObject.name)}
+                    onClick={event => callback(searchObject)}
                 />
             }
         </div>

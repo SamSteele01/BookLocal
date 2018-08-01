@@ -41,3 +41,58 @@
     color: #fff;
 
 }
+.reservationInfo {
+    /* placeholder */
+    grid-column: 1 / 13;
+    border: 0.1rem solid color($primaryBlue saturation(25%));
+}
+.travelerForm-container {
+    grid-column: 1 / 13;
+    text-align: left;
+}
+.backToSearchResults {
+    /* placeholder */
+    grid-column: 1 / 13;
+    text-align: left;
+    margin-bottom: 1rem;
+    color: $primaryBlue;
+  }
+  /* Modal container style that exists outside the Payment component */
+.paymentForm-modal {
+  align-items: center;
+  bottom: 0;
+  display: none;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0.4rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: color($bgColorDark alpha(0.75));
+
+  &:target,
+  &.active {
+    display: flex;
+    opacity: 1;
+    z-index: 10;
+
+    .modalOverlay {
+      background: rgba($bgColorDark, .75);
+      bottom: 0;
+      cursor: default;
+      display: block;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .modalContainer {
+      animation: slide-down .2s ease 1;
+      z-index: 1;
+    }
+  }
+
+}
