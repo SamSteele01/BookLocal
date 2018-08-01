@@ -18,11 +18,6 @@ class Payment extends Component {
     this.state = {
       paymentAmountETH: null,
       walletAddress: null,
-      ccNumber: null,
-      ccName: '',
-      ccExpiry: '',
-      ccCvc: null,
-      focused: '',
       submitted: false,
       paymentTypeToggle: false,
       transactionId: null,
@@ -42,27 +37,10 @@ class Payment extends Component {
       this.setState({[event.target.id]: event.target.value});
     }
   }
-  updateCcFormState = (value, source) => {
-    if(source === 'number') {
-      this.setState({ccNumber: value});
-    } else if(source === 'expiry') {
-      this.setState({ccExpiry: value});
-    } else if(source === 'cvc') {
-      this.setState({ccCvc: value});
-    }
-  }
   hidePaymentForm = (event) => {
     this.props.showPaymentForm(false);
   }
-  togglePaymentType = () => {
-    // change state of paymentTypeToggle to false to display the ETH/Metamask form, true for CCs
-    // state change is passed via onClick events on the divs for each tab
-    if(this.state.showHideEthForm === 'isVisible' && this.state.showHideCcForm === 'isHidden') {
-     this.setState({showHideEthForm: 'isHidden', showHideCcForm: 'isVisible'});
-    } else {
-      this.setState({showHideEthForm: 'isVisible', showHideCcForm: 'isHidden'});
-    }
-  }
+
   render() {
     // display payment form
     // display price in ETH future TODO: display in multiple currencies
@@ -75,10 +53,6 @@ class Payment extends Component {
        <div styleName="form-header">
           <div styleName="form-title">Payment for reservation</div>
        </div>
-       <ul styleName="form-tabContainer">
-          <li styleName="form-tabEth" onClick={this.togglePaymentType}><a>ETH</a></li>
-          <li styleName="form-tabCredit" onClick={this.togglePaymentType}><a>Credit Card</a></li>
-       </ul>
        <div styleName="form-content">
         <div styleName="reservationDetails">
             <p styleName="reservationDetails-price">Price: ETH</p>
@@ -98,42 +72,7 @@ class Payment extends Component {
           />
           <input id="reserve" type="submit" className="button" styleName="paymentForm-submitButton" value="Reserve room" onClick={this.handleSubmit} />
         </form>
-        <form styleName="paymentForm" className={this.state.showHideCcForm}>
-          <Number 
-            onChange={({value, valid}) => this.updateCcFormState(value, 'number')}
-            value={this.state.ccNumber}
-            render={({ getInputProps, value, valid }) => (
-              <div className="formGroup">
-              <label for="ccNumber">Credit Card Number</label>
-              <input required={true} id="ccNumber" styleName="paymentForm-ccNumber" {...getInputProps() } />
-              </div>
-            )}
-          />
-          <Expiration
-            onChange={({value, valid}) => this.updateCcFormState(value, 'expiry')}
-            value={this.state.ccExpiry}
-            render={({ getInputProps, value, valid, error, month, year }) => (
-              <div className="formGroup">
-              <label for="ccExpiry">Expiration Date</label>
-              <input id="ccExpiry" required={true} styleName="paymentForm-ccExpiry" {...getInputProps() } />
-              </div>
-            )}
-          />
-          <Cvc
-            onChange={({value, valid}) => this.updateCcFormState(value, 'cvc')}
-            value={this.state.ccCvc}
-            render={({ getInputProps, value, valid }) => (
-              <div className="formGroup">
-              <label for="ccCvc">CVC Code</label>
-              <input id="ccCvc" required={true} styleName="paymentForm-ccCvc" {...getInputProps() } />
-              </div>
-            )}
-          />
-          <label for="ccName">Name on Card</label>
-          <input type="text" id="ccName" name="ccName" required={true} placeholder="Name on card" value={this.state.ccName} onChange={this.handleTextChange} styleName="paymentForm-ccName" />
-          <input id="reserve" type="submit" className="button" styleName="paymentForm-submitButton" value="Reserve room" onClick={this.handleSubmit} />
         
-        </form>
           </div>
       
         </div>
