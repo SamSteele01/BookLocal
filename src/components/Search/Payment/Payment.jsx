@@ -100,7 +100,7 @@ class Payment extends Component {
         </form>
         <form styleName="paymentForm" className={this.state.showHideCcForm}>
           <Number 
-            onChange={({value, valid}) => updateCcFormState(value, 'number')}
+            onChange={({value, valid}) => this.updateCcFormState(value, 'number')}
             value={this.state.ccNumber}
             render={({ getInputProps, value, valid }) => (
               <div className="formGroup">
@@ -110,7 +110,7 @@ class Payment extends Component {
             )}
           />
           <Expiration
-            onChange={({value, valid}) => updateCcFormState(value, 'expiry')}
+            onChange={({value, valid}) => this.updateCcFormState(value, 'expiry')}
             value={this.state.ccExpiry}
             render={({ getInputProps, value, valid, error, month, year }) => (
               <div className="formGroup">
@@ -120,7 +120,7 @@ class Payment extends Component {
             )}
           />
           <Cvc
-            onChange={({value, valid}) => updateCcFormState(value, 'cvc')}
+            onChange={({value, valid}) => this.updateCcFormState(value, 'cvc')}
             value={this.state.ccCvc}
             render={({ getInputProps, value, valid }) => (
               <div className="formGroup">
