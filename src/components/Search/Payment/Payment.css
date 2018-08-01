@@ -1,0 +1,139 @@
+/* placeholder */
+
+.modalContainer {
+  align-items: center;
+  bottom: 0;
+  display: none;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0.4rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  &:target,
+  &.active {
+    display: flex;
+    opacity: 1;
+    z-index: 10;
+
+    .modalOverlay {
+      background: rgba($bgColorLight, .75);
+      bottom: 0;
+      cursor: default;
+      display: block;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .modalContainer {
+      animation: slide-down .2s ease 1;
+      z-index: 1;
+    }
+  }
+
+}
+
+.form-container {
+  box-shadow: 0 0.2rem 1.4rem rgba($bgColorDark, .3);
+  background: $bgColorLight;
+  border-radius: 0.1rem;
+  display: flex;
+  flex-direction: column;
+  max-height: 75vh;
+  max-width: 640px;
+  padding: 0 0.8rem;
+  width: 100%;
+  height: 35rem;
+  position: relative;
+  .form-header {
+    color: $fontColorHeader;
+    padding: 0.8rem;
+  }
+  .form-content {
+    overflow-y: auto;
+    padding: 0.8rem;
+    position: relative;
+  }
+  .modal-footer {
+    padding: 0.8rem;
+    text-align: right;
+  }
+}
+
+.form-close {
+  position: absolute;
+  right: -1rem;
+  top: -1.6rem;
+  color: $primaryBlue;
+}
+
+.form-title {
+  /* placeholder */
+}
+.form-tabContainer {
+  
+}
+.form-tabEth {
+
+}
+.form-tabCredit {
+
+}
+.form-contentEth {
+
+}
+.form-contentCredit {
+
+}
+.reservationDetails {
+  /* placeholder */
+  .reservationDetails-price {
+
+  }
+  .reservationDetails-dates {
+
+  }
+  .reservationDetails-hotelName {
+
+  }
+}
+
+.paymentForm {
+
+  &:global(.isVisible) {
+    display: block;
+  }
+  &:global(.isHidden) {
+    display: none;
+  }
+}
+.paymentForm-eth {
+
+}
+.paymentForm-credit {
+
+}
+.paymentForm-ccNumber {
+
+}
+.paymentForm-ccName {
+
+}
+.paymentForm-ccExpiry {
+
+}
+.paymentForm-ccCvc {
+  
+}
+.paymentForm-submit-isLoggedOut {
+
+}
+.paymentForm-submitButton {
+  @mixin buttonVariant $primaryGreen, 1rem, 2rem;
+  color: white;
+}
