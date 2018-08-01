@@ -15,8 +15,12 @@
         padding: 0.8rem 1.1rem;
         word-wrap: normal;
         white-space: normal;
+        text-transform: capitalize;
     }
     .isActive, .isSelected {
         background: color(#fff blackness(15%));
     }
+}
+:global(.searchCity) {
+    position: relative;
 }
