@@ -1,0 +1,43 @@
+.container {
+    z-index: 30;
+    width: 50vw;
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    justify-content: center;
+    :global(.formGroup) input {
+        width: 80%;
+    }
+    > :global(.formGroup) * label {
+        display: none;
+    }
+}
+.citySearch {
+    grid-column: 1 / 6;
+}
+.startDate, .endDate {
+    flex: 1 1 30%;
+}
+.startDate {
+    /* placeholder */
+    grid-column: 6 / 8;
+}
+.endDate {
+    /* placeholder */
+    grid-column: 8 / 10;
+}
+.searchSubmit {
+    grid-column: 10 / 13;
+}
+.results {
+    /* placeholder */
+    grid-column: 1 / 13;
+}
+/* :global(.formGroup) {
+    flex: 1 1 40%;
+} */
+.searchSubmitButton {
+    @mixin buttonVariant $primaryBlue, 0.5rem, 1rem;
+    color: #fff;
+
+}

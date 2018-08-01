@@ -1,37 +1,24 @@
-/* External Styles */
-@import '../../node_modules/normalize.css/normalize.css';
-/* Original SASS stylesheet imports */
-@import './partials/_BaseLayout.css';
-@import './partials/_Contact.css';
-@import './partials/_Helpers.css';
-@import './partials/_Register.css';
-@import './partials/_Sections.css';
-@import './partials/_Typography.css';
+@import "Variables";
+@import "Typography";
+@import "BaseLayout";
+@import "Sections";
+@import "Helpers";
+@import "Register";
+@import "Contact";
+@import "IronImage";
 
-/* Temporary style changes added by Sean until a new design direction is decided on.
-/* TODO: Refactor to follow style guide */
-:global(.home) :global(.reserve) {
-  overflow: visible;
-}
-:global(.new-searchTemp) {
-  z-index: 30;
-  background: white;
-  border: 0.05rem solid color(#fff blackness(25%));
-  border-radius: 0.1rem;
-  margin-top: 2rem;
-}
 //Base styles and components
 body,
-:global(.pure-g [class*=pure-u]) {
-  @mixin SourceSans $fontSize;
+.pure-g [class*=pure-u] {
+  font-family: $main-font;
 }
 
 h1, h2, h3 {
-  @mixin SourceSans calc($fontSize * 1.5);
+  font-family: $body-font;
 }
 
 p {
-  @mixin SourceSans $fontSize;
+  font-family: $header-font;
 }
 
 pre {
@@ -41,7 +28,7 @@ pre {
   background: #eee;
 }
 
-:global(.content-card ){
+.content-card {
   border: solid 1px black;
   padding: 20px;
   flex: 1;
@@ -65,7 +52,7 @@ pre {
   }
 }
 
-:global(.content-card--wrapper ){
+.content-card--wrapper {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -91,7 +78,7 @@ pre {
 }
 
 //Images
-:global(.image-md ){
+.image-md {
   height: 250px;
   width: auto;
   @media (min-width: $tablet) {
@@ -99,7 +86,7 @@ pre {
   }
 }
 
-:global(.image-container ){
+.image-container {
   display: flex;
   flex-direction: column;
   span {
@@ -108,11 +95,11 @@ pre {
   }
 }
 
-:global(.hero-pattern ){
+.hero-pattern {
   background-image: url("../images/bluepattern.jpg");
 }
 
-:global(.image ){
+.image {
   margin: auto;
   display: block;
   height: auto;
@@ -120,23 +107,24 @@ pre {
   max-width: 100%;
 }
 
-:global(.img-md ){
+.img-md {
   width: 500px;
   height: 100%;
 }
 
-:global(.image-sml ){
+.image-sml {
   height: 70px;
   width: auto;
 }
 
-:global(.image-xsml ){
+.image-xsml {
   height: 20px;
   width: auto;
 }
 
 // Home page
-:global(.home ){
+.home {
+  background-image: url('../images/booklocal-bg.jpg');
   background-position: top;
   background-attachment: fixed;
   background-size: cover;
@@ -146,21 +134,21 @@ pre {
   align-items: center;
   // position: relative;
   width: 100vw;
-  min-height: calc(100vh - $headerHeight + $footerHeight);
+  min-height: calc(100vh - #{$headerHeight + $footerHeight});
   @media (min-width: $mobile) {
-    min-height: calc(100vh - $headerTabletHeight + $footerHeight);
+    min-height: calc(100vh - #{$headerTabletHeight + $footerHeight});
   }
   @media (min-width: $tablet) {
-    min-height: calc(100vh - $headerHeight + $footerHeight);
+    min-height: calc(100vh - #{$headerHeight + $footerHeight});
   }
 }
 
-/* :global(.darken ){
-/*   filter: brightness(.4);
-/   z-index: 2;
-/ } */
+// .darken {
+//   filter: brightness(.4);
+//   z-index: 2;
+// }
 
-:global(.darken:after ){
+.darken:after {
   position: fixed;
   width: 100%;
   top: 0;
@@ -172,11 +160,11 @@ pre {
   content: "";
 }
 
-:global(.margin-at-bottom>div:last-child ){
+.margin-at-bottom>div:last-child {
   margin-bottom: 40px;
 }
 
-:global(.register-message ){
+.register-message {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -218,7 +206,7 @@ pre {
   }
 }
 
-:global(.dark-glass ){
+.dark-glass {
   box-sizing: border-box;
   padding: 40px;
   width: 100%;
@@ -230,7 +218,7 @@ pre {
   background: rgba(0,0,0,.6);
 }
 
-:global(.margin ){
+.margin {
   // position: absolute;
   margin: 40px;
   width: 90%;
@@ -242,8 +230,8 @@ pre {
 
   /* Eth-Memphis */
 
-  /* // @media screen and (min-width: 1326px){
-  //   :global(.Container ){
+  // @media screen and (min-width: 1326px){
+  //   .Container {
   //     background-color: gray;
   //     display: grid;
   //     grid-template-columns: repeat(3, 2fr);
@@ -258,7 +246,7 @@ pre {
   // }
 
   // @media screen and (max-width: 1325px) and (min-width: 911px) {
-  //     :global(.Container ){
+  //     .Container {
   //         background-color: lavender;
   //         display: grid;
   //         grid-template-columns: repeat(2, 2fr);
@@ -274,7 +262,7 @@ pre {
 
 
   // @media screen and (max-width: 910px) {
-  //   :global(.Container ){
+  //   .Container {
   //     background-color: lightgreen;
   //     display: grid;
   //     grid-template-columns:  2fr;
@@ -286,22 +274,22 @@ pre {
   //     gridTemplateAreas: '';
   //     alignContent: 'center';
   //   }
-  // } */
+  // }
 
 // Grommet Stuff
 
-:global(.grommetux-box--pad-large ){
+.grommetux-box--pad-large {
   display: flex!important;
   justify-content: center!important;
 }
 
-:global(.grommetux-section ){
+.grommetux-section {
   padding: 15px!important;
 }
 
 //Home page
 
-:global(.hero-img ){
+.hero-img {
   height: 60vh;
   width: 100vw;
   background-repeat: no-repeat;
@@ -313,7 +301,7 @@ pre {
   vertical-align: middle;
 }
 
-:global(.hero-text ){
+.hero-text {
   color: white;
   font-size: 30px;
   padding: 0px 25px;
@@ -322,7 +310,3 @@ pre {
     margin-top: 50px;
   }
 }
-
-
-
-/*# sourceMappingURL=App:global(.css.map )*/

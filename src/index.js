@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter, Route} from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
 
-import App from 'containers/App';
-import BaseLayout from 'wrappers/BaseLayout'
+import App from 'components/App';
+import BaseLayout from 'components/BaseLayout'
 
 import './styles/index.css';
 

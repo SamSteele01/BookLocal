@@ -1,0 +1,73 @@
+:global(.what__card-font ){
+  font-weight: 300;
+  font-size: 26px;
+  border: solid 1px $logoBlue;
+  h3 {
+    width: 100%;
+    text-align: center;
+    color: rgb(70, 71, 73);
+  }
+}
+
+:global(.why__card-font ){
+  font-weight: 300;
+  font-size: 14px;
+}
+
+:global(.who__card-font ){
+  font-weight: 300;
+  font-size: 18px;
+}
+
+:global(.steps__card-font ){
+  font-weight: 300;
+  font-size: 14px;
+  border: solid 1px #3675B6;
+}
+
+%paragraph {
+  // max-width: 576px;
+  margin-left: 0;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.375;
+  @media (min-width: $tablet) {
+    font-size: 18px;
+  }
+}
+
+:global(.paragraph-white ){
+  @extend %paragraph;
+  color: white;
+}
+
+:global(.paragraph-gray ){
+  @extend %paragraph;
+  color: $fontGray;
+}
+
+:global(.heading-typography ){
+  font-family: $headerFont;
+  text-transform: uppercase;
+  padding: 25px 0;
+  font-size: 25px;
+  text-align: center;
+  font-weight: 700;
+  @media(min-width: $tablet) {
+    font-size: 35px;
+  }
+}
+
+h2, h3 {
+  font-family: $secondaryHeader;
+}
+
+:global(.how__card-font ){
+  font-size: 14px;
+  padding: 10px;
+  border: solid 1px $logoBlue;
+
+  strong {
+    font-size: 20px;
+  }
+}
