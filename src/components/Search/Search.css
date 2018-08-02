@@ -17,6 +17,12 @@
         display: none;
     }
 }
+.searchBox-container {
+    /* placeholder */
+    position: fixed;
+    @mixin cardBackground;
+    width: 54.15vw;
+}
 .citySearch {
     grid-column: 1 / 6;
     flex: 6 0 40%;
@@ -58,6 +64,11 @@
 .results {
     /* placeholder */
     grid-column: 1 / 13;
+    margin-top: 10vh;
+}
+.results-container {
+    grid-column: 1 / 13;
+
 }
 /* :global(.formGroup) {
     flex: 1 1 40%;
@@ -68,7 +79,10 @@
     top: 5%;
 
 }
-.reservationInfo {
+.reservation-container {
+    /* placeholder */
+}
+.reservation-info {
     /* placeholder */
     grid-column: 1 / 13;
     border: 0.1rem solid color($primaryBlue saturation(25%));

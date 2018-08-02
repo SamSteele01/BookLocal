@@ -70,7 +70,7 @@ class Search extends Component {
     // body: sendObj
     // Receive JSON or other object and set state
     console.log("Returning search result");
-    const queryResult = ['memphis', '20180820', '20180825']; // in practice will receive JSON response. Dummy if needed.
+    const queryResult = ['memphis', '20180820', '08232018']; // in practice will receive JSON response. Dummy if needed.
     this.setState({ results: queryResult});
     this.setState({searchSubmitted: true});
     // map data to state or props?
@@ -91,6 +91,7 @@ class Search extends Component {
   render() {
     return(
       <div className="card" styleName="style.container">
+        <div styleName="style.searchBox-container">
         <div styleName="style.container-header">
           <h1>Search for a hotel</h1>
         </div>
@@ -139,30 +140,34 @@ class Search extends Component {
         </div>
         : null
         }
-        {this.state.searchSubmitted && !this.state.showReservationForm ? 
-          <div styleName="results">
-            <SearchResults searchQuery={this.state.results} searchRunning={this.state.searchSubmitted} reserveClicked={this.reserveClicked} reservationData={this.reservationData}/>
+        {this.state.showReservationForm ?
+          <div styleName="reservation-container">
+          <div styleName="reservation-info">
+            <p>Youv'e chosen the {this.state.reservationData.name} for {this.state.reservationData.price} ETH per night!</p>
+            <p>Please enter your info below before moving on to paying for your room.</p>
+          </div>
+          <div className="formGroup" styleName="style.travelerForm-container">
+            <TravelerInfoForm showPaymentForm={this.showPaymentForm}/>
+          </div>
           </div>
           : null
         }
-        {this.state.showReservationForm &&
-          <div styleName="reservationInfo">
-            <p>Youv'e chosen the {this.state.reservationData.name} for {this.state.reservationData.price} ETH per night!</p>
-            <p>Please enter your info below before moving on to paying for your room.</p>
-          </div> }
-          {this.state.showReservationForm &&
-          <div className="formGroup" styleName="travelerForm-container">
-            <TravelerInfoForm showPaymentForm={this.showPaymentForm}/>
-          </div>
-        }
-        {this.state.showPaymentForm &&
-          <div styleName="paymentForm-modal active" id="payment-modal">
+        {this.state.showPaymentForm ?
+          <div styleName="style.paymentForm-modal active" id="payment-modal">
           <a href="#close" styleName="modalOverlay" aria-label="Close" onClick={() => this.showPaymentForm(false)}>
           </a>
             <Payment showPaymentForm={this.showPaymentForm} reservationData={this.state.reservationData} bookingDates={this.state.results} />
           </div> 
+          : null
         }
       </div>
+      {this.state.searchSubmitted && !this.state.showReservationForm && 
+
+        <div styleName="style.results">
+          <SearchResults searchQuery={this.state.results} searchRunning={this.state.searchSubmitted} reserveClicked={this.reserveClicked} reservationData={this.reservationData}/>
+        </div>
+      }
+    </div>
     )
   }
 }
