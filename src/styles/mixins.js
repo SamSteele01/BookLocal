@@ -66,7 +66,7 @@ var globalMixins = {
   // Outline button color variation
   buttonOutlineVariant: function (obj, color, paddingHeight, paddingWidth) {
     return {
-      'background': 'var(--font-color-light)',
+      'background': '#fff',
       'border': `0.05rem solid ${color}`,
       'color': color,
       'padding': `${paddingHeight} ${paddingWidth} ${paddingHeight} ${paddingWidth}`,
@@ -74,14 +74,14 @@ var globalMixins = {
         'box-shadow': `0 0 0 .1rem rgba(${color}, .2)`,
       },
       '&:focus, &:hover' : {
-        'background': `color(${color} tint(50%))`,
+        'background': `color(${color} tint(5%))`,
         'border-color': `color(${color} shade(2%))`,
-        'color': $fontColorLight,
+        'color': 'var(--font-color-dark)',
       },
       '&:active, &:global(.active)' : {
         'background': color,
         'border-color': `color(${color} shade(5%))`,
-        'color': 'var(--font-color-light)',
+        'color': 'var(--font-color-dark)',
       },
       '&:global(.loading)' : {
         '&::after' : {

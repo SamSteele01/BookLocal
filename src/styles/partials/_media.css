@@ -1,0 +1,66 @@
+/* Image and Video (Media) handling */
+/* Responsive image */
+:global(.imageResponsive) {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+/* Responsive video container */
+:global(.videoResponsive) {
+  display: block;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 56.25%; /* Default ratio 16:9, you can calculate this value by dividing 9 by 16 */
+  }
+
+  iframe,
+  object,
+  embed {
+    border: 0;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+
+video:global(.videoResponsive) {
+  height: auto;
+  max-width: 100%;
+
+  &::before {
+    content: none;
+  }
+}
+/* Alternative sizings for reference elsewhere */
+/* .video-responsive-4-3 {
+  &::before {
+    padding-bottom: 75%; // Ratio 4:3
+  }
+}
+
+.video-responsive-1-1 {
+  &::before {
+    padding-bottom: 100%; // Ratio 1:1
+  }
+} */
+
+/* Figure */
+/* TODO: Should this stay a class? */
+:global(.figure) {
+  margin: 0 0 0.4rem 0;
+
+  :global(.figureCaption) {
+    color: $primaryGrey;
+    margin-top: 0.4rem;
+  }
+}
