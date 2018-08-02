@@ -11,6 +11,7 @@
   text-align: center;
   align-items: center;
   background-image: url("../images/booklocal-bg.jpg");
+  background-attachment: fixed;
 }
 
 :global(.header ){
