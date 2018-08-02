@@ -39,7 +39,7 @@
 }
 
 .form-container {
-  box-shadow: 0 0.2rem 1.4rem rgba($bgColorDark, .3);
+  box-shadow: 0 0.2rem 1.4rem color($bgColorDark alpha(.3));
   background: $bgColorLight;
   border-radius: 0.1rem;
   display: flex;
@@ -48,7 +48,7 @@
   max-width: 640px;
   padding: 0 0.8rem;
   width: 100%;
-  height: 35rem;
+  height: 30rem;
   position: relative;
   .form-header {
     color: $fontColorHeader;
@@ -67,8 +67,8 @@
 
 .form-close {
   position: absolute;
-  right: -1rem;
-  top: -1.6rem;
+  right: -0.7rem;
+  top: -1.05rem;
   color: $primaryBlue;
 }
 
@@ -76,22 +76,46 @@
   /* placeholder */
 }
 .form-tabContainer {
-  
+  /* used with the credit card function, not currently in use. */
 }
 .form-tabEth {
+  /* used with the credit card function, not currently in use. */
 
 }
 .form-tabCredit {
+  /* used with the credit card function, not currently in use. */
 
 }
 .form-contentEth {
+  /* used with the credit card function, not currently in use. */
 
 }
 .form-contentCredit {
+  /* used with the credit card function, not currently in use. */
 
 }
 .reservationDetails {
   /* placeholder */
+  width: 50%;
+  background: color($primaryBlue whiteness(30%) alpha(25%));
+  /* border: 0.05rem solid color($primaryBlue blackness(15% saturation(15%))); */
+  box-shadow: 0.01rem 0.1rem 0.5rem color($bgColorDark);
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  p {
+    text-align: left;
+    margin: 0 0 0.2rem 0;
+    &(:last-child) {
+      margin: 0;
+    }
+  }
+  .reservationDetails-header {
+    h4 {
+      margin: 0 0 1rem 0;
+    }
+  }
   .reservationDetails-price {
 
   }
@@ -101,34 +125,43 @@
   .reservationDetails-hotelName {
 
   }
+  
+  .reservationDetails-beds {
+    
+  }
+
 }
 
-.paymentForm {
-
-  &:global(.isVisible) {
-    display: block;
-  }
-  &:global(.isHidden) {
-    display: none;
-  }
-}
 .paymentForm-eth {
+  /* used with the credit card function, not currently in use. */
 
 }
 .paymentForm-credit {
+  /* used with the credit card function, not currently in use. */
 
 }
 .paymentForm-ccNumber {
+  /* used with the credit card function, not currently in use. */
 
 }
 .paymentForm-ccName {
+  /* used with the credit card function, not currently in use. */
 
 }
 .paymentForm-ccExpiry {
+  /* used with the credit card function, not currently in use. */
 
 }
 .paymentForm-ccCvc {
+  /* used with the credit card function, not currently in use. */
   
+}
+.paymentForm {
+  display: flex;
+  flex-flow: column;
+  input[type="text"] {
+    margin: 0 auto;
+  }
 }
 .paymentForm-submit-isLoggedOut {
 
@@ -136,4 +169,19 @@
 .paymentForm-submitButton {
   @mixin buttonVariant $primaryGreen, 1rem, 2rem;
   color: white;
+  width: 30%;
+  align-self: center;
+  margin-top: 1rem;
+  position: relative;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj48c3ZnIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAzMjAgNTEyIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zOnNlcmlmPSJodHRwOi8vd3d3LnNlcmlmLmNvbS8iIHN0eWxlPSJmaWxsLXJ1bGU6ZXZlbm9kZDtjbGlwLXJ1bGU6ZXZlbm9kZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MS40MTQyMTsiPjxwYXRoIGQ9Ik0zMTEuOSwyNjAuOGwtMTUxLjksOTIuOGwtMTUyLC05Mi44bDE1MiwtMjYwLjhsMTUxLjksMjYwLjhabS0xNTEuOSwxMjIuNmwtMTUyLC05Mi44bDE1MiwyMjEuNGwxNTIsLTIyMS40bC0xNTIsOTIuOFoiIHN0eWxlPSJmaWxsOiNmZmY7ZmlsbC1ydWxlOm5vbnplcm87Ii8+PC9zdmc+);
+  background-repeat: no-repeat;
+  background-size: 8%;
+  background-position: 8% center;
+  &:hover,
+  &:focus {
+      background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj48c3ZnIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAzMjAgNTEyIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zOnNlcmlmPSJodHRwOi8vd3d3LnNlcmlmLmNvbS8iIHN0eWxlPSJmaWxsLXJ1bGU6ZXZlbm9kZDtjbGlwLXJ1bGU6ZXZlbm9kZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MS40MTQyMTsiPjxwYXRoIGQ9Ik0zMTEuOSwyNjAuOGwtMTUxLjksOTIuOGwtMTUyLC05Mi44bDE1MiwtMjYwLjhsMTUxLjksMjYwLjhabS0xNTEuOSwxMjIuNmwtMTUyLC05Mi44bDE1MiwyMjEuNGwxNTIsLTIyMS40bC0xNTIsOTIuOFoiIHN0eWxlPSJmaWxsOiNmZmY7ZmlsbC1ydWxlOm5vbnplcm87Ii8+PC9zdmc+);
+      background-repeat: no-repeat;
+      background-size: 8%;
+      background-position: 8% center;
+  }
 }

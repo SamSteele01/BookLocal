@@ -6,6 +6,7 @@ import 'react-datepicker/dist/react-datepicker.css?raw'
 import SearchForm from './SearchForm'
 import SearchResults from './SearchResults'
 import TravelerInfoForm from 'components/TravelerInfoForm'
+import uniqueId from 'react-html-id'
 import Payment from './Payment'
 
 import style from './Search.css'
@@ -16,6 +17,7 @@ import style from './Search.css'
 class Search extends Component {
   constructor(props) {
     super(props)
+            uniqueId.enableUniqueIds(this)
     this.state = {
         searchString: '',
         startDate: moment([2018, 4, 7]),
@@ -26,6 +28,7 @@ class Search extends Component {
         reservationData: [],
         showPaymentForm: false
     }
+  uniqueId.enableUniqueIds(this)
   this.handleSubmit=this.handleSubmit.bind(this);
   this.handleTextChange=this.handleTextChange.bind(this);
   }
@@ -67,7 +70,7 @@ class Search extends Component {
     // body: sendObj
     // Receive JSON or other object and set state
     console.log("Returning search result");
-    const queryResult = ['memphis', '08202018', '08232018']; // in practice will receive JSON response. Dummy if needed.
+    const queryResult = ['memphis', '20180820', '20180825']; // in practice will receive JSON response. Dummy if needed.
     this.setState({ results: queryResult});
     this.setState({searchSubmitted: true});
     // map data to state or props?
@@ -88,52 +91,64 @@ class Search extends Component {
   render() {
     return(
       <div className="card" styleName="style.container">
+        <div styleName="style.container-header">
+          <h1>Search for a hotel</h1>
+        </div>
       {this.state.showReservationForm &&
         <a styleName="backToSearchResults" onClick={this.backToSearchResults}>&#60; Go back to search results</a>          
       }  
-      {!this.state.showReservationForm &&
-          <div className="formGroup" styleName="style.citySearch">
+      {!this.state.showReservationForm ?
+        <div styleName="style.searchBar-container">  
+        <div className="formGroup" styleName="style.citySearch">
             <SearchForm 
               getSearchString={this.getSearchString}
             />
-          </div> }
-        {!this.state.showReservationForm &&
+          </div>
+ 
           <div className="formGroup" styleName="style.startDate">          
+            <label htmlFor={this.nextUniqueId()}>Start Date</label>
             <DatePicker
+              id={this.lastUniqueId()}
               selected={this.state.startDate}
               onChange={this.handleDateChangeStart}
               selectsStart
               startDate={this.state.startDate}
               endDate={this.state.endDate}
               placeholderText="Check-in date"
-              className="startDate-datePicker"
+              className="startDate-datePicker formInput"
+              htmlId="startDate"
             />
-          </div> }
-        {!this.state.showReservationForm &&
+          </div> 
           <div className="formGroup" styleName="style.endDate">
+            <label htmlFor={this.nextUniqueId()}>End Date</label>
             <DatePicker
+              id={this.lastUniqueId()}
               selected={this.state.endDate}
               onChange={this.handleDateChangeEnd}
               SelectsEnd
               startDate={this.state.startDate}
               endDate={this.state.endDate}
               placeholderText="Check-out Date"
-              classname="endDate-datePicker"
+              className="endDate-datePicker formInput"
+              htmlId="endDate"
             />
-          </div> }
-        {!this.state.showReservationForm && 
+          </div> 
           <div className="formGroup" styleName="style.searchSubmit">
             <button onClick={this.handleSubmit}className="button" styleName="style.searchSubmitButton" value="Search for hotels">Search for hotels</button>
-          </div> }
-        {!this.state.showReservationForm && 
+          </div> 
+        </div>
+        : null
+        }
+        {this.state.searchSubmitted && !this.state.showReservationForm ? 
           <div styleName="results">
             <SearchResults searchQuery={this.state.results} searchRunning={this.state.searchSubmitted} reserveClicked={this.reserveClicked} reservationData={this.reservationData}/>
           </div>
-        } {/* end showReservationForm check */}
+          : null
+        }
         {this.state.showReservationForm &&
           <div styleName="reservationInfo">
             <p>Youv'e chosen the {this.state.reservationData.name} for {this.state.reservationData.price} ETH per night!</p>
-            <p>Complete your info below before moving on to paying for your room.</p>
+            <p>Please enter your info below before moving on to paying for your room.</p>
           </div> }
           {this.state.showReservationForm &&
           <div className="formGroup" styleName="travelerForm-container">
@@ -144,7 +159,7 @@ class Search extends Component {
           <div styleName="paymentForm-modal active" id="payment-modal">
           <a href="#close" styleName="modalOverlay" aria-label="Close" onClick={() => this.showPaymentForm(false)}>
           </a>
-            <Payment showPaymentForm={this.showPaymentForm} />
+            <Payment showPaymentForm={this.showPaymentForm} reservationData={this.state.reservationData} bookingDates={this.state.results} />
           </div> 
         }
       </div>

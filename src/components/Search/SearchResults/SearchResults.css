@@ -1,6 +1,7 @@
 .container {
     /* placeholder */
-    margin-top: 1rem;
-    border-top: 0.1rem solid color(#fff blackness(25%));
+    margin-top: 3rem;
     flex: 1 0 100%;
+    z-index: 10;
+    /* overflow-y: scroll; */
 }

@@ -4,8 +4,9 @@ import getWeb3 from 'utils/getWeb3'
 import TextInput from 'components/TextInput'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
-import { Number, Cvc, Expiration } from 'react-credit-card-primitives'
+import moment from 'moment'
 import './Payment.css'
+
 
 class Payment extends Component {
   static propTypes = {
@@ -47,19 +48,26 @@ class Payment extends Component {
     // Create form with wallet address or handle via Metamask?
     // Submit payment and send out for confirmation
     // TODO: Decide if the reservation Details aspects are necessary in this window.
+        // stringify dates
+        const startDate = moment(this.props.bookingDates[1]).format("MMM Do, YYYY");
+        console.log(startDate);
+        const endDate = moment(this.props.bookingDates[2]).format("MMM Do, YYYY");
+        console.log(endDate);
     return(
        <div styleName="form-container">
-       <a styleName="form-close" onClick={this.hidePaymentForm}><FontAwesomeIcon icon={faTimes} size="3x" /></a>
+       <a styleName="form-close" onClick={this.hidePaymentForm}><FontAwesomeIcon icon={faTimes} size="2x" /></a>
        <div styleName="form-header">
-          <div styleName="form-title">Payment for reservation</div>
+          <div styleName="form-title"><h1>Payment for reservation</h1></div>
        </div>
        <div styleName="form-content">
         <div styleName="reservationDetails">
-            <p styleName="reservationDetails-price">Price: ETH</p>
-            <p styleName="reservationDetails-dates">Dates: A to B</p>
-            <p styleName="reservationDetails-hotelName">Hotel: with address etc.</p>
+        <div styleName="reservationDetails-header"><h4>Booking details</h4></div>
+        <p styleName="reservationDetails-hotelName">Room at {this.props.reservationData.name}</p>
+            <p styleName="reservationDetails-beds">Beds: {this.props.reservationData.beds}</p>
+            <p styleName="reservationDetails-price">Price: {this.props.reservationData.price} ETH</p>
+            <p styleName="reservationDetails-dates">Dates: {startDate} to {endDate} </p>
           </div>
-        <form styleName="paymentForm paymentForm-eth" className={this.state.showHideEthForm} >
+        <form styleName="paymentForm" className={this.state.showHideEthForm} >
           <TextInput 
             htmlId="walletAddress"
             name="walletAddress"
@@ -70,7 +78,7 @@ class Payment extends Component {
             value={this.state.walletAddress}
             placeholder="address"
           />
-          <input id="reserve" type="submit" className="button" styleName="paymentForm-submitButton" value="Reserve room" onClick={this.handleSubmit} />
+          <input id="reserve" type="submit" className="button" styleName="paymentForm-submitButton" value={"Pay " + this.props.reservationData.price + " ETH"} onClick={this.handleSubmit} />
         </form>
         
           </div>

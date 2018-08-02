@@ -67,7 +67,8 @@ const itemToString = i => (i ? i.name : '')
               <input {...getInputProps({
                 isOpen,
                 placeholder: "Search for a city"})} 
-                className="searchCity"
+                className="citySearch-input formInput"
+                htmlId="citySearch"
               />
               {selectedItem ? (
                 <button 
@@ -78,7 +79,7 @@ const itemToString = i => (i ? i.name : '')
                 </button>
 
               ) : (
-                <button {...getToggleButtonProps()}>
+                <button className="citySearch-button" {...getToggleButtonProps()}>
                   <ArrowIcon isOpen={isOpen} />
                 </button>
               )}
