@@ -1,5 +1,6 @@
-.container {
-  /* placeholder */
+.traveler-info-form {
+  max-width: 65vw;
+  max-height: 50vh;
   text-align: left;
 }
 .formHeader {
