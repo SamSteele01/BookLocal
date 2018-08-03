@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import SearchResultsItem from './SearchResultsItem'
 import './SearchResults.css'
 
-// minimum result object elements: 
-// name, id, state/zip, price/night, beds, rating?, 
+// minimum result object elements:
+// name, id, state/zip, price/night, beds, rating?,
 // extended view: ameneties, pool, etc.
 
 const searchResults = [
@@ -18,10 +18,13 @@ const searchResults = [
     {name: 'Hotel #9', city: 'memphis', beds: 1, price: 4, imgSrc: '/media/hotel1.jpg'},
     {name: 'Hotel #10', city: 'memphis', beds: 2, price: 5.5, imgSrc: '/media/hotel1.jpg'},
     {name: 'Hotel #11', city: 'memphis', beds: 1, price: 0.5, imgSrc: '/media/hotel1.jpg'},
-    
+
 ]
 
 class SearchResults extends Component {
+    static propTypes = {
+      
+    }
     constructor(props) {
         super(props)
         this.state = {
@@ -29,19 +32,6 @@ class SearchResults extends Component {
             listReady: false
         }
     }
-    generateSearchResultList() {
-        let searchResultsList = null
-        if (searchResults !== null && searchResults !== undefined) {
-          searchResultsList = searchResults.map((searchObject, index) => {
-            return <SearchResultsItem
-                key={index}
-                searchObject={searchObject}
-                callback={this.reserveClicked}
-              />
-          })
-        }
-        return searchResultsList
-      }
     reserveClicked = (event) => {
         this.props.reserveClicked();
         this.props.reservationData(event);
@@ -50,6 +40,19 @@ class SearchResults extends Component {
     // getSearchQuery = () => {
     //    this.setState({query: this.props.results});
     // }
+    generateSearchResultList() {
+      let searchResultsList = null
+      if (searchResults !== null && searchResults !== undefined) {
+        searchResultsList = searchResults.map((searchObject, index) => {
+          return <SearchResultsItem
+            key={index}
+            searchObject={searchObject}
+            callback={this.reserveClicked}
+          />
+        })
+      }
+      return searchResultsList
+    }
     render() {
         // take in the query info and also receive another object that has either a) the entire list
         // or b) the filtered result returned from GraphQL (requires function call / binding )
@@ -58,10 +61,10 @@ class SearchResults extends Component {
         // include a reservation button
         // reservation button calls the existing Reserve component to confirm dates
         return(
-            <div styleName="container">
+            <div styleName="search-results">
             {this.props.searchRunning &&
                     this.generateSearchResultList()
-                    
+
             }
             </div>
         )
