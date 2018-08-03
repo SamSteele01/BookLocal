@@ -1,0 +1,111 @@
+/* Buttons */
+:global(.button) {
+  @mixin controlTransition;
+  appearance: none;
+  /* background: var(--bg-color-light); */
+  /* border: 0.05rem solid var(--primary-blue); */
+  border-radius: 0.1rem;
+  /* color: var(--primary-blue); */
+  cursor: pointer;
+  display: inline-block;
+  /* font-size: calc($fontSize * 1.25); */
+  /* height: 1.8rem; */
+  /* line-height: 1.2rem; */
+  outline: none;
+  /* padding: 1rem 0.4rem; */
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  /* &:focus {
+    @mixin controlShadow var(--primary-blue);
+  }
+  &:focus,
+  &:hover {
+    background: var(--button-color);
+    border-color: var(--primary-blue)-dark;
+    text-decoration: none;
+  }
+  &:active,
+  &.active {
+    background: var(--primary-blue)-dark;
+    border-color: darken(var(--primary-blue)-dark, 5%);
+    color: var(--primary-blue-tint);
+    text-decoration: none;
+    &.loading {
+      &::after {
+        border-bottom-color: var(--primary-blue-tint);
+        border-left-color: var(--primary-blue-tint);
+      }
+    }
+  }
+  &[disabled],
+  &:disabled,
+  &:global(.disabled) {
+    cursor: default;
+    opacity: .5;
+    pointer-events: none;
+  }
+
+  /* Button Primary
+  &:global(.button-primary) {
+    background: var(--primary-blue);
+    border-color: var(--primary-blue);
+    color: var(--primary-blue-tint);
+    &:focus,
+    &:hover {
+      background: darken(var(--primary-blue), 2%);
+      border-color: darken(var(--primary-blue), 5%);
+      color: var(--primary-blue-tint);
+    }
+    &:active,
+    &:global(.active) {
+      background: darken(var(--primary-blue), 4%);
+      border-color: darken(var(--primary-blue), 7%);
+      color: var(--primary-blue-tint);
+    }
+    &:global(.loading) {
+      &::after {
+        border-bottom-color: var(--primary-blue-tint);
+        border-left-color: var(--primary-blue-tint);
+      }
+    }
+  } */
+}
+/* Button groups */
+:global(.button-group) {
+  display: inline-flex;
+  flex-wrap: wrap;
+
+  :global(.button) {
+    flex: 1 0 auto;
+    &:first-child:not(:last-child) {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0;
+      margin-left: -0.5rem;
+    }
+    &:last-child:not(:first-child) {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+      margin-left: -0.5rem;
+    }
+    &:focus,
+    &:hover,
+    &:active,
+    &:global(.active) {
+      z-index: 1;
+    }
+  }
+
+  &:global(.button-group-block) {
+    display: flex;
+
+    :global(.button) {
+      flex: 1 0 0;
+    }
+  }
+}

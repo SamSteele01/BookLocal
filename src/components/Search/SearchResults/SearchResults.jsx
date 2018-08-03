@@ -36,12 +36,16 @@ class SearchResults extends Component {
             return <SearchResultsItem
                 key={index}
                 searchObject={searchObject}
-                callback={searchObject.name}
+                callback={this.reserveClicked}
               />
           })
         }
         return searchResultsList
       }
+    reserveClicked = (event) => {
+        this.props.reserveClicked();
+        this.props.reservationData(event);
+    }
     // call an update on the query value, if necessary?
     // getSearchQuery = () => {
     //    this.setState({query: this.props.results});

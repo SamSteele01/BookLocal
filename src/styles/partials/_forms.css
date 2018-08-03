@@ -1,0 +1,461 @@
+/* Forms */
+:global(.formGroup) {
+  &:not(:last-child) {
+    margin-bottom: 0.75rem;
+  }
+}
+
+fieldset {
+  margin-bottom: 0.9rem;
+}
+
+legend {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.9rem;
+}
+
+/* Form element: Label */
+:global(.formLabel) {
+  display: block;
+  line-height: 1.2rem;
+  padding: 0.5rem 0;
+}
+
+/* Form element: Input */
+:global(.formInput) {
+  @mixin controlTransition;
+  appearance: none;
+  background: white;
+  background-image: none;
+  border: 0.05rem solid color($bgColorLight blackness(50%));
+  border-radius: 0.1rem;
+  color: $fontColorDark;
+  display: block;
+  font-size: $fontSize;
+  height: 1.6rem;
+  line-height: 1.2rem;
+  max-width: 100%;
+  outline: none;
+  padding: 0.5rem 0.4rem;
+  position: relative;
+  width: 100%;
+  &:focus {
+    box-shadow: 0 0 0 .1rem color($bgColorDark alpha(.2));
+    border-color: $primaryBlue;
+    outline: $primaryBlue auto 1px;
+  }
+  &::placeholder {
+    color: $primaryGrey;
+  }
+
+  /* Input types */
+  &[type="file"] {
+    height: auto;
+  }
+}
+
+/* Form element: Textarea */
+textarea:global(.formInput) {
+  height: auto;
+}
+
+/* Form element: Input hint */
+:global(.formInputHint) {
+  color: $primaryGrey;
+  font-size: 0.7rem;
+  margin-top: 0.2rem;
+
+  &-isSuccessful {
+    color: $primaryGreen;
+  }
+
+  &-hasError {
+    color: $primaryRed;
+  }
+}
+
+/* Form element: Select */
+:global(.formSelect) {
+  appearance: none;
+  border: 0.05rem solid $bgColorDark;
+  border-radius: 0.1rem;
+  color: inherit;
+  font-size: $fontSize;
+  height: 1.6rem;
+  line-height: 1.2rem;
+  outline: none;
+  padding: 0.5rem 0.4rem;
+  vertical-align: middle;
+  width: 100%;
+
+  &[size],
+  &[multiple] {
+    height: auto;
+    
+    option {
+      padding: 0.1rem 0.2rem;
+    }
+  }
+  &:not([multiple]):not([size]) {
+    background: #fff url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%204%205'%3E%3Cpath%20fill='%23667189'%20d='M2%200L0%202h4zm0%205L0%203h4z'/%3E%3C/svg%3E") no-repeat right .35rem center/.4rem .5rem;
+    padding-right: 1.2rem;
+  }
+  &:focus {
+    box-shadow: 0 0 0 .1rem rgba($primaryBlue, .2);
+    border-color: $primaryBlue;
+  }
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+/* Form Icons */
+.has-icon-left,
+.has-icon-right {
+  position: relative;
+
+  .form-icon {
+    height: 0.8rem;
+    margin: 0 0.5rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.8rem;
+    z-index: 2;
+  }
+}
+
+.has-icon-left {
+  .form-icon {
+    left: 0.05rem;
+  }
+
+  .form-input {
+    padding-left: 2.6rem;
+  }
+}
+
+.has-icon-right {
+  .form-icon {
+    right: 0.05rem;
+  }
+
+  .form-input {
+    padding-right: 2.3rem;
+  }
+}
+
+/* Form element: Checkbox and Radio */
+:global(.formCheckbox),
+:global(.formRadio),
+:global(.formSwitch) {
+  display: block;
+  line-height: 1.2rem;
+  margin: (1.6rem - 1.6rem-sm) / 2 0;
+  min-height: 1.2rem;
+  padding: 1rem;
+  position: relative;
+
+  input {
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    &:focus + :global(.formIcon) {
+      box-shadow: 0 0 0 .1rem rgba($primaryBlue, .2);
+      border-color: $primaryBlue;
+    }
+    &:checked + :global(.formIcon) {
+      background: $primaryBlue;
+      border-color: $primaryBlue;
+    }
+  }
+}
+
+  :global(.formIcon) {
+    @include control-transition();
+    border: 0.05rem solid $bgColorDark;
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+  }
+
+:global(.formCheckbox),
+:global(.formRadio) {
+  :global(.formIcon) {
+    background: $bgColorLight;
+    height: 0.8rem;
+    left: 0;
+    top: 0.5rem;
+    width: 0.8rem;
+  }
+
+  input {
+    &:active + .form-icon {
+      background: $bgColorDark;
+    }
+  }
+}
+:global(.formCheckbox) {
+  .form-icon {
+    border-radius: 0.1rem;
+  }
+
+  input {
+    &:checked + :global(.formIcon) {
+      &::before {
+        background-clip: padding-box;
+        border: 0.05rem-lg solid $bgColorLight;
+        border-left-width: 0;
+        border-top-width: 0;
+        content: "";
+        height: 12px;
+        left: 50%;
+        margin-left: -4px;
+        margin-top: -8px;
+        position: absolute;
+        top: 50%;
+        transform: rotate(45deg);
+        width: 8px;
+      }
+    }
+    &:indeterminate + :global(.formIcon) {
+      background: $primaryBlue;
+      border-color: $primaryBlue;
+      &::before {
+        background: $bgColorLight;
+        content: "";
+        height: 2px;
+        left: 50%;
+        margin-left: -5px;
+        margin-top: -1px;
+        position: absolute;
+        top: 50%;
+        width: 10px;
+      }
+    }
+  }
+}
+:global(.formRadio) {
+  .form-icon {
+    border-radius: 50%;
+  }
+
+  input {
+    &:checked + .form-icon {
+      &::before {
+        background: $bgColorLight;
+        border-radius: 50%;
+        content: "";
+        height: 4px;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 4px;
+      }
+    }
+  }
+}
+
+/* Form element: Switch */
+:global(.formSwitch) {
+  padding-left: calc(1.6rem + 0.4rem);
+
+  :global(.formIcon) {
+    background: $primaryGrey;
+    background-clip: padding-box;
+    border-radius: 0.45rem;
+    height: 1.7rem;
+    left: 0;
+    top: 0.5rem;
+    width: 1.6rem;
+    &::before {
+      @mixin controlTransition;
+      background: $bgColorLight;
+      border-radius: 50%;
+      content: "";
+      display: block;
+      height: 0.8rem;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 0.8rem;
+    }
+  }
+
+  input {
+    &:checked + .form-icon {
+      &::before {
+        left: 14px;
+      }
+    }
+    &:active + :global(.formIcon) {
+      &::before {
+        background: $bgColorLight;
+      }
+    }
+  }
+}
+
+/* Form element: Input groups */
+:global(.inputGroup) {
+  display: flex;
+
+  :global(.inputGroup-addon) {
+    background: $bgColorLight;
+    border: 0.05rem solid $bgColorDark;
+    border-radius: 0.1rem;
+    line-height: 1.2rem;
+    padding: 0.5rem 0.4rem;
+    white-space: nowrap;
+  }
+
+  :global(.formInput),
+  :global(.formSelect) {
+    flex: 1 1 auto;
+    width: 1%;
+  }
+
+  :global(.inputGroupButton) {
+    z-index: 1
+  }
+
+  :global(.formInput),
+  :global(.formSelect),
+  :global(.inputGroup-addon),
+  :global(.inputGroupButton) {
+    &:first-child:not(:last-child) {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0;
+      margin-left: -0.05rem;
+    }
+    &:last-child:not(:first-child) {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+      margin-left: -0.05rem;
+    }
+    &:focus {
+      z-index: 1;
+    }
+  }
+
+  :global(.formSelect) {
+    width: auto;
+  }
+}
+
+/* Form validation states */
+:global(.formInput),
+:global(.formSelect) {
+  &-isSuccessful {
+    border-color: $primaryGreen;
+    &:focus {
+      box-shadow: 0 0 0 .1rem rgba($primaryGreen, .2);
+    }
+  }
+
+  &-hasError {
+    border-color: $primaryRed;
+    &:focus {
+      box-shadow: 0 0 0 .1rem rgba($primaryRed, .2);
+
+    }
+  }
+}
+
+:global(.formCheckbox),
+:global(.formRadio),
+:global(.formSwitch) {
+  &-hasError {
+    :global(.formIcon) {
+      border-color: $primaryRed;
+    }
+    
+    input {
+      &:checked + :global(.formIcon) {
+        background: $primaryRed;
+        border-color: $primaryRed;
+      }
+
+      &:focus + :global(.formIcon) {
+        box-shadow: 0 0 0 .1rem rgba($primaryRed, .2);
+
+        border-color: $primaryRed;
+      }
+    }
+  }
+}
+
+:global(.formCheckbox) {
+  &-hasError {
+    input {
+      &:indeterminate + :global(.formIcon) {
+        background: $primaryRed;
+        border-color: $primaryRed;
+      }
+    }
+  }
+}
+
+/* validation based on :placeholder-shown (Edge doesn't support it yet) */
+:global(.formInput) {
+  &:not(:placeholder-shown) {
+    &:invalid {
+      border-color: $primaryRed;
+      &:focus {
+        box-shadow: 0 0 0 .1rem rgba($primaryRed, .2);
+
+      }
+
+      & + :global(.formInputHint) {
+        color: $primaryRed;
+      }
+    }
+  }
+}
+
+/* Form disabled and readonly */
+:global(.formInput),
+:global(.formSelect) {
+  &:disabled,
+  &.disabled {
+    background-color: color($bgColorLight blackness(50%));
+    cursor: not-allowed;
+    opacity: .5;
+  }
+}
+
+:global(.formInput) {
+  &[readonly] {
+    background-color: $bgColorLight;
+  }
+}
+
+input {
+  &:disabled,
+  &.disabled {
+    & + .form-icon {
+      background: color($bgColorLight blackness(50%));
+      cursor: not-allowed;
+      opacity: .5;
+    }
+  }
+}
+
+:global(.formSwitch) {
+  input {
+    &:disabled,
+    &.disabled {
+      & + :global(.formIcon)::before {
+        background: $bgColorLight;
+      }
+    }
+  }
+}

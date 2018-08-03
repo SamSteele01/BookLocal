@@ -5,11 +5,13 @@
   margin: 0;
   padding: 0;
   display: flex;
+  flex-flow: column;
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
   align-items: center;
   background-image: url("../images/booklocal-bg.jpg");
+  background-attachment: fixed;
 }
 
 :global(.header ){
@@ -31,7 +33,7 @@
   }
 }
 
-:global(.Logo )img {
+:global(.Logo) img {
   width: 180px;
   height: auto;
   padding: 7px 5px 0px 5px;

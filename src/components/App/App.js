@@ -10,6 +10,7 @@ import Access from 'components/Access';
 import Settle from 'components/Settle';
 import Status from 'components/Status'
 import Contact from 'components/Contact'
+import Search from 'components/Search'
 import About from 'components/About';
 import getWeb3 from 'utils/getWeb3';
 // import Web3 from 'web3';  // from node module
@@ -126,9 +127,9 @@ class App extends Component {
   render() {
     return (
         <Router history={this.props.history}>
-          <div>
+          <div className="content-container">
             <Route path="/home" component={RegisterMessage} />
-            <Route path="/register" render={(props)=>(<Reserve web3={this.state.web3} RR={this.state.RR} web3error={this.state.web3error} netIdError={this.state.netIdError} account={this.state.account} /> )} />
+            <Route path="/register" render={(props)=>(<Search web3={this.state.web3} RR={this.state.RR} web3error={this.state.web3error} netIdError={this.state.netIdError} account={this.state.account} /> )} />
             <Route path="/checkIn" render={(props)=>(<Access web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId} web3error={this.state.web3error} netIdError={this.state.netIdError} account={this.state.account} /> )} />
             <Route path="/checkOut" render={(props)=>(<Settle web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId} web3error={this.state.web3error} netIdError={this.state.netIdError} account={this.state.account} /> )} />
             <Route path="/status" render={(props)=>(<Status web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId} account={this.state.account} returnComponentState={this.returnComponentState} checkInDate={this.state.checkInDate} checkOutDate={this.state.checkOutDate} />)} />
