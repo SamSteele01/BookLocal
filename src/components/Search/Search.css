@@ -1,9 +1,11 @@
 .container {
     z-index: 30;
-    width: 50vw;
-    padding: 3rem;
+    width: 100vw;
+    margin-top: $headerHeight;
+    /*height ;*/
+    /*padding: 3rem;*/
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    /*grid-template-columns: repeat(12, 1fr);*/
     justify-content: center;
     /* max-height: 20vh; */
     :global(.formGroup) input {
@@ -17,11 +19,15 @@
         display: none;
     }
 }
-.searchBox-container {
-    /* placeholder */
+.search-container {
     position: fixed;
-    @mixin cardBackground;
-    width: 54.15vw;
+    /*@mixin cardBackground;*/
+    width: 100vw;
+    /*height: 100vh;*/
+    top: 0;
+    /*display: flex;
+    justify-content: center;
+    align-items: center;*/
 }
 .citySearch {
     grid-column: 1 / 6;
@@ -33,13 +39,16 @@
     margin-bottom: 2rem;
     text-transform: uppercase;
 }
-.searchBar-container {
+.search-bar {
+  background-color: white;
+    margin-top: 86px;
+    padding: 12px 0 8px 20px;
     display: flex;
     flex-flow: row nowrap;
-    grid-column: 1 / 13;
-    grid-template-columns: repeat(12, 1fr);
     justify-content: space-around;
     align-items: baseline;
+    grid-column: 1 / 13;
+    grid-template-columns: repeat(12, 1fr);
     .citySearch {
         margin-bottom: 0; /* hate doing this, but webpack inheritance isn't working properly */
     }
@@ -62,7 +71,9 @@
     position: relative;
 }
 .results {
-    /* placeholder */
+    /*background-color: white;*/
+    /*margin: 0 4vw;*/
+    padding: 10px;
     grid-column: 1 / 13;
     margin-top: 10vh;
 }
@@ -80,7 +91,15 @@
 
 }
 .reservation-container {
-    /* placeholder */
+  height: 50vh;
+  width: 60vw;
+  margin: 10rem
+
+}
+.reservation-card {
+  background-color: white;
+  height: 50vh;
+  width: 60vw;
 }
 .reservation-info {
     /* placeholder */
@@ -142,6 +161,7 @@
     :global(.citySearch-input) {
         position: relative;
         display: inline-block;
+        overflow: visible;
     }
     :global(.citySearch-button) {
         padding: 0.7rem;
