@@ -46,7 +46,7 @@
 }
 :global(.content-container) {
   flex: 0;
-  margin-top: 15vh;
+  margin-top: 5vh;
 }
 :global(.new-searchTemp) {
   z-index: 30;
@@ -286,64 +286,6 @@ pre {
   }
 }
 
-  /* Eth-Memphis */
-
-  /* // @media screen and (min-width: 1326px){
-  //   :global(.Container ){
-  //     background-color: gray;
-  //     display: grid;
-  //     grid-template-columns: repeat(3, 2fr);
-  //     gridAutoRow: '60px 60px 60px';
-  //     gridAutoColumn: '90px 90px 90px';
-  //     gridAutoFlow: 'row';
-  //     alignItems: 'start';
-  //     justifyItems: '';
-  //     gridTemplateAreas: '';
-  //     alignContent: 'center';
-  //   }
-  // }
-
-  // @media screen and (max-width: 1325px) and (min-width: 911px) {
-  //     :global(.Container ){
-  //         background-color: lavender;
-  //         display: grid;
-  //         grid-template-columns: repeat(2, 2fr);
-  //         gridAutoRow: '60px 60px 60px';
-  //         gridAutoColumn: '90px 90px 90px';
-  //         gridAutoFlow: 'row';
-  //         alignItems: 'start';
-  //         justifyItems: '';
-  //         gridTemplateAreas: '';
-  //         alignContent: 'center';
-  //     }
-  // }
-
-
-  // @media screen and (max-width: 910px) {
-  //   :global(.Container ){
-  //     background-color: lightgreen;
-  //     display: grid;
-  //     grid-template-columns:  2fr;
-  //     gridAutoRow: '60px 60px 60px';
-  //     gridAutoColumn: '90px 90px 90px';
-  //     gridAutoFlow: 'row';
-  //     alignItems: 'start';
-  //     justifyItems: '';
-  //     gridTemplateAreas: '';
-  //     alignContent: 'center';
-  //   }
-  // } */
-
-// Grommet Stuff
-
-:global(.grommetux-box--pad-large ){
-  display: flex!important;
-  justify-content: center!important;
-}
-
-:global(.grommetux-section ){
-  padding: 15px!important;
-}
 
 //Home page
 
