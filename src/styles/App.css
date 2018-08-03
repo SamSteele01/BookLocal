@@ -7,11 +7,46 @@
 @import './partials/_Register.css';
 @import './partials/_Sections.css';
 @import './partials/_Typography.css';
+@import './partials/_forms.css';
+@import './partials/_tables.css';
+@import './partials/_forms.css';
+@import './partials/_media.css';
+
+/* theme colors from Gnosis.pm */
+:root {
+  /* --primary-blue-OLD: #1f7692; */
+  --primary-blue-tint: #00a6c4;
+  --bg-color: #1f3747;
+  --bg-color-shade: #182a36;
+  --primary-green: #008000;
+  --button-color: #143e4d;
+  --button-border-color: #0f2e39;
+  --button-color-hover: #091d25;
+  --button-border-hover: #020708;
+  --button-red: #d9534f;
+  --button-red-border: #d43f3a;
+  /* --font-color-light: #b3c3ce; */
+  --font-color-light: #fff;
+  --primary-grey: #58595B;
+  /* Book local blue */
+  --primary-blue: #1b75bb;
+  --primary-blue-shade: #124D7B;
+  --primary-blue-tint: #4A97D3;
+  --bg-color-light: #FAFAFA;
+  --font-color-dark: black;
+
+
+}
+
 
 /* Temporary style changes added by Sean until a new design direction is decided on. 
 /* TODO: Refactor to follow style guide */
 :global(.home) :global(.reserve) {
   overflow: visible;
+}
+:global(.content-container) {
+  flex: 0;
+  margin-top: 15vh;
 }
 :global(.new-searchTemp) {
   z-index: 30;
@@ -20,6 +55,17 @@
   border-radius: 0.1rem;
   margin-top: 2rem;
 }
+:global(.card) {
+  @mixin cardBackground;
+  grid-column: 1 / 12;
+  padding: 3rem 2rem;
+  flex: 1 1 auto;
+  margin: 0 1rem;
+  &:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+}
+
 //Base styles and components
 body,
 :global(.pure-g [class*=pure-u]) {

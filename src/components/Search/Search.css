@@ -5,15 +5,44 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     justify-content: center;
+    /* max-height: 20vh; */
     :global(.formGroup) input {
         width: 80%;
     }
+    :global(.formGroup):not(last-child) {
+        margin-bottom: 0;
+    }
+
     > :global(.formGroup) * label {
         display: none;
     }
 }
+.searchBox-container {
+    /* placeholder */
+    position: fixed;
+    @mixin cardBackground;
+    width: 54.15vw;
+}
 .citySearch {
     grid-column: 1 / 6;
+    flex: 6 0 40%;
+}
+.container-header {
+    color: $fontColorHeader;
+    grid-column: 1 / 13;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+.searchBar-container {
+    display: flex;
+    flex-flow: row nowrap;
+    grid-column: 1 / 13;
+    grid-template-columns: repeat(12, 1fr);
+    justify-content: space-around;
+    align-items: baseline;
+    .citySearch {
+        margin-bottom: 0; /* hate doing this, but webpack inheritance isn't working properly */
+    }
 }
 .startDate, .endDate {
     flex: 1 1 30%;
@@ -28,26 +57,38 @@
 }
 .searchSubmit {
     grid-column: 10 / 13;
+    align-self: center;
+    flex: 3 0 25%;
+    position: relative;
 }
 .results {
     /* placeholder */
     grid-column: 1 / 13;
+    margin-top: 10vh;
+}
+.results-container {
+    grid-column: 1 / 13;
+
 }
 /* :global(.formGroup) {
     flex: 1 1 40%;
 } */
 .searchSubmitButton {
-    @mixin buttonVariant $primaryBlue, 0.5rem, 1rem;
+    @mixin buttonVariant $primaryBlue, 0.75rem, 1rem;
     color: #fff;
+    top: 5%;
 
 }
-.reservationInfo {
+.reservation-container {
+    /* placeholder */
+}
+.reservation-info {
     /* placeholder */
     grid-column: 1 / 13;
     border: 0.1rem solid color($primaryBlue saturation(25%));
 }
 .travelerForm-container {
-    grid-column: 1 / 13;
+    grid-column: 3 / 13;
     text-align: left;
 }
 .backToSearchResults {
@@ -95,4 +136,15 @@
     }
   }
 
+}
+
+.citySearch {
+    :global(.citySearch-input) {
+        position: relative;
+        display: inline-block;
+    }
+    :global(.citySearch-button) {
+        padding: 0.7rem;
+        @mixin buttonOutlineVariant $primaryBlue;
+    }
 }
