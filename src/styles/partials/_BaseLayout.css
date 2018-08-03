@@ -24,12 +24,12 @@
 :global(.header-spacer ){
   z-index: 1;
   position: relative;
-  height: calc(#{$headerHeight} - 1px);
+  height: resolve($headerHeight - 1px);
   @media (min-width: $mobile) {
-    height: calc(#{$headerTabletHeight} - 1px);
+    height: 101px;
   }
   @media (min-width: $tablet) {
-    height: calc(#{$headerHeight} - 1px);
+    height: 85px;
   }
 }
 
