@@ -45,10 +45,9 @@ class App extends Component {
       checkOutDate: null
     }
     this.returnComponentState=this.returnComponentState.bind(this);
-    // this.handleTextChange=this.handleTextChange.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     /** Get network provider and web3 instance.
      See utils/getWeb3 for more info. */
     getWeb3
@@ -104,16 +103,16 @@ class App extends Component {
   }
 
   accountListener = () => {
-    // var account = web3.eth.accounts[0];
-    // setInterval(() => {
-    //   if (this.state.web3.eth.accounts[0] !== this.state.account) {
-    //     console.log('this.state.web3.eth.accounts[0]: ', this.state.web3.eth.accounts[0]);
-    //     console.log('this.state.account: ', this.state.account)
-    //     // account = web3.eth.accounts[0];
-    //     // updateInterface();
-    //     this.setState({account: this.state.web3.eth.accounts[0]})
-    //   }
-    // }, 2000);
+    // var account = this.state.web3.eth.accounts[0];
+    setInterval(() => {
+      if (this.state.web3.eth.accounts[0] !== this.state.account) {
+        console.log('this.state.web3.eth.accounts[0]: ', this.state.web3.eth.accounts[0]);
+        console.log('this.state.account: ', this.state.account)
+        // account = web3.eth.accounts[0];
+        // updateInterface();
+        this.setState({account: this.state.web3.eth.accounts[0]})
+      }
+    }, 2000);
   }
 
   returnComponentState = (componentState) => {
@@ -129,10 +128,38 @@ class App extends Component {
         <Router history={this.props.history}>
           <div className="content-container">
             <Route path="/home" component={RegisterMessage} />
-            <Route path="/register" render={(props)=>(<Search web3={this.state.web3} RR={this.state.RR} web3error={this.state.web3error} netIdError={this.state.netIdError} account={this.state.account} /> )} />
-            <Route path="/checkIn" render={(props)=>(<Access web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId} web3error={this.state.web3error} netIdError={this.state.netIdError} account={this.state.account} /> )} />
-            <Route path="/checkOut" render={(props)=>(<Settle web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId} web3error={this.state.web3error} netIdError={this.state.netIdError} account={this.state.account} /> )} />
-            <Route path="/status" render={(props)=>(<Status web3={this.state.web3} RR={this.state.RR} tokenId={this.state.tokenId} account={this.state.account} returnComponentState={this.returnComponentState} checkInDate={this.state.checkInDate} checkOutDate={this.state.checkOutDate} />)} />
+            <Route path="/register" render={(props)=>(<Search
+              web3={this.state.web3}
+              RR={this.state.RR}
+              web3error={this.state.web3error}
+              netIdError={this.state.netIdError}
+              account={this.state.account}
+            /> )} />
+            <Route path="/checkIn" render={(props)=>(<Access
+              web3={this.state.web3}
+              RR={this.state.RR}
+              tokenId={this.state.tokenId}
+              web3error={this.state.web3error}
+              netIdError={this.state.netIdError}
+              account={this.state.account}
+            /> )} />
+            <Route path="/checkOut" render={(props)=>(<Settle
+              web3={this.state.web3}
+              RR={this.state.RR}
+              tokenId={this.state.tokenId}
+              web3error={this.state.web3error}
+              netIdError={this.state.netIdError}
+              account={this.state.account}
+            /> )} />
+            <Route path="/status" render={(props)=>(<Status
+              web3={this.state.web3}
+              RR={this.state.RR}
+              tokenId={this.state.tokenId}
+              account={this.state.account}
+              returnComponentState={this.returnComponentState}
+              checkInDate={this.state.checkInDate}
+              checkOutDate={this.state.checkOutDate}
+            />)} />
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route exact path="/" component={RegisterMessage} />
