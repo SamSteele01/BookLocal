@@ -8,9 +8,7 @@
     /*grid-template-columns: repeat(12, 1fr);*/
     justify-content: center;
     /* max-height: 20vh; */
-    :global(.formGroup) input {
-        width: 80%;
-    }
+
     :global(.formGroup):not(last-child) {
         margin-bottom: 0;
     }
@@ -25,6 +23,9 @@
     width: 100vw;
     /*height: 100vh;*/
     top: 0;
+    :global(.formGroup) input {
+        width: 80%;
+    }
     /*display: flex;
     justify-content: center;
     align-items: center;*/
@@ -90,33 +91,7 @@
     top: 5%;
 
 }
-.reservation-container {
-  height: 50vh;
-  width: 60vw;
-  margin: 10rem
 
-}
-.reservation-card {
-  background-color: white;
-  height: 50vh;
-  width: 60vw;
-}
-.reservation-info {
-    /* placeholder */
-    grid-column: 1 / 13;
-    border: 0.1rem solid color($primaryBlue saturation(25%));
-}
-.travelerForm-container {
-    grid-column: 3 / 13;
-    text-align: left;
-}
-.backToSearchResults {
-    /* placeholder */
-    grid-column: 1 / 13;
-    text-align: left;
-    margin-bottom: 1rem;
-    color: $primaryBlue;
-  }
   /* Modal container style that exists outside the Payment component */
 .paymentForm-modal {
   align-items: center;
