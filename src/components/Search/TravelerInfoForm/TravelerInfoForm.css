@@ -1,0 +1,69 @@
+.reservation-container {
+  height: 50vh;
+  width: 60vw;
+  margin: 10rem
+}
+
+.reservation-card {
+  background-color: white;
+  height: auto;
+  /*width: 60vw;*/
+  /*padding:*/
+}
+
+.backToSearchResults {
+  /* placeholder */
+  grid-column: 1 / 13;
+  text-align: left;
+  margin-bottom: 1rem;
+  color: $primaryBlue;
+}
+
+.reservation-info {
+    /* placeholder */
+    grid-column: 1 / 13;
+    border: 0.1rem solid color($primaryBlue saturation(25%));
+}
+
+.travelerForm-container {
+    grid-column: 3 / 13;
+    text-align: left;
+}
+
+.traveler-info-form {
+  max-width: 65vw;
+  max-height: 50vh;
+  text-align: left;
+}
+
+.formHeader {
+  /* placeholder */
+}
+
+.form {
+  /* placeholder */
+  :global(.formGroup) {
+    border: none;
+  }
+  label {
+    text-align: left;
+  }
+}
+
+.form-inputPreferences {
+  /* placeholder */
+  /*width: 80%;*/
+  min-height: 10vh;
+  /*margin-top: 1rem;*/
+}
+
+.form-inputPreferencesLabel {
+  /* placeholder */
+}
+
+.form-inputButton {
+  width: 40%;
+  margin: 15px 30% 0;
+  @mixin buttonVariant $primaryBlue, 0.5rem, 1rem;
+  color: white;
+}
