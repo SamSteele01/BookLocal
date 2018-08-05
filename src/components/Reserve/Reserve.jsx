@@ -51,27 +51,19 @@ class Reserve extends Component{
   handleSubmit = (event) => {
     event.preventDefault();
     let web3 = this.props.web3;
-    // console.log(this.dateConverter(this.state.start));
-    // console.log(this.dateConverter(this.state.stop));
-    // console.log("Reserve fired!");
-    // console.log("("+
-    // web3.toBigNumber(this.dateConverter(this.state.start))+","+
-    // web3.toBigNumber(this.dateConverter(this.state.stop))+","+
-    // "{from: "+web3.eth.accounts[0]+", gas: 3000000})");
     reserve = this.props.RR.reserve(
       this.dateConverter(this.state.start),
       this.dateConverter(this.state.stop),
       {from: web3.eth.accounts[0], gas: 3000000},
       (err,res) => {
-        if(err){console.log('availability: "false" '+err);
-          this.setState({availability: `Oops! Something went wrong ${err}`})}
-        if(!err){
-          // console.log('availability: "true"');
-          // console.log(res);
+        if (err) {
+          console.log('availability: "false" '+err);
+          this.setState({ availability: `Oops! Something went wrong ${err}` })
+        } else {
           this.setState({
             response: res, // switch to response page
-            account: web3.eth.accounts[0]})
-          // console.log(this.transaction(res)) // undefined
+            account: web3.eth.accounts[0],
+          })
           this.setTxnListener(res)
         }
       }
