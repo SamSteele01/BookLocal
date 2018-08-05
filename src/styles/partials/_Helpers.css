@@ -12,7 +12,14 @@
   justify-content: flex-end;
 }
 
-:global(.flex-column ){
+:global(.flex-column-start ){
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+:global(.flex-column-center ){
+  display: flex;
   flex-direction: column;
   justify-content: center;
 }
@@ -24,4 +31,6 @@
   align-items: center;
 }
 
-// For misc spacing, etc:global(. add )helpers here 
+
+
+// For misc spacing, etc:global(. add )helpers here
