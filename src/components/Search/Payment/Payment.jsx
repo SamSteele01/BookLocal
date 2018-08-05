@@ -108,42 +108,47 @@ class Payment extends Component {
     // Submit payment and send out for confirmation
     // TODO: Decide if the reservation Details aspects are necessary in this window.
         // stringify dates
-        const startDate = moment(this.props.bookingDates[1]).format("MMM Do, YYYY");
+        const startDate = moment(this.props.checkInDate).format("MMM Do, YYYY");
         console.log(startDate);
-        const endDate = moment(this.props.bookingDates[2]).format("MMM Do, YYYY");
+        const endDate = moment(this.props.checkOutDate).format("MMM Do, YYYY");
         console.log(endDate);
     return(
-       <div styleName="form-container">
-       <a styleName="form-close" onClick={this.hidePaymentForm}><FontAwesomeIcon icon={faTimes} size="2x" /></a>
-       <div styleName="form-header">
-          <div styleName="form-title"><h1>Payment for reservation</h1></div>
-       </div>
-       <div styleName="form-content">
-        <div styleName="reservationDetails">
-        <div styleName="reservationDetails-header"><h4>Booking details</h4></div>
-        <p styleName="reservationDetails-hotelName">Room at {this.props.reservationData.name}</p>
-            <p styleName="reservationDetails-beds">Beds: {this.props.reservationData.beds}</p>
-            <p styleName="reservationDetails-price">Price: {this.props.reservationData.price} ETH</p>
-            <p styleName="reservationDetails-dates">Dates: {startDate} to {endDate} </p>
-          </div>
-        <form styleName="paymentForm" className={this.state.showHideEthForm} >
-          <TextInput 
-            htmlId="walletAddress"
-            name="walletAddress"
-            label="Wallet Address"
-            type="text"
-            required={true}
-            onChange={this.handleTextChange}
-            value={this.state.walletAddress}
-            placeholder="address"
-          />
-          <input id="reserve" type="submit" className="button" styleName="paymentForm-submitButton" value={"Pay " + this.props.reservationData.price + " ETH"} onClick={this.handleSubmit} />
-        </form>
-        
-          </div>
-      
+      <div styleName="form-container">
+        <div styleName="form-close" onClick={this.hidePaymentForm}>
+          <FontAwesomeIcon icon={faTimes} size="2x" />
         </div>
-        
+        <div styleName="form-content">
+          <ResDetails
+            price={this.props.price}
+            reservationData={this.props.reservationData}
+            startDate={startDate}
+            endDate={endDate}
+          />
+          <div styleName="form-header">
+            <div styleName="form-title"><h1>Payment for reservation</h1></div>
+          </div>
+          <form styleName="paymentForm" className={this.state.showHideEthForm} >
+            <TextInput
+              htmlId="walletAddress"
+              name="walletAddress"
+              label="Wallet Address"
+              type="text"
+              required={true}
+              onChange={this.handleTextChange}
+              value={this.state.walletAddress}
+              placeholder="address"
+            />
+            <input
+              id="reserve"
+              type="submit"
+              className="button"
+              styleName="paymentForm-submitButton"
+              value={"Pay " + this.props.price + " ETH"}
+              onClick={this.handleSubmit}
+            />
+          </form>
+        </div>
+      </div>
     )
   }
 }
