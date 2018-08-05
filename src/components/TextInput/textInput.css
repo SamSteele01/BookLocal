@@ -6,6 +6,38 @@
   margin-bottom: 16px;
 }
 
+.formInput {
+  @mixin controlTransition;
+  appearance: none;
+  background: white;
+  background-image: none;
+  border: 0.05rem solid color($bgColorLight blackness(50%));
+  border-radius: 0.1rem;
+  color: $fontColorDark;
+  display: block;
+  font-size: $fontSize;
+  height: 1.6rem;
+  line-height: 1.2rem;
+  max-width: 100%;
+  outline: none;
+  padding: 0.5rem 0.4rem;
+  position: relative;
+  width: 97%;
+  &:focus {
+    box-shadow: 0 0 0 .1rem color($bgColorDark alpha(.2));
+    border-color: $primaryBlue;
+    outline: $primaryBlue auto 1px;
+  }
+  &::placeholder {
+    color: $primaryGrey;
+  }
+
+  /* Input types */
+  &[type="file"] {
+    height: auto;
+  }
+}
+
 .textinput__error {
   color: red;
 }
