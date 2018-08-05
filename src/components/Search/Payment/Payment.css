@@ -67,6 +67,8 @@
 
 .form-close {
   position: absolute;
+  z-index: 100;
+  cursor: pointer;
   /*right: -0.7rem;
   top: -1.05rem;*/
   /*right: -0.7rem;

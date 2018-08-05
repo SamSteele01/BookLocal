@@ -17,6 +17,7 @@
   text-align: left;
   margin-bottom: 1rem;
   color: $primaryBlue;
+  cursor: pointer;
 }
 
 .reservation-info {
