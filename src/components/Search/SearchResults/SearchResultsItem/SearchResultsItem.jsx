@@ -23,9 +23,9 @@ export default function SearchResultsItem({searchObject, callback}) {
                 Beds: {searchObject.beds}
             </div>
             <div styleName="hotelPrice">
-                Price: {searchObject.price}
+                Price: {searchObject.price} Eth
             </div>
-            {callback && 
+            {callback &&
                 <input
                     id="reserveRoom"
                     type="submit"
