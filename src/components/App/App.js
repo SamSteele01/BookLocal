@@ -63,7 +63,6 @@ class App extends Component {
         web3error: error.error
       })
     })
-    // this.accountListener()
   }
 
   componentDidUpdate(prevProps, prevState){
@@ -102,15 +101,17 @@ class App extends Component {
     }
   }
 
+  /* Have everywhere with: window.web3.eth.accounts[0].
+  * This keeps from having to refresh the page
+  */
   accountListener = () => {
-    // var account = this.state.web3.eth.accounts[0];
     setInterval(() => {
       if (this.state.web3.eth.accounts[0] !== this.state.account) {
         console.log('this.state.web3.eth.accounts[0]: ', this.state.web3.eth.accounts[0]);
         console.log('this.state.account: ', this.state.account)
         // account = web3.eth.accounts[0];
         // updateInterface();
-        this.setState({account: this.state.web3.eth.accounts[0]})
+        this.setState({ account: this.state.web3.eth.accounts[0] })
       }
     }, 2000);
   }
@@ -128,14 +129,14 @@ class App extends Component {
         <Router history={this.props.history}>
           <div className="content-container">
             <Route path="/home" component={RegisterMessage} />
-            <Route path="/register" render={(props)=>(<Search
+            <Route path="/search" render={(props)=>(<Search
               web3={this.state.web3}
               RR={this.state.RR}
               web3error={this.state.web3error}
               netIdError={this.state.netIdError}
               account={this.state.account}
             /> )} />
-            <Route path="/checkIn" render={(props)=>(<Access
+            <Route path="/access" render={(props)=>(<Access
               web3={this.state.web3}
               RR={this.state.RR}
               tokenId={this.state.tokenId}
