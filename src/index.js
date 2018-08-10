@@ -9,7 +9,7 @@ import BaseLayout from 'components/BaseLayout'
 import './styles/index.css';
 
 ReactDOM.render((
-      <BrowserRouter basename="/EthMemphis">
+      <BrowserRouter basename="/booklocal">
           <BaseLayout>
              <Route path="/" component={App} />
           </BaseLayout>
