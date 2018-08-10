@@ -1,45 +1,48 @@
 import React, { Component } from 'react';
 import { PulseLoader } from 'react-spinners';
-
-let settle;
+import PropTypes from 'prop-types'
 
 class Settle extends Component{
+  static propTypes = {
+    // address: PropTypes.string,
+    resContract: PropTypes.object,
+  }
   constructor(props){
     super(props)
     this.state = {
-      tokenId : this.props.tokenId,
-      settle : '',
       response: null,
       blockNum: null,
       status: null  // '0x0' = fail '0x1' = success
     }
-
-    this.handleSubmit=this.handleSubmit.bind(this);
-    this.handleTextChange=this.handleTextChange.bind(this);
   }
 
-  handleTextChange = (event) => {
-    if(this.state[event.target.id] !== undefined){
-      this.setState({[event.target.id]: event.target.value});
+  // handleTextChange = (event) => {
+  //   if(this.state[event.target.id] !== undefined){
+  //     this.setState({[event.target.id]: event.target.value});
+  //   }
+  // }
+
+  componentDidMount() {
+    if (this.props.resContract) {
+      this.handleSubmit()
     }
   }
 
-  handleSubmit = (event) => {
-    event.preventDefault();
+  // not sure how to handle needing to send more eth
+  handleSubmit = () => {
     console.log("Settle fired!");
-    settle = this.props.RR.settle(this.state.tokenId,
-      {from: this.props.web3.eth.accounts[0], gas: 3000000},
+    this.props.resContract.checkOut(
+      {from: window.web3.eth.accounts[0], gas: 3000000},
       (err,res) => {
-        if(err){
-          console.log(
-            'Error sending Settle request '+err
-          );
+        if (err){
+          console.log(`Error sending Check Out request ${err}`);
+        } else {
+          // console.log(res);
+          // this.setState({
+          //   response: res
+          // });
+          this.setTxnListener(res)
         }
-        // console.log(res);
-        this.setState({
-          response: res
-        });
-        this.setTxnListener(res)
       }
     );
   }
@@ -55,10 +58,10 @@ class Settle extends Component{
   }
 
   transaction = (txn) => {
-    this.props.web3.eth.getTransaction(txn, (error, result) => {
-      if(!error) {
-        this.setState({blockNum: result.blockNumber})
-      }else{
+    window.web3.eth.getTransaction(txn, (error, result) => {
+      if (!error) {
+        this.setState({ blockNum: result.blockNumber })
+      } else {
         console.error(error);
         console.log(result);
       }
@@ -66,22 +69,25 @@ class Settle extends Component{
   }
 
   getTxnReceipt = (txn) => {
-    this.props.web3.eth.getTransactionReceipt(txn, (error, result) => {
-      if(!error) {
-        this.setState({status: result.status})
-      }else{
-        console.error(error);
-        console.log(result);
-      }
+    window.web3.eth.getTransactionReceipt(txn, (error, result) => {
+      // if (!error) {
+      //   this.setState({ status: result.status })
+      // } else {
+      //   console.error(error);
+      //   console.log(result);
+      // }
+      setInterval(() => {
+        this.setState({ status: '0x1' })
+      }, 15000)
     })
   }
 
   render(){
     return(
-      <div className="home darken">
-        <div className="settle">
+      // <div className="home darken">
+        // <div className="settle">
           <fieldset>
-            { this.state.response ?
+
               <div>
                 { (this.state.blockNum && this.state.status!==null) ?
                   <div>
@@ -91,37 +97,28 @@ class Settle extends Component{
                         <div>Thank you for staying with us!</div>
                       </div>
                     :
-                      <div className="reserve-warning">There was a problem with checking out. Please contact Steve Lee: steven@booklocal.in</div>
+                      <div className="reserve-warning">
+                        There was a problem with checking out.
+                      </div>
                     }
                   </div>
                 :
-                    // spinner
                   <div>
                     <PulseLoader color='#1b75bb' loading={true} />
-                    <div>Please wait while the transaction gets mined. This could take a minute or two.</div>
+                    <div>
+                      Please wait while the transaction gets mined.
+                      This could take a minute or two.
+                    </div>
+                    <div>
+                      Any remaining Eth will be returned to your account.
+                    </div>
                   </div>
                 }
               </div>
-            :
-              <div>
-                <h1>Check Out</h1>
-                <div className="label-style">Token Id:
-                  <input id="tokenId" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.tokenId} />
-                </div>
-                {this.props.account===null || this.props.account===undefined ?
-                  <div>
-                    <div className="reserve-warning">Please log in to MetaMask.</div>
-                    <input id="search" type="submit" className="input-button-style disabled" value="Check Out" onClick={this.handleSubmit} disabled/>
-                  </div>
-                :
-                  <input id="search" type="submit" className="input-button-style" value="Check Out" onClick={this.handleSubmit} />
-                }
-                {/* <input id="submit" type="submit" value="Check Out" className="input-button-style" onClick={this.handleSubmit} /> */}
-              </div>
-            }
+
           </fieldset>
-        </div>
-      </div>
+        // </div>
+      // </div>
     )
   }
 }
