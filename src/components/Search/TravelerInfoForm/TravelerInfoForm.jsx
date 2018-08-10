@@ -151,7 +151,7 @@ class TravelerInfoForm extends Component {
                         htmlFor="preferences"
                         styleName="form-inputPreferencesLabel"
                       >
-                        Preferences
+                        Notes
                       </label>
                       <textarea
                         styleName="form-inputPreferences"
@@ -160,7 +160,7 @@ class TravelerInfoForm extends Component {
                         value={this.state.preferences}
                         onChange={this.handleTextChange}
                         required={false}
-                        placeholder="Enter any preferences here"
+                        placeholder="Preferences or message about your stay"
                       />
                     </div>
                   </fieldset>
