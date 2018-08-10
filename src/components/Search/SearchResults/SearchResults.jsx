@@ -15,27 +15,27 @@ const client = new Lokka({
 
 const searchResults = [
     {name: 'The Exchange Building', city: 'Memphis', beds: 2,
-      price: 2.2, imgSrc: '/media/hotel1.jpg'},
+      price: .2, imgSrc: '/media/hotel1.jpg'},
     {name: 'Hotel #2', city: 'Memphis', beds: 2,
-      price: 4, imgSrc: '/media/hotel1.jpg'},
+      price: .18, imgSrc: '/media/hotel1.jpg'},
     {name: 'Hotel #3', city: 'Memphis', beds: 1,
-      price: 1.5, imgSrc: '/media/hotel1.jpg'},
+      price: .5, imgSrc: '/media/hotel1.jpg'},
     {name: 'Hotel #4', city: 'Memphis', beds: 2,
-      price: 1, imgSrc: '/media/hotel1.jpg'},
+      price: .1, imgSrc: '/media/hotel1.jpg'},
     {name: 'Hotel #5', city: 'Memphis', beds: 3,
-      price: 10, imgSrc: '/media/hotel1.jpg'},
+      price: .12, imgSrc: '/media/hotel1.jpg'},
     {name: 'Hotel #6', city: 'Memphis', beds: 1,
-      price: 1.1, imgSrc: '/media/hotel1.jpg'},
+      price: .1, imgSrc: '/media/hotel1.jpg'},
     {name: 'Hotel #7', city: 'Memphis', beds: 2,
-      price: 2.2, imgSrc: '/media/hotel1.jpg'},
+      price: .2, imgSrc: '/media/hotel1.jpg'},
     {name: 'Hotel #8', city: 'Memphis', beds: 2,
-      price: 2.15, imgSrc: '/media/hotel1.jpg'},
+      price: .15, imgSrc: '/media/hotel1.jpg'},
     {name: 'Hotel #9', city: 'Memphis', beds: 1,
-      price: 4, imgSrc: '/media/hotel1.jpg'},
+      price: .4, imgSrc: '/media/hotel1.jpg'},
     {name: 'Hotel #10', city: 'Memphis', beds: 2,
-      price: 5.5, imgSrc: '/media/hotel1.jpg'},
+      price: .5, imgSrc: '/media/hotel1.jpg'},
     {name: 'Hotel #11', city: 'Memphis', beds: 1,
-      price: 0.5, imgSrc: '/media/hotel1.jpg'},
+      price: .5, imgSrc: '/media/hotel1.jpg'},
 ]
 
 class SearchResults extends Component {
@@ -45,13 +45,16 @@ class SearchResults extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            query: this.props.searchQuery,
-            listReady: false
+          query: this.props.searchQuery,
+          listReady: false
         }
     }
-    reserveClicked = (event) => {
-        this.props.reserveClicked();
-        this.props.reservationData(event);
+    reserveClicked = (searchObject) => {
+      // calculate total price
+      let totalPrice = (this.props.searchQuery.end - this.props.searchQuery.start) * searchObject.price
+      let resData = Object.assign(searchObject, { totalPrice: totalPrice })
+      // TODO get hotel and RT data from DB
+      this.props.reservationData(resData);
     }
     // call an update on the query value, if necessary?
     // getSearchQuery = () => {
@@ -100,8 +103,8 @@ class SearchResults extends Component {
         Reserve component to confirm dates */
         return(
             <div styleName="search-results">
-            {this.props.searchRunning &&
-                    this.generateSearchResultList()
+            { this.props.searchRunning &&
+              this.generateSearchResultList()
 
             }
             </div>
