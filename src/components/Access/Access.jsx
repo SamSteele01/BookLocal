@@ -1,26 +1,34 @@
 import React, { Component } from 'react';
-import { PulseLoader } from 'react-spinners';
+import PropTypes from 'prop-types'
+import moment from 'moment'
+import ResContractWrapper from 'components/ResContractWrapper';
 import './access.css';
-
-let access;
 
 class Access extends Component{
   static propTypes = {
-
+    web3: PropTypes.object,
+    account: PropTypes.string
   }
   constructor(props){
     super(props)
     this.state = {
-      tokenId : this.props.tokenId,
+      account : '',
       displayAccessCard: false,
       traveler: {},
       hotel: {},
       hotelProfile: {},
       renderDetails: false,
     }
+  }
 
-    this.handleSubmit=this.handleSubmit.bind(this);
-    this.handleTextChange=this.handleTextChange.bind(this);
+  componentDidMount() {
+    this.setState({ account: this.props.account })
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.account !== this.props.account) {
+      this.setState({ account: this.props.account })
+    }
   }
 
   handleTextChange = (event) => {
