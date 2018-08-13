@@ -10,7 +10,7 @@
   /*max-width: 640px;*/
   padding: 0 0.8rem;
   width: 65vw;
-  height: 30rem;
+  /*height: 30rem;*/
   position: relative;
   .form-header {
     color: $fontColorHeader;
@@ -134,6 +134,18 @@
 .paymentForm-submit-isLoggedOut {
 
 }
+.paymentForm-addButton {
+  background: #1b75bb;
+  border: 0.05rem solid rgb(26, 113, 181);
+  color: var(--font-color-light);
+  margin: 15px;
+  padding: 0.5rem 0.4rem;
+  color: #fff;
+  height: 2.6rem;
+  width: 5.2rem;
+  top: 5%;
+}
+
 .paymentForm-submitButton {
   @mixin buttonVariant $primaryGreen, 1rem, 2rem;
   color: white;

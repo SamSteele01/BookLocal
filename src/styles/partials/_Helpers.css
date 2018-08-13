@@ -12,6 +12,12 @@
   justify-content: flex-end;
 }
 
+:global(.flex-row-around ){
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 :global(.flex-column-start ){
   display: flex;
   flex-direction: column;

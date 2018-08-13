@@ -47,6 +47,7 @@
 }
 .reserveRoomButton {
     /* placeholder */
+    margin: 10px;
     @mixin buttonVariant $primaryGreen, 0.5rem, 0.25rem;
     color: #fff;
 }

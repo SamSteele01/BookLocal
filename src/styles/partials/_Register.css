@@ -50,6 +50,7 @@
   z-index: 4;
   filter: brightness(1);
   padding: 10px 16px;
+  transition: all 0.3s ease-in-out 0s;
   @media (min-width: $mobile) {
     padding: 15px 25px;
     max-width: 80vw;

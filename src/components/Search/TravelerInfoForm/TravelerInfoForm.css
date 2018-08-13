@@ -1,12 +1,12 @@
 .reservation-container {
-  height: 50vh;
+  /*height: 50vh;*/
   width: 60vw;
   margin: 10rem
 }
 
 .reservation-card {
   background-color: white;
-  height: auto;
+  min-height: 680px;
   /*width: 60vw;*/
   /*padding:*/
 }
