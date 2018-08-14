@@ -39,9 +39,9 @@ class Header extends Component {
         {this.state.windowWidth>425 ?
           <nav>
             <div className="nav-items">
-              <NavLink to="/register" activeClassName="link-active" className="pure-menu-heading">Book</NavLink>
-              <NavLink to="/checkIn" activeClassName="link-active" className="pure-menu-heading">Check In</NavLink>
-              <NavLink to="/checkOut" activeClassName="link-active" className="pure-menu-heading">Check Out</NavLink>
+              <NavLink to="/search" activeClassName="link-active" className="pure-menu-heading">Search</NavLink>
+              <NavLink to="/access" activeClassName="link-active" className="pure-menu-heading">Check In</NavLink>
+              {/* <NavLink to="/checkOut" activeClassName="link-active" className="pure-menu-heading">Check Out</NavLink> */}
             </div>
             <div className="Logo">
               <Link to="/home">
@@ -53,7 +53,7 @@ class Header extends Component {
               </Link>
             </div>
             <div className="nav-items">
-              <NavLink to="/status" activeClassName="link-active" className="pure-menu-heading">Status</NavLink>
+              {/* <NavLink to="/status" activeClassName="link-active" className="pure-menu-heading">Status</NavLink> */}
               <NavLink to="/about" activeClassName="link-active" className="pure-menu-heading">About</NavLink>
               <NavLink to="/contact" activeClassName="link-active" className="pure-menu-heading">Contact</NavLink>
             </div>
@@ -75,10 +75,10 @@ class Header extends Component {
                     <SvgIcon icon={Paths.X.d} viewBox="0 0 384 512" size={32} />
                   </div>
                   <div className="nav-items">
-                    <NavLink to="/register" activeClassName="link-active" className="pure-menu-heading">Book</NavLink>
-                    <NavLink to="/checkIn" activeClassName="link-active" className="pure-menu-heading">Check In</NavLink>
-                    <NavLink to="/checkOut" activeClassName="link-active" className="pure-menu-heading">Check Out</NavLink>
-                    <NavLink to="/status" activeClassName="link-active" className="pure-menu-heading">Status</NavLink>
+                    <NavLink to="/search" activeClassName="link-active" className="pure-menu-heading">Search</NavLink>
+                    <NavLink to="/access" activeClassName="link-active" className="pure-menu-heading">Check In</NavLink>
+                    {/* <NavLink to="/checkOut" activeClassName="link-active" className="pure-menu-heading">Check Out</NavLink> */}
+                    {/* <NavLink to="/status" activeClassName="link-active" className="pure-menu-heading">Status</NavLink> */}
                     <NavLink to="/about" activeClassName="link-active" className="pure-menu-heading">About</NavLink>
                     <NavLink to="/contact" activeClassName="link-active" className="pure-menu-heading">Contact</NavLink>
                   </div>
