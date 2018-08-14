@@ -15,10 +15,10 @@ export default function ResDetails(props) {
           Beds: {props.reservationData.beds}
         </p>
         <p styleName="reservationDetails-price">
-          Price: {props.price} ETH
+          Price: {props.price.toFixed(3)} ETH
         </p>
         <p styleName="reservationDetails-dates">
-          Dates: {props.checkInDate} to {props.checkOutDate}
+          Dates: {props.startDate} to {props.endDate}
         </p>
     </div>
   );

@@ -23,7 +23,7 @@ export default function SearchResultsItem({searchObject, callback}) {
                 Beds: {searchObject.beds}
             </div>
             <div styleName="hotelPrice">
-                Price: {searchObject.price} Eth
+                Price/night: {searchObject.price} Eth
             </div>
             {callback &&
                 <input
