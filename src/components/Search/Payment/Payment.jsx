@@ -6,6 +6,7 @@ import { Transport } from 'lokka-transport-http'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import moment from 'moment'
+import { PulseLoader } from 'react-spinners'
 
 import TextInput from 'components/TextInput'
 import ResDetails from '../ResDetails';
@@ -30,14 +31,17 @@ class Payment extends Component {
     this.state = {
       paymentAmountETH: null,
       walletAddress: window.web3.eth.accounts[0],
+      additionalValue: 0,
+      total: this.props.price,
       submitted: false,
       paymentTypeToggle: false,
       transactionId: null,
       showHideEthForm: 'isVisible',
-      showHideCcForm: 'isHidden'
+      showHideCcForm: 'isHidden',
+      response: null,
+      blockNum: null,
+      status: null,
     }
-  this.handleSubmit=this.handleSubmit.bind(this);
-  this.handleTextChange=this.handleTextChange.bind(this);
   }
 
   handleTextChange = (event) => {
@@ -45,11 +49,20 @@ class Payment extends Component {
       this.setState({[event.target.id]: event.target.value});
     }
   }
-  hidePaymentForm = (event) => {
+  hidePaymentForm = () => {
     this.props.showPaymentForm(false);
   }
   dateConverter = (mmddyyyy) => {
     return Math.floor(moment(mmddyyyy).unix() / 86400);
+  }
+
+  handleAddValue = (event) => {
+    event.preventDefault();
+    console.log('typeof', typeof(this.state.additionalValue))
+    let total = this.props.price + parseFloat(this.state.additionalValue)
+    console.log('TOTAL', total)
+    this.setState({ total: total })
+    // console.log('TOTAL', this.state.total)
   }
 
   handleSubmit = (event) => {
@@ -61,7 +74,7 @@ class Payment extends Component {
       this.dateConverter(this.props.checkOutDate),
       {
         from: web3.eth.accounts[0],
-        value: web3.toWei(this.props.price, 'ether'),
+        value: web3.toWei(this.state.total, 'ether'),
         gas: 3000000
       },
       (err,res) => {
@@ -79,27 +92,62 @@ class Payment extends Component {
     );
   }
 
-  async submitTravelerInfo(input) {
-    // hotelAddressArray => hotelDataArray
-    let traveler = ''
-    let address = ''
-    let string = `($input: TravelerInput!){
-      addNewTraveler(input: $input){
-        id
-        ethAddress
-        name
-        phoneNumber
-        preferences
+  setTxnListener = (txn) => {
+    let listener = setInterval( () => {
+      this.transaction(txn)
+      if (this.state.blockNum !== null) {
+        this.getTxnReceipt(txn)
+        clearInterval(listener)
       }
-    }`
-    let variable = { input: input }
-    await client.mutate(string, variable)
-    .then(data => {
-      traveler = data
-      address = data.addNewTraveler.ethAddress
-    }).catch(error => console.log(error))
-    return { traveler, address }
+    }, 2000)
   }
+
+  transaction = (txn) => {
+    this.props.web3.eth.getTransaction(txn, (error, result) => {
+      if(!error) {
+        this.setState({blockNum: result.blockNumber})
+      }else{
+        console.error(error);
+        console.log(result);
+      }
+    })
+  }
+
+  getTxnReceipt = (txn) => {
+    this.props.web3.eth.getTransactionReceipt(txn, (error, result) => {
+      if(!error) {
+        this.setState({status: result.status})
+      }else{
+        console.error(error);
+        console.log(result);
+      }
+    })
+  }
+
+  // not used yet. Should validate, then submit at the same time as payment
+  // to contract
+
+  // async submitTravelerInfo(input) {
+  //   // hotelAddressArray => hotelDataArray
+  //   let traveler = ''
+  //   let address = ''
+  //   let string = `($input: TravelerInput!){
+  //     addNewTraveler(input: $input){
+  //       id
+  //       ethAddress
+  //       name
+  //       phoneNumber
+  //       preferences
+  //     }
+  //   }`
+  //   let variable = { input: input }
+  //   await client.mutate(string, variable)
+  //   .then(data => {
+  //     traveler = data
+  //     address = data.addNewTraveler.ethAddress
+  //   }).catch(error => console.log(error))
+  //   return { traveler, address }
+  // }
 
   render() {
     // display payment form
@@ -112,6 +160,7 @@ class Payment extends Component {
         console.log(startDate);
         const endDate = moment(this.props.checkOutDate).format("MMM Do, YYYY");
         console.log(endDate);
+        console.log('typeof total', typeof(this.state.total))
     return(
       <div styleName="form-container">
         <div styleName="form-close" onClick={this.hidePaymentForm}>
@@ -127,26 +176,89 @@ class Payment extends Component {
           <div styleName="form-header">
             <div styleName="form-title"><h1>Payment for reservation</h1></div>
           </div>
-          <form styleName="paymentForm" className={this.state.showHideEthForm} >
-            <TextInput
-              htmlId="walletAddress"
-              name="walletAddress"
-              label="Wallet Address"
-              type="text"
-              required={true}
-              onChange={this.handleTextChange}
-              value={this.state.walletAddress}
-              placeholder="address"
-            />
-            <input
-              id="reserve"
-              type="submit"
-              className="button"
-              styleName="paymentForm-submitButton"
-              value={"Pay " + this.props.price + " ETH"}
-              onClick={this.handleSubmit}
-            />
-          </form>
+          { this.state.response ?
+            <fieldset>
+              { (this.state.blockNum && this.state.status!==null) ?
+                <div>
+                  {this.state.status==="0x1" ?
+                    <div>
+                      <h1>Room Reserved!</h1>
+                      <div>
+                        Thank you for booking your room with BookLocal!
+                      </div>
+                    </div>
+                  :
+                    <div className="reserve-warning">
+                      There was a problem with the reservation getting mined.
+                    </div>
+                  }
+                </div>
+              :
+                // spinner
+                <div>
+                  <PulseLoader color='#1b75bb' loading={true} />
+                  <div>
+                    Please wait while the transaction gets mined.
+                    This could take a minute or two.
+                  </div>
+                </div>
+              }
+              <p>The address that you used to book is: {this.state.account}</p>
+              <div className="reserve-warning">
+                See the transaction on
+                <a
+                  href={`https://rinkeby.etherscan.io/tx/${this.state.response}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Etherscan.io.
+                </a>
+              </div>
+            </fieldset>
+         :
+            <fieldset>
+              <form styleName="paymentForm" className={this.state.showHideEthForm} >
+                <TextInput
+                  htmlId="walletAddress"
+                  name="walletAddress"
+                  label="Wallet Address"
+                  type="text"
+                  required={true}
+                  onChange={this.handleTextChange}
+                  value={this.state.walletAddress}
+                  placeholder="address"
+                />
+                <div className="flex-row-around">
+                  <TextInput
+                    htmlId="additionalValue"
+                    name="additionalValue"
+                    label="Additional Value to send (eth)"
+                    type="number"
+                    required={true}
+                    onChange={this.handleTextChange}
+                    value={this.state.additionalValue}
+                    placeholder="eth"
+                  />
+                  <input
+                    id="addValue"
+                    type="submit"
+                    className="button"
+                    styleName="paymentForm-addButton"
+                    value="Add"
+                    onClick={this.handleAddValue}
+                  />
+                </div>
+                <input
+                  id="reserve"
+                  type="submit"
+                  className="button"
+                  styleName="paymentForm-submitButton"
+                  value={"Send " + this.state.total.toFixed(3) + " ETH"}
+                  onClick={this.handleSubmit}
+                />
+              </form>
+            </fieldset>
+          }
         </div>
       </div>
     )
