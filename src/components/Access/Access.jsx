@@ -41,29 +41,40 @@ class Access extends Component{
     event.preventDefault();
     console.log("Access fired!");
     // query server with reservation address or traveler Id
-
-    // get data on hotel, reservation, roomType
-    // redirect
-    this.setState({
-      displayAccessCard: true,
-      traveler: { name: 'Sam Steele' },
-      hotelProfile: {
-        name: 'The Exchange Building',
-        city: 'Memphis',
-        state: 'TN'
-      },
-      reservation: {
-        // ethAddress: "0x67dead453beef09034",
-        initialBalence: 2.2,
-        price: 2.2,
-        checkIn: 17747,
-        checkOut: 17749,
-      }
-    })
+    console.log('THIS.PROPS.ACCOUNT', this.props.account)
+    // fake login
+    if (this.props.account ===
+      '0xb37a07ffcd1ec4fbc77583cc176e0809b40ff710') {
+      // get data on hotel, reservation, roomType
+      // redirect
+      this.setState({
+        displayAccessCard: true,
+        traveler: { name: 'John Doe' },
+        hotelProfile: {
+          name: 'The Exchange Building',
+          city: 'Memphis',
+          state: 'TN'
+        },
+        reservation: {
+          address: '0x51b9f6c0a70cf0c6550c5397800e180e4390d8ef',
+          initialBalence: .6,
+          price: .6,
+          checkIn: moment().add(5, 'd').format('MMM Do, YYYY'),
+          checkOut: moment().add(8, 'd').format('MMM Do, YYYY'),
+        }
+      })
+    } else {
+      this.setState({ error: 'No reservations found for that address.' })
+    }
   }
 
   toggleDetailsRender = () => {
     this.setState({ renderDetails: !this.state.renderDetails })
+  }
+
+  handleCheckOut = () => {
+    console.log('check out!')
+    this.setState({ checkingOut: true })
   }
 
   setTxnListener = (txn) => {
@@ -101,97 +112,207 @@ class Access extends Component{
   render(){
     return(
       <div className="home darken">
-        <div className="access">
-          { !this.state.displayAccessCard ?
-            <fieldset>
-              { this.state.response ?
-                <div>
-                  { (this.state.blockNum && this.state.status!==null) ?
-                    <div>
-                      { this.state.status==="0x1" ?
-                        <div>
-                          <h1>Checked In!</h1>
-                          <div>Please enjoy your stay!</div>
-                        </div>
-                      :
-                        <div className="reserve-warning">There was a problem with checking in. Please contact Steve Lee: steven@booklocal.in</div>
-                      }
-                    </div>
-                  :
-                      // spinner
-                    <div>
-                      <PulseLoader color='#1b75bb' loading={true} />
-                      <div>Please wait while the transaction gets mined. This could take a minute or two.</div>
-                    </div>
-                  }
+        <div styleName="access">
+          <fieldset>
+            { !this.state.displayAccessCard ?
+              <div>
+                <h1>Check In</h1>
+                <div>Make sure to set MetaMask to the same address that was
+                  used to reserve your room.
                 </div>
-              :
-                <div>
-                  <h1>Check In</h1>
-                  <div>Make sure to set MetaMask to the same address that was used to reserve your room.</div>
-                  <div className="label-style">Address:
-                    <input id="tokenId" type="text" className="input-style" onChange={this.handleTextChange} value={this.state.tokenId} />
-                  </div>
-                  {this.props.account===null || this.props.account===undefined ?
-                    <div>
-                      <div className="reserve-warning">Please log in to MetaMask.</div>
-                      <input id="search" type="submit" className="input-button-style disabled" value="Check In" onClick={this.handleSubmit} disabled/>
-                    </div>
-                  :
-                    <input id="search" type="submit" className="input-button-style" value="Check In" onClick={this.handleSubmit} />
-                  }
-                </div>
-              }
-            </fieldset>
-          :
-            <fieldset>
-              <div className="label-style">
-                Hello {this.state.traveler.name}
-              </div>
-              <div className="label-style">
-                Upcoming stays:
-              </div>
-              <div styleName="wire-frame-box">
-                <div styleName="row space-around" >
-                  <div className="label-style" styleName="h-spacing">
-                    {this.state.hotelProfile.name}
-                  </div>
-                  <div className="label-style" styleName="h-spacing">
-                    {this.state.hotelProfile.city}, {this.state.hotelProfile.state}
-                  </div>
-                </div>
-                <div styleName="row space-around" >
-                  <div className="label-style" styleName="h-spacing">
-                    {this.state.reservation.checkIn}
-                  </div>
-                  <div className="label-style" styleName="h-spacing">
-                    {this.state.reservation.checkOut}
-                  </div>
-                </div>
-                { this.state.renderDetails &&
-                  <div>
-
-                    <div className="label-style">
-                      Info:
-                    </div>
-
-                    <div className="label-style">
-                      Directions:
-                    </div>
-                    <div className="label-style">
-                      Hotel Amenities:
-                    </div>
-                    <div className="label-style">
-                      Wallet:
-                    </div>
+                { this.state.error &&
+                  <div className="reserve-warning">
+                    {this.state.error}
                   </div>
                 }
-                <div className="input-button-style" onClick={this.toggleDetailsRender}>
-                  { this.state.renderDetails ? "Hide Details" : "Click to Access" }
+                <div className="label-style">Address:
+                  <input
+                    id="account"
+                    type="text"
+                    className="input-style"
+                    onChange={this.handleTextChange}
+                    value={this.state.account}
+                  />
                 </div>
+                { !this.props.account ?
+                  <div>
+                    <div className="reserve-warning">
+                      Please log in to MetaMask.
+                    </div>
+                    <input
+                      id="search"
+                      type="submit"
+                      className="input-button-style disabled"
+                      value="Check In"
+                      onClick={this.handleSubmit}
+                      disabled
+                    />
+                  </div>
+                :
+                  <input
+                    id="search"
+                    type="submit"
+                    className="input-button-style"
+                    value="Check In"
+                    onClick={this.handleSubmit}
+                  />
+                }
               </div>
-            </fieldset>
-          }
+            :
+              <div>
+                <div className="label-style">
+                  Hello {this.state.traveler.name}
+                </div>
+                <div className="label-style">
+                  Upcoming stays:
+                </div>
+                { !this.state.checkingOut ?
+                  <div styleName="wire-frame-box">
+                    <div styleName="label-style" >
+                      Reservation address
+                      <input
+                        id="resAddress"
+                        type="text"
+                        styleName="input-style"
+                        value={this.state.reservation.address}
+                        readOnly
+                      />
+                    </div>
+                    <div styleName="row space-around" >
+                      <div
+                        // className="label-style"
+                        styleName="label-style h-spacing">
+                        {this.state.hotelProfile.name}
+                      </div>
+                      <div
+                        // className="label-style"
+                        styleName="label-style h-spacing">
+                        {this.state.hotelProfile.city},
+                        {this.state.hotelProfile.state}
+                      </div>
+                    </div>
+                    <div styleName="row space-around" >
+                      <div
+                        // className="label-style"
+                        styleName="label-style h-spacing">
+                        {this.state.reservation.checkIn}
+                      </div>
+                      <div
+                        // className="label-style"
+                        styleName="label-style h-spacing">
+                        {this.state.reservation.checkOut}
+                      </div>
+                    </div>
+                    { this.state.renderDetails &&
+                      <div styleName="visit-details">
+                        <hr/>
+                        <div styleName="label-style">
+                          Info
+                          <input
+                            id="info"
+                            type="text"
+                            styleName="input-style"
+                            value="Have ID ready at check in."
+                            readOnly
+                          />
+                        </div>
+
+                        <div styleName="label-style">
+                          Directions
+                          <input
+                            id="directions"
+                            type="button"
+                            styleName="form-inputButton"
+                            value="Copy Address to Clipboard"
+                            readOnly
+                          />
+                          <input
+                            id="amenities"
+                            type="button"
+                            styleName="form-inputButton"
+                            value="Open Map"
+                            readOnly
+                          />
+                        </div>
+                        <div styleName="label-style">
+                          Hotel Amenities
+                          <input
+                            id="amenities"
+                            type="text"
+                            styleName="input-style"
+                            value="Laundry service, kitchenette"
+                            readOnly
+                          />
+                        </div>
+                        <hr/>
+                        <div styleName="label-style">
+                          Initial Ammount
+                          <input
+                            id="initialAmmount"
+                            type="text"
+                            styleName="input-style"
+                            value="0.6 Eth"
+                            readOnly
+                          />
+                        </div>
+                        <div styleName="label-style">
+                          Reservation
+                          <input
+                            id="reservation"
+                            type="text"
+                            styleName="input-style"
+                            value="0.4 Eth"
+                            readOnly
+                          />
+                        </div>
+                        <div styleName="label-style">
+                          Purchases
+                          <input
+                            id="purchases"
+                            type="text"
+                            styleName="input-style"
+                            value="0 Eth"
+                            readOnly
+                          />
+                        </div>
+                        <div styleName="label-style">
+                          Balance
+                          <input
+                            id="balance"
+                            type="text"
+                            styleName="input-style"
+                            value="0.2 Eth"
+                            readOnly
+                          />
+                        </div>
+                        <input
+                          id="search"
+                          type="submit"
+                          // className="input-button-style"
+                          styleName="eth-button"
+                          value="Check Out"
+                          onClick={this.handleCheckOut}
+                        />
+                      </div>
+                    }
+                    <div className="input-button-style"
+                      onClick={this.toggleDetailsRender}
+                    >
+                      { this.state.renderDetails ?
+                        "Hide Details"
+                      :
+                        "Click to Access"
+                      }
+                    </div>
+                  </div>
+                :
+                  <ResContractWrapper
+                    address={this.state.reservation.address}
+                  />
+                }
+              </div>
+            }
+          </fieldset>
         </div>
       </div>
     )
