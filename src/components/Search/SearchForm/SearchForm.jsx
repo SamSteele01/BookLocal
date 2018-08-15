@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { render } from 'react-dom' 
+import { render } from 'react-dom'
 import Downshift from 'downshift'
 import XIcon from 'components/XIcon'
 import ArrowIcon from 'components/ArrowIcon'
@@ -26,24 +26,23 @@ const itemToString = i => (i ? i.name : '')
     super(props)
     this.state = {
       query: ''
-      
+
     }
     this.handleStateChange=this.handleStateChange.bind(this);
   }
   handleStateChange = (changes) => {
       if(changes.hasOwnProperty('selectedItem')) {
-        this.setState({query: changes.selectedItem});
-        this.props.getSearchString(changes.selectedItem);
+        this.setState({ query: changes.selectedItem} );
+        this.props.setSearchString(changes.selectedItem);
       } else if (changes.hasOwnProperty('inputValue')) {
-        this.setState({query: changes.inputValue});
-        this.props.getSearchString(changes.inputValue);
+        this.setState({ query: changes.inputValue });
+        this.props.setSearchString(changes.inputValue);
+      }
+  }
 
-      }
-      }
-      
-      render() {
+  render() {
     return (
-      <div>
+      <div styleName="search-form">
       <Downshift
         onStateChange={this.handleStateChange}
         itemToString={itemToString}
@@ -66,18 +65,17 @@ const itemToString = i => (i ? i.name : '')
             <div>
               <input {...getInputProps({
                 isOpen,
-                placeholder: "Search for a city"})} 
+                placeholder: "Search for a city"})}
                 className="citySearch-input formInput"
                 htmlId="citySearch"
               />
-              {selectedItem ? (
-                <button 
+              { selectedItem ? (
+                <button
                   onClick={clearSelection}
                   aria-label="clear selection"
                 >
                   <XIcon />
                 </button>
-
               ) : (
                 <button className="citySearch-button" {...getToggleButtonProps()}>
                   <ArrowIcon isOpen={isOpen} />
@@ -86,48 +84,43 @@ const itemToString = i => (i ? i.name : '')
             </div>
             <div>
               <ul {...getMenuProps({
-                  isOpen,
-                  style: {
-                    border: 
-                      isOpen ? '0.1rem solid lightgray' : null,
-                    borderRadius: 
-                      isOpen ? '0.1rem' : null
-                  }
-                  })} 
+                    isOpen,
+                    style: {
+                      border:
+                        isOpen ? '0.1rem solid lightgray' : null,
+                      borderRadius:
+                        isOpen ? '0.1rem' : null
+                    }
+                  })}
                   className="suggestionsDropdown"
-                  
-                >
-                {isOpen
-                  ? items
+              >
+                { isOpen &&
+                  items
                     .filter(item => !inputValue || item.id.includes(inputValue))
                     .map((item, index) => (
-                    <li
-                    {...getItemProps({
-                      key: item.id,
-                      item,
-                      index,
-                      style: {
-                        backgroundColor: 
-                          highlightedIndex === index ? 'lightgray' : null,
-                          fontWeight: selectedItem === item ?  700 : 400,
-                      },
-                      })}
-                    >
-                      {item.name}
-                    </li>
-                
-                ))
-                : null}
+                      <li
+                      {...getItemProps({
+                        key: item.id,
+                        item,
+                        index,
+                        style: {
+                          backgroundColor:
+                            highlightedIndex === index ? 'lightgray' : null,
+                            fontWeight: selectedItem === item ?  700 : 400,
+                        },
+                        })}
+                      >
+                        {item.name}
+                      </li>
+                    ))
+                }
               </ul>
             </div>
           </div>
-
         )}
-
       </Downshift>
     </div>
     )
-
   }
 }
 
