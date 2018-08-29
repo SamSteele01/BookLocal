@@ -11,19 +11,21 @@ export default function SearchResultsItem({searchObject, callback}) {
     return(
         <div styleName="container">
             <div styleName="hotelName">
-                <h4>{searchObject.name}</h4>
+                <h4>{searchObject.hotelProfile.name}</h4>
             </div>
             <div styleName="hotelImage" data-image={searchObject.imgSrc}>
-                <img src={searchObject.imgSrc} alt={searchObject.name} />
+                <img src={searchObject.hotelProfile.imgSrc}
+                  alt={searchObject.name}
+                />
             </div>
             <div styleName="hotelLocation">
-                City: <span>{searchObject.city}</span>
+                City: <span>{searchObject.hotelProfile.city}</span>
             </div>
             <div styleName="hotelBeds">
-                Beds: {searchObject.beds}
+                Beds: {searchObject.roomTypes.beds}
             </div>
             <div styleName="hotelPrice">
-                Price/night: {searchObject.price} Eth
+                Price/night: {searchObject.roomTypes.price} Eth
             </div>
             {callback &&
                 <input
