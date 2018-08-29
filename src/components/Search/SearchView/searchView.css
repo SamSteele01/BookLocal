@@ -1,0 +1,62 @@
+.search-container {
+    position: fixed;
+    /*@mixin cardBackground;*/
+    width: 100vw;
+    /*height: 100vh;*/
+    top: 0;
+    :global(.formGroup) input {
+        width: 80%;
+    }
+    /*display: flex;
+    justify-content: center;
+    align-items: center;*/
+}
+
+.search-bar {
+  background-color: white;
+    margin-top: 86px;
+    padding: 12px 0 8px 20px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: baseline;
+    grid-column: 1 / 13;
+    grid-template-columns: repeat(12, 1fr);
+    .citySearch {
+        margin-bottom: 0; /* hate doing this, but webpack inheritance isn't working properly */
+    }
+}
+
+.citySearch {
+    grid-column: 1 / 6;
+    flex: 6 0 40%;
+}
+
+.startDate, .endDate {
+    flex: 1 1 30%;
+}
+
+.startDate {
+    /* placeholder */
+    grid-column: 6 / 8;
+}
+
+.endDate {
+    /* placeholder */
+    grid-column: 8 / 10;
+}
+
+.searchSubmit {
+    grid-column: 10 / 13;
+    align-self: center;
+    flex: 3 0 25%;
+    position: relative;
+}
+
+.results {
+    /*background-color: white;*/
+    /*margin: 0 4vw;*/
+    padding: 10px;
+    grid-column: 1 / 13;
+    margin-top: 10vh;
+}
