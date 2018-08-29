@@ -21,15 +21,16 @@ const itemToString = i => (i ? i.name : '')
   // Using downshift to handle the autocomplete/suggest function here. Docs and relevant comparison code
   // Here: https://www.npmjs.com/package/downshift
   // And here: https://codesandbox.io/s/github/kentcdodds/downshift-examples
-  class SearchForm extends Component {
-    constructor(props) {
-    super(props)
+class SearchForm extends Component {
+  constructor(props) {
+  super(props)
     this.state = {
       query: ''
 
     }
     this.handleStateChange=this.handleStateChange.bind(this);
   }
+  
   handleStateChange = (changes) => {
       if(changes.hasOwnProperty('selectedItem')) {
         this.setState({ query: changes.selectedItem} );
