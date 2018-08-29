@@ -1,13 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Lokka } from 'lokka'
-import { Transport } from 'lokka-transport-http'
 import SearchResultsItem from './SearchResultsItem'
 import './SearchResults.css'
-
-const client = new Lokka({
-  transport: new Transport('http://localhost:8080/graphql')
-});
 
 // minimum result object elements:
 // name, id, state/zip, price/night, beds, rating?,
@@ -40,7 +34,8 @@ const searchResults = [
 
 class SearchResults extends Component {
     static propTypes = {
-      SearchResults: PropTypes.array
+      hotelResultsArray: PropTypes.array,
+      reservationData: PropTypes.func.isRequired,
     }
     constructor(props) {
         super(props)
@@ -51,47 +46,26 @@ class SearchResults extends Component {
     }
     reserveClicked = (searchObject) => {
       // calculate total price
-      let totalPrice = (this.props.searchQuery.end - this.props.searchQuery.start) * searchObject.price
+      let totalPrice = (this.props.searchQuery.end
+        - this.props.searchQuery.start)
+        * searchObject.price
       let resData = Object.assign(searchObject, { totalPrice: totalPrice })
       // TODO get hotel and RT data from DB
       this.props.reservationData(resData);
     }
-    // call an update on the query value, if necessary?
-    // getSearchQuery = () => {
-    //    this.setState({query: this.props.results});
-    // }
+
     generateSearchResultList() {
-      let searchResultsList = null
-      if (searchResults !== null && searchResults !== undefined) {
-        searchResultsList = searchResults.map((searchObject, index) => {
+      // let searchResultsList = null
+      // if (searchResults !== null && searchResults !== undefined) {
+        let searchResultsList = this.props.hotelResultsArray.map((dataObject, index) => {
           return <SearchResultsItem
             key={index}
-            searchObject={searchObject}
+            searchObject={dataObject}
             callback={this.reserveClicked}
           />
         })
-      }
+      // }
       return searchResultsList
-    }
-    async searchHotels(input) {
-      let hotels = ''
-      let address = ''
-      let string = `($input: TravelerInput!){
-        addNewTraveler(input: $input){
-          id
-          ethAddress
-          name
-          phoneNumber
-          preferences
-        }
-      }`
-      let variable = { input: input }
-      await client.query(string, variable)
-      .then(data => {
-        hotels = data
-        address = data.addNewTraveler.ethAddress
-      }).catch(error => console.log(error))
-      return { hotels, address }
     }
 
     render() {
@@ -103,10 +77,12 @@ class SearchResults extends Component {
         Reserve component to confirm dates */
         return(
             <div styleName="search-results">
-            { this.props.searchRunning &&
-              this.generateSearchResultList()
-
-            }
+              { this.props.display === 'results' &&
+                this.generateSearchResultList()
+              }
+              { this.props.display === 'loading' &&
+                <div styleName="loading">Loading</div>
+              }
             </div>
         )
     }
