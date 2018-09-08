@@ -49,6 +49,7 @@ class SearchResults extends Component {
       let totalPrice = (this.props.searchQuery.end
         - this.props.searchQuery.start)
         * searchObject.price
+      // TODO call web3.getReservationPrice() INSTEAD
       let resData = Object.assign(searchObject, { totalPrice: totalPrice })
       // TODO get hotel and RT data from DB
       this.props.reservationData(resData);
