@@ -38,20 +38,24 @@ class TravelerInfoForm extends Component {
     event.preventDefault();
     console.log("Form submit fired!");
       // get account[0] from MetaMask
-      let inputObject = Object.assign({ ethAddress: window.web3.eth.accounts[0] }, this.state)
+      let inputObject = Object.assign(
+        { ethAddress: window.web3.eth.accounts[0] },
+        this.state
+      )
       console.log('INPUTOBJECT', inputObject)
       // send updated state values to DB
-      // let traveler = this.submitTravelerInfo(inputObject)
+      this.submitTravelerInfo(inputObject)
       // confirm initial submission
       // console.log('TRAVELER', traveler)
       // trigger view change to Payment modal (without navigating away)
+      // TODO add if data and not error
       this.props.showPaymentForm(true);
   }
 
   async submitTravelerInfo(input) {
     // hotelAddressArray => hotelDataArray
-    let traveler = ''
-    let address = ''
+    // let traveler = ''
+    // let address = ''
     let string = `($input: TravelerInput!){
       addNewTraveler(input: $input){
         id
@@ -63,11 +67,8 @@ class TravelerInfoForm extends Component {
     }`
     let variable = { input: input }
     await client.mutate(string, variable)
-    .then(data => {
-      traveler = data
-      address = data.addNewTraveler.ethAddress
-    }).catch(error => console.log(error))
-    return { traveler, address }
+    .then(data => console.log(data))
+    .catch(error => console.log(error))
   }
 
   navigateBack = (event) => {
