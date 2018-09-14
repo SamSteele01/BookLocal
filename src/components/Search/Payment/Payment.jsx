@@ -13,7 +13,7 @@ import ResDetails from '../ResDetails';
 import './Payment.css'
 
 const client = new Lokka({
-  transport: new Transport('http://localhost:8080/graphql')
+  transport: new Transport('https://api.booklocal.in/graphql')
 });
 
 class Payment extends Component {

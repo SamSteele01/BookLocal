@@ -13,7 +13,7 @@ import hotelABI from 'abis/hotelABI'
 import './searchView.css'
 
 const client = new Lokka({
-  transport: new Transport('http://localhost:8080/graphql')
+  transport: new Transport('https://api.booklocal.in/graphql')
 });
 
 export default class SearchView extends Component {
