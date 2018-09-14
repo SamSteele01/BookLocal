@@ -82,7 +82,7 @@ class SearchResults extends Component {
                 this.generateSearchResultList()
               }
               { this.props.display === 'loading' &&
-                <div styleName="loading">Loading</div>
+                <div className="loading">Loading</div>
               }
             </div>
         )

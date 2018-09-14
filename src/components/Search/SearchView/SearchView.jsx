@@ -5,9 +5,12 @@ import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css?raw'
 import { Lokka } from 'lokka'
 import { Transport } from 'lokka-transport-http'
-import SearchForm from './SearchForm'
-import SearchResults from './SearchResults'
+import uniqueId from 'react-html-id'
+
+import SearchForm from '../SearchForm'
+import SearchResults from '../SearchResults'
 import hotelABI from 'abis/hotelABI'
+import './searchView.css'
 
 const client = new Lokka({
   transport: new Transport('http://localhost:8080/graphql')
@@ -31,7 +34,8 @@ export default class SearchView extends Component {
       display: null,
       hotelResultsArray: [],
     };
-
+    uniqueId.enableUniqueIds(this)
+    this.handleSubmitHotelSearch = this.handleSubmitHotelSearch.bind(this)
   }
 
   // handleTextChange = (event) => {

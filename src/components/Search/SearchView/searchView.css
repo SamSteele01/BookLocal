@@ -60,3 +60,10 @@
     grid-column: 1 / 13;
     margin-top: 10vh;
 }
+
+.searchSubmitButton {
+    @mixin buttonVariant $primaryBlue, 0.75rem, 1rem;
+    color: #fff;
+    top: 5%;
+
+}
